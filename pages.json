@@ -85,6 +85,24 @@
 				"navigationBarTitleText":"注册"
 			}
         }
+        ,{
+            "path" : "pages/quickLogin/quickLogin",
+            "style" : {
+				"navigationBarTitleText":"手机登录"
+			}
+        }
+        ,{
+            "path" : "pages/Invitation_code/Invitation_code",
+            "style" : {
+				"navigationBarTitleText":"分享优惠"
+			}
+        }
+        ,{
+            "path" : "pages/contact_service/contact_service",
+            "style" : {
+				"navigationBarTitleText":"联系客服"
+			}
+        }
     ],
 	// 全局样式
     "globalStyle" : {

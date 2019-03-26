@@ -1,19 +1,18 @@
 <template>
 	<view class="page_reg">
 		<view class="reg_form">
-
 			<view class="input">
 				<view class="img">
 					<i class="iconfont icon-dianhua3"></i>
 				</view>
-				<input type="text" v-model.trim="username" placeholder-style="color:#ccc;font-size:14px;" placeholder="请输入手机号">
+				<input type="text" v-model.trim="username" placeholder-style="color:#ccc;font-size:14px;" placeholder="请输入手机号" :focus="autoFocus">
 			</view>
 			<view class="line" />
 			<view class="input">
 				<view class="img">
 					<i class="iconfont icon-yanzhengma"></i>
 				</view>
-				<input v-model.trim="regCode" placeholder-style="color:#ccc;font-size:14px;" placeholder="输入验证码">
+				<input v-model.trim="regCode" placeholder-style="color:#ccc;font-size:14px;" placeholder="输入验证码" >
 				<view class="get_code">
 					<view class="get_code_btn" :class="{'dis_btn':codeDisable===true}" @tap.stop="getMsgCode">{{codeText}}</view>
 				</view>
@@ -46,7 +45,9 @@
 				codeDisable: false,
 				codeText: '获取验证码',
 				codeTimer: null,
-			};
+				codeLoad:false, // 是否正在发送验证码
+				autoFocus:true,
+			}
 		},
 		methods: {
 			inputUsername(e) {
@@ -65,7 +66,7 @@
 				const user = this.username;
 				const that = this;
 				let _time = 60;
-				if (that.codeDisable) return;
+				if (that.codeDisable || that.codeLoad) return;
 				if (user === '' || !helper.phoneReg(user)) {
 					uni.showToast({
 						title: '请输入正的确手机号',
@@ -73,37 +74,64 @@
 						icon:'none'
 					});
 				} else {
+// 					uni.request({
+// 					url:"http://dz.cdabon.com/wap/api/global.php?action=CheckParams4H5&type=phone",
+// 					method:'GET',
+// 					data:{
+// 						key:user,
+// 						params:user
+// 					},
+// 					success:function(res){
+// 						if(res.status == 200){
+// 							
+// 						}
+// 					},
+// 					fail:function(fail){
+// 						
+// 					},
+// 					complete:function(){
+// 						
+// 					}
+// 				})
+					that.codeLoad = true;
 					uni.request({
-						url:"http://www.duanzu.com/e/member/doaction.php",
+						url:"http://dz.cdabon.com/e/member/doaction.php",
 						method:'GET',
 						data:{
 							enews: 'Rzsj',
 							phone: user
 						},
 						success:function(res){
-							console.log(res)
+							that.codeDisable = true;
+							that.codeTimer = setInterval(function() {
+								if (_time <= 0) {
+									clearInterval(that.codeTimer);
+									that.codeTimer = null;
+									that.codeText = '重新获取'
+									that.codeDisable = false;
+								} else {
+									that.codeText = `${_time}s再获取`;
+									_time -= 1;
+								}
+							}, 1000)
+							uni.showToast({
+								title: '已发送到手机',
+								duration: 1000,
+								icon:'none'
+							});
 						},
 						fail:function(){
-							
+							uni.showToast({
+								title: '发送失败',
+								duration: 1000,
+								icon:'none'
+							});
 						},
 						complete:function(){
-							
+							that.codeLoad = false;
 						}
 					})
-// 					that.codeDisable = true;
-// 					that.codeTimer = setInterval(function() {
-// 						if (_time <= 0) {
-// 							clearInterval(that.codeTimer);
-// 							that.codeTimer = null;
-// 							that.codeText = '重新获取'
-// 							that.codeDisable = false;
-// 						} else {
-// 							that.codeText = `${_time}s再获取`;
-// 							_time -= 1;
-// 						}
-// 					}, 1000)
 				}
-				
 			},
 			// 提交注册
 			submitRegsiter() {
@@ -236,8 +264,8 @@
 	.submit {
 		box-sizing: border-box;
 		width: 100%;
-		height: 36px;
-		line-height: 36px;
+		height: 40px;
+		line-height: 40px;
 		margin: 30px 20px 10px 20px;
 		color: white;
 		background-color: #F05B72;

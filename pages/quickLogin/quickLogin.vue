@@ -1,7 +1,7 @@
 <template>
-	<view class="page_login">
+	<view class="page_quick_login">
 		<!-- 登录form -->
-		<view class="login_form">
+		<view class="quick_login_form">
 			<view class="input">
 				<view class="img">
 					<i class="iconfont icon-ziyuan"></i>
@@ -10,6 +10,17 @@
 				 :focus="autoFocus">
 				<view class="img icon_del" @tap="delUser" v-if="username">
 					<i class="iconfont icon-quxiao"></i>
+				</view>
+			</view>
+			<view class="line" />
+			<view class="input">
+				<view class="img">
+					<i class="iconfont icon-yanzhengma"></i>
+				</view>
+				<input type="text" v-model.trim="imgCode" placeholder-style="color:#ccc;font-size:14px;" placeholder="图形验证码"
+				 :focus="autoFocus">
+				<view class="get_code" v-if="code_img" @click="getImgCode">
+					<img class="code_img" :src="code_img" alt="">
 				</view>
 			</view>
 			<view class="line" />
@@ -29,7 +40,7 @@
 		<button class="submit" @tap="login">登录</button>
 		<view class="opts">
 			<text @tap="goReg" class="text">立即注册</text>
-			<text @tap="quickLogin" class="text" style="color: #F05B72;">手机快速登录</text>
+			<text @tap="usualLogin" class="text" style="color: #F05B72;">账号登录</text>
 		</view>
 		<view class="quick_login_line">
 			<view class="line" />
@@ -57,10 +68,12 @@
 					weibo: isUni ? '/static/weibo.png' : require('./images/weibo.png')
 				},
 				autoFocus: true,
+				code_img: '', //图形验证码链接
+				imgCode:'', // 图形验证码
 			}
 		},
-		onLoad(){
-			
+		onshow() {
+			this.getImgCode()
 		},
 		methods: {
 			inputUsername(e) {
@@ -75,9 +88,12 @@
 			switchPwd() {
 				this.pwdType = this.pwdType === 'text' ? 'password' : 'text'
 			},
-			quickLogin() {
+			login() {
+				console.log('username:' + this.username + ',pwd:' + this.userpwd)
+			},
+			usualLogin() {
 				uni.redirectTo({
-					url: '/pages/quickLogin/quickLogin'
+					url: '/pages/login/login'
 				})
 			},
 			goReg() {
@@ -85,47 +101,15 @@
 					url: '/pages/register/register'
 				})
 			},
+			// 获取图形验证码
+			getImgCode() {
+				const that = this;
+				let codeImg = that.code_img
+				that.code_img = 'http://dz.cdabon.com/e/ShowKey/?v=login&'+new Date().getTime()
+			},
 			thirdLogin(type) {
 				console.log(type)
-			},
-			// 登录
-			login() {
-				const that = this;
-				const username = that.username;
-				const pws = that.userpwd;
-				if (username === '') {
-					uni.showToast({
-						title: '账号不能为空',
-						duration: 1500,
-						icon: 'none'
-					});
-				} else if (pws === '') {
-					uni.showToast({
-						title: '密码不能为空',
-						duration: 1500,
-						icon: 'none'
-					});
-				} else {
-					uni.request({
-						url:'http://dz.cdabon.com/e/member/ajax/index.php?action=login',
-						method:'POST',
-						data:{
-							username:username,
-							password:pws
-						},
-						success:function(){
-							
-						},
-						fail:function(){
-							
-						},
-						complete:function(){
-							
-						}
-					})
-					console.log('username:' + this.username + ',pwd:' + this.userpwd)
-				}
-			},
+			}
 		}
 	}
 </script>
@@ -141,11 +125,11 @@
 	$form-border-color: rgba(214, 214, 214, 1);
 	$text-color: #B6B6B6;
 
-	.page_login {
+	.page_quick_login {
 		padding: 10px;
 	}
 
-	.login_form {
+	.quick_login_form {
 		display: flex;
 		margin: 20px;
 		flex-direction: column;
@@ -182,6 +166,18 @@
 					color: #F05B72;
 				}
 
+			}
+
+			.get_code {
+				min-width: 60px;
+				min-height: 40px;
+				display: flex;
+				align-items: center;
+
+				.code_img {
+					width: 60px;
+					height: 30px
+				}
 			}
 
 			.icon_del .iconfont,

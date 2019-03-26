@@ -219,14 +219,44 @@
 .icon-pinglun:before {
   content: "\E61C";
 }
-.iconfont{
+.iconfont {
 	font-family: 'iconfont';
 	font-size: 24rpx;
 }
-page,page{
+page,
+page {
 	font-size: 16px;
 }
-._i{
+._i {
 	display: inline;
+}
+.dis_btn {
+	pointer-events: none;
+	background: #CCCCCC !important;
+}
+.padding15-wrap {
+	padding: 30rpx;
+}
+.my-btn-block {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: block;
+	width: 100%;
+	height: 80rpx;
+	line-height: 80rpx;
+	text-align: center;
+	font-size: 1rem;
+	background: #f05b72;
+	border-radius: 5px;
+	color: #fff;
+	border: none;
+	padding: 0;
+}
+.my-btn-block:active {
+	background: #f05b72 !important;
+	opacity: 0.8;
+}
+._ul ._li{
+	list-style: none;
 }
 
