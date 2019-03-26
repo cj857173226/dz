@@ -6,7 +6,10 @@
     "pages/messages/messages",
     "pages/my/my",
     "pages/login/login",
-    "pages/register/register"
+    "pages/register/register",
+    "pages/quickLogin/quickLogin",
+    "pages/Invitation_code/Invitation_code",
+    "pages/contact_service/contact_service"
   ],
   "subPackages": [],
   "window": {

@@ -5,8 +5,8 @@
 				<img :src="userInfo.headimgurl?userInfo.headimgurl:'/static/images/landlordguide/pic1_1.png'" id="user-avatar" alt="">
 			</div>
 			<div class="avatar-right-wrap">
-				<p id="user-cname" v-if="userInfo.username">{{userInfo.username}}</p>
-				<p v-if="!userInfo.username" @click.stop="pageTo('/pages/login/login')" style="font: 14px;color: #f05b72;">请登录</p>
+				<p id="user-cname" v-if="userInfo.username" style="margin-bottom: 4px;">{{userInfo.username}}</p>
+				<p v-if="!userInfo.username" @click.stop="pageTo('/pages/login/login')" style="font: 14px;color: #f05b72;margin-bottom: 4px;">请登录</p>
 				<!--完善信息-->
 				<p class="perfect-info">信息未完善,请完善信息 <text class="iconfont icon-weibiaoti34"></text></p>
 			</div>
@@ -91,13 +91,13 @@
 						</div>
 					</div>
 					<div class="more-fun-item ">
-						<div class="_box" @click.stop="pageTo('contactService')">
+						<div class="_box" @click.stop="pageTo('/pages/contact_service/contact_service')">
 							<i class="iconfont icon-kefu"></i>
 							<p class="name">联系客服</p>
 						</div>
 					</div>
 					<div class="more-fun-item ">
-						<div class="_box" @click.stop="pageTo('share')">
+						<div class="_box" @click.stop="pageTo('/pages/Invitation_code/Invitation_code')">
 							<i class="iconfont icon-tianjiahaoyou"></i>
 							<p class="name">邀请好友</p>
 						</div>
@@ -146,6 +146,9 @@
 			}
 		},
 		onLoad(){
+		},
+		onShow(){
+			console.log(1)
 		},
 		mounted() {
 			// helper.isLogin()
@@ -218,10 +221,15 @@
 	}
 
 	#my-index-head .avatar-right-wrap {
-		padding-top: 20upx;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-top: 10upx;
+		padding-bottom: 10upx;
 		box-sizing: border-box;
 		padding-left: 30upx;
 		float: left;
+		height: 60px;
 		width: calc(100% - 260upx);
 	}
 

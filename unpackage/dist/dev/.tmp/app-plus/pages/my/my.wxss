@@ -45,11 +45,26 @@ page {
 	font-size: 14px;
 }
 #my-index-head .avatar-right-wrap {
-	padding-top: 20rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	padding-top: 10rpx;
+	padding-bottom: 10rpx;
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 	padding-left: 30rpx;
 	float: left;
+	height: 60px;
 	width: calc(100% - 260rpx);
 }
 #user-avatar {

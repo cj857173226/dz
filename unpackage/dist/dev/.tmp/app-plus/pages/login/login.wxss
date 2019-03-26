@@ -121,8 +121,8 @@ page {
 .submit.data-v-16b598e3 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  height: 36px;
-  line-height: 36px;
+  height: 40px;
+  line-height: 40px;
   margin: 30px 20px 10px 20px;
   color: white;
   background-color: #F05B72;
@@ -154,7 +154,7 @@ page {
           justify-content: space-between;
 }
 .opts .text.data-v-16b598e3 {
-    font-size: 13px;
+    font-size: 14px;
     color: #B6B6B6;
 }
 .quick_login_line.data-v-16b598e3 {
