@@ -1,0 +1,1 @@
+<template name="b34181ec"><view class="_view b34181ec content"><navigator url hover-class="navigator-hover" class="_navigator b34181ec">aaa</navigator><image class="_image b34181ec logo" src="../../static/logo.png"></image><view class="_view b34181ec"><text class="_text b34181ec title">{{title}}</text></view></view></template>

@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/collection/collection",
+    "pages/orderList/orderList",
+    "pages/messages/messages",
+    "pages/my/my"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {},
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/tabBarIcon/home.png",
+        "selectedIconPath": "static/tabBarIcon/home-on.png"
+      },
+      {
+        "pagePath": "pages/collection/collection",
+        "text": "收藏",
+        "iconPath": "static/tabBarIcon/collection.png",
+        "selectedIconPath": "static/tabBarIcon/collection-on.png"
+      },
+      {
+        "pagePath": "pages/orderList/orderList",
+        "text": "订单",
+        "iconPath": "static/tabBarIcon/order.png",
+        "selectedIconPath": "static/tabBarIcon/order-on.png"
+      },
+      {
+        "pagePath": "pages/messages/messages",
+        "text": "消息",
+        "iconPath": "static/tabBarIcon/message.png",
+        "selectedIconPath": "static/tabBarIcon/message-on.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "static/tabBarIcon/my.png",
+        "selectedIconPath": "static/tabBarIcon/my-on.png"
+      }
+    ],
+    "color": "#333333",
+    "selectedColor": "#F05B72",
+    "backgroundColor": "#FFFFFF",
+    "position": "bottom"
+  },
+  "splashscreen": {
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
+  },
+  "appname": "xzapp"
+}
