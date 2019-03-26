@@ -1,5 +1,17 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],{
 
+/***/ "./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js":
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js ***!
+  \*********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nvar isFn = function isFn(v) {\n  return typeof v === 'function';\n};\n\nvar handlePromise = function handlePromise(promise) {\n  return promise.then(function (data) {\n    return [null, data];\n  }).catch(function (err) {\n    return [err];\n  });\n};\n\nvar REGEX = /^on|^create|Sync$|Manager$|^pause/;\nvar API_NORMAL_LIST = ['os', 'stopRecord', 'stopVoice', 'stopBackgroundAudio', 'stopPullDownRefresh', 'hideKeyboard', 'hideToast', 'hideLoading', 'showNavigationBarLoading', 'hideNavigationBarLoading', 'canIUse', 'navigateBack', 'closeSocket', 'pageScrollTo', 'drawCanvas'];\n\nvar shouldPromise = function shouldPromise(name) {\n  if (REGEX.test(name) && name !== 'createBLEConnection') {\n    return false;\n  }\n  if (~API_NORMAL_LIST.indexOf(name)) {\n    return false;\n  }\n  return true;\n};\n\nvar promisify = function promisify(api) {\n  return function () {\n    for (var _len = arguments.length, params = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {\n      params[_key - 1] = arguments[_key];\n    }\n\n    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};\n\n    if (isFn(options.success) || isFn(options.fail) || isFn(options.complete)) {\n      return api.apply(undefined, [options].concat(params));\n    }\n    return handlePromise(new Promise(function (resolve, reject) {\n      api.apply(undefined, [Object.assign({}, options, {\n        success: resolve,\n        fail: reject\n      })].concat(params));\n      /* eslint-disable no-extend-native */\n      Promise.prototype.finally = function (callback) {\n        var promise = this.constructor;\n        return this.then(function (value) {\n          return promise.resolve(callback()).then(function () {\n            return value;\n          });\n        }, function (reason) {\n          return promise.resolve(callback()).then(function () {\n            throw reason;\n          });\n        });\n      };\n    }));\n  };\n};\n\nvar EPS = 1e-4;\nvar BASE_DEVICE_WIDTH = 750;\nvar isIOS = false;\nvar deviceWidth = 0;\nvar deviceDPR = 0;\n\nfunction checkDeviceWidth() {\n  var _wx$getSystemInfoSync = wx.getSystemInfoSync(),\n      platform = _wx$getSystemInfoSync.platform,\n      pixelRatio = _wx$getSystemInfoSync.pixelRatio,\n      windowWidth = _wx$getSystemInfoSync.windowWidth;\n\n  deviceWidth = windowWidth;\n  deviceDPR = pixelRatio;\n  isIOS = platform === 'ios';\n}\n\nfunction transformUpx(number, newDeviceWidth) {\n  if (deviceWidth === 0) {\n    checkDeviceWidth();\n  }\n\n  if (number === 0) {\n    return 0;\n  }\n\n  var result = number / BASE_DEVICE_WIDTH * (newDeviceWidth || deviceWidth);\n  if (result < 0) {\n    result = -result;\n  }\n  result = Math.floor(result + EPS);\n  if (result === 0) {\n    if (deviceDPR === 1 || !isIOS) {\n      return 1;\n    } else {\n      return 0.5;\n    }\n  }\n  return number < 0 ? -result : result;\n}\n\nfunction requireNativePlugin(pluginName) {\n  /* eslint-disable no-undef */\n  return __requireNativePlugin__(pluginName);\n}\n\nvar uni = {};\n\nvar baseUni = {\n  os: {\n    plus: true\n  }\n};\n\nif (typeof Proxy !== 'undefined') {\n  uni = new Proxy({}, {\n    get: function get(target, name) {\n      if (baseUni.hasOwnProperty(name)) {\n        return baseUni[name];\n      }\n\n      if (name === 'upx2px') {\n        return transformUpx;\n      }\n      if (name === 'requireNativePlugin') {\n        return requireNativePlugin;\n      }\n      if (!wx.hasOwnProperty(name)) {\n        return;\n      }\n      if (shouldPromise(name)) {\n        return promisify(wx[name]);\n      }\n      return wx[name];\n    }\n  });\n} else {\n  uni.upx2px = transformUpx;\n\n  uni.requireNativePlugin = requireNativePlugin;\n\n  Object.keys(baseUni).forEach(function (key) {\n    uni[key] = baseUni[key];\n  });\n\n  Object.keys(wx).forEach(function (key) {\n    if (wx.hasOwnProperty(key)) {\n      if (shouldPromise(key)) {\n        uni[key] = promisify(wx[key]);\n      } else {\n        uni[key] = wx[key];\n      }\n    }\n  });\n}\n\nvar uni$1 = uni;\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (uni$1);\n\n\n//# sourceURL=C:/Users/xiaoliu/Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js");
+
+/***/ }),
+
 /***/ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mpvue-page-factory/index.js":
 /*!****************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mpvue-page-factory/index.js ***!
@@ -43,6 +55,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, exports) {
 
 eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn this;\n})();\n\ntry {\n\t// This works if eval is allowed (see CSP)\n\tg = g || new Function(\"return this\")();\n} catch (e) {\n\t// This works if the window reference is available\n\tif (typeof window === \"object\") g = window;\n}\n\n// g can still be undefined, but nothing to do about it...\n// We return undefined, instead of nothing here, so it's\n// easier to handle this case. if(!global) { ...}\n\nmodule.exports = g;\n\n\n//# sourceURL=C:/Users/xiaoliu/Desktop/HBuilderX/plugins/uniapp-cli/node_modules/webpack/buildin/global.js");
+
+/***/ }),
+
+/***/ "D:\\xzapp\\common\\helper.js":
+/*!*********************************!*\
+  !*** D:/xzapp/common/helper.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;\nvar isLogin = function isLogin() {\n  var dz_user = uni.getStorageSync('dz_user');\n  if (!dz_user) {\n    uni.reLaunch({\n      url: '/pages/login/login' });\n\n  }\n};\n\nvar phoneReg = function phoneReg(phone) {\n  var phoneReg = /^[1][3,4,5,7,8][0-9]{9}$/;\n  if (phoneReg.test(phone)) {\n    return true;\n  } else {\n    return false;\n  }\n};var _default =\n\n{\n  isLogin: isLogin,\n  phoneReg: phoneReg };exports.default = _default;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js */ \"./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js\")[\"default\"]))\n\n//# sourceURL=uni-app:///common/helper.js?2cbc");
 
 /***/ }),
 

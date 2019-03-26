@@ -75,11 +75,15 @@
         }
         ,{
             "path" : "pages/login/login",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText":"登录"
+			}
         }
         ,{
             "path" : "pages/register/register",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText":"注册"
+			}
         }
     ],
 	// 全局样式
