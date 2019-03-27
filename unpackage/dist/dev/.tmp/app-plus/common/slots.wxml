@@ -1,1 +1,16 @@
+<import src="/components/particulars/srcoll-view.vue.wxml" />
+<import src="/components/particulars/Contact-room-door.vue.wxml" />
+<import src="/components/index/carousel.vue.wxml" />
+<import src="/components/index/select.vue.wxml" />
+<import src="/components/index/circum.vue.wxml" />
+<import src="/components/mpvue-citypicker/mpvueCityPicker.vue.wxml" />
+<import src="/components/index/date-picker/date-picker.vue.wxml" />
+<import src="/components/particulars/map.vue.wxml" />
+<import src="/components/particulars/room-description.vue.wxml" />
+<import src="/components/particulars/uni-rate/uni-rate.vue.wxml" />
+<import src="/components/particulars/supporting-facility.vue.wxml" />
+<import src="/components/particulars/unsubscribe-rules.vue.wxml" />
+<import src="/components/particulars/uni-icon/uni-icon.vue.wxml" />
+<import src="/components/particulars/plug/uni-steps/uni-steps.vue.wxml" />
+<import src="/components/particulars/plug/uni-icon/uni-icon.vue.wxml" />
 
