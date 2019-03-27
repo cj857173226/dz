@@ -1,1 +1,5 @@
+<import src="/components/index/carousel.vue.wxml" />
+<import src="/components/index/select.vue.wxml" />
+<import src="/components/index/circum.vue.wxml" />
+<import src="/components/index/date-picker/date-picker.vue.wxml" />
 
