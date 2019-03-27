@@ -1,48 +1,48 @@
 <template>
-	<view id="my-index">
-		<div id="my-index-head" class="clearfix">
-			<div>
+	<scroll-view id="my-index" scroll-y=true>
+		<view id="my-index-head" class="clearfix">
+			<view>
 				<img :src="userInfo.headimgurl?userInfo.headimgurl:'/static/images/landlordguide/pic1_1.png'" id="user-avatar" alt="">
-			</div>
-			<div class="avatar-right-wrap">
+			</view>
+			<view class="avatar-right-wrap">
 				<p id="user-cname" v-if="userInfo.username" style="margin-bottom: 4px;">{{userInfo.username}}</p>
 				<p v-if="!userInfo.username" @click.stop="pageTo('/pages/login/login')" style="font: 14px;color: #f05b72;margin-bottom: 4px;">请登录</p>
 				<!--完善信息-->
 				<p class="perfect-info">信息未完善,请完善信息 <text class="iconfont icon-weibiaoti34"></text></p>
-			</div>
+			</view>
 			<!--身份转换-->
-			<div class="user-type" @click.stop="changeUserPower()">
+			<view class="user-type" @click.stop="changeUserPower()">
 				<text class="iconfont icon-zhuanhuan"></text>
 				<span v-text="curPowerType == 'fk'? '房东': '房客'"></span>
-			</div>
-		</div>
-		<div id="my-index-main">
+			</view>
+		</view>
+		<view id="my-index-main">
 			<!--基础信息-->
-			<div class="basic-info">
+			<view class="basic-info">
 				<p class="basic-title">基本信息</p>
-				<div class="basic-info-item-wrap">
-					<div class="basic-info-item">
-						<div class="_box" @click.stop="pageTo('myAccount')">
-							<i class="iconfont icon-qianbao"></i>
+				<view class="basic-info-item-wrap">
+					<view class="basic-info-item">
+						<view class="_box" @click.stop="pageTo('myAccount')">
+							<text class="iconfont icon-qianbao"></text> 
 							<p class="name">我的账户</p>
-						</div>
-					</div>
-					<div class="basic-info-item ">
-						<div class="_box" @click.stop="pageTo('myInformation')">
-							<i class="iconfont icon-shenfenzheng"></i>
+						</view>
+					</view>
+					<view class="basic-info-item ">
+						<view class="_box" @click.stop="pageTo('myInformation')">
+							<text class="iconfont icon-shenfenzheng"></text> 
 							<p class="name">我的资料</p>
-						</div>
-					</div>
-					<div class="basic-info-item" @click.stop="pageTo('releaseManage')" v-if="curPowerType==='fd' && userPower==='5'">
-						<div class="_box">
-							<i class="iconfont icon-fabu"></i>
+						</view>
+					</view>
+					<view class="basic-info-item" @click.stop="pageTo('releaseManage')" v-if="curPowerType==='fd' && userPower==='5'">
+						<view class="_box">
+							<text class="iconfont icon-fabu"></text> 
 							<p class="name">发布管理</p>
-						</div>
-					</div>
-				</div>
-			</div>
+						</view>
+					</view>
+				</view>
+			</view>
 			<!--广告-->
-			<div class="ad-wrap " id="slider">
+			<view class="ad-wrap " id="slider">
 				<swiper class="swiper" circular=true :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval"
 				 :duration="duration" :indicator-active-color="indicatorActiveColor">
 					<swiper-item>
@@ -61,55 +61,59 @@
 						</view>
 					</swiper-item>
 				</swiper>
-			</div>
+			</view>
 			<!--更多功能-->
-			<div class="more-fun-wrap">
+			<view class="more-fun-wrap">
 				<p class="more-fun-title">更多功能</p>
-				<div class="more-fun-item-wrap">
-					<div class="more-fun-item" @click.stop="pageTo('statistics')" v-if="curPowerType==='fd' && userPower==='5'">
-						<div class="_box">
-							<i class="iconfont icon-tongji1"></i>
+				<view class="more-fun-item-wrap">
+					<view class="more-fun-item" @click.stop="pageTo('statistics')" v-if="curPowerType==='fd' && userPower==='5'">
+						<view class="_box">
+							<text class="iconfont icon-tongji1"></text> 
 							<p class="name">统计</p>
-						</div>
-					</div>
-					<div class="more-fun-item">
-						<div class="_box" @click.stop="pageTo('myInvoice')">
-							<i class="iconfont icon-fapiao"></i>
+						</view>
+					</view>
+					<view class="more-fun-item">
+						<view class="_box" @click.stop="pageTo('myInvoice')">
+							<text class="iconfont icon-fapiao"></text> 
 							<p class="name">发票</p>
-						</div>
-					</div>
-					<div class="more-fun-item ">
-						<div class="_box" @click.stop="pageTo('checkIn')">
-							<i class="iconfont icon-tuandui"></i>
+						</view>
+					</view>
+					<view class="more-fun-item ">
+						<view class="_box" @click.stop="pageTo('/pages/check_in/check_in')">
+							<text class="iconfont icon-tuandui"></text> 
 							<p class="name">常用入住人</p>
-						</div>
-					</div>
-					<div class="more-fun-item ">
-						<div class="_box" @click.stop="pageTo('myAddress')">
-							<i class="iconfont icon-dizhi-01"></i>
+						</view>
+					</view>
+					<view class="more-fun-item ">
+						<view class="_box" @click.stop="pageTo('/pages/my_address/my_address')">
+							<text class="iconfont icon-dizhi-01"></text> 
 							<p class="name">收货地址</p>
-						</div>
-					</div>
-					<div class="more-fun-item ">
-						<div class="_box" @click.stop="pageTo('/pages/contact_service/contact_service')">
-							<i class="iconfont icon-kefu"></i>
+						</view>
+					</view>
+					<view class="more-fun-item ">
+						<view class="_box" @click.stop="pageTo('/pages/contact_service/contact_service')">
+							<text class="iconfont icon-kefu"></text> 
 							<p class="name">联系客服</p>
-						</div>
-					</div>
-					<div class="more-fun-item ">
-						<div class="_box" @click.stop="pageTo('/pages/Invitation_code/Invitation_code')">
-							<i class="iconfont icon-tianjiahaoyou"></i>
+						</view>
+					</view>
+					<view class="more-fun-item ">
+						<view class="_box" @click.stop="pageTo('/pages/Invitation_code/Invitation_code')">
+							<text class="iconfont icon-tianjiahaoyou"></text> 
 							<p class="name">邀请好友</p>
-						</div>
-					</div>
-				</div>
-			</div>
+						</view>
+					</view>
+				</view>
+			</view>
 			<button id="change-fd" class="del-btn-block" v-if="userPower == '1'" @click.stop="pageTo('becomeLandlord')">成为房东</button>
-		</div>
-	</view>
+		</view>
+	</scroll-view>
 </template>
 
 <script>
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
 	import helper from 'common/helper.js'
 	export default {
 		data() {
@@ -145,9 +149,13 @@
 				indicatorActiveColor: "#F05B72"
 			}
 		},
-		onLoad(){
+		computed:{
+			...mapState(['islogin'])
 		},
-		onShow(){
+		onLoad() {
+			console.log(this.islogin)
+		},
+		onShow() {
 			console.log(1)
 		},
 		mounted() {
@@ -155,7 +163,7 @@
 			var that = this;
 			this.$nextTick(function() {
 				// 底部导航栏
-
+				
 			})
 		},
 		methods: {
@@ -167,12 +175,16 @@
 		}
 	}
 </script>
-
 <style>
 	page {
-		background: #eeeeee;
+		height: 100%;
+		background: #f5f6f8;
 	}
-
+</style>
+<style scoped>
+	#my-index{
+		height: 100%;
+	}
 	.swiper {
 		height: 200upx;
 	}
@@ -198,6 +210,9 @@
 	#my-index-head .user-type {
 		position: absolute;
 		box-sizing: border-box;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 		padding: 0 30upx;
 		height: 60upx;
 		line-height: 60upx;

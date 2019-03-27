@@ -3,16 +3,16 @@
 		<view class="reg_form">
 			<view class="input">
 				<view class="img">
-					<i class="iconfont icon-dianhua3"></i>
+					<text class="iconfont icon-dianhua3"></text>
 				</view>
 				<input type="text" v-model.trim="username" placeholder-style="color:#ccc;font-size:14px;" placeholder="请输入手机号" :focus="autoFocus">
 			</view>
 			<view class="line" />
 			<view class="input">
 				<view class="img">
-					<i class="iconfont icon-yanzhengma"></i>
+					<text class="iconfont icon-yanzhengma"></text>
 				</view>
-				<input v-model.trim="regCode" placeholder-style="color:#ccc;font-size:14px;" placeholder="输入验证码" >
+				<input v-model.trim="regCode" placeholder-style="color:#ccc;font-size:14px;" placeholder="动态验证码" >
 				<view class="get_code">
 					<view class="get_code_btn" :class="{'dis_btn':codeDisable===true}" @tap.stop="getMsgCode">{{codeText}}</view>
 				</view>
@@ -20,12 +20,12 @@
 			<view class="line" />
 			<view class="input">
 				<view class="img">
-					<i class="iconfont icon-mima"></i>
+					<text class="iconfont icon-mima"></text>
 				</view>
 				<input :type="pwdType" :value="userpwd" @input="inputPwd" placeholder-style="color:#ccc;font-size:14px;" placeholder="请输入密码">
 				<view class="img icon_pwd_switch" @tap="switchPwd">
-					<i class="iconfont icon-yanjing" v-if="pwdType==='password'"></i>
-					<i class="iconfont icon-yanjing1" v-if="pwdType==='text'"></i>
+					<text class="iconfont icon-yanjing" v-if="pwdType==='password'"></text>
+					<text class="iconfont icon-yanjing1" v-if="pwdType==='text'"></text>
 				</view>
 			</view>
 		</view>
@@ -213,7 +213,6 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-
 				.iconfont {
 					font-size: 18px;
 					color: #F05B72;

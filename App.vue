@@ -1,13 +1,29 @@
 <script>
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
 	export default {
+		data() {
+			return {
+
+			}
+		},
+		computed: {
+			...mapState(['islogin'])
+		},
 		onLaunch: function() {
 			console.log('App Launch')
+			this.login()
 		},
 		onShow: function() {
 			console.log('App Show')
 		},
 		onHide: function() {
 			console.log('App Hide')
+		},
+		methods: {
+			...mapMutations(['login'])
 		}
 	}
 </script>
@@ -43,22 +59,44 @@
 		box-sizing: border-box;
 		display: block;
 		width: 100%;
-		height: 80upx;
-		line-height: 80upx;
+		height: 100upx;
+		line-height: 100upx;
 		text-align: center;
-		font-size: 1rem;
+		font-size: 16px;
 		background: #f05b72;
 		border-radius: 5px;
 		color: #fff;
 		border: none;
 		padding: 0;
+		transition: all 0.2s;
 	}
 
 	.my-btn-block:active {
 		background: #f05b72 !important;
 		opacity: 0.8;
 	}
-	ul li{
+
+	.my-del-block {
+		box-sizing: border-box;
+		display: block;
+		width: 100%;
+		height: 100upx;
+		line-height: 100upx;
+		text-align: center;
+		font-size: 16px;
+		background: #FFFFFF;
+		border-radius: 5px;
+		color: #333;
+		border: none;
+		padding: 0;
+		transition: all 0.2s;
+	}
+	.my-del-block:active{
+		background: #f9f9f9 !important;
+		color: #AAAAAA;
+	}
+
+	ul li {
 		list-style: none;
 	}
 </style>

@@ -10,7 +10,15 @@
     "pages/quickLogin/quickLogin",
     "pages/Invitation_code/Invitation_code",
     "pages/contact_service/contact_service",
+<<<<<<< HEAD
     "pages/particulars/particulars"
+=======
+    "pages/my_address/my_address",
+    "pages/my_address/edit_address",
+    "pages/my_address/add_address",
+    "pages/check_in/check_in",
+    "pages/check_in/edit_check_in"
+>>>>>>> 4b1ddab1aefc64ae37c821f72acc06742ac5341e
   ],
   "subPackages": [],
   "window": {
