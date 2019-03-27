@@ -4,35 +4,33 @@
 		<view class="quick_login_form">
 			<view class="input">
 				<view class="img">
-					<i class="iconfont icon-ziyuan"></i>
+					<text class="iconfont icon-ziyuan"></text>
 				</view>
 				<input type="text" v-model.trim="username" placeholder-style="color:#ccc;font-size:14px;" placeholder="请输入手机号"
 				 :focus="autoFocus">
 				<view class="img icon_del" @tap="delUser" v-if="username">
-					<i class="iconfont icon-quxiao"></i>
+					<text class="iconfont icon-quxiao"></text>
 				</view>
 			</view>
 			<view class="line" />
 			<view class="input">
 				<view class="img">
-					<i class="iconfont icon-yanzhengma"></i>
+					<text class="iconfont icon-tuxingyanzhengma"></text>
 				</view>
 				<input type="text" v-model.trim="imgCode" placeholder-style="color:#ccc;font-size:14px;" placeholder="图形验证码"
 				 :focus="autoFocus">
-				<view class="get_code" v-if="code_img" @click="getImgCode">
+				<view class="get_img_code" v-if="code_img" @click="getImgCode">
 					<img class="code_img" :src="code_img" alt="">
 				</view>
 			</view>
 			<view class="line" />
 			<view class="input">
 				<view class="img">
-					<i class="iconfont icon-mima"></i>
+					<text class="iconfont icon-yanzhengma"></text>
 				</view>
-				<input :type="pwdType" :value="userpwd" @input="inputPwd" placeholder-style="color:#ccc;font-size:14px;"
-				 placeholder="请输入密码">
-				<view class="img icon_pwd_switch" @tap="switchPwd">
-					<i class="iconfont icon-yanjing" v-if="pwdType==='password'"></i>
-					<i class="iconfont icon-yanjing1" v-if="pwdType==='text'"></i>
+				<input v-model.trim="regCode" placeholder-style="color:#ccc;font-size:14px;" placeholder="动态验证码" >
+				<view class="get_code">
+					<view class="get_code_btn" :class="{'dis_btn':codeDisable===true}" @tap.stop="getMsgCode">{{codeText}}</view>
 				</view>
 			</view>
 		</view>
@@ -70,9 +68,13 @@
 				autoFocus: true,
 				code_img: '', //图形验证码链接
 				imgCode:'', // 图形验证码
+				codeDisable: false,  //是否可以获取验证码
+				codeText: '获取验证码',
+				codeTimer: null, //验证码定时器
+				codeLoad:false, // 是否正在发送验证码
 			}
 		},
-		onshow() {
+		onLoad(){
 			this.getImgCode()
 		},
 		methods: {
@@ -168,7 +170,7 @@
 
 			}
 
-			.get_code {
+			.get_img_code {
 				min-width: 60px;
 				min-height: 40px;
 				display: flex;
@@ -177,6 +179,27 @@
 				.code_img {
 					width: 60px;
 					height: 30px
+				}
+			}
+			.get_code {
+				min-width: 90px;
+				min-height: 40px;
+				display: flex;
+				align-items: center;
+			
+				.get_code_btn {
+					height: 30px;
+					width: 100%;
+					line-height: 30px;
+					text-align: center;
+					color: #FFFFFF;
+					background: #F05B72;
+					border-radius: 8px;
+					font-size: 14px;
+			
+					&:active {
+						opacity: 0.8;
+					}
 				}
 			}
 

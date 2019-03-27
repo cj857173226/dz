@@ -3,38 +3,38 @@
 		<view class="contact-type-list">
 			<view class="contact-type">
 				<view class="content-icon">
-					<i class="iconfont icon-kefu"></i>
+					<text class="iconfont icon-kefu"></text>
 				</view>
 				<view class="content-wrap">
 					<text class="content-title">在线客服 (推荐)</text>
 					<view class="note">立即解答,分分钟解决你的问题</view>
 				</view>
 				<view class="right-icon">
-					<i class="iconfont icon-weibiaoti34"></i>
+					<text class="iconfont icon-weibiaoti34"></text>
 				</view>
 			</view>
 			<view class="contact-type" @tap="callPhone">
 				<view class="content-icon">
-					<i class="iconfont icon-dianhua3"></i>
+					<text class="iconfont icon-dianhua3"></text>
 				</view>
 				<view class="content-wrap">
 					<text class="content-title">客服电话</text>
 					<view class="note">400-6565-06</view>
 				</view>
 				<view class="right-icon">
-					<i class="iconfont icon-weibiaoti34"></i>
+					<text class="iconfont icon-weibiaoti34"></text>
 				</view>
 			</view>
 			<view class="contact-type">
 				<view class="content-icon">
-					<i class="iconfont icon-youxiang"></i>
+					<text class="iconfont icon-youxiang"></text>
 				</view>
 				<view class="content-wrap">
 					<text class="content-title">客服邮箱</text>
 					<view class="note">service@163.com</view>
 				</view>
 				<view class="right-icon">
-					<i class="iconfont icon-weibiaoti34"></i>
+					<text class="iconfont icon-weibiaoti34"></text>
 				</view>
 			</view>
 		</view>

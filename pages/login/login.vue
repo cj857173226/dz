@@ -4,24 +4,24 @@
 		<view class="login_form">
 			<view class="input">
 				<view class="img">
-					<i class="iconfont icon-ziyuan"></i>
+					<text class="iconfont icon-ziyuan"></text>
 				</view>
 				<input type="text" v-model.trim="username" placeholder-style="color:#ccc;font-size:14px;" placeholder="请输入手机号"
 				 :focus="autoFocus">
 				<view class="img icon_del" @tap="delUser" v-if="username">
-					<i class="iconfont icon-quxiao"></i>
+					<text class="iconfont icon-quxiao"></text>
 				</view>
 			</view>
 			<view class="line" />
 			<view class="input">
 				<view class="img">
-					<i class="iconfont icon-mima"></i>
+					<text class="iconfont icon-mima"></text>
 				</view>
 				<input :type="pwdType" :value="userpwd" @input="inputPwd" placeholder-style="color:#ccc;font-size:14px;"
 				 placeholder="请输入密码">
 				<view class="img icon_pwd_switch" @tap="switchPwd">
-					<i class="iconfont icon-yanjing" v-if="pwdType==='password'"></i>
-					<i class="iconfont icon-yanjing1" v-if="pwdType==='text'"></i>
+					<text class="iconfont icon-yanjing" v-if="pwdType==='password'"></text>
+					<text class="iconfont icon-yanjing1" v-if="pwdType==='text'"></text>
 				</view>
 			</view>
 		</view>
@@ -57,6 +57,7 @@
 					weibo: isUni ? '/static/weibo.png' : require('./images/weibo.png')
 				},
 				autoFocus: true,
+				loginLoad:false,
 			}
 		},
 		onLoad(){
@@ -90,6 +91,7 @@
 			},
 			// 登录
 			login() {
+				if(this.loginLoad) return;
 				const that = this;
 				const username = that.username;
 				const pws = that.userpwd;
@@ -106,24 +108,39 @@
 						icon: 'none'
 					});
 				} else {
+					that.loginLoad = true;
 					uni.request({
 						url:'http://dz.cdabon.com/e/member/ajax/index.php?action=login',
 						method:'POST',
+						header:{
+							"Content-Type": "application/x-www-form-urlencoded",
+						},
 						data:{
 							username:username,
 							password:pws
 						},
-						success:function(){
-							
+						success:function(res){
+							if(res.data.status === 'success'){
+								
+							} else{
+								uni.showToast({
+									title: res.data.msg,
+									duration: 1500,
+									icon: 'none'
+								});
+							}
 						},
-						fail:function(){
-							
+						fail:function(err){
+							uni.showToast({
+								title: '登录失败',
+								duration: 1500,
+								icon: 'none'
+							});
 						},
 						complete:function(){
-							
+							that.loginLoad = false;
 						}
 					})
-					console.log('username:' + this.username + ',pwd:' + this.userpwd)
 				}
 			},
 		}

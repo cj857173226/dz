@@ -4,11 +4,18 @@
     "pages/collection/collection",
     "pages/orderList/orderList",
     "pages/messages/messages",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/quickLogin/quickLogin",
+    "pages/Invitation_code/Invitation_code",
+    "pages/contact_service/contact_service",
+    "pages/my_address/my_address",
+    "pages/my_address/edit_address"
   ],
   "subPackages": [],
   "window": {
-    "navigationStyle": "custom"
+    "navigationBarBackgroundColor": "#F05B72"
   },
   "usingComponents": {},
   "tabBar": {

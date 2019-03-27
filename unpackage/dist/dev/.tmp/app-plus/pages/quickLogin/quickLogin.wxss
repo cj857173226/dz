@@ -105,7 +105,7 @@ page {
         font-size: 18px;
         color: #F05B72;
 }
-.quick_login_form .input .get_code.data-v-28774569 {
+.quick_login_form .input .get_img_code.data-v-28774569 {
       min-width: 60px;
       min-height: 40px;
       display: -webkit-box;
@@ -117,9 +117,34 @@ page {
           -ms-flex-align: center;
               align-items: center;
 }
-.quick_login_form .input .get_code .code_img.data-v-28774569 {
+.quick_login_form .input .get_img_code .code_img.data-v-28774569 {
         width: 60px;
         height: 30px;
+}
+.quick_login_form .input .get_code.data-v-28774569 {
+      min-width: 90px;
+      min-height: 40px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+}
+.quick_login_form .input .get_code .get_code_btn.data-v-28774569 {
+        height: 30px;
+        width: 100%;
+        line-height: 30px;
+        text-align: center;
+        color: #FFFFFF;
+        background: #F05B72;
+        border-radius: 8px;
+        font-size: 14px;
+}
+.quick_login_form .input .get_code .get_code_btn.data-v-28774569:active {
+          opacity: 0.8;
 }
 .quick_login_form .input .icon_del .iconfont.data-v-28774569,
     .quick_login_form .input .icon_pwd_switch .iconfont.data-v-28774569 {

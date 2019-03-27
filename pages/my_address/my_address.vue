@@ -1,0 +1,234 @@
+<template>
+	<view class="address-page">
+		<button class="my-btn-block add-btn" @tap="addAddress"><text class="iconfont icon-jia"></text>添加收货地址</button>
+		<scroll-view class="adress-list-wrap" scroll-y=true>
+			<view class='adress-list' v-if="addressList.length>0">
+				<view class="adress-item" v-for="(item,index) in addressList" :key="index">
+					<view class="user-info">{{item.truename}}&nbsp;{{item.phone}}</view>
+					<view class="loca-ifon">{{item.local}}</view>
+					<view class="status-wrap">
+						<view class="modify-btn" @tap="editAddress(item)"><text class="iconfont icon-icon-edit"></text>编辑</view>
+						<view class="default-address" v-if="item.isdefault == 1">默认地址</view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+	</view>
+</template>
+
+<script>
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+	export default {
+		data() {
+			return {
+				addressList: [{
+						address: "走走走",
+						addressid: "18",
+						city: "呼和浩特市",
+						district: "新城区",
+						isdefault: "0",
+						phone: "18280172253",
+						province: "内蒙古",
+						truename: "陈",
+						local: '北京市 东城区',
+					},
+					{
+						address: "走走走",
+						addressid: "17",
+						city: "呼和浩特市",
+						district: "新城区",
+						isdefault: "0",
+						phone: "18280172253",
+						province: "内蒙古",
+						truename: "陈",
+						local: '北京市 东城区',
+					},
+					{
+						address: "走走走",
+						addressid: "18",
+						city: "呼和浩特市",
+						district: "新城区",
+						isdefault: "0",
+						phone: "18280172253",
+						province: "内蒙古",
+						truename: "陈",
+						local: '北京市 东城区',
+					},
+					{
+						address: "走走走",
+						addressid: "17",
+						city: "呼和浩特市",
+						district: "新城区",
+						isdefault: "0",
+						phone: "18280172253",
+						province: "内蒙古",
+						truename: "陈",
+						local: '北京市 东城区',
+					},
+					{
+						address: "走走走",
+						addressid: "18",
+						city: "呼和浩特市",
+						district: "新城区",
+						isdefault: "0",
+						phone: "18280172253",
+						province: "内蒙古",
+						truename: "陈",
+						local: '北京市 东城区',
+					},
+					{
+						address: "走走走",
+						addressid: "17",
+						city: "呼和浩特市",
+						district: "新城区",
+						isdefault: "0",
+						phone: "18280172253",
+						province: "内蒙古",
+						truename: "陈",
+						local: '北京市 东城区',
+					},
+					{
+						address: "走走走",
+						addressid: "18",
+						city: "呼和浩特市",
+						district: "新城区",
+						isdefault: "0",
+						phone: "18280172253",
+						province: "内蒙古",
+						truename: "陈",
+						local: '北京市 东城区',
+					},
+					{
+						address: "走走走",
+						addressid: "17",
+						city: "呼和浩特市",
+						district: "新城区",
+						isdefault: "0",
+						phone: "18280172253",
+						province: "内蒙古",
+						truename: "陈",
+						local: '北京市 东城区',
+					}
+				],
+			};
+		},
+		onLoad() {},
+		onShow() {},
+		computed: {
+			...mapState(['islogin', 'token', 'isEditAddress'])
+		},
+		methods: {
+			...mapMutations(['addressEditStatus']),
+			editAddress(par) {
+				this.addressEditStatus(false)
+				const params = JSON.stringify(par);
+				uni.navigateTo({
+					url: '/pages/my_address/edit_address?param=' + params
+				})
+			},
+			addAddress() {
+				this.addressEditStatus(false)
+				uni.navigateTo({
+					url: '/pages/my_address/add_address'
+				})
+			}
+		}
+	}
+</script>
+<style>
+	page {
+		height: 100%;
+		background: #f5f6f8;
+	}
+</style>
+
+<style lang="scss" scoped>
+	$theme-color: #F05B72;
+	$back-color:#f5f6f8;
+
+	.address-page {
+		box-sizing: border-box;
+		padding: 30upx;
+		height: 100%;
+
+		.add-btn {
+			margin-bottom: 20upx;
+
+			.iconfont {
+				font-size: 16px;
+			}
+		}
+
+		.adress-list-wrap {
+			height: calc(100% - 100upx);
+
+			.adress-list {
+				box-sizing: border-box;
+				display: flex;
+				flex-direction: column;
+				background: #ffffff;
+				padding: 0 20upx;
+				border-radius: 12upx;
+
+				.adress-item {
+					box-sizing: border-box;
+					padding: 16upx 0;
+					display: flex;
+					flex-direction: column;
+					border-bottom: 1px solid #eaeaea;
+
+					.user-info {
+						box-sizing: border-box;
+						width: 100%;
+						font-size: 16px;
+						font-weight: 800;
+						margin-bottom: 10upx;
+						// 						overflow: hidden;
+						// 						text-overflow: ellipsis;
+						// 						white-space:nowrap;
+					}
+
+					.loca-ifon {
+						width: 100%;
+						font-size: 14px;
+						color: #aaaaaa;
+						margin-bottom: 10upx;
+					}
+
+					.status-wrap {
+						width: 100%;
+						display: flex;
+						flex-direction: row-reverse;
+						align-items: center;
+						justify-content: space-between;
+						font-size: 14px;
+
+						.default-address {
+							color: $theme-color;
+						}
+
+						.modify-btn {
+							color: #aaaaaa;
+
+							.iconfont {
+								margin-right: 4upx;
+								font-size: 14px;
+							}
+
+							&:active {
+								color: #cccccc;
+							}
+						}
+					}
+
+					&:last-child {
+						border-bottom: none;
+					}
+				}
+			}
+		}
+	}
+</style>
