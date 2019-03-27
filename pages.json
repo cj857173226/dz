@@ -20,9 +20,9 @@
 			}
 		},
 		{
-			"path": "pages/particulars/particulars",
-			"style": {
-				"navigationBarTitleText": "房间详情"
+		    "path" : "pages/particulars/particulars",
+		    "style" : {
+				"navigationBarTitleText":"房间详情"
 			}
 		},
 		{
@@ -106,8 +106,8 @@
 					"bounce": "none"
 				}
 			}
-
 		},
+			
 		{
 			"path": "pages/my_address/edit_address",
 			"style": {

@@ -4,9 +4,15 @@
 <import src="/components/index/select.vue.wxml" />
 <import src="/components/index/circum.vue.wxml" />
 <import src="/components/mpvue-citypicker/mpvueCityPicker.vue.wxml" />
+<<<<<<< HEAD
 <import src="/components/index/date-picker/date-picker.vue.wxml" />
 <import src="/components/particulars/map.vue.wxml" />
 <import src="/components/particulars/room-description.vue.wxml" />
+=======
+<import src="/components/particulars/map.vue.wxml" />
+<import src="/components/particulars/room-description.vue.wxml" />
+<import src="/components/index/date-picker/date-picker.vue.wxml" />
+>>>>>>> ae78b194e062882f1602a3592a6fd51e8f8fe1e5
 <import src="/components/particulars/uni-rate/uni-rate.vue.wxml" />
 <import src="/components/particulars/supporting-facility.vue.wxml" />
 <import src="/components/particulars/unsubscribe-rules.vue.wxml" />
