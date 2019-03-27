@@ -45,7 +45,7 @@
 	export default {
 		data() {
 			return {
-				service_line:'18280172253', // 热线电话
+				service_line:'400-6565-06', // 热线电话
 			};
 		},
 		methods:{
