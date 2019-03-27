@@ -20,6 +20,12 @@
 			}
 		},
 		{
+		    "path" : "pages/particulars/particulars",
+		    "style" : {
+				"navigationBarTitleText":"房间详情"
+			}
+		},
+		{
 			// 收藏
 			"path": "pages/collection/collection",
 			"style": {
@@ -66,50 +72,6 @@
 					},
 					"bounce": "none"
 				}
-<<<<<<< HEAD
-            }
-        }
-        ,{
-            "path" : "pages/login/login",
-            "style" : {
-				"navigationBarTitleText":"登录"
-			}
-        }
-        ,{
-            "path" : "pages/register/register",
-            "style" : {
-				"navigationBarTitleText":"注册"
-			}
-        }
-        ,{
-            "path" : "pages/quickLogin/quickLogin",
-            "style" : {
-				"navigationBarTitleText":"手机登录"
-			}
-        }
-        ,{
-            "path" : "pages/Invitation_code/Invitation_code",
-            "style" : {
-				"navigationBarTitleText":"分享优惠"
-			}
-        }
-        ,{
-            "path" : "pages/contact_service/contact_service",
-            "style" : {
-				"navigationBarTitleText":"联系客服"
-			}
-        },
-		{
-		    "path" : "pages/particulars/particulars",
-		    "style" : {
-				"navigationBarTitleText":"房间详情"
-			}
-		}
-    ],
-	// 全局样式
-    "globalStyle" : {
-		"navigationBarBackgroundColor":"#F05B72"
-=======
 			}
 		}, {
 			"path": "pages/login/login",
@@ -144,8 +106,8 @@
 					"bounce": "none"
 				}
 			}
-
 		},
+			
 		{
 			"path": "pages/my_address/edit_address",
 			"style": {
@@ -154,7 +116,6 @@
 					"bounce": "none"
 				}
 			}
->>>>>>> 4b1ddab1aefc64ae37c821f72acc06742ac5341e
 		},
 		{
 			"path": "pages/my_address/add_address",
