@@ -102,7 +102,13 @@
             "style" : {
 				"navigationBarTitleText":"联系客服"
 			}
-        }
+        },
+		{
+		    "path" : "pages/particulars/particulars",
+		    "style" : {
+				"navigationBarTitleText":"房间详情"
+			}
+		}
     ],
 	// 全局样式
     "globalStyle" : {

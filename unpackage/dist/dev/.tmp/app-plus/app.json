@@ -9,7 +9,8 @@
     "pages/register/register",
     "pages/quickLogin/quickLogin",
     "pages/Invitation_code/Invitation_code",
-    "pages/contact_service/contact_service"
+    "pages/contact_service/contact_service",
+    "pages/particulars/particulars"
   ],
   "subPackages": [],
   "window": {

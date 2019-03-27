@@ -14,7 +14,7 @@
 			<view class="calendar">
 				<calendar @change="change"></calendar>
 			</view>
-			<view class="search">
+			<view class="search" @tap="tapSelect">
 				<view class="list-box">
 					<i class="iconfont icon-city">&#xe611;</i>
 					<text class="city">试试搜:花水湾</text>
@@ -43,6 +43,9 @@
 			}
 		},
 		methods: {
+			tapSelect:function(){
+				console.log('111111')
+			},
 			change({choiceDate, dayCount})
 			{
 				//1.choiceDate 时间区间（开始时间和结束时间）

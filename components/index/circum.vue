@@ -8,10 +8,10 @@
 		<view class="subtitle">体验不一样的旅行方式</view>
 		<view class="recommend-box">
 			<view class="list-box">
-				<image class="list-img" src="../../static/images/landlordguide/banner4.jpg"></image>
+				<image @tap="clickDetails()" class="list-img" src="../../static/images/landlordguide/banner4.jpg"></image>
 				<!-- 房户信息 -->
 				<view class="username-box" >
-					<view class="username-img-box" @tap="clickDetails()">
+					<view class="username-img-box">
 						<image class="username-img" src="../../static/images/landlordguide/banner4.jpg" ></image>
 					</view>
 					<view class="username-title-box">
@@ -43,11 +43,14 @@
 <script>
 	export default{
 		onLoad(){
-			console.log(1)
+			// console.log(1)
 		},
 		methods:{
-			clickDetails:function(e){
-				console.log('111',e)
+			// 点击图片跳转页面查看房间详情
+			clickDetails:function(){
+				uni.navigateTo({
+					url:'/pages/particulars/particulars'
+				})
 			}
 		}
 	}
