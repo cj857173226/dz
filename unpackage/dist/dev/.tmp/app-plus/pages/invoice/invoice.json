@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "我的发票",
+  "bounce": "none",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "抬头",
+        "fontSize": "14px",
+        "float": "right"
+      }
+    ]
+  }
+}

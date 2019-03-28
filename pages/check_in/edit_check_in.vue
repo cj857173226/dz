@@ -106,7 +106,6 @@
 	.edite_check_page {
 		box-sizing: border-box;
 		height: 100%;
-
 		.head_title {
 			box-sizing: border-box;
 			background: #ececec;

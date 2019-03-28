@@ -10,6 +10,7 @@ const store = new Vuex.Store({
 		userName: '',
 		isEditAddress:false, // 是编辑了收货地址列表
 		isEditCheckIn:false, // 是编辑了 常住人
+		isEditInvoiceHead:false, // 是否编辑了发票抬头
 	},
 	mutations: {
 		login(state, provider) {
@@ -28,6 +29,10 @@ const store = new Vuex.Store({
 		// 常住人编辑状态更新
 		checkInEditStatus(state, is){
 			state.isEditCheckIn = is;
+		},
+		// 发票抬头编辑状态更新
+		invoiceHeadEditStatus(state, is){
+			state.isEditInvoiceHead = is;
 		}
 	}
 })

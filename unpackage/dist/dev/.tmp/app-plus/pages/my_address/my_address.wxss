@@ -36,14 +36,8 @@ page {
   padding: 30rpx;
   height: 100%;
 }
-.address-page .add-btn.data-v-5cdab26f {
-    margin-bottom: 20rpx;
-}
-.address-page .add-btn .iconfont.data-v-5cdab26f {
-      font-size: 16px;
-}
 .address-page .adress-list-wrap.data-v-5cdab26f {
-    height: calc(100% - 100rpx);
+    height: calc(100%);
 }
 .address-page .adress-list-wrap .adress-list.data-v-5cdab26f {
       -webkit-box-sizing: border-box;
@@ -114,14 +108,12 @@ page {
 .address-page .adress-list-wrap .adress-list .adress-item .status-wrap .default-address.data-v-5cdab26f {
             color: #F05B72;
 }
-.address-page .adress-list-wrap .adress-list .adress-item .status-wrap .modify-btn.data-v-5cdab26f {
+.address-page .adress-list-wrap .adress-list .adress-item .status-wrap .edit-btn.data-v-5cdab26f {
             color: #aaaaaa;
+            padding: 8rpx;
+            font-size: 28rpx;
 }
-.address-page .adress-list-wrap .adress-list .adress-item .status-wrap .modify-btn .iconfont.data-v-5cdab26f {
-              margin-right: 4rpx;
-              font-size: 14px;
-}
-.address-page .adress-list-wrap .adress-list .adress-item .status-wrap .modify-btn.data-v-5cdab26f:active {
+.address-page .adress-list-wrap .adress-list .adress-item .status-wrap .edit-btn.data-v-5cdab26f:active {
               color: #cccccc;
 }
 .address-page .adress-list-wrap .adress-list .adress-item.data-v-5cdab26f:last-child {

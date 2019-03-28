@@ -73,7 +73,7 @@
 						</view>
 					</view>
 					<view class="more-fun-item">
-						<view class="_box" @click.stop="pageTo('myInvoice')">
+						<view class="_box" @click.stop="pageTo('/pages/invoice/invoice')">
 							<text class="iconfont icon-fapiao"></text> 
 							<p class="name">发票</p>
 						</view>

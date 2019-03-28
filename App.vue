@@ -59,8 +59,8 @@
 		box-sizing: border-box;
 		display: block;
 		width: 100%;
-		height: 100upx;
-		line-height: 100upx;
+		height: 90upx;
+		line-height: 90upx;
 		text-align: center;
 		font-size: 16px;
 		background: #f05b72;
@@ -80,8 +80,8 @@
 		box-sizing: border-box;
 		display: block;
 		width: 100%;
-		height: 100upx;
-		line-height: 100upx;
+		height: 90upx;
+		line-height: 90upx;
 		text-align: center;
 		font-size: 16px;
 		background: #FFFFFF;

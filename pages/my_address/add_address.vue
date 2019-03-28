@@ -69,6 +69,8 @@
 		onLoad() {
 		},
 		onShow() {},
+		onBackPress(option){
+		},
 		components: {
 			mpvueCityPicker
 		},
@@ -118,7 +120,6 @@
 			height: 100%;
 			width: 100%;
 			padding: 20upx 30upx;
-			position: relative;
 			.edit_address_form {
 				box-sizing: border-box;
 				padding: 0upx 20upx;
@@ -164,13 +165,9 @@
 				}
 			}
 			.handle_btn_wrap {
-				position: absolute;
+				margin-top: 40upx;
 				box-sizing: border-box;
-				bottom: 0;
-				left: 0;
 				width: 100%;
-				display: flex;
-				justify-content: space-between;
 				padding: 20upx 20upx;
 				.add-btn{
 					

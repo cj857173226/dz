@@ -71,6 +71,7 @@ eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.de
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!D:\\projectFile\\xzapp\\components\\particulars\\uni-rate\\uni-rate.vue?vue&type=style&index=0&lang=scss&":
 /*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-1!./node_modules/css-loader??ref--8-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/sass-loader/lib/loader.js??ref--8-oneOf-1-4!./node_modules/vue-loader/lib??vue-loader-options!D:/projectFile/xzapp/components/particulars/uni-rate/uni-rate.vue?vue&type=style&index=0&lang=scss& ***!
@@ -140,6 +141,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+=======
+>>>>>>> 443fe9a651af67736d876d3d2c75bdd2bf8d5ccd
 /***/ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js":
 /*!********************************************************************!*\
   !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
@@ -271,6 +274,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _C_U
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "D:\\projectFile\\xzapp\\components\\particulars\\uni-icon\\uni-icon.vue":
 /*!*************************************************************************!*\
   !*** D:/projectFile/xzapp/components/particulars/uni-icon/uni-icon.vue ***!
@@ -371,6 +375,12 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _C_U
 /*!***************************************!*\
   !*** D:/projectFile/xzapp/pages.json ***!
   \***************************************/
+=======
+/***/ "D:\\xzapp\\pages.json":
+/*!***************************!*\
+  !*** D:/xzapp/pages.json ***!
+  \***************************/
+>>>>>>> 443fe9a651af67736d876d3d2c75bdd2bf8d5ccd
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
