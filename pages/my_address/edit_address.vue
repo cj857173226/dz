@@ -74,6 +74,9 @@
 		computed: {
 			...mapState(['islogin', 'token', 'isEditAddress'])
 		},
+		watch:{
+		
+		},
 		onLoad(option) {
 			const par = JSON.parse(option.param);
 		},
@@ -118,7 +121,6 @@
 			height: 100%;
 			width: 100%;
 			padding: 20upx 30upx;
-			position: relative;
 			.edit_address_form {
 				box-sizing: border-box;
 				padding: 0upx 20upx;
@@ -164,17 +166,15 @@
 				}
 			}
 			.handle_btn_wrap {
-				position: absolute;
+				margin-top: 40upx;
 				box-sizing: border-box;
-				bottom: 0;
-				left: 0;
 				width: 100%;
 				display: flex;
 				justify-content: space-between;
 				padding: 20upx 20upx;
 				button{
-					height: 100upx;
-					line-height: 100upx;
+					height: 90upx;
+					line-height: 90upx;
 					width: 40%;
 					font-size: 14px;
 				}

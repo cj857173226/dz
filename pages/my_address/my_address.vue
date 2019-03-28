@@ -1,13 +1,12 @@
 <template>
 	<view class="address-page">
-		<button class="my-btn-block add-btn" @tap="addAddress"><text class="iconfont icon-jia"></text>添加收货地址</button>
 		<scroll-view class="adress-list-wrap" scroll-y=true>
 			<view class='adress-list' v-if="addressList.length>0">
 				<view class="adress-item" v-for="(item,index) in addressList" :key="index">
 					<view class="user-info">{{item.truename}}&nbsp;{{item.phone}}</view>
 					<view class="loca-ifon">{{item.local}}</view>
 					<view class="status-wrap">
-						<view class="modify-btn" @tap="editAddress(item)"><text class="iconfont icon-icon-edit"></text>编辑</view>
+						<text class="iconfont icon-icon-edit edit-btn" @tap="editAddress(item)">编辑</text>
 						<view class="default-address" v-if="item.isdefault == 1">默认地址</view>
 					</view>
 				</view>
@@ -117,6 +116,11 @@
 		},
 		onLoad() {},
 		onShow() {},
+		onNavigationBarButtonTap(e) {
+			if(e.text === '添加'){
+				this.addAddress()
+			}
+		},
 		computed: {
 			...mapState(['islogin', 'token', 'isEditAddress'])
 		},
@@ -154,17 +158,8 @@
 		padding: 30upx;
 		height: 100%;
 
-		.add-btn {
-			margin-bottom: 20upx;
-
-			.iconfont {
-				font-size: 16px;
-			}
-		}
-
 		.adress-list-wrap {
-			height: calc(100% - 100upx);
-
+			height: calc(100% );
 			.adress-list {
 				box-sizing: border-box;
 				display: flex;
@@ -210,14 +205,10 @@
 							color: $theme-color;
 						}
 
-						.modify-btn {
+						.edit-btn {
 							color: #aaaaaa;
-
-							.iconfont {
-								margin-right: 4upx;
-								font-size: 14px;
-							}
-
+							padding: 8upx;
+							font-size: 28upx;
 							&:active {
 								color: #cccccc;
 							}

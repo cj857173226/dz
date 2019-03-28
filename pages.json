@@ -103,7 +103,14 @@
 			"style": {
 				"navigationBarTitleText": "收货地址",
 				"app-plus": {
-					"bounce": "none"
+					"bounce": "none",
+					"titleNView": {
+						"buttons": [{
+							"text": "添加",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
 				}
 			}
 		},
@@ -142,7 +149,47 @@
 			}
 
 		}
-	],
+	    ,{
+            "path" : "pages/invoice/invoice",
+            "style" : {
+				"navigationBarTitleText": "我的发票",
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": {
+						"buttons": [{
+							"text": "抬头",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
+				}
+			}
+        },
+		{
+		    "path" : "pages/invoice/invoice_head",
+		    "style" : {
+				"navigationBarTitleText": "发票抬头",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+		    "path" : "pages/invoice/edit_invoice_head",
+		    "style" : {
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": {
+						"buttons": [{
+							"text": "保存",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
+				}
+			}
+		}
+    ],
 	// 全局样式
 	"globalStyle": {
 		"navigationBarBackgroundColor": "#F05B72"
