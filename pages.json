@@ -26,6 +26,12 @@
 			}
 		},
 		{
+			"path" : "pages/landlord_introduced/landlord_introduced",
+			"style" : {
+			"navigationBarTitleText":"房东介绍"
+			}
+		},
+		{
 			// 收藏
 			"path": "pages/collection/collection",
 			"style": {
