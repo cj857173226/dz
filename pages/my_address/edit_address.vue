@@ -27,10 +27,10 @@
 						<input type="text" placeholder-style="font-size:14px;color:#cccccc;" placeholder="详细地址" v-model.tirm="addressForm.address">
 					</view>
 				</view>
-				<view class="form-item">
+				<view class="form-item" v-if="isSetDefault">
 					<view class="label">设为默认地址</view>
 					<view class="input">
-						<switch class="o-switch" color="#F05B72" :checked="addressForm.district==='1'" @change="defaultSwitch" />
+						<switch class="o-switch" color="#F05B72" :checked="addressForm.isdefault==='1'" @change="defaultSwitch" />
 					</view>
 				</view>
 			</view>
@@ -53,12 +53,13 @@
 	export default {
 		data() {
 			return {
+				isSetDefault: true,
 				addressForm: {
 					address: "",
 					addressid: "",
 					city: "",
 					district: "",
-					isdefault: 0,
+					isdefault: '0',
 					phone: "",
 					province: "",
 					truename: "",
@@ -79,6 +80,7 @@
 		},
 		onLoad(option) {
 			const par = JSON.parse(option.param);
+			this.isSetDefault = JSON.parse(option.param).isdefault === '1'? false: true;
 		},
 		onShow() {},
 		methods: {
