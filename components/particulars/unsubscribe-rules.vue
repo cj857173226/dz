@@ -47,6 +47,8 @@ export default {
 						font-size: 16px;
 						border: 1px solid #ef5b72;
 						color: #fff;
+            margin-top: 60upx;
+            margin-bottom: 60upx;
 					}
   }
 </style>

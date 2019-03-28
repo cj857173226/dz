@@ -11,7 +11,7 @@
 				<image @tap="clickDetails()" class="list-img" src="../../static/images/landlordguide/banner4.jpg"></image>
 				<!-- 房户信息 -->
 				<view class="username-box" >
-					<view class="username-img-box">
+					<view class="username-img-box" @tap="clickPhoto">
 						<image class="username-img" src="../../static/images/landlordguide/banner4.jpg" ></image>
 					</view>
 					<view class="username-title-box">
@@ -50,6 +50,12 @@
 			clickDetails:function(){
 				uni.navigateTo({
 					url:'/pages/particulars/particulars'
+				})
+			},
+			// 点击头像跳转到房东介绍
+			clickPhoto:function(){
+				uni.navigateTo({
+					url:'/pages/landlord_introduced/landlord_introduced'
 				})
 			}
 		}

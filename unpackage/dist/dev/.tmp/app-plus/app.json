@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/particulars/particulars",
+    "pages/landlord_introduced/landlord_introduced",
     "pages/collection/collection",
     "pages/orderList/orderList",
     "pages/messages/messages",
