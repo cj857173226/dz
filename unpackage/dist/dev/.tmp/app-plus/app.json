@@ -18,7 +18,8 @@
     "pages/check_in/edit_check_in",
     "pages/invoice/invoice",
     "pages/invoice/invoice_head",
-    "pages/invoice/edit_invoice_head"
+    "pages/invoice/edit_invoice_head",
+    "pages/my_information/my_information"
   ],
   "subPackages": [],
   "window": {

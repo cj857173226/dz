@@ -1,6 +1,7 @@
 
-page{
+page {
 	height: 100%;
+	background: #f5f6f8;
 }
 
 @charset "UTF-8";
@@ -42,5 +43,144 @@ page{
     padding: 10rpx;
     border: 1px solid #eaeaea;
     border-radius: 12rpx;
+    background: #ffffff;
+}
+.edit_invoice_head_page .type_change_wrap .t_line.data-v-155ad6df {
+      width: 86%;
+      height: 1px;
+      background: #eaeaea;
+      margin: 0 auto;
+}
+.edit_invoice_head_page .type_change_wrap .type_item.data-v-155ad6df {
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      padding: 20rpx 10rpx;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+}
+.edit_invoice_head_page .type_change_wrap .type_item .chang_radio_wrap.data-v-155ad6df {
+        width: 40rpx;
+}
+.edit_invoice_head_page .type_change_wrap .type_item .chang_radio_wrap .chang_radio.data-v-155ad6df {
+          -webkit-box-sizing: border-box;
+                  box-sizing: border-box;
+          margin-top: 4rpx;
+          width: 36rpx;
+          height: 36rpx;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          border: 1px solid #aaaaaa;
+          border-radius: 18rpx;
+}
+.edit_invoice_head_page .type_change_wrap .type_item .chang_radio_wrap .chang_radio .radio_circle.data-v-155ad6df {
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+            width: 20rpx;
+            height: 20rpx;
+            background: #F05B72;
+            border-radius: 10rpx;
+}
+.edit_invoice_head_page .type_change_wrap .type_item .chang_radio_wrap .chang_radio_on.data-v-155ad6df {
+          border: 1px solid #F05B72;
+}
+.edit_invoice_head_page .type_change_wrap .type_item .info.data-v-155ad6df {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        padding-left: 16rpx;
+        -webkit-box-flex: 1;
+        -webkit-flex-grow: 1;
+            -ms-flex-positive: 1;
+                flex-grow: 1;
+}
+.edit_invoice_head_page .type_change_wrap .type_item .info .text.data-v-155ad6df {
+          font-size: 28rpx;
+          color: #ccc;
+          margin-bottom: 4rpx;
+}
+.edit_invoice_head_page .type_change_wrap .type_item .info .title.data-v-155ad6df {
+          font-size: 32rpx;
+          color: #333;
+}
+.edit_invoice_head_page .invoice_head_form.data-v-155ad6df {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 0 20rpx;
+    background: #ffffff;
+    margin-top: 20rpx;
+    border-radius: 12rpx;
+}
+.edit_invoice_head_page .invoice_head_form .form-item.data-v-155ad6df {
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      padding: 10rpx 0;
+      height: 100rpx;
+      border-bottom: 1px solid #eaeaea;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+}
+.edit_invoice_head_page .invoice_head_form .form-item.data-v-155ad6df:last-child {
+        border-bottom: none;
+}
+.edit_invoice_head_page .invoice_head_form .form-item .label.data-v-155ad6df {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        width: 110px;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+           text-overflow: ellipsis;
+        text-align: right;
+        font-size: 16px;
+}
+.edit_invoice_head_page .invoice_head_form .form-item .input.data-v-155ad6df {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -webkit-flex-grow: 1;
+            -ms-flex-positive: 1;
+                flex-grow: 1;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -webkit-flex-direction: row-reverse;
+            -ms-flex-direction: row-reverse;
+                flex-direction: row-reverse;
+        font-size: 14px;
+}
+.edit_invoice_head_page .invoice_head_form .form-item .input ._input.data-v-155ad6df {
+          text-align: right;
+          font-size: 14px;
+}
+.edit_invoice_head_page .my-del-block.data-v-155ad6df {
+    margin-top: 40rpx;
 }
 

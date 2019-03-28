@@ -1346,6 +1346,20 @@ if( __WXML_GLOBAL__.ops_cached.$gwx_29)return __WXML_GLOBAL__.ops_cached.$gwx_29
 __WXML_GLOBAL__.ops_cached.$gwx_29=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'1612f65a'])
+Z([3,'_view data-v-155ad6df edit_invoice_head_page'])
+Z([3,'_view data-v-155ad6df type_change_wrap'])
+Z([3,'handleProxy'])
+Z([3,'_view data-v-155ad6df type_item'])
+Z([[7],[3,'$k']])
+Z([1,'1612f65a-0'])
+Z([[2,'==='],[[6],[[7],[3,'inviceHeadForm']],[3,'type']],[1,'common']])
+Z(z[3])
+Z(z[4])
+Z(z[5])
+Z([1,'1612f65a-1'])
+Z([[2,'==='],[[6],[[7],[3,'inviceHeadForm']],[3,'type']],[1,'special']])
+Z([[7],[3,'isSetDefault']])
+Z([[2,'==='],[[7],[3,'handleType']],[1,'edit']])
 })(__WXML_GLOBAL__.ops_cached.$gwx_29);return __WXML_GLOBAL__.ops_cached.$gwx_29
 }
 function gz$gwx_30(){
@@ -1483,8 +1497,10 @@ if( __WXML_GLOBAL__.ops_cached.$gwx_43)return __WXML_GLOBAL__.ops_cached.$gwx_43
 __WXML_GLOBAL__.ops_cached.$gwx_43=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'9cae403c'])
+Z([3,'_view data-v-438ed8b2 edit_address_page'])
+Z([[7],[3,'isSetDefault']])
 Z([3,'handleProxy'])
-Z(z[1])
+Z(z[3])
 Z([[9],[[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[10],[[6],[[7],[3,'$root']],[[2,'+'],[[7],[3,'$kk']],[1,'9cae403c-0']]]]],[[8],'$root',[[7],[3,'$root']]]])
 Z([[7],[3,'$k']])
 Z([1,'9cae403c-5'])
@@ -1525,7 +1541,10 @@ function gz$gwx_47(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_47)return __WXML_GLOBAL__.ops_cached.$gwx_47
 __WXML_GLOBAL__.ops_cached.$gwx_47=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'2e74987e'])
+Z([3,'15549178'])
+Z([3,'_view data-v-6525d449 nick-name'])
+Z([[2,'||'],[[2,'==='],[[6],[[7],[3,'infoForm']],[3,'nickname']],[1,'']],[[2,'==='],[[7],[3,'onfocus']],[1,true]]])
+Z([[2,'&&'],[[2,'!=='],[[6],[[7],[3,'infoForm']],[3,'nickname']],[1,'']],[[2,'==='],[[7],[3,'onfocus']],[1,false]]])
 })(__WXML_GLOBAL__.ops_cached.$gwx_47);return __WXML_GLOBAL__.ops_cached.$gwx_47
 }
 function gz$gwx_48(){
@@ -1533,19 +1552,14 @@ if( __WXML_GLOBAL__.ops_cached.$gwx_48)return __WXML_GLOBAL__.ops_cached.$gwx_48
 __WXML_GLOBAL__.ops_cached.$gwx_48=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[8],'$root',[[7],[3,'$root']]]])
-Z([3,'2e74987e'])
+Z([3,'15549178'])
 })(__WXML_GLOBAL__.ops_cached.$gwx_48);return __WXML_GLOBAL__.ops_cached.$gwx_48
 }
 function gz$gwx_49(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_49)return __WXML_GLOBAL__.ops_cached.$gwx_49
 __WXML_GLOBAL__.ops_cached.$gwx_49=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'549e0622'])
-Z([3,'_view data-v-19b099e7 container'])
-Z([[9],[[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[10],[[6],[[7],[3,'$root']],[[2,'+'],[[7],[3,'$kk']],[1,'549e0622-0']]]]],[[8],'$root',[[7],[3,'$root']]]])
-Z([3,'0b76799d'])
-Z([[9],[[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[10],[[6],[[7],[3,'$root']],[[2,'+'],[[7],[3,'$kk']],[1,'549e0622-1']]]]],[[8],'$root',[[7],[3,'$root']]]])
-Z([3,'57a4df89'])
+Z([3,'2e74987e'])
 })(__WXML_GLOBAL__.ops_cached.$gwx_49);return __WXML_GLOBAL__.ops_cached.$gwx_49
 }
 function gz$gwx_50(){
@@ -1553,17 +1567,19 @@ if( __WXML_GLOBAL__.ops_cached.$gwx_50)return __WXML_GLOBAL__.ops_cached.$gwx_50
 __WXML_GLOBAL__.ops_cached.$gwx_50=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[8],'$root',[[7],[3,'$root']]]])
-Z([3,'549e0622'])
+Z([3,'2e74987e'])
 })(__WXML_GLOBAL__.ops_cached.$gwx_50);return __WXML_GLOBAL__.ops_cached.$gwx_50
 }
 function gz$gwx_51(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_51)return __WXML_GLOBAL__.ops_cached.$gwx_51
 __WXML_GLOBAL__.ops_cached.$gwx_51=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'08907b64'])
-Z([3,'_view data-v-28774569 quick_login_form'])
-Z([[7],[3,'username']])
-Z([[7],[3,'code_img']])
+Z([3,'549e0622'])
+Z([3,'_view data-v-19b099e7 container'])
+Z([[9],[[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[10],[[6],[[7],[3,'$root']],[[2,'+'],[[7],[3,'$kk']],[1,'549e0622-0']]]]],[[8],'$root',[[7],[3,'$root']]]])
+Z([3,'0b76799d'])
+Z([[9],[[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[10],[[6],[[7],[3,'$root']],[[2,'+'],[[7],[3,'$kk']],[1,'549e0622-1']]]]],[[8],'$root',[[7],[3,'$root']]]])
+Z([3,'57a4df89'])
 })(__WXML_GLOBAL__.ops_cached.$gwx_51);return __WXML_GLOBAL__.ops_cached.$gwx_51
 }
 function gz$gwx_52(){
@@ -1571,12 +1587,30 @@ if( __WXML_GLOBAL__.ops_cached.$gwx_52)return __WXML_GLOBAL__.ops_cached.$gwx_52
 __WXML_GLOBAL__.ops_cached.$gwx_52=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[8],'$root',[[7],[3,'$root']]]])
-Z([3,'08907b64'])
+Z([3,'549e0622'])
 })(__WXML_GLOBAL__.ops_cached.$gwx_52);return __WXML_GLOBAL__.ops_cached.$gwx_52
 }
 function gz$gwx_53(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_53)return __WXML_GLOBAL__.ops_cached.$gwx_53
 __WXML_GLOBAL__.ops_cached.$gwx_53=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'08907b64'])
+Z([3,'_view data-v-28774569 quick_login_form'])
+Z([[7],[3,'username']])
+Z([[7],[3,'code_img']])
+})(__WXML_GLOBAL__.ops_cached.$gwx_53);return __WXML_GLOBAL__.ops_cached.$gwx_53
+}
+function gz$gwx_54(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_54)return __WXML_GLOBAL__.ops_cached.$gwx_54
+__WXML_GLOBAL__.ops_cached.$gwx_54=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+Z([[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[8],'$root',[[7],[3,'$root']]]])
+Z([3,'08907b64'])
+})(__WXML_GLOBAL__.ops_cached.$gwx_54);return __WXML_GLOBAL__.ops_cached.$gwx_54
+}
+function gz$gwx_55(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_55)return __WXML_GLOBAL__.ops_cached.$gwx_55
+__WXML_GLOBAL__.ops_cached.$gwx_55=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'c3304af8'])
 Z([3,'handleProxy'])
@@ -1585,21 +1619,21 @@ Z([[7],[3,'$k']])
 Z([1,'c3304af8-4'])
 Z([[2,'==='],[[7],[3,'pwdType']],[1,'password']])
 Z([[2,'==='],[[7],[3,'pwdType']],[1,'text']])
-})(__WXML_GLOBAL__.ops_cached.$gwx_53);return __WXML_GLOBAL__.ops_cached.$gwx_53
+})(__WXML_GLOBAL__.ops_cached.$gwx_55);return __WXML_GLOBAL__.ops_cached.$gwx_55
 }
-function gz$gwx_54(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_54)return __WXML_GLOBAL__.ops_cached.$gwx_54
-__WXML_GLOBAL__.ops_cached.$gwx_54=[];
+function gz$gwx_56(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_56)return __WXML_GLOBAL__.ops_cached.$gwx_56
+__WXML_GLOBAL__.ops_cached.$gwx_56=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([[9],[[10],[[6],[[7],[3,'$root']],[1,'0']]],[[8],'$root',[[7],[3,'$root']]]])
 Z([3,'c3304af8'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_54);return __WXML_GLOBAL__.ops_cached.$gwx_54
+})(__WXML_GLOBAL__.ops_cached.$gwx_56);return __WXML_GLOBAL__.ops_cached.$gwx_56
 }
 __WXML_GLOBAL__.ops_set.$gwx=z;
 __WXML_GLOBAL__.ops_init.$gwx=true;
 var nv_require=function(){var nnm={};var nom={};return function(n){return function(){if(!nnm[n]) return undefined;try{if(!nom[n])nom[n]=nnm[n]();return nom[n];}catch(e){e.message=e.message.replace(/nv_/g,'');var tmp = e.stack.substring(0,e.stack.lastIndexOf(n));e.stack = tmp.substring(0,tmp.lastIndexOf('\n'));e.stack = e.stack.replace(/\snv_/g,' ');e.stack = $gstack(e.stack);e.stack += '\n    at ' + n.substring(2);console.error(e);}
 }}}()
-var x=['./common/slots.wxml','./components/index/carousel.vue.wxml','./components/index/circum.vue.wxml','./components/index/date-picker/date-picker.vue.wxml','./components/index/select.vue.wxml','/components/index/date-picker/date-picker.vue.wxml','./components/mpvue-citypicker/mpvueCityPicker.vue.wxml','./components/particulars/Contact-room-door.vue.wxml','/components/particulars/map.vue.wxml','/components/particulars/room-description.vue.wxml','./components/particulars/map.vue.wxml','./components/particulars/plug/uni-icon/uni-icon.vue.wxml','./components/particulars/plug/uni-steps/uni-steps.vue.wxml','/components/particulars/plug/uni-icon/uni-icon.vue.wxml','./components/particulars/room-description.vue.wxml','/components/particulars/uni-rate/uni-rate.vue.wxml','/components/particulars/supporting-facility.vue.wxml','/components/particulars/unsubscribe-rules.vue.wxml','./components/particulars/srcoll-view.vue.wxml','./components/particulars/supporting-facility.vue.wxml','./components/particulars/uni-icon/uni-icon.vue.wxml','./components/particulars/uni-rate/uni-rate.vue.wxml','/components/particulars/uni-icon/uni-icon.vue.wxml','./components/particulars/unsubscribe-rules.vue.wxml','/components/particulars/plug/uni-steps/uni-steps.vue.wxml','./pages/Invitation_code/Invitation_code.vue.wxml','./pages/Invitation_code/Invitation_code.wxml','./Invitation_code.vue.wxml','./pages/check_in/check_in.vue.wxml','./pages/check_in/check_in.wxml','./check_in.vue.wxml','./pages/check_in/edit_check_in.vue.wxml','./pages/check_in/edit_check_in.wxml','./edit_check_in.vue.wxml','./pages/collection/collection.vue.wxml','./pages/collection/collection.wxml','./collection.vue.wxml','./pages/contact_service/contact_service.vue.wxml','./pages/contact_service/contact_service.wxml','./contact_service.vue.wxml','./pages/index/index.vue.wxml','/components/index/carousel.vue.wxml','/components/index/select.vue.wxml','/components/index/circum.vue.wxml','./pages/index/index.wxml','./index.vue.wxml','./pages/invoice/edit_invoice_head.vue.wxml','./pages/invoice/edit_invoice_head.wxml','./edit_invoice_head.vue.wxml','./pages/invoice/invoice.vue.wxml','./pages/invoice/invoice.wxml','./invoice.vue.wxml','./pages/invoice/invoice_head.vue.wxml','./pages/invoice/invoice_head.wxml','./invoice_head.vue.wxml','./pages/login/login.vue.wxml','./pages/login/login.wxml','./login.vue.wxml','./pages/messages/messages.vue.wxml','./pages/messages/messages.wxml','./messages.vue.wxml','./pages/my/my.vue.wxml','./pages/my/my.wxml','./my.vue.wxml','./pages/my_address/add_address.vue.wxml','/components/mpvue-citypicker/mpvueCityPicker.vue.wxml','./pages/my_address/add_address.wxml','./add_address.vue.wxml','./pages/my_address/edit_address.vue.wxml','./pages/my_address/edit_address.wxml','./edit_address.vue.wxml','./pages/my_address/my_address.vue.wxml','./pages/my_address/my_address.wxml','./my_address.vue.wxml','./pages/orderList/orderList.vue.wxml','./pages/orderList/orderList.wxml','./orderList.vue.wxml','./pages/particulars/particulars.vue.wxml','/components/particulars/srcoll-view.vue.wxml','/components/particulars/Contact-room-door.vue.wxml','./pages/particulars/particulars.wxml','./particulars.vue.wxml','./pages/quickLogin/quickLogin.vue.wxml','./pages/quickLogin/quickLogin.wxml','./quickLogin.vue.wxml','./pages/register/register.vue.wxml','./pages/register/register.wxml','./register.vue.wxml'];d_[x[0]]={}
+var x=['./common/slots.wxml','./components/index/carousel.vue.wxml','./components/index/circum.vue.wxml','./components/index/date-picker/date-picker.vue.wxml','./components/index/select.vue.wxml','/components/index/date-picker/date-picker.vue.wxml','./components/mpvue-citypicker/mpvueCityPicker.vue.wxml','./components/particulars/Contact-room-door.vue.wxml','/components/particulars/map.vue.wxml','/components/particulars/room-description.vue.wxml','./components/particulars/map.vue.wxml','./components/particulars/plug/uni-icon/uni-icon.vue.wxml','./components/particulars/plug/uni-steps/uni-steps.vue.wxml','/components/particulars/plug/uni-icon/uni-icon.vue.wxml','./components/particulars/room-description.vue.wxml','/components/particulars/uni-rate/uni-rate.vue.wxml','/components/particulars/supporting-facility.vue.wxml','/components/particulars/unsubscribe-rules.vue.wxml','./components/particulars/srcoll-view.vue.wxml','./components/particulars/supporting-facility.vue.wxml','./components/particulars/uni-icon/uni-icon.vue.wxml','./components/particulars/uni-rate/uni-rate.vue.wxml','/components/particulars/uni-icon/uni-icon.vue.wxml','./components/particulars/unsubscribe-rules.vue.wxml','/components/particulars/plug/uni-steps/uni-steps.vue.wxml','./pages/Invitation_code/Invitation_code.vue.wxml','./pages/Invitation_code/Invitation_code.wxml','./Invitation_code.vue.wxml','./pages/check_in/check_in.vue.wxml','./pages/check_in/check_in.wxml','./check_in.vue.wxml','./pages/check_in/edit_check_in.vue.wxml','./pages/check_in/edit_check_in.wxml','./edit_check_in.vue.wxml','./pages/collection/collection.vue.wxml','./pages/collection/collection.wxml','./collection.vue.wxml','./pages/contact_service/contact_service.vue.wxml','./pages/contact_service/contact_service.wxml','./contact_service.vue.wxml','./pages/index/index.vue.wxml','/components/index/carousel.vue.wxml','/components/index/select.vue.wxml','/components/index/circum.vue.wxml','./pages/index/index.wxml','./index.vue.wxml','./pages/invoice/edit_invoice_head.vue.wxml','./pages/invoice/edit_invoice_head.wxml','./edit_invoice_head.vue.wxml','./pages/invoice/invoice.vue.wxml','./pages/invoice/invoice.wxml','./invoice.vue.wxml','./pages/invoice/invoice_head.vue.wxml','./pages/invoice/invoice_head.wxml','./invoice_head.vue.wxml','./pages/login/login.vue.wxml','./pages/login/login.wxml','./login.vue.wxml','./pages/messages/messages.vue.wxml','./pages/messages/messages.wxml','./messages.vue.wxml','./pages/my/my.vue.wxml','./pages/my/my.wxml','./my.vue.wxml','./pages/my_address/add_address.vue.wxml','/components/mpvue-citypicker/mpvueCityPicker.vue.wxml','./pages/my_address/add_address.wxml','./add_address.vue.wxml','./pages/my_address/edit_address.vue.wxml','./pages/my_address/edit_address.wxml','./edit_address.vue.wxml','./pages/my_address/my_address.vue.wxml','./pages/my_address/my_address.wxml','./my_address.vue.wxml','./pages/my_information/my_information.vue.wxml','./pages/my_information/my_information.wxml','./my_information.vue.wxml','./pages/orderList/orderList.vue.wxml','./pages/orderList/orderList.wxml','./orderList.vue.wxml','./pages/particulars/particulars.vue.wxml','/components/particulars/srcoll-view.vue.wxml','/components/particulars/Contact-room-door.vue.wxml','./pages/particulars/particulars.wxml','./particulars.vue.wxml','./pages/quickLogin/quickLogin.vue.wxml','./pages/quickLogin/quickLogin.wxml','./quickLogin.vue.wxml','./pages/register/register.vue.wxml','./pages/register/register.wxml','./register.vue.wxml'];d_[x[0]]={}
 var m0=function(e,s,r,gg){
 var z=gz$gwx_1()
 return r
@@ -2316,7 +2350,7 @@ try{
 var oB=_v()
 _(r,oB)
 if(_oz(z,1,e,s,gg)){oB.wxVkey=1
-cs.push("./pages/check_in/edit_check_in.vue.wxml:button:1:1982")
+cs.push("./pages/check_in/edit_check_in.vue.wxml:button:1:1984")
 cs.pop()
 }
 oB.wxXCkey=1
@@ -2550,6 +2584,52 @@ gg.f=$gdc(f_["./pages/invoice/edit_invoice_head.vue.wxml"],"",1)
 if(p_[b]){_wl(b,x[46]);return}
 p_[b]=true
 try{
+cs.push("./pages/invoice/edit_invoice_head.vue.wxml:view:1:27")
+var oB=_n('view')
+_rz(z,oB,'class',1,e,s,gg)
+cs.push("./pages/invoice/edit_invoice_head.vue.wxml:view:1:86")
+var fE=_n('view')
+_rz(z,fE,'class',2,e,s,gg)
+cs.push("./pages/invoice/edit_invoice_head.vue.wxml:view:1:139")
+var cF=_mz(z,'view',['bindtap',3,'class',1,'data-comkey',2,'data-eventid',3],[],e,s,gg)
+var hG=_v()
+_(cF,hG)
+if(_oz(z,7,e,s,gg)){hG.wxVkey=1
+cs.push("./pages/invoice/edit_invoice_head.vue.wxml:view:1:424")
+cs.pop()
+}
+hG.wxXCkey=1
+cs.pop()
+_(fE,cF)
+cs.push("./pages/invoice/edit_invoice_head.vue.wxml:view:1:990")
+var oH=_mz(z,'view',['bindtap',8,'class',1,'data-comkey',2,'data-eventid',3],[],e,s,gg)
+var cI=_v()
+_(oH,cI)
+if(_oz(z,12,e,s,gg)){cI.wxVkey=1
+cs.push("./pages/invoice/edit_invoice_head.vue.wxml:view:1:1276")
+cs.pop()
+}
+cI.wxXCkey=1
+cs.pop()
+_(fE,oH)
+cs.pop()
+_(oB,fE)
+var xC=_v()
+_(oB,xC)
+if(_oz(z,13,e,s,gg)){xC.wxVkey=1
+cs.push("./pages/invoice/edit_invoice_head.vue.wxml:view:1:3027")
+cs.pop()
+}
+var oD=_v()
+_(oB,oD)
+if(_oz(z,14,e,s,gg)){oD.wxVkey=1
+cs.push("./pages/invoice/edit_invoice_head.vue.wxml:button:1:3419")
+cs.pop()
+}
+xC.wxXCkey=1
+oD.wxXCkey=1
+cs.pop()
+_(r,oB)
 }catch(err){
 p_[b]=false
 throw err
@@ -2825,43 +2905,43 @@ p_[b]=true
 try{
 cs.push("./pages/my/my.vue.wxml:scroll-view:1:27")
 var oB=_mz(z,'scroll-view',['class',1,'id',1,'scrollY',2],[],e,s,gg)
-cs.push("./pages/my/my.vue.wxml:view:1:371")
+cs.push("./pages/my/my.vue.wxml:view:1:365")
 var xC=_n('view')
 _rz(z,xC,'class',4,e,s,gg)
 var oD=_v()
 _(xC,oD)
 if(_oz(z,5,e,s,gg)){oD.wxVkey=1
-cs.push("./pages/my/my.vue.wxml:view:1:425")
+cs.push("./pages/my/my.vue.wxml:view:1:419")
 cs.pop()
 }
 var fE=_v()
 _(xC,fE)
 if(_oz(z,6,e,s,gg)){fE.wxVkey=1
-cs.push("./pages/my/my.vue.wxml:view:1:560")
+cs.push("./pages/my/my.vue.wxml:view:1:554")
 cs.pop()
 }
 oD.wxXCkey=1
 fE.wxXCkey=1
 cs.pop()
 _(oB,xC)
-cs.push("./pages/my/my.vue.wxml:view:1:1222")
+cs.push("./pages/my/my.vue.wxml:view:1:1216")
 var cF=_mz(z,'view',['class',7,'id',1],[],e,s,gg)
 var hG=_v()
 _(cF,hG)
 if(_oz(z,9,e,s,gg)){hG.wxVkey=1
-cs.push("./pages/my/my.vue.wxml:view:1:2061")
+cs.push("./pages/my/my.vue.wxml:view:1:2055")
 cs.pop()
 }
 var oH=_v()
 _(cF,oH)
 if(_oz(z,10,e,s,gg)){oH.wxVkey=1
-cs.push("./pages/my/my.vue.wxml:view:1:3643")
+cs.push("./pages/my/my.vue.wxml:view:1:3637")
 cs.pop()
 }
 var cI=_v()
 _(cF,cI)
 if(_oz(z,11,e,s,gg)){cI.wxVkey=1
-cs.push("./pages/my/my.vue.wxml:button:1:5526")
+cs.push("./pages/my/my.vue.wxml:button:1:5520")
 cs.pop()
 }
 hG.wxXCkey=1
@@ -2976,20 +3056,32 @@ gg.f=$gdc(f_["./pages/my_address/edit_address.vue.wxml"],"",1)
 if(p_[b]){_wl(b,x[68]);return}
 p_[b]=true
 try{
-var oB=_v()
-_(r,oB)
-cs.push("./pages/my_address/edit_address.vue.wxml:template:1:2458")
-var xC=_oz(z,6,e,s,gg)
-var oD=_gd(x[68],xC,e_,d_)
-if(oD){
-var fE=_1z(z,3,e,s,gg) || {}
+cs.push("./pages/my_address/edit_address.vue.wxml:view:1:97")
+var oB=_n('view')
+_rz(z,oB,'class',1,e,s,gg)
+var xC=_v()
+_(oB,xC)
+if(_oz(z,2,e,s,gg)){xC.wxVkey=1
+cs.push("./pages/my_address/edit_address.vue.wxml:view:1:1903")
+cs.pop()
+}
+var oD=_v()
+_(oB,oD)
+cs.push("./pages/my_address/edit_address.vue.wxml:template:1:2484")
+var fE=_oz(z,8,e,s,gg)
+var cF=_gd(x[68],fE,e_,d_)
+if(cF){
+var hG=_1z(z,5,e,s,gg) || {}
 var cur_globalf=gg.f
-oB.wxXCkey=3
-oD(fE,fE,oB,gg)
+oD.wxXCkey=3
+cF(hG,hG,oD,gg)
 gg.f=cur_globalf
 }
-else _w(xC,x[68],1,2659)
+else _w(fE,x[68],1,2685)
 cs.pop()
+xC.wxXCkey=1
+cs.pop()
+_(r,oB)
 }catch(err){
 p_[b]=false
 throw err
@@ -3096,14 +3188,33 @@ return r
 }
 e_[x[72]]={f:m45,j:[],i:[],ti:[x[73]],ic:[]}
 d_[x[74]]={}
-d_[x[74]]["2e74987e"]=function(e,s,r,gg){
+d_[x[74]]["15549178"]=function(e,s,r,gg){
 var z=gz$gwx_47()
-var b=x[74]+':2e74987e'
+var b=x[74]+':15549178'
 r.wxVkey=b
-gg.f=$gdc(f_["./pages/orderList/orderList.vue.wxml"],"",1)
+gg.f=$gdc(f_["./pages/my_information/my_information.vue.wxml"],"",1)
 if(p_[b]){_wl(b,x[74]);return}
 p_[b]=true
 try{
+cs.push("./pages/my_information/my_information.vue.wxml:view:1:561")
+var oB=_n('view')
+_rz(z,oB,'class',1,e,s,gg)
+var xC=_v()
+_(oB,xC)
+if(_oz(z,2,e,s,gg)){xC.wxVkey=1
+cs.push("./pages/my_information/my_information.vue.wxml:input:1:607")
+cs.pop()
+}
+var oD=_v()
+_(oB,oD)
+if(_oz(z,3,e,s,gg)){oD.wxVkey=1
+cs.push("./pages/my_information/my_information.vue.wxml:view:1:967")
+cs.pop()
+}
+xC.wxXCkey=1
+oD.wxXCkey=1
+cs.pop()
+_(r,oB)
 }catch(err){
 p_[b]=false
 throw err
@@ -3123,7 +3234,7 @@ var hYD=e_[x[75]].i
 _ai(hYD,x[76],e_,x[75],1,1)
 var oZD=_v()
 _(r,oZD)
-cs.push("./pages/orderList/orderList.wxml:template:2:6")
+cs.push("./pages/my_information/my_information.wxml:template:2:6")
 var c1D=_oz(z,1,e,s,gg)
 var o2D=_gd(x[75],c1D,e_,d_)
 if(o2D){
@@ -3140,12 +3251,56 @@ return r
 }
 e_[x[75]]={f:m47,j:[],i:[],ti:[x[76]],ic:[]}
 d_[x[77]]={}
-d_[x[77]]["549e0622"]=function(e,s,r,gg){
+d_[x[77]]["2e74987e"]=function(e,s,r,gg){
 var z=gz$gwx_49()
-var b=x[77]+':549e0622'
+var b=x[77]+':2e74987e'
+r.wxVkey=b
+gg.f=$gdc(f_["./pages/orderList/orderList.vue.wxml"],"",1)
+if(p_[b]){_wl(b,x[77]);return}
+p_[b]=true
+try{
+}catch(err){
+p_[b]=false
+throw err
+}
+p_[b]=false
+return r
+}
+var m48=function(e,s,r,gg){
+var z=gz$gwx_49()
+return r
+}
+e_[x[77]]={f:m48,j:[],i:[],ti:[],ic:[]}
+d_[x[78]]={}
+var m49=function(e,s,r,gg){
+var z=gz$gwx_50()
+var e6D=e_[x[78]].i
+_ai(e6D,x[79],e_,x[78],1,1)
+var b7D=_v()
+_(r,b7D)
+cs.push("./pages/orderList/orderList.wxml:template:2:6")
+var o8D=_oz(z,1,e,s,gg)
+var x9D=_gd(x[78],o8D,e_,d_)
+if(x9D){
+var o0D=_1z(z,0,e,s,gg) || {}
+var cur_globalf=gg.f
+b7D.wxXCkey=3
+x9D(o0D,o0D,b7D,gg)
+gg.f=cur_globalf
+}
+else _w(o8D,x[78],2,18)
+cs.pop()
+e6D.pop()
+return r
+}
+e_[x[78]]={f:m49,j:[],i:[],ti:[x[79]],ic:[]}
+d_[x[80]]={}
+d_[x[80]]["549e0622"]=function(e,s,r,gg){
+var z=gz$gwx_51()
+var b=x[80]+':549e0622'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/particulars/particulars.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[77]);return}
+if(p_[b]){_wl(b,x[80]);return}
 p_[b]=true
 try{
 cs.push("./pages/particulars/particulars.vue.wxml:view:1:155")
@@ -3155,7 +3310,7 @@ var xC=_v()
 _(oB,xC)
 cs.push("./pages/particulars/particulars.vue.wxml:template:1:201")
 var oD=_oz(z,3,e,s,gg)
-var fE=_gd(x[77],oD,e_,d_)
+var fE=_gd(x[80],oD,e_,d_)
 if(fE){
 var cF=_1z(z,2,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -3163,13 +3318,13 @@ xC.wxXCkey=3
 fE(cF,cF,xC,gg)
 gg.f=cur_globalf
 }
-else _w(oD,x[77],1,272)
+else _w(oD,x[80],1,272)
 cs.pop()
 var hG=_v()
 _(oB,hG)
 cs.push("./pages/particulars/particulars.vue.wxml:template:1:295")
 var oH=_oz(z,5,e,s,gg)
-var cI=_gd(x[77],oH,e_,d_)
+var cI=_gd(x[80],oH,e_,d_)
 if(cI){
 var oJ=_1z(z,4,e,s,gg) || {}
 var cur_globalf=gg.f
@@ -3177,7 +3332,7 @@ hG.wxXCkey=3
 cI(oJ,oJ,hG,gg)
 gg.f=cur_globalf
 }
-else _w(oH,x[77],1,366)
+else _w(oH,x[80],1,366)
 cs.pop()
 cs.pop()
 _(r,oB)
@@ -3188,46 +3343,46 @@ throw err
 p_[b]=false
 return r
 }
-var m48=function(e,s,r,gg){
-var z=gz$gwx_49()
-var t5D=e_[x[77]].i
-_ai(t5D,x[78],e_,x[77],1,1)
-_ai(t5D,x[79],e_,x[77],1,62)
-t5D.pop()
-t5D.pop()
+var m50=function(e,s,r,gg){
+var z=gz$gwx_51()
+var cBE=e_[x[80]].i
+_ai(cBE,x[81],e_,x[80],1,1)
+_ai(cBE,x[82],e_,x[80],1,62)
+cBE.pop()
+cBE.pop()
 return r
 }
-e_[x[77]]={f:m48,j:[],i:[],ti:[x[78],x[79]],ic:[]}
-d_[x[80]]={}
-var m49=function(e,s,r,gg){
-var z=gz$gwx_50()
-var b7D=e_[x[80]].i
-_ai(b7D,x[81],e_,x[80],1,1)
-var o8D=_v()
-_(r,o8D)
+e_[x[80]]={f:m50,j:[],i:[],ti:[x[81],x[82]],ic:[]}
+d_[x[83]]={}
+var m51=function(e,s,r,gg){
+var z=gz$gwx_52()
+var oDE=e_[x[83]].i
+_ai(oDE,x[84],e_,x[83],1,1)
+var cEE=_v()
+_(r,cEE)
 cs.push("./pages/particulars/particulars.wxml:template:2:6")
-var x9D=_oz(z,1,e,s,gg)
-var o0D=_gd(x[80],x9D,e_,d_)
-if(o0D){
-var fAE=_1z(z,0,e,s,gg) || {}
+var oFE=_oz(z,1,e,s,gg)
+var lGE=_gd(x[83],oFE,e_,d_)
+if(lGE){
+var aHE=_1z(z,0,e,s,gg) || {}
 var cur_globalf=gg.f
-o8D.wxXCkey=3
-o0D(fAE,fAE,o8D,gg)
+cEE.wxXCkey=3
+lGE(aHE,aHE,cEE,gg)
 gg.f=cur_globalf
 }
-else _w(x9D,x[80],2,18)
+else _w(oFE,x[83],2,18)
 cs.pop()
-b7D.pop()
+oDE.pop()
 return r
 }
-e_[x[80]]={f:m49,j:[],i:[],ti:[x[81]],ic:[]}
-d_[x[82]]={}
-d_[x[82]]["08907b64"]=function(e,s,r,gg){
-var z=gz$gwx_51()
-var b=x[82]+':08907b64'
+e_[x[83]]={f:m51,j:[],i:[],ti:[x[84]],ic:[]}
+d_[x[85]]={}
+d_[x[85]]["08907b64"]=function(e,s,r,gg){
+var z=gz$gwx_53()
+var b=x[85]+':08907b64'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/quickLogin/quickLogin.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[82]);return}
+if(p_[b]){_wl(b,x[85]);return}
 p_[b]=true
 try{
 cs.push("./pages/quickLogin/quickLogin.vue.wxml:view:1:80")
@@ -3256,41 +3411,41 @@ throw err
 p_[b]=false
 return r
 }
-var m50=function(e,s,r,gg){
-var z=gz$gwx_51()
+var m52=function(e,s,r,gg){
+var z=gz$gwx_53()
 return r
 }
-e_[x[82]]={f:m50,j:[],i:[],ti:[],ic:[]}
-d_[x[83]]={}
-var m51=function(e,s,r,gg){
-var z=gz$gwx_52()
-var oDE=e_[x[83]].i
-_ai(oDE,x[84],e_,x[83],1,1)
-var cEE=_v()
-_(r,cEE)
+e_[x[85]]={f:m52,j:[],i:[],ti:[],ic:[]}
+d_[x[86]]={}
+var m53=function(e,s,r,gg){
+var z=gz$gwx_54()
+var bKE=e_[x[86]].i
+_ai(bKE,x[87],e_,x[86],1,1)
+var oLE=_v()
+_(r,oLE)
 cs.push("./pages/quickLogin/quickLogin.wxml:template:2:6")
-var oFE=_oz(z,1,e,s,gg)
-var lGE=_gd(x[83],oFE,e_,d_)
-if(lGE){
-var aHE=_1z(z,0,e,s,gg) || {}
+var xME=_oz(z,1,e,s,gg)
+var oNE=_gd(x[86],xME,e_,d_)
+if(oNE){
+var fOE=_1z(z,0,e,s,gg) || {}
 var cur_globalf=gg.f
-cEE.wxXCkey=3
-lGE(aHE,aHE,cEE,gg)
+oLE.wxXCkey=3
+oNE(fOE,fOE,oLE,gg)
 gg.f=cur_globalf
 }
-else _w(oFE,x[83],2,18)
+else _w(xME,x[86],2,18)
 cs.pop()
-oDE.pop()
+bKE.pop()
 return r
 }
-e_[x[83]]={f:m51,j:[],i:[],ti:[x[84]],ic:[]}
-d_[x[85]]={}
-d_[x[85]]["c3304af8"]=function(e,s,r,gg){
-var z=gz$gwx_53()
-var b=x[85]+':c3304af8'
+e_[x[86]]={f:m53,j:[],i:[],ti:[x[87]],ic:[]}
+d_[x[88]]={}
+d_[x[88]]["c3304af8"]=function(e,s,r,gg){
+var z=gz$gwx_55()
+var b=x[88]+':c3304af8'
 r.wxVkey=b
 gg.f=$gdc(f_["./pages/register/register.vue.wxml"],"",1)
-if(p_[b]){_wl(b,x[85]);return}
+if(p_[b]){_wl(b,x[88]);return}
 p_[b]=true
 try{
 cs.push("./pages/register/register.vue.wxml:view:1:1503")
@@ -3318,34 +3473,34 @@ throw err
 p_[b]=false
 return r
 }
-var m52=function(e,s,r,gg){
-var z=gz$gwx_53()
+var m54=function(e,s,r,gg){
+var z=gz$gwx_55()
 return r
 }
-e_[x[85]]={f:m52,j:[],i:[],ti:[],ic:[]}
-d_[x[86]]={}
-var m53=function(e,s,r,gg){
-var z=gz$gwx_54()
-var bKE=e_[x[86]].i
-_ai(bKE,x[87],e_,x[86],1,1)
-var oLE=_v()
-_(r,oLE)
+e_[x[88]]={f:m54,j:[],i:[],ti:[],ic:[]}
+d_[x[89]]={}
+var m55=function(e,s,r,gg){
+var z=gz$gwx_56()
+var oRE=e_[x[89]].i
+_ai(oRE,x[90],e_,x[89],1,1)
+var cSE=_v()
+_(r,cSE)
 cs.push("./pages/register/register.wxml:template:2:6")
-var xME=_oz(z,1,e,s,gg)
-var oNE=_gd(x[86],xME,e_,d_)
-if(oNE){
-var fOE=_1z(z,0,e,s,gg) || {}
+var oTE=_oz(z,1,e,s,gg)
+var lUE=_gd(x[89],oTE,e_,d_)
+if(lUE){
+var aVE=_1z(z,0,e,s,gg) || {}
 var cur_globalf=gg.f
-oLE.wxXCkey=3
-oNE(fOE,fOE,oLE,gg)
+cSE.wxXCkey=3
+lUE(aVE,aVE,cSE,gg)
 gg.f=cur_globalf
 }
-else _w(xME,x[86],2,18)
+else _w(oTE,x[89],2,18)
 cs.pop()
-bKE.pop()
+oRE.pop()
 return r
 }
-e_[x[86]]={f:m53,j:[],i:[],ti:[x[87]],ic:[]}
+e_[x[89]]={f:m55,j:[],i:[],ti:[x[90]],ic:[]}
 if(path&&e_[path]){
 return function(env,dd,global){$gwxc=0;var root={"tag":"wx-page"};root.children=[]
 var main=e_[path].f
@@ -3366,7 +3521,7 @@ return root;
 
 
 
-__wxAppCode__['app.json']={"pages":["pages/index/index","pages/particulars/particulars","pages/collection/collection","pages/orderList/orderList","pages/messages/messages","pages/my/my","pages/login/login","pages/register/register","pages/quickLogin/quickLogin","pages/Invitation_code/Invitation_code","pages/contact_service/contact_service","pages/my_address/my_address","pages/my_address/edit_address","pages/my_address/add_address","pages/check_in/check_in","pages/check_in/edit_check_in","pages/invoice/invoice","pages/invoice/invoice_head","pages/invoice/edit_invoice_head"],"subPackages":[],"window":{"navigationBarBackgroundColor":"#F05B72"},"usingComponents":{},"tabBar":{"list":[{"pagePath":"pages/index/index","text":"首页","iconPath":"static/tabBarIcon/home.png","selectedIconPath":"static/tabBarIcon/home-on.png"},{"pagePath":"pages/collection/collection","text":"收藏","iconPath":"static/tabBarIcon/collection.png","selectedIconPath":"static/tabBarIcon/collection-on.png"},{"pagePath":"pages/orderList/orderList","text":"订单","iconPath":"static/tabBarIcon/order.png","selectedIconPath":"static/tabBarIcon/order-on.png"},{"pagePath":"pages/messages/messages","text":"消息","iconPath":"static/tabBarIcon/message.png","selectedIconPath":"static/tabBarIcon/message-on.png"},{"pagePath":"pages/my/my","text":"我的","iconPath":"static/tabBarIcon/my.png","selectedIconPath":"static/tabBarIcon/my-on.png"}],"color":"#333333","selectedColor":"#F05B72","backgroundColor":"#FFFFFF","position":"bottom"},"splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false},"appname":"xzapp"};
+__wxAppCode__['app.json']={"pages":["pages/index/index","pages/particulars/particulars","pages/collection/collection","pages/orderList/orderList","pages/messages/messages","pages/my/my","pages/login/login","pages/register/register","pages/quickLogin/quickLogin","pages/Invitation_code/Invitation_code","pages/contact_service/contact_service","pages/my_address/my_address","pages/my_address/edit_address","pages/my_address/add_address","pages/check_in/check_in","pages/check_in/edit_check_in","pages/invoice/invoice","pages/invoice/invoice_head","pages/invoice/edit_invoice_head","pages/my_information/my_information"],"subPackages":[],"window":{"navigationBarBackgroundColor":"#F05B72"},"usingComponents":{},"tabBar":{"list":[{"pagePath":"pages/index/index","text":"首页","iconPath":"static/tabBarIcon/home.png","selectedIconPath":"static/tabBarIcon/home-on.png"},{"pagePath":"pages/collection/collection","text":"收藏","iconPath":"static/tabBarIcon/collection.png","selectedIconPath":"static/tabBarIcon/collection-on.png"},{"pagePath":"pages/orderList/orderList","text":"订单","iconPath":"static/tabBarIcon/order.png","selectedIconPath":"static/tabBarIcon/order-on.png"},{"pagePath":"pages/messages/messages","text":"消息","iconPath":"static/tabBarIcon/message.png","selectedIconPath":"static/tabBarIcon/message-on.png"},{"pagePath":"pages/my/my","text":"我的","iconPath":"static/tabBarIcon/my.png","selectedIconPath":"static/tabBarIcon/my-on.png"}],"color":"#333333","selectedColor":"#F05B72","backgroundColor":"#FFFFFF","position":"bottom"},"splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false},"appname":"xzapp"};
 __wxAppCode__['app.wxml']=$gwx('./app.wxml');
 
 
@@ -3730,7 +3885,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;\nvar isLogin = function isLogin() {\n  var dz_user = uni.getStorageSync('dz_user');\n  if (!dz_user) {\n    uni.reLaunch({\n      url: '/pages/login/login' });\n\n  }\n};\n\nvar phoneReg = function phoneReg(phone) {\n  var phoneReg = /^[1][3,4,5,7,8][0-9]{9}$/;\n  if (phoneReg.test(phone)) {\n    return true;\n  } else {\n    return false;\n  }\n};var _default =\n\n{\n  isLogin: isLogin,\n  phoneReg: phoneReg };exports.default = _default;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js */ \"./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js\")[\"default\"]))\n\n//# sourceURL=uni-app:///common/helper.js?2cbc");
+eval("/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0; // 检测是否登录\nvar isLogin = function isLogin() {\n  var dz_user = uni.getStorageSync('dz_user');\n  if (!dz_user) {\n    uni.reLaunch({\n      url: '/pages/login/login' });\n\n  }\n};\n\n//  手机号验证\nvar phoneReg = function phoneReg(phone) {\n  var phoneReg = /^[1][3,4,5,7,8][0-9]{9}$/;\n  if (phoneReg.test(phone)) {\n    return true;\n  } else {\n    return false;\n  }\n};\n\n// 邮箱验证\nvar emailReg = function emailReg(email) {\n  var emailReg = /^([a-zA-Z0-9]+[_|\\_|\\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\\_|\\.]?)*[a-zA-Z0-9]+\\.[a-zA-Z]{2,3}$/;;\n  if (emailReg.test(email)) {\n    return true;\n  } else {\n    return false;\n  }\n};\n\n// 身份证验证\nvar idCardReg = function idCardReg(idCard) {\n  var idCardReg = /(^\\d{15}$)|(^\\d{18}$)|(^\\d{17}(\\d|X|x)$)/;\n  if (idCardReg.test(idCard)) {\n    return true;\n  } else {\n    return false;\n  }\n};\n\n// 中文名称验证\nvar nameRge = function nameRge(name) {\n  var chineseReg = /^[\\u4e00-\\u9fa5]+$/; // 汉字验证\n  if (chineseReg.test(name)) {\n    return true;\n  } else {\n    return false;\n  }\n};var _default =\n\n{\n  isLogin: isLogin,\n  phoneReg: phoneReg,\n  emailReg: emailReg,\n  idCardReg: idCardReg,\n  nameRge: nameRge };exports.default = _default;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js */ \"./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js\")[\"default\"]))\n\n//# sourceURL=uni-app:///common/helper.js?2cbc");
 
 /***/ }),
 
@@ -5529,7 +5684,7 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=D:/xzapp/pages/my
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"scroll-view\", { attrs: { id: \"my-index\", \"scroll-y\": \"true\" } }, [\n    _c(\"view\", { staticClass: \"clearfix\", attrs: { id: \"my-index-head\" } }, [\n      _c(\"view\", [\n        _c(\"img\", {\n          attrs: {\n            src: _vm.userInfo.headimgurl\n              ? _vm.userInfo.headimgurl\n              : \"/static/images/landlordguide/pic1_1.png\",\n            id: \"user-avatar\",\n            alt: \"\"\n          }\n        })\n      ]),\n      _c(\n        \"view\",\n        { staticClass: \"avatar-right-wrap\" },\n        [\n          _vm.userInfo.username\n            ? _c(\n                \"p\",\n                {\n                  staticStyle: { \"margin-bottom\": \"4px\" },\n                  attrs: { id: \"user-cname\" }\n                },\n                [_vm._v(_vm._s(_vm.userInfo.username))]\n              )\n            : _vm._e(),\n          !_vm.userInfo.username\n            ? _c(\n                \"p\",\n                {\n                  staticStyle: {\n                    font: \"14px\",\n                    color: \"#f05b72\",\n                    \"margin-bottom\": \"4px\"\n                  },\n                  attrs: { eventid: \"e9b80b38-0\" },\n                  on: {\n                    click: function($event) {\n                      $event.stopPropagation()\n                      _vm.pageTo(\"/pages/login/login\")\n                    }\n                  }\n                },\n                [_vm._v(\"请登录\")]\n              )\n            : _vm._e(),\n          _c(\"p\", { staticClass: \"perfect-info\" }, [\n            _vm._v(\"信息未完善,请完善信息\"),\n            _c(\"text\", { staticClass: \"iconfont icon-weibiaoti34\" })\n          ])\n        ],\n        1\n      ),\n      _c(\n        \"view\",\n        {\n          staticClass: \"user-type\",\n          attrs: { eventid: \"e9b80b38-1\" },\n          on: {\n            click: function($event) {\n              $event.stopPropagation()\n              _vm.changeUserPower()\n            }\n          }\n        },\n        [\n          _c(\"text\", { staticClass: \"iconfont icon-zhuanhuan\" }),\n          _c(\"span\", {\n            domProps: {\n              textContent: _vm._s(_vm.curPowerType == \"fk\" ? \"房东\" : \"房客\")\n            }\n          })\n        ]\n      )\n    ]),\n    _c(\n      \"view\",\n      { attrs: { id: \"my-index-main\" } },\n      [\n        _c(\n          \"view\",\n          { staticClass: \"basic-info\" },\n          [\n            _c(\"p\", { staticClass: \"basic-title\" }, [_vm._v(\"基本信息\")]),\n            _c(\"view\", { staticClass: \"basic-info-item-wrap\" }, [\n              _c(\"view\", { staticClass: \"basic-info-item\" }, [\n                _c(\n                  \"view\",\n                  {\n                    staticClass: \"_box\",\n                    attrs: { eventid: \"e9b80b38-2\" },\n                    on: {\n                      click: function($event) {\n                        $event.stopPropagation()\n                        _vm.pageTo(\"myAccount\")\n                      }\n                    }\n                  },\n                  [\n                    _c(\"text\", { staticClass: \"iconfont icon-qianbao\" }),\n                    _c(\"p\", { staticClass: \"name\" }, [_vm._v(\"我的账户\")])\n                  ],\n                  1\n                )\n              ]),\n              _c(\"view\", { staticClass: \"basic-info-item \" }, [\n                _c(\n                  \"view\",\n                  {\n                    staticClass: \"_box\",\n                    attrs: { eventid: \"e9b80b38-3\" },\n                    on: {\n                      click: function($event) {\n                        $event.stopPropagation()\n                        _vm.pageTo(\"myInformation\")\n                      }\n                    }\n                  },\n                  [\n                    _c(\"text\", { staticClass: \"iconfont icon-shenfenzheng\" }),\n                    _c(\"p\", { staticClass: \"name\" }, [_vm._v(\"我的资料\")])\n                  ],\n                  1\n                )\n              ]),\n              _vm.curPowerType === \"fd\" && _vm.userPower === \"5\"\n                ? _c(\n                    \"view\",\n                    {\n                      staticClass: \"basic-info-item\",\n                      attrs: { eventid: \"e9b80b38-4\" },\n                      on: {\n                        click: function($event) {\n                          $event.stopPropagation()\n                          _vm.pageTo(\"releaseManage\")\n                        }\n                      }\n                    },\n                    [\n                      _c(\n                        \"view\",\n                        { staticClass: \"_box\" },\n                        [\n                          _c(\"text\", { staticClass: \"iconfont icon-fabu\" }),\n                          _c(\"p\", { staticClass: \"name\" }, [_vm._v(\"发布管理\")])\n                        ],\n                        1\n                      )\n                    ]\n                  )\n                : _vm._e()\n            ])\n          ],\n          1\n        ),\n        _c(\n          \"view\",\n          { staticClass: \"ad-wrap \", attrs: { id: \"slider\" } },\n          [\n            _c(\n              \"swiper\",\n              {\n                staticClass: \"swiper\",\n                attrs: {\n                  circular: \"true\",\n                  \"indicator-dots\": _vm.indicatorDots,\n                  autoplay: _vm.autoplay,\n                  interval: _vm.interval,\n                  duration: _vm.duration,\n                  \"indicator-active-color\": _vm.indicatorActiveColor\n                }\n              },\n              [\n                _c(\"swiper-item\", { attrs: { mpcomid: \"e9b80b38-0\" } }, [\n                  _c(\n                    \"view\",\n                    {\n                      staticClass: \"swiper-item uni-bg-red\",\n                      attrs: { eventid: \"e9b80b38-5\" },\n                      on: { click: _vm.a }\n                    },\n                    [\n                      _c(\"img\", {\n                        attrs: {\n                          src: \"/static/images/landlordguide/pic1_1.png\",\n                          alt: \"\"\n                        }\n                      })\n                    ]\n                  )\n                ]),\n                _c(\"swiper-item\", { attrs: { mpcomid: \"e9b80b38-1\" } }, [\n                  _c(\"view\", { staticClass: \"swiper-item uni-bg-green\" }, [\n                    _c(\"img\", {\n                      attrs: {\n                        src: \"/static/images/landlordguide/pic1_1.png\",\n                        alt: \"\"\n                      }\n                    })\n                  ])\n                ]),\n                _c(\"swiper-item\", { attrs: { mpcomid: \"e9b80b38-2\" } }, [\n                  _c(\"view\", { staticClass: \"swiper-item uni-bg-blue\" }, [\n                    _c(\"img\", {\n                      attrs: {\n                        src: \"/static/images/landlordguide/pic1_1.png\",\n                        alt: \"\"\n                      }\n                    })\n                  ])\n                ])\n              ],\n              1\n            )\n          ],\n          1\n        ),\n        _c(\n          \"view\",\n          { staticClass: \"more-fun-wrap\" },\n          [\n            _c(\"p\", { staticClass: \"more-fun-title\" }, [_vm._v(\"更多功能\")]),\n            _c(\"view\", { staticClass: \"more-fun-item-wrap\" }, [\n              _vm.curPowerType === \"fd\" && _vm.userPower === \"5\"\n                ? _c(\n                    \"view\",\n                    {\n                      staticClass: \"more-fun-item\",\n                      attrs: { eventid: \"e9b80b38-6\" },\n                      on: {\n                        click: function($event) {\n                          $event.stopPropagation()\n                          _vm.pageTo(\"statistics\")\n                        }\n                      }\n                    },\n                    [\n                      _c(\n                        \"view\",\n                        { staticClass: \"_box\" },\n                        [\n                          _c(\"text\", { staticClass: \"iconfont icon-tongji1\" }),\n                          _c(\"p\", { staticClass: \"name\" }, [_vm._v(\"统计\")])\n                        ],\n                        1\n                      )\n                    ]\n                  )\n                : _vm._e(),\n              _c(\"view\", { staticClass: \"more-fun-item\" }, [\n                _c(\n                  \"view\",\n                  {\n                    staticClass: \"_box\",\n                    attrs: { eventid: \"e9b80b38-7\" },\n                    on: {\n                      click: function($event) {\n                        $event.stopPropagation()\n                        _vm.pageTo(\"/pages/invoice/invoice\")\n                      }\n                    }\n                  },\n                  [\n                    _c(\"text\", { staticClass: \"iconfont icon-fapiao\" }),\n                    _c(\"p\", { staticClass: \"name\" }, [_vm._v(\"发票\")])\n                  ],\n                  1\n                )\n              ]),\n              _c(\"view\", { staticClass: \"more-fun-item \" }, [\n                _c(\n                  \"view\",\n                  {\n                    staticClass: \"_box\",\n                    attrs: { eventid: \"e9b80b38-8\" },\n                    on: {\n                      click: function($event) {\n                        $event.stopPropagation()\n                        _vm.pageTo(\"/pages/check_in/check_in\")\n                      }\n                    }\n                  },\n                  [\n                    _c(\"text\", { staticClass: \"iconfont icon-tuandui\" }),\n                    _c(\"p\", { staticClass: \"name\" }, [_vm._v(\"常用入住人\")])\n                  ],\n                  1\n                )\n              ]),\n              _c(\"view\", { staticClass: \"more-fun-item \" }, [\n                _c(\n                  \"view\",\n                  {\n                    staticClass: \"_box\",\n                    attrs: { eventid: \"e9b80b38-9\" },\n                    on: {\n                      click: function($event) {\n                        $event.stopPropagation()\n                        _vm.pageTo(\"/pages/my_address/my_address\")\n                      }\n                    }\n                  },\n                  [\n                    _c(\"text\", { staticClass: \"iconfont icon-dizhi-01\" }),\n                    _c(\"p\", { staticClass: \"name\" }, [_vm._v(\"收货地址\")])\n                  ],\n                  1\n                )\n              ]),\n              _c(\"view\", { staticClass: \"more-fun-item \" }, [\n                _c(\n                  \"view\",\n                  {\n                    staticClass: \"_box\",\n                    attrs: { eventid: \"e9b80b38-10\" },\n                    on: {\n                      click: function($event) {\n                        $event.stopPropagation()\n                        _vm.pageTo(\"/pages/contact_service/contact_service\")\n                      }\n                    }\n                  },\n                  [\n                    _c(\"text\", { staticClass: \"iconfont icon-kefu\" }),\n                    _c(\"p\", { staticClass: \"name\" }, [_vm._v(\"联系客服\")])\n                  ],\n                  1\n                )\n              ]),\n              _c(\"view\", { staticClass: \"more-fun-item \" }, [\n                _c(\n                  \"view\",\n                  {\n                    staticClass: \"_box\",\n                    attrs: { eventid: \"e9b80b38-11\" },\n                    on: {\n                      click: function($event) {\n                        $event.stopPropagation()\n                        _vm.pageTo(\"/pages/Invitation_code/Invitation_code\")\n                      }\n                    }\n                  },\n                  [\n                    _c(\"text\", { staticClass: \"iconfont icon-tianjiahaoyou\" }),\n                    _c(\"p\", { staticClass: \"name\" }, [_vm._v(\"邀请好友\")])\n                  ],\n                  1\n                )\n              ])\n            ])\n          ],\n          1\n        ),\n        _vm.userPower == \"1\"\n          ? _c(\n              \"button\",\n              {\n                staticClass: \"del-btn-block\",\n                attrs: { id: \"change-fd\", eventid: \"e9b80b38-12\" },\n                on: {\n                  click: function($event) {\n                    $event.stopPropagation()\n                    _vm.pageTo(\"becomeLandlord\")\n                  }\n                }\n              },\n              [_vm._v(\"成为房东\")]\n            )\n          : _vm._e()\n      ],\n      1\n    )\n  ])\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=D:/xzapp/pages/my/my.vue?vue&type=template&id=c9f4832e&scoped=true&");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"scroll-view\", { attrs: { id: \"my-index\", \"scroll-y\": \"true\" } }, [\n    _c(\"view\", { staticClass: \"clearfix\", attrs: { id: \"my-index-head\" } }, [\n      _c(\"view\", [\n        _c(\"img\", {\n          attrs: {\n            src: _vm.userInfo.headimgurl\n              ? _vm.userInfo.headimgurl\n              : \"/static/images/default_avatar.jpg\",\n            id: \"user-avatar\",\n            alt: \"\"\n          }\n        })\n      ]),\n      _c(\n        \"view\",\n        { staticClass: \"avatar-right-wrap\" },\n        [\n          _vm.userInfo.username\n            ? _c(\n                \"p\",\n                {\n                  staticStyle: { \"margin-bottom\": \"4px\" },\n                  attrs: { id: \"user-cname\" }\n                },\n                [_vm._v(_vm._s(_vm.userInfo.username))]\n              )\n            : _vm._e(),\n          !_vm.userInfo.username\n            ? _c(\n                \"p\",\n                {\n                  staticStyle: {\n                    font: \"14px\",\n                    color: \"#f05b72\",\n                    \"margin-bottom\": \"4px\"\n                  },\n                  attrs: { eventid: \"e9b80b38-0\" },\n                  on: {\n                    click: function($event) {\n                      $event.stopPropagation()\n                      _vm.pageTo(\"/pages/login/login\")\n                    }\n                  }\n                },\n                [_vm._v(\"请登录\")]\n              )\n            : _vm._e(),\n          _c(\"p\", { staticClass: \"perfect-info\" }, [\n            _vm._v(\"信息未完善,请完善信息\"),\n            _c(\"text\", { staticClass: \"iconfont icon-weibiaoti34\" })\n          ])\n        ],\n        1\n      ),\n      _c(\n        \"view\",\n        {\n          staticClass: \"user-type\",\n          attrs: { eventid: \"e9b80b38-1\" },\n          on: {\n            click: function($event) {\n              $event.stopPropagation()\n              _vm.changeUserPower()\n            }\n          }\n        },\n        [\n          _c(\"text\", { staticClass: \"iconfont icon-zhuanhuan\" }),\n          _c(\"span\", {\n            domProps: {\n              textContent: _vm._s(_vm.curPowerType == \"fk\" ? \"房东\" : \"房客\")\n            }\n          })\n        ]\n      )\n    ]),\n    _c(\n      \"view\",\n      { attrs: { id: \"my-index-main\" } },\n      [\n        _c(\n          \"view\",\n          { staticClass: \"basic-info\" },\n          [\n            _c(\"p\", { staticClass: \"basic-title\" }, [_vm._v(\"基本信息\")]),\n            _c(\"view\", { staticClass: \"basic-info-item-wrap\" }, [\n              _c(\"view\", { staticClass: \"basic-info-item\" }, [\n                _c(\n                  \"view\",\n                  {\n                    staticClass: \"_box\",\n                    attrs: { eventid: \"e9b80b38-2\" },\n                    on: {\n                      click: function($event) {\n                        $event.stopPropagation()\n                        _vm.pageTo(\"myAccount\")\n                      }\n                    }\n                  },\n                  [\n                    _c(\"text\", { staticClass: \"iconfont icon-qianbao\" }),\n                    _c(\"p\", { staticClass: \"name\" }, [_vm._v(\"我的账户\")])\n                  ],\n                  1\n                )\n              ]),\n              _c(\"view\", { staticClass: \"basic-info-item \" }, [\n                _c(\n                  \"view\",\n                  {\n                    staticClass: \"_box\",\n                    attrs: { eventid: \"e9b80b38-3\" },\n                    on: {\n                      click: function($event) {\n                        $event.stopPropagation()\n                        _vm.pageTo(\"/pages/my_information/my_information\")\n                      }\n                    }\n                  },\n                  [\n                    _c(\"text\", { staticClass: \"iconfont icon-shenfenzheng\" }),\n                    _c(\"p\", { staticClass: \"name\" }, [_vm._v(\"我的资料\")])\n                  ],\n                  1\n                )\n              ]),\n              _vm.curPowerType === \"fd\" && _vm.userPower === \"5\"\n                ? _c(\n                    \"view\",\n                    {\n                      staticClass: \"basic-info-item\",\n                      attrs: { eventid: \"e9b80b38-4\" },\n                      on: {\n                        click: function($event) {\n                          $event.stopPropagation()\n                          _vm.pageTo(\"releaseManage\")\n                        }\n                      }\n                    },\n                    [\n                      _c(\n                        \"view\",\n                        { staticClass: \"_box\" },\n                        [\n                          _c(\"text\", { staticClass: \"iconfont icon-fabu\" }),\n                          _c(\"p\", { staticClass: \"name\" }, [_vm._v(\"发布管理\")])\n                        ],\n                        1\n                      )\n                    ]\n                  )\n                : _vm._e()\n            ])\n          ],\n          1\n        ),\n        _c(\n          \"view\",\n          { staticClass: \"ad-wrap \", attrs: { id: \"slider\" } },\n          [\n            _c(\n              \"swiper\",\n              {\n                staticClass: \"swiper\",\n                attrs: {\n                  circular: \"true\",\n                  \"indicator-dots\": _vm.indicatorDots,\n                  autoplay: _vm.autoplay,\n                  interval: _vm.interval,\n                  duration: _vm.duration,\n                  \"indicator-active-color\": _vm.indicatorActiveColor\n                }\n              },\n              [\n                _c(\"swiper-item\", { attrs: { mpcomid: \"e9b80b38-0\" } }, [\n                  _c(\n                    \"view\",\n                    {\n                      staticClass: \"swiper-item uni-bg-red\",\n                      attrs: { eventid: \"e9b80b38-5\" },\n                      on: { click: _vm.a }\n                    },\n                    [\n                      _c(\"img\", {\n                        attrs: {\n                          src: \"/static/images/landlordguide/pic1_1.png\",\n                          alt: \"\"\n                        }\n                      })\n                    ]\n                  )\n                ]),\n                _c(\"swiper-item\", { attrs: { mpcomid: \"e9b80b38-1\" } }, [\n                  _c(\"view\", { staticClass: \"swiper-item uni-bg-green\" }, [\n                    _c(\"img\", {\n                      attrs: {\n                        src: \"/static/images/landlordguide/pic1_1.png\",\n                        alt: \"\"\n                      }\n                    })\n                  ])\n                ]),\n                _c(\"swiper-item\", { attrs: { mpcomid: \"e9b80b38-2\" } }, [\n                  _c(\"view\", { staticClass: \"swiper-item uni-bg-blue\" }, [\n                    _c(\"img\", {\n                      attrs: {\n                        src: \"/static/images/landlordguide/pic1_1.png\",\n                        alt: \"\"\n                      }\n                    })\n                  ])\n                ])\n              ],\n              1\n            )\n          ],\n          1\n        ),\n        _c(\n          \"view\",\n          { staticClass: \"more-fun-wrap\" },\n          [\n            _c(\"p\", { staticClass: \"more-fun-title\" }, [_vm._v(\"更多功能\")]),\n            _c(\"view\", { staticClass: \"more-fun-item-wrap\" }, [\n              _vm.curPowerType === \"fd\" && _vm.userPower === \"5\"\n                ? _c(\n                    \"view\",\n                    {\n                      staticClass: \"more-fun-item\",\n                      attrs: { eventid: \"e9b80b38-6\" },\n                      on: {\n                        click: function($event) {\n                          $event.stopPropagation()\n                          _vm.pageTo(\"statistics\")\n                        }\n                      }\n                    },\n                    [\n                      _c(\n                        \"view\",\n                        { staticClass: \"_box\" },\n                        [\n                          _c(\"text\", { staticClass: \"iconfont icon-tongji1\" }),\n                          _c(\"p\", { staticClass: \"name\" }, [_vm._v(\"统计\")])\n                        ],\n                        1\n                      )\n                    ]\n                  )\n                : _vm._e(),\n              _c(\"view\", { staticClass: \"more-fun-item\" }, [\n                _c(\n                  \"view\",\n                  {\n                    staticClass: \"_box\",\n                    attrs: { eventid: \"e9b80b38-7\" },\n                    on: {\n                      click: function($event) {\n                        $event.stopPropagation()\n                        _vm.pageTo(\"/pages/invoice/invoice\")\n                      }\n                    }\n                  },\n                  [\n                    _c(\"text\", { staticClass: \"iconfont icon-fapiao\" }),\n                    _c(\"p\", { staticClass: \"name\" }, [_vm._v(\"发票\")])\n                  ],\n                  1\n                )\n              ]),\n              _c(\"view\", { staticClass: \"more-fun-item \" }, [\n                _c(\n                  \"view\",\n                  {\n                    staticClass: \"_box\",\n                    attrs: { eventid: \"e9b80b38-8\" },\n                    on: {\n                      click: function($event) {\n                        $event.stopPropagation()\n                        _vm.pageTo(\"/pages/check_in/check_in\")\n                      }\n                    }\n                  },\n                  [\n                    _c(\"text\", { staticClass: \"iconfont icon-tuandui\" }),\n                    _c(\"p\", { staticClass: \"name\" }, [_vm._v(\"常用入住人\")])\n                  ],\n                  1\n                )\n              ]),\n              _c(\"view\", { staticClass: \"more-fun-item \" }, [\n                _c(\n                  \"view\",\n                  {\n                    staticClass: \"_box\",\n                    attrs: { eventid: \"e9b80b38-9\" },\n                    on: {\n                      click: function($event) {\n                        $event.stopPropagation()\n                        _vm.pageTo(\"/pages/my_address/my_address\")\n                      }\n                    }\n                  },\n                  [\n                    _c(\"text\", { staticClass: \"iconfont icon-dizhi-01\" }),\n                    _c(\"p\", { staticClass: \"name\" }, [_vm._v(\"收货地址\")])\n                  ],\n                  1\n                )\n              ]),\n              _c(\"view\", { staticClass: \"more-fun-item \" }, [\n                _c(\n                  \"view\",\n                  {\n                    staticClass: \"_box\",\n                    attrs: { eventid: \"e9b80b38-10\" },\n                    on: {\n                      click: function($event) {\n                        $event.stopPropagation()\n                        _vm.pageTo(\"/pages/contact_service/contact_service\")\n                      }\n                    }\n                  },\n                  [\n                    _c(\"text\", { staticClass: \"iconfont icon-kefu\" }),\n                    _c(\"p\", { staticClass: \"name\" }, [_vm._v(\"联系客服\")])\n                  ],\n                  1\n                )\n              ]),\n              _c(\"view\", { staticClass: \"more-fun-item \" }, [\n                _c(\n                  \"view\",\n                  {\n                    staticClass: \"_box\",\n                    attrs: { eventid: \"e9b80b38-11\" },\n                    on: {\n                      click: function($event) {\n                        $event.stopPropagation()\n                        _vm.pageTo(\"/pages/Invitation_code/Invitation_code\")\n                      }\n                    }\n                  },\n                  [\n                    _c(\"text\", { staticClass: \"iconfont icon-tianjiahaoyou\" }),\n                    _c(\"p\", { staticClass: \"name\" }, [_vm._v(\"邀请好友\")])\n                  ],\n                  1\n                )\n              ])\n            ])\n          ],\n          1\n        ),\n        _vm.userPower == \"1\"\n          ? _c(\n              \"button\",\n              {\n                staticClass: \"del-btn-block\",\n                attrs: { id: \"change-fd\", eventid: \"e9b80b38-12\" },\n                on: {\n                  click: function($event) {\n                    $event.stopPropagation()\n                    _vm.pageTo(\"becomeLandlord\")\n                  }\n                }\n              },\n              [_vm._v(\"成为房东\")]\n            )\n          : _vm._e()\n      ],\n      1\n    )\n  ])\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=D:/xzapp/pages/my/my.vue?vue&type=template&id=c9f4832e&scoped=true&");
 
 /***/ }),
 
@@ -6420,7 +6575,7 @@ define('pages/my_address/edit_address.js',function(require, module, exports, win
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nvar _mpvueCityPicker = _interopRequireDefault(__webpack_require__(/*! ../../components/mpvue-citypicker/mpvueCityPicker.vue */ \"D:\\\\xzapp\\\\components\\\\mpvue-citypicker\\\\mpvueCityPicker.vue\"));\nvar _vuex = __webpack_require__(/*! vuex */ \"./node_modules/vuex/dist/vuex.esm.js\");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =\n\n\n\n{\n  data: function data() {\n    return {\n      addressForm: {\n        address: \"\",\n        addressid: \"\",\n        city: \"\",\n        district: \"\",\n        isdefault: 0,\n        phone: \"\",\n        province: \"\",\n        truename: \"\",\n        local: '',\n        cityVlue: [0, 0, 1] },\n\n      cityPickerValueDefault: [0, 0, 1] };\n\n  },\n  components: {\n    mpvueCityPicker: _mpvueCityPicker.default },\n\n  computed: _objectSpread({},\n  (0, _vuex.mapState)(['islogin', 'token', 'isEditAddress'])),\n\n  watch: {},\n\n\n  onLoad: function onLoad(option) {\n    var par = JSON.parse(option.param);\n  },\n  onShow: function onShow() {},\n  methods: _objectSpread({},\n  (0, _vuex.mapMutations)(['addressEditStatus']), {\n    // 城市选择\n    showCityPicker: function showCityPicker() {\n      this.$refs.mpvueCityPicker.show();\n    },\n    // 取消城市选择\n    onCancel: function onCancel(e) {\n      console.log(e);\n    },\n    onConfirm: function onConfirm(e) {\n      this.pickerText = JSON.stringify(e);\n    },\n    // 设置默认地址开关\n    defaultSwitch: function defaultSwitch(e) {\n      console.log(e);\n    } }) };exports.default = _default;\n\n//# sourceURL=uni-app:///pages/my_address/edit_address.vue?vue&type=script&lang=js&?2b4b");
+eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nvar _mpvueCityPicker = _interopRequireDefault(__webpack_require__(/*! ../../components/mpvue-citypicker/mpvueCityPicker.vue */ \"D:\\\\xzapp\\\\components\\\\mpvue-citypicker\\\\mpvueCityPicker.vue\"));\nvar _vuex = __webpack_require__(/*! vuex */ \"./node_modules/vuex/dist/vuex.esm.js\");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =\n\n\n\n{\n  data: function data() {\n    return {\n      isSetDefault: true,\n      addressForm: {\n        address: \"\",\n        addressid: \"\",\n        city: \"\",\n        district: \"\",\n        isdefault: '0',\n        phone: \"\",\n        province: \"\",\n        truename: \"\",\n        local: '',\n        cityVlue: [0, 0, 1] },\n\n      cityPickerValueDefault: [0, 0, 1] };\n\n  },\n  components: {\n    mpvueCityPicker: _mpvueCityPicker.default },\n\n  computed: _objectSpread({},\n  (0, _vuex.mapState)(['islogin', 'token', 'isEditAddress'])),\n\n  watch: {},\n\n\n  onLoad: function onLoad(option) {\n    var par = JSON.parse(option.param);\n    this.isSetDefault = JSON.parse(option.param).isdefault === '1' ? false : true;\n  },\n  onShow: function onShow() {},\n  methods: _objectSpread({},\n  (0, _vuex.mapMutations)(['addressEditStatus']), {\n    // 城市选择\n    showCityPicker: function showCityPicker() {\n      this.$refs.mpvueCityPicker.show();\n    },\n    // 取消城市选择\n    onCancel: function onCancel(e) {\n      console.log(e);\n    },\n    onConfirm: function onConfirm(e) {\n      this.pickerText = JSON.stringify(e);\n    },\n    // 设置默认地址开关\n    defaultSwitch: function defaultSwitch(e) {\n      console.log(e);\n    } }) };exports.default = _default;\n\n//# sourceURL=uni-app:///pages/my_address/edit_address.vue?vue&type=script&lang=js&?2b4b");
 
 /***/ }),
 
@@ -6454,7 +6609,7 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=D:/xzapp/pages/my
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\n    \"view\",\n    { staticClass: \"edit_address_page\" },\n    [\n      _c(\"view\", { staticClass: \"edit_address_wrap\" }, [\n        _c(\"view\", { staticClass: \"edit_address_form\" }, [\n          _c(\"view\", { staticClass: \"form-item\" }, [\n            _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"姓名\")]),\n            _c(\"view\", { staticClass: \"input\" }, [\n              _c(\"input\", {\n                directives: [\n                  {\n                    name: \"model\",\n                    rawName: \"v-model.tirm\",\n                    value: _vm.addressForm.truename,\n                    expression: \"addressForm.truename\",\n                    modifiers: { tirm: true }\n                  }\n                ],\n                attrs: {\n                  type: \"text\",\n                  \"placeholder-style\": \"font-size:14px;color:#cccccc;\",\n                  placeholder: \"收件人姓名\",\n                  eventid: \"9cae403c-0\"\n                },\n                domProps: { value: _vm.addressForm.truename },\n                on: {\n                  input: function($event) {\n                    if ($event.target.composing) {\n                      return\n                    }\n                    _vm.addressForm.truename = $event.target.value\n                  }\n                }\n              })\n            ])\n          ]),\n          _c(\"view\", { staticClass: \"form-item\" }, [\n            _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"手机号\")]),\n            _c(\"view\", { staticClass: \"input\" }, [\n              _c(\"input\", {\n                directives: [\n                  {\n                    name: \"model\",\n                    rawName: \"v-model.tirm\",\n                    value: _vm.addressForm.phone,\n                    expression: \"addressForm.phone\",\n                    modifiers: { tirm: true }\n                  }\n                ],\n                attrs: {\n                  type: \"text\",\n                  \"placeholder-style\": \"font-size:14px;color:#cccccc;\",\n                  placeholder: \"收件人手机号\",\n                  eventid: \"9cae403c-1\"\n                },\n                domProps: { value: _vm.addressForm.phone },\n                on: {\n                  input: function($event) {\n                    if ($event.target.composing) {\n                      return\n                    }\n                    _vm.addressForm.phone = $event.target.value\n                  }\n                }\n              })\n            ])\n          ]),\n          _c(\"view\", { staticClass: \"form-item\" }, [\n            _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"所在地区\")]),\n            _c(\n              \"view\",\n              {\n                staticClass: \"input\",\n                attrs: { eventid: \"9cae403c-2\" },\n                on: { click: _vm.showCityPicker }\n              },\n              [\n                _vm.addressForm.address\n                  ? _c(\"span\", [_vm._v(_vm._s(_vm.addressForm.address))])\n                  : _c(\n                      \"span\",\n                      {\n                        staticStyle: { \"font-size\": \"14px\", color: \"#CCCCCC\" }\n                      },\n                      [_vm._v(\"省-市-区\")]\n                    )\n              ]\n            )\n          ]),\n          _c(\"view\", { staticClass: \"form-item\" }, [\n            _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"详细地址\")]),\n            _c(\"view\", { staticClass: \"input\" }, [\n              _c(\"input\", {\n                directives: [\n                  {\n                    name: \"model\",\n                    rawName: \"v-model.tirm\",\n                    value: _vm.addressForm.address,\n                    expression: \"addressForm.address\",\n                    modifiers: { tirm: true }\n                  }\n                ],\n                attrs: {\n                  type: \"text\",\n                  \"placeholder-style\": \"font-size:14px;color:#cccccc;\",\n                  placeholder: \"详细地址\",\n                  eventid: \"9cae403c-3\"\n                },\n                domProps: { value: _vm.addressForm.address },\n                on: {\n                  input: function($event) {\n                    if ($event.target.composing) {\n                      return\n                    }\n                    _vm.addressForm.address = $event.target.value\n                  }\n                }\n              })\n            ])\n          ]),\n          _c(\"view\", { staticClass: \"form-item\" }, [\n            _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"设为默认地址\")]),\n            _c(\"view\", { staticClass: \"input\" }, [\n              _c(\"switch\", {\n                staticClass: \"o-switch\",\n                attrs: {\n                  color: \"#F05B72\",\n                  checked: _vm.addressForm.district === \"1\",\n                  eventid: \"9cae403c-4\"\n                },\n                on: { change: _vm.defaultSwitch }\n              })\n            ])\n          ])\n        ]),\n        _c(\n          \"view\",\n          { staticClass: \"handle_btn_wrap\" },\n          [\n            _c(\"button\", { staticClass: \"del-btn\" }, [_vm._v(\"删除\")]),\n            _c(\"button\", { staticClass: \"save-btn\" }, [_vm._v(\"保存\")])\n          ],\n          1\n        )\n      ]),\n      _c(\"mpvue-city-picker\", {\n        ref: \"mpvueCityPicker\",\n        attrs: {\n          pickerValueDefault: _vm.cityPickerValueDefault,\n          eventid: \"9cae403c-5\",\n          mpcomid: \"9cae403c-0\"\n        },\n        on: { onCancel: _vm.onCancel, onConfirm: _vm.onConfirm }\n      })\n    ],\n    1\n  )\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=D:/xzapp/pages/my_address/edit_address.vue?vue&type=template&id=438ed8b2&scoped=true&");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\n    \"view\",\n    { staticClass: \"edit_address_page\" },\n    [\n      _c(\"view\", { staticClass: \"edit_address_wrap\" }, [\n        _c(\"view\", { staticClass: \"edit_address_form\" }, [\n          _c(\"view\", { staticClass: \"form-item\" }, [\n            _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"姓名\")]),\n            _c(\"view\", { staticClass: \"input\" }, [\n              _c(\"input\", {\n                directives: [\n                  {\n                    name: \"model\",\n                    rawName: \"v-model.tirm\",\n                    value: _vm.addressForm.truename,\n                    expression: \"addressForm.truename\",\n                    modifiers: { tirm: true }\n                  }\n                ],\n                attrs: {\n                  type: \"text\",\n                  \"placeholder-style\": \"font-size:14px;color:#cccccc;\",\n                  placeholder: \"收件人姓名\",\n                  eventid: \"9cae403c-0\"\n                },\n                domProps: { value: _vm.addressForm.truename },\n                on: {\n                  input: function($event) {\n                    if ($event.target.composing) {\n                      return\n                    }\n                    _vm.addressForm.truename = $event.target.value\n                  }\n                }\n              })\n            ])\n          ]),\n          _c(\"view\", { staticClass: \"form-item\" }, [\n            _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"手机号\")]),\n            _c(\"view\", { staticClass: \"input\" }, [\n              _c(\"input\", {\n                directives: [\n                  {\n                    name: \"model\",\n                    rawName: \"v-model.tirm\",\n                    value: _vm.addressForm.phone,\n                    expression: \"addressForm.phone\",\n                    modifiers: { tirm: true }\n                  }\n                ],\n                attrs: {\n                  type: \"text\",\n                  \"placeholder-style\": \"font-size:14px;color:#cccccc;\",\n                  placeholder: \"收件人手机号\",\n                  eventid: \"9cae403c-1\"\n                },\n                domProps: { value: _vm.addressForm.phone },\n                on: {\n                  input: function($event) {\n                    if ($event.target.composing) {\n                      return\n                    }\n                    _vm.addressForm.phone = $event.target.value\n                  }\n                }\n              })\n            ])\n          ]),\n          _c(\"view\", { staticClass: \"form-item\" }, [\n            _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"所在地区\")]),\n            _c(\n              \"view\",\n              {\n                staticClass: \"input\",\n                attrs: { eventid: \"9cae403c-2\" },\n                on: { click: _vm.showCityPicker }\n              },\n              [\n                _vm.addressForm.address\n                  ? _c(\"span\", [_vm._v(_vm._s(_vm.addressForm.address))])\n                  : _c(\n                      \"span\",\n                      {\n                        staticStyle: { \"font-size\": \"14px\", color: \"#CCCCCC\" }\n                      },\n                      [_vm._v(\"省-市-区\")]\n                    )\n              ]\n            )\n          ]),\n          _c(\"view\", { staticClass: \"form-item\" }, [\n            _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"详细地址\")]),\n            _c(\"view\", { staticClass: \"input\" }, [\n              _c(\"input\", {\n                directives: [\n                  {\n                    name: \"model\",\n                    rawName: \"v-model.tirm\",\n                    value: _vm.addressForm.address,\n                    expression: \"addressForm.address\",\n                    modifiers: { tirm: true }\n                  }\n                ],\n                attrs: {\n                  type: \"text\",\n                  \"placeholder-style\": \"font-size:14px;color:#cccccc;\",\n                  placeholder: \"详细地址\",\n                  eventid: \"9cae403c-3\"\n                },\n                domProps: { value: _vm.addressForm.address },\n                on: {\n                  input: function($event) {\n                    if ($event.target.composing) {\n                      return\n                    }\n                    _vm.addressForm.address = $event.target.value\n                  }\n                }\n              })\n            ])\n          ]),\n          _vm.isSetDefault\n            ? _c(\"view\", { staticClass: \"form-item\" }, [\n                _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"设为默认地址\")]),\n                _c(\"view\", { staticClass: \"input\" }, [\n                  _c(\"switch\", {\n                    staticClass: \"o-switch\",\n                    attrs: {\n                      color: \"#F05B72\",\n                      checked: _vm.addressForm.isdefault === \"1\",\n                      eventid: \"9cae403c-4\"\n                    },\n                    on: { change: _vm.defaultSwitch }\n                  })\n                ])\n              ])\n            : _vm._e()\n        ]),\n        _c(\n          \"view\",\n          { staticClass: \"handle_btn_wrap\" },\n          [\n            _c(\"button\", { staticClass: \"del-btn\" }, [_vm._v(\"删除\")]),\n            _c(\"button\", { staticClass: \"save-btn\" }, [_vm._v(\"保存\")])\n          ],\n          1\n        )\n      ]),\n      _c(\"mpvue-city-picker\", {\n        ref: \"mpvueCityPicker\",\n        attrs: {\n          pickerValueDefault: _vm.cityPickerValueDefault,\n          eventid: \"9cae403c-5\",\n          mpcomid: \"9cae403c-0\"\n        },\n        on: { onCancel: _vm.onCancel, onConfirm: _vm.onConfirm }\n      })\n    ],\n    1\n  )\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=D:/xzapp/pages/my_address/edit_address.vue?vue&type=template&id=438ed8b2&scoped=true&");
 
 /***/ }),
 
@@ -6832,7 +6987,7 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=D:/xzapp/pages/ch
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"view\", { staticClass: \"edite_check_page\" }, [\n    _c(\"view\", { staticClass: \"head_title\" }, [_vm._v(\"身份证信息(必填)\")]),\n    _c(\"view\", { staticClass: \"check_form\" }, [\n      _c(\"view\", { staticClass: \"form_item\" }, [\n        _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"姓名\")]),\n        _c(\"view\", { staticClass: \"ipt\" }, [\n          _c(\"input\", {\n            directives: [\n              {\n                name: \"model\",\n                rawName: \"v-model.trim\",\n                value: _vm.checkForm.name,\n                expression: \"checkForm.name\",\n                modifiers: { trim: true }\n              }\n            ],\n            attrs: {\n              type: \"text\",\n              \"placeholder-style\": \"font-size:14px;color:#ccc;\",\n              placeholder: \"确保信息真实\",\n              eventid: \"7b99cf2e-0\"\n            },\n            domProps: { value: _vm.checkForm.name },\n            on: {\n              input: function($event) {\n                if ($event.target.composing) {\n                  return\n                }\n                _vm.checkForm.name = $event.target.value.trim()\n              },\n              blur: function($event) {\n                _vm.$forceUpdate()\n              }\n            }\n          })\n        ])\n      ]),\n      _c(\"view\", { staticClass: \"form_item\" }, [\n        _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"身份证\")]),\n        _c(\"view\", { staticClass: \"ipt\" }, [\n          _c(\"input\", {\n            directives: [\n              {\n                name: \"model\",\n                rawName: \"v-model.trim\",\n                value: _vm.checkForm.idcardno,\n                expression: \"checkForm.idcardno\",\n                modifiers: { trim: true }\n              }\n            ],\n            attrs: {\n              type: \"text\",\n              \"placeholder-style\": \"font-size:14px;color:#ccc;\",\n              placeholder: \"确保信息真实\",\n              eventid: \"7b99cf2e-1\"\n            },\n            domProps: { value: _vm.checkForm.idcardno },\n            on: {\n              input: function($event) {\n                if ($event.target.composing) {\n                  return\n                }\n                _vm.checkForm.idcardno = $event.target.value.trim()\n              },\n              blur: function($event) {\n                _vm.$forceUpdate()\n              }\n            }\n          })\n        ])\n      ])\n    ]),\n    _c(\"view\", { staticClass: \"head_title\" }, [_vm._v(\"其他信息选填(必填)\")]),\n    _c(\"view\", { staticClass: \"check_form\" }, [\n      _c(\"view\", { staticClass: \"form_item\" }, [\n        _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"手机号\")]),\n        _c(\"view\", { staticClass: \"ipt\" }, [\n          _c(\"input\", {\n            directives: [\n              {\n                name: \"model\",\n                rawName: \"v-model.trim\",\n                value: _vm.checkForm.mobile,\n                expression: \"checkForm.mobile\",\n                modifiers: { trim: true }\n              }\n            ],\n            attrs: {\n              type: \"text\",\n              \"placeholder-style\": \"font-size:14px;color:#ccc;\",\n              placeholder: \"确保信息真实\",\n              eventid: \"7b99cf2e-2\"\n            },\n            domProps: { value: _vm.checkForm.mobile },\n            on: {\n              input: function($event) {\n                if ($event.target.composing) {\n                  return\n                }\n                _vm.checkForm.mobile = $event.target.value.trim()\n              },\n              blur: function($event) {\n                _vm.$forceUpdate()\n              }\n            }\n          })\n        ])\n      ]),\n      _c(\"view\", { staticClass: \"form_item\" }, [\n        _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"护照号\")]),\n        _c(\"view\", { staticClass: \"ipt\" }, [\n          _c(\"input\", {\n            directives: [\n              {\n                name: \"model\",\n                rawName: \"v-model.trim\",\n                value: _vm.checkForm.passportno,\n                expression: \"checkForm.passportno\",\n                modifiers: { trim: true }\n              }\n            ],\n            attrs: {\n              type: \"text\",\n              \"placeholder-style\": \"font-size:14px;color:#ccc;\",\n              placeholder: \"确保信息真实\",\n              eventid: \"7b99cf2e-3\"\n            },\n            domProps: { value: _vm.checkForm.passportno },\n            on: {\n              input: function($event) {\n                if ($event.target.composing) {\n                  return\n                }\n                _vm.checkForm.passportno = $event.target.value.trim()\n              },\n              blur: function($event) {\n                _vm.$forceUpdate()\n              }\n            }\n          })\n        ])\n      ])\n    ]),\n    _c(\n      \"view\",\n      { staticClass: \"handle_btn_wrap\" },\n      [\n        _vm.handleType === \"edit\"\n          ? _c(\"button\", { staticClass: \"my-del-block\" }, [_vm._v(\"删除\")])\n          : _vm._e(),\n        _c(\"button\", {\n          staticClass: \"my-btn-block\",\n          domProps: {\n            textContent: _vm._s(_vm.handleType === \"edit\" ? \"保存\" : \"添加\")\n          }\n        })\n      ],\n      1\n    )\n  ])\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=D:/xzapp/pages/check_in/edit_check_in.vue?vue&type=template&id=4c4e32b4&scoped=true&");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"view\", { staticClass: \"edite_check_page\" }, [\n    _c(\"view\", { staticClass: \"head_title\" }, [_vm._v(\"身份证信息(必填)\")]),\n    _c(\"view\", { staticClass: \"check_form\" }, [\n      _c(\"view\", { staticClass: \"form_item\" }, [\n        _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"姓名\")]),\n        _c(\"view\", { staticClass: \"ipt\" }, [\n          _c(\"input\", {\n            directives: [\n              {\n                name: \"model\",\n                rawName: \"v-model.trim\",\n                value: _vm.checkForm.name,\n                expression: \"checkForm.name\",\n                modifiers: { trim: true }\n              }\n            ],\n            attrs: {\n              type: \"text\",\n              \"placeholder-style\": \"font-size:14px;color:#ccc;\",\n              placeholder: \"确保信息真实\",\n              eventid: \"7b99cf2e-0\"\n            },\n            domProps: { value: _vm.checkForm.name },\n            on: {\n              input: function($event) {\n                if ($event.target.composing) {\n                  return\n                }\n                _vm.checkForm.name = $event.target.value.trim()\n              },\n              blur: function($event) {\n                _vm.$forceUpdate()\n              }\n            }\n          })\n        ])\n      ]),\n      _c(\"view\", { staticClass: \"form_item\" }, [\n        _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"身份证\")]),\n        _c(\"view\", { staticClass: \"ipt\" }, [\n          _c(\"input\", {\n            directives: [\n              {\n                name: \"model\",\n                rawName: \"v-model.trim\",\n                value: _vm.checkForm.idcardno,\n                expression: \"checkForm.idcardno\",\n                modifiers: { trim: true }\n              }\n            ],\n            attrs: {\n              type: \"idcard\",\n              \"placeholder-style\": \"font-size:14px;color:#ccc;\",\n              placeholder: \"确保信息真实\",\n              eventid: \"7b99cf2e-1\"\n            },\n            domProps: { value: _vm.checkForm.idcardno },\n            on: {\n              input: function($event) {\n                if ($event.target.composing) {\n                  return\n                }\n                _vm.checkForm.idcardno = $event.target.value.trim()\n              },\n              blur: function($event) {\n                _vm.$forceUpdate()\n              }\n            }\n          })\n        ])\n      ])\n    ]),\n    _c(\"view\", { staticClass: \"head_title\" }, [_vm._v(\"其他信息选填(必填)\")]),\n    _c(\"view\", { staticClass: \"check_form\" }, [\n      _c(\"view\", { staticClass: \"form_item\" }, [\n        _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"手机号\")]),\n        _c(\"view\", { staticClass: \"ipt\" }, [\n          _c(\"input\", {\n            directives: [\n              {\n                name: \"model\",\n                rawName: \"v-model.trim\",\n                value: _vm.checkForm.mobile,\n                expression: \"checkForm.mobile\",\n                modifiers: { trim: true }\n              }\n            ],\n            attrs: {\n              type: \"text\",\n              \"placeholder-style\": \"font-size:14px;color:#ccc;\",\n              placeholder: \"确保信息真实\",\n              eventid: \"7b99cf2e-2\"\n            },\n            domProps: { value: _vm.checkForm.mobile },\n            on: {\n              input: function($event) {\n                if ($event.target.composing) {\n                  return\n                }\n                _vm.checkForm.mobile = $event.target.value.trim()\n              },\n              blur: function($event) {\n                _vm.$forceUpdate()\n              }\n            }\n          })\n        ])\n      ]),\n      _c(\"view\", { staticClass: \"form_item\" }, [\n        _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"护照号\")]),\n        _c(\"view\", { staticClass: \"ipt\" }, [\n          _c(\"input\", {\n            directives: [\n              {\n                name: \"model\",\n                rawName: \"v-model.trim\",\n                value: _vm.checkForm.passportno,\n                expression: \"checkForm.passportno\",\n                modifiers: { trim: true }\n              }\n            ],\n            attrs: {\n              type: \"text\",\n              \"placeholder-style\": \"font-size:14px;color:#ccc;\",\n              placeholder: \"确保信息真实\",\n              eventid: \"7b99cf2e-3\"\n            },\n            domProps: { value: _vm.checkForm.passportno },\n            on: {\n              input: function($event) {\n                if ($event.target.composing) {\n                  return\n                }\n                _vm.checkForm.passportno = $event.target.value.trim()\n              },\n              blur: function($event) {\n                _vm.$forceUpdate()\n              }\n            }\n          })\n        ])\n      ])\n    ]),\n    _c(\n      \"view\",\n      { staticClass: \"handle_btn_wrap\" },\n      [\n        _vm.handleType === \"edit\"\n          ? _c(\"button\", { staticClass: \"my-del-block\" }, [_vm._v(\"删除\")])\n          : _vm._e(),\n        _c(\"button\", {\n          staticClass: \"my-btn-block\",\n          domProps: {\n            textContent: _vm._s(_vm.handleType === \"edit\" ? \"保存\" : \"添加\")\n          }\n        })\n      ],\n      1\n    )\n  ])\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=D:/xzapp/pages/check_in/edit_check_in.vue?vue&type=template&id=4c4e32b4&scoped=true&");
 
 /***/ }),
 
@@ -7176,7 +7331,7 @@ define('pages/invoice/edit_invoice_head.js',function(require, module, exports, w
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nvar _vuex = __webpack_require__(/*! vuex */ \"./node_modules/vuex/dist/vuex.esm.js\");function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =\n\n\n\n{\n  data: function data() {\n    return {\n      handleType: '',\n      inviceHeadForm: {\n        company: \"\",\n        email: \"\",\n        id: \"\",\n        is_default: \"\",\n        number: \"\",\n        type: \"\",\n        user_id: \"\" } };\n\n\n  },\n  onLoad: function onLoad(option) {\n    this.handleType = option.type;\n    if (option.type === 'add') {\n      uni.setNavigationBarTitle({\n        title: '添加发票抬头' });\n\n    } else if (option.type === 'edit') {\n      uni.setNavigationBarTitle({\n        title: '编辑发票抬头' });\n\n      this.inviceHeadForm = JSON.parse(option.param);\n    }\n  },\n  onShow: function onShow() {\n\n  },\n  onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {\n    if (e.index === 0) {\n      console.log('保存');\n    }\n  },\n  computed: _objectSpread({},\n  (0, _vuex.mapState)(['islogin', 'token', 'isEditInvoiceHead'])),\n\n  methods: _objectSpread({},\n  (0, _vuex.mapMutations)(['invoiceHeadEditStatus']), {\n    saveInvoiceHead: function saveInvoiceHead() {\n\n    } }) };exports.default = _default;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js */ \"./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js\")[\"default\"]))\n\n//# sourceURL=uni-app:///pages/invoice/edit_invoice_head.vue?vue&type=script&lang=js&?0dee");
+eval("/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nvar _helper = _interopRequireDefault(__webpack_require__(/*! ../../common/helper.js */ \"D:\\\\xzapp\\\\common\\\\helper.js\"));\nvar _vuex = __webpack_require__(/*! vuex */ \"./node_modules/vuex/dist/vuex.esm.js\");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =\n\n\n\n{\n  data: function data() {\n    return {\n      handleType: '',\n      isSetDefault: true,\n      inviceHeadForm: {\n        company: \"\",\n        email: \"\",\n        id: \"\",\n        is_default: \"\",\n        number: \"\",\n        type: \"common\",\n        user_id: \"\" } };\n\n\n  },\n  onLoad: function onLoad(option) {\n    this.handleType = option.type;\n    if (option.type === 'add') {\n      uni.setNavigationBarTitle({\n        title: '添加发票抬头' });\n\n    } else if (option.type === 'edit') {\n      uni.setNavigationBarTitle({\n        title: '编辑发票抬头' });\n\n      this.inviceHeadForm = JSON.parse(option.param);\n      this.isSetDefault = JSON.parse(option.param).is_default === '1' ? false : true;\n    }\n  },\n  onShow: function onShow() {\n\n  },\n  onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {\n    if (e.index === 0) {\n      this.saveInvoiceHead();\n    }\n  },\n  computed: _objectSpread({},\n  (0, _vuex.mapState)(['islogin', 'token', 'isEditInvoiceHead'])),\n\n  methods: _objectSpread({},\n  (0, _vuex.mapMutations)(['invoiceHeadEditStatus']), {\n    // 选择发票抬头类型\n    // type---> special:专用发票   common:普通发票\n    changeInviceHeadType: function changeInviceHeadType(type) {\n      this.inviceHeadForm.type = type;\n    },\n    // 保存发票抬头\n    saveInvoiceHead: function saveInvoiceHead() {\n      var _this = this;\n      var company = _this.inviceHeadForm.company.trim();\n      var email = _this.inviceHeadForm.email.trim();\n      var number = _this.inviceHeadForm.number.trim();\n      if (company === '') {\n        uni.showToast({\n          title: '公司名称不能为空',\n          duration: 1500,\n          icon: 'none' });\n\n      } else if (number === '') {\n\n        uni.showToast({\n          title: '识别号不能为空',\n          duration: 1500,\n          icon: 'none' });\n\n\n      } else if (email === '') {\n        uni.showToast({\n          title: '邮箱不能为空',\n          duration: 1500,\n          icon: 'none' });\n\n      } else {\n        if (!_helper.default.emailReg(email)) {\n          uni.showToast({\n            title: '邮箱格式有误',\n            duration: 1500,\n            icon: 'none' });\n\n        } else {\n          if (_this.handleType === 'add') {\n            console.log('添加');\n          } else if (_this.handleType === 'edit') {\n            console.log('修改');\n          }\n        }\n\n      }\n    },\n    // 设置默认抬头\n    defaultSwitch: function defaultSwitch(e) {\n      console.log(e);\n    } }) };exports.default = _default;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js */ \"./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js\")[\"default\"]))\n\n//# sourceURL=uni-app:///pages/invoice/edit_invoice_head.vue?vue&type=script&lang=js&?0dee");
 
 /***/ }),
 
@@ -7210,7 +7365,7 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=D:/xzapp/pages/in
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _vm._m(0)\n}\nvar staticRenderFns = [\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"edit_invoice_head_page\" }, [\n      _c(\"view\", { staticClass: \"type_change_wrap\" }, [\n        _c(\"view\", { staticClass: \"type_item\" }, [\n          _c(\"view\", { staticClass: \"chang_radio_wrap\" }, [\n            _c(\"view\", { staticClass: \"chang_radio\" }, [\n              _c(\"view\", { staticClass: \"radio_circle\" })\n            ])\n          ]),\n          _c(\"view\", { staticClass: \"info\" }, [\n            _c(\"view\", { staticClass: \"text title\" }, [\n              _vm._v(\"增值税电子普通发票\")\n            ]),\n            _c(\"view\", { staticClass: \"text title\" }, [\n              _vm._v(\"发送至邮箱或自行下载\")\n            ]),\n            _c(\"view\", { staticClass: \"text title\" }, [\n              _vm._v(\"用途及规则同增值税纸质普通发票\")\n            ]),\n            _c(\"view\", { staticClass: \"text title\" }, [\n              _vm._v(\"请务必确认公司可接受该发票类型\")\n            ])\n          ])\n        ]),\n        _c(\"view\", { staticClass: \"type_item\" }, [\n          _c(\"view\", { staticClass: \"chang_radio_wrap\" }, [\n            _c(\"view\", { staticClass: \"chang_radio\" }, [\n              _c(\"view\", { staticClass: \"radio_circle\" })\n            ])\n          ]),\n          _c(\"view\", { staticClass: \"info\" }, [\n            _c(\"view\", { staticClass: \"text title\" }, [\n              _vm._v(\"增值税专用发票\")\n            ]),\n            _c(\"view\", { staticClass: \"text title\" }, [\n              _vm._v(\"需提供专票资质\")\n            ]),\n            _c(\"view\", { staticClass: \"text title\" }, [\n              _vm._v(\"可以抵扣进项税额\")\n            ]),\n            _c(\"view\", { staticClass: \"text title\" }, [\n              _vm._v(\"仅限一般纳税人企业使用\")\n            ])\n          ])\n        ])\n      ]),\n      _c(\"view\", { staticClass: \"invoice_head_form\" })\n    ])\n  }\n]\nrender._withStripped = true\n\n\n\n//# sourceURL=D:/xzapp/pages/invoice/edit_invoice_head.vue?vue&type=template&id=155ad6df&scoped=true&");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\n    \"view\",\n    { staticClass: \"edit_invoice_head_page\" },\n    [\n      _c(\"view\", { staticClass: \"type_change_wrap\" }, [\n        _c(\n          \"view\",\n          {\n            staticClass: \"type_item\",\n            attrs: { eventid: \"1612f65a-0\" },\n            on: {\n              tap: function($event) {\n                _vm.changeInviceHeadType(\"common\")\n              }\n            }\n          },\n          [\n            _c(\"view\", { staticClass: \"chang_radio_wrap\" }, [\n              _c(\n                \"view\",\n                {\n                  staticClass: \"chang_radio\",\n                  class: {\n                    chang_radio_on: _vm.inviceHeadForm.type === \"common\"\n                  }\n                },\n                [\n                  _vm.inviceHeadForm.type === \"common\"\n                    ? _c(\"view\", { staticClass: \"radio_circle\" })\n                    : _vm._e()\n                ]\n              )\n            ]),\n            _vm._m(0)\n          ]\n        ),\n        _c(\"view\", { staticClass: \"t_line\" }),\n        _c(\n          \"view\",\n          {\n            staticClass: \"type_item\",\n            attrs: { eventid: \"1612f65a-1\" },\n            on: {\n              tap: function($event) {\n                _vm.changeInviceHeadType(\"special\")\n              }\n            }\n          },\n          [\n            _c(\"view\", { staticClass: \"chang_radio_wrap\" }, [\n              _c(\n                \"view\",\n                {\n                  staticClass: \"chang_radio\",\n                  class: {\n                    chang_radio_on: _vm.inviceHeadForm.type === \"special\"\n                  }\n                },\n                [\n                  _vm.inviceHeadForm.type === \"special\"\n                    ? _c(\"view\", { staticClass: \"radio_circle\" })\n                    : _vm._e()\n                ]\n              )\n            ]),\n            _vm._m(1)\n          ]\n        )\n      ]),\n      _c(\"view\", { staticClass: \"invoice_head_form\" }, [\n        _c(\"view\", { staticClass: \"form-item\" }, [\n          _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"公司全称\")]),\n          _c(\"view\", { staticClass: \"input\" }, [\n            _c(\"input\", {\n              directives: [\n                {\n                  name: \"model\",\n                  rawName: \"v-model\",\n                  value: _vm.inviceHeadForm.company,\n                  expression: \"inviceHeadForm.company\"\n                }\n              ],\n              attrs: {\n                type: \"text\",\n                \"placeholder-style\": \"font-size:14px;color:#cccccc;\",\n                placeholder: \"公司全称\",\n                eventid: \"1612f65a-2\"\n              },\n              domProps: { value: _vm.inviceHeadForm.company },\n              on: {\n                input: function($event) {\n                  if ($event.target.composing) {\n                    return\n                  }\n                  _vm.inviceHeadForm.company = $event.target.value\n                }\n              }\n            })\n          ])\n        ]),\n        _c(\"view\", { staticClass: \"form-item\" }, [\n          _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"纳税人识别号\")]),\n          _c(\"view\", { staticClass: \"input\" }, [\n            _c(\"input\", {\n              directives: [\n                {\n                  name: \"model\",\n                  rawName: \"v-model\",\n                  value: _vm.inviceHeadForm.number,\n                  expression: \"inviceHeadForm.number\"\n                }\n              ],\n              attrs: {\n                type: \"text\",\n                \"placeholder-style\": \"font-size:14px;color:#cccccc;\",\n                placeholder: \"纳税人识别号\",\n                eventid: \"1612f65a-3\"\n              },\n              domProps: { value: _vm.inviceHeadForm.number },\n              on: {\n                input: function($event) {\n                  if ($event.target.composing) {\n                    return\n                  }\n                  _vm.inviceHeadForm.number = $event.target.value\n                }\n              }\n            })\n          ])\n        ]),\n        _c(\"view\", { staticClass: \"form-item\" }, [\n          _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"电子邮箱\")]),\n          _c(\"view\", { staticClass: \"input\" }, [\n            _c(\"input\", {\n              directives: [\n                {\n                  name: \"model\",\n                  rawName: \"v-model\",\n                  value: _vm.inviceHeadForm.email,\n                  expression: \"inviceHeadForm.email\"\n                }\n              ],\n              attrs: {\n                type: \"text\",\n                \"placeholder-style\": \"font-size:14px;color:#cccccc;\",\n                placeholder: \"电子邮箱\",\n                eventid: \"1612f65a-4\"\n              },\n              domProps: { value: _vm.inviceHeadForm.email },\n              on: {\n                input: function($event) {\n                  if ($event.target.composing) {\n                    return\n                  }\n                  _vm.inviceHeadForm.email = $event.target.value\n                }\n              }\n            })\n          ])\n        ]),\n        _vm.isSetDefault\n          ? _c(\"view\", { staticClass: \"form-item\" }, [\n              _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"设置默认抬头\")]),\n              _c(\"view\", { staticClass: \"input\" }, [\n                _c(\"switch\", {\n                  staticClass: \"o-switch\",\n                  attrs: {\n                    color: \"#F05B72\",\n                    checked: _vm.inviceHeadForm.is_default === \"1\",\n                    eventid: \"1612f65a-5\"\n                  },\n                  on: { change: _vm.defaultSwitch }\n                })\n              ])\n            ])\n          : _vm._e()\n      ]),\n      _vm.handleType === \"edit\"\n        ? _c(\"button\", { staticClass: \"my-del-block\" }, [_vm._v(\"删除\")])\n        : _vm._e()\n    ],\n    1\n  )\n}\nvar staticRenderFns = [\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"info\" }, [\n      _c(\"view\", { staticClass: \"text title\" }, [_vm._v(\"增值税电子普通发票\")]),\n      _c(\"view\", { staticClass: \"text \" }, [_vm._v(\"发送至邮箱或自行下载\")]),\n      _c(\"view\", { staticClass: \"text \" }, [\n        _vm._v(\"用途及规则同增值税纸质普通发票\")\n      ]),\n      _c(\"view\", { staticClass: \"text \" }, [\n        _vm._v(\"请务必确认公司可接受该发票类型\")\n      ])\n    ])\n  },\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"info\" }, [\n      _c(\"view\", { staticClass: \"text title\" }, [_vm._v(\"增值税专用发票\")]),\n      _c(\"view\", { staticClass: \"text \" }, [_vm._v(\"需提供专票资质\")]),\n      _c(\"view\", { staticClass: \"text \" }, [_vm._v(\"可以抵扣进项税额\")]),\n      _c(\"view\", { staticClass: \"text \" }, [_vm._v(\"仅限一般纳税人企业使用\")])\n    ])\n  }\n]\nrender._withStripped = true\n\n\n\n//# sourceURL=D:/xzapp/pages/invoice/edit_invoice_head.vue?vue&type=template&id=155ad6df&scoped=true&");
 
 /***/ }),
 
@@ -7289,4 +7444,130 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _C_U
 },[["D:\\xzapp\\main.js?{\"page\":\"pages%2Finvoice%2Fedit_invoice_head\"}","common/runtime","common/vendor"]]]);
 });
 require('pages/invoice/edit_invoice_head.js');
+__wxRoute = 'pages/my_information/my_information';__wxRouteBegin = true;__wxAppCurrentFile__ = 'pages/my_information/my_information.js';
+
+define('pages/my_information/my_information.js',function(require, module, exports, window, document, frames, self, location, navigator, localStorage, history, Caches, screen, alert, confirm, prompt, fetch, XMLHttpRequest, WebSocket, webkit, WeixinJSCore, Reporter, print, WeixinJSBridge){
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/my_information/my_information"],{
+
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!D:\\xzapp\\pages\\my_information\\my_information.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--18-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!D:/xzapp/pages/my_information/my_information.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;var _default =\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n{\n  data: function data() {\n    return {\n      infoForm: {\n        avatar: '', // 用户头像\n        nickname: '', //昵称\n        idCard: '', //身份证号\n        passCard: '', //护照号\n        sex: '', //性别\n        local: '', //地区\n        date: '', //出生日期\n        education: '' //教育背景\n      },\n      onfocus: true,\n      headBgStyle: {\n        'background-img': '' } };\n\n\n  },\n  onLoad: function onLoad() {},\n  onShow: function onShow() {},\n  onReachBottom: function onReachBottom() {\n\n  },\n  methods: {\n    chooseAvatar: function chooseAvatar() {\n      var _this = this;\n      uni.chooseImage({\n        count: 1, //默认9\n        sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有\n        sourceType: ['album', 'camera'], //从相册选择\n        success: function success(res) {\n          console.log(res.tempFiles);\n          _this.infoForm.avatar = res.tempFiles[0].path;\n          _this.headBgStyle['background-img'] = res.tempFiles[0].path;\n          console.log(JSON.stringify(res.tempFilePaths));\n        } });\n\n    } } };exports.default = _default;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js */ \"./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js\")[\"default\"]))\n\n//# sourceURL=uni-app:///pages/my_information/my_information.vue?vue&type=script&lang=js&?4738");
+
+/***/ }),
+
+/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!D:\\xzapp\\pages\\my_information\\my_information.vue?vue&type=style&index=1&id=6525d449&lang=scss&scoped=true&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-1!./node_modules/css-loader??ref--8-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/sass-loader/lib/loader.js??ref--8-oneOf-1-4!./node_modules/vue-loader/lib??vue-loader-options!D:/xzapp/pages/my_information/my_information.vue?vue&type=style&index=1&id=6525d449&lang=scss&scoped=true& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=D:/xzapp/pages/my_information/my_information.vue?vue&type=style&index=1&id=6525d449&lang=scss&scoped=true&");
+
+/***/ }),
+
+/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!D:\\xzapp\\pages\\my_information\\my_information.vue?vue&type=style&index=0&lang=css&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!./node_modules/css-loader??ref--6-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!D:/xzapp/pages/my_information/my_information.vue?vue&type=style&index=0&lang=css& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=D:/xzapp/pages/my_information/my_information.vue?vue&type=style&index=0&lang=css&");
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!D:\\xzapp\\pages\\my_information\\my_information.vue?vue&type=template&id=6525d449&scoped=true&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!D:/xzapp/pages/my_information/my_information.vue?vue&type=template&id=6525d449&scoped=true& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\n    \"view\",\n    {\n      staticClass: \"my_information_page\",\n      style: _vm.infoForm.avatar ? _vm.headBgStyle : \"\"\n    },\n    [\n      _c(\"view\", { staticClass: \"head\" }, [\n        _c(\n          \"view\",\n          {\n            staticClass: \"avatar_wrap\",\n            attrs: { eventid: \"15549178-0\" },\n            on: { tap: _vm.chooseAvatar }\n          },\n          [\n            _c(\"img\", {\n              staticClass: \"avatar\",\n              attrs: {\n                src: _vm.infoForm.avatar\n                  ? _vm.infoForm.avatar\n                  : \"/static/images/default_avatar.jpg\",\n                alt: \"\"\n              }\n            }),\n            _vm._m(0)\n          ]\n        ),\n        _c(\"view\", { staticClass: \"nick-name\" }, [\n          _vm.infoForm.nickname === \"\" || _vm.onfocus === true\n            ? _c(\"input\", {\n                directives: [\n                  {\n                    name: \"model\",\n                    rawName: \"v-model.trim\",\n                    value: _vm.infoForm.nickname,\n                    expression: \"infoForm.nickname\",\n                    modifiers: { trim: true }\n                  }\n                ],\n                attrs: {\n                  type: \"text\",\n                  \"placeholder-style\": \"font-size:36upx;color:#cccccc;\",\n                  maxlength: \"16\",\n                  placeholder: \"请输入用户名\",\n                  eventid: \"15549178-1\"\n                },\n                domProps: { value: _vm.infoForm.nickname },\n                on: {\n                  focus: function($event) {\n                    _vm.onfocus = true\n                  },\n                  blur: [\n                    function($event) {\n                      _vm.onfocus = false\n                    },\n                    function($event) {\n                      _vm.$forceUpdate()\n                    }\n                  ],\n                  input: function($event) {\n                    if ($event.target.composing) {\n                      return\n                    }\n                    _vm.infoForm.nickname = $event.target.value.trim()\n                  }\n                }\n              })\n            : _vm._e(),\n          _vm.infoForm.nickname !== \"\" && _vm.onfocus === false\n            ? _c(\n                \"view\",\n                {\n                  staticClass: \"show_nickname\",\n                  attrs: { eventid: \"15549178-2\" },\n                  on: {\n                    tap: function($event) {\n                      _vm.onfocus = true\n                    }\n                  }\n                },\n                [\n                  _vm._v(_vm._s(_vm.infoForm.nickname)),\n                  _c(\"text\", {\n                    staticClass: \"iconfont icon-icon-edit edit-icon\"\n                  })\n                ]\n              )\n            : _vm._e()\n        ])\n      ]),\n      _vm._m(1)\n    ]\n  )\n}\nvar staticRenderFns = [\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"img_icon\" }, [\n      _c(\"text\", { staticClass: \"iconfont icon-tuxingyanzhengma\" })\n    ])\n  },\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"view\", { staticClass: \"info_form\" }, [\n      _c(\"view\", { staticClass: \"form_item\" }, [\n        _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"真实姓名\")]),\n        _c(\"view\", { staticClass: \"ipt\" }, [\n          _c(\"input\", {\n            attrs: {\n              type: \"text\",\n              \"placeholder-style\": \"font-size:28upx;color:#cccccc;\",\n              placeholder: \"请填写\"\n            }\n          })\n        ]),\n        _c(\"view\", { staticClass: \"after_icon\" })\n      ]),\n      _c(\"view\", { staticClass: \"form_item\" }, [\n        _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"身份证号\")]),\n        _c(\"view\", { staticClass: \"ipt\" }, [\n          _c(\"input\", {\n            attrs: {\n              type: \"text\",\n              \"placeholder-style\": \"font-size:28upx;color:#cccccc;\",\n              placeholder: \"请填写\"\n            }\n          })\n        ]),\n        _c(\"view\", { staticClass: \"after_icon\" })\n      ]),\n      _c(\"view\", { staticClass: \"form_item\" }, [\n        _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"护照号\")]),\n        _c(\"view\", { staticClass: \"ipt\" }, [\n          _c(\"input\", {\n            attrs: {\n              type: \"text\",\n              \"placeholder-style\": \"font-size:28upx;color:#cccccc;\",\n              placeholder: \"请填写\"\n            }\n          })\n        ]),\n        _c(\"view\", { staticClass: \"after_icon\" })\n      ]),\n      _c(\"view\", { staticClass: \"form_item\" }, [\n        _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"性别\")]),\n        _c(\"view\", { staticClass: \"ipt\" }, [\n          _c(\"view\", { staticClass: \"empty\" }, [_vm._v(\"请选择\")])\n        ]),\n        _c(\"view\", { staticClass: \"after_icon\" }, [\n          _c(\"text\", { staticClass: \"iconfont icon-right\" })\n        ])\n      ]),\n      _c(\"view\", { staticClass: \"form_item\" }, [\n        _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"地区\")]),\n        _c(\"view\", { staticClass: \"ipt\" }, [\n          _c(\"view\", { staticClass: \"empty\" }, [_vm._v(\"请选择\")])\n        ]),\n        _c(\"view\", { staticClass: \"after_icon\" }, [\n          _c(\"text\", { staticClass: \"iconfont icon-right\" })\n        ])\n      ]),\n      _c(\"view\", { staticClass: \"form_item\" }, [\n        _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"出生日期\")]),\n        _c(\"view\", { staticClass: \"ipt\" }, [\n          _c(\"view\", { staticClass: \"empty\" }, [_vm._v(\"请选择\")])\n        ]),\n        _c(\"view\", { staticClass: \"after_icon\" }, [\n          _c(\"text\", { staticClass: \"iconfont icon-right\" })\n        ])\n      ]),\n      _c(\"view\", { staticClass: \"form_item\" }, [\n        _c(\"view\", { staticClass: \"label\" }, [_vm._v(\"教育背景\")]),\n        _c(\"view\", { staticClass: \"ipt\" }, [\n          _c(\"view\", { staticClass: \"empty\" }, [_vm._v(\"请选择\")])\n        ]),\n        _c(\"view\", { staticClass: \"after_icon\" }, [\n          _c(\"text\", { staticClass: \"iconfont icon-right\" })\n        ])\n      ])\n    ])\n  }\n]\nrender._withStripped = true\n\n\n\n//# sourceURL=D:/xzapp/pages/my_information/my_information.vue?vue&type=template&id=6525d449&scoped=true&");
+
+/***/ }),
+
+/***/ "D:\\xzapp\\main.js?{\"page\":\"pages%2Fmy_information%2Fmy_information\"}":
+/*!***************************************************************************!*\
+  !*** D:/xzapp/main.js?{"page":"pages%2Fmy_information%2Fmy_information"} ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__(/*! uni-pages */ \"D:\\\\xzapp\\\\pages.json\");\nvar _mpvuePageFactory = _interopRequireDefault(__webpack_require__(/*! mpvue-page-factory */ \"./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mpvue-page-factory/index.js\"));\nvar _my_information = _interopRequireDefault(__webpack_require__(/*! ./pages/my_information/my_information.vue */ \"D:\\\\xzapp\\\\pages\\\\my_information\\\\my_information.vue\"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}\nPage((0, _mpvuePageFactory.default)(_my_information.default));\n\n//# sourceURL=D:/xzapp/main.js?%7B%22page%22:%22pages%252Fmy_information%252Fmy_information%22%7D");
+
+/***/ }),
+
+/***/ "D:\\xzapp\\pages\\my_information\\my_information.vue":
+/*!********************************************************!*\
+  !*** D:/xzapp/pages/my_information/my_information.vue ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _my_information_vue_vue_type_template_id_6525d449_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./my_information.vue?vue&type=template&id=6525d449&scoped=true& */ \"D:\\\\xzapp\\\\pages\\\\my_information\\\\my_information.vue?vue&type=template&id=6525d449&scoped=true&\");\n/* harmony import */ var _my_information_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./my_information.vue?vue&type=script&lang=js& */ \"D:\\\\xzapp\\\\pages\\\\my_information\\\\my_information.vue?vue&type=script&lang=js&\");\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _my_information_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _my_information_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n/* harmony import */ var _my_information_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./my_information.vue?vue&type=style&index=0&lang=css& */ \"D:\\\\xzapp\\\\pages\\\\my_information\\\\my_information.vue?vue&type=style&index=0&lang=css&\");\n/* harmony import */ var _my_information_vue_vue_type_style_index_1_id_6525d449_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./my_information.vue?vue&type=style&index=1&id=6525d449&lang=scss&scoped=true& */ \"D:\\\\xzapp\\\\pages\\\\my_information\\\\my_information.vue?vue&type=style&index=1&id=6525d449&lang=scss&scoped=true&\");\n/* harmony import */ var _C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./node_modules/vue-loader/lib/runtime/componentNormalizer.js */ \"./node_modules/vue-loader/lib/runtime/componentNormalizer.js\");\n\n\n\n\n\n\n\n/* normalize component */\n\nvar component = Object(_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(\n  _my_information_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  _my_information_vue_vue_type_template_id_6525d449_scoped_true___WEBPACK_IMPORTED_MODULE_0__[\"render\"],\n  _my_information_vue_vue_type_template_id_6525d449_scoped_true___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"],\n  false,\n  null,\n  \"6525d449\",\n  null\n  \n)\n\n/* hot reload */\nif (false) { var api; }\ncomponent.options.__file = \"D:/xzapp/pages/my_information/my_information.vue\"\n/* harmony default export */ __webpack_exports__[\"default\"] = (component.exports);\n\n//# sourceURL=D:/xzapp/pages/my_information/my_information.vue");
+
+/***/ }),
+
+/***/ "D:\\xzapp\\pages\\my_information\\my_information.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************!*\
+  !*** D:/xzapp/pages/my_information/my_information.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_my_information_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--18-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!./my_information.vue?vue&type=script&lang=js& */ \"./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!D:\\\\xzapp\\\\pages\\\\my_information\\\\my_information.vue?vue&type=script&lang=js&\");\n/* harmony import */ var _C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_my_information_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_my_information_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_my_information_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_my_information_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n /* harmony default export */ __webpack_exports__[\"default\"] = (_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_my_information_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); \n\n//# sourceURL=uni-app:///pages/my_information/my_information.vue?vue&type=script&lang=js&?3d0e");
+
+/***/ }),
+
+/***/ "D:\\xzapp\\pages\\my_information\\my_information.vue?vue&type=style&index=0&lang=css&":
+/*!*****************************************************************************************!*\
+  !*** D:/xzapp/pages/my_information/my_information.vue?vue&type=style&index=0&lang=css& ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_my_information_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!./node_modules/css-loader??ref--6-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!./my_information.vue?vue&type=style&index=0&lang=css& */ \"./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!D:\\\\xzapp\\\\pages\\\\my_information\\\\my_information.vue?vue&type=style&index=0&lang=css&\");\n/* harmony import */ var _C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_my_information_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_my_information_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_my_information_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_my_information_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n /* harmony default export */ __webpack_exports__[\"default\"] = (_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_my_information_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); \n\n//# sourceURL=D:/xzapp/pages/my_information/my_information.vue?vue&type=style&index=0&lang=css&");
+
+/***/ }),
+
+/***/ "D:\\xzapp\\pages\\my_information\\my_information.vue?vue&type=style&index=1&id=6525d449&lang=scss&scoped=true&":
+/*!******************************************************************************************************************!*\
+  !*** D:/xzapp/pages/my_information/my_information.vue?vue&type=style&index=1&id=6525d449&lang=scss&scoped=true& ***!
+  \******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_my_information_vue_vue_type_style_index_1_id_6525d449_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-1!./node_modules/css-loader??ref--8-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/sass-loader/lib/loader.js??ref--8-oneOf-1-4!./node_modules/vue-loader/lib??vue-loader-options!./my_information.vue?vue&type=style&index=1&id=6525d449&lang=scss&scoped=true& */ \"./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!D:\\\\xzapp\\\\pages\\\\my_information\\\\my_information.vue?vue&type=style&index=1&id=6525d449&lang=scss&scoped=true&\");\n/* harmony import */ var _C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_my_information_vue_vue_type_style_index_1_id_6525d449_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_my_information_vue_vue_type_style_index_1_id_6525d449_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);\n/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_my_information_vue_vue_type_style_index_1_id_6525d449_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_my_information_vue_vue_type_style_index_1_id_6525d449_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));\n /* harmony default export */ __webpack_exports__[\"default\"] = (_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_my_information_vue_vue_type_style_index_1_id_6525d449_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); \n\n//# sourceURL=D:/xzapp/pages/my_information/my_information.vue?vue&type=style&index=1&id=6525d449&lang=scss&scoped=true&");
+
+/***/ }),
+
+/***/ "D:\\xzapp\\pages\\my_information\\my_information.vue?vue&type=template&id=6525d449&scoped=true&":
+/*!***************************************************************************************************!*\
+  !*** D:/xzapp/pages/my_information/my_information.vue?vue&type=template&id=6525d449&scoped=true& ***!
+  \***************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_my_information_vue_vue_type_template_id_6525d449_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!./my_information.vue?vue&type=template&id=6525d449&scoped=true& */ \"./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!D:\\\\xzapp\\\\pages\\\\my_information\\\\my_information.vue?vue&type=template&id=6525d449&scoped=true&\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return _C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_my_information_vue_vue_type_template_id_6525d449_scoped_true___WEBPACK_IMPORTED_MODULE_0__[\"render\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return _C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_C_Users_xiaoliu_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_my_information_vue_vue_type_template_id_6525d449_scoped_true___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"]; });\n\n\n\n//# sourceURL=D:/xzapp/pages/my_information/my_information.vue?vue&type=template&id=6525d449&scoped=true&");
+
+/***/ })
+
+},[["D:\\xzapp\\main.js?{\"page\":\"pages%2Fmy_information%2Fmy_information\"}","common/runtime","common/vendor"]]]);
+});
+require('pages/my_information/my_information.js');
 

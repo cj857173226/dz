@@ -13,7 +13,7 @@
 			<view class="form_item">
 				<view class="label">身份证</view>
 				<view class="ipt">
-					<input type="text" placeholder-style="font-size:14px;color:#ccc;" placeholder="确保信息真实" v-model.trim="checkForm.idcardno">
+					<input type="idcard" placeholder-style="font-size:14px;color:#ccc;" placeholder="确保信息真实" v-model.trim="checkForm.idcardno">
 				</view>
 			</view>
 		</view>

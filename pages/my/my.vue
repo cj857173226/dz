@@ -2,7 +2,7 @@
 	<scroll-view id="my-index" scroll-y=true>
 		<view id="my-index-head" class="clearfix">
 			<view>
-				<img :src="userInfo.headimgurl?userInfo.headimgurl:'/static/images/landlordguide/pic1_1.png'" id="user-avatar" alt="">
+				<img :src="userInfo.headimgurl?userInfo.headimgurl:'/static/images/default_avatar.jpg'" id="user-avatar" alt="">
 			</view>
 			<view class="avatar-right-wrap">
 				<p id="user-cname" v-if="userInfo.username" style="margin-bottom: 4px;">{{userInfo.username}}</p>
@@ -28,7 +28,7 @@
 						</view>
 					</view>
 					<view class="basic-info-item ">
-						<view class="_box" @click.stop="pageTo('myInformation')">
+						<view class="_box" @click.stop="pageTo('/pages/my_information/my_information')">
 							<text class="iconfont icon-shenfenzheng"></text> 
 							<p class="name">我的资料</p>
 						</view>
