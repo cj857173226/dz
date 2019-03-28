@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/particulars/particulars",
     "pages/landlord_introduced/landlord_introduced",
+    "pages/selecteds/selecteds",
     "pages/collection/collection",
     "pages/orderList/orderList",
     "pages/messages/messages",

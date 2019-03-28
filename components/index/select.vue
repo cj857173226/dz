@@ -25,7 +25,7 @@
 			</view>
 		</view>
 		<!-- <view class="btn-box"> -->
-			<button class="btn" type="primary" >开始搜索</button>
+			<button @tap="clickSelect" class="btn" type="primary" >开始搜索</button>
 		<!-- </view> -->
 		
 	</view>
@@ -52,6 +52,13 @@
 				//2.dayCount 共多少晚
 				console.dir(choiceDate)
 				console.log("入住从 "+ choiceDate[0].re + "  到 " + choiceDate[1].re + "  共 " + dayCount +" 晚");
+			},
+			// 点击按钮跳转到搜索页面
+			clickSelect:function () {
+				console.log('1111')
+				uni.navigateTo({
+					url:'/pages/selecteds/selecteds'
+				})
 			}
 		}
 	}

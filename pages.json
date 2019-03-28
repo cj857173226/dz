@@ -32,6 +32,12 @@
 			}
 		},
 		{
+			"path" : "pages/selecteds/selecteds",
+			"style" : {
+			"navigationBarTitleText":"筛选"
+			}
+		},
+		{
 			// 收藏
 			"path": "pages/collection/collection",
 			"style": {
