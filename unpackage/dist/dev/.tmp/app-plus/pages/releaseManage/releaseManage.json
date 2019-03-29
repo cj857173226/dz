@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "发布管理",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "发布",
+        "fontSize": "14px",
+        "float": "right"
+      }
+    ]
+  }
+}

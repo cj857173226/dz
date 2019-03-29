@@ -99,4 +99,7 @@
 	ul li {
 		list-style: none;
 	}
+	uni-picker .uni-picker-action.uni-picker-action-confirm{
+		color: #f05b72;
+	}
 </style>

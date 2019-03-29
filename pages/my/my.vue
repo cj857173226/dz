@@ -6,9 +6,9 @@
 			</view>
 			<view class="avatar-right-wrap">
 				<p id="user-cname" v-if="userInfo.username" style="margin-bottom: 4px;">{{userInfo.username}}</p>
-				<p v-if="!userInfo.username" @click.stop="pageTo('/pages/login/login')" style="font: 14px;color: #f05b72;margin-bottom: 4px;">请登录</p>
+				<p v-if="!userInfo.username" @click.stop="pageTo('/pages/login/login')" style="font-size: 32upx;color: #f05b72;margin-bottom: 4px;">请登录</p>
 				<!--完善信息-->
-				<p class="perfect-info">信息未完善,请完善信息 <text class="iconfont icon-weibiaoti34"></text></p>
+				<!-- <p class="perfect-info">信息未完善,请完善信息 <text class="iconfont icon-weibiaoti34"></text></p> -->
 			</view>
 			<!--身份转换-->
 			<view class="user-type" @click.stop="changeUserPower()">
@@ -33,7 +33,8 @@
 							<p class="name">我的资料</p>
 						</view>
 					</view>
-					<view class="basic-info-item" @click.stop="pageTo('releaseManage')" v-if="curPowerType==='fd' && userPower==='5'">
+					<!-- v-if="curPowerType==='fd' && userPower==='5'" -->
+					<view class="basic-info-item" @click.stop="pageTo('/pages/releaseManage/releaseManage')" >
 						<view class="_box">
 							<text class="iconfont icon-fabu"></text> 
 							<p class="name">发布管理</p>
@@ -66,7 +67,8 @@
 			<view class="more-fun-wrap">
 				<p class="more-fun-title">更多功能</p>
 				<view class="more-fun-item-wrap">
-					<view class="more-fun-item" @click.stop="pageTo('statistics')" v-if="curPowerType==='fd' && userPower==='5'">
+					<!-- v-if="curPowerType==='fd' && userPower==='5'" -->
+					<view class="more-fun-item" @click.stop="pageTo('statistics')">
 						<view class="_box">
 							<text class="iconfont icon-tongji1"></text> 
 							<p class="name">统计</p>
@@ -258,7 +260,7 @@
 	}
 
 	#my-index-head .avatar-right-wrap #user-cname {
-		font-size: 16px;
+		font-size: 40upx;
 		color: #333;
 		font-weight: 800;
 		overflow: hidden;
@@ -291,11 +293,12 @@
 
 	#my-index-main .basic-info .basic-title,
 	#my-index-main .more-fun-wrap .more-fun-title {
-		color: #a0a0a0;
+		color: #F05B72!important;
 		box-sizing: border-box;
 		width: 100%;
-		padding: 0 30upx;
-		font-size: 12px;
+		padding: 0 40upx;
+		font-size: 14px;
+		margin-bottom: 20upx;
 	}
 
 	#my-index-main .basic-info .basic-info-item-wrap,
@@ -313,6 +316,7 @@
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
+		margin-bottom: 20upx;
 		height: 120upx;
 		text-align: center;
 		width: calc(100% / 3);
@@ -354,12 +358,6 @@
 		padding: 10px;
 	}
 
-	#my-index-main .more-fun-wrap .more-fun-title {
-		color: #a0a0a0;
-		box-sizing: border-box;
-		width: 100%;
-		padding: 0 15px;
-	}
 
 	#my-index-main .more-fun-wrap .more-fun-item-wrap {
 		-webkit-box-sizing: border-box;

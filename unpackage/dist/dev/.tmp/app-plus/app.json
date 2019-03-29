@@ -24,7 +24,9 @@
     "pages/invoice/invoice",
     "pages/invoice/invoice_head",
     "pages/invoice/edit_invoice_head",
-    "pages/my_information/my_information"
+    "pages/my_information/my_information",
+    "pages/releaseManage/releaseManage",
+    "pages/releaseManage/house_detail"
   ],
   "subPackages": [],
   "window": {
