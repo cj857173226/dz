@@ -6,9 +6,9 @@
 					<i class="iconfont icon-city">&#xec70;</i>
 					<text class="city">成都</text>
 				</view>
-				<view class="list-box">
+				<view class="list-box" @tap="tapOrientation">
 					<i class="iconfont icon-place">&#xe793;</i>
-					<text class="my-place">我的位置</text>
+					<text class="my-place">1:{{log}},2:{{lat}}</text>
 				</view>
 			</view>
 			<view class="calendar">
@@ -33,14 +33,31 @@
 
 <script>
 	import calendar from './date-picker/date-picker.vue' //引入日期插件
+	import amap from '../../common/amap-wx.js'  //高德微信sdk
 	export default {
 		components: {
 			calendar
 		},
 		data () {
 			return {
-				
+				lat:'',
+				log:'',
+				amapPlugin:null,
+				key:'762ed8c71859b8e2ab587fcb3211fa14', //高德开放平台上申请的key
+				addressName: '',  
+        weather: {  
+          hasData: false,  
+          data: []  
+        }
 			}
+		},
+		onLoad(){
+			// 初始化高德小程序sdk的实例对象
+			this.amapPlugin = new amap.AMapWX({
+				key:this.key
+			})
+			// this.getRegeo()
+			console.log("1:",this.amapPlugin)
 		},
 		methods: {
 			tapSelect:function(){
@@ -59,7 +76,20 @@
 				uni.navigateTo({
 					url:'/pages/selecteds/selecteds'
 				})
-			}
+			},
+			
+			// getRegeo() {  
+      //       uni.showLoading({  
+      //           title: '获取信息中'  
+      //       });  
+      //       this.amapPlugin.getRegeo({  
+      //           success: (data) => {  
+      //               console.log(data)  
+      //               this.addressName = data[0].name;  
+      //               uni.hideLoading();  
+      //           }  
+      //       });  
+      //   }  
 		}
 	}
 	

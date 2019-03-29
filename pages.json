@@ -69,6 +69,27 @@
 			}
 		},
 		{
+			// 系统消息
+			"path": "pages/messages/system_messages",
+			"style": {
+				"navigationBarTitleText": "系统消息"
+			}
+		},
+		{
+			// 聊天页面
+			"path": "pages/messages/username_messages",
+			"style": {
+				"navigationBarTitleText": "聊天页面"
+			}
+		},
+		{
+			// 优惠活动
+			"path": "pages/messages/favorable",
+			"style": {
+				"navigationBarTitleText": "优惠活动"
+			}
+		},
+		{
 			// 我的
 			"path": "pages/my/my",
 			"style": {
