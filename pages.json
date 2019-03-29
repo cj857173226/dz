@@ -215,7 +215,33 @@
 				}
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/releaseManage/releaseManage",
+            "style" : {
+				"navigationBarTitleText": "发布管理",
+				"app-plus": {
+					// "bounce": "none",
+					"titleNView": {
+						"buttons": [{
+							"text": "发布",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
+				}
+			}
+        },
+		{
+		    "path" : "pages/releaseManage/house_detail",
+		    "style" : {
+				"navigationBarTitleText": "房间详情",
+				"app-plus": {
+					// "bounce": "none",
+				}
+			}
+		}
+		
+    ],
 	// 全局样式
 	"globalStyle": {
 		"navigationBarBackgroundColor": "#F05B72"

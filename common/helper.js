@@ -48,10 +48,26 @@ const nameRge = function (name){
 	}
 }
 
+// 对象深拷贝
+const deepCopy = function(obj) {
+    let result = Array.isArray(obj) ? [] : {};
+    for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            if (typeof obj[key] === 'object') {
+                result[key] = deepCopy(obj[key]);   //递归复制
+            } else {
+                result[key] = obj[key];
+            }
+        }
+    }
+    return result;
+}
+
 export default {  
   isLogin,
   phoneReg,
   emailReg,
   idCardReg,
-  nameRge
+  nameRge,
+  deepCopy
 }  
