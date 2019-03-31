@@ -5,6 +5,7 @@
     "pages/landlord_introduced/landlord_introduced",
     "pages/selecteds/selecteds",
     "pages/collection/collection",
+    "pages/collection/new_group",
     "pages/orderList/orderList",
     "pages/messages/messages",
     "pages/messages/system_messages",
