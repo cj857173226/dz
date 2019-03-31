@@ -56,6 +56,13 @@
 		},
 		{
 			// 订单
+			"path": "pages/collection/new_group",
+			"style": {
+				"navigationBarTitleText": "新建分组"
+			}
+		},
+		{
+			// 订单
 			"path": "pages/orderList/orderList",
 			"style": {
 				"navigationBarTitleText": "订单"
