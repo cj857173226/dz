@@ -152,13 +152,13 @@ page {
 .reg_form .input .get_code .get_code_btn:active {
           opacity: 0.8;
 }
-.reg_form .input ._input {
+.reg_form .input input {
       outline: none;
       height: 30px;
       width: 100%;
       font-size: 14px;
 }
-.reg_form .input ._input:focus {
+.reg_form .input input:focus {
         outline: none;
 }
 .submit {

@@ -74,7 +74,7 @@ page {
 
 
 /*联系客服*/
-.contact_service_page.data-v-35d970e8 {
+.contact_service_page.data-v-c204d690 {
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 	display: -webkit-box;
@@ -88,7 +88,7 @@ page {
 	    -ms-flex-direction: column;
 	        flex-direction: column;
 }
-.contact-type-list .contact-type.data-v-35d970e8 {
+.contact-type-list .contact-type.data-v-c204d690 {
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 	width: 100%;
@@ -114,10 +114,10 @@ page {
 	border-radius: 6px;
 	margin-bottom: 30rpx;
 }
-.contact-type-list .contact-type.data-v-35d970e8:last-child {
+.contact-type-list .contact-type.data-v-c204d690:last-child {
 	margin-bottom: 0;
 }
-.contact-type-list .contact-type .content-icon.data-v-35d970e8 {
+.contact-type-list .contact-type .content-icon.data-v-c204d690 {
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 	display: -webkit-box;
@@ -135,7 +135,7 @@ page {
 	height: 80px;
 	width: 240rpx;
 }
-.contact-type-list .contact-type .right-icon.data-v-35d970e8 {
+.contact-type-list .contact-type .right-icon.data-v-c204d690 {
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 	display: -webkit-box;
@@ -155,21 +155,21 @@ page {
 	width: 120rpx;
 	text-align: center;
 }
-.contact-type-list .contact-type .content-icon .iconfont.data-v-35d970e8,
-.contact-type-list .contact-type .right-icon .iconfont.data-v-35d970e8 {
+.contact-type-list .contact-type .content-icon .iconfont.data-v-c204d690,
+.contact-type-list .contact-type .right-icon .iconfont.data-v-c204d690 {
 	font-size: 30px;
 	color: #b7b7b7;
 }
-.contact-type-list .contact-type .content-wrap .content-title.data-v-35d970e8 {
+.contact-type-list .contact-type .content-wrap .content-title.data-v-c204d690 {
 	font-size: 16px;
 	color: #f05b72;
 }
-.contact-type-list .contact-type .content-wrap .note.data-v-35d970e8 {
+.contact-type-list .contact-type .content-wrap .note.data-v-c204d690 {
 	font-size: 12px;
 	color: #cccccc;
 	line-height: 24px;
 }
-.contact-type-list .contact-type .content-wrap.data-v-35d970e8 {
+.contact-type-list .contact-type .content-wrap.data-v-c204d690 {
 	width: 100%;
 }
 

@@ -31,7 +31,7 @@
 					</view>
 					<button class="house-handle-btn lower-shelf-btn" v-if="item.is_complete ==1 && item.status== 1">下架</button>
 					<button class="house-handle-btn upper-shelf-btn" v-if="item.is_complete ==0 && item.status== 2">上架</button>
-					<button class="house-handle-btn house-update-btn" v-if="item.is_complete ==0 && item.status== -1" @click.stop="toPage('set-house-detail')">修改</button>
+					<button class="house-handle-btn house-update-btn" v-if="item.is_complete ==0 && item.status== -1" @tap.stop="houseDetail(item)">修改</button>
 				</view>
 			</view>
 		</view>
@@ -91,6 +91,23 @@
 					is_complete: 0, //是否完成信息
 				}]
 			};
+		},
+		onLoad() {
+		
+		},
+		onShow() {
+		
+		},
+		computed: {
+		
+		},
+		methods: {
+			houseDetail(par){
+				const params = JSON.stringify(par);
+				uni.navigateTo({
+					url: '/pages/releaseManage/house_detail?param=' + params
+				})
+			}
 		}
 	}
 </script>

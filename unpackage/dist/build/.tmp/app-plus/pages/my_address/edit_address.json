@@ -1,3 +1,5 @@
 {
-  "navigationBarTitleText": "编辑地址"
+  "usingComponents": {},
+  "navigationBarTitleText": "编辑地址",
+  "bounce": "none"
 }

@@ -258,10 +258,73 @@
 				"navigationBarTitleText": "房间详情",
 				"app-plus": {
 					// "bounce": "none",
+					"titleNView": {
+						"buttons": [{
+							"text": "预览",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
 				}
 			}
 		}
-		
+        ,{
+            "path" : "pages/releaseManage/house_basic_info/house_basic_info",
+            "style" : {
+				"navigationBarTitleText": "基本信息",
+				"app-plus": {
+					// "bounce": "none",
+					
+				}
+			}
+        },
+		{
+		    "path" : "pages/releaseManage/house_basic_info/house_type",
+		    "style" : {
+				"navigationBarTitleText": "房屋户型",
+				"app-plus": {
+					// "bounce": "none",
+					"titleNView": {
+						"buttons": [{
+							"text": "确定",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
+				}
+			}
+		},{
+            "path" : "pages/releaseManage/house_basic_info/house_area",
+            "style" : {
+				"navigationBarTitleText": "出租面积",
+				"app-plus": {
+					// "bounce": "none",
+					"titleNView": {
+						"buttons": [{
+							"text": "确定",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
+				}
+			}
+        },
+		{
+		    "path" : "pages/releaseManage/house_basic_info/people_number",
+		    "style" : {
+				"navigationBarTitleText": "适宜人数",
+				"app-plus": {
+					// "bounce": "none",
+					"titleNView": {
+						"buttons": [{
+							"text": "确定",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
+				}
+			}
+		}
     ],
 	// 全局样式
 	"globalStyle": {

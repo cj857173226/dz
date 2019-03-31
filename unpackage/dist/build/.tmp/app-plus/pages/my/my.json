@@ -1,4 +1,5 @@
 {
+  "usingComponents": {},
   "navigationBarTitleText": "我的",
   "titleNView": {
     "buttons": [
@@ -9,5 +10,6 @@
         "float": "right"
       }
     ]
-  }
+  },
+  "bounce": "none"
 }

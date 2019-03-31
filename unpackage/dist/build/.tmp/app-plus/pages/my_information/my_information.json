@@ -1,0 +1,13 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "我的资料",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "保存",
+        "fontSize": "14px",
+        "float": "right"
+      }
+    ]
+  }
+}

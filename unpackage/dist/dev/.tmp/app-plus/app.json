@@ -26,7 +26,11 @@
     "pages/invoice/edit_invoice_head",
     "pages/my_information/my_information",
     "pages/releaseManage/releaseManage",
-    "pages/releaseManage/house_detail"
+    "pages/releaseManage/house_detail",
+    "pages/releaseManage/house_basic_info/house_basic_info",
+    "pages/releaseManage/house_basic_info/house_type",
+    "pages/releaseManage/house_basic_info/house_area",
+    "pages/releaseManage/house_basic_info/people_number"
   ],
   "subPackages": [],
   "window": {

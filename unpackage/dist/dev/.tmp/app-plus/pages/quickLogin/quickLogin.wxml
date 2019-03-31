@@ -1,2 +1,2 @@
 <import src="./quickLogin.vue.wxml" />
-    <template is="08907b64" data="{{ ...$root['0'], $root }}"/>
+    <template is="ea15ef24" data="{{ ...$root['0'], $root }}"/>
