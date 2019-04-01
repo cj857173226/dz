@@ -172,7 +172,16 @@
 					"bounce": "none"
 				}
 			}
-		}, {
+		},
+		{
+		    "path" : "pages/statistics/statistics",
+		    "style" : {
+				"navigationBarTitleText": "结算统计",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},{
 			"path": "pages/check_in/check_in",
 			"style": {
 				"navigationBarTitleText": "常用入住人",
@@ -332,6 +341,16 @@
 				}
 			}
 		}
+       
+        ,{
+            "path" : "pages/landlord/landlord",
+            "style" : {
+				"navigationBarTitleText": "成为房东",
+				"app-plus": {
+					// "bounce": "none",
+				}
+			}
+        }
     ],
 	// 全局样式
 	"globalStyle": {

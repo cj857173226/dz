@@ -68,7 +68,7 @@
 				<p class="more-fun-title">更多功能</p>
 				<view class="more-fun-item-wrap">
 					<!-- v-if="curPowerType==='fd' && userPower==='5'" -->
-					<view class="more-fun-item" @click.stop="pageTo('statistics')">
+					<view class="more-fun-item" @click.stop="pageTo('/pages/statistics/statistics')">
 						<view class="_box">
 							<text class="iconfont icon-tongji1"></text> 
 							<p class="name">统计</p>
@@ -106,7 +106,7 @@
 					</view>
 				</view>
 			</view>
-			<button id="change-fd" class="del-btn-block" v-if="userPower == '1'" @click.stop="pageTo('becomeLandlord')">成为房东</button>
+			<button id="change-fd" class="change-fd my-del-block" @tap="pageTo('/pages/landlord/landlord')">成为房东</button>
 		</view>
 	</scroll-view>
 </template>
@@ -378,17 +378,8 @@
 		margin-bottom: 10px;
 	}
 
-	#change-fd {
+	.change-fd{
 		margin-top: 15px;
-		box-sizing: border-box;
-		background: #FFFFFF;
-		border-radius: 4px;
-		text-align: center;
-		border: none;
-		height: 36px;
-		width: 100%;
-		font-size: 16px;
-		color: #333;
 	}
 
 	/*联系客服*/
