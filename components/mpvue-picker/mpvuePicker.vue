@@ -434,7 +434,7 @@
     .mpvue-picker__action {
         display: block;
         flex: 1;
-        color: #1aad19;
+        color: #f05b72;
     }
 
     .mpvue-picker__action:first-child {

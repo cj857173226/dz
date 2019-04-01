@@ -181,7 +181,7 @@ page {
                   flex-grow: 1;
 }
 .releaseManage_page .house_list .list_item .item_foot .foot_left .house_title.data-v-d5d3572e {
-            font-size: 40rpx;
+            font-size: 36rpx;
             color: #F05B72;
             margin-bottom: 10rpx;
             overflow: hidden;
@@ -191,7 +191,7 @@ page {
 }
 .releaseManage_page .house_list .list_item .item_foot .foot_left .rent-type.data-v-d5d3572e {
             color: #aaaaaa;
-            font: 28rpx;
+            font-size: 28rpx;
 }
 .releaseManage_page .house_list .list_item .item_foot .house-handle-btn.data-v-d5d3572e {
           -webkit-box-sizing: border-box;
@@ -201,10 +201,10 @@ page {
           background: #FFFFFF;
           border: 1px solid #F05B72;
           width: 140rpx;
-          height: 76rpx;
-          line-height: 76rpx;
+          height: 60rpx;
+          line-height: 60rpx;
           text-align: center;
-          font-size: 32rpx;
+          font-size: 28rpx;
           color: #F05B72;
 }
 

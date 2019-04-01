@@ -26,15 +26,15 @@
 			}
 		},
 		{
-			"path" : "pages/landlord_introduced/landlord_introduced",
-			"style" : {
-			"navigationBarTitleText":"房东介绍"
+			"path": "pages/landlord_introduced/landlord_introduced",
+			"style": {
+				"navigationBarTitleText": "房东介绍"
 			}
 		},
 		{
-			"path" : "pages/selecteds/selecteds",
-			"style" : {
-			"navigationBarTitleText":"筛选"
+			"path": "pages/selecteds/selecteds",
+			"style": {
+				"navigationBarTitleText": "筛选"
 			}
 		},
 		{
@@ -174,14 +174,14 @@
 			}
 		},
 		{
-		    "path" : "pages/statistics/statistics",
-		    "style" : {
+			"path": "pages/statistics/statistics",
+			"style": {
 				"navigationBarTitleText": "结算统计",
 				"app-plus": {
 					"bounce": "none"
 				}
 			}
-		},{
+		}, {
 			"path": "pages/check_in/check_in",
 			"style": {
 				"navigationBarTitleText": "常用入住人",
@@ -251,10 +251,9 @@
 					}
 				}
 			}
-		}
-	    ,{
-            "path" : "pages/releaseManage/releaseManage",
-            "style" : {
+		}, {
+			"path": "pages/releaseManage/releaseManage",
+			"style": {
 				"navigationBarTitleText": "发布管理",
 				"app-plus": {
 					// "bounce": "none",
@@ -267,10 +266,10 @@
 					}
 				}
 			}
-        },
+		},
 		{
-		    "path" : "pages/releaseManage/house_detail",
-		    "style" : {
+			"path": "pages/releaseManage/house_detail",
+			"style": {
 				"navigationBarTitleText": "房间详情",
 				"app-plus": {
 					// "bounce": "none",
@@ -283,20 +282,19 @@
 					}
 				}
 			}
-		}
-        ,{
-            "path" : "pages/releaseManage/house_basic_info/house_basic_info",
-            "style" : {
+		}, {
+			"path": "pages/releaseManage/house_basic_info/house_basic_info",
+			"style": {
 				"navigationBarTitleText": "基本信息",
 				"app-plus": {
 					// "bounce": "none",
-					
+
 				}
 			}
-        },
+		},
 		{
-		    "path" : "pages/releaseManage/house_basic_info/house_type",
-		    "style" : {
+			"path": "pages/releaseManage/house_basic_info/house_type",
+			"style": {
 				"navigationBarTitleText": "房屋户型",
 				"app-plus": {
 					// "bounce": "none",
@@ -309,9 +307,9 @@
 					}
 				}
 			}
-		},{
-            "path" : "pages/releaseManage/house_basic_info/house_area",
-            "style" : {
+		}, {
+			"path": "pages/releaseManage/house_basic_info/house_area",
+			"style": {
 				"navigationBarTitleText": "出租面积",
 				"app-plus": {
 					// "bounce": "none",
@@ -324,10 +322,10 @@
 					}
 				}
 			}
-        },
+		},
 		{
-		    "path" : "pages/releaseManage/house_basic_info/people_number",
-		    "style" : {
+			"path": "pages/releaseManage/house_basic_info/people_number",
+			"style": {
 				"navigationBarTitleText": "适宜人数",
 				"app-plus": {
 					// "bounce": "none",
@@ -340,50 +338,102 @@
 					}
 				}
 			}
-		}  
-    ,{
-      "path" : "pages/landlord/landlord",
-      "style" : {
-			"navigationBarTitleText": "成为房东",
-			"app-plus": {
+		}, {
+			"path": "pages/landlord/landlord",
+			"style": {
+				"navigationBarTitleText": "成为房东",
+				"app-plus": {
 					// "bounce": "none",
-			}
-			}
-		}
-		,{
-      "path" : "pages/landlord/landlord_benefit",
-      "style" : {
-			"navigationBarTitleText": "我想成为房东"
-			}
-		}
-		,{
-      "path" : "pages/landlord/iphone",
-      "style" : {
-			"navigationBarTitleText": "修改手机号码"
-			}
-		}
-		,{
-      "path" : "pages/landlord/information",
-      "style" : {
-			"navigationBarTitleText": "完善真实身份",
-			"app-plus": {
-				"titleNView": {
-					"buttons": [{
-						"text": "确定",
-						"fontSize": "14px",
-						"float": "right"
-					}]
 				}
 			}
+		}, {
+			"path": "pages/landlord/landlord_benefit",
+			"style": {
+				"navigationBarTitleText": "我想成为房东"
 			}
-		}
-		,{
+		}, {
+			"path": "pages/landlord/iphone",
+			"style": {
+				"navigationBarTitleText": "修改手机号码"
+			}
+		}, {
+			"path": "pages/landlord/information",
+			"style": {
+				"navigationBarTitleText": "完善真实身份",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "确定",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
+				}
+			}
+		}, 
+		{
       "path" : "pages/landlord/payment_term",
       "style" : {
 			"navigationBarTitleText": "选择收款方式"
 			}
+		},{
+			"path": "pages/releaseManage/bed_info/bed_info",
+			"style": {
+				"navigationBarTitleText": "床铺信息",
+				"app-plus": {
+					// "bounce": "none",
+				}
+			}
+		}, {
+			"path": "pages/releaseManage/bed_info/edit_bed",
+			"style": {
+				"navigationBarTitleText": "编辑床铺",
+				"app-plus": {
+					// "bounce": "none",
+				}
+			}
+		}, {
+			"path": "pages/releaseManage/bed_info/add_bed",
+			"style": {
+				"navigationBarTitleText": "添加床铺",
+				"app-plus": {
+					// "bounce": "none",
+				}
+			}
+		}, {
+			"path": "pages/releaseManage/bed_info/other_bed",
+			"style": {
+				"navigationBarTitleText": "其他类型和尺寸",
+				"app-plus": {
+					// "bounce": "none",
+				}
+			}
+		}, {
+			"path": "pages/releaseManage/house_describe/house_describe",
+			"style": {
+				"navigationBarTitleText": "房间描述",
+				"app-plus": {
+					// "bounce": "none",
+				}
+			}
+		}, {
+			"path": "pages/releaseManage/house_facilities/house_facilities",
+			"style": {
+				"navigationBarTitleText": "配套设施",
+				"app-plus": {
+					// "bounce": "none",
+				}
+			}
+		}, {
+			"path": "pages/releaseManage/price_rule/price_rule",
+			"style": {
+				"navigationBarTitleText": "价格规则",
+				"app-plus": {
+					// "bounce": "none",
+				}
+			}
 		}
-  ],
+	],
 	// 全局样式
 	"globalStyle": {
 		"navigationBarBackgroundColor": "#F05B72"

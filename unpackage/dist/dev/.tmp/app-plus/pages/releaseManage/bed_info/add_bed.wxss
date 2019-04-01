@@ -1,0 +1,223 @@
+
+page {
+	height: 100%;
+}
+
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.add_bed_page.data-v-126f4a4e {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-height: 100%;
+  width: 100%;
+  padding: 30rpx;
+}
+.add_bed_page .title.data-v-126f4a4e {
+    font-size: 32rpx;
+    color: #aaaaaa;
+    margin-bottom: 30rpx;
+}
+.add_bed_page .bed-default-option.data-v-126f4a4e {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+.add_bed_page .bed-default-option .option-item.data-v-126f4a4e {
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      height: 100rpx;
+      line-height: 100rpx;
+      width: 48%;
+      padding: 0 10rpx;
+      border: 1px dashed #cccccc;
+      border-radius: 8rpx;
+      margin-bottom: 30rpx;
+      color: #aaaaaa;
+      text-align: center;
+}
+.add_bed_page .bed-default-option .option-item .bed-type.data-v-126f4a4e {
+        display: inline;
+        font-size: 32rpx;
+        margin-right: 10rpx;
+}
+.add_bed_page .bed-default-option .option-item .bed-size.data-v-126f4a4e {
+        display: inline;
+        font-size: 28rpx;
+}
+.add_bed_page .add-other-bed.data-v-126f4a4e {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 100rpx;
+    line-height: 100rpx;
+    width: 100%;
+    padding: 0 10rpx;
+    border: 1px dashed #cccccc;
+    border-radius: 8rpx;
+    text-align: center;
+}
+.add_bed_page .add-other-bed .iconfont.data-v-126f4a4e {
+      font-size: 32rpx;
+      color: #aaaaaa;
+}
+.add_bed_page .bed-other-option.data-v-126f4a4e {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 100rpx;
+    line-height: 100rpx;
+    width: 100%;
+    padding: 0 20rpx;
+    border: 1px dashed #cccccc;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    color: #aaaaaa;
+}
+.add_bed_page .bed-other-option .left.data-v-126f4a4e {
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+}
+.add_bed_page .bed-other-option .left .bed-type.data-v-126f4a4e {
+        margin-right: 10rpx;
+        display: inline;
+}
+.add_bed_page .bed-other-option .left .bed-size.data-v-126f4a4e {
+        font-size: 28rpx;
+        display: inline;
+}
+.add_bed_page .option-item-active.data-v-126f4a4e {
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+}
+.add_bed_page .bed-number-wrap.data-v-126f4a4e {
+    margin-top: 40rpx;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    padding: 30rpx 0;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+}
+.add_bed_page .bed-number-wrap .main-box.data-v-126f4a4e {
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+}
+.add_bed_page .bed-number-wrap .main-box .number-control.data-v-126f4a4e {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+}
+.add_bed_page .bed-number-wrap .main-box .number-control .reduce-btn.data-v-126f4a4e,
+        .add_bed_page .bed-number-wrap .main-box .number-control .add-btn.data-v-126f4a4e {
+          -webkit-box-sizing: border-box;
+                  box-sizing: border-box;
+          width: 40rpx;
+          height: 40rpx;
+          line-height: 40rpx;
+          text-align: center;
+          border: 1px solid #000000;
+}
+.add_bed_page .bed-number-wrap .main-box .number-control .reduce-btn .iconfont.data-v-126f4a4e,
+          .add_bed_page .bed-number-wrap .main-box .number-control .add-btn .iconfont.data-v-126f4a4e {
+            font-size: 32rpx;
+}
+.add_bed_page .bed-number-wrap .main-box .number-control .dis-num.data-v-126f4a4e {
+          pointer-events: none;
+          color: #cccccc !important;
+          border: 1px solid #EAEAEA !important;
+}
+.add_bed_page .bed-number-wrap .main-box .number-control .bed-num.data-v-126f4a4e {
+          -webkit-box-sizing: border-box;
+                  box-sizing: border-box;
+          padding: 0 10rpx;
+          width: 100rpx;
+          text-align: right;
+}
+.add_bed_page .bed-number-wrap .main-box .number-control .bed-num text.data-v-126f4a4e {
+            width: 40rpx;
+            display: inline-block;
+}
+.add_bed_page .bed-number-wrap .tips.data-v-126f4a4e {
+      margin-top: 20rpx;
+      font-size: 28rpx;
+      color: #aaaaaa;
+}
+

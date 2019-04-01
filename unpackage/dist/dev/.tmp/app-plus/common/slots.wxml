@@ -1,2 +1,2 @@
-<import src="/components/mpvue-echarts/src/echarts.vue.wxml" />
+<import src="/components/mpvue-picker/mpvuePicker.vue.wxml" />
 
