@@ -227,7 +227,7 @@
 					.foot_left{
 						flex-grow: 1;
 						.house_title{
-							font-size:40upx;
+							font-size:36upx;
 							color: $theme-color;
 							margin-bottom: 10upx;
 							overflow: hidden;
@@ -236,7 +236,7 @@
 						}
 						.rent-type{
 							color: #aaaaaa;
-							font: 28upx;
+							font-size: 28upx;
 						}
 					}
 					.house-handle-btn{
@@ -246,10 +246,10 @@
 						background: #FFFFFF;
 						border: 1px solid $theme-color;
 						width: 140upx;
-						height: 76upx;
-						line-height: 76upx;
+						height: 60upx;
+						line-height: 60upx;
 						text-align: center;
-						font-size: 32upx;
+						font-size: 28upx;
 						color: $theme-color;
 					}
 				}

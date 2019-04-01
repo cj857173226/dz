@@ -5,7 +5,7 @@
 		</view>
 		<view class="house_detail_form">
 			<view class="form_item" @tap="pageTo('house_basic_info/house_basic_info')">
-				<view class="label" >基本信息</view>
+				<view class="label">基本信息</view>
 				<view class="ipt">
 					<view class="empty">未完成</view>
 					<view class="data_box"></view>
@@ -14,8 +14,8 @@
 					<text class="iconfont icon-right"></text>
 				</view>
 			</view>
-			<view class="form_item">
-				<view class="label">床鋪信息</view>
+			<view class="form_item" @tap="pageTo('bed_info/bed_info')">
+				<view class="label">床铺信息</view>
 				<view class="ipt">
 					<view class="empty">未完成</view>
 					<view class="data_box"></view>
@@ -24,7 +24,7 @@
 					<text class="iconfont icon-right"></text>
 				</view>
 			</view>
-			<view class="form_item">
+			<view class="form_item" @tap="pageTo('house_describe/house_describe')">
 				<view class="label">房间描述</view>
 				<view class="ipt">
 					<view class="empty">未完成</view>
@@ -34,7 +34,7 @@
 					<text class="iconfont icon-right"></text>
 				</view>
 			</view>
-			<view class="form_item">
+			<view class="form_item" @tap="pageTo('house_facilities/house_facilities')">
 				<view class="label">配套设施</view>
 				<view class="ipt">
 					<view class="empty">未完成</view>
@@ -44,7 +44,7 @@
 					<text class="iconfont icon-right"></text>
 				</view>
 			</view>
-			<view class="form_item">
+			<view class="form_item" @tap="pageTo('price_rule/price_rule')">
 				<view class="label">价格规则</view>
 				<view class="ipt">
 					<view class="empty">未完成</view>
@@ -86,7 +86,7 @@
 			</view>
 			<view class="form_item">
 				<view class="content">
-					我已经阅读并同意 
+					我已经阅读并同意
 					<text>《房东规则》</text>
 					<text>《房源上线标准》</text>
 				</view>
@@ -106,7 +106,7 @@
 	export default {
 		data() {
 			return {
-
+				
 			}
 		},
 		onLoad() {
@@ -120,18 +120,19 @@
 		},
 		methods: {
 			// 页面跳转
-			pageTo(page,par){
+			pageTo(page, par) {
 				let url = '';
-				if(par){
+				if (par) {
 					const params = JSON.stringify(par);
-					url= '/pages/releaseManage/' + page +'?param' +params;
+					url = '/pages/releaseManage/' + page + '?param' + params;
 				} else {
 					url = '/pages/releaseManage/' + page;
 				}
 				uni.navigateTo({
 					url: url
 				})
-			},
+			}
+			
 		}
 	}
 </script>
@@ -147,18 +148,16 @@
 	.house_detail_page {
 		box-sizing: border-box;
 		padding: 20upx 30upx;
-		height: 100%;
-
+		min-height: 100%;
 		.house_status {
 			box-sizing: border-box;
 			width: 100%;
-			height: 80upx;
-			;
-			line-height: 80upx;
+			height: 100upx;
+			line-height: 100upx;
 			border-radius: 12upx;
 			background: #ffeeee;
 			color: #f05b72;
-			font-size: 32upx;
+			font-size: 36upx;
 			text-align: center;
 		}
 
@@ -185,7 +184,8 @@
 					padding: 20upx 30upx 20upx 0;
 					font-size: 28upx;
 					color: #aaaaaa;
-					>text{
+
+					>text {
 						color: #333333;
 					}
 				}
@@ -228,7 +228,8 @@
 				}
 			}
 		}
-		.bottom_wrap{
+
+		.bottom_wrap {
 			box-sizing: border-box;
 			width: 100%;
 			height: 80upx;
@@ -236,12 +237,14 @@
 			flex-direction: row-reverse;
 			justify-content: space-between;
 			align-items: center;
-			.del_house{
+
+			.del_house {
 				color: #aaaaaa;
 				font-size: 28upx;
 			}
 		}
-		.release_btn{
+
+		.release_btn {
 			margin-top: 20upx;
 		}
 	}
