@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 <template name="31dd1019"><view class="_view data-v-1071f014 house_area_page"><view class="_view data-v-1071f014 tips_wrap"><view class="_view data-v-1071f014 one_line">请填写<text class="_text data-v-1071f014 b_text">房客独享房间的使用面积</text></view><view class="_view data-v-1071f014 one_line">而不是整套房屋的面积</view></view><view class="_view data-v-1071f014 input_wrap"><input type="number" placeholder="请填写" placeholder-style="font-size:32upx; color:#ccc;" focus maxlength="4" value="{{area}}" bindinput="handleProxy" data-eventid="{{'31dd1019-0'}}" data-comkey="{{$k}}" class="_input data-v-1071f014" /><view class="_view data-v-1071f014 unit">㎡</view></view></view></template>
+=======
+<template name="762e052c"><view class="_view data-v-b451e18c"></view></template>
+>>>>>>> 0e97e887512239a1b72b3a1c80128aa3dcca3d0b
