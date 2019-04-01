@@ -1,0 +1,69 @@
+
+.ec-canvas.data-v-18b453c8 {
+  width: 100%;
+  height: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+
+page,
+	view {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+        font-size: 28rpx;
+}
+page {
+		min-height: 100%;
+}
+.page-section-title {
+		padding: 0 30rpx;
+}
+.title {
+		margin-left: 30rpx;
+        line-height: 1.5;
+		color: #8f8f94;
+}
+.container {
+		padding-bottom: 30rpx;
+		-webkit-box-sizing: border-box;
+		        box-sizing: border-box;
+}
+.container,
+	.canvasView {
+		-webkit-box-flex: 1;
+		-webkit-flex: 1;
+		    -ms-flex: 1;
+		        flex: 1;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+}
+.navigate {
+		color: #007AFF;
+}
+.canvas-bar {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: row;
+		    -ms-flex-direction: row;
+		        flex-direction: row;
+		-webkit-box-pack: justify;
+		-webkit-justify-content: space-between;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+}
+.update-btn {
+		margin-right: 30rpx;
+}
+

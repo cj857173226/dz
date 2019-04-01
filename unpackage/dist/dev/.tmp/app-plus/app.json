@@ -33,7 +33,11 @@
     "pages/releaseManage/house_basic_info/house_type",
     "pages/releaseManage/house_basic_info/house_area",
     "pages/releaseManage/house_basic_info/people_number",
-    "pages/landlord/landlord"
+    "pages/landlord/landlord",
+    "pages/landlord/landlord_benefit",
+    "pages/landlord/iphone",
+    "pages/landlord/information",
+    "pages/landlord/payment_term"
   ],
   "subPackages": [],
   "window": {

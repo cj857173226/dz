@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "完善真实身份",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "确定",
+        "fontSize": "14px",
+        "float": "right"
+      }
+    ]
+  }
+}

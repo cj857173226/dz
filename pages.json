@@ -340,18 +340,50 @@
 					}
 				}
 			}
-		}
-       
-        ,{
-            "path" : "pages/landlord/landlord",
-            "style" : {
-				"navigationBarTitleText": "成为房东",
-				"app-plus": {
+		}  
+    ,{
+      "path" : "pages/landlord/landlord",
+      "style" : {
+			"navigationBarTitleText": "成为房东",
+			"app-plus": {
 					// "bounce": "none",
+			}
+			}
+		}
+		,{
+      "path" : "pages/landlord/landlord_benefit",
+      "style" : {
+			"navigationBarTitleText": "我想成为房东"
+			}
+		}
+		,{
+      "path" : "pages/landlord/iphone",
+      "style" : {
+			"navigationBarTitleText": "修改手机号码"
+			}
+		}
+		,{
+      "path" : "pages/landlord/information",
+      "style" : {
+			"navigationBarTitleText": "完善真实身份",
+			"app-plus": {
+				"titleNView": {
+					"buttons": [{
+						"text": "确定",
+						"fontSize": "14px",
+						"float": "right"
+					}]
 				}
 			}
-        }
-    ],
+			}
+		}
+		,{
+      "path" : "pages/landlord/payment_term",
+      "style" : {
+			"navigationBarTitleText": "选择收款方式"
+			}
+		}
+  ],
 	// 全局样式
 	"globalStyle": {
 		"navigationBarBackgroundColor": "#F05B72"
