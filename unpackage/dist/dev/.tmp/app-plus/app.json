@@ -43,6 +43,7 @@
     "pages/releaseManage/bed_info/add_bed",
     "pages/releaseManage/bed_info/other_bed",
     "pages/releaseManage/house_describe/house_describe",
+    "pages/releaseManage/house_describe/edit_describe",
     "pages/releaseManage/house_facilities/house_facilities",
     "pages/releaseManage/price_rule/price_rule"
   ],

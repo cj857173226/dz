@@ -411,17 +411,38 @@
 		}, {
 			"path": "pages/releaseManage/house_describe/house_describe",
 			"style": {
-				"navigationBarTitleText": "房间描述",
+				"navigationBarTitleText": "房源描述",
 				"app-plus": {
 					// "bounce": "none",
 				}
 			}
-		}, {
+		},
+		 {
+			"path": "pages/releaseManage/house_describe/edit_describe",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "确定",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
+				}
+			}
+		},{
 			"path": "pages/releaseManage/house_facilities/house_facilities",
 			"style": {
 				"navigationBarTitleText": "配套设施",
 				"app-plus": {
-					// "bounce": "none",
+					"titleNView": {
+						"buttons": [{
+							"text": "确定",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
 				}
 			}
 		}, {

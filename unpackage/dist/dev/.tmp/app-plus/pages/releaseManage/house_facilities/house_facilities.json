@@ -1,3 +1,12 @@
 {
-  "navigationBarTitleText": "配套设施"
+  "navigationBarTitleText": "配套设施",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "确定",
+        "fontSize": "14px",
+        "float": "right"
+      }
+    ]
+  }
 }
