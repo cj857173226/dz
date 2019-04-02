@@ -1,0 +1,2 @@
+<import src="./price_control.vue.wxml" />
+    <template is="86abc1e4" data="{{ ...$root['0'], $root }}"/>

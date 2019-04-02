@@ -1,0 +1,1 @@
+<template name="1b7370c6"><view class="_view data-v-4e8cbe5b contanier"><textarea class="_textarea data-v-4e8cbe5b box" placeholder="对水费、电费、燃气费等其他费用有更多要求,请进行描述。(选填)" placeholder-style="font-size:12px;" bindblur="handleProxy" data-eventid="{{'1b7370c6-0'}}" data-comkey="{{$k}}" /></view></template>

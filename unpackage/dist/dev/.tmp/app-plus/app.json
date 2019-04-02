@@ -45,7 +45,17 @@
     "pages/releaseManage/house_describe/house_describe",
     "pages/releaseManage/house_describe/edit_describe",
     "pages/releaseManage/house_facilities/house_facilities",
-    "pages/releaseManage/price_rule/price_rule"
+    "pages/releaseManage/price_rule/price_rule",
+    "pages/releaseManage/price_rule/price_control",
+    "pages/releaseManage/price_rule/price_promotion",
+    "pages/releaseManage/price_rule/cash_pledge",
+    "pages/releaseManage/price_rule/clean",
+    "pages/releaseManage/price_rule/with_guest",
+    "pages/releaseManage/price_rule/rests",
+    "pages/releaseManage/price_rule/numbe_days",
+    "pages/releaseManage/price_rule/other_requirements",
+    "pages/releaseManage/price_rule/hide_the_tips",
+    "pages/releaseManage/price_rule/break_contract"
   ],
   "subPackages": [],
   "window": {
