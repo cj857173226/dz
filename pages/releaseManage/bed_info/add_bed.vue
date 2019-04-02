@@ -10,8 +10,7 @@
 				<view class="bed-size">宽{{item.weight}}m长{{item.length}}m</view>
 			</view>
 		</view>
-		<!-- v-if="!customBedOption" -->
-		<view class="add-other-bed" @tap.stop="editOtherTypeBed()">
+		<view class="add-other-bed" v-if="!customBedOption" @tap.stop="otherBed('add')">
 			<text class="iconfont icon-jia">其他类型和尺寸</text>
 		</view>
 		<view class="bed-other-option" v-if="customBedOption" :class="{'option-item-active':curActiveBedOption && curActiveBedOption.option == customBedOption.option}"
@@ -25,7 +24,7 @@
 				<view class="bed-type" v-else-if="customBedOption.type=='other'">其他</view>
 				<view class="bed-size">宽{{customBedOption.weight}}m长{{customBedOption.length}}m</view>
 			</view>
-			<view class="edit-other-type" @tap.stop="editOtherTypeBed(customBedOption)">编辑</view>
+			<view class="edit-other-type" @tap.stop="otherBed('edit', customBedOption)">编辑</view>
 
 		</view>
 		<view class="bed-number-wrap">
@@ -41,7 +40,7 @@
 				如果有相同类型和尺寸的床铺,可以设置同规格床铺数而不需要重复添加.如无需要,请填写1张
 			</view>
 		</view>
-		<button class="my-btn-block" :class="{'dis_btn':!curActiveBedOption}" style="margin-top: 40upx;" @click="submitAddBed">
+		<button class="my-btn-block" :class="{'dis_btn':!curActiveBedOption}" style="margin-top: 40upx;" @tap="submitAddBed">
 			确定
 		</button>
 	</view>
@@ -91,12 +90,7 @@
 				// 当前选择的床铺组合
 				curActiveBedOption: null,
 				// 自定义床铺组合
-				customBedOption: {
-					option: 7,
-					length: "1.8",
-					type: "single",
-					weight: "1.0",
-				},
+				customBedOption: null,
 				// customBedOption: null,
 				// 选择床铺数量
 				bedNumber: 1,
@@ -127,13 +121,34 @@
 					if (this.bedNumber <= 1) {
 						return
 					}
-					this.$set(this, 'bedNumber', this.bedNumber - 1)
+					this.$set(this, 'bedNumber', Number(this.bedNumber) - 1)
 				} else if (type == 1) {
 					if (this.bedNumber >= 99) {
 						return
 					}
-					this.$set(this, 'bedNumber', this.bedNumber + 1)
+					this.$set(this, 'bedNumber', Number(this.bedNumber) + 1)
 				}
+			},
+			// 提交添加床铺
+			submitAddBed(){
+				
+			},
+			// 到添加或编辑其他尺寸床铺页面
+			// handle 操作方式   add:添加  edit:编辑
+			otherBed(handle, par){
+				let url = '';
+				let params = '';
+				if(par){
+				 params = JSON.stringify(par);
+				}
+				if(handle === 'add'){
+					url = '/pages/releaseManage/bed_info/other_bed?type=add'
+				}else if(handle === 'edit'){
+					url = '/pages/releaseManage/bed_info/other_bed?type=edit&param='+ params
+				}
+				uni.navigateTo({
+					url:url
+				})
 			},
 		}
 	}

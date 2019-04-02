@@ -5,7 +5,7 @@
 			<view class="one_line">床品<text class="b_text">至少每客一换</text></view>
 		</view>
 		<view class="bed_list">
-			<view class="bed_item" v-for="(item,index) in bedList" :key="index">
+			<view class="bed_item" v-for="(item,index) in bedList" :key="index" @tap="editBed(item)">
 				<view class="del_btn_wrap">
 					<view class="del_btn" @tap="deleteBed(item.id)">
 						<text class="iconfont icon-jian"></text>
@@ -31,8 +31,6 @@
 			</view>
 		</view>
 		<button class="add_bed my-btn-block" @tap="addBed">添加床铺</button>
-
-
 	</view>
 </template>
 
@@ -102,6 +100,13 @@
 
 		},
 		methods: {
+			// 编辑床铺
+			editBed(par){
+				const params = JSON.stringify(par);
+				uni.navigateTo({
+					url:'/pages/releaseManage/bed_info/edit_bed?param='+ params
+				})
+			},
 			// 删除床铺
 			deleteBed(id) {
 				console.log(id)
@@ -122,7 +127,8 @@
 				uni.navigateTo({
 					url:'/pages/releaseManage/bed_info/add_bed'
 				})
-			},
+			}
+			
 		}
 	}
 </script>
