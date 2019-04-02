@@ -427,9 +427,146 @@
 		}, {
 			"path": "pages/releaseManage/price_rule/price_rule",
 			"style": {
-				"navigationBarTitleText": "价格规则",
+				"navigationBarTitleText": "价格规则"
+			}
+		}, {
+			"path": "pages/releaseManage/price_rule/price_control",
+			"style": {
+				"navigationBarTitleText": "日价管理",
 				"app-plus": {
-					// "bounce": "none",
+					"titleNView": {
+						"buttons": [{
+							"text": "完成",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/releaseManage/price_rule/price_promotion",
+			"style": {
+				"navigationBarTitleText": "促销说明"
+			}
+		},
+		{
+			"path": "pages/releaseManage/price_rule/cash_pledge",
+			"style": {
+				"navigationBarTitleText": "押金",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "保存",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/releaseManage/price_rule/clean",
+			"style": {
+				"navigationBarTitleText": "清洁费",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "完成",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/releaseManage/price_rule/with_guest",
+			"style": {
+				"navigationBarTitleText": "加客管理",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "完成",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/releaseManage/price_rule/rests",
+			"style": {
+				"navigationBarTitleText": "其他费用",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "完成",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/releaseManage/price_rule/numbe_days",
+			"style": {
+				"navigationBarTitleText": "入住天数限制",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "完成",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/releaseManage/price_rule/other_requirements",
+			"style": {
+				"navigationBarTitleText": "其他要求",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "完成",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/releaseManage/price_rule/hide_the_tips",
+			"style": {
+				"navigationBarTitleText": "隐藏贴士",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "完成",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/releaseManage/price_rule/break_contract",
+			"style": {
+				"navigationBarTitleText": "房客违约责任",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "完成",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
 				}
 			}
 		}

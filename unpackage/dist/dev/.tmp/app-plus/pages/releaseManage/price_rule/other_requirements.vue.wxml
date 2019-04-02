@@ -1,0 +1,1 @@
+<template name="6f7577ae"><view class="_view data-v-2eabb079 contanier"><textarea class="_textarea data-v-2eabb079 box" placeholder="房客使用您的房间需要遵守的规则(如年龄段、性别、接待时间等),合理的要求可使您避免一些不可必要的麻烦(请不要发布联系方式)" placeholder-style="font-size:12px;" bindblur="handleProxy" data-eventid="{{'6f7577ae-0'}}" data-comkey="{{$k}}" /></view></template>

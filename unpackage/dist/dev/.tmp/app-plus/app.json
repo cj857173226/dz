@@ -34,20 +34,27 @@
     "pages/releaseManage/house_basic_info/house_area",
     "pages/releaseManage/house_basic_info/people_number",
     "pages/landlord/landlord",
-<<<<<<< HEAD
     "pages/landlord/landlord_benefit",
     "pages/landlord/iphone",
     "pages/landlord/information",
-    "pages/landlord/payment_term"
-=======
+    "pages/landlord/payment_term",
     "pages/releaseManage/bed_info/bed_info",
     "pages/releaseManage/bed_info/edit_bed",
     "pages/releaseManage/bed_info/add_bed",
     "pages/releaseManage/bed_info/other_bed",
     "pages/releaseManage/house_describe/house_describe",
     "pages/releaseManage/house_facilities/house_facilities",
-    "pages/releaseManage/price_rule/price_rule"
->>>>>>> 7a114518b5d794c86b11da9c3b2b9b7a919237d3
+    "pages/releaseManage/price_rule/price_rule",
+    "pages/releaseManage/price_rule/price_control",
+    "pages/releaseManage/price_rule/price_promotion",
+    "pages/releaseManage/price_rule/cash_pledge",
+    "pages/releaseManage/price_rule/clean",
+    "pages/releaseManage/price_rule/with_guest",
+    "pages/releaseManage/price_rule/rests",
+    "pages/releaseManage/price_rule/numbe_days",
+    "pages/releaseManage/price_rule/other_requirements",
+    "pages/releaseManage/price_rule/hide_the_tips",
+    "pages/releaseManage/price_rule/break_contract"
   ],
   "subPackages": [],
   "window": {

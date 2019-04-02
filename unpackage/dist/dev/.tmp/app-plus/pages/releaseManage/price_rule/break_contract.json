@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "房客违约责任",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "完成",
+        "fontSize": "14px",
+        "float": "right"
+      }
+    ]
+  }
+}
