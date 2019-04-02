@@ -44,7 +44,6 @@
     "pages/releaseManage/bed_info/other_bed",
     "pages/releaseManage/house_describe/house_describe",
     "pages/releaseManage/house_facilities/house_facilities",
-<<<<<<< HEAD
     "pages/releaseManage/price_rule/price_rule",
     "pages/releaseManage/price_rule/price_control",
     "pages/releaseManage/price_rule/price_promotion",
@@ -56,9 +55,6 @@
     "pages/releaseManage/price_rule/other_requirements",
     "pages/releaseManage/price_rule/hide_the_tips",
     "pages/releaseManage/price_rule/break_contract"
-=======
-    "pages/releaseManage/price_rule/price_rule"
->>>>>>> 783829fc9c3d304972a4cb11cfff37fab0446b2d
   ],
   "subPackages": [],
   "window": {
