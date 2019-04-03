@@ -2,6 +2,10 @@
 	<view class="edit_describe_page">
 		<view class="textarea_wrap">
 			<textarea placeholder-style="color:#cccccc;font-size:28upx;" :placeholder="describeOption.placeholder" :maxlength="describeOption.maxLength" v-model="describeContent"/>
+			<view class="counter">
+				<text class="cur" v-text="describeContent.length"></text>
+				<text class="total">/{{describeOption.maxLength}}</text>
+			</view>
 		</view>
 		<view class="tips_wrap">
 			<view class="tips" v-for="(d,i) in describeOption.tips" :key="i">
@@ -141,6 +145,7 @@
 		box-sizing: border-box;
 		padding: 40upx 30upx 20upx;
 		.textarea_wrap{
+			position: relative;
 			box-sizing: border-box;
 			width: 100%;
 			height: 400upx;
@@ -152,6 +157,19 @@
 				padding: 10upx;
 				font-size: 28upx;
 				border-radius: 16upx;
+			}
+			.counter{
+				position: absolute;
+				right: 10upx;
+				bottom: 10upx;
+				font-size: 28upx;
+				text-align: right;
+				.cur{
+					color: $theme-color;
+				}
+				.total{
+					color: #cccccc;
+				}
 			}
 		}
 		.tips_wrap{

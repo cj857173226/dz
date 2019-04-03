@@ -1,2 +1,2 @@
 <import src="./hide_the_tips.vue.wxml" />
-    <template is="70c380ce" data="{{ ...$root['0'], $root }}"/>
+    <template is="05e7c34a" data="{{ ...$root['0'], $root }}"/>

@@ -178,10 +178,60 @@
 			"style": {
 				"navigationBarTitleText": "结算统计",
 				"app-plus": {
+					"bounce": "none",
+					"titleNView": {
+						"buttons": [{
+							"text": "记录一笔",
+							"fontSize": "14px",
+							"float": "right",
+							"width":"60px"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/statistics/add_bill",
+			"style": {
+				"navigationBarTitleText": "记录一笔",
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": {
+						"buttons": [{
+							"text": "保存",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
+				}
+			}
+		},
+		// 编辑账单
+		{
+			"path": "pages/statistics/edit_bill",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": {
+						"buttons": [{
+							"text": "保存",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/statistics/bill_note",
+			"style": {
+				"navigationBarTitleText": "备注",
+				"app-plus": {
 					"bounce": "none"
 				}
 			}
-		}, {
+		},{
 			"path": "pages/check_in/check_in",
 			"style": {
 				"navigationBarTitleText": "常用入住人",
