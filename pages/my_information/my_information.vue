@@ -41,6 +41,7 @@
 				</view>
 				<view class="after_icon">
 				</view>
+				
 			</view>
 			<view class="form_item" @tap="changeSex">
 				<view class="label">性别</view>

@@ -54,7 +54,7 @@
 					<text class="iconfont icon-right"></text>
 				</view>
 			</view>
-			<view class="form_item">
+			<view class="form_item" @tap="pageTo('room_photograph/room_photograph')">
 				<view class="label">房间照片</view>
 				<view class="ipt">
 					<view class="empty">未完成</view>
