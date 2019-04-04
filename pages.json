@@ -228,7 +228,14 @@
 			"style": {
 				"navigationBarTitleText": "备注",
 				"app-plus": {
-					"bounce": "none"
+					"bounce": "none",
+					"titleNView": {
+						"buttons": [{
+							"text": "完成",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
 				}
 			}
 		},{
@@ -656,7 +663,23 @@
 				}
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/setting/setting",
+            "style" : {
+				"navigationBarTitleText": "设置",
+				"app-plus": {
+					"bounce": "none"
+// 					"titleNView": {
+// 						"buttons": [{
+// 							"text": "",
+// 							"fontSize": "14px",
+// 							"float": "right"
+// 						}]
+// 					}
+				}
+			}
+        }
+    ],
 	// 全局样式
 	"globalStyle": {
 		"navigationBarBackgroundColor": "#F05B72"

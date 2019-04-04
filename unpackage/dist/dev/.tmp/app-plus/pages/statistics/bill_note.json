@@ -1,4 +1,13 @@
 {
   "navigationBarTitleText": "备注",
-  "bounce": "none"
+  "bounce": "none",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "完成",
+        "fontSize": "14px",
+        "float": "right"
+      }
+    ]
+  }
 }

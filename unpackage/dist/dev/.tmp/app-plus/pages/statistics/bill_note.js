@@ -8,7 +8,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;var _default =\n\n\n\n\n\n\n{\n  data: function data() {\n    return {};\n\n\n  },\n  onLoad: function onLoad() {\n\n  },\n  onShow: function onShow() {\n\n  },\n  computed: {},\n\n\n  methods: {} };exports.default = _default;\n\n//# sourceURL=uni-app:///pages/statistics/bill_note.vue?vue&type=script&lang=js&?bbd0");
+eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;var _default =\n\n\n\n\n\n\n\n\n\n\n\n\n{\n  data: function data() {\n    return {\n      noteText: '',\n      maxLength: 35 };\n\n  },\n  onLoad: function onLoad() {\n\n  },\n  onShow: function onShow() {\n\n  },\n  computed: {},\n\n\n  methods: {} };exports.default = _default;\n\n//# sourceURL=uni-app:///pages/statistics/bill_note.vue?vue&type=script&lang=js&?bbd0");
 
 /***/ }),
 
@@ -42,7 +42,7 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=D:/projectFile/xz
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"view\", {})\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=D:/projectFile/xzapp/pages/statistics/bill_note.vue?vue&type=template&id=3e2c854e&scoped=true&");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"view\", { staticClass: \"bill_note_page\" }, [\n    _c(\"view\", { staticClass: \"bill_note_wrap\" }, [\n      _c(\"textarea\", {\n        attrs: {\n          \"placeholder-style\": \"color:#cccccc;\",\n          placeholder: \"请填写备注\",\n          maxlength: _vm.maxLength\n        }\n      }),\n      _c(\"view\", { staticClass: \"control\" }, [\n        _c(\"text\", {\n          staticClass: \"cur\",\n          domProps: { textContent: _vm._s(_vm.noteText.length) }\n        }),\n        _c(\"text\", { staticClass: \"total\" }, [\n          _vm._v(\"/\" + _vm._s(_vm.maxLength))\n        ])\n      ])\n    ])\n  ])\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=D:/projectFile/xzapp/pages/statistics/bill_note.vue?vue&type=template&id=3e2c854e&scoped=true&");
 
 /***/ }),
 

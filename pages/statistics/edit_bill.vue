@@ -24,7 +24,7 @@
 					<text class="iconfont icon-right"></text>
 				</view>
 			</view>
-			<view class="form_item">
+			<view class="form_item" @tap="editNote()">
 				<view class="icon">
 					<text class="iconfont icon-beizhu"></text>
 				</view>
@@ -60,6 +60,9 @@
 		data(){
 			return{
 				editType:'',
+				editForm:{
+					
+				}
 			}
 		},
 		onLoad(opt){
@@ -76,7 +79,12 @@
 			
 		},
 		methods:{
-			
+			// 编辑备注
+			editNote(){
+				uni.navigateTo({
+					url:'/pages/statistics/bill_note'
+				})
+			}
 		}
 	}
 </script>
@@ -89,9 +97,10 @@
 <style lang="scss" scoped>
 	$theme-color: #F05B72;
 	.edit_bill_page{
+		box-sizing: border-box;
+		padding: 0 20upx;
 		.edit_bill_form{
 			box-sizing: border-box;
-			padding: 0 20upx;
 			width: 100%;
 			.form_item{
 				box-sizing: border-box;

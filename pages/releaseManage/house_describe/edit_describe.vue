@@ -1,8 +1,8 @@
 <template>
 	<view class="edit_describe_page">
 		<view class="textarea_wrap">
-			<textarea placeholder-style="color:#cccccc;font-size:28upx;" :placeholder="describeOption.placeholder" :maxlength="describeOption.maxLength" v-model="describeContent"/>
-			<view class="counter">
+			<textarea placeholder-style="color:#cccccc;font-size:28upx" :placeholder="describeOption.placeholder" :maxlength="describeOption.maxLength" v-model="describeContent"/>
+			<view class="control">
 				<text class="cur" v-text="describeContent.length"></text>
 				<text class="total">/{{describeOption.maxLength}}</text>
 			</view>
@@ -158,7 +158,7 @@
 				font-size: 28upx;
 				border-radius: 16upx;
 			}
-			.counter{
+			.control{
 				position: absolute;
 				right: 10upx;
 				bottom: 10upx;

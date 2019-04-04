@@ -59,7 +59,8 @@
     "pages/releaseManage/price_rule/other_requirements",
     "pages/releaseManage/price_rule/hide_the_tips",
     "pages/releaseManage/price_rule/break_contract",
-    "pages/releaseManage/room_photograph/room_photograph"
+    "pages/releaseManage/room_photograph/room_photograph",
+    "pages/setting/setting"
   ],
   "subPackages": [],
   "window": {
