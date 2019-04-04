@@ -35,6 +35,7 @@ page {
   padding: 40rpx 30rpx 20rpx;
 }
 .edit_describe_page .textarea_wrap.data-v-73f1f00e {
+    position: relative;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
@@ -49,6 +50,19 @@ page {
       padding: 10rpx;
       font-size: 28rpx;
       border-radius: 16rpx;
+}
+.edit_describe_page .textarea_wrap .counter.data-v-73f1f00e {
+      position: absolute;
+      right: 10rpx;
+      bottom: 10rpx;
+      font-size: 28rpx;
+      text-align: right;
+}
+.edit_describe_page .textarea_wrap .counter .cur.data-v-73f1f00e {
+        color: #F05B72;
+}
+.edit_describe_page .textarea_wrap .counter .total.data-v-73f1f00e {
+        color: #cccccc;
 }
 .edit_describe_page .tips_wrap.data-v-73f1f00e {
     margin-top: 40rpx;

@@ -39,7 +39,7 @@
 				upload_picture_list: []
 			};
 		},
-		name: 'sun-upimg',
+		// name: 'sun-upimg',
 		props: {
 			upImgConfig: {
 				type: Object,
@@ -60,7 +60,7 @@
 						// 是否开启notli(即选择完直接上传)
 						notli: false,
 						// 图片数量
-						count: 3,
+						count: 9,
 						// 默认启用图片压缩(小程序端)
 						upreduce: true,
 						// 上传图片背景颜色
@@ -291,13 +291,13 @@
  -->
 <style scoped>
 	[class*="icon-"] {
-		font-family: "iconfont" !important;
+		font-family: "iconfont1";
 		font-size: inherit;
 		font-style: normal;
 	}
 
 	@font-face {
-		font-family: "iconfont";
+		font-family: "iconfont1";
 		src: url('//at.alicdn.com/t/font_533566_yfq2d9wdij.eot?t=1545239985831');
 		/* IE9*/
 		src: url('//at.alicdn.com/t/font_533566_yfq2d9wdij.eot?t=1545239985831#iefix') format('embedded-opentype'),
@@ -325,6 +325,7 @@
 	.sunsin_picture_list {
 		width: 100%;
 		padding: 20upx;
+		box-sizing: border-box;
 		display: flex;
 		flex-wrap: wrap;
 		align-items: flex-start;

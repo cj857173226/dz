@@ -1,4 +1,14 @@
 {
   "navigationBarTitleText": "结算统计",
-  "bounce": "none"
+  "bounce": "none",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "记录一笔",
+        "fontSize": "14px",
+        "float": "right",
+        "width": "60px"
+      }
+    ]
+  }
 }

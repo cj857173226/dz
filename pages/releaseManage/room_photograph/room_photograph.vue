@@ -9,8 +9,8 @@
     </view>
     <view class="bedroom-box">
       <view class="top-bedroom">
-        <text>卧室</text>
-        <view class="example">
+        <text style="font-weight: 700;">卧室</text>
+        <view class="example" @tap="previewImage">
           范例
           <text class="iconfont">&#xe65e;</text>
         </view>
@@ -22,15 +22,82 @@
       <view>
         <!-- 不会覆盖限制上传图片数量（也就是count参数生效），notli默认false -->
         <sunui-upimg :upImgConfig="upImgConfig" @onUpImg="upImgData" ref="uImage"/>
-        <!-- <button type="primary" @tap="getUpImgInfo">获取上传图片信息</button> -->
       </view>
     </view>
+    <view class="bedroom-box">
+      <view class="top-bedroom">
+        <text style="font-weight: 700;">客厅</text>
+        <view class="example">
+          范例
+          <text class="iconfont">&#xe65e;</text>
+        </view>
+      </view>
+      <view class="hint-bedroom">
+        建议上传。站在厅角拍摄，事业会更广阔。
+      </view>
+      <view>
+        <!-- 不会覆盖限制上传图片数量（也就是count参数生效），notli默认false -->
+        <sunui-upimg :upImgConfig="upImgConfig" @onUpImg="upImgData" ref="uImage"/>
+      </view>
+    </view>
+    <view class="bedroom-box">
+      <view class="top-bedroom">
+        <text style="font-weight: 700;">卫生间</text>
+        <view class="example">
+          范例
+          <text class="iconfont">&#xe65e;</text>
+        </view>
+      </view>
+      <view class="hint-bedroom">
+        必须上传卫生间照片。请确保
+        <text class="hint-bedroom-color">马桶卫浴、地面细节完整。</text>
+      </view>
+      <view>
+        <!-- 不会覆盖限制上传图片数量（也就是count参数生效），notli默认false -->
+        <sunui-upimg :upImgConfig="upImgConfig" @onUpImg="upImgData" ref="uImage"/>
+      </view>
+    </view>
+    <view class="bedroom-box">
+      <view class="top-bedroom">
+        <text style="font-weight: 700;">厨房</text>
+        <view class="example">
+          范例
+          <text class="iconfont">&#xe65e;</text>
+        </view>
+      </view>
+      <view class="hint-bedroom">
+        建议上传。
+      </view>
+      <view>
+        <!-- 不会覆盖限制上传图片数量（也就是count参数生效），notli默认false -->
+        <sunui-upimg :upImgConfig="upImgConfig" @onUpImg="upImgData" ref="uImage"/>
+      </view>
+    </view>
+    <view class="bedroom-box">
+      <view class="top-bedroom">
+        <text style="font-weight: 700;">其他</text>
+        <view class="example">
+          范例
+          <text class="iconfont">&#xe65e;</text>
+        </view>
+      </view>
+      <view class="hint-bedroom">
+        建议上传。可以是其他室内空间、物件、小区周边环境等。更多的照片往往能吸引更多的房客。
+      </view>
+      <view>
+        <!-- 不会覆盖限制上传图片数量（也就是count参数生效），notli默认false -->
+        <sunui-upimg :upImgConfig="upImgConfig" @onUpImg="upImgData" ref="uImage"/>
+      </view>
+    </view>
+    <view class="btn">保存</view>
   </view>
 </template>
 <script>
-
+import sunUpImg from "../../../components/sunui-upimg/sunui-upimg.vue"; //图片上传组件
 export default {
- 
+  components: {
+    "sunui-upimg": sunUpImg
+  },
   data() {
     return {
       /**
@@ -52,15 +119,15 @@ export default {
         // 后端图片接口地址(阿里云开启oos的话就填写阿里云上传服务器url：http://4zlinkimgtest.oss-cn-beijing.aliyuncs.com/否则的话写自己后端上传图片地址，注意把oos置为false!!!)
         url: "http://4zlinkimgtest.oss-cn-beijing.aliyuncs.com/",
         // 是否开启notli(开启的话就是选择完直接上传，关闭的话当count满足数量时才上传)
-        notli: false,
+        notli: true,
         // 图片数量
-        count: 2,
+        count: 9,
         // 相机来源([相机,相册],[相机])
         sourceType: true,
         // 是否压缩上传照片(仅小程序生效)
         sizeType: true,
         // 新增上传背景修改
-        bgColor: "#0089FC",
+        bgColor: "#E3E0E4",
         // 新增上传icon图标颜色修改
         iconColor: "#fff",
         // 上传文字描述(仅限四个字)
@@ -95,10 +162,25 @@ export default {
       this.imgArr = arrImg;
     },
     // 获取上传图片的所有信息(Step2)
-    // getUpImgInfo() {
-    //   console.log("转成多维数组:", this.imgArr);
-    //   console.log("转成一维数组:", this.imgArr.join().split(","));
-    // }
+    getUpImgInfo() {
+      console.log("转成多维数组:", this.imgArr);
+      console.log("转成一维数组:", this.imgArr.join().split(","));
+    },
+    previewImage() {
+      // 从相册选择6张图
+      uni.previewImage({
+        current:'../../../static/images/meitu1.jpg',
+        indicator:'number',
+        loop:true,
+        urls:['../../../static/images/meitu1.jpg','../../../static/images/meitu.jpeg','../../../static/images/meitu2.jpeg','../../../static/images/meitu3.jpg'],
+        success:function(res){
+          console.log(res);
+        },
+        fail:function(err){
+          console.log(err);
+        }
+      });
+    }
   }
 };
 </script>
@@ -125,6 +207,7 @@ export default {
   }
   .bedroom-box {
     margin-top: 40upx;
+    border-bottom: 1px solid #efefef;
     .top-bedroom {
       display: flex;
       align-items: center;
@@ -141,6 +224,19 @@ export default {
         color: #000;
         font-weight: 700;
       }
+    }
+  }
+  .btn {
+    width: 100%;
+    height: 90upx;
+    background-color: #ea516b;
+    color: #fff;
+    border-radius: 10upx;
+    text-align: center;
+    line-height: 90upx;
+    margin-top: 40upx;
+    &:active{
+      opacity: 0.5;
     }
   }
 }
