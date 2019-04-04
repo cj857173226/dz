@@ -21,6 +21,9 @@
     "pages/my_address/edit_address",
     "pages/my_address/add_address",
     "pages/statistics/statistics",
+    "pages/statistics/add_bill",
+    "pages/statistics/edit_bill",
+    "pages/statistics/bill_note",
     "pages/check_in/check_in",
     "pages/check_in/edit_check_in",
     "pages/invoice/invoice",
@@ -55,7 +58,8 @@
     "pages/releaseManage/price_rule/numbe_days",
     "pages/releaseManage/price_rule/other_requirements",
     "pages/releaseManage/price_rule/hide_the_tips",
-    "pages/releaseManage/price_rule/break_contract"
+    "pages/releaseManage/price_rule/break_contract",
+    "pages/setting/setting"
   ],
   "subPackages": [],
   "window": {

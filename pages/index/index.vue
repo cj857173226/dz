@@ -20,12 +20,17 @@
 		
 	}
 </script>
-
 <style>
+	page{
+		height: 100%;
+	}
+</style>
+
+<style lang="scss" scoped>
 	.content{
 		width: 100%;
 		background-color: #fff;
-		height: 100%;
+		min-height: 100%;
 		box-sizing: border-box;
 	}
 </style>

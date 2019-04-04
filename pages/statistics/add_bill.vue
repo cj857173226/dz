@@ -28,7 +28,7 @@
 					<text class="iconfont icon-right"></text>
 				</view>
 			</view>
-			<view class="form_item">
+			<view class="form_item" @tap="editNote()">
 				<view class="icon">
 					<text class="iconfont icon-beizhu"></text>
 				</view>
@@ -82,6 +82,12 @@
 					this.curTab = type
 				}
 			},
+			// 编辑备注
+			editNote(){
+				uni.navigateTo({
+					url:'/pages/statistics/bill_note'
+				})
+			}
 		}
 	}
 </script>

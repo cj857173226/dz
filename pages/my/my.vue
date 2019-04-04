@@ -160,6 +160,11 @@
 		onShow() {
 			console.log(1)
 		},
+		onNavigationBarButtonTap(e){
+			if(e.index === 0){
+				this.pageTo('/pages/setting/setting')
+			}
+		},
 		mounted() {
 			// helper.isLogin()
 			var that = this;
@@ -174,6 +179,7 @@
 					url: url
 				});
 			}
+			
 		}
 	}
 </script>
