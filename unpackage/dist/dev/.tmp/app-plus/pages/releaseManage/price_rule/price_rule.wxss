@@ -24,14 +24,14 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.centenr.data-v-a058b868 {
+.centenr.data-v-5cf6b026 {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 12px;
   background-color: #F4F4F4;
 }
-.centenr .price-discipline.data-v-a058b868 {
+.centenr .price-discipline.data-v-5cf6b026 {
     width: 100%;
     height: 80rpx;
     background-color: #F4F4F4;
@@ -41,7 +41,7 @@
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
-.centenr .list-box.data-v-a058b868 {
+.centenr .list-box.data-v-5cf6b026 {
     padding: 20rpx 30rpx;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -60,10 +60,10 @@
     border-bottom: 1px solid #CACACA;
     background-color: #fff;
 }
-.centenr .list-box .left-box.data-v-a058b868 {
+.centenr .list-box .left-box.data-v-5cf6b026 {
       font-size: 12px;
 }
-.centenr .list-box .left-box .promotion-recommend-box.data-v-a058b868 {
+.centenr .list-box .left-box .promotion-recommend-box.data-v-5cf6b026 {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -73,7 +73,7 @@
             -ms-flex-align: center;
                 align-items: center;
 }
-.centenr .list-box .left-box .promotion-recommend-box .recommend.data-v-a058b868 {
+.centenr .list-box .left-box .promotion-recommend-box .recommend.data-v-5cf6b026 {
           width: 50rpx;
           height: 30rpx;
           background-color: #F93578;
@@ -84,7 +84,7 @@
           font-size: 12px;
           margin-left: 10rpx;
 }
-.centenr .list-box .left-box .open.data-v-a058b868 {
+.centenr .list-box .left-box .open.data-v-5cf6b026 {
         color: #CACACA;
 }
 

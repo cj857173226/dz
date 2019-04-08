@@ -24,14 +24,14 @@
 					<text class="iconfont icon-mima"></text>
 				</view>
 				<input :password="pwdType==='password'" :value="userpwd" @input="inputPwd" placeholder-style="color:#ccc;font-size:14px;"
-				 placeholder="请设置密码(不超过14个字符)">
+				 placeholder="请设置密码">
 				<view class="img icon_pwd_switch" @tap="switchPwd">
 					<text class="iconfont icon-yanjing" v-if="pwdType==='password'"></text>
 					<text class="iconfont icon-yanjing1" v-if="pwdType==='text'"></text>
 				</view>
 			</view>
 		</view>
-		<button class="submit" @tap="submitRegsiter">注册</button>
+		<button class="submit" :class="{'dis_btn':registerLoad===true}" @tap="submitRegsiter">注册</button>
 	</view>
 </template>
 
@@ -44,8 +44,8 @@
 				userpwd: '', //密码
 				regCode: '', //验证码
 				pwdType: 'password',
-				codeDisable: false, // 验证按钮是否禁用
 				codeText: '获取验证码',
+				codeDisable: false, // 验证按钮是否禁用
 				codeTimer: null,
 				codeLoad: false, // 是否正在发送验证码
 				autoFocus: true,
@@ -72,9 +72,15 @@
 				let _time = 60;
 				if (that.codeDisable || that.codeLoad || that.regPhoneLoad) return;
 				if (user === '' || !helper.phoneReg(user)) {
+					let _title = '';
+					if(user === ''){
+						_title = "手机号不能为空"
+					} else if(!helper.phoneReg(user)){
+						_title = "手机号格式有误"
+					}
 					uni.showToast({
-						title: '请输入正的确手机号',
-						duration: 1000,
+						title: _title,
+						duration: 1500,
 						icon: 'none'
 					});
 				} else {
@@ -117,7 +123,7 @@
 											});
 										} else {
 											uni.showToast({
-												title: '发送失败,请稍后重试',
+												title: r.data.errorMsg,
 												duration: 1500,
 												icon: 'none'
 											});
@@ -155,7 +161,6 @@
 							that.regPhoneLoad = false;
 						}
 					})
-
 				}
 			},
 			// 提交注册
@@ -177,15 +182,9 @@
 						duration: 1500,
 						icon: 'none'
 					});
-				} else if (psw === '' || psw.length > 14) {
-					let _title = '请设置密码';
-					if (psw === '') {
-						_title = '请设置密码';
-					} else if (psw.length > 14) {
-						_title = '密码不能超过14个字符';
-					}
+				} else if (psw === '') {
 					uni.showToast({
-						title: _title,
+						title: '请设置密码',
 						duration: 1500,
 						icon: 'none'
 					});
@@ -203,7 +202,19 @@
 							"Content-Type": "application/x-www-form-urlencoded",
 						},
 						success: (res) => {
-							
+							if(res.data.status==='success'){
+								uni.setStorageSync('dz_userInfo', res.data.content);
+								uni.setStorageSync('dz_token', res.data.content.token);
+								uni.reLaunch({
+									url: "/pages/index/index"
+								})
+							}else{
+								uni.showToast({
+									title: res.data.msg,
+									duration: 1500,
+									icon: 'none'
+								});
+							}
 						},
 						fail: () => {
 

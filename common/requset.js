@@ -34,5 +34,4 @@ export function requset(opt) {
 		fail:opt.fail,
 		complete:opt.complete
 	})
-
 }

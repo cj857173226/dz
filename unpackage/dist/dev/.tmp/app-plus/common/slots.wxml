@@ -1,8 +1,1 @@
-<import src="/components/mpvue-picker/mpvuePicker.vue.wxml" />
-<import src="/components/particulars/map.vue.wxml" />
-<import src="/components/particulars/room-description.vue.wxml" />
-<import src="/components/particulars/uni-rate/uni-rate.vue.wxml" />
-<import src="/components/particulars/supporting-facility.vue.wxml" />
-<import src="/components/particulars/unsubscribe-rules.vue.wxml" />
-<import src="/components/particulars/plug/uni-steps/uni-steps.vue.wxml" />
 
