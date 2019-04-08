@@ -34,6 +34,9 @@
 </template>
 
 <script>
+	import {shortHttp,banner} from '../../common/requestUrl.json' // 接口文件
+	console.log("网址",shortHttp+banner);
+	// console.log("banner图地址",banner);
 	export default {
     data() {
         return {
@@ -55,8 +58,26 @@
         },
         durationChange(e) {
             this.duration = e.target.value
-        }
-    }
+		},
+		// 轮播图请求方法
+		banner:function() {
+			uni.request({
+				url:shortHttp+banner,
+				method:'GET',
+				dataType:'json',
+				success: (res) => {
+					console.log(res);					
+				},
+				fail: (err) => {
+					console.log(err);
+				}
+			})
+		}
+	},
+	onLoad:function(){
+		console.log('onReady');
+		this.banner();
+	}
 }
 	
 </script>

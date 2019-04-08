@@ -14,9 +14,7 @@
       </uni-steps>
       <view class="rule">本规则有房东定制</view>
     </view>
-    <button class="mini-btn" type="primary">
-				立即预定
-		</button>
+    
   </view>
 </template>
 <script>
@@ -40,16 +38,7 @@ export default {
     .rule{
       text-align: right;
     }
-    .mini-btn{
-						height: 80upx;
-						line-height: 80upx;
-						background-color: #ef5b72;
-						font-size: 16px;
-						border: 1px solid #ef5b72;
-						color: #fff;
-            margin-top: 60upx;
-            margin-bottom: 60upx;
-					}
+    
   }
 </style>
 

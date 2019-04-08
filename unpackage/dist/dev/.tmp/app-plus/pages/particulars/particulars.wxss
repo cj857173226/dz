@@ -238,16 +238,6 @@
 .contanier .rule.data-v-0ac49416 {
     text-align: right;
 }
-.contanier .mini-btn.data-v-0ac49416 {
-    height: 80rpx;
-    line-height: 80rpx;
-    background-color: #ef5b72;
-    font-size: 16px;
-    border: 1px solid #ef5b72;
-    color: #fff;
-    margin-top: 60rpx;
-    margin-bottom: 60rpx;
-}
 
 @charset "UTF-8";
 /**
@@ -586,6 +576,15 @@
 .container .housing-information-box .house-classifieds .font-color.data-v-44429624 {
         color: #c8c8c8;
         font-size: 12px;
+}
+.container .mini-btn.data-v-44429624 {
+    height: 80rpx;
+    line-height: 80rpx;
+    background-color: #ef5b72;
+    font-size: 16px;
+    border: 1px solid #ef5b72;
+    color: #fff;
+    margin-top: 30rpx;
 }
 
 @charset "UTF-8";
