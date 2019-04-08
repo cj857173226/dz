@@ -43,6 +43,9 @@
 		<!-- 自定义组件 -->
 		<house_map></house_map>
 		<roomDescription></roomDescription>
+		<button class="mini-btn" type="primary">
+				立即预定
+		</button>
 	</view>
 </template>
 
@@ -158,6 +161,15 @@
 					font-size: 12px;
 				}
 			}
+		}
+		.mini-btn{
+			height: 80upx;
+			line-height: 80upx;
+			background-color: #ef5b72;
+			font-size: 16px;
+			border: 1px solid #ef5b72;
+			color: #fff;
+      margin-top: 30upx;
 		}
 	}
 </style>

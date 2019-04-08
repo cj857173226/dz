@@ -647,6 +647,21 @@
 					}
 				}
 			}
+		},
+		{
+			"path": "pages/releaseManage/room_photograph/room_photograph",
+			"style": {
+				"navigationBarTitleText": "房间照片",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "排序",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
+				}
+			}
 		}
 	    ,{
             "path" : "pages/setting/setting",
