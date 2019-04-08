@@ -5,14 +5,15 @@
 				<view class="img">
 					<text class="iconfont icon-dianhua3"></text>
 				</view>
-				<input type="text" v-model.trim="username" placeholder-style="color:#ccc;font-size:14px;" placeholder="请输入手机号" :focus="autoFocus">
+				<input type="text" v-model.trim="username" placeholder-style="color:#ccc;font-size:14px;" placeholder="请输入手机号"
+				 :focus="autoFocus">
 			</view>
 			<view class="line" />
 			<view class="input">
 				<view class="img">
 					<text class="iconfont icon-yanzhengma"></text>
 				</view>
-				<input v-model.trim="regCode" placeholder-style="color:#ccc;font-size:14px;" placeholder="动态验证码" >
+				<input v-model.trim="regCode" placeholder-style="color:#ccc;font-size:14px;" placeholder="动态验证码">
 				<view class="get_code">
 					<view class="get_code_btn" :class="{'dis_btn':codeDisable===true}" @tap.stop="getMsgCode">{{codeText}}</view>
 				</view>
@@ -22,7 +23,8 @@
 				<view class="img">
 					<text class="iconfont icon-mima"></text>
 				</view>
-				<input :type="pwdType" :value="userpwd" @input="inputPwd" placeholder-style="color:#ccc;font-size:14px;" placeholder="请输入密码">
+				<input :password="pwdType==='password'" :value="userpwd" @input="inputPwd" placeholder-style="color:#ccc;font-size:14px;"
+				 placeholder="请设置密码(不超过14个字符)">
 				<view class="img icon_pwd_switch" @tap="switchPwd">
 					<text class="iconfont icon-yanjing" v-if="pwdType==='password'"></text>
 					<text class="iconfont icon-yanjing1" v-if="pwdType==='text'"></text>
@@ -42,11 +44,13 @@
 				userpwd: '', //密码
 				regCode: '', //验证码
 				pwdType: 'password',
-				codeDisable: false,
+				codeDisable: false, // 验证按钮是否禁用
 				codeText: '获取验证码',
 				codeTimer: null,
-				codeLoad:false, // 是否正在发送验证码
-				autoFocus:true,
+				codeLoad: false, // 是否正在发送验证码
+				autoFocus: true,
+				regPhoneLoad: false, // 是否正在验证手机
+				registerLoad: false, // 是否正在注册中
 			}
 		},
 		methods: {
@@ -66,95 +70,147 @@
 				const user = this.username;
 				const that = this;
 				let _time = 60;
-				if (that.codeDisable || that.codeLoad) return;
+				if (that.codeDisable || that.codeLoad || that.regPhoneLoad) return;
 				if (user === '' || !helper.phoneReg(user)) {
 					uni.showToast({
 						title: '请输入正的确手机号',
 						duration: 1000,
-						icon:'none'
+						icon: 'none'
 					});
 				} else {
-// 					uni.request({
-// 					url:"http://dz.cdabon.com/wap/api/global.php?action=CheckParams4H5&type=phone",
-// 					method:'GET',
-// 					data:{
-// 						key:user,
-// 						params:user
-// 					},
-// 					success:function(res){
-// 						if(res.status == 200){
-// 							
-// 						}
-// 					},
-// 					fail:function(fail){
-// 						
-// 					},
-// 					complete:function(){
-// 						
-// 					}
-// 				})
-					that.codeLoad = true;
+					that.regPhoneLoad = true;
 					uni.request({
-						url:"http://dz.cdabon.com/e/member/doaction.php",
-						method:'GET',
-						data:{
-							enews: 'Rzsj',
-							phone: user
+						url: "http://dz.cdabon.com/wap/api/global.php?action=CheckParams4H5&type=phone",
+						method: 'GET',
+						data: {
+							key: user,
+							params: user
 						},
-						success:function(res){
-							that.codeDisable = true;
-							that.codeTimer = setInterval(function() {
-								if (_time <= 0) {
-									clearInterval(that.codeTimer);
-									that.codeTimer = null;
-									that.codeText = '重新获取'
-									that.codeDisable = false;
-								} else {
-									that.codeText = `${_time}s再获取`;
-									_time -= 1;
-								}
-							}, 1000)
+						success: function(res) {
+							that.codeLoad = true;
+							if (res.data.status === 'success') {
+								uni.request({
+									url: "http://dz.cdabon.com/e/member/doaction.php",
+									method: 'GET',
+									data: {
+										enews: 'Rzsj',
+										phone: user
+									},
+									success: function(r) {
+										if (r.data.status === 'success') {
+											that.codeDisable = true;
+											that.codeTimer = setInterval(function() {
+												if (_time <= 0) {
+													clearInterval(that.codeTimer);
+													that.codeTimer = null;
+													that.codeText = '重新获取'
+													that.codeDisable = false;
+												} else {
+													that.codeText = `${_time}s再获取`;
+													_time -= 1;
+												}
+											}, 1000)
+											uni.showToast({
+												title: '已发送到手机',
+												duration: 1500,
+												icon: 'none'
+											});
+										} else {
+											uni.showToast({
+												title: '发送失败,请稍后重试',
+												duration: 1500,
+												icon: 'none'
+											});
+										}
+
+
+									},
+									fail: function() {
+										uni.showToast({
+											title: '发送失败,请稍后重试',
+											duration: 1000,
+											icon: 'none'
+										});
+									},
+									complete: function() {
+										that.codeLoad = false;
+									}
+								})
+							} else {
+								uni.showToast({
+									title: res.data.errorMsg,
+									duration: 1500,
+									icon: 'none'
+								});
+							}
+						},
+						fail: function() {
 							uni.showToast({
-								title: '已发送到手机',
+								title: '系统异常,请稍后再试',
 								duration: 1000,
-								icon:'none'
+								icon: 'none'
 							});
 						},
-						fail:function(){
-							uni.showToast({
-								title: '发送失败',
-								duration: 1000,
-								icon:'none'
-							});
-						},
-						complete:function(){
-							that.codeLoad = false;
+						complete: function() {
+							that.regPhoneLoad = false;
 						}
 					})
+
 				}
 			},
 			// 提交注册
 			submitRegsiter() {
+				const that = this;
 				const user = this.username;
 				const psw = this.userpwd;
 				const regCode = this.regCode;
+				if(that.registerLoad) return;
 				if (user === '') {
 					uni.showToast({
 						title: '请输入手机号',
 						duration: 1000,
-						icon:'none'
+						icon: 'none'
 					});
-				} else if(regCode === ''){
+				} else if (regCode === '') {
 					uni.showToast({
 						title: '请填写验证码',
-						duration: 1000,
-						icon:'none'
+						duration: 1500,
+						icon: 'none'
 					});
-				} else if (psw === ''){
+				} else if (psw === '' || psw.length > 14) {
+					let _title = '请设置密码';
+					if (psw === '') {
+						_title = '请设置密码';
+					} else if (psw.length > 14) {
+						_title = '密码不能超过14个字符';
+					}
 					uni.showToast({
-						title: '请设置密码',
-						duration: 1000,
-						icon:'none'
+						title: _title,
+						duration: 1500,
+						icon: 'none'
+					});
+				} else {
+					that.registerLoad = true;
+					uni.request({
+						url: 'http://dz.cdabon.com/e/member/ajax/index.php?action=checkregister', //仅为示例，并非真实接口地址。
+						method: "POST",
+						data: {
+							password: psw,
+							phone: user,
+							code: regCode
+						},
+						header: {
+							"Content-Type": "application/x-www-form-urlencoded",
+						},
+						success: (res) => {
+							
+						},
+						fail: () => {
+
+						},
+						complete: () => {
+							that.registerLoad = false;
+						}
 					});
 				}
 			},
@@ -213,6 +269,7 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
+
 				.iconfont {
 					font-size: 18px;
 					color: #F05B72;

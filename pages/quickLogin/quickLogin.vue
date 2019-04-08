@@ -53,13 +53,16 @@
 	</view>
 </template>
 <script>
+	import {
+		requset
+	} from '../../common/requset.js'
 	export default {
 		data() {
 			const isUni = typeof(uni) !== 'undefined'
 			return {
-				username: '',
-				userpwd: '',
-				pwdType: 'password',
+				username: '', //账号
+				userpwd: '', //密码
+				regCode:'', // 动态验证码
 				imgInfo: {
 					qq: isUni ? '/static/qq.png' : require('./images/qq.png'),
 					wechat: isUni ? '/static/wechat.png' : require('./images/wechat.png'),
@@ -87,9 +90,6 @@
 			delUser() {
 				this.username = ''
 			},
-			switchPwd() {
-				this.pwdType = this.pwdType === 'text' ? 'password' : 'text'
-			},
 			login() {
 				console.log('username:' + this.username + ',pwd:' + this.userpwd)
 			},
@@ -109,6 +109,11 @@
 				let codeImg = that.code_img
 				that.code_img = 'http://dz.cdabon.com/e/ShowKey/?v=login&'+new Date().getTime()
 			},
+			// 获取动态验证码
+			getMsgCode(){
+			
+			},
+			// 第三方快速登录
 			thirdLogin(type) {
 				console.log(type)
 			}
