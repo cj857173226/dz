@@ -4,11 +4,11 @@
 			<view class="location">
 				<view class="list-box">
 					<i class="iconfont icon-city">&#xec70;</i>
-					<text class="city">成都</text>
+					<text class="city">{{city}}</text>
 				</view>
 				<view class="list-box" @tap="tapOrientation">
 					<i class="iconfont icon-place">&#xe793;</i>
-					<text class="my-place">1:{{log}},2:{{lat}}</text>
+					<text class="my-place">{{city}}</text>
 				</view>
 			</view>
 			<view class="calendar">
@@ -48,16 +48,23 @@
         weather: {  
           hasData: false,  
           data: []  
-        }
+				},
+				city:''
 			}
 		},
 		onLoad(){
-			// 初始化高德小程序sdk的实例对象
+		/* 	// 初始化高德小程序sdk的实例对象
 			this.amapPlugin = new amap.AMapWX({
 				key:this.key
 			})
 			// this.getRegeo()
-			console.log("1:",this.amapPlugin)
+			console.log("1:",this.amapPlugin) */
+			plus.geolocation.getCurrentPosition(
+			(p) => {
+				console.log("postion",p.address.city);
+				this.city = p.address.city
+			}
+		);
 		},
 		methods: {
 			tapSelect:function(){

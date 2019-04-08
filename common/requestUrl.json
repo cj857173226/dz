@@ -1,4 +1,5 @@
 {
-  "shortHttp":"http://dz.cdabon.com",
-  "banner":"/wap/api/json.php?action=api_getIndexRecommendLodgeunit.json"
+  "shortHttp":"http://dz.cdabon.com",  
+  "banner":"/wap/api/json.php?action=api_getIndexRecommendLodgeunit.json", 
+  "ambitus":"/wap/api/search.php?action=index" 
 }

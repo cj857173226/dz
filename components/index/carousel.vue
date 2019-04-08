@@ -11,21 +11,10 @@
 					indicator-color="#EBEDF3"
 					indicator-active-color="#fff"
 					>
-		                <swiper-item>
-		                    <image class="banner" src="../../static/images/landlordguide/banner1.jpg"></image>
+						
+		                <swiper-item v-for="(item,index) in banner" :key="index">
+		                    <image class="banner" :src="shortHttp+item.mainimageurl"></image>
 		                </swiper-item>
-						<swiper-item>
-						    <image class="banner" src="../../static/images/landlordguide/banner2.jpg"></image>
-						</swiper-item>
-						<swiper-item>
-						    <image class="banner" src="../../static/images/landlordguide/banner3.jpg"></image>
-						</swiper-item>
-						<swiper-item>
-						    <image class="banner" src="../../static/images/landlordguide/banner4.jpg"></image>
-						</swiper-item>
-						<swiper-item>
-						    <image class="banner" src="../../static/images/landlordguide/banner5.jpg"></image>
-						</swiper-item>
 					</swiper>
 				</view>
 			</view>
@@ -34,18 +23,19 @@
 </template>
 
 <script>
-	import {shortHttp,banner} from '../../common/requestUrl.json' // 接口文件
-	console.log("网址",shortHttp+banner);
-	// console.log("banner图地址",banner);
 	export default {
     data() {
         return {
             indicatorDots: true,
             autoplay: true,
             interval: 2000,
-            duration: 500
+			duration: 500,
+			shortHttp:"http://dz.cdabon.com" //域名
         }
-    },
+	},
+	props: {
+		banner:Array
+	},
     methods: {
         changeIndicatorDots(e) {
             this.indicatorDots = !this.indicatorDots
@@ -59,25 +49,8 @@
         durationChange(e) {
             this.duration = e.target.value
 		},
-		// 轮播图请求方法
-		banner:function() {
-			uni.request({
-				url:shortHttp+banner,
-				method:'GET',
-				dataType:'json',
-				success: (res) => {
-					console.log(res);					
-				},
-				fail: (err) => {
-					console.log(err);
-				}
-			})
-		}
 	},
-	onLoad:function(){
-		console.log('onReady');
-		this.banner();
-	}
+	
 }
 	
 </script>
