@@ -112,7 +112,7 @@
 				} else {
 					that.loginLoad = true;
 					uni.request({
-						url: 'http://dz.cdabon.com/e/member/ajax/index.php?action=login',
+						url: 'http://dz.abontest.com/e/member/ajax/index.php?action=login',
 						method: 'POST',
 						header: {
 							"Content-Type": "application/x-www-form-urlencoded",

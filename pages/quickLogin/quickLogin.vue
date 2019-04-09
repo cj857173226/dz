@@ -24,7 +24,7 @@
 			</view>
 		</view>
 		<!-- 登录提交 -->
-		<button class="submit" @tap="quickLogin">登录</button>
+		<button class="submit" :class="{'dis_btn':loginLoad===true}" @tap="quickLogin" v-text="loginLoad?'登录中':'登录'"></button>
 		<view class="opts">
 			<text @tap="goReg" class="text">立即注册</text>
 			<text @tap="usualLogin" class="text" style="color: #F05B72;">账号登录</text>
@@ -43,8 +43,8 @@
 </template>
 <script>
 	import {
-		requset
-	} from '../../common/requset.js'
+		request
+	} from '../../common/request.js'
 	import helper from '../../common/helper.js'
 	export default {
 		data() {
@@ -66,7 +66,8 @@
 				loginLoad: false, // 是否在登录
 			}
 		},
-		onLoad() {},
+		onLoad() {
+		},
 		methods: {
 			inputUsername(e) {
 				this.username = e.target.value
@@ -134,7 +135,7 @@
 								});
 							} else {
 								uni.showToast({
-									title: r.data.errorMsg,
+									title: r.data.msg,
 									duration: 1500,
 									icon: 'none'
 								});
@@ -155,6 +156,7 @@
 				}
 			},
 			quickLogin() {
+				
 				const _this = this;
 				const user = _this.username;
 				const regCode = _this.regCode;
@@ -179,7 +181,7 @@
 				} else {
 					_this.loginLoad = true;
 					uni.request({
-						url: "http://dz.cdabon.com/e/member/ajax/index.php?action=mobilelogin",
+						url: "http://dz.abontest.com/e/member/ajax/index.php?action=mobilelogin",
 						method: 'GET',
 						data: {
 							code: regCode,
@@ -196,7 +198,7 @@
 								})
 							} else {
 								uni.showToast({
-									title: res.data.msg,
+									title: res.data.errorMsg,
 									duration: 1500,
 									icon: 'none'
 								});
