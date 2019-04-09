@@ -43,17 +43,17 @@
 <script>
 	export default{
 		onLoad(){
-			// console.log(1)
+			console.log(1)
 		},
 		methods:{
 			// 点击图片跳转页面查看房间详情
-			clickDetails:function(){
+			clickDetails(){
 				uni.navigateTo({
 					url:'/pages/particulars/particulars'
 				})
 			},
 			// 点击头像跳转到房东介绍
-			clickPhoto:function(){
+			clickPhoto(){
 				uni.navigateTo({
 					url:'/pages/landlord_introduced/landlord_introduced'
 				})

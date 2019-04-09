@@ -1,7 +1,7 @@
 <template>
   <view class="content">
     <Carousel :banner="contentArray"></Carousel>
-    <Selects></Selects>
+    <Selects :GPS="city"></Selects>
     <Circum></Circum>
   </view>
 </template>
@@ -22,28 +22,22 @@ export default {
   data() {
     return {
       contentArray: null, //轮播图
-			ambitusArray: null, //周边推荐
+      ambitusArray: null, //周边推荐
+      city: "" // gps获取当前设备城市名
     };
   },
   onLoad() {
-    // uni.getLocation({
-    //   type: "gcj02", //返回可以用于uni.openLocation的经纬度
-    //   success: function(res) {
-    //     const latitude = res.latitude;
-    //     const longitude = res.longitude;
-        
-    //   }
-		// });
-		
+    this.cityGps(); //调用获取城市名
+    console.log(1)
     // 判断用户是否登录
-    // let token = uni.getStorageSync("dz_token");
-    // if (!token) {
-    //   setTimeout(function() {
-    //     uni.reLaunch({
-    //       url: "/pages/login/login"
-    //     });
-    //   }, 0);
-    // }
+    let token = uni.getStorageSync("dz_token");
+    if (!token) {
+      setTimeout(function() {
+        uni.reLaunch({
+          url: "/pages/login/login"
+        });
+      }, 0);
+    }
   },
   onReady() {
     this.bannerFn();
@@ -64,20 +58,30 @@ export default {
         }
       });
     },
-    recommended: function() {
+    cityGps() {
+      // 获取当前位置
+      const _that = this;
+      plus.geolocation.getCurrentPosition(p => {
+        _that.city = p.address.city; //当前城市名
+        console.log(_that)
+      });
+    },
+    // 周边推荐
+    recommended() {
+      console.log(2);
+      const _that = this;
+      console.log("城市", _that.city);
       uni.request({
         url: shortHttp + ambitus,
         method: "GET",
-        data: { cityName: "成都" },
-        success: res => {
-          // console.log(res);
-
-          // _that.contentArray = res.data.content
-        },
-        fail: err => {
-          console.log(err);
+        data: { cityName: _that.city },  //*：有问题，无法拿到当前城市
+        success:res=>{
+          console.log(res);
+          
         }
       });
+     
+      // console.log("同步操作", res);
     }
   }
 };

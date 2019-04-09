@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import { shortHttp } from "../../common/requestUrl.json"; // 接口文件
 	export default {
     data() {
         return {
@@ -30,7 +31,7 @@
             autoplay: true,
             interval: 2000,
 			duration: 500,
-			shortHttp:"http://dz.cdabon.com" //域名
+			shortHttp, //域名
         }
 	},
 	props: {

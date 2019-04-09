@@ -4,11 +4,11 @@
 			<view class="location">
 				<view class="list-box">
 					<i class="iconfont icon-city">&#xec70;</i>
-					<text class="city">{{city}}</text>
+					<text class="city">{{GPS}}</text>
 				</view>
 				<view class="list-box" @tap="tapOrientation">
 					<i class="iconfont icon-place">&#xe793;</i>
-					<text class="my-place">{{city}}</text>
+					<text class="my-place">{{GPS}}</text>
 				</view>
 			</view>
 			<view class="calendar">
@@ -40,31 +40,15 @@
 		},
 		data () {
 			return {
-				lat:'',
-				log:'',
-				amapPlugin:null,
-				key:'762ed8c71859b8e2ab587fcb3211fa14', //高德开放平台上申请的key
-				addressName: '',  
         weather: {  
           hasData: false,  
           data: []  
 				},
-				city:''
+				
 			}
 		},
-		onLoad(){
-		/* 	// 初始化高德小程序sdk的实例对象
-			this.amapPlugin = new amap.AMapWX({
-				key:this.key
-			})
-			// this.getRegeo()
-			console.log("1:",this.amapPlugin) */
-			plus.geolocation.getCurrentPosition(
-			(p) => {
-				console.log("postion",p.address.city);
-				this.city = p.address.city
-			}
-		);
+		props: {
+			GPS:String
 		},
 		methods: {
 			tapSelect:function(){
