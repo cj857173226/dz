@@ -116,6 +116,7 @@
 		mapState,
 		mapMutations
 	} from 'vuex'
+	import {request} from '../../common/request.js'
 	import helper from 'common/helper.js'
 	export default {
 		data() {
@@ -152,13 +153,16 @@
 			}
 		},
 		computed:{
-			...mapState(['islogin'])
+		
 		},
 		onLoad() {
-			console.log(this.islogin)
+			// 检测是否登录
+			helper.isLogin();
+			this.userInfo = uni.getStorageSync('dz_userInfo');
+			console.log(this.userInfo)
 		},
 		onShow() {
-			console.log(1)
+			
 		},
 		onNavigationBarButtonTap(e){
 			if(e.index === 0){
@@ -194,7 +198,7 @@
 		height: 100%;
 	}
 	.swiper {
-		height: 200upx;
+		height: 240upx;
 	}
 
 	.swiper .swiper-item {
@@ -356,12 +360,12 @@
 	}
 
 	#my-index-main .more-fun-wrap {
-		margin-top: 15px;
+		margin-top: 30upx;
 		box-sizing: border-box;
 		background: #FFFFFF;
-		min-height: 100px;
+		min-height: 200upx;
 		border-radius: 4px;
-		padding: 10px;
+		padding: 20upx;
 	}
 
 
