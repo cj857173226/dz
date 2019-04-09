@@ -86,7 +86,7 @@
 				} else {
 					that.regPhoneLoad = true;
 					uni.request({
-						url: "http://dz.cdabon.com/wap/api/global.php?action=CheckParams4H5&type=phone",
+						url: "http://dz.abontest.com/wap/api/global.php?action=CheckParams4H5&type=phone",
 						method: 'GET',
 						data: {
 							key: user,

@@ -122,7 +122,7 @@
 			}
 		},
 		computed: {
-			...mapState(['islogin', 'token', 'isEditAddress'])
+			...mapState(['isEditAddress'])
 		},
 		methods: {
 			...mapMutations(['addressEditStatus']),
@@ -137,6 +137,26 @@
 				this.addressEditStatus(false)
 				uni.navigateTo({
 					url: '/pages/my_address/add_address'
+				})
+			},
+			// 获取收货地址列表
+			getAddressList(){
+				const _this = this;
+				uni.showLoading({
+					title: '加载中',
+					mask: false,
+				});
+				request({
+					url:'/wap/api/my.php?action=AddressesList',
+					success:function(res){
+						console.log()
+					},
+					fail:function(){
+						
+					},
+					complete:function(){
+						uni.hideLoading()
+					}
 				})
 			}
 		}

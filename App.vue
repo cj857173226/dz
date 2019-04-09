@@ -10,7 +10,6 @@
 		onLaunch: function() {
 			console.log('App Launch')
 			let token = uni.getStorageSync('dz_token');
-			
 			if (!token) {
 				setTimeout(function() {
 					uni.reLaunch({

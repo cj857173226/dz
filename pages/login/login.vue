@@ -112,7 +112,7 @@
 				} else {
 					that.loginLoad = true;
 					uni.request({
-						url: 'http://dz.cdabon.com/e/member/ajax/index.php?action=login',
+						url: 'http://dz.abontest.com/e/member/ajax/index.php?action=login',
 						method: 'POST',
 						header: {
 							"Content-Type": "application/x-www-form-urlencoded",
@@ -130,7 +130,7 @@
 								})
 							} else {
 								uni.showToast({
-									title: res.data.errorMsg,
+									title: res.data.msg,
 									duration: 1500,
 									icon: 'none'
 								});
