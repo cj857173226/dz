@@ -15,27 +15,16 @@
 			<view class="line" />
 			<view class="input">
 				<view class="img">
-					<text class="iconfont icon-tuxingyanzhengma"></text>
-				</view>
-				<input type="text" v-model.trim="imgCode" placeholder-style="color:#ccc;font-size:14px;" placeholder="图形验证码"
-				 :focus="autoFocus">
-				<view class="get_img_code" v-if="code_img" @click="getImgCode">
-					<img class="code_img" :src="code_img" alt="">
-				</view>
-			</view>
-			<view class="line" />
-			<view class="input">
-				<view class="img">
 					<text class="iconfont icon-yanzhengma"></text>
 				</view>
-				<input v-model.trim="regCode" placeholder-style="color:#ccc;font-size:14px;" placeholder="动态验证码" >
+				<input v-model.trim="regCode" placeholder-style="color:#ccc;font-size:14px;" placeholder="动态验证码">
 				<view class="get_code">
 					<view class="get_code_btn" :class="{'dis_btn':codeDisable===true}" @tap.stop="getMsgCode">{{codeText}}</view>
 				</view>
 			</view>
 		</view>
 		<!-- 登录提交 -->
-		<button class="submit" @tap="login">登录</button>
+		<button class="submit" @tap="quickLogin">登录</button>
 		<view class="opts">
 			<text @tap="goReg" class="text">立即注册</text>
 			<text @tap="usualLogin" class="text" style="color: #F05B72;">账号登录</text>
@@ -56,13 +45,13 @@
 	import {
 		requset
 	} from '../../common/requset.js'
+	import helper from '../../common/helper.js'
 	export default {
 		data() {
 			const isUni = typeof(uni) !== 'undefined'
 			return {
 				username: '', //账号
-				userpwd: '', //密码
-				regCode:'', // 动态验证码
+				regCode: '', // 动态验证码
 				imgInfo: {
 					qq: isUni ? '/static/qq.png' : require('./images/qq.png'),
 					wechat: isUni ? '/static/wechat.png' : require('./images/wechat.png'),
@@ -70,16 +59,14 @@
 				},
 				autoFocus: true,
 				code_img: '', //图形验证码链接
-				imgCode:'', // 图形验证码
-				codeDisable: false,  //是否可以获取验证码
+				codeDisable: false, //是否可以获取验证码
 				codeText: '获取验证码',
 				codeTimer: null, //验证码定时器
-				codeLoad:false, // 是否正在发送验证码
+				codeLoad: false, // 是否正在发送验证码
+				loginLoad: false, // 是否在登录
 			}
 		},
-		onLoad(){
-			this.getImgCode()
-		},
+		onLoad() {},
 		methods: {
 			inputUsername(e) {
 				this.username = e.target.value
@@ -89,9 +76,6 @@
 			},
 			delUser() {
 				this.username = ''
-			},
-			login() {
-				console.log('username:' + this.username + ',pwd:' + this.userpwd)
 			},
 			usualLogin() {
 				uni.redirectTo({
@@ -103,15 +87,134 @@
 					url: '/pages/register/register'
 				})
 			},
-			// 获取图形验证码
-			getImgCode() {
-				const that = this;
-				let codeImg = that.code_img
-				that.code_img = 'http://dz.cdabon.com/e/ShowKey/?v=login&'+new Date().getTime()
-			},
 			// 获取动态验证码
-			getMsgCode(){
-			
+			getMsgCode() {
+				if (this.codeLoad) return;
+				const _this = this;
+				const user = _this.username;
+				let _time = 60;
+				if (user === '' || !helper.phoneReg(user)) {
+					let _title = '';
+					if (user === '') {
+						_title = "手机号不能为空"
+					} else if (!helper.phoneReg(user)) {
+						_title = "手机号格式有误"
+					}
+					uni.showToast({
+						title: _title,
+						duration: 1500,
+						icon: 'none'
+					});
+				} else {
+					uni.request({
+						url: "http://dz.cdabon.com/wap/api/global.php",
+						method: 'GET',
+						data: {
+							action: 'QuickSendSmsCode',
+							phone: user
+						},
+						success: function(r) {
+							if (r.data.status === 'success') {
+								_this.codeDisable = true;
+								_this.codeTimer = setInterval(function() {
+									if (_time <= 0) {
+										clearInterval(_this.codeTimer);
+										_this.codeTimer = null;
+										_this.codeText = '重新获取'
+										_this.codeDisable = false;
+									} else {
+										_this.codeText = `${_time}s再获取`;
+										_time -= 1;
+									}
+								}, 1000)
+								uni.showToast({
+									title: '已发送到手机',
+									duration: 1500,
+									icon: 'none'
+								});
+							} else {
+								uni.showToast({
+									title: r.data.errorMsg,
+									duration: 1500,
+									icon: 'none'
+								});
+							}
+
+						},
+						fail: function() {
+							uni.showToast({
+								title: '发送失败,请稍后重试',
+								duration: 1000,
+								icon: 'none'
+							});
+						},
+						complete: function() {
+							_this.codeLoad = false;
+						}
+					})
+				}
+			},
+			quickLogin() {
+				const _this = this;
+				const user = _this.username;
+				const regCode = _this.regCode;
+				if (user === '' || !helper.phoneReg(user)) {
+					let _title = '';
+					if (user === '') {
+						_title = "手机号不能为空"
+					} else if (!helper.phoneReg(user)) {
+						_title = "手机号格式有误"
+					}
+					uni.showToast({
+						title: _title,
+						duration: 1500,
+						icon: 'none'
+					});
+				} else if (regCode === '') {
+					uni.showToast({
+						title: '验证码不能为空',
+						duration: 1500,
+						icon: 'none'
+					});
+				} else {
+					_this.loginLoad = true;
+					uni.request({
+						url: "http://dz.cdabon.com/e/member/ajax/index.php?action=mobilelogin",
+						method: 'GET',
+						data: {
+							code: regCode,
+							username: user,
+							nationName: 'CN',
+							nationCode: '86'
+						},
+						success: function(res) {
+							if (res.data.status === 'success') {
+								uni.setStorageSync('dz_userInfo', res.data.content);
+								uni.setStorageSync('dz_token', res.data.content.token);
+								uni.reLaunch({
+									url: "/pages/index/index"
+								})
+							} else {
+								uni.showToast({
+									title: res.data.msg,
+									duration: 1500,
+									icon: 'none'
+								});
+							}
+						},
+						fail: function(err) {
+							uni.showToast({
+								title: '登录失败',
+								duration: 1500,
+								icon: 'none'
+							});
+						},
+						complete: function() {
+							_this.loginLoad = false;
+						}
+					})
+				}
+
 			},
 			// 第三方快速登录
 			thirdLogin(type) {
@@ -186,12 +289,13 @@
 					height: 30px
 				}
 			}
+
 			.get_code {
 				min-width: 90px;
 				min-height: 40px;
 				display: flex;
 				align-items: center;
-			
+
 				.get_code_btn {
 					height: 30px;
 					width: 100%;
@@ -201,7 +305,7 @@
 					background: #F05B72;
 					border-radius: 8px;
 					font-size: 14px;
-			
+
 					&:active {
 						opacity: 0.8;
 					}

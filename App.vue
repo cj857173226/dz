@@ -1,20 +1,23 @@
 <script>
-	import {
-		mapState,
-		mapMutations
-	} from 'vuex'
 	export default {
 		data() {
 			return {
 
 			}
 		},
-		computed: {
-			...mapState(['islogin'])
-		},
+		computed: {},
+
 		onLaunch: function() {
 			console.log('App Launch')
-			this.login()
+			let token = uni.getStorageSync('dz_token');
+			
+			if (!token) {
+				setTimeout(function() {
+					uni.reLaunch({
+						url: "/pages/login/login"
+					})
+				}, 0)
+			}
 		},
 		onShow: function() {
 			console.log('App Show')
@@ -22,9 +25,7 @@
 		onHide: function() {
 			console.log('App Hide')
 		},
-		methods: {
-			...mapMutations(['login'])
-		}
+		methods: {}
 	}
 </script>
 
@@ -91,7 +92,8 @@
 		padding: 0;
 		transition: all 0.2s;
 	}
-	.my-del-block:active{
+
+	.my-del-block:active {
 		background: #f9f9f9 !important;
 		color: #AAAAAA;
 	}
@@ -99,7 +101,8 @@
 	ul li {
 		list-style: none;
 	}
-	uni-picker .uni-picker-action.uni-picker-action-confirm{
+
+	uni-picker .uni-picker-action.uni-picker-action-confirm {
 		color: #f05b72;
 	}
 </style>

@@ -29,6 +29,7 @@
 
 
 
+
 /*每个页面公共css */
 @font-face {
   font-family: 'iconfont';  /* project id 1051448 */
@@ -401,14 +402,14 @@ page {
 	-o-transition: all 0.2s;
 	transition: all 0.2s;
 }
-.my-del-block:active{
+.my-del-block:active {
 	background: #f9f9f9 !important;
 	color: #AAAAAA;
 }
 ._ul ._li {
 	list-style: none;
 }
-uni-picker .uni-picker-action.uni-picker-action-confirm{
+uni-picker .uni-picker-action.uni-picker-action-confirm {
 	color: #f05b72;
 }
 

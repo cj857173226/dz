@@ -26,7 +26,7 @@
 			</view>
 		</view>
 		<!-- 登录提交 -->
-		<button class="submit" @tap="login">登录</button>
+		<button class="submit" :class="{'dis_btn':loginLoad===true}" @tap="login" v-text="loginLoad===true?'登录中...':'登录'">登录</button>
 		<view class="opts">
 			<text @tap="goReg" class="text">立即注册</text>
 			<text @tap="quickLogin" class="text" style="color: #F05B72;">手机快速登录</text>
@@ -57,11 +57,13 @@
 					weibo: isUni ? '/static/weibo.png' : require('./images/weibo.png')
 				},
 				autoFocus: true,
-				loginLoad:false,
+				loginLoad: false,
 			}
 		},
-		onLoad(){
-			
+		onLoad() {
+
+		},
+		computed: {
 		},
 		methods: {
 			inputUsername(e) {
@@ -91,7 +93,7 @@
 			},
 			// 登录
 			login() {
-				if(this.loginLoad) return;
+				if (this.loginLoad) return;
 				const that = this;
 				const username = that.username;
 				const pws = that.userpwd;
@@ -110,34 +112,38 @@
 				} else {
 					that.loginLoad = true;
 					uni.request({
-						url:'http://dz.cdabon.com/e/member/ajax/index.php?action=login',
-						method:'POST',
-						header:{
+						url: 'http://dz.cdabon.com/e/member/ajax/index.php?action=login',
+						method: 'POST',
+						header: {
 							"Content-Type": "application/x-www-form-urlencoded",
 						},
-						data:{
-							username:username,
-							password:pws
+						data: {
+							username: username,
+							password: pws
 						},
-						success:function(res){
-							if(res.data.status === 'success'){
-								
-							} else{
+						success: function(res) {
+							if (res.data.status === 'success') {
+								uni.setStorageSync('dz_userInfo', res.data.content);
+								uni.setStorageSync('dz_token', res.data.content.token);
+								uni.reLaunch({
+									url: "/pages/index/index"
+								})
+							} else {
 								uni.showToast({
-									title: res.data.msg,
+									title: res.data.errorMsg,
 									duration: 1500,
 									icon: 'none'
 								});
 							}
 						},
-						fail:function(err){
+						fail: function(err) {
 							uni.showToast({
 								title: '登录失败',
 								duration: 1500,
 								icon: 'none'
 							});
 						},
-						complete:function(){
+						complete: function() {
 							that.loginLoad = false;
 						}
 					})
