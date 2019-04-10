@@ -89,8 +89,12 @@
 					fail: function(err) {
 						helper.layer('系统异常,请稍后再试')
 					},
-					complete: function() {
-						uni.hideLoading();
+					complete: function(res) {
+						if(res.data.status === 'success'){
+							uni.hideLoading()
+						} else{
+							helper.layer('获取地址列表失败')
+						}
 					}
 				})
 			}

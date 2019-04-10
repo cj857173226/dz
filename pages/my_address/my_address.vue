@@ -20,6 +20,10 @@
 		mapState,
 		mapMutations
 	} from 'vuex'
+	import helper from '../../common/helper.js'
+	import {
+		request
+	} from '../../common/request.js'
 	export default {
 		data() {
 			return {
@@ -114,10 +118,16 @@
 				],
 			};
 		},
-		onLoad() {},
-		onShow() {},
+		onLoad() {
+			this.getAddressList()
+		},
+		onShow() {
+			if(this.isEditAddress){
+				this.getAddressList()
+			}
+		},
 		onNavigationBarButtonTap(e) {
-			if(e.text === '添加'){
+			if (e.text === '添加') {
 				this.addAddress()
 			}
 		},
@@ -140,22 +150,34 @@
 				})
 			},
 			// 获取收货地址列表
-			getAddressList(){
+			getAddressList() {
 				const _this = this;
 				uni.showLoading({
 					title: '加载中',
 					mask: false,
 				});
 				request({
-					url:'/wap/api/my.php?action=AddressesList',
-					success:function(res){
-						console.log()
+					url: '/wap/api/my.php?action=AddressesList',
+					success: function(res) {
+						if (res.data.status === 'success') {
+							let list = res.data.content;
+							if (list.length > 0) {
+								_this.addressList = list;
+							} else {
+								_this.addressList = [];
+							}
+						} else {
+							helper.layer(res.data.errorMsg)
+						}
 					},
-					fail:function(){
-						
+					fail: function() {
 					},
-					complete:function(){
-						uni.hideLoading()
+					complete: function(res) {
+						if(res.data.status === 'success'){
+							uni.hideLoading()
+						} else{
+							helper.layer('获取地址列表失败')
+						}
 					}
 				})
 			}
@@ -179,7 +201,8 @@
 		height: 100%;
 
 		.adress-list-wrap {
-			height: calc(100% );
+			height: calc(100%);
+
 			.adress-list {
 				box-sizing: border-box;
 				display: flex;
@@ -229,6 +252,7 @@
 							color: #aaaaaa;
 							padding: 8upx;
 							font-size: 28upx;
+
 							&:active {
 								color: #cccccc;
 							}

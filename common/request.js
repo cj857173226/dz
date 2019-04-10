@@ -16,6 +16,13 @@ export function request(opt) {
 		data: {},
 		dataType: 'json',
 		responseType: 'text',
+		fail:function(){
+			uni.showToast({
+				title: '系统异常,稍后再试',
+				duration: 1500,
+				icon: 'none'
+			});
+		}
 	}
 	opt = Object.assign(option, opt);
 	uni.request({
