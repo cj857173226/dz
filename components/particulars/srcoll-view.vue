@@ -6,41 +6,40 @@
 	            <swiper class="swiper"
 				indicator-color="#EBEDF3"
 				indicator-active-color="#fff"
+				@change="changeIndicatorDots"
 				>
-	                <swiper-item>
-	                    <image class="banner" src="../../static/images/landlordguide/banner1.jpg"></image>
+	                <swiper-item v-for="(item,index) in detailsImg" :key="index" :item-id="(index+1)+''">
+	                    <image class="banner" :src="http+item.bigImgUrl"></image>
 	                </swiper-item>
-					<swiper-item>
-					    <image class="banner" src="../../static/images/landlordguide/banner2.jpg"></image>
-					</swiper-item>
-					<swiper-item>
-					    <image class="banner" src="../../static/images/landlordguide/banner3.jpg"></image>
-					</swiper-item>
-					<swiper-item>
-					    <image class="banner" src="../../static/images/landlordguide/banner4.jpg"></image>
-					</swiper-item>
-					<swiper-item>
-					    <image class="banner" src="../../static/images/landlordguide/banner5.jpg"></image>
-					</swiper-item>
 				</swiper>
 			</view>
 		</view>
 		<view class="price">
-			&yen;<text class="specific-price">2199</text>起/晚
+			&yen;<text class="specific-price">{{}}</text>起/晚
 		</view>
 		<view class="indexes-box">
-			<text>1</text>/
-			<text>5</text>
+			<text>{{numberIndex}}</text>/
+			<!-- <text v-text="detailsImg.length"></text> -->
 		</view>
 	</view>
   </view>
 </template>
 
 <script>
+import { shortHttp } from "../../common/requestUrl.json"; // 接口文件
 	export default {
 		data(){
 			return{
+				numberIndex:1,
+				http:shortHttp
 			}
+		},
+		props: ["detailsImg","prices"],
+		methods: {
+			
+		},
+		mounted () {
+			console.log(this.detailsImg);
 		}
 	}
 </script>
@@ -75,6 +74,13 @@
 				}
 			}
 			.indexes-box{
+				width: 60upx;
+				height: 60upx;
+				background-color: rgba(0,0,0,.7);
+				border-radius: 50%;
+				text-align: center;
+				line-height: 60upx;
+				font-size: 12px;
 				color: #fff;
 				position: absolute;
 				bottom: 10upx;

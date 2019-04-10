@@ -632,7 +632,7 @@
 
 	.layer-content {
 		position: absolute;
-		height: 85%;
+		height: 90%;
 		bottom: 0;
 		font-size: 26upx;
 		flex-direction: column;

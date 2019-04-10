@@ -337,6 +337,17 @@ eval("/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, 
 
 /***/ }),
 
+/***/ "D:\\projectFile\\xzapp\\common\\requestUrl.json":
+/*!***************************************************!*\
+  !*** D:/projectFile/xzapp/common/requestUrl.json ***!
+  \***************************************************/
+/*! exports provided: shortHttp, banner, ambitus, room, default */
+/***/ (function(module) {
+
+eval("module.exports = {\"shortHttp\":\"http://dz.abontest.com\",\"banner\":\"/wap/api/json.php?action=api_getIndexRecommendLodgeunit.json\",\"ambitus\":\"/wap/api/search.php?action=index\",\"room\":\"/wap/api/detail.php?action=index\"};\n\n//# sourceURL=D:/projectFile/xzapp/common/requestUrl.json");
+
+/***/ }),
+
 /***/ "D:\\projectFile\\xzapp\\components\\mpvue-citypicker\\city-data\\area.js":
 /*!**************************************************************************!*\
   !*** D:/projectFile/xzapp/components/mpvue-citypicker/city-data/area.js ***!
