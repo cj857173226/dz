@@ -77,7 +77,7 @@
 			};
 		},
 		computed: {
-			...mapState(['islogin', 'token', 'isEditCheckIn'])
+			...mapState(['isEditCheckIn'])
 		},
 		onLoad(option) {
 			this.handleType = option.type;

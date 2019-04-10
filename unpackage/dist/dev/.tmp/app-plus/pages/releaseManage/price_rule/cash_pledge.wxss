@@ -24,38 +24,38 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-554da29b {
+.contanier.data-v-4c8c2181 {
   width: 100%;
   padding: 30rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 12px;
 }
-.contanier .title.data-v-554da29b {
+.contanier .title.data-v-4c8c2181 {
     font-size: 20px;
     font-weight: bold;
 }
-.contanier .title.data-v-554da29b:nth-of-type(2) {
+.contanier .title.data-v-4c8c2181:nth-of-type(2) {
       margin-top: 10rpx;
       margin-bottom: 40rpx;
 }
-.contanier .the-same-security.data-v-554da29b {
+.contanier .the-same-security.data-v-4c8c2181 {
     font-size: 14px;
     font-weight: 700;
     margin-bottom: 16rpx;
 }
-.contanier .verbal-content.data-v-554da29b {
+.contanier .verbal-content.data-v-4c8c2181 {
     color: #C6C6C6;
     margin-bottom: 10rpx;
 }
-.contanier .border.data-v-554da29b {
+.contanier .border.data-v-4c8c2181 {
     border-bottom: 1px solid #e4e3e3;
     padding-bottom: 30rpx;
 }
-.contanier .bottom-box.data-v-554da29b {
+.contanier .bottom-box.data-v-4c8c2181 {
     margin-top: 20rpx;
 }
-.contanier .bottom-box .deposit.data-v-554da29b {
+.contanier .bottom-box .deposit.data-v-4c8c2181 {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -69,7 +69,7 @@
           -ms-flex-pack: justify;
               justify-content: space-between;
 }
-.contanier .bottom-box .deposit .switch-box .uni-switch-input.data-v-554da29b {
+.contanier .bottom-box .deposit .switch-box .uni-switch-input.data-v-4c8c2181 {
         width: 100rpx !important;
         height: 30rpx !important;
 }

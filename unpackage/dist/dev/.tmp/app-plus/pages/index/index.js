@@ -198,17 +198,6 @@ eval("function AMapWX(a) {this.key = a.key, this.requestConfig = { key: a.key, s
 
 /***/ }),
 
-/***/ "D:\\xzapp\\common\\requestUrl.json":
-/*!***************************************!*\
-  !*** D:/xzapp/common/requestUrl.json ***!
-  \***************************************/
-/*! exports provided: shortHttp, banner, ambitus, default */
-/***/ (function(module) {
-
-eval("module.exports = {\"shortHttp\":\"http://dz.abontest.com\",\"banner\":\"/wap/api/json.php?action=api_getIndexRecommendLodgeunit.json\",\"ambitus\":\"/wap/api/search.php?action=index\"};\n\n//# sourceURL=D:/xzapp/common/requestUrl.json");
-
-/***/ }),
-
 /***/ "D:\\xzapp\\components\\index\\carousel.vue":
 /*!**********************************************!*\
   !*** D:/xzapp/components/index/carousel.vue ***!
