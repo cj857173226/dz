@@ -11,6 +11,7 @@
 import Carousel from "../../components/index/carousel.vue"; // 轮播组件
 import Selects from "../../components/index/select.vue"; // 地区时间搜索组件
 import Circum from "../../components/index/circum.vue"; // 周边推荐组件
+
 import { shortHttp, banner, ambitus } from "../../common/requestUrl.json"; // 接口文件
 export default {
   components: {
@@ -23,7 +24,7 @@ export default {
     return {
       contentArray: null, //轮播图
       ambitusArray: null, //周边推荐
-      city: "" // gps获取当前设备城市名
+      city: "", // gps获取当前设备城市名
     };
   },
   onLoad() {
@@ -51,7 +52,10 @@ export default {
         url: shortHttp + banner,
         method: "GET",
         success: res => {
-          _that.contentArray = res.data.content;
+          let array = res.data.content
+          console.log(array);
+          
+          _that.contentArray = array;
         },
         fail: err => {
           console.log(err);
@@ -63,25 +67,25 @@ export default {
       const _that = this;
       plus.geolocation.getCurrentPosition(p => {
         _that.city = p.address.city; //当前城市名
-        console.log(_that)
+        console.log(_that.city)
       });
+      
     },
     // 周边推荐
-    recommended() {
-      console.log(2);
+    async recommended() {
+      // console.log(2);
       const _that = this;
-      console.log("城市", _that.city);
-      uni.request({
+      var [err,res] = await uni.request({
         url: shortHttp + ambitus,
         method: "GET",
-        data: { cityName: _that.city },  //*：有问题，无法拿到当前城市
-        success:res=>{
-          console.log(res);
+        data: { cityName: "成都市" },  //*：有问题，无法拿到当前城市
+        // success:res=>{
+        //   console.log(res);
           
-        }
+        // }
       });
      
-      // console.log("同步操作", res);
+      console.log("同步操作", res);
     }
   }
 };

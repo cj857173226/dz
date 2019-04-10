@@ -33,7 +33,7 @@
 
 <script>
 	import calendar from './date-picker/date-picker.vue' //引入日期插件
-	import amap from '../../common/amap-wx.js'  //高德微信sdk
+	
 	export default {
 		components: {
 			calendar

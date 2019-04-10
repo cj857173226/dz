@@ -43,7 +43,7 @@
 <script>
 	export default{
 		onLoad(){
-			console.log(1)
+			// console.log(1)
 		},
 		methods:{
 			// 点击图片跳转页面查看房间详情

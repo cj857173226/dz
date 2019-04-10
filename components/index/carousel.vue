@@ -9,10 +9,10 @@
 					:interval="interval" 
 					:duration="duration"
 					indicator-color="#EBEDF3"
-					indicator-active-color="#fff"
+					indicator-active-color="#E9516A"
 					>
 						
-		                <swiper-item v-for="(item,index) in banner" :key="index">
+		                <swiper-item @tap="onDetails(item.luid)" v-for="(item,index) in banner" :key="index">
 		                    <image class="banner" :src="shortHttp+item.mainimageurl"></image>
 		                </swiper-item>
 					</swiper>
@@ -38,25 +38,19 @@ import { shortHttp } from "../../common/requestUrl.json"; // 接口文件
 		banner:Array
 	},
     methods: {
-        changeIndicatorDots(e) {
-            this.indicatorDots = !this.indicatorDots
-        },
-        changeAutoplay(e) {
-            this.autoplay = !this.autoplay
-        },
-        intervalChange(e) {
-            this.interval = e.target.value
-        },
-        durationChange(e) {
-            this.duration = e.target.value
-		},
+        onDetails(id){
+			console.log('id:',id);
+			uni.navigateTo({
+				url: `/pages/particulars/particulars?id=${id}`
+			})
+		}
 	},
 	
 }
 	
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 	.container{
 		width: 100%;
 		height: 500upx;

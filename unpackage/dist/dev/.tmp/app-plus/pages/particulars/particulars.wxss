@@ -24,6 +24,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+<<<<<<< HEAD
 .container.data-v-c1deb0b0 {
   width: 100%;
   height: 500rpx;
@@ -88,6 +89,9 @@
 /* 透明度 */
 /* 文章场景相关 */
 .container.data-v-3259b61d {
+=======
+.container.data-v-6736a992 {
+>>>>>>> 1941abf5315594ab31ed75f2aba245f133682860
   width: 100%;
   height: 490rpx;
   background-color: #fff;
@@ -617,5 +621,48 @@
   width: 100%;
   height: 100%;
   background-color: #ededed;
+}
+.container .container-box.data-v-3ad1568d {
+    width: 100%;
+    height: 500rpx;
+}
+.container .container-box .uni-padding-wrap.data-v-3ad1568d {
+      position: relative;
+}
+.container .container-box .uni-padding-wrap .swiper.data-v-3ad1568d {
+        width: 100%;
+        height: 500rpx;
+}
+.container .container-box .uni-padding-wrap .swiper .banner.data-v-3ad1568d {
+          width: 100%;
+          height: 500rpx;
+}
+.container .container-box .uni-padding-wrap .price.data-v-3ad1568d {
+        width: 200rpx;
+        height: 60rpx;
+        line-height: 60rpx;
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+        background-color: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+}
+.container .container-box .uni-padding-wrap .price .specific-price.data-v-3ad1568d {
+          font-size: 18px;
+}
+.container .container-box .uni-padding-wrap .indexes-box.data-v-3ad1568d {
+        width: 60rpx;
+        height: 60rpx;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 50%;
+        text-align: center;
+        line-height: 60rpx;
+        font-size: 12px;
+        color: #fff;
+        position: absolute;
+        bottom: 10rpx;
+        right: 30rpx;
 }
 

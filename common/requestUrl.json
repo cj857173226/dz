@@ -1,5 +1,6 @@
 {
   "shortHttp":"http://dz.abontest.com",  
   "banner":"/wap/api/json.php?action=api_getIndexRecommendLodgeunit.json", 
-  "ambitus":"/wap/api/search.php?action=index" 
+  "ambitus":"/wap/api/search.php?action=index" ,
+  "room":"/wap/api/detail.php?action=index"
 }
