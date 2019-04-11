@@ -1,4 +1,4 @@
-<import src="/components/particulars/uni-rate/uni-rate.vue.wxml" /><import src="/components/particulars/supporting-facility.vue.wxml" /><import src="/components/particulars/unsubscribe-rules.vue.wxml" /><template name="b16f7022"><view class="_view data-v-91117182 cantainer"><view class="_view data-v-91117182 title">房间描述</view><view class="_view data-v-91117182 introduce">同学，祝贺你喜提彩蛋~
+<import src="/components/particulars/uni-rate/uni-rate.vue.wxml" /><import src="/components/particulars/supporting-facility.vue.wxml" /><import src="/components/particulars/unsubscribe-rules.vue.wxml" /><template name="b16f7022"><view class="_view data-v-91117182 cantainer-description-box"><view class="_view data-v-91117182 title">房间描述</view><view class="_view data-v-91117182 introduce">同学，祝贺你喜提彩蛋~
 	或许你们还在犹豫是否加入，我会坦诚的告诉你我们超酷；
 	在这里大家都用无人车代步，AI音箱不仅播放还可以交互；
 	人工智能是发展的核心技术，做自己让未来不只领先几步；

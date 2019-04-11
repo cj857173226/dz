@@ -31,8 +31,8 @@
 				<view class="price">
 					&yen;<text class="specific-price">2199</text>起/晚
 				</view>
-				<view class="icon-box">
-					<i class="iconfont love-icon">&#xe619;</i>
+				<view class="icon-box" @tap="onCollect">
+					<i class="iconfont" :class="[isShow?'love-icon':'love-icon-red']">&#xe63e;</i>
 				</view>
 			</view>
 			
@@ -42,8 +42,11 @@
 
 <script>
 	export default{
-		onLoad(){
-			// console.log(1)
+
+		data () {
+			return {
+				isShow:true
+			}
 		},
 		methods:{
 			// 点击图片跳转页面查看房间详情
@@ -57,6 +60,11 @@
 				uni.navigateTo({
 					url:'/pages/landlord_introduced/landlord_introduced'
 				})
+			},
+			onCollect(){
+				console.log(11);
+				
+				this.isShow = !this.isShow
 			}
 		}
 	}
@@ -171,13 +179,17 @@
 					color: #fff;
 					background-color: rgba(0,0,0,.7);
 					border-radius: 50%;
+					line-height: 60upx;
+					text-align: 60upx;
 					position: absolute;
 					top: 30upx;
 					right:30upx;
 					.love-icon{
-						font-size: 40upx;
-						line-height: 60upx;
-						text-align: 60upx;
+						font-size: 30upx;
+					}
+					.love-icon-red{
+						font-size: 30upx;
+						color: #F8070E;
 					}
 				}
 			}

@@ -130,7 +130,7 @@
 								})
 							} else {
 								uni.showToast({
-									title: res.data.errorMsg,
+									title: res.data.msg,
 									duration: 1500,
 									icon: 'none'
 								});

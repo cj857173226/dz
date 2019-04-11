@@ -28,7 +28,7 @@
 						</view>
 					</view>
 					<view class="basic-info-item ">
-						<view class="_box" @click.stop="pageTo('/pages/my_information/my_information')">
+						<view class="_box" @tap.stop="editUserInfo">
 							<text class="iconfont icon-shenfenzheng"></text> 
 							<p class="name">我的资料</p>
 						</view>
@@ -153,16 +153,17 @@
 			}
 		},
 		computed:{
-		
+			...mapState(['isEditUserInfo'])
 		},
 		onLoad() {
 			// 检测是否登录
 			helper.isLogin();
 			this.userInfo = uni.getStorageSync('dz_userInfo');
-			console.log(this.userInfo)
 		},
 		onShow() {
-			
+			if(this.isEditUserInfo){
+				this.userInfo = uni.getStorageSync('dz_userInfo');
+			}
 		},
 		onNavigationBarButtonTap(e){
 			if(e.index === 0){
@@ -178,12 +179,19 @@
 			})
 		},
 		methods: {
+			...mapMutations(['isUserInfoEditStatus']),
 			pageTo(url) {
 				uni.navigateTo({
 					url: url
 				});
+			},
+			// 到编辑个人资料页面
+			editUserInfo(){
+				uni.navigateTo({
+					url: '/pages/my_information/my_information'
+				});
+				this.isUserInfoEditStatus(false)
 			}
-			
 		}
 	}
 </script>

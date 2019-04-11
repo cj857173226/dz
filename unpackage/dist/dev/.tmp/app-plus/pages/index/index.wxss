@@ -720,14 +720,18 @@ uni-button.data-v-4034a95d{
         color: #fff;
         background-color: rgba(0, 0, 0, 0.7);
         border-radius: 50%;
+        line-height: 60rpx;
+        text-align: 60rpx;
         position: absolute;
         top: 30rpx;
         right: 30rpx;
 }
 .container .recommend-box .list-box .icon-box .love-icon.data-v-707e80d0 {
-          font-size: 40rpx;
-          line-height: 60rpx;
-          text-align: 60rpx;
+          font-size: 30rpx;
+}
+.container .recommend-box .list-box .icon-box .love-icon-red.data-v-707e80d0 {
+          font-size: 30rpx;
+          color: #F8070E;
 }
 
 

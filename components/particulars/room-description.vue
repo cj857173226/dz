@@ -1,5 +1,5 @@
 <template>
-	<view class="cantainer">
+	<view class="cantainer-description-box">
 		<view class="title">房间描述</view>
 		<view class="introduce">同学，祝贺你喜提彩蛋~
 		或许你们还在犹豫是否加入，我会坦诚的告诉你我们超酷；
@@ -88,7 +88,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.cantainer{
+	.cantainer-description-box{
 		width: 100%;
 		margin-top: 10upx;
 		background-color: #fff;
