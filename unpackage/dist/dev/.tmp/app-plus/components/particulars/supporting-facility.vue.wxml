@@ -1,1 +1,9 @@
+<<<<<<< HEAD
 <template name="0206ed69"><view class="_view data-v-0fbdffbe containers"><view class="_view data-v-0fbdffbe title">配套设施</view><view class="_view data-v-0fbdffbe supporting-box"><view class="_view data-v-0fbdffbe box"><view class="_view data-v-0fbdffbe icon-box" wx:key="i" key="{{i}}" wx:for="{{dataArray}}" wx:for-index="i" wx:for-item="v"><text class="_text data-v-0fbdffbe iconfont color-icon {{v.leftIcon}}"></text><view style="font-size:12px;" class="_view data-v-0fbdffbe">{{v.leftText}}</view></view></view></view></view></template>
+=======
+<<<<<<< HEAD
+<template name="f7039d10"><view class="_view data-v-187f80d8 containers"><view class="_view data-v-187f80d8 title">配套设施</view><view class="_view data-v-187f80d8 supporting-box"><view class="_view data-v-187f80d8 box"><view class="_view data-v-187f80d8 icon-box" wx:key="i" key="{{i}}" wx:for="{{dataArray}}" wx:for-index="i" wx:for-item="v"><text class="_text data-v-187f80d8 iconfont color-icon {{v.leftIcon}}"></text><view style="font-size:12px;" class="_view data-v-187f80d8">{{v.leftText}}</view></view></view></view></view></template>
+=======
+<template name="0206ed69"><view class="_view data-v-0fbdffbe container"><view class="_view data-v-0fbdffbe title">配套设施</view><view class="_view data-v-0fbdffbe supporting-box"><view class="_view data-v-0fbdffbe box" wx:key="i" key="{{i}}" wx:for="{{listData}}" wx:for-index="i" wx:for-item="v"><text class="_text data-v-0fbdffbe left"><text class="_text data-v-0fbdffbe iconfont color-icon {{v.leftIcon}}"></text><text class="_text data-v-0fbdffbe">{{v.leftText}}</text></text><text class="_text data-v-0fbdffbe right"><text class="_text data-v-0fbdffbe iconfont color-icon {{v.rightIcon}}"></text><text class="_text data-v-0fbdffbe">{{v.rightText}}</text></text></view></view></view></template>
+>>>>>>> dd299d5bdd7781bed39adb94cc59879d6fe5eaec
+>>>>>>> bdd797299291d67805fab0ea494c1f19c2dc6311

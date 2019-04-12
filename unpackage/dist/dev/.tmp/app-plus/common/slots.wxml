@@ -1,5 +1,34 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<import src="/components/landlord_introduced/head_portrait.vue.wxml" />
+<import src="/components/index/carousel.vue.wxml" />
+<import src="/components/index/select.vue.wxml" />
+<import src="/components/index/circum.vue.wxml" />
+<import src="/components/particulars/Contact-room-door.vue.wxml" />
+<import src="/components/selected/select-city.vue.wxml" />
+<import src="/components/orlderList/uni-segmented-control.vue.wxml" />
+<import src="/components/orlderList/unclosed.vue.wxml" />
+<import src="/components/orlderList/over.vue.wxml" />
+<import src="/pages/messages/lign-in/components/wkiwi-swipe-action.vue.wxml" />
+<import src="/components/mpvue-citypicker/mpvueCityPicker.vue.wxml" />
+<import src="/components/mpvue-picker/mpvuePicker.vue.wxml" />
+<import src="/components/mpvue-echarts/src/echarts.vue.wxml" />
+<import src="/components/sunui-upimg/sunui-upimg.vue.wxml" />
+<import src="/components/particulars/plug/uni-steps/uni-steps.vue.wxml" />
+>>>>>>> bdd797299291d67805fab0ea494c1f19c2dc6311
 <import src="/components/particulars/map.vue.wxml" />
 <import src="/components/particulars/uni-rate/uni-rate.vue.wxml" />
 <import src="/components/particulars/supporting-facility.vue.wxml" />
 <import src="/components/particulars/unsubscribe-rules.vue.wxml" />
+<<<<<<< HEAD
+=======
+<import src="/components/particulars/plug/uni-icon/uni-icon.vue.wxml" />
+<import src="/components/particulars/uni-icon/uni-icon.vue.wxml" />
+>>>>>>> 1941abf5315594ab31ed75f2aba245f133682860
+>>>>>>> dd299d5bdd7781bed39adb94cc59879d6fe5eaec
+>>>>>>> bdd797299291d67805fab0ea494c1f19c2dc6311
 
