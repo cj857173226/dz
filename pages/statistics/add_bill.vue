@@ -11,18 +11,21 @@
 				</view>
 				<view class="label">金额</view>
 				<view class="content_wrap">
-					<input type="text" placeholder="最高设置金额99999.99" placeholder-style="color:#ccc;" maxlength="10"> 
+					<input type="number" placeholder="最高设置金额99999.99" placeholder-style="color:#ccc;" maxlength="10" v-model="billForm.money">
 				</view>
 				<view class="unit">元</view>
 			</view>
-			<view class="form_item">
+			<view class="form_item" @tap="changeMoneyType">
 				<view class="icon">
-					<text class="iconfont icon-tongji6" ></text>
+					<text class="iconfont icon-tongji6"></text>
 				</view>
 				<view class="label" v-text="curTab==='out'?'成本分类':'收入来源'"></view>
 				<view class="content_wrap">
-					<view class="no_data">请选择</view>
-					<view class="content"></view>
+					<view class="no_data" v-if="!billForm.source">请选择</view>
+					<view class="content" v-else>
+						<text v-if="billForm.source==='1'">平台</text>
+						<text v-if="billForm.source==='2'">其他</text>
+					</view>
 				</view>
 				<view class="after-icon">
 					<text class="iconfont icon-right"></text>
@@ -34,21 +37,8 @@
 				</view>
 				<view class="label">备注</view>
 				<view class="content_wrap">
-					<view class="no_data">请填写备注内容</view>
-					<view class="content"></view>
-				</view>
-				<view class="after-icon">
-					<text class="iconfont icon-right"></text>
-				</view>
-			</view>
-			<view class="form_item">
-				<view class="icon">
-					<text class="iconfont icon-rili"></text>
-				</view>
-				<view class="label">日期</view>
-				<view class="content_wrap">
-					<view class="no_data">请选择日期</view>
-					<view class="content"></view>
+					<view class="no_data" v-if="!billForm.note">请填写备注内容</view>
+					<view class="content" v-else>{{billForm.note}}</view>
 				</view>
 				<view class="after-icon">
 					<text class="iconfont icon-right"></text>
@@ -59,17 +49,37 @@
 </template>
 
 <script>
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+	import {
+		request
+	} from '../../common/request.js';
+	import helper from '../../common/helper.js';
 	export default {
 		data() {
 			return {
-				curTab: 'in'
+				curTab: 'out',
+				billForm: {
+					source: '',
+					note: '',
+					money: '',
+				},
+				defaultVal: [],
 			}
 		},
+		components: {
+		},
 		onLoad() {
-
 		},
 		onShow() {
 
+		},
+		onNavigationBarButtonTap(e) {
+			if (e.index === 0) {}
+		},
+		onBackPress() {
 		},
 		computed: {
 
@@ -83,11 +93,24 @@
 				}
 			},
 			// 编辑备注
-			editNote(){
+			editNote() {
 				uni.navigateTo({
-					url:'/pages/statistics/bill_note'
+					url: '/pages/statistics/bill_note'
 				})
-			}
+			},
+			// 选择金额类型
+			changeMoneyType() {
+				const _this = this;
+				uni.showActionSheet({
+					itemList: ['平台', '其他'],
+					success: function(res) {
+						_this.billForm.source = (res.tapIndex + 1).toString();
+					},
+					fail: function(res) {
+						console.log(res.errMsg);
+					}
+				});
+			},
 		}
 	}
 </script>
@@ -99,6 +122,7 @@
 </style>
 <style lang="scss" scoped>
 	$theme-color: #F05B72;
+
 	.add_bill_page {
 		box-sizing: border-box;
 		width: 100%;
@@ -117,73 +141,86 @@
 				border-bottom: 1px solid #cccccc;
 				font-size: 32upx;
 			}
-			.tab-on{
+
+			.tab-on {
 				border-bottom: 1px solid $theme-color;
 				color: $theme-color;
 			}
 		}
-		.add_bill_form{
+
+		.add_bill_form {
 			box-sizing: border-box;
 			padding: 0 20upx;
 			width: 100%;
-			.form_item{
+
+			.form_item {
 				box-sizing: border-box;
 				width: 100%;
 				height: 90upx;
 				display: flex;
 				align-items: center;
 				border-bottom: 1px solid #eaeaea;
-				.icon{
+
+				.icon {
 					height: 100%;
 					width: 60upx;
 					color: #AAAAAA;
 					display: flex;
 					align-items: center;
 					justify-content: center;
-					.iconfont{
+
+					.iconfont {
 						font-size: 32upx;
 					}
 				}
-				.label{
+
+				.label {
 					height: 100%;
 					width: 140upx;
 					display: flex;
 					align-items: center;
 				}
-				.content_wrap{
+
+				.content_wrap {
 					box-sizing: border-box;
 					width: calc(100% - 260upx);
-					.no_data{
+
+					.no_data {
 						text-align: right;
 						color: #cccccc;
 					}
-					.content{
+
+					.content {
 						width: 100%;
 						overflow: hidden;
 						text-overflow: ellipsis;
 						white-space: nowrap;
 						text-align: right
 					}
-					input{
+
+					input {
 						text-align: right;
 					}
 				}
-				
+
 				.unit,
-				.after-icon{
+				.after-icon {
 					height: 100%;
 					width: 60upx;
 					text-align: center;
 				}
-				.unit{
+
+				.unit {
 					line-height: 86upx;
 				}
-				.after-icon{
+
+				.after-icon {
 					line-height: 90upx;
-					.iconfont{
+
+					.iconfont {
 						display: inline-block;
 						margin-top: 4upx;
-						font-size:32upx;
+						font-size: 32upx;
 						color: #cccccc
 					}
 				}

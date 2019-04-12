@@ -22,7 +22,7 @@
 		onLoad() {},
 		onShow() {},
 		onNavigationBarButtonTap(e) {
-			if(e.text === '抬头'){
+			if(e.index === 0){
 				uni.navigateTo({
 					url: '/pages/invoice/invoice_head'
 				})

@@ -12,6 +12,7 @@
     "pages/messages/username_messages",
     "pages/messages/favorable",
     "pages/my/my",
+    "pages/my/ad",
     "pages/login/login",
     "pages/register/register",
     "pages/quickLogin/quickLogin",

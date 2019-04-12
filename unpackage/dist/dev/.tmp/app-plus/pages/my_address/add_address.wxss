@@ -114,11 +114,7 @@ page {
                   flex-direction: row-reverse;
           font-size: 14px;
 }
-<<<<<<< HEAD
 .edit_address_page .edit_address_wrap .edit_address_form .form-item .input ._input.data-v-6222561e {
-=======
-.edit_address_page .edit_address_wrap .edit_address_form .form-item .input ._input.data-v-b5772690 {
->>>>>>> 1941abf5315594ab31ed75f2aba245f133682860
             width: 100%;
             text-align: right;
             font-size: 14px;

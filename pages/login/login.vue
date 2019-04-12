@@ -26,7 +26,7 @@
 			</view>
 		</view>
 		<!-- 登录提交 -->
-		<button class="submit" :class="{'dis_btn':loginLoad===true}" @tap="login" v-text="loginLoad===true?'登录中...':'登录'">登录</button>
+		<button class="submit" :class="{'dis_btn':loginLoad===true}" @tap="login" v-text="loginLoad===true?'登录中...':'登录'"></button>
 		<view class="opts">
 			<text @tap="goReg" class="text">立即注册</text>
 			<text @tap="quickLogin" class="text" style="color: #F05B72;">手机快速登录</text>

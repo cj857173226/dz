@@ -43,6 +43,7 @@
 			if(this.isEditCheckIn === true){
 				this.getChckList();
 			}
+			this.checkInEditStatus(false)
 		},
 		methods: {
 			...mapMutations(['checkInEditStatus']),

@@ -62,7 +62,7 @@
           </view>
         </view>
       </view>
-      <view class="btn">开始发布房源</view>
+      <view class="my-btn-block">开始发布房源</view>
     </view>
   </view>
 </template>

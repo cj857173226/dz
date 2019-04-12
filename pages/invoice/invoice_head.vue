@@ -10,7 +10,7 @@
 					<view class="one_line email">电子邮箱:<text>{{item.email}}</text></view>
 					<view class="hanle_wrap">
 						<text class="iconfont icon-icon-edit edit_btn" @tap="handleInvoiceHead('edit',item)">编辑</text>
-						<viwe class="default" v-if="item.is_default === '1'">默认抬头</viwe>
+						<view class="default" v-if="item.is_default === '1'">默认抬头</view>
 					</view>
 				</view>
 			</view>
@@ -27,51 +27,66 @@
 		mapState,
 		mapMutations
 	} from 'vuex'
+	import {
+		request
+	} from '../../common/request.js'
+	import {
+		shortHttp
+	} from '../../common/requestUrl.json'
+	import helper from 'common/helper.js'
 	export default {
 		data() {
 			return {
-				listData: [{
-						company: "公司",
-						email: "123123@qq.com",
-						id: "10",
-						is_default: "1",
-						number: "123123",
-						type: "common",
-						user_id: "104"
-					},
-					{
-						company: "公司1",
-						email: "123123@qq.com",
-						id: "10",
-						is_default: "0",
-						number: "123123",
-						type: "common",
-						user_id: "104"
-					}, {
-						company: "公司2",
-						email: "123123@qq.com",
-						id: "10",
-						is_default: "0",
-						number: "123123",
-						type: "common",
-						user_id: "104"
-					}, {
-						company: "公司3",
-						email: "123123@qq.com",
-						id: "10",
-						is_default: "0",
-						number: "123123",
-						type: "common",
-						user_id: "104"
-					}
+				listData: [
+// 					{
+// 							company: "公司",
+// 							email: "123123@qq.com",
+// 							id: "1",
+// 							is_default: "1",
+// 							number: "123123",
+// 							type: "common",
+// 							user_id: "104"
+// 						},
+// 						{
+// 							company: "公司1",
+// 							email: "123123@qq.com",
+// 							id: "2",
+// 							is_default: "0",
+// 							number: "123123",
+// 							type: "common",
+// 							user_id: "104"
+// 						}, {
+// 							company: "公司2",
+// 							email: "123123@qq.com",
+// 							id: "3",
+// 							is_default: "0",
+// 							number: "123123",
+// 							type: "common",
+// 							user_id: "104"
+// 						}, {
+// 							company: "公司3",
+// 							email: "123123@qq.com",
+// 							id: "4",
+// 							is_default: "0",
+// 							number: "123123",
+// 							type: "common",
+// 							user_id: "104"
+// 						}
 				]
 			};
 		},
-		onLoad() {},
-		onShow() {},
+		onLoad() {
+			this.getInvoiceHeadList()
+		},
+		onShow() {
+			if(this.isEditInvoiceHead){
+				this.getInvoiceHeadList()
+			}
+			this.invoiceHeadEditStatus(false);
+		},
 
 		computed: {
-			...mapState(['islogin', 'token', 'isEditInvoiceHead'])
+			...mapState(['isEditInvoiceHead'])
 		},
 		methods: {
 			...mapMutations(['invoiceHeadEditStatus']),
@@ -84,11 +99,32 @@
 					url = '/pages/invoice/edit_invoice_head?type=add'
 				} else if (type === 'edit') {
 					const params = JSON.stringify(par);
-					url = '/pages/invoice/edit_invoice_head?type=edit&param='+ params;
+					url = '/pages/invoice/edit_invoice_head?type=edit&param=' + params;
 				}
-				
+				this.invoiceHeadEditStatus(false);
 				uni.navigateTo({
 					url: url
+				})
+			},
+			// 获取发票抬头列表
+			getInvoiceHeadList() {
+				const _this = this;
+				uni.showLoading({
+					title:'获取抬头发票'
+				})
+				request({
+					url: '/wap/api/my.php?action=InvoiceList',
+					method:'POST',
+					success:(res)=>{
+						if(res.data.status === 'success'){
+							_this.listData = res.data.content;
+						}else{
+							helper.layer('获取列表失败')
+						}
+					},
+					complete:()=>{
+						uni.hideLoading()
+					}
 				})
 			}
 		}

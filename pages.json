@@ -114,6 +114,12 @@
 				}
 			}
 		}, {
+			// 广告详情页面
+			"path": "pages/my/ad",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		}, {
 			"path": "pages/login/login",
 			"style": {
 				"navigationBarTitleText": "登录"
@@ -184,7 +190,7 @@
 							"text": "记录一笔",
 							"fontSize": "14px",
 							"float": "right",
-							"width":"60px"
+							"width": "60px"
 						}]
 					}
 				}
@@ -238,7 +244,7 @@
 					}
 				}
 			}
-		},{
+		}, {
 			"path": "pages/check_in/check_in",
 			"style": {
 				"navigationBarTitleText": "常用入住人",
@@ -427,13 +433,13 @@
 					}
 				}
 			}
-		}, 
+		},
 		{
-      "path" : "pages/landlord/payment_term",
-      "style" : {
-			"navigationBarTitleText": "选择收款方式"
+			"path": "pages/landlord/payment_term",
+			"style": {
+				"navigationBarTitleText": "选择收款方式"
 			}
-		},{
+		}, {
 			"path": "pages/releaseManage/bed_info/bed_info",
 			"style": {
 				"navigationBarTitleText": "床铺信息",
@@ -474,7 +480,7 @@
 				}
 			}
 		},
-		 {
+		{
 			"path": "pages/releaseManage/house_describe/edit_describe",
 			"style": {
 				"navigationBarTitleText": "",
@@ -488,7 +494,7 @@
 					}
 				}
 			}
-		},{
+		}, {
 			"path": "pages/releaseManage/house_facilities/house_facilities",
 			"style": {
 				"navigationBarTitleText": "配套设施",
@@ -662,24 +668,23 @@
 					}
 				}
 			}
-		}
-	    ,{
-            "path" : "pages/setting/setting",
-            "style" : {
+		}, {
+			"path": "pages/setting/setting",
+			"style": {
 				"navigationBarTitleText": "设置",
 				"app-plus": {
 					"bounce": "none"
-// 					"titleNView": {
-// 						"buttons": [{
-// 							"text": "",
-// 							"fontSize": "14px",
-// 							"float": "right"
-// 						}]
-// 					}
+					// 					"titleNView": {
+					// 						"buttons": [{
+					// 							"text": "",
+					// 							"fontSize": "14px",
+					// 							"float": "right"
+					// 						}]
+					// 					}
 				}
 			}
-        }
-    ],
+		}
+	],
 	// 全局样式
 	"globalStyle": {
 		"navigationBarBackgroundColor": "#F05B72"

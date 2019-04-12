@@ -1,9 +1,9 @@
 <template>
 	<view class="statistics_page">
 		<view class="date_choice">
-			<button class="pre_month">上个月</button>
-			<view class="cur_month">2017-10</view>
-			<button class="next_month">下个月</button>
+			<button class="pre_month" :class="{'dis_btn':disPreMonthBtn}" @tap="jumpMonth('pre')">上个月</button>
+			<view class="cur_month" @tap="pickDate">{{checkOnTime.year}}-{{checkOnTime.month}}</view>
+			<button class="next_month" :class="{'dis_btn':disNextMonthBtn}" @tap="jumpMonth('next')">下个月</button>
 		</view>
 		<view class="canvasView">
 			<mpvue-echarts :echarts="echarts" :onInit="pieInit" canvasId="pie" ref="pieChart" />
@@ -37,18 +37,27 @@
 				</view>
 			</view>
 		</scroll-view>
+		<w-picker :mode="mode" :startYear="startYear" :endYear="endYear" :defaultVal="defaultVal" @confirm="onConfirm" ref="datePicker" />
 	</view>
 </template>
 
 <script>
 	import * as echarts from '@/components/echarts/echarts.simple.min.js';
 	import mpvueEcharts from '@/components/mpvue-echarts/src/echarts.vue';
-
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+	import {
+		request
+	} from '../../common/request.js';
+	import helper from '../../common/helper.js';
+	import wPicker from '../../components/w-picker/w-picker.vue';
 	const cityList = [{
-		value: 55,
+		value: 0,
 		name: '收入'
 	}, {
-		value: 38,
+		value: 0,
 		name: '成本'
 	}];
 
@@ -82,13 +91,25 @@
 			return {
 				echarts: echarts,
 				updateStatus: false,
+				mode: 'datem',
+				curTime: {
+					year: '',
+					month: '',
+					day: ''
+				},
+				// 当前选中的时间
+				checkOnTime: {
+					year: '',
+					month: '',
+				},
+				startYear: '2012',
+				endYear: helper.getCurTime().year,
+				defaultVal: [0, 0], // 日期默认值
 				billData: {
 					// 总账单
 					in: '', //预计收入
 					out: '', //成本，
 					profit: '', //预计利润
-					totalin: [0, 0, 0, 0, 0], //最近五个月的总收入
-					totalout: [0, 0, 0, 0, 0], // 最近五个月的总成本
 					// 账单列表
 					billList: [{
 							id: '1',
@@ -176,15 +197,61 @@
 				},
 			}
 		},
+		components: {
+			mpvueEcharts,
+			wPicker
+		},
 		onLoad() {
 			pieOption.series[0].data = cityList.slice(0);
+			const timeObj = helper.getCurTime();
+			// 当前时间
+			this.curTime = timeObj;
+			// 当前选中的时间
+			this.checkOnTime.year = timeObj.year;
+			this.checkOnTime.month = timeObj.month;
+			// 获取时间选择器的初始值
+			this.defaultVal = this.defaultDateVal();
+			// 获取统计数据(全部)
+			this.getStatisticsData();
+			
 		},
-		onNavigationBarButtonTap(e){
-			if(e.index === 0){
+		onShow() {
+			this.statisticsEditStatus(false)
+		},
+		onNavigationBarButtonTap(e) {
+			if (e.index === 0) {
 				this.addbill()
 			}
 		},
+		onBackPress() {
+			// 返回时判断时间picker是否已关闭
+			if (this.$refs.datePicker.showPicker) {
+				this.$refs.datePicker.hide();
+				return true
+			}
+		},
+		computed: {
+			...mapState(['isEditStatistics']),
+			//是否禁用上个月跳转按钮
+			disPreMonthBtn: {
+				get: function() {
+					if (Number(this.checkOnTime.year) <= Number(this.startYear) && Number(this.checkOnTime.month) <= 1) {
+						return true
+					}
+				}
+			},
+			//是否禁用下个月跳转按钮
+			disNextMonthBtn: {
+				get: function() {
+					if (Number(this.checkOnTime.year) >= Number(this.curTime.year) && Number(this.checkOnTime.month) >= Number(this.curTime
+							.month)) {
+						return true
+					}
+				}
+			},
+		},
 		methods: {
+			...mapMutations(['statisticsEditStatus']),
 			updatePie() {
 				// 参考 mpvue-charts 的懒加载示例
 				// https://github.com/F-loat/mpvue-echarts/blob/master/examples/lazyLoad.vue
@@ -213,20 +280,81 @@
 				return pieChart
 			},
 			// 记录一笔
-			addbill(){
+			addbill() {
 				uni.navigateTo({
 					url: '/pages/statistics/add_bill',
 				});
 			},
-			editbill(par){
+			editbill(par) {
 				const param = JSON.stringify(par)
 				uni.navigateTo({
 					url: '/pages/statistics/edit_bill?param=' + param,
 				});
-			}
-		},
-		components: {
-			mpvueEcharts
+			},
+			// 跳到上一个月或者下一个月
+			jumpMonth(handle) {
+				const Y = Number(this.curTime.year); // 当前的年份(固定)
+				const M = Number(this.curTime.month); // 当前的月份(固定)
+				const _y = Number(this.checkOnTime.year); //当前选中的年份
+				const _m = Number(this.checkOnTime.month); // 当前选中的月份
+				let cy = '', // 修改后的年份
+					cm = ''; // 修改后的月份
+				if (handle === 'pre') {
+					if (_y <= Number(this.startYear) && _m <= 1) return;
+					if (_m > 1) {
+						cm = _m - 1;
+						cy = _y;
+					} else {
+						cm = 12;
+						cy = _y - 1;
+					}
+				} else if (handle === 'next') {
+					if (_y >= Y && _m >= M) return;
+					if (_m < 12) {
+						cm = _m + 1;
+						cy = _y;
+					} else {
+						cm = 1;
+						cy = _y + 1;
+					}
+				}
+				cm = cm >= 10 ? cm : '0' + cm;
+				this.checkOnTime.year = cy.toString();
+				this.checkOnTime.month = cm.toString();
+			},
+			// 日期选择
+			pickDate() {
+				this.$refs.datePicker.show();
+			},
+			//确定日期选择
+			onConfirm(e) {
+				this.checkOnTime.year = e[0];
+				this.checkOnTime.month = e[1];
+				this.defaultVal = this.defaultDateVal();
+			},
+			// 返回日期默认值
+			defaultDateVal() {
+				const y_val = Number(this.checkOnTime.year) - Number(this.startYear);
+				const m_val = Number(this.checkOnTime.month) - 1;
+				return [y_val, m_val]
+			},
+			// 获取统计数据
+			//type:  statistics: '统计数据'  total: 获取总数    list: '获取列表'
+			getStatisticsData() {
+				const _this = this;
+				const year = this.checkOnTime.year;
+				const month = this.checkOnTime.month;
+				request({
+					url:'/wap/api/statistics.php?action=statistics',
+					data:{
+						date:year+'-'+month
+					},
+					success:function(res){
+						console.log(res)
+					},
+				})
+			},
+
 		}
 	}
 </script>
@@ -262,9 +390,14 @@
 				font-size: 28upx;
 				width: 180upx;
 				border-radius: 0;
+				transition: all 0.2s;
 
 				&::after {
 					border: none;
+				}
+
+				&:active {
+					opacity: 0.8;
 				}
 			}
 
@@ -277,6 +410,7 @@
 				border-bottom: 1px solid #eaeaea;
 				border-top: 1px solid #eaeaea;
 				color: $theme-color;
+				font-size: 32upx;
 			}
 		}
 
@@ -346,12 +480,15 @@
 					align-items: center;
 					border-bottom: 1px solid #eaeaea;
 					padding: 20upx 0;
-					&:last-child{
+
+					&:last-child {
 						border-bottom: none;
 					}
+
 					.left {
 						box-sizing: border-box;
 						width: calc(100% - 180upx);
+
 						.l_title {
 							box-sizing: border-box;
 							width: 100%;

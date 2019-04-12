@@ -129,7 +129,7 @@ const isObjEqual = function(a, b) {
 		for (var i = 0; i < propsA.length; i++) {
 			var propName = propsA[i];
 			//如果对应属性对应值不相等，则返回false
-			if ((a[propName] !== b[propName]) && propName!=='__ob__') {
+			if ((a[propName] !== b[propName]) && propName !== '__ob__') {
 				return false;
 			}
 		}
@@ -143,7 +143,18 @@ const isObjEqual = function(a, b) {
 		return false;
 	}
 }
-
+// 获取当前时间
+const getCurTime = function() {
+	var date = new Date();
+	var year = date.getFullYear();
+	var month = (date.getMonth() + 1) > 10 ? (date.getMonth() + 1) : '0' + (date.getMonth() + 1);
+	var day = date.getDate() > 10 ? date.getDate() : '0' + date.getDate();
+	return {
+		year: year.toString(),
+		month: month.toString(),
+		day: day.toString()
+	}
+};
 export default {
 	isLogin,
 	phoneReg,
@@ -153,5 +164,6 @@ export default {
 	deepCopy,
 	layer,
 	hideIdCard,
-	isObjEqual
+	isObjEqual,
+	getCurTime
 }
