@@ -29,11 +29,11 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.my_information_page.data-v-6525d449 {
+.my_information_page.data-v-e1d80722 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.my_information_page .head.data-v-6525d449 {
+.my_information_page .head.data-v-e1d80722 {
     height: 360rpx;
     caret-color: #F05B72;
     display: -webkit-box;
@@ -54,7 +54,7 @@ page {
         -ms-flex-align: center;
             align-items: center;
 }
-.my_information_page .head .avatar_wrap.data-v-6525d449 {
+.my_information_page .head .avatar_wrap.data-v-e1d80722 {
       position: relative;
       border: 3px solid rgba(144, 144, 144, 0.1);
       height: 160rpx;
@@ -74,12 +74,12 @@ page {
               align-items: center;
       margin-bottom: 30rpx;
 }
-.my_information_page .head .avatar_wrap .avatar.data-v-6525d449 {
+.my_information_page .head .avatar_wrap .avatar.data-v-e1d80722 {
         width: 156rpx;
         height: 156rpx;
         border-radius: 50%;
 }
-.my_information_page .head .avatar_wrap .img_icon.data-v-6525d449 {
+.my_information_page .head .avatar_wrap .img_icon.data-v-e1d80722 {
         position: absolute;
         right: 0;
         bottom: 0;
@@ -100,11 +100,11 @@ page {
             -ms-flex-align: center;
                 align-items: center;
 }
-.my_information_page .head .avatar_wrap .img_icon .iconfont.data-v-6525d449 {
+.my_information_page .head .avatar_wrap .img_icon .iconfont.data-v-e1d80722 {
           font-size: 24rpx;
           color: #FFFFFF;
 }
-.my_information_page .head .nick-name.data-v-6525d449 {
+.my_information_page .head .nick-name.data-v-e1d80722 {
       width: 480rpx;
       height: 52rpx;
       display: -webkit-box;
@@ -116,30 +116,30 @@ page {
           -ms-flex-pack: center;
               justify-content: center;
 }
-.my_information_page .head .nick-name ._input.data-v-6525d449 {
+.my_information_page .head .nick-name ._input.data-v-e1d80722 {
         width: 480rpx;
         text-align: center;
         caret-color: #F05B72;
         font-size: 36rpx;
 }
-.my_information_page .head .nick-name .show_nickname.data-v-6525d449 {
+.my_information_page .head .nick-name .show_nickname.data-v-e1d80722 {
         display: inline;
         font-size: 36rpx;
         height: 52rpx;
         line-height: 52rpx;
         text-align: center;
 }
-.my_information_page .head .nick-name .show_nickname .edit-icon.data-v-6525d449 {
+.my_information_page .head .nick-name .show_nickname .edit-icon.data-v-e1d80722 {
           font-size: 32rpx;
           color: #F05B72;
 }
-.my_information_page .info_form.data-v-6525d449 {
+.my_information_page .info_form.data-v-e1d80722 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
     padding: 20rpx 30rpx;
 }
-.my_information_page .info_form .form_item.data-v-6525d449 {
+.my_information_page .info_form .form_item.data-v-e1d80722 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
@@ -159,10 +159,10 @@ page {
               flex-direction: row;
       border-bottom: 1px solid #eaeaea;
 }
-.my_information_page .info_form .form_item .label.data-v-6525d449 {
+.my_information_page .info_form .form_item .label.data-v-e1d80722 {
         font-size: 32rpx;
 }
-.my_information_page .info_form .form_item .ipt.data-v-6525d449 {
+.my_information_page .info_form .form_item .ipt.data-v-e1d80722 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         height: 100%;
@@ -185,19 +185,19 @@ page {
                 align-items: center;
         font-size: 28rpx;
 }
-.my_information_page .info_form .form_item .ipt ._input.data-v-6525d449 {
+.my_information_page .info_form .form_item .ipt ._input.data-v-e1d80722 {
           text-align: right;
           font-size: 28rpx;
 }
-.my_information_page .info_form .form_item .ipt .empty.data-v-6525d449 {
+.my_information_page .info_form .form_item .ipt .empty.data-v-e1d80722 {
           font-size: 28rpx;
           color: #cccccc;
 }
-.my_information_page .info_form .form_item .ipt .data_box.data-v-6525d449 {
+.my_information_page .info_form .form_item .ipt .data_box.data-v-e1d80722 {
           font-size: 28rpx;
           color: #333333;
 }
-.my_information_page .info_form .form_item .after_icon.data-v-6525d449 {
+.my_information_page .info_form .form_item .after_icon.data-v-e1d80722 {
         width: 30rpx;
         display: -webkit-box;
         display: -webkit-flex;
@@ -212,7 +212,7 @@ page {
             -ms-flex-align: center;
                 align-items: center;
 }
-.my_information_page .info_form .form_item .after_icon .iconfont.data-v-6525d449 {
+.my_information_page .info_form .form_item .after_icon .iconfont.data-v-e1d80722 {
           font-size: 28rpx;
           color: #cccccc;
 }

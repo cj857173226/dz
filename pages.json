@@ -662,6 +662,12 @@
 					}
 				}
 			}
+		},
+		{
+			"path": "pages/comment/comment",
+			"style": {
+				"navigationBarTitleText": ""
+			}
 		}
 	    ,{
             "path" : "pages/setting/setting",
@@ -669,13 +675,6 @@
 				"navigationBarTitleText": "设置",
 				"app-plus": {
 					"bounce": "none"
-// 					"titleNView": {
-// 						"buttons": [{
-// 							"text": "",
-// 							"fontSize": "14px",
-// 							"float": "right"
-// 						}]
-// 					}
 				}
 			}
         }

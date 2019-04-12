@@ -29,7 +29,7 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contenr.data-v-7d13272e {
+.contenr.data-v-c6045efa {
   width: 100%;
   height: 100%;
   padding: 30rpx;
@@ -50,27 +50,27 @@ page {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.contenr .top.data-v-7d13272e {
+.contenr .top.data-v-c6045efa {
     width: 100%;
     height: 240rpx;
 }
-.contenr .top .radio-box.data-v-7d13272e {
+.contenr .top .radio-box.data-v-c6045efa {
       margin-bottom: 30rpx;
 }
-.contenr .top .radio-box .promotion.data-v-7d13272e {
+.contenr .top .radio-box .promotion.data-v-c6045efa {
         font-size: 14px;
         font-weight: 500;
 }
-.contenr .top .radio-box .promotion .ado.data-v-7d13272e {
+.contenr .top .radio-box .promotion .ado.data-v-c6045efa {
           width: 28rpx !important;
           height: 28rpx !important;
           margin-right: 40rpx;
 }
-.contenr .top .radio-box .explain.data-v-7d13272e {
+.contenr .top .radio-box .explain.data-v-c6045efa {
         padding-left: 36px;
         color: #cacaca;
 }
-.contenr .btn.data-v-7d13272e {
+.contenr .btn.data-v-c6045efa {
     width: 100%;
     height: 80rpx;
     background-color: #ea516b;
@@ -80,7 +80,7 @@ page {
     border-radius: 10rpx;
     line-height: 80rpx;
 }
-.contenr .btn.data-v-7d13272e:active {
+.contenr .btn.data-v-c6045efa:active {
       opacity: 0.5;
 }
 

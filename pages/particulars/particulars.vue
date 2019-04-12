@@ -39,7 +39,7 @@
 					<text>{{score}}条点评</text>
 				</view>
 			</view>
-			<view class="img-box">
+			<view class="img-box" @tap="clickLandlord">
 				<image class="img" :src="http+usernamePhoto"></image>
 			</view>
 			<view class="autonym">
@@ -68,21 +68,17 @@
 			</view>
 		</view>
 		<!-- 自定义组件 -->
-		<house_map :lat="latitude" :lng="longitude"></house_map>
+		<house_map :lat="latitude" :log="longitude"></house_map>
 		<!-- <roomDescription></roomDescription> -->
 		<view class="cantainer-description-box">
 		<view class="title">房间描述</view>
-		<view class="introduce">同学，祝贺你喜提彩蛋~
-		或许你们还在犹豫是否加入，我会坦诚的告诉你我们超酷；
-		在这里大家都用无人车代步，AI音箱不仅播放还可以交互；
-		人工智能是发展的核心技术，做自己让未来不只领先几步；
-		在这里做自己，欢迎来到百度！</view>
+		<view class="introduce" :class="[isTrue?'introduce':'introduces']">{{roomInnerIntro}}</view>
 		<view class="btn-box">
-			<button class="mini-btn btn-the-globe" type="primary" size="mini">
+			<button class="mini-btn btn-the-globe" type="primary" size="mini" @tap="clickBtn">
 				查看全部描述
 			</button>
 		</view>
-		<image class="meinv-img" src="../../static/images/landlordguide/meinv.jpg"></image>
+		<image class="meinv-img" :src="http+headImageUrl"></image>
 		<view class="details-of-the-room-box">
 			<view class="details-of-the-room-title">房间详情</view>
 			<view class="operation-list-box">
@@ -90,10 +86,10 @@
 					<text class="left">可租房态</text>
 					<text class="right">查看日历</text>
 				</view>
-				<view class="list-box">
+				<!-- <view class="list-box">
 					<text class="left">交易规则</text>
 					<text class="right">查看</text>
-				</view>
+				</view> -->
 				<view class="list-box">
 					<text class="left">是否允许加客</text>
 					<text class="right" style="color:#B8B8B8">{{addTenant}}</text>
@@ -129,17 +125,16 @@
 			<view class="grades-box">
 				<view class="grades-contenr">
 					<!-- 星星评分组件 -->
-					<uni-rate size="20" value="4"></uni-rate>
+					<uni-rate size="20" disabled="false" :value="goodRate"></uni-rate>
 				</view>
-				<view class="discuss-box">
-					<view v-for="(v,i) in commentList" :key="i" class="criticism">
+				<view v-if="count != 0" class="discuss-box">
+					<view  v-for="(v,i) in commentList" :key="i" class="criticism">
 						<view class="username-img-box">
 							<view class="username-check">
 								<view>{{v.user.realname}}</view>
 								<view class="check">{{v.comment_time}}</view>
 							</view>
 							<img class="username-photo" :src="v.user.userpic?(http+v.user.userpic):'../../static/images/meitu3.jpg'" alt="用户头像">
-							<!-- <img class="username-photo" v-else src="../../static/images/meitu3.jpg" alt="用户头像"> -->
 						</view>
 						<text style="font-size:14px;">
 							{{v.comment}}
@@ -147,16 +142,61 @@
 					</view>
 					<view class="btn-box">
 						<button class="mini-btn btn-the-globe" type="primary" size="mini">
-							<!-- <i class="iconfont contact-the-landlord-icon">&#xe607;</i> -->
-							查看全部评论
+							全部评论({{commentList.length}})
 						</button>
 					</view>
 					<image class="show-img" src="../../static/images/landlordguide/banner4.jpg" alt="展示图片"></image>
 				</view>
-				
+				<view v-else class="discuss-box">
+					<image class="show-img" src="../../static/images/meitu1.jpg" alt="展示图片"></image>
+				</view>
 			</view>
 		</view>
 		<supportingFacility :facility="facility"></supportingFacility>
+		<view class="transaction-rules-box">
+			<view class="transaction-rules-title">交易规则</view>
+			<view class="bottom-transaction-rules">
+				<view class="booking-way-box">
+					<text class="iconfont iconyuding">&#xe6dd;</text>
+					<view class="right-booking-way-box">
+						<view class="top-title">预订方式</view>
+						<view class="conten">下单即可入住，无需房东确认</view>
+					</view>
+				</view>
+				<view class="booking-way-box">
+					<text class="iconfont iconyuding">&#xe785;</text>
+					<view class="right-booking-way-box">
+						<view class="top-title">入住天数</view>
+						<view class="conten">最少入住一天，最多入住不限</view>
+					</view>
+				</view>
+				<view class="booking-way-box">
+					<view class="right-booking-way-box1">
+						<view class="top-title">在线订金比</view>
+						<view class="conten">订单确认后，在线支付房款的100%作为订金</view>
+					</view>
+				</view>
+				<view class="booking-way-box">
+					<view class="right-booking-way-box1">
+						<view class="top-title">押金</view>
+						<view class="conten">￥600，小猪担保免押</view>
+					</view>
+				</view>
+				<view class="booking-way-box">
+					<view class="right-booking-way-box1">
+						<view class="top-title">加客</view>
+						<view class="conten">不允许加客</view>
+					</view>
+				</view>
+				<view class="booking-way-box">
+					<text class="iconfont iconyuding">&#xe63f;</text>
+					<view class="right-booking-way-box">
+						<view class="top-title">入住须知</view>
+						<view class="conten">独立卫生间，允许做饭，允许吸烟，允许聚会，不允许带宠物、接待境外人士</view>
+					</view>
+				</view>
+			</view>
+		</view>
 		<unsubscribeRules></unsubscribeRules>
 		
 	</view>
@@ -179,6 +219,7 @@
 		components:{house_map,uniRate,supportingFacility,unsubscribeRules},
 		data () {
 			return {
+				isTrue:true,
 				commentList:null, //评论数据
 				imgArray:null, // 图片的数据
 				price:null, // 房间价格
@@ -204,20 +245,33 @@
 				minDays:'',//最少入住天数
 				maxDays:'',//最多入住天数
 				foreigner:'', //是否接待外客
-
+				goodRate:'0', //评论星级
+				count:null,
+				headImageUrl:'',
+				roomInnerIntro:'', // 房间描述
+				landlordId:'', //房东唯一id
 			}
 		},
 		methods: {
+			//顶部图片反动的index
 			changeIndicatorDots(e){
-				console.log(e);
-				
 				this.numberIndex = e.detail.currentItemId
+			},
+			// 是否查看全部评论
+			clickBtn(){
+				this.isTrue = !this.isTrue
+			},
+			// 携带房东唯一id跳转到房东详情
+			clickLandlord(){
+				uni.navigateTo({
+					url:`/pages/landlord_introduced/landlord_introduced?landlord=${this.landlordId}`
+				})
 			}
 		},
 		onLoad(option) {
 			// console.log(option.id);
 			const _that = this;
-			let id = option.id; //用户点击轮播图传过来的房间唯一id
+			let id = option.id; //房间唯一id
 			uni.request({
 				url:shortHttp+room,
 				data:{luId:id},
@@ -249,6 +303,11 @@
 					_that.maxDays = datas.detail.maxDays
 					_that.foreigner = datas.detail.foreigner
 					_that.commentList = datas.comment.content
+					_that.goodRate = datas.comment.goodRate
+					_that.count = datas.comment.count
+					_that.headImageUrl = datas.landlord.headImageUrl
+					_that.roomInnerIntro = datas.detail.roomInnerIntro
+					_that.landlordId = datas.landlord.landlordId
 				}
 			})
 		}
@@ -423,6 +482,13 @@
 			text-align: center;
 			text-overflow: ellipsis; 
 			overflow: hidden;
+			font-size: 14px;
+			padding: 44upx 46upx;
+		}
+		.introduces{
+			width: 610upx;
+			height: 100%;
+			font-size: 14px;
 			padding: 44upx 46upx;
 		}
 		.btn-box{
@@ -435,7 +501,7 @@
 						font-size: 12px;
 						border: 1px solid #ef5b72;
 						color: #ef5b72;
-						margin: 43upx 0 28upx 0;
+						margin: 0upx 0 28upx 0;
 						.contact-the-landlord-icon{
 							font-size: 14px;
 							color: #ef5b72;
@@ -523,31 +589,76 @@
 						}
 					}
 					.btn-box{
-			text-align: center;
-			margin-top: 18upx;
-			.show-img{
-					width: 100%;
-					height: 364upx;
-				}
-			.mini-btn{
-						height: 80upx;
-						line-height: 80upx;
-						background-color: #fff;
-						font-size: 12px;
-						border: 1px solid #ef5b72;
-						color: #ef5b72;
-						.contact-the-landlord-icon{
-							font-size: 14px;
+						text-align: center;
+						margin-top: 18upx;
+						.show-img{
+								width: 100%;
+								height: 364upx;
+							}
+						.mini-btn{
+							height: 80upx;
+							line-height: 80upx;
+							background-color: #fff;
+							font-size: 12px;
+							border: 1px solid #ef5b72;
 							color: #ef5b72;
-							margin-right: 10upx;
+							.contact-the-landlord-icon{
+								font-size: 14px;
+								color: #ef5b72;
+								margin-right: 10upx;
+							}
 						}
 					}
-		}
-				
 				}
 			}
 		}
-		
 	}
+	.transaction-rules-box{
+		width: 100%;
+		padding: 40upx;
+		box-sizing: border-box;
+		.transaction-rules-title{
+			width: 100%;
+			text-align: center;
+			color: #000;
+			font-size: 14;
+			font-weight: bold;
+		}
+		.bottom-transaction-rules{
+			color: #626262;
+			margin-top: 20upx;
+			.booking-way-box{
+				margin-top: 20upx;
+				display: flex;
+				.iconyuding{
+					font-size: 16px;
+				}
+				.right-booking-way-box{
+					font-size: 12px;
+					margin-left: 30upx;
+					
+					.top-title{
+						color: #000;
+					}
+					.conten{
+						color: #d6d6d6;
+					}
+				}
+				.right-booking-way-box1{
+					margin-left: 62upx;
+					// margin-top: 20upx;
+					font-size: 12px;
+					.top-title{
+						color: #000;
+					}
+					.conten{
+						color: #d6d6d6;
+					}
+				}
+			}
+		}
 	}
+}
+	
+
 </style>

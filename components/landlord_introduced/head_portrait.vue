@@ -2,13 +2,13 @@
   <view class="contanier">
     <!--  -->
     <view class="photo-box">
-      <image class="photo-img" src="../../static/images/landlordguide/banner4.jpg"></image>
+      <image class="photo-img" :src="shortHttp+userpic"></image>
     </view>
     <!-- 用户名 认证 -->
     <view class="username-box">
-      <view class="username">niafuiag</view>
+      <view class="username">{{username}}</view>
       <view class="autonym">实名认证</view>
-      <view class="verification">已验证：手机号</view>
+      <view class="verification">已验证：{{phone}}</view>
       <view class="box">
         <text>回复率96% | 平均确认14分钟 | 订单接受率40%</text>
       </view>
@@ -32,16 +32,17 @@
     </view>
     <!-- 房源 -->
     <view class="property-id-box">
-      <view class="property-id-title">21个房源</view>
+      <view class="property-id-title">{{listingCount}}个房源</view>
         <scroll-view class="scroll-view_H" scroll-x="true">
           <view class="scroll-view-item-box">
-            <view class="scroll-view-item_H uni-bg-red" v-for="(item,i) in scrollList" :key="i">
-              <image class="property-id-img" :src="item.imgUrl"></image>
+            <view class="scroll-view-item_H uni-bg-red" v-for="(item,i) in scrollList" :key="i" @tap="clickRoom(item.id)">
+              <image class="property-id-img" :src="shortHttp+item.titlepic"></image>
               <view style="font-size:14px;font-weight: bold;margin-top:30upx;">{{item.title}}</view>
               <view class="lightning-comment">
-                <view class="lightning"><text class="iconfont icon-lightningbshandian lightning-icon"></text>{{item.lightning}}</view>
-                <view class="comment"><text class="iconfont icon-pinglun1 comment-icon"></text>{{item.comment}}</view>
+                <view class="lightning"><text class="iconfont icon-lightningbshandian lightning-icon"></text>速订</view>
+                <view class="comment"><text class="iconfont icon-pinglun1 comment-icon"></text>{{1}}评论</view>
               </view>
+              <view class="price">{{item.dayrentprice}}起/晚</view>
             </view>
           </view>       
         </scroll-view>
@@ -51,25 +52,55 @@
 <script>
 // 引入第三方评分插件
 import uniRate from '../particulars/uni-rate/uni-rate'
+import { shortHttp,portrait } from "../../common/requestUrl.json"; // 接口文件
 export default {
   components: {
     uniRate
   },
   data(){
     return{
-      scrollList:[
-        {imgUrl:'../../static/images/landlordguide/banner2.jpg',title:'后海胡同里咖啡厅风格小白楼',lightning:'点评',comment:'0条评论'},
-        {imgUrl:'../../static/images/landlordguide/banner3.jpg',title:'后海胡同里咖啡厅风格小白楼',lightning:'点评',comment:'0条评论'},
-        {imgUrl:'../../static/images/landlordguide/banner4.jpg',title:'后海胡同里咖啡厅风格小白楼',lightning:'点评',comment:'0条评论'},
-        {imgUrl:'../../static/images/landlordguide/banner5.jpg',title:'后海胡同里咖啡厅风格小白楼',lightning:'点评',comment:'0条评论'},
-      ]
+      shortHttp,
+      userpic:'', //房东头像
+      username:'', //房东名字
+      phone:'', //验证信息
+      listingCount:'', //多少房源
+      scrollList:[],
     }
   },
+  props: ["landlord"],
   methods: {
     // 更多点评
     clickBtnComment(){
-      console.log("啊，被猪点了")
+      uni.navigateTo({
+        url:'/pages/comment/comment'
+      })
+    },
+    // 用户点击获取当前房源的唯一id，携带id并跳转页面
+    clickRoom(teyp){
+      uni.navigateTo({
+        url:`/pages/particulars/particulars?id=${teyp}`
+      })
     }
+  },
+  mounted () {
+    let id = this.landlord
+    uni.request({
+      url:shortHttp+portrait,
+      data:{landlordId:id},
+      success: res => {
+        console.log("房东详情：",res);
+        this.userpic = res.data.content.landlordInfo.userpic
+        this.username = res.data.content.landlordInfo.username
+        let phone = res.data.content.landlordInfo.phone 
+        if (!phone=="") {
+          this.phone = "手机号"
+        } else {
+          this.phone = "未验证"
+        }
+        this.listingCount = res.data.content.listing_count
+        this.scrollList = res.data.content.listing
+      }
+    })
   }
 }
 </script>
@@ -186,6 +217,20 @@ export default {
           .scroll-view-item_H{
             display: inline-block;
             width: 100%;
+            position: relative;
+            .price{
+                width: 180upx;
+                height: 80upx;
+                background-color: rgba($color: #000000, $alpha: .5);
+                color: #fff;
+                font-size: 14px;
+                text-align: center;
+                line-height: 80upx;
+                position: absolute;
+                z-index: 1;
+                left: 0;
+                top: 260upx;
+              }
             .property-id-img{
               width: 100%;
               height: 340upx;
@@ -196,6 +241,7 @@ export default {
               color: #a8a8a8;
               font-size: 14px;
               margin-top: 20upx;
+              
               .lightning{
                 margin-right: 10upx;
                 .lightning-icon{

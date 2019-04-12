@@ -1,13 +1,16 @@
 <template>
   <view class="containers">
     <view class="title">配套设施</view>
-    <view class="supporting-box">
+    <view v-if="dataArray.length>0" class="supporting-box">
       <view class="box">
         <view class="icon-box" v-for="(v,i) in dataArray" :key="i">
             <text class="iconfont color-icon" :class="v.leftIcon"></text>
             <view style="font-size:12px;">{{v.leftText}}</view>
         </view>
       </view>
+    </view>
+    <view v-else class="else-supporting-box">
+        占无，敬请等待房东上传...
     </view>
   </view>
 </template>
@@ -169,6 +172,14 @@ export default {
           }
       }
     }
+  }
+  .else-supporting-box{
+    width: 100%;
+    padding: 40upx;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 12px;
+    color: #CFCFCF;
   }
 }
 </style>
