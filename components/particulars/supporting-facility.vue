@@ -1,75 +1,176 @@
 <template>
-  <view class="container">
+  <view class="containers">
     <view class="title">配套设施</view>
     <view class="supporting-box">
-      <view class="box" v-for="(v,i) in listData" :key="i">
-        <text class="left">
-          <text class="iconfont color-icon" :class="v.leftIcon"></text><text>{{v.leftText}}</text></text>
-        <text class="right">
-          <text class="iconfont color-icon" :class="v.rightIcon"></text><text>{{v.rightText}}</text>
-        </text>
+      <view class="box">
+        <view class="icon-box" v-for="(v,i) in dataArray" :key="i">
+            <text class="iconfont color-icon" :class="v.leftIcon"></text>
+            <view style="font-size:12px;">{{v.leftText}}</view>
+        </view>
       </view>
     </view>
   </view>
 </template>
 <script>
-
 export default {
-  data(){
-    return{
-      listData:[
-        {leftText:'牙具',rightText:'香皂',leftIcon:'icon-yaju',rightIcon:'icon-xiangzao_'},
-        {leftText:'毛巾',rightText:'沐浴 洗发水',leftIcon:'icon-maojin_',rightIcon:'icon-muyulu'},
-        {leftText:'手纸',rightText:'热水淋浴',leftIcon:'icon-weishengzhi_',rightIcon:'icon-reshui'},
-        {leftText:'浴缸',rightText:'拖鞋',leftIcon:'icon-yugang',rightIcon:'icon-tuoxie'},
-        {leftText:'电视',rightText:'空调',leftIcon:'icon-dianshi',rightIcon:'icon-kongdiao'},
-        {leftText:'冰箱',rightText:'饮水设备',leftIcon:'icon-bingxiang',rightIcon:'icon-yinshuiji'},
-        {leftText:'洗衣机',rightText:'有线网络',leftIcon:'icon-xiyiji',rightIcon:'icon-youxianwangluo'},
-        {leftText:'无线网络',rightText:'暖气',leftIcon:'icon-wuxianwangluo',rightIcon:'icon-nuanqi'},
-        {leftText:'电梯',rightText:'门禁系统',leftIcon:'icon-icon_lift',rightIcon:'icon-webiconmenjinxitong'},
-        {leftText:'停车位',rightText:'允许带宠物',leftIcon:'icon-tingche',rightIcon:'icon-yunxudaichongwu'},
-        {leftText:'允许聚会',rightText:'允许吸烟',leftIcon:'icon-faci_juhui',rightIcon:'icon-kexiyan'}
-
-      ]
-    }
+  data() {
+    return {
+      dataArray: []
+    };
+  },
+  props: ["facility"],
+  mounted() {
+    let data = this.facility; // 拿到从父组件穿过来的参数
+    // 循环
+    data.forEach(element => {
+      let allowName = element.name;
+      switch (allowName) {
+        case "牙具":
+          this.dataArray.push({ leftText: "牙具", leftIcon: "icon-yaju" });
+          break;
+        case "香皂":
+          this.dataArray.push({
+            leftText: "香皂",
+            leftIcon: "icon-xiangzao_"
+          });
+          break;
+        case "毛巾":
+          this.dataArray.push({ leftText: "毛巾", leftIcon: "icon-maojin_" });
+          break;
+        case "沐浴":
+          this.dataArray.push({ leftText: "沐浴", leftIcon: "icon-muyulu" });
+          break;
+        case "手纸":
+          this.dataArray.push({
+            leftText: "手纸",
+            leftIcon: "icon-weishengzhi_"
+          });
+          break;
+        case "热水淋浴":
+          this.dataArray.push({
+            leftText: "热水淋浴",
+            leftIcon: "icon-reshui"
+          });
+          break;
+        case "浴缸":
+          this.dataArray.push({ leftText: "浴缸", leftIcon: "icon-yugang" });
+          break;
+        case "拖鞋":
+          this.dataArray.push({ leftText: "拖鞋", leftIcon: "icon-tuoxie" });
+          break;
+        case "电视":
+          this.dataArray.push({ leftText: "电视", leftIcon: "icon-dianshi" });
+          break;
+        case "空调":
+          this.dataArray.push({
+            leftText: "空调",
+            leftIcon: "icon-kongdiao"
+          });
+          break;
+        case "冰箱":
+          this.dataArray.push({ leftText: "冰箱", leftIcon: "icon-bingxiang" });
+          break;
+        case "饮水设备":
+          this.dataArray.push({
+            leftText: "饮水设备",
+            leftIcon: "icon-yinshuiji"
+          });
+          break;
+        case "洗衣机":
+          this.dataArray.push({ leftText: "洗衣机", leftIcon: "icon-xiyiji" });
+          break;
+        case "有线网络":
+          this.dataArray.push({
+            leftText: "有线网络",
+            leftIcon: "icon-youxianwangluo"
+          });
+          break;
+        case "无线网络":
+          this.dataArray.push({
+            leftText: "无线网络",
+            leftIcon: "icon-wuxianwangluo"
+          });
+          break;
+        case "暖气":
+          this.dataArray.push({ leftText: "暖气", leftIcon: "icon-nuanqi" });
+          break;
+        case "电梯":
+          this.dataArray.push({ leftText: "电梯", leftIcon: "icon-icon_lift" });
+          break;
+        case "门禁系统":
+          this.dataArray.push({
+            leftText: "门禁系统",
+            leftIcon: "icon-webiconmenjinxitong"
+          });
+          break;
+        case "停车位":
+          this.dataArray.push({
+            leftText: "停车位",
+            leftIcon: "icon-tingche"
+          });
+          break;
+        case "允许带宠物":
+          this.dataArray.push({
+            leftText: "允许带宠物",
+            leftIcon: "icon-yunxudaichongwu"
+          });
+          break;
+        case "允许聚会":
+          this.dataArray.push({
+            leftText: "允许聚会",
+            leftIcon: "icon-faci_juhui"
+          });
+          break;
+        case "允许吸烟":
+          this.dataArray.push({
+            leftText: "允许吸烟",
+            leftIcon: "icon-kexiyan"
+          });
+          break;
+        case "允许做饭":
+          this.dataArray.push({
+            leftText: "允许做饭",
+            leftIcon: "icon-kezuofan"
+          });
+          break;
+      }
+    });
   }
-}
+};
 </script>
 <style lang="scss" scoped>
-  .container{
+.containers {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+  .title {
+    font-weight: bold;
+    text-align: center;
+  }
+  .supporting-box {
     width: 100%;
+    padding: 40upx;
     box-sizing: border-box;
-    .title{
-      font-weight: bold;
-      text-align: center;
-    }
-    .supporting-box{
+    .box {
       width: 100%;
-      padding: 40upx;
+      color: #000;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
       box-sizing: border-box;
-      .box{
-        width: 100%;
+      .icon-box {
+        width: 152upx;
         height: 72upx;
-        color:#a5a5a5;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #ccc;
-        .left{
-          font-size: 14px;
-          .color-icon{
-            font-size: 18px;
+        text-align: center;
+        margin-bottom: 30upx;
+        box-sizing: border-box;
+          .color-icon {
+            font-size: 20px;
           }
-        }
-        .right{
-          font-size: 14px;
-          .color-icon{
-            font-size: 18px;
-          }
-        }
       }
     }
   }
+}
 </style>
 
 

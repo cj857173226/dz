@@ -1,5 +1,5 @@
 <template>
-	<view class="container">
+	<view class="container-contact-box">
 		<view class="contact-box">
 			<view class="title">后海胡同里咖啡厅风格小白楼</view>
 			<view class="comment">
@@ -67,7 +67,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.container{
+	.container-contact-box{
 		width: 100%;
 		// height: 556upx;
 		padding: 30upx;
