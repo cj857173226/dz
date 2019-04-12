@@ -55,7 +55,7 @@
 				</view>
 			</view>
 		</view>
-		<button class="my-del-block" v-if="handleType==='edit'">删除</button>
+		<button class="my-del-block" v-if="handleType==='edit'" @tap="deleteInvoiceHead">删除</button>
 	</view>
 </template>
 
@@ -65,6 +65,12 @@
 		mapState,
 		mapMutations
 	} from 'vuex'
+	import {
+		request
+	} from '../../common/request.js'
+	import {
+		shortHttp
+	} from '../../common/requestUrl.json'
 	export default {
 		data() {
 			return {
@@ -74,7 +80,7 @@
 					company: "",
 					email: "",
 					id: "",
-					is_default: "",
+					is_default: "0",
 					number: "",
 					type: "common",
 					user_id: ""
@@ -119,6 +125,9 @@
 				const company = _this.inviceHeadForm.company.trim();
 				const email = _this.inviceHeadForm.email.trim();
 				const number = _this.inviceHeadForm.number.trim();
+				const type = _this.inviceHeadForm.type;
+				const defaultHead = _this.inviceHeadForm.is_default;
+				const id = _this.inviceHeadForm.id;
 				if (company === '') {
 					uni.showToast({
 						title: '公司名称不能为空',
@@ -126,39 +135,138 @@
 						icon: 'none'
 					});
 				} else if (number === '') {
-					
+
 					uni.showToast({
 						title: '识别号不能为空',
 						duration: 1500,
 						icon: 'none'
 					});
-					
-				} else if (email === ''){
+
+				} else if (email === '') {
 					uni.showToast({
 						title: '邮箱不能为空',
 						duration: 1500,
 						icon: 'none'
 					});
 				} else {
-					if(!helper.emailReg(email)){
+					if (!helper.emailReg(email)) {
 						uni.showToast({
 							title: '邮箱格式有误',
 							duration: 1500,
 							icon: 'none'
 						});
-					} else{
-						if(_this.handleType === 'add'){
-							console.log('添加')
-						}else if (_this.handleType === 'edit') {
-							console.log('修改')
+					} else {
+						if (_this.handleType === 'add') {
+							let param = {
+								type: type,
+								company: company,
+								number: number,
+								email: email,
+								is_default: defaultHead
+							}
+							_this.addInvoiceHead(param)
+						} else if (_this.handleType === 'edit') {
+							let param = {
+								id:id,
+								type: type,
+								company: company,
+								number: number,
+								email: email,
+								is_default: defaultHead
+							}
+							_this.editInvoiceHead(param)
 						}
 					}
-					
+
 				}
+			},
+			// 添加发票抬头
+			addInvoiceHead(par){
+				const _this = this;
+				uni.showLoading({
+					title:'添加中...'
+				})
+				request({
+					url:'/wap/api/my.php?action=SaveInvoice',
+					data:par,
+					success:(res)=>{
+						if(res.data.status ==='success'){
+							_this.invoiceHeadEditStatus(true);
+							uni.navigateBack({
+								delta:1,
+							})
+						}else{
+							helper.layer('添加失败')
+						}
+					},
+					complete:()=>{
+						uni.hideLoading()
+					}
+				})
+			},
+			// 修改发表抬头
+			editInvoiceHead(par){
+				const _this = this;
+				uni.showLoading({
+					title:'添加中...'
+				})
+				request({
+					url:'/wap/api/my.php?action=UpdateInvoice',
+					data:par,
+					success:(res)=>{
+						if(res.data.status ==='success'){
+							_this.invoiceHeadEditStatus(true);
+							uni.navigateBack({
+								delta:1,
+							})
+						}else{
+							helper.layer('修改失败')
+						}
+					},
+					complete:()=>{
+						uni.hideLoading()
+					}
+				})
+			},
+			//删除发票抬头
+			deleteInvoiceHead(){
+				 const _this = this;
+				 const id = _this.inviceHeadForm.id;
+				 uni.showModal({
+				 	title: '',
+				 	content: '是否删除该发票抬头',
+				 	confirmText: '删除',
+				 	confirmColor: '#F05B72',
+					success:(res)=>{
+						if(res.confirm){
+							 uni.showLoading({
+								title:'删除中...'
+							})
+							request({
+								url:'/wap/api/my.php?action=DeleteInvoice&id='+id,
+								success:(res)=>{
+									if(res.data.status ==='success'){
+										_this.invoiceHeadEditStatus(true);
+										uni.navigateBack({
+											delta:1,
+										})
+									}else{
+										helper.layer('删除失败')
+									}
+								},
+								complete:()=>{
+									uni.hideLoading()
+								}
+							})
+						}
+					}
+				 })
+				
 			},
 			// 设置默认抬头
 			defaultSwitch(e) {
 				console.log(e)
+				this.inviceHeadForm.is_default = e.detail.value ? '1' : '0'
 			}
 		}
 	}

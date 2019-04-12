@@ -1,17 +1,17 @@
 <template>
 	<scroll-view id="my-index" scroll-y=true>
 		<view id="my-index-head" class="clearfix">
-			<view>
-				<img :src="userInfo.headimgurl?userInfo.headimgurl:'/static/images/default_avatar.jpg'" id="user-avatar" alt="">
+			<view class="avatar_wrap" @tap="editUserInfo">
+				<img :src="userInfo.headImgurl? (host + userInfo.headImgurl):'/static/images/default_avatar.jpg'" id="user-avatar" alt="">
 			</view>
-			<view class="avatar-right-wrap">
-				<p id="user-cname" v-if="userInfo.username" style="margin-bottom: 4px;">{{userInfo.username}}</p>
-				<p v-if="!userInfo.username" @click.stop="pageTo('/pages/login/login')" style="font-size: 32upx;color: #f05b72;margin-bottom: 4px;">请登录</p>
+			<view class="nickname-wrap">
+				<p id="user-cname" v-if="userInfo.nickname">{{userInfo.nickname}}</p>
+				<p v-if="!userInfo.token" @click.stop="pageTo('/pages/login/login')" style="font-size: 32upx;color: #f05b72;margin-bottom: 4px;">请登录</p>
 				<!--完善信息-->
 				<!-- <p class="perfect-info">信息未完善,请完善信息 <text class="iconfont icon-weibiaoti34"></text></p> -->
 			</view>
 			<!--身份转换-->
-			<view class="user-type" @click.stop="changeUserPower()">
+			<view class="user-type" @tap.stop="changeUserPower()">
 				<text class="iconfont icon-zhuanhuan"></text>
 				<span v-text="curPowerType == 'fk'? '房东': '房客'"></span>
 			</view>
@@ -33,7 +33,7 @@
 							<p class="name">我的资料</p>
 						</view>
 					</view>
-					<!-- v-if="curPowerType==='fd' && userPower==='5'" -->
+					<!-- v-if="curPowerType==='fd' && userInfo.isFangDong" -->
 					<view class="basic-info-item" @click.stop="pageTo('/pages/releaseManage/releaseManage')" >
 						<view class="_box">
 							<text class="iconfont icon-fabu"></text> 
@@ -43,22 +43,15 @@
 				</view>
 			</view>
 			<!--广告-->
-			<view class="ad-wrap " id="slider">
+			<view class="ad-wrap " id="slider" v-if="adList.length!== 0">
 				<swiper class="swiper" circular=true :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval"
 				 :duration="duration" :indicator-active-color="indicatorActiveColor">
-					<swiper-item>
-						<view class="swiper-item uni-bg-red" @click="a">
-							<img src="/static/images/landlordguide/pic1_1.png" alt="">
-						</view>
-					</swiper-item>
-					<swiper-item>
-						<view class="swiper-item uni-bg-green">
-							<img src="/static/images/landlordguide/pic1_1.png" alt="">
-						</view>
-					</swiper-item>
-					<swiper-item>
-						<view class="swiper-item uni-bg-blue">
-							<img src="/static/images/landlordguide/pic1_1.png" alt="">
+					<swiper-item v-for="(item,index) in adList" :key="index">
+						<view class="swiper-item" @tap="adDetail(item)">
+							<img v-if="item.picture" src="/static/images/landlordguide/pic1_1.png" alt="">
+							<div v-if="!item.picture" class="no_img">
+								暂无图片
+							</div>
 						</view>
 					</swiper-item>
 				</swiper>
@@ -117,10 +110,12 @@
 		mapMutations
 	} from 'vuex'
 	import {request} from '../../common/request.js'
+	import {shortHttp} from '../../common/requestUrl.json'
 	import helper from 'common/helper.js'
 	export default {
 		data() {
 			return {
+				host:shortHttp, // 域名
 				userInfo: {}, // 用户信息
 				infoData: {
 					name: '',
@@ -131,7 +126,6 @@
 					date: '',
 					education: '',
 				}, //个人信息填写
-				userPower: '', // 用户权限
 				curPowerType: '', // 当前用户权限类别 'fd':'房东'  'fk'：'房客'
 				userId: '', //用户id
 				// 广告列表
@@ -158,12 +152,18 @@
 		onLoad() {
 			// 检测是否登录
 			helper.isLogin();
-			this.userInfo = uni.getStorageSync('dz_userInfo');
+			// 获取广告
+			this.getAddList()
 		},
 		onShow() {
+			// 判断个人资料是否修改
 			if(this.isEditUserInfo){
-				this.userInfo = uni.getStorageSync('dz_userInfo');
+				helper.layer('保存成功')
 			}
+			this.userInfo = uni.getStorageSync('dz_userInfo');
+			// 获取当前房东权限
+			this.curPowerType = this.userInfo.isFangDong? 'fk' : uni.getStorageSync('dz_curPower');
+			this.isUserInfoEditStatus(false);
 		},
 		onNavigationBarButtonTap(e){
 			if(e.index === 0){
@@ -187,11 +187,51 @@
 			},
 			// 到编辑个人资料页面
 			editUserInfo(){
+				this.isUserInfoEditStatus(false)
 				uni.navigateTo({
 					url: '/pages/my_information/my_information'
 				});
-				this.isUserInfoEditStatus(false)
-			}
+				
+			},
+			// 获取广告接口
+			getAddList(){
+				const _this = this;
+				request({
+					url:'/wap/api/my.php?action=messageListAd ',
+					success:(res)=>{
+						if(res.data.status === 'success'){
+							_this.adList = res.data.content;
+						}
+					},
+					fail:()=>{
+						
+					},
+					complete:()=>{
+						
+					}
+				})
+			},
+			// 切换用户权限
+			changeUserPower(){
+				if(!this.userInfo.isFangDong){
+					this.pageTo('/pages/landlord/landlord');
+				}else{
+					if(this.curPowerType === 'fk'){
+						this.curPowerType = 'fd';
+						uni.setStorageSync('dz_curPower','fd');
+					}else{
+						this.curPowerType = 'fk';
+						uni.setStorageSync('dz_curPower','fk');
+					}
+				}
+			},
+			// 查看广告详情
+			adDetail(par){
+				uni.setStorageSync('dz_ad',par);
+				uni.navigateTo({
+					url:'/pages/my/ad'
+				});
+			},
 		}
 	}
 </script>
@@ -218,17 +258,30 @@
 		width: 100%;
 		height: 100%;
 	}
+	
+	.swiper .swiper-item .no_img{
+		box-sizing: border-box;
+		height: 100%;
+		width: 100%;
+		background: #AAAAAA;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 40upx;
+		color: #FFFFFF;
+	}
 
 	#my-index-head {
-		position: relative;
 		box-sizing: border-box;
-		padding: 20upx 30upx;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 20upx 0upx 20upx 30upx;
 		height: 160upx;
 		width: 100%;
 	}
 
 	#my-index-head .user-type {
-		position: absolute;
 		box-sizing: border-box;
 		display: flex;
 		justify-content: space-between;
@@ -238,8 +291,6 @@
 		line-height: 60upx;
 		font-weight: 800;
 		font-size: 14px;
-		right: 0;
-		top: calc(160upx / 2 - 60upx / 2);
 		border-radius: 60upx 0 0 60upx;
 		background: #f9d260;
 		text-align: right;
@@ -255,17 +306,14 @@
 		font-size: 14px;
 	}
 
-	#my-index-head .avatar-right-wrap {
+	#my-index-head .nickname-wrap {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		padding-top: 10upx;
-		padding-bottom: 10upx;
 		box-sizing: border-box;
 		padding-left: 30upx;
 		float: left;
-		height: 60px;
-		width: calc(100% - 260upx);
+		width: calc(100% - 300upx);
 	}
 
 	#user-avatar {
@@ -277,22 +325,23 @@
 		border: 2px solid rgba(255, 255, 255, .6);
 	}
 
-	#my-index-head .avatar-right-wrap #user-cname {
+	#my-index-head .nickname-wrap #user-cname {
 		font-size: 40upx;
 		color: #333;
+		width: 100%;
 		font-weight: 800;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		white-space: normal;
+		white-space: nowrap;
 	}
 
-	#my-index-head .avatar-right-wrap .perfect-info {
+	#my-index-head .nickname-wrap .perfect-info {
 		line-height: 36upx;
 		color: #a0a0a0;
 		font-size: 12px;
 	}
 
-	#my-index-head .avatar-right-wrap .perfect-info .iconfont {
+	#my-index-head .nickname-wrap .perfect-info .iconfont {
 		font-size: 12px;
 		color: #cccccc;
 	}

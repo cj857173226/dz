@@ -1,4 +1,16 @@
+<<<<<<< HEAD
 <import src="/components/particulars/uni-rate/uni-rate.vue.wxml" /><import src="/components/particulars/supporting-facility.vue.wxml" /><import src="/components/particulars/unsubscribe-rules.vue.wxml" /><template name="b16f7022"><view class="_view data-v-91117182 cantainer-description-box"><view class="_view data-v-91117182 title">房间描述</view><view class="_view data-v-91117182 introduce">同学，祝贺你喜提彩蛋~
+=======
+<<<<<<< HEAD
+<import src="/components/particulars/uni-rate/uni-rate.vue.wxml" /><import src="/components/particulars/supporting-facility.vue.wxml" /><import src="/components/particulars/unsubscribe-rules.vue.wxml" /><template name="45950cc4"><view class="_view data-v-0274bbce cantainer-description-box"><view class="_view data-v-0274bbce title">房间描述</view><view class="_view data-v-0274bbce introduce">同学，祝贺你喜提彩蛋~
+=======
+<<<<<<< HEAD
+<import src="/components/particulars/uni-rate/uni-rate.vue.wxml" /><import src="/components/particulars/supporting-facility.vue.wxml" /><import src="/components/particulars/unsubscribe-rules.vue.wxml" /><template name="b16f7022"><view class="_view data-v-91117182 cantainer-description-box"><view class="_view data-v-91117182 title">房间描述</view><view class="_view data-v-91117182 introduce">同学，祝贺你喜提彩蛋~
+=======
+<import src="/components/particulars/uni-rate/uni-rate.vue.wxml" /><import src="/components/particulars/supporting-facility.vue.wxml" /><import src="/components/particulars/unsubscribe-rules.vue.wxml" /><template name="45950cc4"><view class="_view data-v-0274bbce cantainer"><view class="_view data-v-0274bbce title">房间描述</view><view class="_view data-v-0274bbce introduce">同学，祝贺你喜提彩蛋~
+>>>>>>> dd299d5bdd7781bed39adb94cc59879d6fe5eaec
+>>>>>>> bdd797299291d67805fab0ea494c1f19c2dc6311
+>>>>>>> 9df0639170a7603b0ebfa603f99107e815f6f859
 	或许你们还在犹豫是否加入，我会坦诚的告诉你我们超酷；
 	在这里大家都用无人车代步，AI音箱不仅播放还可以交互；
 	人工智能是发展的核心技术，做自己让未来不只领先几步；

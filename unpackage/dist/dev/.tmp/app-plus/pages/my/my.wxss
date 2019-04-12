@@ -19,16 +19,47 @@ page {
 	width: 100%;
 	height: 100%;
 }
-#my-index-head.data-v-7dd6788f {
-	position: relative;
+.swiper .swiper-item .no_img.data-v-7dd6788f{
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
-	padding: 20rpx 30rpx;
+	height: 100%;
+	width: 100%;
+	background: #AAAAAA;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	font-size: 40rpx;
+	color: #FFFFFF;
+}
+#my-index-head.data-v-7dd6788f {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	padding: 20rpx 0rpx 20rpx 30rpx;
 	height: 160rpx;
 	width: 100%;
 }
 #my-index-head .user-type.data-v-7dd6788f {
-	position: absolute;
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 	display: -webkit-box;
@@ -48,8 +79,6 @@ page {
 	line-height: 60rpx;
 	font-weight: 800;
 	font-size: 14px;
-	right: 0;
-	top: calc(160rpx / 2 - 60rpx / 2);
 	border-radius: 60rpx 0 0 60rpx;
 	background: #f9d260;
 	text-align: right;
@@ -62,7 +91,7 @@ page {
 #my-index-head .user-type .iconfont.data-v-7dd6788f {
 	font-size: 14px;
 }
-#my-index-head .avatar-right-wrap.data-v-7dd6788f {
+#my-index-head .nickname-wrap.data-v-7dd6788f {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -76,14 +105,11 @@ page {
 	-webkit-justify-content: center;
 	    -ms-flex-pack: center;
 	        justify-content: center;
-	padding-top: 10rpx;
-	padding-bottom: 10rpx;
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 	padding-left: 30rpx;
 	float: left;
-	height: 60px;
-	width: calc(100% - 260rpx);
+	width: calc(100% - 300rpx);
 }
 #user-avatar.data-v-7dd6788f {
 	-webkit-box-sizing: border-box;
@@ -94,21 +120,22 @@ page {
 	border-radius: 100%;
 	border: 2px solid rgba(255, 255, 255, .6);
 }
-#my-index-head .avatar-right-wrap #user-cname.data-v-7dd6788f {
+#my-index-head .nickname-wrap #user-cname.data-v-7dd6788f {
 	font-size: 40rpx;
 	color: #333;
+	width: 100%;
 	font-weight: 800;
 	overflow: hidden;
 	-o-text-overflow: ellipsis;
 	   text-overflow: ellipsis;
-	white-space: normal;
+	white-space: nowrap;
 }
-#my-index-head .avatar-right-wrap .perfect-info.data-v-7dd6788f {
+#my-index-head .nickname-wrap .perfect-info.data-v-7dd6788f {
 	line-height: 36rpx;
 	color: #a0a0a0;
 	font-size: 12px;
 }
-#my-index-head .avatar-right-wrap .perfect-info .iconfont.data-v-7dd6788f {
+#my-index-head .nickname-wrap .perfect-info .iconfont.data-v-7dd6788f {
 	font-size: 12px;
 	color: #cccccc;
 }

@@ -27,95 +27,7 @@
 	export default {
 		data() {
 			return {
-				addressList: [{
-						address: "走走走",
-						addressid: "18",
-						city: "呼和浩特市",
-						district: "新城区",
-						isdefault: "0",
-						phone: "18280172253",
-						province: "内蒙古",
-						truename: "陈",
-						local: '北京市 东城区',
-					},
-					{
-						address: "走走走",
-						addressid: "17",
-						city: "呼和浩特市",
-						district: "新城区",
-						isdefault: "0",
-						phone: "18280172253",
-						province: "内蒙古",
-						truename: "陈",
-						local: '北京市 东城区',
-					},
-					{
-						address: "走走走",
-						addressid: "18",
-						city: "呼和浩特市",
-						district: "新城区",
-						isdefault: "0",
-						phone: "18280172253",
-						province: "内蒙古",
-						truename: "陈",
-						local: '北京市 东城区',
-					},
-					{
-						address: "走走走",
-						addressid: "17",
-						city: "呼和浩特市",
-						district: "新城区",
-						isdefault: "0",
-						phone: "18280172253",
-						province: "内蒙古",
-						truename: "陈",
-						local: '北京市 东城区',
-					},
-					{
-						address: "走走走",
-						addressid: "18",
-						city: "呼和浩特市",
-						district: "新城区",
-						isdefault: "0",
-						phone: "18280172253",
-						province: "内蒙古",
-						truename: "陈",
-						local: '北京市 东城区',
-					},
-					{
-						address: "走走走",
-						addressid: "17",
-						city: "呼和浩特市",
-						district: "新城区",
-						isdefault: "0",
-						phone: "18280172253",
-						province: "内蒙古",
-						truename: "陈",
-						local: '北京市 东城区',
-					},
-					{
-						address: "走走走",
-						addressid: "18",
-						city: "呼和浩特市",
-						district: "新城区",
-						isdefault: "0",
-						phone: "18280172253",
-						province: "内蒙古",
-						truename: "陈",
-						local: '北京市 东城区',
-					},
-					{
-						address: "走走走",
-						addressid: "17",
-						city: "呼和浩特市",
-						district: "新城区",
-						isdefault: "0",
-						phone: "18280172253",
-						province: "内蒙古",
-						truename: "陈",
-						local: '北京市 东城区',
-					}
-				],
+				addressList: [],
 			};
 		},
 		onLoad() {
@@ -125,6 +37,7 @@
 			if(this.isEditAddress){
 				this.getAddressList()
 			}
+			this.addressEditStatus(false)
 		},
 		onNavigationBarButtonTap(e) {
 			if (e.text === '添加') {

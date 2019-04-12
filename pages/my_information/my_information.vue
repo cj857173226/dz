@@ -2,13 +2,13 @@
 	<view class="my_information_page">
 		<view class="head">
 			<view class="avatar_wrap" @tap="chooseAvatar">
-				<img class="avatar" :src="avatar?avatar:'/static/images/default_avatar.jpg'" alt="">
+				<img class="avatar" :src="avatar?(host+avatar):'/static/images/default_avatar.jpg'" alt="">
 				<view class="img_icon">
 					<text class="iconfont icon-xiangji"></text>
 				</view>
 			</view>
 			<view class="nick-name">
-				<input type="text" ref="nickname" v-if="infoForm.nickname==='' || onfocus === true" placeholder-style="font-size:36upx;color:#cccccc;"
+				<input type="text" ref="nickname" v-if="!infoForm.nickname || onfocus === true" placeholder-style="font-size:36upx;color:#cccccc;"
 				 maxlength="16" placeholder="请输入用户名" v-model.trim="infoForm.nickname" @focus="onfocus = true" @blur="onfocus = false"
 				 :focus="focus">
 
@@ -112,6 +112,7 @@
 		},
 		data() {
 			return {
+				host:shortHttp,
 				token: '',
 				storageInfo: {},
 				avatar: '', // 用户头像
@@ -121,7 +122,6 @@
 					idCard: '', //身份证号
 					passCard: '', //护照号
 					sex: '', //性别
-					local: '', //地区
 					birth: '', //出生日期
 					education: '', //教育背景
 					province: '', // 省
@@ -203,10 +203,10 @@
 					sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
 					sourceType: ['album', 'camera'], //从相册选择
 					success: function(res) {
-						_this.avatar = res.tempFiles[0].path;
+						let _avatar = res.tempFiles[0].path;
 						uni.uploadFile({
 							url: 'http://dz.abontest.com/e/extend/uploadify/uploadify.php?dir=duanzu_head_no_mark&type=head_no_mark', //仅为示例，非真实的接口地址
-							filePath: _this.avatar,
+							filePath: _avatar,
 							name: 'Filedata',
 							header: {
 								"Authorization": 'Bearer ' + _this.token,
@@ -215,8 +215,8 @@
 								const data = JSON.parse(res.data)
 								if (data.status === 'success') {
 									_this.storageInfo.headImgurl = data.content.url;
+									_this.avatar = data.content.url;
 									uni.setStorageSync('dz_userInfo', _this.storageInfo);
-									_this.isUserInfoEditStatus(true);
 									helper.layer('上传成功');
 								} else {
 									helper.layer('头像上传失败,请稍后再试');
@@ -322,7 +322,7 @@
 					confirmColor: '#F05B72',
 					success: function(res) {
 						if (res.confirm) {
-
+							_this.submitInfo();
 						} else if (res.cancel) {
 							_this.infoForm = helper.deepCopy(_this.initInfo);
 							uni.navigateBack({
@@ -341,17 +341,18 @@
 				const idCard = _this.infoForm.idCard;
 				const passCard = _this.infoForm.passCard;
 				const sex = _this.infoForm.sex;
-				const local = _this.infoForm.local;
 				const birth = _this.infoForm.birth;
 				const education = _this.infoForm.education;
 				const province = _this.infoForm.province;
 				const city = _this.infoForm.city;
 				const localIndex = _this.infoForm.localIndex;
 				const birth_code = _this.infoForm.birth_code;
-				if (nickname === '') {
+				if (nickname.trim() === '') {
 					helper.layer('用户名不能为空')
-				} else if (idCard !== '' && !helper.idCardReg(idCard)) {
+				} else if (idCard.trim() !== '' && !helper.idCardReg(idCard)) {
 					helper.layer('身份证格式有误')
+				}  else if(truename.trim() !== '' && !helper.nameRge(truename)){
+					helper.layer('姓名必须为中文')
 				} else {
 					this.idLoding = true;
 					const param = {
@@ -365,19 +366,26 @@
 						province_code: localIndex,
 						realname:truename,
 						sex:sex,
-						username:nickname
+						nickname:nickname
 					}
 					request({
 						url: '/wap/api/my.php?action=updateInfo',
 						method: 'POST',
 						data:param,
 						success: (res) => {
-							if(res){
-								
+							if(res.data.status === 'success'){
+								let _uinfo = uni.getStorageSync('dz_userInfo');
+								let _data = Object.assign(_uinfo,param);
+								uni.setStorageSync('dz_userInfo',_data);
+								_this.initInfo = helper.deepCopy(_this.initUserInfo(_data)) 
+								_this.isUserInfoEditStatus(true);
+								uni.navigateBack({
+									delta: 1
+								})
+								helper.layer('修改成功')
+							}else{
+								helper.layer('修改失败')
 							}
-						},
-						fail: () => {
-
 						},
 						complete: () => {
 							this.idLoding = false;
@@ -388,13 +396,11 @@
 			// 初始化个人信息
 			initUserInfo(userInfo){
 				let _infoObj = {};
-				_infoObj['nickname'] = userInfo.username;
+				_infoObj['nickname'] = userInfo.nickname?userInfo.nickname:'';
 				_infoObj['truename'] = userInfo.realname;
 				_infoObj['idCard'] = userInfo.idcard;
 				_infoObj['passCard'] = userInfo.passport;
 				_infoObj['sex'] = userInfo.sex;
-				_infoObj['local'] = (userInfo.province !== '' && userInfo.city !== '') ? userInfo.province + '-' + userInfo.city :
-					'';
 				_infoObj['birth'] = userInfo.birth;
 				_infoObj['education'] = userInfo.education;
 				_infoObj['province'] = userInfo.province;
