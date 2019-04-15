@@ -1,4 +1,1 @@
-<import src="/components/mpvue-picker/mpvuePicker.vue.wxml" />
-<import src="/components/mpvue-echarts/src/echarts.vue.wxml" />
-<import src="/components/w-picker/w-picker.vue.wxml" />
 

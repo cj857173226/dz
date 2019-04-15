@@ -1,11 +1,14 @@
 <template>
 	<view class="invice_page">
 		<view class="tab_wrap">
-			<view class="tab_btn" :class="{'tab_btn_on':curTab === 1}" @tap="changeTab(1)">已发出</view>
-			<view class="tab_btn" :class="{'tab_btn_on':curTab === 2}" @tap="changeTab(2)">未发出</view>
+			<view class="tab_btn" :class="{'tab_btn_on':curTab === '1'}" @tap="changeTab(1)">已发出</view>
+			<view class="tab_btn" :class="{'tab_btn_on':curTab === '2'}" @tap="changeTab(2)">未发出</view>
 		</view>
 		<scroll-view scroll-y class="invice_list_wrap">
 			<view class="invice_list">
+				
+			</view>
+			<view class="no_list">
 				
 			</view>
 		</scroll-view>
@@ -16,7 +19,7 @@
 	export default {
 		data() {
 			return {
-				curTab: 1,   //1 已发出  2 未发出
+				curTab: '1',   //1 已发出  2 未发出
 			};
 		},
 		onLoad() {},
@@ -33,8 +36,9 @@
 		},
 		methods:{
 			changeTab(index){
-				if(index === this.curTab) return;
-				this.curTab = index;
+				let i = index.toString();
+				if(i === this.curTab) return;
+				this.curTab = i;
 			}
 		}
 	}

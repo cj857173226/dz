@@ -62,6 +62,7 @@
     "pages/releaseManage/price_rule/break_contract",
     "pages/releaseManage/room_photograph/room_photograph",
     "pages/comment/comment",
+    "pages/setting/setting",
     "pages/setting/setting"
   ],
   "subPackages": [],

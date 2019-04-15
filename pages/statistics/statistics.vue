@@ -11,30 +11,33 @@
 		<view class="bill_wrap">
 			<view class="bill_item">
 				<view class="b_title"><text class="iconfont icon-dian" style="color:#f05b72;"></text>预计收入</view>
-				<view class="b_money">￥10.00</view>
+				<view class="b_money">￥{{billData.in}}</view>
 			</view>
 			<view class="bill_item">
 				<view class="b_title"><text class="iconfont icon-dian" style="color:#06d7b5;"></text>成本</view>
-				<view class="b_money">￥10.00</view>
+				<view class="b_money">￥{{billData.out}}</view>
 			</view>
 			<view class="bill_item">
 				<view class="b_title">预计利润</view>
-				<view class="b_money">￥10.000000000000000000000</view>
+				<view class="b_money">￥{{billData.profit}}</view>
 			</view>
 		</view>
 		<scroll-view view class="bill_list_wrap" scroll-y>
-			<view class="bill_list">
+			<view class="bill_list" v-if="billData.billList.length>0">
 				<view class="list_item" v-for="(item,index) in billData.billList" :key="index" @tap="editbill(item)">
 					<view class="left">
 						<view class="l_title">
-							<text v-text="item.type=='in'?'收入记录':'成本记录'"></text><text v-if="item.note!=''">-{{item.note}}</text>
+							<text v-text="item.type=='in'?'收入记录':'成本记录'"></text><text style="color: #AAAAAA;" v-if="item.remark!=''">-{{item.remark}}</text>
 						</view>
-						<view class="l_source" v-text="item.source=='1'?'来源平台':'来源其他'"></view>
-						<view class="l_time">{{item.date}}</view>
+						<!-- <view class="l_source" v-text="item.source=='1'?'来源平台':'来源其他'"></view> -->
+						<view class="l_time">{{item._date}}</view>
 					</view>
 					<view class="l_money in" v-if="item.type=='in'">{{item.money}}</view>
 					<view class="l_money out" v-if="item.type=='out'">{{item.money}}</view>
 				</view>
+			</view>
+			<view class="no_list" v-if="billData.billList.length<=0">
+				暂无本月账单
 			</view>
 		</scroll-view>
 		<w-picker :mode="mode" :startYear="startYear" :endYear="endYear" :defaultVal="defaultVal" @confirm="onConfirm" ref="datePicker" />
@@ -107,93 +110,11 @@
 				defaultVal: [0, 0], // 日期默认值
 				billData: {
 					// 总账单
-					in: '', //预计收入
-					out: '', //成本，
-					profit: '', //预计利润
+					in: '0.00', //预计收入
+					out: '0.00', //成本，
+					profit: '0.00', //预计利润
 					// 账单列表
-					billList: [{
-							id: '1',
-							type: 'in',
-							source: '1',
-							date: '03-01',
-							note: '今天买了个鸭儿,今天买了个鸭儿,今天买了个鸭儿,今天买了个鸭儿',
-							money: '+99999.99'
-						},
-						{
-							id: '2',
-							type: 'out',
-							source: '1',
-							date: '03-02',
-							note: '今天买了个鸭儿,今天买了个鸭儿,今天买了个鸭儿,今天买了个鸭儿',
-							money: '-99999.99'
-						},
-						{
-							id: '3',
-							type: 'in',
-							source: '2',
-							date: '03-03',
-							note: '今天买了个鸭儿,今天买了个鸭儿,今天买了个鸭儿,今天买了个鸭儿',
-							money: '+99999.99'
-						},
-						{
-							id: '3',
-							type: 'in',
-							source: '2',
-							date: '03-03',
-							note: '今天买了个鸭儿,今天买了个鸭儿,今天买了个鸭儿,今天买了个鸭儿',
-							money: '+99999.99'
-						},
-						{
-							id: '3',
-							type: 'in',
-							source: '2',
-							date: '03-03',
-							note: '今天买了个鸭儿,今天买了个鸭儿,今天买了个鸭儿,今天买了个鸭儿',
-							money: '+99999.99'
-						}, {
-							id: '3',
-							type: 'in',
-							source: '2',
-							date: '03-03',
-							note: '今天买了个鸭儿,今天买了个鸭儿,今天买了个鸭儿,今天买了个鸭儿',
-							money: '+99999.99'
-						}, {
-							id: '3',
-							type: 'in',
-							source: '2',
-							date: '03-03',
-							note: '今天买了个鸭儿,今天买了个鸭儿,今天买了个鸭儿,今天买了个鸭儿',
-							money: '+99999.99'
-						}, {
-							id: '3',
-							type: 'in',
-							source: '2',
-							date: '03-03',
-							note: '今天买了个鸭儿,今天买了个鸭儿,今天买了个鸭儿,今天买了个鸭儿',
-							money: '+99999.99'
-						}, {
-							id: '3',
-							type: 'in',
-							source: '2',
-							date: '03-03',
-							note: '今天买了个鸭儿,今天买了个鸭儿,今天买了个鸭儿,今天买了个鸭儿',
-							money: '+99999.99'
-						}, {
-							id: '3',
-							type: 'in',
-							source: '2',
-							date: '03-03',
-							note: '今天买了个鸭儿,今天买了个鸭儿,今天买了个鸭儿,今天买了个鸭儿',
-							money: '+99999.99'
-						}, {
-							id: '3',
-							type: 'in',
-							source: '2',
-							date: '03-03',
-							note: '今天买了个鸭儿,今天买了个鸭儿,今天买了个鸭儿,今天买了个鸭儿',
-							money: '+99999.99'
-						}
-					]
+					billList: []
 				},
 			}
 		},
@@ -213,9 +134,12 @@
 			this.defaultVal = this.defaultDateVal();
 			// 获取统计数据(全部)
 			this.getStatisticsData();
-			
+
 		},
 		onShow() {
+			if (this.isEditStatistics) {
+				this.getStatisticsData();
+			}
 			this.statisticsEditStatus(false)
 		},
 		onNavigationBarButtonTap(e) {
@@ -252,22 +176,17 @@
 		},
 		methods: {
 			...mapMutations(['statisticsEditStatus']),
-			updatePie() {
+			updatePie(In, out) {
 				// 参考 mpvue-charts 的懒加载示例
 				// https://github.com/F-loat/mpvue-echarts/blob/master/examples/lazyLoad.vue
-
-				if (this.updateStatus) {
-					return;
-				}
 				pieOption.series[0].data = [{
-					value: 100,
+					value: In,
 					name: '收入'
 				}, {
-					value: 38,
+					value: out,
 					name: '成本'
 				}]
 				this.$refs.pieChart.init();
-				this.updateStatus = true;
 			},
 			pieInit(canvas, width, height) {
 				let pieChart = echarts.init(canvas, null, {
@@ -284,6 +203,7 @@
 				uni.navigateTo({
 					url: '/pages/statistics/add_bill',
 				});
+				uni.setStorageSync('dz_billNote', '');
 			},
 			editbill(par) {
 				const param = JSON.stringify(par)
@@ -321,6 +241,8 @@
 				cm = cm >= 10 ? cm : '0' + cm;
 				this.checkOnTime.year = cy.toString();
 				this.checkOnTime.month = cm.toString();
+				this.defaultVal = this.defaultDateVal();
+				this.getStatisticsData();
 			},
 			// 日期选择
 			pickDate() {
@@ -328,9 +250,14 @@
 			},
 			//确定日期选择
 			onConfirm(e) {
+				const _oldY = this.checkOnTime.year;
+				const _oldM = this.checkOnTime.month;
 				this.checkOnTime.year = e[0];
 				this.checkOnTime.month = e[1];
 				this.defaultVal = this.defaultDateVal();
+				if (_oldY !== e[0] || _oldM !== e[1]) {
+					this.getStatisticsData();
+				}
 			},
 			// 返回日期默认值
 			defaultDateVal() {
@@ -344,14 +271,34 @@
 				const _this = this;
 				const year = this.checkOnTime.year;
 				const month = this.checkOnTime.month;
+				uni.showLoading({
+					title: '',
+					mask: true,
+				})
 				request({
-					url:'/wap/api/statistics.php?action=statistics',
-					data:{
-						date:year+'-'+month
+					url: '/wap/api/statistics.php?action=statistics',
+					data: {
+						date: year + '-' + month
 					},
-					success:function(res){
-						console.log(res)
+					success: function(res) {
+						if (res.data.status === 'success') {
+							let _data = res.data.content;
+							const list = _data.billList;
+							if (list.length > 0) {
+								list.map((item, index, self) => {
+									self[index]['_date'] = item.date.substr(5);
+								})
+							}
+							_this.billData.billList = list;
+							_this.billData.in = _data.in.toFixed(2);
+							_this.billData.out = _data.out.toFixed(2);
+							_this.billData.profit = _data.profit.toFixed(2);
+							_this.updatePie(Number(_data.in), Number(_data.out))
+						}
 					},
+					complete: function() {
+						uni.hideLoading()
+					}
 				})
 			},
 
@@ -525,6 +472,15 @@
 					}
 				}
 
+			}
+
+			.no_list {
+				display: flex;
+				height: 200upx;
+				;
+				justify-content: center;
+				align-items: center;
+				color: #aaaaaa;
 			}
 		}
 	}

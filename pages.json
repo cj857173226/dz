@@ -216,16 +216,9 @@
 		{
 			"path": "pages/statistics/edit_bill",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "收入详情",
 				"app-plus": {
-					"bounce": "none",
-					"titleNView": {
-						"buttons": [{
-							"text": "保存",
-							"fontSize": "14px",
-							"float": "right"
-						}]
-					}
+					"bounce": "none"
 				}
 			}
 		},

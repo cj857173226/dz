@@ -236,7 +236,6 @@
 				};
 				this.data = data;
 				this.pickVal = this.defaultVal;
-				console.log(this.defaultVal)
 				let months= [];
 				let days = [];
 				switch (mode) {

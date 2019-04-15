@@ -1,7 +1,7 @@
 <template>
 	<view class="bill_note_page">
 		<view class="bill_note_wrap">
-			<textarea placeholder-style="color:#cccccc;" placeholder="请填写备注" :maxlength="maxLength"/>
+			<textarea placeholder-style="color:#cccccc;" placeholder="请填写备注" :maxlength="maxLength" v-model="noteText"/>
 			<view class="control">
 				<text class="cur" v-text="noteText.length"></text>
 				<text class="total">/{{maxLength}}</text>
@@ -18,17 +18,29 @@
 				maxLength: 35,
 			}
 		},
-		onLoad(){
-			
+		onLoad(e){
+			const note = e.note;
+			this.noteText = note;
 		},
 		onShow(){
 			
+		},
+		onNavigationBarButtonTap(e) {
+			if (e.index === 0) {
+				this.saveNote()
+			}
 		},
 		computed:{
 			
 		},
 		methods:{
-			
+			// 保存备注
+			saveNote(){
+				uni.setStorageSync('dz_billNote',this.noteText);
+				uni.navigateBack({
+					delta: 1
+				});
+			}
 		}
 	}
 </script>
