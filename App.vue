@@ -96,6 +96,11 @@
 		background: #f9f9f9 !important;
 		color: #AAAAAA;
 	}
+	
+	.placeholder{
+		color: #CCCCCC;
+		font-size: 28upx;;
+	}
 
 	ul li {
 		list-style: none;

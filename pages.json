@@ -322,6 +322,22 @@
 					}
 				}
 			}
+		},{
+			"path": "pages/releaseManage/local_set",
+			"style": {
+				"navigationBarTitleText": "地址详情",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},{
+			"path": "pages/releaseManage/rent_type",
+			"style": {
+				"navigationBarTitleText": "出租类型",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
 		},
 		{
 			"path": "pages/releaseManage/house_detail",

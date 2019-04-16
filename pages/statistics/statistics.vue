@@ -167,8 +167,7 @@
 			//是否禁用下个月跳转按钮
 			disNextMonthBtn: {
 				get: function() {
-					if (Number(this.checkOnTime.year) >= Number(this.curTime.year) && Number(this.checkOnTime.month) >= Number(this.curTime
-							.month)) {
+					if (Number(this.checkOnTime.year) >= Number(this.curTime.year) && Number(this.checkOnTime.month) >= Number(this.curTime.month)) {
 						return true
 					}
 				}

@@ -1,3 +1,9 @@
+// 城市数据
+import provinceData from '../common/city-data/province.js'
+import cityData from '../common/city-data/city.js'
+import areaData from '../common/city-data/area.js'
+
+
 // 检测是否登录
 const isLogin = function() {
 	const token = uni.getStorageSync('dz_token');
@@ -155,6 +161,44 @@ const getCurTime = function() {
 		day: day.toString()
 	}
 };
+
+// 获取三级联动城市选择默认值
+const getLocalDefaultValue = function(province, city, district) {
+	let p_val = 0, // 省 索引
+		c_val = 0, // 市 索引
+		d_val = 0; // 区 索引
+	// 筛选省
+	if (!province) {
+		p_val = 0;
+	} else {
+		provinceData.forEach((item, index) => {
+			if (item.label === province) {
+				p_val = index;
+			}
+		})
+	}
+	// 筛选市
+	if (!city) {
+		p_val = 0;
+	} else {
+		cityData[p_val].forEach((item, index) => {
+			if (item.label === city) {
+				c_val = index;
+			}
+		})
+	}
+	// 筛选区
+	if (!district) {
+		p_val = 0;
+	} else {
+		areaData[p_val][c_val].forEach((item, index) => {
+			if (item.label === district) {
+				d_val = index;
+			}
+		})
+	}
+	return [p_val, c_val, d_val];
+}
 export default {
 	isLogin,
 	phoneReg,
@@ -165,5 +209,6 @@ export default {
 	layer,
 	hideIdCard,
 	isObjEqual,
-	getCurTime
+	getCurTime,
+	getLocalDefaultValue
 }

@@ -217,6 +217,7 @@
 				}
 			},
 			show() {
+				this.pickerValue = this.pickerValueDefault;
 				setTimeout(() => {
 					if (this.pickerValueArrayChange || this.modeChange) {
 						this.initPicker(this.pickerValueArray);

@@ -92,11 +92,20 @@
 				}]
 			};
 		},
-		onLoad() {
+		onLoad(e) {
 		
 		},
 		onShow() {
 		
+		},
+	
+		onNavigationBarButtonTap(e) {
+			if(e.index === 0){
+				// 发布按钮
+				uni.navigateTo({
+					url:'/pages/releaseManage/local_set?type=add'
+				})
+			}
 		},
 		computed: {
 		

@@ -86,10 +86,13 @@
 					confirmText: '删除',
 					confirmColor: '#F05B72',
 					success: function(res) {
+						uni.showLoading({
+							title:'删除中...'
+						})
 						if (res.confirm) {
 							_this.isDeling = true;
 							request({
-								url: '/wap/api/statistics.php?action=delete&id='+id,
+								url: '/wap/api/statistics.php?action=destroy&id='+id,
 								method: 'GET',
 								success: function(res) {
 									if (res.data.status === "success") {

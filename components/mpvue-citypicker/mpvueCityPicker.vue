@@ -69,6 +69,7 @@ export default {
       setTimeout(() => {
         this.showPicker = true;
       }, 0);
+			this.pickerValue = this.pickerValueDefault;
     },
     maskClick() {
       this.pickerCancel();
