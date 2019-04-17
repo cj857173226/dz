@@ -55,10 +55,17 @@
 			}
 		},
 		{
-			// 订单
+			// 新建分组
 			"path": "pages/collection/new_group",
 			"style": {
 				"navigationBarTitleText": "新建分组"
+			}
+		},
+		{
+			// 新建分组
+			"path": "pages/collection/custom",
+			"style": {
+				"navigationBarTitleText": "我喜欢的房源"
 			}
 		},
 		{

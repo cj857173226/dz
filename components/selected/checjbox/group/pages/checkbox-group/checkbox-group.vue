@@ -68,6 +68,7 @@
   }
   .checkbox{
     padding: 5px;
+    font-size: 14px;
     border: 1px solid #e1e1e1;
     margin-right: 24upx;
     border-radius: 7upx;

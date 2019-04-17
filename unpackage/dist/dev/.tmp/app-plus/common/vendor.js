@@ -341,10 +341,10 @@ eval("/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, 
 /*!***************************************************!*\
   !*** D:/projectFile/xzapp/common/requestUrl.json ***!
   \***************************************************/
-/*! exports provided: shortHttp, banner, ambitus, room, portrait, default */
+/*! exports provided: shortHttp, banner, ambitus, room, portrait, fangDongDiscuss, default */
 /***/ (function(module) {
 
-eval("module.exports = {\"shortHttp\":\"http://dz.abontest.com\",\"banner\":\"/wap/api/json.php?action=api_getIndexRecommendLodgeunit.json\",\"ambitus\":\"/wap/api/search.php?action=index\",\"room\":\"/wap/api/detail.php?action=index\",\"portrait\":\"/wap/api/fangdong.php?action=index\"};\n\n//# sourceURL=D:/projectFile/xzapp/common/requestUrl.json");
+eval("module.exports = {\"shortHttp\":\"http://dz.abontest.com\",\"banner\":\"/wap/api/json.php?action=api_getIndexRecommendLodgeunit.json\",\"ambitus\":\"/wap/api/search.php?action=index\",\"room\":\"/wap/api/detail.php?action=index\",\"portrait\":\"/wap/api/fangdong.php?action=index\",\"fangDongDiscuss\":\"/wap/api/fangdong.php?action=comments\"};\n\n//# sourceURL=D:/projectFile/xzapp/common/requestUrl.json");
 
 /***/ }),
 

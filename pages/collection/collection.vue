@@ -1,17 +1,18 @@
 <template>
 	<view class="contanier">
-		<view class="group-box" @tap="cilckParticulars">
+		<view class="group-box" @tap="cilckParticulars(item.cid,item.cname)" v-for="(item,i) in groupingList" :key="i">
 			<image class="group-img" src="../../static/images/meitu.jpeg"></image>
-			<view class="group-name">我喜欢的房源</view>
+			<view class="group-name">{{item.cname}}</view>
 		</view>
 	</view>
 </template>
 
 <script>
+	import {request} from '../../common/request.js' // 封装的带有token的请求方法
 	export default {
 		data() {
 			return {
-				
+				groupingList:null, // 分组列表
 			};
 		},
 		onNavigationBarButtonTap(e){
@@ -21,11 +22,23 @@
 			})
 		},
 		methods: {
-			// cilckParticulars:function(){
-			// 	uni.navigateTo({
-			// 		url:'/pages/collection/new_group'
-			// 	})
-			// }
+			cilckParticulars:function(id,cname){
+				//  id：房源id  cname：房源标题
+				uni.navigateTo({
+					url:`/pages/collection/custom?id=${id}&title=${cname}`
+				})
+			}
+		},
+		onLoad(){
+			const _that = this
+			// 获取分组列表
+			request({
+				url:"/wap/api/my.php?action=favoriteClass",
+				success: function(res) {
+					console.log("分组列表:",res.data.content.item);
+					_that.groupingList = res.data.content.item;
+				}
+			})
 		}
 	}
 </script>

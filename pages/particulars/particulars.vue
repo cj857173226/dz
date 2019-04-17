@@ -141,7 +141,7 @@
 						</text>
 					</view>
 					<view class="btn-box">
-						<button class="mini-btn btn-the-globe" type="primary" size="mini">
+						<button class="mini-btn btn-the-globe" type="primary" size="mini" @tap="clickDiscuss(landlordId)">
 							全部评论({{commentList.length}})
 						</button>
 					</view>
@@ -213,7 +213,7 @@
 	import uniRate from "../../components/particulars/uni-rate/uni-rate.vue" //引用评分插件
 	import supportingFacility from "../../components/particulars/supporting-facility.vue" //引用配套设施插件
 	import unsubscribeRules from '../../components/particulars/unsubscribe-rules' 
-	import { shortHttp,room } from "../../common/requestUrl.json"; // 接口文件
+	import { shortHttp,room,fangDongDiscuss } from "../../common/requestUrl.json"; // 接口文件
 	
 	export default {
 		components:{house_map,uniRate,supportingFacility,unsubscribeRules},
@@ -257,7 +257,7 @@
 			changeIndicatorDots(e){
 				this.numberIndex = e.detail.currentItemId
 			},
-			// 是否查看全部评论
+			// 是否查看全部描述
 			clickBtn(){
 				this.isTrue = !this.isTrue
 			},
@@ -265,6 +265,17 @@
 			clickLandlord(){
 				uni.navigateTo({
 					url:`/pages/landlord_introduced/landlord_introduced?landlord=${this.landlordId}`
+				})
+			},
+			// 点击跳转页面查看房东所有描述
+			clickDiscuss(type){
+				uni.request({
+					url:shortHttp+fangDongDiscuss,
+					data:{id:type},
+					success: res => {
+						console.log("查看房东评论：",res);
+						
+					}
 				})
 			}
 		},
@@ -368,14 +379,16 @@
 		padding: 30upx;
 		box-sizing: border-box;
 		.contact-box{
-			// height: 100%;
-			height: 556upx;
+			height: 600upx;
+			padding: 0 20upx;
+			box-sizing: border-box;
 			background-color: #fff;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			.title{
 				margin-top: 42upx;
+				text-align: center;
 				font-weight: bold;
 			}
 			.comment{
@@ -420,7 +433,7 @@
 					font-size: 12px;
 					color: #a9a9a9;
 					text-align: center;
-					margin-bottom: 20upx;
+					// margin-bottom: 20upx;
 				}
 				.mini-btn{
 					background-color: #fff;

@@ -1,5 +1,5 @@
 <template>
-	<view class="container">
+	<view class="containers">
 		<view class="box">
 			<view class="location">
 				<view class="list-box">
