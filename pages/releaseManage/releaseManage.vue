@@ -22,7 +22,8 @@
 				</view>
 				<view class="item_foot">
 					<view class="foot_left">
-						<view class="house_title">{{item.title}}</view>
+						<view class="no_title" v-if="item.title===''">未完成发布的房源</view>
+						<view class="house_title" v-else>{{item.title}}</view>
 						<view class="rent-type">
 							<view v-if="item.leasetype == 1">整套出租</view>
 							<view v-else-if="item.leasetype == 2">独立房间</view>
@@ -31,7 +32,7 @@
 					</view>
 					<button class="house-handle-btn lower-shelf-btn" v-if="item.is_complete ==1 && item.status== 1">下架</button>
 					<button class="house-handle-btn upper-shelf-btn" v-if="item.is_complete ==0 && item.status== 2">上架</button>
-					<button class="house-handle-btn house-update-btn" v-if="item.is_complete ==0 && item.status== -1" @tap.stop="houseDetail(item)">修改</button>
+					<button class="house-handle-btn house-update-btn" v-if="item.is_complete ==0 && item.status== -1" @tap.stop="editHouseInfo(item)">修改</button>
 				</view>
 			</view>
 		</view>
@@ -39,11 +40,22 @@
 </template>
 
 <script>
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+	import {
+		request
+	} from '../../common/request.js'
+	import helper from 'common/helper.js'
+	import {
+		shortHttp
+	} from '../../common/requestUrl.json'
 	export default {
 		data() {
 			return {
 				listData: [{
-					title: '这是一个大房子啊', //房屋标题
+					title: '', //房屋标题
 					titlepic: '/static/images/landlordguide/banner1.jpg', // 标题配图
 					// titlepic: '',
 					xz_zb: '', //坐标,
@@ -52,18 +64,18 @@
 					xz_district: '', //区
 					xz_address: '', //详细地址
 					xz_number: '', //门牌号
-					xz_local: '北京东城区某某街,200号', // 地址(全)
+					xz_local: '北京市直辖市东城区', // 地址(全)
 					leasetype: 1, //出租类型：1：整套出租；2：独立房间；3：合住房间
-					tantnum: 10, //宜居人数
-					roomtype_shi: 1, //房屋类型，室
-					roomtype_ting: 1, //房屋类型，厅
-					roomtype_wei: 1, //房屋类型，卫
-					roomtype_chu: 1, //房屋类型，厨
-					roomtype_yt: 1, //房屋类型，阳台
-					area: 100, //房屋面积
-					sameroom: 2, // 同类房源、床位、房间
-					toilet: 1, // 卫生间：1，共用；2，独立
-					livetogether: 1, // 是否和房东同居 1:同居 2:不同居
+					tantnum: '', //宜居人数
+					roomtype_shi: '', //房屋类型，室
+					roomtype_ting: '', //房屋类型，厅
+					roomtype_wei: '', //房屋类型，卫
+					roomtype_chu: '', //房屋类型，厨
+					roomtype_yt: '', //房屋类型，阳台
+					area: '', //房屋面积
+					sameroom: 1, // 同类房源、床位、房间
+					toilet: '', // 卫生间：1，共用；2，独立
+					livetogether: '', // 是否和房东同居 1:同居 2:不同居
 					bed: '', // 床位信息
 					bedsheet: '', //被单更换：tenant，每客一换；day，每日一换
 					roomServiceIntro: '', //个性表述
@@ -86,35 +98,58 @@
 					pics: '', //图片信息
 					renzheng: '', //认证
 					addtenanttips: '', //加客费
-					status: -1, // 状态
+					status: -1, // 状态 -1待发布，0,待审核1上架2下架
 					daohang: '', //定位导航
 					is_complete: 0, //是否完成信息
 				}]
 			};
 		},
 		onLoad(e) {
-		
+			this.getHouseLists();
 		},
 		onShow() {
-		
+
 		},
-	
+
 		onNavigationBarButtonTap(e) {
-			if(e.index === 0){
+			if (e.index === 0) {
+				// 清空创建房源的信息
+				this.clearCreateHouseInfo();
 				// 发布按钮
 				uni.navigateTo({
-					url:'/pages/releaseManage/local_set?type=add'
+					url: '/pages/releaseManage/local_set?type=add'
 				})
 			}
 		},
 		computed: {
-		
+
 		},
 		methods: {
-			houseDetail(par){
-				const params = JSON.stringify(par);
+			...mapMutations(['editCreateHouseInfo','clearCreateHouseInfo','editReleaseInfo','clearReleaseInfo','initReleaseInfoStatus']),
+			// 获取房源列表
+			getHouseLists(){
+				request({
+					url:'/wap/api/fangdong.php?action=houseList',
+					method:'GET',
+					success:(res)=>{
+						
+					},
+					fail:()=>{
+						
+					},
+					complete:()=>{
+						
+					}
+				})
+			},
+			// 修改房屋发布信息
+			editHouseInfo(par) {
+				// 先清空房源信息
+				this.clearReleaseInfo();
+				// 带入当前要修改的房源信息
+				this.editReleaseInfo(par);
 				uni.navigateTo({
-					url: '/pages/releaseManage/house_detail?param=' + params
+					url: '/pages/releaseManage/house_detail?type=edit'
 				})
 			}
 		}
@@ -132,16 +167,19 @@
 	.releaseManage_page {
 		box-sizing: border-box;
 		width: 100%;
+
 		.house_list {
 			box-sizing: border-box;
 			width: 100%;
 			padding: 30upx 20upx;
+
 			.list_item {
 				padding: 30upx 20upx;
 				position: relative;
 				box-sizing: border-box;
 				width: 100%;
-				&::after{
+
+				&::after {
 					position: absolute;
 					content: '';
 					display: block;
@@ -151,6 +189,7 @@
 					bottom: 0;
 					background: #eaeaea;
 				}
+
 				.item_head {
 					box-sizing: border-box;
 					width: 100%;
@@ -198,6 +237,7 @@
 					position: relative;
 					width: 100%;
 					min-height: 400upx;
+
 					.house_pic {
 						display: block;
 						width: 100%;
@@ -233,22 +273,31 @@
 					flex-direction: row;
 					justify-content: space-between;
 					align-items: center;
-					.foot_left{
+
+					.foot_left {
 						flex-grow: 1;
-						.house_title{
-							font-size:36upx;
+						.house_title {
+							font-size: 36upx;
 							color: $theme-color;
 							margin-bottom: 10upx;
 							overflow: hidden;
 							text-overflow: ellipsis;
 							white-space: nowrap;
 						}
-						.rent-type{
+						.no_title{
+							font-size: 36upx;
+							color: #333333;
+							overflow: hidden;
+							text-overflow: ellipsis;
+							white-space: nowrap;
+						}
+						.rent-type {
 							color: #aaaaaa;
 							font-size: 28upx;
 						}
 					}
-					.house-handle-btn{
+
+					.house-handle-btn {
 						box-sizing: border-box;
 						padding: 0;
 						margin: 0 0 0 20upx;

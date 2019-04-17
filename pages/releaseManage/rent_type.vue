@@ -2,9 +2,9 @@
 	<view class="rent_type_page">
 		<view class="head">房客入住的<text class="key">空间类型</text>是?</view>
 		<view class="type_check_wrap">
-			<view class="check_item" @tap="changeLeaseType('1')">
+			<view class="check_item" @tap="changeLeaseType(1)">
 				<view class="check_btn_wrap">
-					<view class="check_btn" :class="{'check_on':leasetype === '1'}">
+					<view class="check_btn" :class="{'check_on':leasetype === 1}">
 					</view>
 				</view>
 				<view class="check_content">
@@ -12,9 +12,9 @@
 					<view class="desc">房客独享整个房屋</view>
 				</view>
 			</view>
-			<view class="check_item" @tap="changeLeaseType('2')">
+			<view class="check_item" @tap="changeLeaseType(2)">
 				<view class="check_btn_wrap">
-					<view class="check_btn" :class="{'check_on':leasetype === '2'}">
+					<view class="check_btn" :class="{'check_on':leasetype === 2}">
 					</view>
 				</view>
 				<view class="check_content">
@@ -22,9 +22,9 @@
 					<view class="desc">房客拥有一个独立的房间,但部分空间与他人分享</view>
 				</view>
 			</view>
-			<view class="check_item" @tap="changeLeaseType('3')">
+			<view class="check_item" @tap="changeLeaseType(3)">
 				<view class="check_btn_wrap">
-					<view class="check_btn" :class="{'check_on':leasetype === '3'}">
+					<view class="check_btn" :class="{'check_on':leasetype === 3}">
 					</view>
 				</view>
 				<view class="check_content">
@@ -47,6 +47,17 @@
 </template>
 
 <script>
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+	import {
+		request
+	} from '../../common/request.js'
+	import helper from 'common/helper.js'
+	import {
+		shortHttp
+	} from '../../common/requestUrl.json'
 	export default {
 		data() {
 			return {
@@ -55,32 +66,84 @@
 			}
 		},
 		onLoad(e) {
-			this.type = e.type;
+			if (e.type) {
+				this.type = e.type;
+			}
 		},
 		onShow() {
-
+			if(this.type === 'add'){
+			}
+		},
+		onBackPress() {
+			if (this.type === 'add') {
+				this.back();
+				return true;
+			}
 		},
 		computed: {
-
+			...mapState(['releaseObj','createHouseInfo'])
 		},
 		methods: {
+			...mapMutations(['editCreateHouseInfo','clearCreateHouseInfo','editReleaseInfo','clearReleaseInfo']),
 			//切换出租类型
 			changeLeaseType(type) {
 				this.leasetype = type;
 			},
 			// 提交按钮
 			submit() {
+				if(this.leasetype === '') return;
+				const _this = this;
+				const leasetype = _this.leasetype;
 				if (this.type === 'add') {
-					let index;
-					let page_arr = getCurrentPages().splice(2);
-					uni.navigateTo({
-						url: '/pages/releaseManage/house_detail?type=add'
+					_this.editCreateHouseInfo({
+						leasetype:leasetype
 					})
+					const param = _this.createHouseInfo;
+					request({
+						url:'/wap/api/fangdong.php?action=createHouse',
+						method: 'POST',
+						data:param,
+						success:(res)=>{
+							if(res.data.status === 'success'){
+								
+							}else{
+								helper.layer(res.data.errorMsg)
+							}
+						},
+						complete:()=>{
+							
+						}
+						
+						
+					})
+// 					uni.redirectTo({
+// 						url: '/pages/releaseManage/house_detail?type=add'
+// 					})
 				} else if (this.type === 'edit') {
 
 				}
 
+			},
+			// 返回
+			back() {
+				const _this = this;
+				uni.showModal({
+					title: '提示',
+					content: '是否放弃发布',
+					success: function(res) {
+						if (res.confirm) {
+							_this.type = '';
+							_this.clearCreateHouseInfo();
+							uni.navigateBack({
+								delta: 1
+							})
+						} else if (res.cancel) {
+			
+						}
+					}
+				});
 			}
+			
 		}
 	}
 </script>

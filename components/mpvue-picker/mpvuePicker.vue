@@ -131,7 +131,6 @@
 			initPicker(valueArray) {
 				let pickerValueArray = valueArray;
 				this.pickerValue = this.pickerValueDefault;
-				console.log(this.pickerValue )
 				// 初始化多级联动
 				if (this.mode === 'selector') {
 					this.pickerValueSingleArray = valueArray;

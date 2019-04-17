@@ -103,10 +103,22 @@
 </template>
 
 <script>
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+	import {
+		request
+	} from '../../common/request.js'
+	import helper from 'common/helper.js'
+	import {
+		shortHttp
+	} from '../../common/requestUrl.json'
 	export default {
 		data() {
 			return {
 				pageType: '', // 页面进入的类型 add添加
+				houseInfo:{},
 			}
 		},
 		onLoad(e) {
@@ -115,15 +127,18 @@
 			}
 		},
 		onShow() {
-
+			this.houseInfo = this.releaseObj;
 		},
 		onBackPress(options) {
-		
+			
+			// console.log(options)
 		},
 		computed: {
-
+			...mapState(['releaseObj']),
+			//基本信息
 		},
 		methods: {
+			...mapMutations(['editReleaseInfo','clearReleaseInfo']),
 			// 页面跳转
 			pageTo(page, par) {
 				let url = '';
@@ -137,11 +152,7 @@
 					url: url
 				})
 			},
-			back() {
-				uni.navigateBack({
-					delta: 3
-				});
-			}
+			// 获取信息完成状态
 
 		}
 	}

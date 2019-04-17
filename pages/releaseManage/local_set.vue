@@ -63,7 +63,9 @@
 			}
 		},
 		onLoad(e){
-			this.type = e.type;
+			if(e.type){
+				this.type = e.type;
+			}
 			helper.getLocalDefaultValue(this.province, this.city, this.district);
 		},
 		onShow(){
@@ -73,6 +75,7 @@
 			mpvueCityPicker
 		},
 		computed:{
+			...mapState(['createHouseInfo','releaseObj']),
 			// 根据省市区 返回地址
 			local:{
 				get:function(){
@@ -95,6 +98,7 @@
 			},
 		},
 		methods:{
+			...mapMutations(['editCreateHouseInfo','editReleaseInfo','clearReleaseInfo']),
 			// 弹出城市选择器
 			cityPickerShow(){
 				this.$refs.localPicker.show();
@@ -115,8 +119,22 @@
 			// 下一步或保存
 			completeLocal(){
 				if(this.local === ''|| this.address ==='' || this.number ==='') return;
+				const _this = this;
+				const local = _this.local
+				const province = _this.province;
+				const city = _this.city;
+				const district = _this.district;
+				const address = _this.address;
+				const number = _this.number;
 				if(this.type === 'add'){
-					uni.navigateTo({
+					_this.editCreateHouseInfo({
+						xz_province:province,
+						xz_city:city,
+						xz_district:district,
+						xz_address:address,
+						xz_number:number
+					})
+					uni.redirectTo({
 						url:'/pages/releaseManage/rent_type?type=add',
 					})
 				} else if(this.type === 'edit'){

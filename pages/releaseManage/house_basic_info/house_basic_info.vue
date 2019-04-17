@@ -4,8 +4,8 @@
 			<view class="form_item" @tap="setHouseType()">
 				<view class="item_left">
 					<view class="label">房屋类型</view>
-					<view class="empty_data">请选择</view>
-					<view class="result"></view>
+					<view class="empty_data" v-if="houseType ===''">请选择</view>
+					<view class="result" v-else>{{houseType}}</view>
 				</view>
 				<view class="after_icon">
 					<text class="iconfont icon-right"></text>
@@ -14,8 +14,8 @@
 			<view class="form_item" @tap="setHouseArea">
 				<view class="item_left">
 					<view class="label">出租面积</view>
-					<view class="empty_data">请选择</view>
-					<view class="result"></view>
+					<view class="empty_data" v-if="houseArea===''">请选择</view>
+					<view class="result" v-else>{{houseArea}}㎡</view>
 				</view>
 				<view class="after_icon">
 					<text class="iconfont icon-right"></text>
@@ -24,8 +24,11 @@
 			<view class="form_item" @tap="changeWeiType">
 				<view class="item_left">
 					<view class="label">卫生间类型</view>
-					<view class="empty_data">请选择</view>
-					<view class="result"></view>
+					<view class="empty_data" v-if="weiType === ''">请选择</view>
+					<view class="result" v-else>
+						<text v-if="weiType==='1'">公共卫生间</text>
+						<text v-if="weiType==='2'">独立卫生间</text>
+					</view>
 				</view>
 				<view class="after_icon">
 					<text class="iconfont icon-right"></text>
@@ -34,8 +37,11 @@
 			<view class="form_item" @tap="isLiveTogether">
 				<view class="item_left">
 					<view class="label">与房东同居一套房间内</view>
-					<view class="empty_data">请选择</view>
-					<view class="result"></view>
+					<view class="empty_data" v-if="cohabitation===''">请选择</view>
+					<view class="result" v-else>
+						<text v-if="cohabitation==='1'">是</text>
+						<text v-if="cohabitation==='2'">否</text>
+					</view>
 				</view>
 				<view class="after_icon">
 					<text class="iconfont icon-right"></text>
@@ -44,48 +50,37 @@
 			<view class="form_item" @tap="setPeopleNum()">
 				<view class="item_left">
 					<view class="label">宜居人数</view>
-					<view class="empty_data">请选择</view>
-					<view class="result"></view>
+					<view class="empty_data" v-if="liveNumber===''">请选择</view>
+					<view class="result" v-else>{{liveNumber}}人</view>
 				</view>
 				<view class="after_icon">
 					<text class="iconfont icon-right"></text>
 				</view>
 			</view>
 
-			<view class="form_item" @tap="similarChange('house')">
+			<view class="form_item" @tap="similarChange">
 				<view class="item_left">
-					<view class="label">同类房源数</view>
+					<view class="label">
+						<text v-if="leasetype===1">同类房源数</text>
+						<text v-if="leasetype===2">同类房间数</text>
+						<text v-if="leasetype===3">同类床位数</text>
+					</view>
 					<view class="empty_data"></view>
-					<view class="result">{{houseInfo.similarHouse}}套</view>
-					<view class="tips">你有相同房源吗</view>
+					<view class="result">{{sameroom}}
+						<text v-if="leasetype===1">套</text>
+						<text v-if="leasetype===2">间</text>
+						<text v-if="leasetype===3">位</text>
+					</view>
+					<view class="tips">你有相同
+						<text v-if="leasetype===1">房源</text>
+						<text v-if="leasetype===2">房间</text>
+						<text v-if="leasetype===3">床位</text>
+						吗</view>
 				</view>
 				<view class="after_icon">
 					<text class="iconfont icon-right"></text>
 				</view>
 			</view>
-			<view class="form_item"  @tap="similarChange('bed')">
-				<view class="item_left">
-					<view class="label">同类床位数</view>
-					<view class="empty_data"></view>
-					<view class="result">{{houseInfo.similarBed}}位</view>
-					<view class="tips">你有相同床位吗</view>
-				</view>
-				<view class="after_icon">
-					<text class="iconfont icon-right"></text>
-				</view>
-			</view>
-			<view class="form_item">
-				<view class="item_left"  @tap="similarChange('room')">
-					<view class="label">同类房间数</view>
-					<view class="empty_data"></view>
-					<view class="result">{{houseInfo.similarRoom}}间</view>
-					<view class="tips">你有相同房间吗</view>
-				</view>
-				<view class="after_icon">
-					<text class="iconfont icon-right"></text>
-				</view>
-			</view>
-
 		</view>
 		<mpvue-picker ref="similarPicker" :mode="mode" :deepLength="deepLength" :pickerValueDefault="pickerValueDefault"
 		 @onConfirm="similarConfirm" @onCancel="similarCancel" :pickerValueArray="pickerValueArray"></mpvue-picker>
@@ -93,10 +88,22 @@
 </template>
 
 <script>
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+	import {
+		request
+	} from '../../../common/request.js'
+	import helper from '../../../common/helper.js'
+	import {
+		shortHttp
+	} from '../../../common/requestUrl.json'
 	import mpvuePicker from '../../../components/mpvue-picker/mpvuePicker.vue';
 	export default {
 		data() {
 			return {
+				leasetype: '', // 出租类型：1：整套出租；2：独立房间；3：合住房间
 				// 卫生间类型
 				weiTypes: [{
 						value: '1',
@@ -107,24 +114,31 @@
 						text: '独立卫生间'
 					}
 				],
-				//房源基本类型信息
-				houseInfo: {
-					houseType: null, //房源类型
-					houseArea: '', //房源面积
-					weiType: '', //卫生间类型
-					cohabitation: '', // 是否和房东同居
-					liveNumber: '', // 宜居人数
-					similarHouse: 1, // 同类房源数量
-					similarBed: 1, //同类床位数量
-					similarRoom: 1, //同类房间数量
-					status: -1, // 发布状态
-					is_complete: 0, // 是否完成信息
-				},
-				deepLength: 1,
-				mode: 'selector',
+				// 是否与房东同居选择数据
+				cohabitationData:[
+					{
+						value: '1',
+						text: '是'
+					},
+					{
+						value: '2',
+						text: '否'
+					}
+				],
+				roomtype_shi: '', //房屋类型，室
+				roomtype_ting: '', //房屋类型，厅
+				roomtype_wei: '', //房屋类型，卫
+				roomtype_chu: '', //房屋类型，厨
+				roomtype_yt: '', //房屋类型，阳台
+				houseArea: '', //房源面积
+				weiType: '', //卫生间类型
+				cohabitation: '', // 是否和房东同居
+				liveNumber: '', // 宜居人数
+				sameroom: 1, // 同类房源、床位、房间
+				deepLength: 1,//picker 列数
+				mode: 'selector', //picker类型
 				pickerValueDefault: [0],
 				pickerValueArray: [],
-				similarType: '',
 
 			}
 		},
@@ -132,7 +146,7 @@
 
 		},
 		onShow() {
-
+			this.getCurPageData();
 		},
 		onBackPress() {
 			if (this.$refs.similarPicker.showPicker) {
@@ -145,9 +159,20 @@
 			mpvuePicker,
 		},
 		computed: {
-
+			...mapState(['releaseObj']),
+			houseType: {
+				get() {
+					if (this.roomtype_shi === '' || this.roomtype_ting === '' || this.roomtype_wei ===
+						'' || this.roomtype_chu === '' || this.roomtype_yt === '') {
+							return '';
+						}else {
+							return this.roomtype_shi+'室 '+this.roomtype_ting+'厅 '+this.roomtype_wei+'卫 '+ this.roomtype_chu +'厨 ' + this.roomtype_yt+'阳台'
+						}
+				}
+			}
 		},
 		methods: {
+			...mapMutations(['editReleaseInfo', 'clearReleaseInfo']),
 			// 设置房屋户型
 			setHouseType() {
 				uni.navigateTo({
@@ -173,7 +198,7 @@
 				uni.showActionSheet({
 					itemList: ['公共卫生间', '独立卫生间'],
 					success: function(res) {
-						console.log(_this.weiTypes[res.tapIndex].value)
+					_this.weiType = _this.weiTypes[res.tapIndex].value;
 					},
 					fail: function(res) {
 						console.log(res.errMsg);
@@ -182,9 +207,12 @@
 			},
 			// 选择是否与房东同居
 			isLiveTogether() {
+				const _this = this;
 				uni.showActionSheet({
 					itemList: ['与房东同居', '不与房东同居'],
-					success: function(res) {},
+					success: function(res) {
+						_this.cohabitation = _this.cohabitationData[res.tapIndex].value;
+					},
 					fail: function(res) {
 						console.log(res.errMsg);
 					}
@@ -192,20 +220,17 @@
 			},
 			// 选择同类房源\房间\床位数量
 			// type: house房源  room房间  bed 床位
-			similarChange(type) {
-				this.similarType = type;
+			similarChange() {
+				const type = this.leasetype;
 				let unit = '';
 				let _data = [];
 				let defaultArr = [];
-				if (type === 'house') {
+				if (type === 1) {
 					unit = '套';
-					defaultArr = [Number(this.houseInfo.similarHouse) - 1]
-				} else if(type === 'bed'){
-					unit = '位';
-					defaultArr = [Number(this.houseInfo.similarBed) - 1]
-				} else if(type === 'room'){
+				} else if (type === 2) {
 					unit = '间';
-					defaultArr = [Number(this.houseInfo.similarRoom) - 1]
+				} else if (type === 3) {
+					unit = '位';
 				}
 				for (let i = 1; i <= 99; i++) {
 					_data.push({
@@ -214,21 +239,31 @@
 					})
 				}
 				this.pickerValueArray = _data;
-				this.pickerValueDefault = defaultArr;
-				this.$refs.similarPicker.show()
+				this.pickerValueDefault = [Number(this.sameroom) - 1];
+				this.$refs.similarPicker.show();
 			},
+			//  确认同类房源\房间\床位数量选择
 			similarConfirm(e) {
-				if(this.similarType ==='house'){
-					this.houseInfo.similarHouse = e.value[0]
-				} else if(this.similarType ==='bed'){
-					this.houseInfo.similarBed = e.value[0]
-				} else if (this.similarType ==='room'){
-					this.houseInfo.similarRoom = e.value[0]
-				}
+				this.sameroom = e.value[0]
 			},
+			// 取消同类房源\房间\床位数量选择
 			similarCancel() {
 				
-			}
+			},
+			// 获取当前页面的信息
+			getCurPageData() {
+				let _houseInfo = this.releaseObj;
+				this.leasetype = _houseInfo.leasetype; //房屋出租类型
+				this.roomtype_shi = _houseInfo.roomtype_shi;
+				this.roomtype_ting = _houseInfo.roomtype_ting;
+				this.roomtype_wei = _houseInfo.roomtype_wei;
+				this.roomtype_chu = _houseInfo.roomtype_chu;
+				this.roomtype_yt = _houseInfo.roomtype_yt;
+				this.houseArea = _houseInfo.area; // 房屋面积
+				this.weiType = _houseInfo.toilet; // 卫生间类型
+				this.cohabitation = _houseInfo.livetogether; //是否与房东同居
+				this.liveNumber = _houseInfo.tantnum; // 宜居人数
+			},
 		}
 	}
 </script>

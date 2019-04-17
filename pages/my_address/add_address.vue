@@ -83,7 +83,7 @@
 			mpvueCityPicker
 		},
 		computed: {
-			...mapState(['isEditAddress'])
+			...mapState(['isEditAddress',])
 		},
 		methods: {
 			...mapMutations(['addressEditStatus']),

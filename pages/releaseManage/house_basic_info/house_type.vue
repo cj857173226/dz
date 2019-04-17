@@ -78,7 +78,7 @@
 					office: 0, //厅
 					wei: 0, // 卫
 					Kitchen: 0, // 厨
-					balcony: 99 // 阳台
+					balcony: 0 // 阳台
 				}
 			}
 		},

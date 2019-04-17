@@ -189,6 +189,14 @@ page {
                text-overflow: ellipsis;
             white-space: nowrap;
 }
+.releaseManage_page .house_list .list_item .item_foot .foot_left .no_title.data-v-bcdf4a7a {
+            font-size: 36rpx;
+            color: #333333;
+            overflow: hidden;
+            -o-text-overflow: ellipsis;
+               text-overflow: ellipsis;
+            white-space: nowrap;
+}
 .releaseManage_page .house_list .list_item .item_foot .foot_left .rent-type.data-v-bcdf4a7a {
             color: #aaaaaa;
             font-size: 28rpx;
