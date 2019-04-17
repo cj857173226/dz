@@ -75,7 +75,11 @@
 						if (res.data.status === 'success') {
 							let list = res.data.content;
 							if (list.length > 0) {
+								list.map((item,index,self)=>{
+									self[index]['local'] = item.province+'-'+item.city+'-'+item.district+'\xa0\xa0\xa0'+item.address
+								})
 								_this.addressList = list;
+								
 							} else {
 								_this.addressList = [];
 							}

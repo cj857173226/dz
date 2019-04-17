@@ -15,7 +15,7 @@
 				</view>
 				<view class="unit">元</view>
 			</view>
-			<view class="form_item" @tap="changeMoneyType">
+			<!-- 	<view class="form_item" @tap="changeMoneyType">
 				<view class="icon">
 					<text class="iconfont icon-tongji6"></text>
 				</view>
@@ -30,7 +30,7 @@
 				<view class="after-icon">
 					<text class="iconfont icon-right"></text>
 				</view>
-			</view>
+			</view> -->
 			<view class="form_item" @tap="editNote()">
 				<view class="icon">
 					<text class="iconfont icon-beizhu"></text>
@@ -62,29 +62,37 @@
 			return {
 				curTab: 'out',
 				billForm: {
-					source: '',
 					note: '',
 					money: '',
 				},
 				defaultVal: [],
+				isAdding: false, // 是否正在添加之中
 			}
 		},
 		components: {
+			...mapState(['isEditStatistics'])
 		},
 		onLoad() {
+			//  初始化备注信息
+			uni.setStorageSync('dz_billNote', '');
 		},
 		onShow() {
-
+			const note = uni.getStorageSync('dz_billNote');
+			this.billForm.note = note;
 		},
 		onNavigationBarButtonTap(e) {
-			if (e.index === 0) {}
+			if (e.index === 0) {
+				this.submitAddBill()
+			}
 		},
 		onBackPress() {
+
 		},
 		computed: {
 
 		},
 		methods: {
+			...mapMutations(['statisticsEditStatus']),
 			changeBillTab(type) {
 				if (this.curBillTab === type) {
 					return
@@ -95,7 +103,7 @@
 			// 编辑备注
 			editNote() {
 				uni.navigateTo({
-					url: '/pages/statistics/bill_note'
+					url: '/pages/statistics/bill_note?note=' + this.billForm.note
 				})
 			},
 			// 选择金额类型
@@ -110,6 +118,55 @@
 						console.log(res.errMsg);
 					}
 				});
+			},
+			// 提交添加账单
+			submitAddBill() {
+				if (this.isAdding) return;
+				const _this = this;
+				const type = _this.curTab;
+				const money = _this.billForm.money;
+				const note = _this.billForm.note;
+				if (money === '' || Number(money).toFixed(2) < 0.01 || Number(money).toFixed(2) > 99999.99) {
+					let _msg = '';
+					if (money === '') {
+						_msg = '请填写金额'
+					} else if (Number(money).toFixed(2) < 0.01) {
+						_msg = '金额不能小于0.01'
+					} else if (Number(money).toFixed(2) > 99999.99) {
+						_msg = '金额不能大于99999.99'
+					}
+					helper.layer(_msg)
+				} else {
+					const param = {
+						money: money,
+						type: type,
+						remark: note,
+					}
+					_this.isAdding = true;
+					uni.showLoading({
+						title: '添加中...',
+						mask: true,
+					})
+					request({
+						url: '/wap/api/statistics.php?action=submit',
+						method: 'POST',
+						data: param,
+						success: (res) => {
+							if (res.data.status === 'success') {
+								this.statisticsEditStatus(true);
+								uni.navigateBack({
+									delta: 1,
+								})
+							} else {
+								helper.layer('添加账单失败')
+							}
+						},
+						complete: () => {
+							_this.isAdding = false;
+							uni.hideLoading();
+						}
+					})
+				}
 			},
 		}
 	}

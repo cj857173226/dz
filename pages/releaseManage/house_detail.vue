@@ -106,14 +106,19 @@
 	export default {
 		data() {
 			return {
-				
+				pageType: '', // 页面进入的类型 add添加
 			}
 		},
-		onLoad() {
-
+		onLoad(e) {
+			if (e.type) {
+				this.pageType = e.type;
+			}
 		},
 		onShow() {
 
+		},
+		onBackPress(options) {
+		
 		},
 		computed: {
 
@@ -131,8 +136,13 @@
 				uni.navigateTo({
 					url: url
 				})
+			},
+			back() {
+				uni.navigateBack({
+					delta: 3
+				});
 			}
-			
+
 		}
 	}
 </script>
@@ -149,6 +159,7 @@
 		box-sizing: border-box;
 		padding: 20upx 30upx;
 		min-height: 100%;
+
 		.house_status {
 			box-sizing: border-box;
 			width: 100%;

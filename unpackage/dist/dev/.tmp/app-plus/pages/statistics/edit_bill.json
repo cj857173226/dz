@@ -1,13 +1,4 @@
 {
-  "navigationBarTitleText": "",
-  "bounce": "none",
-  "titleNView": {
-    "buttons": [
-      {
-        "text": "保存",
-        "fontSize": "14px",
-        "float": "right"
-      }
-    ]
-  }
+  "navigationBarTitleText": "收入详情",
+  "bounce": "none"
 }

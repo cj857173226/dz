@@ -420,6 +420,10 @@ page {
 	background: #f9f9f9 !important;
 	color: #AAAAAA;
 }
+.placeholder{
+	color: #CCCCCC;
+	font-size: 28rpx;
+}
 ._ul ._li {
 	list-style: none;
 }

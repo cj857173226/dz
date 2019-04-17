@@ -342,4 +342,20 @@ page {
 .statistics_page .bill_list_wrap .bill_list .list_item .out.data-v-4b3b252f {
           color: #06d7b5;
 }
+.statistics_page .bill_list_wrap .no_list.data-v-4b3b252f {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      height: 200rpx;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      color: #aaaaaa;
+}
 

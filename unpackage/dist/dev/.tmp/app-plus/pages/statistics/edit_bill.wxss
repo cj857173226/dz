@@ -1,5 +1,5 @@
 
-page{
+page {
 	height: 100%;
 }
 
@@ -89,7 +89,7 @@ page{
 .edit_bill_page .edit_bill_form .form_item .content_wrap.data-v-c4b99f80 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
-        width: calc(100% - 260rpx);
+        width: calc(100% - 220rpx);
 }
 .edit_bill_page .edit_bill_form .form_item .content_wrap .no_data.data-v-c4b99f80 {
           text-align: right;
@@ -102,9 +102,13 @@ page{
              text-overflow: ellipsis;
           white-space: nowrap;
           text-align: right;
+          color: #AAAAAA;
 }
 .edit_bill_page .edit_bill_form .form_item .content_wrap ._input.data-v-c4b99f80 {
           text-align: right;
+}
+.edit_bill_page .edit_bill_form .form_item .note.data-v-c4b99f80 {
+        width: 100%;
 }
 .edit_bill_page .edit_bill_form .form_item .unit.data-v-c4b99f80,
       .edit_bill_page .edit_bill_form .form_item .after-icon.data-v-c4b99f80 {
@@ -123,6 +127,59 @@ page{
           margin-top: 4rpx;
           font-size: 32rpx;
           color: #cccccc;
+}
+.edit_bill_page .edit_bill_form .note_item.data-v-c4b99f80 {
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      width: 100%;
+      padding: 20rpx 0;
+}
+.edit_bill_page .edit_bill_form .note_item .label.data-v-c4b99f80 {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        width: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+}
+.edit_bill_page .edit_bill_form .note_item .label .icon.data-v-c4b99f80 {
+          width: 60rpx;
+          color: #AAAAAA;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+}
+.edit_bill_page .edit_bill_form .note_item .label .icon .iconfont.data-v-c4b99f80 {
+            font-size: 32rpx;
+}
+.edit_bill_page .edit_bill_form .note_item .note.data-v-c4b99f80 {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        padding: 16rpx;
+}
+.edit_bill_page .edit_bill_form .note_item .note .content.data-v-c4b99f80 {
+          -webkit-box-sizing: border-box;
+                  box-sizing: border-box;
+          width: 100%;
+          min-height: 200rpx;
+          border: 1px solid #eaeaea;
+          border-radius: 8rpx;
+          padding: 20rpx;
+          color: #AAAAAA;
 }
 .edit_bill_page .del_btn.data-v-c4b99f80 {
     color: #AAAAAA;

@@ -24,14 +24,14 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-a2a15228 {
+.contanier.data-v-7f3eb374 {
   width: 100%;
   padding: 0 30rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 14px;
 }
-.contanier .price-amount.data-v-a2a15228 {
+.contanier .price-amount.data-v-7f3eb374 {
     width: 100%;
     padding: 20rpx 0;
     display: -webkit-box;
@@ -48,7 +48,7 @@
             justify-content: space-between;
     border-bottom: 1px solid #f4f4f4;
 }
-.contanier .price-amount .amout-box.data-v-a2a15228 {
+.contanier .price-amount .amout-box.data-v-7f3eb374 {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -58,7 +58,7 @@
           -ms-flex-align: center;
               align-items: center;
 }
-.contanier .price-amount .amout-box .amount.data-v-a2a15228 {
+.contanier .price-amount .amout-box .amount.data-v-7f3eb374 {
         text-align: right;
         width: 300rpx;
 }

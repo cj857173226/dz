@@ -33,6 +33,8 @@
     "pages/invoice/edit_invoice_head",
     "pages/my_information/my_information",
     "pages/releaseManage/releaseManage",
+    "pages/releaseManage/local_set",
+    "pages/releaseManage/rent_type",
     "pages/releaseManage/house_detail",
     "pages/releaseManage/house_basic_info/house_basic_info",
     "pages/releaseManage/house_basic_info/house_type",

@@ -181,6 +181,7 @@
 			},
 			// 删除地址
 			delAddress(){
+				if(this.isDeling) return;
 				const _this = this;
 				const id = _this.addressForm.addressid;
 				uni.showModal({

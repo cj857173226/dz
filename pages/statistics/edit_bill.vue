@@ -1,40 +1,22 @@
 <template>
 	<view class="edit_bill_page">
-			<view class="edit_bill_form">
+		<view class="edit_bill_form">
+			<view class="form_item">
+				<view class="icon">
+					<text class="iconfont icon-tongji6"></text>
+				</view>
+				<view class="label">金额类型</view>
+				<view class="content_wrap">
+					<view class="content" v-text="detailForm.type==='in'?'收入':'成本'"></view>
+				</view>
+			</view>
 			<view class="form_item">
 				<view class="icon">
 					<text class="iconfont icon-jine"></text>
 				</view>
 				<view class="label">金额</view>
 				<view class="content_wrap">
-					<input type="text" placeholder="最高设置金额99999.99" placeholder-style="color:#ccc;" maxlength="10"> 
-				</view>
-				<view class="unit">元</view>
-			</view>
-			<view class="form_item">
-				<view class="icon">
-					<text class="iconfont icon-tongji6" ></text>
-				</view>
-				<view class="label" v-text="editType==='out'?'成本分类':'收入来源'"></view>
-				<view class="content_wrap">
-					<view class="no_data">请选择</view>
-					<view class="content"></view>
-				</view>
-				<view class="after-icon">
-					<text class="iconfont icon-right"></text>
-				</view>
-			</view>
-			<view class="form_item" @tap="editNote()">
-				<view class="icon">
-					<text class="iconfont icon-beizhu"></text>
-				</view>
-				<view class="label">备注</view>
-				<view class="content_wrap">
-					<view class="no_data">请填写备注内容</view>
-					<view class="content"></view>
-				</view>
-				<view class="after-icon">
-					<text class="iconfont icon-right"></text>
+					<view class="content">{{detailForm.money}}元</view>
 				</view>
 			</view>
 			<view class="form_item">
@@ -43,129 +25,231 @@
 				</view>
 				<view class="label">日期</view>
 				<view class="content_wrap">
-					<view class="no_data">请选择日期</view>
-					<view class="content"></view>
-				</view>
-				<view class="after-icon">
-					<text class="iconfont icon-right"></text>
+					<view class="content">{{detailForm.date}}</view>
 				</view>
 			</view>
+			<view class="note_item">
+
+				<view class="label">
+					<view class="icon"> <text class="iconfont icon-beizhu"></text></view>
+					<text class="text">备注</text>
+				</view>
+				<view class="note">
+					<view class="content">{{detailForm.remark}}</view>
+				</view>
+
+			</view>
+
 		</view>
-		<button class="del_btn my-del-block">删除</button>
+		<button class="del_btn my-del-block" @tap="delBill">删除</button>
 	</view>
 </template>
 
 <script>
-	export default{
-		data(){
-			return{
-				editType:'',
-				editForm:{
-					
-				}
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+	import helper from '../../common/helper.js'
+	import {
+		request
+	} from '../../common/request.js'
+	export default {
+		data() {
+			return {
+				detailForm: {
+
+				},
+				isDeling:false,
 			}
 		},
-		onLoad(opt){
-			const param = JSON.parse(opt.param)
-			this.editType = param.type;
-			uni.setNavigationBarTitle({
-			title: param.type === 'in'? '编辑收入': '编辑成本'
-		});
+		onLoad(opt) {
+			const param = JSON.parse(opt.param);
+			this.detailForm = param;
+			console.log(param)
 		},
-		onShow(){
-			
+		onShow() {
+
 		},
-		computed:{
-			
+		computed: {
+
 		},
-		methods:{
-			// 编辑备注
-			editNote(){
-				uni.navigateTo({
-					url:'/pages/statistics/bill_note'
-				})
+		methods: {
+			...mapMutations(['statisticsEditStatus']),
+			delBill(){
+				if(this.isDeling) return;
+				const _this = this;
+				const id = _this.detailForm.id;
+				uni.showModal({
+					title: '',
+					content: '是否删除该记录',
+					confirmText: '删除',
+					confirmColor: '#F05B72',
+					success: function(res) {
+						uni.showLoading({
+							title:'删除中...'
+						})
+						if (res.confirm) {
+							_this.isDeling = true;
+							request({
+								url: '/wap/api/statistics.php?action=destroy&id='+id,
+								method: 'GET',
+								success: function(res) {
+									if (res.data.status === "success") {
+										helper.layer('删除成功')
+										_this.statisticsEditStatus(true);
+										uni.navigateBack({
+											delta: 1
+										});
+									} else {
+										helper.layer('删除失败')
+									}
+								},
+								complete: function() {
+									_this.isDeling = false;
+								}
+							})
+						}
+					}
+				});
 			}
 		}
 	}
 </script>
 
 <style>
-	page{
+	page {
 		height: 100%;
 	}
 </style>
 <style lang="scss" scoped>
 	$theme-color: #F05B72;
-	.edit_bill_page{
+
+	.edit_bill_page {
 		box-sizing: border-box;
 		padding: 0 20upx;
-		.edit_bill_form{
+
+		.edit_bill_form {
 			box-sizing: border-box;
 			width: 100%;
-			.form_item{
+
+			.form_item {
 				box-sizing: border-box;
 				width: 100%;
 				height: 90upx;
 				display: flex;
 				align-items: center;
 				border-bottom: 1px solid #eaeaea;
-				.icon{
+
+				.icon {
 					height: 100%;
 					width: 60upx;
 					color: #AAAAAA;
 					display: flex;
 					align-items: center;
 					justify-content: center;
-					.iconfont{
+
+					.iconfont {
 						font-size: 32upx;
 					}
 				}
-				.label{
+
+				.label {
 					height: 100%;
 					width: 140upx;
 					display: flex;
 					align-items: center;
 				}
-				.content_wrap{
+
+				.content_wrap {
 					box-sizing: border-box;
-					width: calc(100% - 260upx);
-					.no_data{
+					width: calc(100% - 220upx);
+
+					.no_data {
 						text-align: right;
 						color: #cccccc;
 					}
-					.content{
+
+					.content {
 						width: 100%;
 						overflow: hidden;
 						text-overflow: ellipsis;
 						white-space: nowrap;
-						text-align: right
+						text-align: right;
+						color: #AAAAAA;
 					}
-					input{
+
+					input {
 						text-align: right;
 					}
 				}
-				
+
+				.note {
+					width: 100%;
+				}
+
 				.unit,
-				.after-icon{
+				.after-icon {
 					height: 100%;
 					width: 60upx;
 					text-align: center;
 				}
-				.unit{
+
+				.unit {
 					line-height: 86upx;
 				}
-				.after-icon{
+
+				.after-icon {
 					line-height: 90upx;
-					.iconfont{
+
+					.iconfont {
 						display: inline-block;
 						margin-top: 4upx;
-						font-size:32upx;
+						font-size: 32upx;
 						color: #cccccc
 					}
 				}
 			}
+
+			.note_item {
+				box-sizing: border-box;
+				width: 100%;
+				padding: 20upx 0;
+
+				.label {
+					box-sizing: border-box;
+					width: 100%;
+					display: flex;
+					align-items: center;
+					.icon {
+						width: 60upx;
+						color: #AAAAAA;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+					
+						.iconfont {
+							font-size: 32upx;
+						}
+					}
+				}
+				.note{
+					box-sizing: border-box;
+					padding:16upx;
+					.content{
+						box-sizing: border-box;
+						width: 100%;
+						min-height: 200upx;
+						border: 1px solid #eaeaea;
+						border-radius: 8upx;
+						padding: 20upx;
+						color: #AAAAAA;
+					}
+				}
+			}
 		}
-		.del_btn{
+
+		.del_btn {
 			color: #AAAAAA;
 			margin-top: 40upx;
 		}
