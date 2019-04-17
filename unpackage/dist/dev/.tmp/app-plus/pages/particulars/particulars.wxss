@@ -438,8 +438,16 @@
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
+<<<<<<< HEAD
+.container .container-contact-box .contact-box.data-v-3ad1568d {
+      height: 600rpx;
+      padding: 0 20rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+=======
 .container .container-contact-box .contact-box.data-v-19b099e7 {
       height: 556rpx;
+>>>>>>> fe613f3f29b8b68e40c9c0b437e8d780eabf27e2
       background-color: #fff;
       display: -webkit-box;
       display: -webkit-flex;
@@ -457,6 +465,7 @@
 }
 .container .container-contact-box .contact-box .title.data-v-19b099e7 {
         margin-top: 42rpx;
+        text-align: center;
         font-weight: bold;
 }
 .container .container-contact-box .contact-box .comment.data-v-19b099e7 {
@@ -509,7 +518,6 @@
           font-size: 12px;
           color: #a9a9a9;
           text-align: center;
-          margin-bottom: 20rpx;
 }
 .container .container-contact-box .contact-box .autonym .mini-btn.data-v-19b099e7 {
           background-color: #fff;

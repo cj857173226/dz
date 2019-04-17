@@ -8,7 +8,7 @@
         {title:'入住当天 14:00前',desc:'如提前退房，扣除一天后订金'},
         {title:'退房当天 12:00 前',desc:''}]" 
         direction="column" 
-        :active="2" 
+        :active="4" 
         active-color="#f05b72"
         >
       </uni-steps>

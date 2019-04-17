@@ -6,6 +6,7 @@
     "pages/selecteds/selecteds",
     "pages/collection/collection",
     "pages/collection/new_group",
+    "pages/collection/custom",
     "pages/orderList/orderList",
     "pages/messages/messages",
     "pages/messages/system_messages",
