@@ -14,7 +14,7 @@
 			<view class="form_item" @tap="setHouseArea">
 				<view class="item_left">
 					<view class="label">出租面积</view>
-					<view class="empty_data" v-if="houseArea===''">请选择</view>
+					<view class="empty_data" v-if="houseArea==='0'">请选择</view>
 					<view class="result" v-else>{{houseArea}}㎡</view>
 				</view>
 				<view class="after_icon">
@@ -61,20 +61,20 @@
 			<view class="form_item" @tap="similarChange">
 				<view class="item_left">
 					<view class="label">
-						<text v-if="leasetype===1">同类房源数</text>
-						<text v-if="leasetype===2">同类房间数</text>
-						<text v-if="leasetype===3">同类床位数</text>
+						<text v-if="leasetype==='1'">同类房源数</text>
+						<text v-if="leasetype==='2'">同类房间数</text>
+						<text v-if="leasetype==='3'">同类床位数</text>
 					</view>
 					<view class="empty_data"></view>
 					<view class="result">{{sameroom}}
-						<text v-if="leasetype===1">套</text>
-						<text v-if="leasetype===2">间</text>
-						<text v-if="leasetype===3">位</text>
+						<text v-if="leasetype==='1'">套</text>
+						<text v-if="leasetype==='2'">间</text>
+						<text v-if="leasetype==='3'">位</text>
 					</view>
 					<view class="tips">你有相同
-						<text v-if="leasetype===1">房源</text>
-						<text v-if="leasetype===2">房间</text>
-						<text v-if="leasetype===3">床位</text>
+						<text v-if="leasetype==='1'">房源</text>
+						<text v-if="leasetype==='2'">房间</text>
+						<text v-if="leasetype==='3'">床位</text>
 						吗</view>
 				</view>
 				<view class="after_icon">
@@ -115,8 +115,7 @@
 					}
 				],
 				// 是否与房东同居选择数据
-				cohabitationData:[
-					{
+				cohabitationData: [{
 						value: '1',
 						text: '是'
 					},
@@ -125,6 +124,7 @@
 						text: '否'
 					}
 				],
+				house_id: '',
 				roomtype_shi: '', //房屋类型，室
 				roomtype_ting: '', //房屋类型，厅
 				roomtype_wei: '', //房屋类型，卫
@@ -134,8 +134,8 @@
 				weiType: '', //卫生间类型
 				cohabitation: '', // 是否和房东同居
 				liveNumber: '', // 宜居人数
-				sameroom: 1, // 同类房源、床位、房间
-				deepLength: 1,//picker 列数
+				sameroom: '', // 同类房源、床位、房间
+				deepLength: 1, //picker 列数
 				mode: 'selector', //picker类型
 				pickerValueDefault: [0],
 				pickerValueArray: [],
@@ -162,17 +162,18 @@
 			...mapState(['releaseObj']),
 			houseType: {
 				get() {
-					if (this.roomtype_shi === '' || this.roomtype_ting === '' || this.roomtype_wei ===
-						'' || this.roomtype_chu === '' || this.roomtype_yt === '') {
-							return '';
-						}else {
-							return this.roomtype_shi+'室 '+this.roomtype_ting+'厅 '+this.roomtype_wei+'卫 '+ this.roomtype_chu +'厨 ' + this.roomtype_yt+'阳台'
-						}
+					if (this.roomtype_shi === '0' && this.roomtype_ting === '0' && this.roomtype_wei ===
+						'0' && this.roomtype_chu === '0' && this.roomtype_yt === '0') {
+						return '';
+					} else {
+						return this.roomtype_shi + '室 ' + this.roomtype_ting + '厅 ' + this.roomtype_wei + '卫 ' + this.roomtype_chu +
+							'厨 ' + this.roomtype_yt + '阳台'
+					}
 				}
 			}
 		},
 		methods: {
-			...mapMutations(['editReleaseInfo', 'clearReleaseInfo']),
+			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
 			// 设置房屋户型
 			setHouseType() {
 				uni.navigateTo({
@@ -195,10 +196,34 @@
 			// 选择卫生间类型
 			changeWeiType() {
 				const _this = this;
+				const old_val = _this.releaseObj.toilet;
+				const id = _this.house_id;
 				uni.showActionSheet({
 					itemList: ['公共卫生间', '独立卫生间'],
 					success: function(res) {
-					_this.weiType = _this.weiTypes[res.tapIndex].value;
+						const _val = _this.weiTypes[res.tapIndex].value;
+						if (old_val !== _val) {
+							request({
+								url: '/wap/api/fangdong.php?action=improveHouse',
+								method: 'POST',
+								data: {
+									house_id: id,
+									toilet: _val
+								},
+								success: (res) => {
+									if (res.data.status === 'success') {
+										let _data = res.data.content;
+										_this.editReleaseInfo(_data);
+										_this.editReleaseInfoStatus(true);
+									} else {
+										helper.layer('修改失败')
+									}
+								},
+								complete: () => {
+									_this.getCurPageData();
+								}
+							})
+						}
 					},
 					fail: function(res) {
 						console.log(res.errMsg);
@@ -208,10 +233,34 @@
 			// 选择是否与房东同居
 			isLiveTogether() {
 				const _this = this;
+				const old_val = _this.releaseObj.livetogether;
+				const id = _this.house_id;
 				uni.showActionSheet({
 					itemList: ['与房东同居', '不与房东同居'],
 					success: function(res) {
-						_this.cohabitation = _this.cohabitationData[res.tapIndex].value;
+						const _val = _this.cohabitationData[res.tapIndex].value;
+						if (old_val !== _val) {
+							request({
+								url: '/wap/api/fangdong.php?action=improveHouse',
+								method: 'POST',
+								data: {
+									house_id: id,
+									livetogether: _val
+								},
+								success: (res) => {
+									if (res.data.status === 'success') {
+										let _data = res.data.content;
+										_this.editReleaseInfo(_data);
+										_this.editReleaseInfoStatus(true);
+									} else {
+										helper.layer('修改失败')
+									}
+								},
+								complete: () => {
+									_this.getCurPageData();
+								}
+							})
+						}
 					},
 					fail: function(res) {
 						console.log(res.errMsg);
@@ -225,11 +274,11 @@
 				let unit = '';
 				let _data = [];
 				let defaultArr = [];
-				if (type === 1) {
+				if (type === '1') {
 					unit = '套';
-				} else if (type === 2) {
+				} else if (type === '2') {
 					unit = '间';
-				} else if (type === 3) {
+				} else if (type === '3') {
 					unit = '位';
 				}
 				for (let i = 1; i <= 99; i++) {
@@ -239,20 +288,48 @@
 					})
 				}
 				this.pickerValueArray = _data;
-				this.pickerValueDefault = [Number(this.sameroom) - 1];
+				this.pickerValueDefault = this.sameroom <= 0? [0] : [Number(this.sameroom) - 1];
 				this.$refs.similarPicker.show();
 			},
 			//  确认同类房源\房间\床位数量选择
 			similarConfirm(e) {
-				this.sameroom = e.value[0]
+				const _this = this;
+				const old_val = this.releaseObj.sameroom;
+				const _val = e.value[0];
+				const id = _this.house_id;
+				_this.sameroom = _val;
+				if(Number(old_val) !== _val){
+						request({
+						url: '/wap/api/fangdong.php?action=improveHouse',
+						method: 'POST',
+						data: {
+							house_id: id,
+							sameroom: _val
+						},
+						success: (res) => {
+							if (res.data.status === 'success') {
+								let _data = res.data.content;
+								_this.editReleaseInfo(_data);
+								_this.editReleaseInfoStatus(true);
+							} else {
+								helper.layer('修改失败')
+							}
+						},
+						complete: () => {
+							_this.getCurPageData();
+						}
+					})
+				}
+				
 			},
 			// 取消同类房源\房间\床位数量选择
 			similarCancel() {
-				
+
 			},
 			// 获取当前页面的信息
 			getCurPageData() {
 				let _houseInfo = this.releaseObj;
+				this.house_id = _houseInfo.id;
 				this.leasetype = _houseInfo.leasetype; //房屋出租类型
 				this.roomtype_shi = _houseInfo.roomtype_shi;
 				this.roomtype_ting = _houseInfo.roomtype_ting;
@@ -263,6 +340,7 @@
 				this.weiType = _houseInfo.toilet; // 卫生间类型
 				this.cohabitation = _houseInfo.livetogether; //是否与房东同居
 				this.liveNumber = _houseInfo.tantnum; // 宜居人数
+				this.sameroom = _houseInfo.sameroom; // 同类房源、床位、房间
 			},
 		}
 	}

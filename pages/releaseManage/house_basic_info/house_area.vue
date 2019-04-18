@@ -12,18 +12,27 @@
 </template>
 
 <script>
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+	import {
+		request
+	} from '../../../common/request.js'
+	import helper from '../../../common/helper.js'
 	export default {
 		data() {
 			return {
 				area: '',
 				old_area: '',
+				isSubmiting: false, // 是否正在提交
 			}
 		},
 		onLoad() {
 
 		},
 		onShow() {
-
+			this.getHouseArea();
 		},
 		onNavigationBarButtonTap(e) {
 			if (e.index === 0) {
@@ -31,20 +40,62 @@
 			}
 		},
 		computed: {
-
+			...mapState(['releaseObj']),
 		},
 		methods: {
+			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
 			submitHouseArea() {
-				console.log(this.area)
+				if (this.isSubmiting) return;
+				const _this = this;
+				const id = _this.releaseObj.id;
+				const area = _this.area;
+				const old_area = _this.old_area;
 				const reg = /^\d*$/;
-				if (Number(this.area) <= 0 || Number(this.area) > 9999 || !reg.test(this.area)) {
+				if (Number(area) <= 0 || Number(area) > 9999 || !reg.test(area)) {
 					uni.showToast({
 						title: '1~9999的正整数',
 						duration: 1500,
-						icon:'none'
+						icon: 'none'
 					});
+				} else {
+					if (area === old_area) {
+						uni.navigateBack({
+							delta: 1,
+						})
+					} else {
+						_this.isSubmiting = true;
+						request({
+							url:'/wap/api/fangdong.php?action=improveHouse',
+							method:'POST',
+							data:{
+								house_id:id,
+								area:area
+							},
+							success:(res)=>{
+								if(res.data.status === 'success'){
+									let _data = res.data.content;
+									_this.editReleaseInfo(_data);
+									_this.editReleaseInfoStatus(true);
+									uni.navigateBack({
+										delta:1,
+									})
+								}else{
+									helper.layer('保存失败')
+								}
+							},
+							complete:()=>{
+								_this.isSubmiting = false;
+							}
+						})
+					}
 				}
-			}
+			},
+			// 获取房屋面积
+			getHouseArea() {
+				const _releaseObj = this.releaseObj;
+				this.area = Number(_releaseObj.area) <= 0 ? '' : _releaseObj.area;
+				this.old_area = Number(_releaseObj.area) <= 0 ? '' : _releaseObj.area;
+			},
 		}
 	}
 </script>

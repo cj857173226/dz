@@ -67,8 +67,12 @@
 			<view class="form_item">
 				<view class="label">出租类型</view>
 				<view class="ipt">
-					<view class="empty">未完成</view>
-					<view class="data_box"></view>
+					<view class="empty" v-if="!houseInfo.leasetype">未完成</view>
+					<view class="data_box" v-if="houseInfo.leasetype">
+						<text v-if="houseInfo.leasetype==='1'">整套房屋</text>
+						<text v-if="houseInfo.leasetype==='2'">独立房间</text>
+						<text v-if="houseInfo.leasetype==='3'">合住房间</text>
+					</view>
 				</view>
 				<view class="after_icon">
 					<text class="iconfont icon-right"></text>
@@ -77,7 +81,7 @@
 			<view class="form_item">
 				<view class="label">房源地址</view>
 				<view class="ipt">
-					<view class="empty">未完成</view>
+					<view class="empty" v-if="!houseInfo.xz_local">未完成</view>
 					<view class="data_box"></view>
 				</view>
 				<view class="after_icon">
@@ -96,7 +100,7 @@
 			</view>
 		</view>
 		<view class="bottom_wrap">
-			<view class="del_house">删除房源</view>
+			<view class="del_house" @tap="deleteHouse()">删除房源</view>
 		</view>
 		<button class="release_btn my-btn-block">发布按钮</button>
 	</view>
@@ -118,7 +122,8 @@
 		data() {
 			return {
 				pageType: '', // 页面进入的类型 add添加
-				houseInfo:{},
+				houseInfo: {}, // 当前房屋的信息
+				isDeling: false, // 是否正在删除房源
 			}
 		},
 		onLoad(e) {
@@ -130,7 +135,7 @@
 			this.houseInfo = this.releaseObj;
 		},
 		onBackPress(options) {
-			
+
 			// console.log(options)
 		},
 		computed: {
@@ -138,7 +143,7 @@
 			//基本信息
 		},
 		methods: {
-			...mapMutations(['editReleaseInfo','clearReleaseInfo']),
+			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
 			// 页面跳转
 			pageTo(page, par) {
 				let url = '';
@@ -151,6 +156,47 @@
 				uni.navigateTo({
 					url: url
 				})
+			},
+			// 删除房源
+			deleteHouse() {
+				if (this.isDeling) return;
+				const _this = this;
+				const id = _this.houseInfo.id;
+				uni.showModal({
+					title: '删除',
+					content: '是否要删除该房源',
+					confirmText: '删除',
+					confirmColor: '#F05B72',
+					success: function(res) {
+						_this.isDeling = true;
+						if (res.confirm) {
+							uni.showLoading({
+								mask: true,
+								title: '删除中...'
+							})
+							request({
+								url: '/wap/api/fangdong.php?action=destroyHouse&house_id=' + id,
+								success: (res) => {
+									if (res.data.status === 'success') {
+										uni.hideLoading();
+										_this.editReleaseInfoStatus(true);
+										uni.navigateBack({
+											delta: 1,
+										})
+									} else {
+										helper.layer('删除失败')
+									}
+								},
+								complete: () => {
+									_this.isDeling = false
+								}
+							})
+						} else if (res.cancel) {
+
+						}
+					}
+				});
+
 			},
 			// 获取信息完成状态
 
@@ -232,8 +278,8 @@
 					}
 
 					.data_box {
-						font-size: 28upx;
-						color: #333333;
+						font-size: 32upx;
+						color: #444444;
 					}
 				}
 
@@ -263,6 +309,11 @@
 			.del_house {
 				color: #aaaaaa;
 				font-size: 28upx;
+				transition: all 0.1s;
+
+				&:active {
+					color: #cccccc;
+				}
 			}
 		}
 
