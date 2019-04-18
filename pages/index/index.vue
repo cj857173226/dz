@@ -88,7 +88,6 @@
 	</view>
 		<mpvue-picker :themeColor="themeColor" ref="mpvuePicker" :mode="mode" :deepLength="deepLength" :pickerValueDefault="pickerValueDefault"
          @onConfirm="onConfirm" @onCancel="onCancel()" :pickerValueArray="pickerValueArray"></mpvue-picker>
-				<!-- <myPicker></myPicker> -->
   </view>
 </template>
 
@@ -96,7 +95,6 @@
 import mpvuePicker from '../../components/index/mpvue-picker/mpvuePicker';
 // 引入自定义组件
 import calendar from '../../components/index/date-picker/date-picker' //引入日期插件件
-// import myPicker from '../../components/index/picker' //自己封装的一个picker组件 
 import {request} from '../../common/request.js' // 封装的带有token的请求方法
 import { shortHttp, banner, ambitus } from "../../common/requestUrl.json"; // 接口文件
 export default {
@@ -130,8 +128,6 @@ export default {
     };
   },
   onLoad() {
-    
-    console.log(1)
     // 判断用户是否登录
     let token = uni.getStorageSync("dz_token");
     if (!token) {
@@ -199,17 +195,19 @@ export default {
       
     },
     // 周边推荐
-    async recommended() {
+     recommended() {
       
       const _that = this;
-      console.log("城市",_that.city);
-      var [err,res] = await uni.request({
-        url: shortHttp + ambitus,
-        method: "GET",
-        data: { cityName: "广州" },  //*：有问题，无法拿到当前城市
+      request({
+        url: "/wap/api/search.php?action=index",
+				data: { cityName: "广州" },  //*：有问题，无法拿到当前城市
+				success: function(res) {
+					//  console.log("同步操作", res);
+					  _that.ambitusArray = res.data.content.item;
+				}
       });
-     _that.ambitusArray = res.data.content.item;
-      console.log("同步操作", res);
+    
+     
     },
     // 点击图片跳转页面查看房间详情
 			clickDetails(id){
@@ -245,9 +243,12 @@ export default {
 				_this.i = _this.ambitusArray[index]
 				_this.luId = _this.ambitusArray[index].luId
 				_this.$set(_this.ambitusArray[index],'isFavorite',coll) //更改
+				
 				// 判断
 				if (coll === true) {
-					_this.$refs.mpvuePicker.show() // 点击弹出mpvuePickerpicker
+					setTimeout(()=>{
+						_this.$refs.mpvuePicker.show() // 点击弹出mpvuePickerpicker
+					},2000)
 				} else if (coll === false) {
 					request({
 						url:'/wap/api/my.php?action=modifyFavorite',

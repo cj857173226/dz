@@ -1,3 +1,13 @@
 {
-  "navigationBarTitleText": "我喜欢的房源"
+  "navigationBarTitleText": "我喜欢的房源",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "",
+        "fontSrc": "/static/font/iconfont.ttf",
+        "fontSize": "22px",
+        "float": "right"
+      }
+    ]
+  }
 }

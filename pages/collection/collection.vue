@@ -35,7 +35,7 @@
 			request({
 				url:"/wap/api/my.php?action=favoriteClass",
 				success: function(res) {
-					console.log("分组列表:",res.data.content.item);
+					console.log("分组列表:",res);
 					_that.groupingList = res.data.content.item;
 				}
 			})
@@ -50,16 +50,16 @@
 	box-sizing: border-box;
 	.group-box{
 		width: 100%;
-		height: 562upx;
+		height: 540upx;
 		border-bottom: 2upx solid #ccc;
+		margin-bottom: 10upx;
 		.group-img{
 			width: 100%;
 			height: 462upx;
 		}
 		.group-name{
 			width: 100%;
-			height: 90upx;
-			line-height: 80upx;
+			line-height: 60upx;
 			font-size: 20px;
 			font-weight: bold;
 		}

@@ -23,6 +23,9 @@
 					<text>{{numberIndex}}</text>/
 					<text>{{imgArray.length}}</text>
 				</view>
+				<view class="icon-box" @tap="onCollect()">
+					<i class="iconfont" :class="data.isFavorite?'love-icon-red':'love-icon'">&#xe63e;</i>
+				</view>
 			</view>
   	</view>
 		<!-- <contactRoomDoor/> -->
@@ -198,25 +201,27 @@
 			</view>
 		</view>
 		<unsubscribeRules></unsubscribeRules>
-		
-	</view>
-		<button class="mini-btn" type="primary">
-				立即预定
-		</button>
-	</view>
+		</view>
+			<button class="mini-btn" type="primary">
+					立即预定
+			</button>
+		</view>
+	<mpvue-picker :themeColor="themeColor" ref="mpvuePicker" :mode="mode" :deepLength="deepLength" :pickerValueDefault="pickerValueDefault"
+         @onConfirm="onConfirm" @onCancel="onCancel()" :pickerValueArray="pickerValueArray"></mpvue-picker>
 	</view>
 </template>
 
 <script>
+	import mpvuePicker from '../../components/index/mpvue-picker/mpvuePicker';
 	import house_map from '../../components/particulars/map.vue' //地图组件
 	import roomDescription from '../../components/particulars/room-description.vue' //房间详情组件
 	import uniRate from "../../components/particulars/uni-rate/uni-rate.vue" //引用评分插件
 	import supportingFacility from "../../components/particulars/supporting-facility.vue" //引用配套设施插件
 	import unsubscribeRules from '../../components/particulars/unsubscribe-rules' 
 	import { shortHttp,room,fangDongDiscuss } from "../../common/requestUrl.json"; // 接口文件
-	
+	import {request} from '../../common/request.js' // 封装的带有token的请求方法
 	export default {
-		components:{house_map,uniRate,supportingFacility,unsubscribeRules},
+		components:{house_map,uniRate,supportingFacility,unsubscribeRules,mpvuePicker},
 		data () {
 			return {
 				isTrue:true,
@@ -250,6 +255,13 @@
 				headImageUrl:'',
 				roomInnerIntro:'', // 房间描述
 				landlordId:'', //房东唯一id
+				data:null,
+				cityPickerValueDefault: [0, 0, 1],
+				themeColor: '#007AFF',
+				mode: 'selector',
+				deepLength: 1,
+				pickerValueDefault: [0],
+				pickerValueArray:[]
 			}
 		},
 		methods: {
@@ -269,12 +281,85 @@
 			},
 			// 点击跳转页面查看房东所有描述
 			clickDiscuss(type){
-				uni.request({
-					url:shortHttp+fangDongDiscuss,
+				request({
+					url:fangDongDiscuss,
 					data:{id:type},
 					success: res => {
 						console.log("查看房东评论：",res);
 						
+					}
+				})
+			},
+			onCollect(){
+				const _this = this;
+				let pickerValueArray = []
+				request({
+					url:'/wap/api/my.php?action=favoriteClass',
+					success: function(res) {	
+						let array = res.data.content.item
+						for (let i = 0; i < array.length; i++) {
+							pickerValueArray.push({
+								label:array[i].cname,
+								value:array[i].cid
+							})
+							_this.pickerValueArray = pickerValueArray 
+						}		
+					}
+				})
+				let coll = !_this.data.isFavorite //获取原本的收藏值并取反
+				_this.$set(_this.data,"isFavorite",coll); //更改
+				// 判断
+				if (coll === true) {
+					setTimeout(()=>{
+						_this.$refs.mpvuePicker.show() // 点击弹出mpvuePickerpicker
+					},2000)
+				} else if (coll === false) {
+					request({
+						url:'/wap/api/my.php?action=modifyFavorite',
+						data:{luId:_this.luId,favAction:"del"},
+						success:res => {
+							console.log('取消了:',res);
+							if (res.data.status == "success") {
+								uni.showToast({
+									title:"取消收藏",
+									duration:2000
+								})
+							}
+						}
+					})
+				}
+			},
+			// picker 组件点击取消时回调
+			onCancel(e) {
+				// console.log(this.i);
+				
+				this.data.isFavorite = false
+			},
+			// picker 组件点击确定时回调，返回选中的 label, value 和数组索引 index 的值
+			onConfirm(e){
+				console.log("确认：",e.value);
+				const _that = this;
+				let value = e.value;
+				let collectId;
+				for (let index = 0; index < value.length; index++) {
+					collectId = value[index];
+				}
+				request({
+					url:'/wap/api/my.php?action=modifyFavorite',
+					data:{luId:_that.luId,classId:collectId,favAction:"add"},
+					success: res => {
+						console.log("收藏：",res);
+						if (res.data.status == "success") {
+							uni.showToast({
+								title:"收藏成功",
+								duration:2000
+							})
+						} else {
+							uni.showToast({
+								title:"收藏失败",
+								duration:2000
+							})
+						}
 					}
 				})
 			}
@@ -283,12 +368,13 @@
 			// console.log(option.id);
 			const _that = this;
 			let id = option.id; //房间唯一id
-			uni.request({
-				url:shortHttp+room,
+			request({
+				url:room,
 				data:{luId:id},
 				success: res => {
 					console.log("房间详情",res.data.content);
 					let datas = res.data.content
+					_that.data = datas
 					_that.imgArray = datas.images// 图片数组
 					_that.price = datas.priceAndTips.displayPrice // 价格
 					_that.lodgeUnitName = datas.luBase.lodgeUnitName // 房屋标题
@@ -371,6 +457,27 @@
 				bottom: 10upx;
 				right: 30upx;
 			}
+			.icon-box{
+					width: 60upx;
+					height: 60upx;
+					color: #fff;
+					background-color: rgba(0,0,0,.7);
+					border-radius: 50%;
+					line-height: 60upx;
+					display: flex;
+					justify-content: center;
+					font-size: 30upx;
+					position: absolute;
+					top: 30upx;
+					right:30upx;
+					.love-icon{
+						font-size: 30upx;
+					}
+					.love-icon-red{
+						font-size: 30upx;
+						color: #F8070E;
+					}
+				}
 		}
 	}
 	.container-contact-box{
