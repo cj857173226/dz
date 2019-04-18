@@ -227,13 +227,13 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-75e49dae {
+.contanier.data-v-ebeb3b62 {
   width: 100%;
   padding: 30rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.contanier .system-messages.data-v-75e49dae {
+.contanier .system-messages.data-v-ebeb3b62 {
     width: 100%;
     height: 160rpx;
     -webkit-box-sizing: border-box;
@@ -248,7 +248,7 @@
         -ms-flex-align: center;
             align-items: center;
 }
-.contanier .system-messages .photo.data-v-75e49dae {
+.contanier .system-messages .photo.data-v-ebeb3b62 {
       width: 100rpx;
       height: 100rpx;
       border-radius: 50rpx;
@@ -257,23 +257,23 @@
       text-align: center;
       margin-right: 26rpx;
 }
-.contanier .system-messages .photo .colorbaise.data-v-75e49dae {
+.contanier .system-messages .photo .colorbaise.data-v-ebeb3b62 {
         font-size: 50rpx;
         color: #fff;
 }
-.contanier .system-messages .photo .photo-img.data-v-75e49dae {
+.contanier .system-messages .photo .photo-img.data-v-ebeb3b62 {
         width: 100rpx;
         height: 100rpx;
         border-radius: 50rpx;
 }
-.contanier .system-messages .messages-box.data-v-75e49dae {
+.contanier .system-messages .messages-box.data-v-ebeb3b62 {
       width: 564rpx;
       height: 80rpx;
 }
-.contanier .system-messages .messages-box .system-title.data-v-75e49dae {
+.contanier .system-messages .messages-box .system-title.data-v-ebeb3b62 {
         font-size: 14px;
 }
-.contanier .system-messages .messages-box .system-contanier.data-v-75e49dae {
+.contanier .system-messages .messages-box .system-contanier.data-v-ebeb3b62 {
         width: 100%;
         height: 40rpx;
         color: #b9b9b9;

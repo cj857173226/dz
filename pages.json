@@ -65,7 +65,24 @@
 			// 新建分组
 			"path": "pages/collection/custom",
 			"style": {
-				"navigationBarTitleText": "我喜欢的房源"
+				"navigationBarTitleText": "我喜欢的房源",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue642",
+							"fontSrc": "/static/font/iconfont.ttf",
+							"fontSize": "22px",
+							"float": "right"
+						}]
+					}
+				}
+			}
+		},
+		{
+			// 修改分组
+			"path": "pages/collection/amend_group",
+			"style": {
+				"navigationBarTitleText": "修改组名"
 			}
 		},
 		{

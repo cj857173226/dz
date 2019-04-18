@@ -30,20 +30,20 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.edit_address_page.data-v-6222561e {
+.edit_address_page.data-v-b5772690 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 100%;
   width: 100%;
 }
-.edit_address_page .edit_address_wrap.data-v-6222561e {
+.edit_address_page .edit_address_wrap.data-v-b5772690 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     height: 100%;
     width: 100%;
     padding: 20rpx 30rpx;
 }
-.edit_address_page .edit_address_wrap .edit_address_form.data-v-6222561e {
+.edit_address_page .edit_address_wrap .edit_address_form.data-v-b5772690 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       padding: 0rpx 20rpx;
@@ -64,7 +64,7 @@ page {
       width: 100%;
       border-radius: 6px;
 }
-.edit_address_page .edit_address_wrap .edit_address_form .form-item.data-v-6222561e {
+.edit_address_page .edit_address_wrap .edit_address_form .form-item.data-v-b5772690 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         padding: 10rpx 0;
@@ -75,10 +75,10 @@ page {
         display: -ms-flexbox;
         display: flex;
 }
-.edit_address_page .edit_address_wrap .edit_address_form .form-item.data-v-6222561e:last-child {
+.edit_address_page .edit_address_wrap .edit_address_form .form-item.data-v-b5772690:last-child {
           border-bottom: none;
 }
-.edit_address_page .edit_address_wrap .edit_address_form .form-item .label.data-v-6222561e {
+.edit_address_page .edit_address_wrap .edit_address_form .form-item .label.data-v-b5772690 {
           display: -webkit-box;
           display: -webkit-flex;
           display: -ms-flexbox;
@@ -94,7 +94,7 @@ page {
           text-align: right;
           font-size: 16px;
 }
-.edit_address_page .edit_address_wrap .edit_address_form .form-item .input.data-v-6222561e {
+.edit_address_page .edit_address_wrap .edit_address_form .form-item .input.data-v-b5772690 {
           display: -webkit-box;
           display: -webkit-flex;
           display: -ms-flexbox;
@@ -114,12 +114,12 @@ page {
                   flex-direction: row-reverse;
           font-size: 14px;
 }
-.edit_address_page .edit_address_wrap .edit_address_form .form-item .input ._input.data-v-6222561e {
+.edit_address_page .edit_address_wrap .edit_address_form .form-item .input ._input.data-v-b5772690 {
             width: 100%;
             text-align: right;
             font-size: 14px;
 }
-.edit_address_page .edit_address_wrap .handle_btn_wrap.data-v-6222561e {
+.edit_address_page .edit_address_wrap .handle_btn_wrap.data-v-b5772690 {
       margin-top: 40rpx;
       -webkit-box-sizing: border-box;
               box-sizing: border-box;

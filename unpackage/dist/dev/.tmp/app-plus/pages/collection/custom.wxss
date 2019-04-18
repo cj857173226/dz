@@ -30,4 +30,93 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+.contanier .costom-box.data-v-78b81a22 {
+    width: 100%;
+    margin-top: 30rpx;
+    position: relative;
+}
+.contanier .costom-box .costom-img.data-v-78b81a22 {
+      width: 100%;
+      height: 460rpx;
+}
+.contanier .costom-box .bottom-box.data-v-78b81a22 {
+      width: 100%;
+      height: 174rpx;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+}
+.contanier .costom-box .bottom-box .photn.data-v-78b81a22 {
+        width: 80rpx;
+        height: 80rpx;
+        border-radius: 50%;
+}
+.contanier .costom-box .bottom-box .housing-title-box.data-v-78b81a22 {
+        font-size: 14px;
+        margin-left: 20rpx;
+}
+.contanier .costom-box .bottom-box .housing-title-box .title.data-v-78b81a22 {
+          font-weight: 600;
+}
+.contanier .costom-box .bottom-box .housing-title-box .icon-box.data-v-78b81a22 {
+          color: #9B9B9B;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: row;
+              -ms-flex-direction: row;
+                  flex-direction: row;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+                  align-items: center;
+}
+.contanier .costom-box .bottom-box .housing-title-box .icon-box .color1.data-v-78b81a22 {
+            color: #D1EDEA;
+            font-size: 16px;
+}
+.contanier .costom-box .bottom-box .housing-title-box .icon-box .color2.data-v-78b81a22 {
+            font-size: 16px;
+}
+.contanier .costom-box .price.data-v-78b81a22 {
+      width: 200rpx;
+      height: 60rpx;
+      font-size: 14px;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.5);
+      text-align: center;
+      line-height: 60rpx;
+      position: absolute;
+      left: 0;
+      bottom: 184rpx;
+}
+.contanier .costom-box .right-box.data-v-78b81a22 {
+      width: 80rpx;
+      height: 60rpx;
+      line-height: 60rpx;
+      text-align: center;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 5rpx;
+      position: absolute;
+      top: 20rpx;
+      right: 20rpx;
+      z-index: 999;
+}
+.contanier .costom-box .right-box .font20.data-v-78b81a22 {
+        font-size: 40rpx;
+}
 

@@ -7,6 +7,7 @@
     "pages/collection/collection",
     "pages/collection/new_group",
     "pages/collection/custom",
+    "pages/collection/amend_group",
     "pages/orderList/orderList",
     "pages/messages/messages",
     "pages/messages/system_messages",
