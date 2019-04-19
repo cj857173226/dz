@@ -13,38 +13,88 @@
 </template>
 
 <script>
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+	import {
+		request
+	} from '../../../common/request.js'
+	import helper from '../../../common/helper.js'
 	export default {
 		data() {
 			return {
 				number: '',
+				old_number:'',
+				isSubmiting: false, // 是否正在提交
 			}
 		},
 		onLoad() {
 
 		},
 		onShow() {
-
+			this.getPeopleNumber();
 		},
 		onNavigationBarButtonTap(e) {
 			if (e.index === 0) {
-				this.submitPeopleNum()
+				this.submitPeopleNum();
 			}
 		},
 		computed: {
-
+			...mapState(['releaseObj']),
 		},
 		methods: {
+			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
 			submitPeopleNum() {
+				if(this.isSubmiting) return;
+				const _this = this;
+				const id = _this.releaseObj.id;
+				const number = _this.number;
+				const old_number = _this.old_number;
 				const reg = /^\d*$/;
-				if (Number(this.number) <= 0 || Number(this.number) > 99 || !reg.test(this.number)) {
-					uni.showToast({
-						title: '1~9999的正整数',
-						duration: 1500,
-						icon:'none'
-					});
+				if (Number(number) <= 0 || Number(number) > 99 || !reg.test(number)) {
+					helper.layer('1~99的正整数');
+				}else{
+					if (number === old_number) {
+						uni.navigateBack({
+							delta: 1,
+						})
+					} else {
+						_this.isSubmiting = true;
+						request({
+							url:'/wap/api/fangdong.php?action=improveHouse',
+							method:'POST',
+							data:{
+								house_id:id,
+								tantnum:number
+							},
+							success:(res)=>{
+								if(res.data.status === 'success'){
+									let _data = res.data.content;
+									_this.editReleaseInfo(_data);
+									_this.editReleaseInfoStatus(true);
+									uni.navigateBack({
+										delta:1,
+									})
+								}else{
+									helper.layer('保存失败')
+								}
+							},
+							complete:()=>{
+								_this.isSubmiting = false;
+							}
+						})
+					}
 				}
-			}
-		}
+			},
+			// 获取房屋面积
+			getPeopleNumber() {
+				const _releaseObj = this.releaseObj;
+				this.number = Number(_releaseObj.tantnum) <= 0 ? '' : _releaseObj.tantnum;
+				this.old_number = Number(_releaseObj.tantnum) <= 0 ? '' : _releaseObj.tantnum;
+			},
+		},
+	
 	}
 </script>
 

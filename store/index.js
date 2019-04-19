@@ -31,6 +31,7 @@ const store = new Vuex.Store({
 		},
 		// 初始化的房源发布信息 (不修改)
 		initReleaseObj:{
+			id:'',
 			title: '', //房屋标题
 			titlepic: '', // 标题配图
 			// titlepic: '',
@@ -43,13 +44,13 @@ const store = new Vuex.Store({
 			xz_local: '', // 地址(全)
 			leasetype: '', //出租类型：1：整套出租；2：独立房间；3：合住房间
 			tantnum: '', //宜居人数
-			roomtype_shi: '', //房屋类型，室
-			roomtype_ting: '', //房屋类型，厅
-			roomtype_wei: '', //房屋类型，卫
-			roomtype_chu: '', //房屋类型，厨
-			roomtype_yt: '', //房屋类型，阳台
+			roomtype_shi: '0', //房屋类型，室
+			roomtype_ting: '0', //房屋类型，厅
+			roomtype_wei: '0', //房屋类型，卫
+			roomtype_chu: '0', //房屋类型，厨
+			roomtype_yt: '0', //房屋类型，阳台
 			area: '', //房屋面积
-			sameroom: 1, // 同类房源、床位、房间
+			sameroom: '0', // 同类房源、床位、房间
 			toilet: '', // 卫生间：1，共用；2，独立
 			livetogether: '', // 是否和房东同居 1:同居 2:不同居
 			bed: '', // 床位信息
@@ -80,6 +81,7 @@ const store = new Vuex.Store({
 		},
 		// 房源发布信息
 		releaseObj:{
+			id:'',
 			title: '', //房屋标题
 			titlepic: '', // 标题配图
 			// titlepic: '',
@@ -92,13 +94,13 @@ const store = new Vuex.Store({
 			xz_local: '', // 地址(全)
 			leasetype: '', //出租类型：1：整套出租；2：独立房间；3：合住房间
 			tantnum: '', //宜居人数
-			roomtype_shi: '', //房屋类型，室
-			roomtype_ting: '', //房屋类型，厅
-			roomtype_wei: '', //房屋类型，卫
-			roomtype_chu: '', //房屋类型，厨
-			roomtype_yt: '', //房屋类型，阳台
+			roomtype_shi: '0', //房屋类型，室
+			roomtype_ting: '0', //房屋类型，厅
+			roomtype_wei: '0', //房屋类型，卫
+			roomtype_chu: '0', //房屋类型，厨
+			roomtype_yt: '0', //房屋类型，阳台
 			area: '', //房屋面积
-			sameroom: 1, // 同类房源、床位、房间
+			sameroom: '0', // 同类房源、床位、房间
 			toilet: '', // 卫生间：1，共用；2，独立
 			livetogether: '', // 是否和房东同居 1:同居 2:不同居
 			bed: '', // 床位信息
@@ -168,15 +170,14 @@ const store = new Vuex.Store({
 					state.releaseObj[key] = obj[key];
 				}
 			}
-			state.isEditReleaseInfo = true;
 		},
 		//初始化(清空)房源信息
 		clearReleaseInfo(state){
 			state.releaseObj = helper.deepCopy(state.initReleaseObj)
 		},
-		// 初始化房源发布信息修改状态
-		initReleaseInfoStatus(state){
-			state.isEditReleaseInfo = false;
+		// 修改房源发布信息修改状态
+		editReleaseInfoStatus(state,is){
+			state.isEditReleaseInfo = is;
 		}
 	}
 })

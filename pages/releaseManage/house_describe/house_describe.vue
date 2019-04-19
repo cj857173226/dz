@@ -1,73 +1,73 @@
 <template>
 	<view class="house_describe_page">
 		<view class="describe_form">
-			<view class="form_item" @tap="editDescribe('title',describeForm.title)">
+			<view class="form_item" @tap="editDescribe('title')">
 				<view class="left_wrap">
 					<view class="label_wrap">
 						<view class="title">房源标题</view>
 					</view>
 					<view class="content_wrap">
-						<view class="no_data" v-if="describeForm.title===''">请完善</view>
-						<view class="content" v-if="describeForm.title!==''">{{describeForm.title}}</view>
+						<view class="no_data" v-if="!title">请完善</view>
+						<view class="content" v-if="title">{{title}}</view>
 					</view>
 				</view>
 				<view class="after_icon">
 					<text class="iconfont icon-right"></text>
 				</view>
 			</view>
-			<view class="form_item" @tap="editDescribe('personality',describeForm.personality)">
+			<view class="form_item" @tap="editDescribe('personality')">
 				<view class="left_wrap">
 					<view class="label_wrap">
 						<view class="title">个性描述</view>
 						<view class="tag">选填</view>
 					</view>
 					<view class="content_wrap">
-						<view class="no_data" v-if="describeForm.personality===''">请完善</view>
-						<view class="content" v-if="describeForm.personality!==''">{{describeForm.title}}</view>
+						<view class="no_data" v-if="!roomServiceIntro">请完善</view>
+						<view class="content" v-if="roomServiceIntro">{{roomServiceIntro}}</view>
 					</view>
 				</view>
 				<view class="after_icon">
 					<text class="iconfont icon-right"></text>
 				</view>
 			</view>
-			<view class="form_item" @tap="editDescribe('inside',describeForm.inside)">
+			<view class="form_item" @tap="editDescribe('inside')">
 				<view class="left_wrap">
 					<view class="label_wrap">
 						<view class="title">内部情况</view>
 					</view>
 					<view class="content_wrap">
-						<view class="no_data" v-if="describeForm.inside===''">请完善</view>
-						<view class="content" v-if="describeForm.inside!==''">{{describeForm.title}}</view>
+						<view class="no_data" v-if="!roomRoominnerIntro">请完善</view>
+						<view class="content" v-if="roomRoominnerIntro">{{roomRoominnerIntro}}</view>
 					</view>
 				</view>
 				<view class="after_icon">
 					<text class="iconfont icon-right"></text>
 				</view>
 			</view>
-			<view class="form_item" @tap="editDescribe('traffic',describeForm.traffic)">
+			<view class="form_item" @tap="editDescribe('traffic')">
 				<view class="left_wrap">
 					<view class="label_wrap">
 						<view class="title">交通状况</view>
 						<view class="tag">选填</view>
 					</view>
 					<view class="content_wrap">
-						<view class="no_data" v-if="describeForm.traffic===''">请完善</view>
-						<view class="content" v-if="describeForm.traffic!==''">{{describeForm.title}}</view>
+						<view class="no_data" v-if="!roomLocationIntro">请完善</view>
+						<view class="content" v-if="roomLocationIntro">{{roomLocationIntro}}</view>
 					</view>
 				</view>
 				<view class="after_icon">
 					<text class="iconfont icon-right"></text>
 				</view>
 			</view>
-			<view class="form_item" @tap="editDescribe('periphery',describeForm.periphery)">
+			<view class="form_item" @tap="editDescribe('periphery')">
 				<view class="left_wrap">
 					<view class="label_wrap">
 						<view class="title">周边情况</view>
 						<view class="tag">选填</view>
 					</view>
 					<view class="content_wrap">
-						<view class="no_data" v-if="describeForm.periphery===''">请完善</view>
-						<view class="content" v-if="describeForm.periphery!==''">{{describeForm.title}}</view>
+						<view class="no_data" v-if="!roomAroundIntro">请完善</view>
+						<view class="content" v-if="roomAroundIntro">{{roomAroundIntro}}</view>
 					</view>
 				</view>
 				<view class="after_icon">
@@ -79,37 +79,56 @@
 </template>
 
 <script>
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+	import {
+		request
+	} from '../../../common/request.js'
+	import helper from '../../../common/helper.js'
 	export default {
 		data() {
 			return {
+				house_id: '',
 				// 房源描述表单
-				describeForm: {
-					title: '', //标题
-					personality: '', //个性
-					inside: '', //内部
-					traffic: '', //交通
-					periphery: '' //周边
-				},
+				title: '', //标题
+				roomServiceIntro: '', //个性
+				roomRoominnerIntro: '', //内部
+				roomLocationIntro: '', //交通
+				roomAroundIntro: '' //周边
 			}
 		},
 		onLoad() {
 
 		},
 		onShow() {
-
+			this.getHouseDecs();
 		},
 		computed: {
-
+			...mapState(['releaseObj']),
 		},
 		methods: {
+			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
 			// 跳转到编辑描述页面
 			// type 描述类型   title 标题  personality 个性   inside内部   traffic交通  periphery周边
-			editDescribe(type,desc){
-				const url = '/pages/releaseManage/house_describe/edit_describe?type=' + type+'&desc='+ desc;
+			editDescribe(type, desc) {
+				const url = '/pages/releaseManage/house_describe/edit_describe?type=' + type;
 				uni.navigateTo({
-					url:url
+					url: url
 				})
-			}
+			},
+			// 获取房源描述
+			getHouseDecs() {
+				const _this = this;
+				const _houseInfo = _this.releaseObj;
+				_this.house_id = _houseInfo.id;
+				_this.title = _houseInfo.title;
+				_this.roomServiceIntro = _houseInfo.roomServiceIntro;
+				_this.roomRoominnerIntro = _houseInfo.roomRoominnerIntro;
+				_this.roomLocationIntro = _houseInfo.roomLocationIntro;
+				_this.roomAroundIntro = _houseInfo.roomAroundIntro;
+			},
 		}
 	}
 </script>
@@ -126,7 +145,7 @@
 		box-sizing: border-box;
 		padding: 0 30upx;
 		width: 100%;
-		
+
 		.describe_form {
 			box-sizing: border-box;
 			width: 100%;

@@ -1,7 +1,8 @@
 <template>
 	<view class="edit_describe_page">
 		<view class="textarea_wrap">
-			<textarea placeholder-style="color:#cccccc;font-size:28upx" :placeholder="describeOption.placeholder" :maxlength="describeOption.maxLength" v-model="describeContent"/>
+			<textarea placeholder-style="color:#cccccc;font-size:28upx" :placeholder="describeOption.placeholder" :maxlength="describeOption.maxLength"
+			 v-model="describeContent" />
 			<view class="control">
 				<text class="cur" v-text="describeContent.length"></text>
 				<text class="total">/{{describeOption.maxLength}}</text>
@@ -19,9 +20,19 @@
 </template>
 
 <script>
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+	import {
+		request
+	} from '../../../common/request.js'
+	import helper from '../../../common/helper.js'
 	export default {
 		data() {
 			return {
+				// 房屋id 
+				house_id:'',
 				// 描述的内容
 				describeContent:'',
 				// 当前描述的主题
@@ -33,6 +44,7 @@
 					maxLength: '', //描述最大字数限制
 					placeholder: '', // 文本提示
 				},
+				isSubmiting:false, //是否正在提交描述
 				// 所有配置数据
 				optionsArr:[
 					{
@@ -82,18 +94,15 @@
 		onLoad(opt) {
 			// type 描述类型   title 标题  personality 个性   inside内部   traffic交通  periphery周边
 			let navTitle = '';
-			console.log(opt)
 			const _this = this;
 			const describeType = opt.type;
-			const describeContent = opt.desc;
-			this.describeContent = describeContent;
+			_this.describeType = opt.type;
 			switch (describeType) {
 				case 'title':
-					navTitle = '房源标题'
+					navTitle = '房源标题';
 					break;
 				case 'personality':
 					navTitle = '个性描述'
-					break;
 				case 'inside':
 					navTitle = '内部情况'
 					break;
@@ -115,7 +124,7 @@
 			})
 		},
 		onShow() {
-
+			this.getHouseDecs();
 		},
 		onNavigationBarButtonTap(e){
 			if(e.index === 0){
@@ -123,12 +132,84 @@
 			}
 		},
 		computed: {
-
+			...mapState(['releaseObj']),
 		},
 		methods: {
+			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
+			// 提交描述
 			submitDescribe(){
-				console.log(this.describeContent)
-			}
+				if(this.isSubmiting) return;
+				const _this = this;
+				const id = this.house_id;
+				const describeType = _this.describeType;
+				let param = {
+					house_id:id,
+				}
+				switch (describeType) {
+					case 'title':
+						param['title'] = _this.describeContent;
+						break;
+					case 'personality':
+						param['roomServiceIntro'] = _this.describeContent;
+						break;
+					case 'inside':
+						param['roomRoominnerIntro'] = _this.describeContent;
+						break;
+					case 'traffic':
+						param['roomLocationIntro'] = _this.describeContent;
+						break;
+					case 'periphery':
+						param['roomAroundIntro'] = _this.describeContent;
+						break;
+				}
+				console.log(param)
+// 				request({
+// 					url:'/wap/api/fangdong.php?action=improveHouse',
+// 					method:'POST',
+// 					data:param,
+// 					success:(res)=>{
+// 						if(res.data.status === 'success'){
+// 							let _data = res.data.content;
+// 							_this.editReleaseInfo(_data);
+// 							_this.editReleaseInfoStatus(true);
+// 							uni.navigateBack({
+// 								delta:1,
+// 							})
+// 						}else{
+// 							helper.layer('保存失败')
+// 						}
+// 					},
+// 					complete:()=>{
+// 						_this.isSubmiting = false;
+// 						_this.getHouseDecs()
+// 					}
+// 				})
+			},
+			// 获取房源描述
+			getHouseDecs() {
+				const _this = this;
+				const _houseInfo = _this.releaseObj;
+				const describeType = _this.describeType;
+				_this.house_id = _houseInfo.id;
+				switch (describeType) {
+					case 'title':
+						_this.describeContent = _this.releaseObj.title?_this.releaseObj.title:'';
+						break;
+					case 'personality':
+						_this.describeContent = _this.releaseObj.roomServiceIntro?_this.releaseObj.roomServiceIntro:'';
+						break;
+					case 'inside':
+						_this.describeContent = _this.releaseObj.roomRoominnerIntro?_this.releaseObj.roomRoominnerIntro:'';
+						break;
+					case 'traffic':
+						_this.describeContent = _this.releaseObj.roomLocationIntro?_this.releaseObj.roomLocationIntro:'';
+						break;
+					case 'periphery':
+						_this.describeContent = _this.releaseObj.roomAroundIntro?_this.releaseObj.roomAroundIntro:'';
+						break;
+				}
+				console.log(_this.describeContent)
+			},
 		}
 	}
 </script>

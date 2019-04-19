@@ -2,9 +2,9 @@
 	<view class="rent_type_page">
 		<view class="head">房客入住的<text class="key">空间类型</text>是?</view>
 		<view class="type_check_wrap">
-			<view class="check_item" @tap="changeLeaseType(1)">
+			<view class="check_item" @tap="changeLeaseType('1')">
 				<view class="check_btn_wrap">
-					<view class="check_btn" :class="{'check_on':leasetype === 1}">
+					<view class="check_btn" :class="{'check_on':leasetype === '1'}">
 					</view>
 				</view>
 				<view class="check_content">
@@ -12,9 +12,9 @@
 					<view class="desc">房客独享整个房屋</view>
 				</view>
 			</view>
-			<view class="check_item" @tap="changeLeaseType(2)">
+			<view class="check_item" @tap="changeLeaseType('2')">
 				<view class="check_btn_wrap">
-					<view class="check_btn" :class="{'check_on':leasetype === 2}">
+					<view class="check_btn" :class="{'check_on':leasetype === '2'}">
 					</view>
 				</view>
 				<view class="check_content">
@@ -22,9 +22,9 @@
 					<view class="desc">房客拥有一个独立的房间,但部分空间与他人分享</view>
 				</view>
 			</view>
-			<view class="check_item" @tap="changeLeaseType(3)">
+			<view class="check_item" @tap="changeLeaseType('3')">
 				<view class="check_btn_wrap">
-					<view class="check_btn" :class="{'check_on':leasetype === 3}">
+					<view class="check_btn" :class="{'check_on':leasetype === '3'}">
 					</view>
 				</view>
 				<view class="check_content">
@@ -34,13 +34,16 @@
 			</view>
 		</view>
 		<view class="bottom">
-			<button class="my-btn-block" :class="{'dis_btn':leasetype ===''}" @tap="submit">确认
-				<text v-if="leasetype!==''">
+			<button class="my-btn-block" :class="{'dis_btn':leasetype ===''||submiting}" @tap="submit">
+				<text v-if="!submiting">确认</text>
+				<text v-if="leasetype!==''&& !submiting">
 					选择
 					<text v-if="leasetype === '1'">整套房屋</text>
 					<text v-if="leasetype === '2'">独立房间</text>
 					<text v-if="leasetype === '3'">合住房间</text>
 				</text>
+				<text v-if="submiting && type==='add'">创建中..</text>
+				<text v-if="submiting && type==='edit'">保存中..</text>
 			</button>
 		</view>
 	</view>
@@ -62,7 +65,8 @@
 		data() {
 			return {
 				type: '', // 页面编辑类型 add添加  edit 编辑
-				leasetype: '', //出租类型：1：整套出租；2：独立房间；3：合住房间
+				leasetype: '', //出租类型：1：整套出租；2：独立房间；3：合住房间,
+				submiting: false, //是否正在提交中
 			}
 		},
 		onLoad(e) {
@@ -71,8 +75,7 @@
 			}
 		},
 		onShow() {
-			if(this.type === 'add'){
-			}
+			if (this.type === 'add') {}
 		},
 		onBackPress() {
 			if (this.type === 'add') {
@@ -81,44 +84,49 @@
 			}
 		},
 		computed: {
-			...mapState(['releaseObj','createHouseInfo'])
+			...mapState(['releaseObj', 'createHouseInfo'])
 		},
 		methods: {
-			...mapMutations(['editCreateHouseInfo','clearCreateHouseInfo','editReleaseInfo','clearReleaseInfo']),
+			...mapMutations(['editCreateHouseInfo', 'clearCreateHouseInfo', 'editReleaseInfo', 'clearReleaseInfo','editReleaseInfoStatus']),
 			//切换出租类型
 			changeLeaseType(type) {
 				this.leasetype = type;
 			},
 			// 提交按钮
 			submit() {
-				if(this.leasetype === '') return;
+				if (this.leasetype === '' || this.submiting) return;
 				const _this = this;
 				const leasetype = _this.leasetype;
 				if (this.type === 'add') {
+					_this.submiting = true;
 					_this.editCreateHouseInfo({
-						leasetype:leasetype
+						leasetype: leasetype
 					})
 					const param = _this.createHouseInfo;
 					request({
-						url:'/wap/api/fangdong.php?action=createHouse',
+						url: '/wap/api/fangdong.php?action=createHouse',
 						method: 'POST',
-						data:param,
-						success:(res)=>{
-							if(res.data.status === 'success'){
-								
-							}else{
+						data: param,
+						success: (res) => {
+							if (res.data.status === 'success') {
+								let data = res.data.content;
+								data['xz_local'] = data.xz_province + data.xz_city + data.xz_district + '\xa0\xa0' + data.xz_address +
+									'\xa0\xa0' + data.xz_number;
+								_this.clearReleaseInfo();
+								// 带入当前要修改的房源信息
+								_this.editReleaseInfo(data);
+								_this.editReleaseInfoStatus(true);
+								uni.redirectTo({
+									url: '/pages/releaseManage/house_detail?type=add'
+								})
+							} else {
 								helper.layer(res.data.errorMsg)
 							}
 						},
-						complete:()=>{
-							
+						complete: () => {
+							_this.submiting = false;
 						}
-						
-						
 					})
-// 					uni.redirectTo({
-// 						url: '/pages/releaseManage/house_detail?type=add'
-// 					})
 				} else if (this.type === 'edit') {
 
 				}
@@ -138,12 +146,12 @@
 								delta: 1
 							})
 						} else if (res.cancel) {
-			
+
 						}
 					}
 				});
 			}
-			
+
 		}
 	}
 </script>
