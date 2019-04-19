@@ -87,7 +87,7 @@
 			<view class="operation-list-box">
 				<view class="list-box">
 					<text class="left">可租房态</text>
-					<text class="right">查看日历</text>
+					<text class="right" @click="onShowDatePicker('range')">查看日历</text>
 				</view>
 				<!-- <view class="list-box">
 					<text class="left">交易规则</text>
@@ -202,16 +202,23 @@
 		</view>
 		<unsubscribeRules></unsubscribeRules>
 		</view>
-			<button class="mini-btn" type="primary">
+			<!-- <button class="mini-btn" type="primary">
 					立即预定
-			</button>
+			</button> -->
+			<view class="reserve-box">
+				<text style="font-weight:800;">￥1230</text>
+				<text style="font-size:14px;margin: 0 50upx;">1晚</text>
+				<text>立即预定</text>
+			</view>
 		</view>
+	<mx-date-picker :show="showPicker" :type="type" :value="value" :show-tips="true" :begin-text="'入住'" :end-text="'离店'" color="#f05b72" :show-seconds="true" @confirm="onSelected" @cancel="onSelected" />
 	<mpvue-picker :themeColor="themeColor" ref="mpvuePicker" :mode="mode" :deepLength="deepLength" :pickerValueDefault="pickerValueDefault"
          @onConfirm="onConfirm" @onCancel="onCancel()" :pickerValueArray="pickerValueArray"></mpvue-picker>
 	</view>
 </template>
 
 <script>
+	import MxDatePicker from "@/components/mx-datepicker/mx-datepicker.vue";
 	import mpvuePicker from '../../components/index/mpvue-picker/mpvuePicker';
 	import house_map from '../../components/particulars/map.vue' //地图组件
 	import roomDescription from '../../components/particulars/room-description.vue' //房间详情组件
@@ -221,7 +228,7 @@
 	import { shortHttp,room,fangDongDiscuss } from "../../common/requestUrl.json"; // 接口文件
 	import {request} from '../../common/request.js' // 封装的带有token的请求方法
 	export default {
-		components:{house_map,uniRate,supportingFacility,unsubscribeRules,mpvuePicker},
+		components:{house_map,uniRate,supportingFacility,unsubscribeRules,mpvuePicker,MxDatePicker},
 		data () {
 			return {
 				isTrue:true,
@@ -261,7 +268,11 @@
 				mode: 'selector',
 				deepLength: 1,
 				pickerValueDefault: [0],
-				pickerValueArray:[]
+				pickerValueArray:[],
+				luId:'',
+				showPicker: false,
+        type: 'range',  //时间插件类型  可选值：date（日期）、time（时间）、datetime（日期时间）、range（日期范围）、rangetime（日期时间范围）
+        value: ''
 			}
 		},
 		methods: {
@@ -362,15 +373,32 @@
 						}
 					}
 				})
-			}
+			},
+			/* -----------------------------日期组件回调函数------------------------------- */
+			onShowDatePicker(type){//显示
+        this.type = type;
+        this.showPicker = true;
+        this.value = this[type];
+      },
+      onSelected(e) {//选择
+        this.showPicker = false;
+        if(e) {
+            this[this.type] = e.value; 
+            //选择的值
+            console.log('value => '+ e.value);
+            //原始的Date对象
+            console.log('date => ' + e.date);
+        }
+      }
 		},
 		onLoad(option) {
 			// console.log(option.id);
 			const _that = this;
 			let id = option.id; //房间唯一id
+			_that.luId = id
 			request({
 				url:room,
-				data:{luId:id},
+				data:{luId:_that.luId},
 				success: res => {
 					console.log("房间详情",res.data.content);
 					let datas = res.data.content
@@ -776,6 +804,22 @@
 					}
 				}
 			}
+		}
+	}
+	.reserve-box{
+		width: 100%;
+		height: 90upx;
+		background: #f05b72;
+		border-radius: 10upx;
+		color: #fff;
+		line-height: 90upx;
+		text-align: center;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		z-index: 999;
+		&:active{
+			opacity: .5;
 		}
 	}
 }

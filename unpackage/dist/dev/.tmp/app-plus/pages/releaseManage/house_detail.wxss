@@ -117,7 +117,11 @@ page {
           color: #F05B72;
           font-size: 32rpx;
 }
+<<<<<<< HEAD
 .house_detail_page .house_detail_form .form_item .ipt .data_box.data-v-0da5ff29 {
+=======
+.house_detail_page .house_detail_form .form_item .ipt .data_box.data-v-2e4738c3 {
+>>>>>>> c424367c24c7be57a0df4ad6f4493d8c19ec6acd
           font-size: 32rpx;
           color: #444444;
 }
@@ -170,7 +174,11 @@ page {
       -o-transition: all 0.1s;
       transition: all 0.1s;
 }
+<<<<<<< HEAD
 .house_detail_page .bottom_wrap .del_house.data-v-0da5ff29:active {
+=======
+.house_detail_page .bottom_wrap .del_house.data-v-2e4738c3:active {
+>>>>>>> c424367c24c7be57a0df4ad6f4493d8c19ec6acd
         color: #cccccc;
 }
 .house_detail_page .release_btn.data-v-0da5ff29 {

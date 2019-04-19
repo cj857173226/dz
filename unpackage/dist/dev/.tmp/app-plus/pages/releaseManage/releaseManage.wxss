@@ -222,7 +222,11 @@ page {
           font-size: 28rpx;
           color: #F05B72;
 }
+<<<<<<< HEAD
 .releaseManage_page .no_list.data-v-bcdf4a7a {
+=======
+.releaseManage_page .no_list.data-v-d5d3572e {
+>>>>>>> c424367c24c7be57a0df4ad6f4493d8c19ec6acd
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
