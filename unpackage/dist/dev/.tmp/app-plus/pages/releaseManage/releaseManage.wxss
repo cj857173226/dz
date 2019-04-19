@@ -33,6 +33,7 @@ page {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
+  height: 100%;
 }
 .releaseManage_page .house_list.data-v-d5d3572e {
     -webkit-box-sizing: border-box;
@@ -85,11 +86,17 @@ page {
               -ms-flex-positive: 1;
                   flex-grow: 1;
           width: 560rpx;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          overflow: hidden;
           word-break: break-all;
+          color: #999999;
+          font-weight: 800;
 }
 .releaseManage_page .house_list .list_item .item_head .hous_local .iconfont.data-v-d5d3572e {
             margin-right: 8rpx;
-            font-size: 32rpx;
+            font-size: 40rpx;
             font-weight: 800;
 }
 .releaseManage_page .house_list .list_item .item_head .modify_local_btn.data-v-d5d3572e {
@@ -214,5 +221,27 @@ page {
           text-align: center;
           font-size: 28rpx;
           color: #F05B72;
+}
+.releaseManage_page .no_list.data-v-d5d3572e {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    height: 40%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #cccccc;
+    font-weight: 800;
+    font-size: 36rpx;
+    letter-spacing: 8rpx;
 }
 

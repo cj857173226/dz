@@ -118,8 +118,8 @@ page {
           font-size: 32rpx;
 }
 .house_detail_page .house_detail_form .form_item .ipt .data_box.data-v-2e4738c3 {
-          font-size: 28rpx;
-          color: #333333;
+          font-size: 32rpx;
+          color: #444444;
 }
 .house_detail_page .house_detail_form .form_item .after_icon.data-v-2e4738c3 {
         width: 30rpx;
@@ -166,6 +166,12 @@ page {
 .house_detail_page .bottom_wrap .del_house.data-v-2e4738c3 {
       color: #aaaaaa;
       font-size: 28rpx;
+      -webkit-transition: all 0.1s;
+      -o-transition: all 0.1s;
+      transition: all 0.1s;
+}
+.house_detail_page .bottom_wrap .del_house.data-v-2e4738c3:active {
+        color: #cccccc;
 }
 .house_detail_page .release_btn.data-v-2e4738c3 {
     margin-top: 20rpx;
