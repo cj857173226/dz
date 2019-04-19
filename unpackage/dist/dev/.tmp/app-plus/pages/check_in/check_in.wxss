@@ -30,13 +30,13 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.check_in_page.data-v-db66bf62 {
+.check_in_page.data-v-656021ae {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 100%;
   padding-top: 20rpx;
 }
-.check_in_page .add_btn.data-v-db66bf62 {
+.check_in_page .add_btn.data-v-656021ae {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
@@ -47,22 +47,22 @@ page {
     text-align: center;
     color: #F05B72;
 }
-.check_in_page .add_btn .iconfont.data-v-db66bf62 {
+.check_in_page .add_btn .iconfont.data-v-656021ae {
       font-size: 16px;
       font-weight: 800;
       margin-right: 8rpx;
 }
-.check_in_page .add_btn.data-v-db66bf62:active {
+.check_in_page .add_btn.data-v-656021ae:active {
       color: #f4a9b5;
 }
-.check_in_page .check_list_wrap.data-v-db66bf62 {
+.check_in_page .check_list_wrap.data-v-656021ae {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
     margin-top: 20rpx;
     height: calc(100% - 140rpx);
 }
-.check_in_page .check_list_wrap .check_list.data-v-db66bf62 {
+.check_in_page .check_list_wrap .check_list.data-v-656021ae {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
@@ -77,7 +77,7 @@ page {
           -ms-flex-direction: column;
               flex-direction: column;
 }
-.check_in_page .check_list_wrap .check_list .check_item.data-v-db66bf62 {
+.check_in_page .check_list_wrap .check_list .check_item.data-v-656021ae {
         position: relative;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
@@ -94,7 +94,7 @@ page {
             -ms-flex-direction: row;
                 flex-direction: row;
 }
-.check_in_page .check_list_wrap .check_list .check_item .user_info.data-v-db66bf62 {
+.check_in_page .check_list_wrap .check_list .check_item .user_info.data-v-656021ae {
           -webkit-box-sizing: border-box;
                   box-sizing: border-box;
           display: -webkit-box;
@@ -114,14 +114,14 @@ page {
               -ms-flex-pack: distribute;
                   justify-content: space-around;
 }
-.check_in_page .check_list_wrap .check_list .check_item .user_info .name.data-v-db66bf62 {
+.check_in_page .check_list_wrap .check_list .check_item .user_info .name.data-v-656021ae {
             font-size: 16px;
 }
-.check_in_page .check_list_wrap .check_list .check_item .user_info .id_card.data-v-db66bf62 {
+.check_in_page .check_list_wrap .check_list .check_item .user_info .id_card.data-v-656021ae {
             font-size: 14px;
             color: #aaaaaa;
 }
-.check_in_page .check_list_wrap .check_list .check_item .after_icon.data-v-db66bf62 {
+.check_in_page .check_list_wrap .check_list .check_item .after_icon.data-v-656021ae {
           -webkit-box-sizing: border-box;
                   box-sizing: border-box;
           display: -webkit-box;
@@ -138,14 +138,14 @@ page {
                   align-items: center;
           width: 60rpx;
 }
-.check_in_page .check_list_wrap .check_list .check_item .after_icon .iconfont.data-v-db66bf62 {
+.check_in_page .check_list_wrap .check_list .check_item .after_icon .iconfont.data-v-656021ae {
             font-size: 50rpx;
             color: #aaaaaa;
 }
-.check_in_page .check_list_wrap .check_list .check_item.data-v-db66bf62:last-child::after {
+.check_in_page .check_list_wrap .check_list .check_item.data-v-656021ae:last-child::after {
           display: none;
 }
-.check_in_page .check_list_wrap .check_list .check_item.data-v-db66bf62::after {
+.check_in_page .check_list_wrap .check_list .check_item.data-v-656021ae::after {
           position: absolute;
           bottom: 0;
           left: 30rpx;
@@ -155,7 +155,7 @@ page {
           width: calc(100% - 60rpx);
           background: #eaeaea;
 }
-.check_in_page .check_list_wrap .check_list .check_item.data-v-db66bf62:active {
+.check_in_page .check_list_wrap .check_list .check_item.data-v-656021ae:active {
           background: #f5f5f5;
 }
 

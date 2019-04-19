@@ -20,9 +20,18 @@
 </template>
 
 <script>
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+	import {
+		request
+	} from '../../../common/request.js'
+	import helper from '../../../common/helper.js'
 	export default {
 		data() {
 			return {
+				house_id: '', //房源id
 				// 配套设施选项列表
 				checkList: [{
 						type: 1, // 1.标题 2.多选框
@@ -203,10 +212,12 @@
 					}
 				],
 				checkedList: [],
+				isSubmiting: false, // 是否在提交中
+
 			}
 		},
 		onLoad() {
-
+			this.getFacilitiesData();
 		},
 		onShow() {
 
@@ -217,9 +228,12 @@
 			}
 		},
 		computed: {
-
+			...mapState(['releaseObj']),
 		},
 		methods: {
+			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus', 'clearCustomBedOption',
+				'clearCurBedOption'
+			]),
 			// 配套设施选择
 			facilitiesCheck(index) {
 				let _arr = [];
@@ -233,14 +247,55 @@
 			},
 			// 提交配套设施
 			submitFacilities() {
-				if (this.checkedList.length <= 0) {
+				if (this.isSubmiting) return;
+				const _this = this;
+				const id = _this.house_id;
+				if (_this.checkedList.length <= 0) {
 					uni.showToast({
 						title: '请选择配套设施',
 						duration: 1500,
-						icon:'none'
+						icon: 'none'
 					});
+				} else {
+					_this.isSubmiting = true;
+					let param = JSON.stringify(_this.checkedList)
+					request({
+						url: '/wap/api/fangdong.php?action=improveHouse',
+						method: 'POST',
+						data: {
+							house_id: id,
+							sb_list: param,
+						},
+						success: (res) => {
+							if (res.data.status === 'success') {
+								let _data = res.data.content;
+								_this.editReleaseInfo(_data);
+								_this.editReleaseInfoStatus(true);
+								uni.navigateBack({
+									delta: 1,
+								})
+
+							} else {
+								helper.layer('设置失败')
+							}
+						},
+						complete: () => {
+							_this.isSubmiting = false;
+						},
+					})
 				}
-				console.log(this.checkedList)
+			},
+			// 获取当前设施
+			getFacilitiesData() {
+				const _releaseObj = this.releaseObj;
+				let curFacilities = _releaseObj.sb_list ? JSON.parse(_releaseObj.sb_list) : [];
+				this.checkedList = curFacilities;
+				this.house_id = _releaseObj.id;
+				this.checkList.map((item,index,self)=>{
+					if(item.type ===2 && curFacilities.indexOf(item.value)!= -1){
+						self[index].checked = true;
+					}
+				})
 			}
 		}
 	}

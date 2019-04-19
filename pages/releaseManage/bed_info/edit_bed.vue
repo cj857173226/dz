@@ -1,7 +1,7 @@
 <template>
 	<view class="edit_bed_page">
 		<view class="edit_form">
-			<view class="form_item" @tap = "changeBedType">
+			<view class="form_item" @tap="changeBedType">
 				<view class="label">床铺类型</view>
 				<view class="content_wrap">
 					<text class="content" v-if="modifyBedForm.type!=''">
@@ -55,30 +55,43 @@
 </template>
 
 <script>
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+	import {
+		request
+	} from '../../../common/request.js'
+	import helper from '../../../common/helper.js'
 	export default {
 		data() {
 			return {
+				//房源id
+				house_id: '',
+				curindex: '',
+				oldBed: null, //未修改过的床铺信息 (用于比较)
 				modifyBedForm: {
-					id: '',
 					type: '',
 					weight: '',
 					length: '',
 					num: 1,
-				}
+				},
+				isLoading: false, //是否正在提交请求
 			}
 		},
 		onLoad(opt) {
-			if (opt.param) {
-				this.modifyBedForm = JSON.parse(opt.param)
+			if (opt.index) {
+				this.curindex = opt.index;
+				this.getCurBedInfo()
 			}
 		},
 		onShow() {
 
 		},
 		computed: {
+			...mapState(['releaseObj']),
 			isAllowEdit: {
 				get: function() {
-					// return this.firstName + ' ' + this.lastName
 					if (Number(this.modifyBedForm.weight) < 0.1 || Number(this.modifyBedForm.weight) > 10 || Number(this.modifyBedForm
 							.length) < 0.1 || Number(this.modifyBedForm.length) > 10) {
 						return true
@@ -89,6 +102,9 @@
 			}
 		},
 		methods: {
+			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus', 'clearCustomBedOption',
+				'clearCurBedOption'
+			]),
 			// 修改床铺数量
 			modifyBedNumber(type) {
 				if (type == 0) {
@@ -105,28 +121,140 @@
 			},
 			//确定修改床铺
 			submitEditBed() {
-				let id = this.modifyBedForm.id;
+				const _this = this;
+				if (this.isLoading) return;
+				const id = _this.house_id;
 				let type = this.modifyBedForm.type;
 				let length = (Number(this.modifyBedForm.length)).toFixed(1);
 				let weight = (Number(this.modifyBedForm.weight)).toFixed(1);
 				let num = this.modifyBedForm.num
-				console.log(id, type, length, weight, num)
+				let param = {
+					type: type,
+					length: length,
+					weight: weight,
+					num: num
+				};
+				if (_this.compareObj(_this.oldBed, param)) {
+					uni.navigateBack({
+						delta: 1,
+					})
+				} else {
+					let curBedList = this.releaseObj.bed?JSON.parse(this.releaseObj.bed):[];
+				    curBedList[_this.curindex] = param;
+					let bedParam = JSON.stringify(curBedList);
+					_this.isLoading = true;
+					uni.showLoading({
+						title:'修改床铺..',
+						mask:true,
+					})
+					request({
+						url:'/wap/api/fangdong.php?action=improveHouse',
+						method:'POST',
+						data:{
+							house_id:id,
+							bed:bedParam,
+						},
+						success:(res)=>{
+							if(res.data.status === 'success'){
+								let _data = res.data.content;
+								_this.editReleaseInfo(_data);
+								_this.editReleaseInfoStatus(true);
+								uni.hideLoading();
+								uni.navigateBack({
+									delta:1,
+								})
+								
+							}else{
+								helper.layer('修改失败')
+							}
+						},
+						complete:()=>{
+							_this.isLoading = false;
+						}
+					})
+				}
 			},
 			// 删除床铺
-			deleteBed() {},
+			deleteBed() {
+				if(this.isLoading) return;
+				const _this = this;
+				const id = _this.house_id;
+				uni.showModal({
+					title: '删除',
+					content: '是否删除这个床铺',
+					confirmText: '删除',
+					confirmColor: '#F05B72',
+					success: function(res) {
+						if (res.confirm) {
+							let curBedList = _this.releaseObj.bed?JSON.parse(_this.releaseObj.bed):[];
+							//这里分割一下数组
+							curBedList.splice(_this.curindex,1);
+							let param = JSON.stringify(curBedList);
+							_this.isLoading = true;
+							uni.showLoading({
+								title:'删除床铺...',
+								mask:true,
+							})
+							request({
+								url:'/wap/api/fangdong.php?action=improveHouse',
+								method:'POST',
+								data:{
+									house_id:id,
+									bed:param,
+								},
+								success:(res)=>{
+									if(res.data.status === 'success'){
+										let _data = res.data.content;
+										_this.editReleaseInfo(_data);
+										_this.editReleaseInfoStatus(true);
+										uni.hideLoading();
+										uni.navigateBack({
+											delta:1,
+										})
+									}else{
+										helper.layer('删除失败')
+									}
+								},
+								complete:()=>{
+									_this.isLoading = false;
+								}
+							})
+						} else if (res.cancel) {
+							console.log('用户点击取消');
+						}
+					}
+				});
+			},
 			// 选择床铺类型
 			changeBedType() {
 				const _this = this;
-				const bedData = ['double','single', 'sofa','canopy','tatami','other']
+				const bedData = ['double', 'single', 'sofa', 'canopy', 'tatami', 'other']
 				uni.showActionSheet({
-					itemList: ['双人床', '单人床', '沙发','双层床','榻榻米','其他'],
+					itemList: ['双人床', '单人床', '沙发', '双层床', '榻榻米', '其他'],
 					success: function(res) {
 						const index = res.tapIndex;
 						_this.modifyBedForm.type = bedData[index]
 					},
-					fail: function(res) {
-					}
+					fail: function(res) {}
 				});
+			},
+			// 获取当前床铺信息
+			getCurBedInfo() {
+				const _releaseObj = this.releaseObj;
+				let _bedList = _releaseObj.bed ? JSON.parse(_releaseObj.bed) : [];
+				this.house_id = _releaseObj.id;
+				const curBed = _bedList[this.curindex];
+				this.oldBed = helper.deepCopy(curBed);
+				this.modifyBedForm = helper.deepCopy(curBed);
+			},
+			// 比较两个obj 是否相等obj,obj2
+			compareObj(obj, obj2) {
+				for (let key in obj) {
+					if (obj[key] !== obj2[key]) {
+						return false
+					}
+				}
+				return true;
 			}
 		}
 	}

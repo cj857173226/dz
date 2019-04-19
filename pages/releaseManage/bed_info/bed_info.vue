@@ -4,10 +4,10 @@
 			<view class="one_line">为了保证房客体验,我们要求</view>
 			<view class="one_line">床品<text class="b_text">至少每客一换</text></view>
 		</view>
-		<view class="bed_list">
-			<view class="bed_item" v-for="(item,index) in bedList" :key="index" @tap="editBed(item)">
-				<view class="del_btn_wrap">
-					<view class="del_btn" @tap="deleteBed(item.id)">
+		<view class="bed_list" v-if="bedList.length>0">
+			<view class="bed_item" v-for="(item,index) in bedList" :key="index" @tap="editBed(index)">
+				<view class="del_btn_wrap" @tap.stop="deleteBed(index)">
+					<view class="del_btn">
 						<text class="iconfont icon-jian"></text>
 					</view>
 				</view>
@@ -30,92 +30,97 @@
 				</view>
 			</view>
 		</view>
-		<button class="add_bed my-btn-block" @tap="addBed">添加床铺</button>
+		<view class="no_list" v-if="bedList.length===0">
+			赶紧去添加床铺吧~
+		</view>
+		<!-- <button class="add_bed my-btn-block" @tap="addBed">添加床铺</button> -->
 	</view>
 </template>
 
 <script>
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+	import {
+		request
+	} from '../../../common/request.js'
+	import helper from '../../../common/helper.js'
 	export default {
 		data() {
 			return {
-				bedList: [{
-						id: "23773886004",
-						length: "2.0",
-						num: "99",
-						type: "double",
-						weight: "1.8",
-					},
-					{
-						id: "23773886004",
-						length: "2.0",
-						num: "1",
-						type: "single",
-						weight: "1.8",
-					},
-					{
-						id: "23773886004",
-						length: "2.0",
-						num: "1",
-						type: "canopy",
-						weight: "1.8",
-					},
-					{
-						id: "23773886004",
-						length: "2.0",
-						num: "1",
-						type: "sofa",
-						weight: "1.8",
-					},
-					{
-						id: "23773886004",
-						length: "2.0",
-						num: "1",
-						type: "tatami",
-						weight: "1.8",
-					},
-					{
-						id: "23773886004",
-						length: "2.0",
-						num: "1",
-						type: "other",
-						weight: "1.8",
-					},
-				],
-				show: false,
-				dialogConfig: {
-
-					title: '',
-					content: '',
-				}
+				house_id: '', //房源ID
+				bedList: [],
+				isDeling: false, // 是否正在删除中
 			}
 		},
 		components: {},
 		onLoad() {
 
 		},
+		onNavigationBarButtonTap(e) {
+			if(e.index===0){
+				this.addBed()
+			}
+		},
 		onShow() {
-
+			this.getBedinfo()
 		},
 		computed: {
-
+			...mapState(['releaseObj']),
 		},
 		methods: {
+			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus','clearCustomBedOption','clearCurBedOption']),
 			// 编辑床铺
-			editBed(par){
-				const params = JSON.stringify(par);
+			editBed(index) {
 				uni.navigateTo({
-					url:'/pages/releaseManage/bed_info/edit_bed?param='+ params
+					url: '/pages/releaseManage/bed_info/edit_bed?index=' + index
 				})
 			},
 			// 删除床铺
-			deleteBed(id) {
-				console.log(id)
+			deleteBed(index) {
+				if(this.isDeling) return;
+				const _this = this;
+				const id = _this.house_id;
 				uni.showModal({
 					title: '删除',
 					content: '是否删除这个床铺',
+					confirmText: '删除',
+					confirmColor: '#F05B72',
 					success: function(res) {
 						if (res.confirm) {
-							console.log('用户点击确定');
+							let curList = _this.bedList.slice();
+							//这里分割一下数组
+							curList.splice(index,1);
+							let param = JSON.stringify(curList);
+							_this.isDeling = true;
+							uni.showLoading({
+								title:'删除床铺...',
+								mask:true,
+							})
+							request({
+								url:'/wap/api/fangdong.php?action=improveHouse',
+								method:'POST',
+								data:{
+									house_id:id,
+									bed:param,
+								},
+								success:(res)=>{
+									if(res.data.status === 'success'){
+										let _data = res.data.content;
+										_this.editReleaseInfo(_data);
+										_this.editReleaseInfoStatus(true);
+										uni.hideLoading();
+									}else{
+										helper.layer('删除失败')
+									}
+								},
+								complete:()=>{
+									_this.isDeling = false;
+									_this.getBedinfo();
+								}
+							})
+							console.log(param)
 						} else if (res.cancel) {
 							console.log('用户点击取消');
 						}
@@ -123,12 +128,22 @@
 				});
 			},
 			// 跳转到添加床铺页面
-			addBed(){
+			addBed() {
+				//清空自定义床铺组合
+				this.clearCustomBedOption();
+				// 清空当前选择的床铺组合
+				this.clearCurBedOption();
 				uni.navigateTo({
-					url:'/pages/releaseManage/bed_info/add_bed'
+					url: '/pages/releaseManage/bed_info/add_bed'
 				})
+			},
+			getBedinfo() {
+				const _releaseObj = this.releaseObj;
+				let _bedList = _releaseObj.bed?JSON.parse(_releaseObj.bed):[];
+				this.house_id = _releaseObj.id;
+				this.bedList = _bedList;
 			}
-			
+
 		}
 	}
 </script>
@@ -243,7 +258,16 @@
 				}
 			}
 		}
-
+		.no_list{
+			box-sizing: border-box;
+			width: 100%;
+			height: 300upx;
+			font-size: 32upx;
+			color: #aaaaaa;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 		.add_bed {
 			margin-top: 40upx;
 		}

@@ -29,19 +29,19 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.bed_info_page.data-v-c0095a68 {
+.bed_info_page.data-v-38f69c26 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 40rpx 30rpx 20rpx;
 }
-.bed_info_page .tips_wrap.data-v-c0095a68 {
+.bed_info_page .tips_wrap.data-v-38f69c26 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
     font-size: 40rpx;
     margin-bottom: 80rpx;
 }
-.bed_info_page .tips_wrap .one_line.data-v-c0095a68 {
+.bed_info_page .tips_wrap .one_line.data-v-38f69c26 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
@@ -50,15 +50,15 @@ page {
       margin-bottom: 6rpx;
       color: #888888;
 }
-.bed_info_page .tips_wrap .one_line .b_text.data-v-c0095a68 {
+.bed_info_page .tips_wrap .one_line .b_text.data-v-38f69c26 {
         color: #000000;
 }
-.bed_info_page .bed_list.data-v-c0095a68 {
+.bed_info_page .bed_list.data-v-38f69c26 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
 }
-.bed_info_page .bed_list .bed_item.data-v-c0095a68 {
+.bed_info_page .bed_list .bed_item.data-v-38f69c26 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
@@ -78,10 +78,10 @@ page {
       height: 90rpx;
       border-bottom: 1px solid #eaeaea;
 }
-.bed_info_page .bed_list .bed_item.data-v-c0095a68:first-child {
+.bed_info_page .bed_list .bed_item.data-v-38f69c26:first-child {
         border-top: 1px solid #eaeaea;
 }
-.bed_info_page .bed_list .bed_item .del_btn_wrap.data-v-c0095a68 {
+.bed_info_page .bed_list .bed_item .del_btn_wrap.data-v-38f69c26 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         width: 60rpx;
@@ -94,7 +94,7 @@ page {
             -ms-flex-align: center;
                 align-items: center;
 }
-.bed_info_page .bed_list .bed_item .del_btn_wrap .del_btn.data-v-c0095a68 {
+.bed_info_page .bed_list .bed_item .del_btn_wrap .del_btn.data-v-38f69c26 {
           width: 40rpx;
           height: 40rpx;
           background: #F66;
@@ -116,15 +116,15 @@ page {
           -o-transition: all 0.1s ease;
           transition: all 0.1s ease;
 }
-.bed_info_page .bed_list .bed_item .del_btn_wrap .del_btn .iconfont.data-v-c0095a68 {
+.bed_info_page .bed_list .bed_item .del_btn_wrap .del_btn .iconfont.data-v-38f69c26 {
             margin-top: 4rpx;
             font-size: 32rpx;
             font-weight: 800;
 }
-.bed_info_page .bed_list .bed_item .del_btn_wrap .del_btn.data-v-c0095a68:active {
+.bed_info_page .bed_list .bed_item .del_btn_wrap .del_btn.data-v-38f69c26:active {
             opacity: 0.8;
 }
-.bed_info_page .bed_list .bed_item .bed_info.data-v-c0095a68 {
+.bed_info_page .bed_list .bed_item .bed_info.data-v-38f69c26 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         display: -webkit-box;
@@ -138,14 +138,14 @@ page {
                 flex-direction: row;
         width: calc(100% - 180rpx);
 }
-.bed_info_page .bed_list .bed_item .bed_info .bed_type.data-v-c0095a68 {
+.bed_info_page .bed_list .bed_item .bed_info .bed_type.data-v-38f69c26 {
           width: 140rpx;
 }
-.bed_info_page .bed_list .bed_item .bed-number.data-v-c0095a68 {
+.bed_info_page .bed_list .bed_item .bed-number.data-v-38f69c26 {
         text-align: right;
         width: 80rpx;
 }
-.bed_info_page .bed_list .bed_item .after-icon.data-v-c0095a68 {
+.bed_info_page .bed_list .bed_item .after-icon.data-v-38f69c26 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         display: -webkit-box;
@@ -168,11 +168,31 @@ page {
         width: 40rpx;
         color: #aaaaaa;
 }
-.bed_info_page .bed_list .bed_item .after-icon .iconfont.data-v-c0095a68 {
+.bed_info_page .bed_list .bed_item .after-icon .iconfont.data-v-38f69c26 {
           margin-top: 4rpx;
           font-size: 32rpx;
 }
-.bed_info_page .add_bed.data-v-c0095a68 {
+.bed_info_page .no_list.data-v-38f69c26 {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    height: 300rpx;
+    font-size: 32rpx;
+    color: #aaaaaa;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.bed_info_page .add_bed.data-v-38f69c26 {
     margin-top: 40rpx;
 }
 

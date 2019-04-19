@@ -128,7 +128,11 @@ const store = new Vuex.Store({
 			status: -1, // 状态 -1待发布，0,待审核1上架2下架
 			daohang: '', //定位导航
 			is_complete: 0, //是否完成信息
-		}
+		},
+		// 自定义床铺组合
+		customBedOption:null,
+		// 当前选择的床铺
+		curBedOption:null,
 	},
 	mutations: {
 		// 收货地址是否编辑状态更新
@@ -178,7 +182,24 @@ const store = new Vuex.Store({
 		// 修改房源发布信息修改状态
 		editReleaseInfoStatus(state,is){
 			state.isEditReleaseInfo = is;
+		},
+		// 修改自定义床铺组合
+		eidtCustomBedOption(state,bed){
+			state.customBedOption = bed;
+		},
+		// 清空自定义床铺组合
+		clearCustomBedOption(state){
+			state.customBedOption = null;
+		},
+		// 修改自定义床铺组合
+		eidtCurBedOption(state,bed){
+			state.curBedOption = bed;
+		},
+		// 清空自定义床铺组合
+		clearCurBedOption(state){
+			state.curBedOption = null;
 		}
+		
 	}
 })
 export default store

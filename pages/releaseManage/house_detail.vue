@@ -114,7 +114,7 @@
 	import {
 		request
 	} from '../../common/request.js'
-	import helper from 'common/helper.js'
+	import helper from '../../common/helper.js'
 	import {
 		shortHttp
 	} from '../../common/requestUrl.json'

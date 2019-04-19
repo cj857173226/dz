@@ -1,7 +1,7 @@
 <template>
 	<view class="edit_bed_page">
 		<view class="edit_form">
-			<view class="form_item" @tap = "changeBedType">
+			<view class="form_item" @tap="changeBedType">
 				<view class="label">床铺类型</view>
 				<view class="content_wrap">
 					<text class="content" v-if="otherBedForm.type!==''">
@@ -42,10 +42,18 @@
 </template>
 
 <script>
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+	import {
+		request
+	} from '../../../common/request.js'
+	import helper from '../../../common/helper.js'
 	export default {
 		data() {
 			return {
-				handleType:'add',
+				handleType: 'add',
 				otherBedForm: {
 					type: '',
 					weight: '',
@@ -63,10 +71,12 @@
 
 		},
 		computed: {
+			...mapState(['releaseObj', 'customBedOption']),
 			isAllowEdit: {
 				get: function() {
 					// return this.firstName + ' ' + this.lastName
-					if (Number(this.otherBedForm.weight) < 0.1 || Number(this.otherBedForm.weight) > 10 || Number(this.otherBedForm.length) < 0.1 || Number(this.otherBedForm.length) > 10) {
+					if (Number(this.otherBedForm.weight) < 0.1 || Number(this.otherBedForm.weight) > 10 || Number(this.otherBedForm.length) <
+						0.1 || Number(this.otherBedForm.length) > 10) {
 						return true
 					} else {
 						return false
@@ -75,25 +85,36 @@
 			}
 		},
 		methods: {
+			...mapMutations(['eidtCustomBedOption', 'eidtCurBedOption']),
 			//确定修改床铺
 			submitEditBed() {
+				if (this.isAllowEdit) return;
 				let type = this.otherBedForm.type;
 				let length = (Number(this.otherBedForm.length)).toFixed(1);
 				let weight = (Number(this.otherBedForm.weight)).toFixed(1);
-				console.log( type, length, weight)
+				let customBed = {
+					option: 7,
+					length: length,
+					type: type,
+					weight: weight,
+				};
+				this.eidtCustomBedOption(customBed);
+				this.eidtCurBedOption(customBed);
+				uni.navigateBack({
+					delta: 1,
+				})
 			},
 			// 选择床铺类型
 			changeBedType() {
 				const _this = this;
-				const bedData = ['double','single', 'sofa','canopy','tatami','other']
+				const bedData = ['double', 'single', 'sofa', 'canopy', 'tatami', 'other']
 				uni.showActionSheet({
-					itemList: ['双人床', '单人床', '沙发','双层床','榻榻米','其他'],
+					itemList: ['双人床', '单人床', '沙发', '双层床', '榻榻米', '其他'],
 					success: function(res) {
 						const index = res.tapIndex;
 						_this.otherBedForm.type = bedData[index]
 					},
-					fail: function(res) {
-					}
+					fail: function(res) {}
 				});
 			}
 		}
