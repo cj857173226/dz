@@ -26,6 +26,7 @@ export default {
 <style lang="scss" scoped>
   .contanier{
     width: 100%;
+    height: 600upx;
     padding:  0 40upx 0 40upx;
     box-sizing: border-box;
     .title{
