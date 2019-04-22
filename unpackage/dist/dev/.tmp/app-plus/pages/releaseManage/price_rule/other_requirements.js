@@ -8,7 +8,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;var _default =\n\n\n\n\n\n\n\n\n\n\n{\n  methods: {\n    bindTextAreaBlur: function bindTextAreaBlur(e) {\n      console.log(e.detail.value);\n    } } };exports.default = _default;\n\n//# sourceURL=uni-app:///pages/releaseManage/price_rule/other_requirements.vue?vue&type=script&lang=js&?cf60");
+eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;var _default =\n\n\n\n\n\n\n\n\n{\n  data: function data() {\n    return {\n      desc: '' };\n\n\n  },\n  onLoad: function onLoad() {\n\n  },\n  onShow: function onShow() {\n\n  },\n  computed: {},\n\n\n  methods: {} };exports.default = _default;\n\n//# sourceURL=uni-app:///pages/releaseManage/price_rule/other_requirements.vue?vue&type=script&lang=js&?cf60");
 
 /***/ }),
 
@@ -31,7 +31,7 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=D:/xzapp/pages/re
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"view\", { staticClass: \"contanier\" }, [\n    _c(\"textarea\", {\n      staticClass: \"box\",\n      attrs: {\n        placeholder:\n          \"房客使用您的房间需要遵守的规则(如年龄段、性别、接待时间等),合理的要求可使您避免一些不可必要的麻烦(请不要发布联系方式)\",\n        \"placeholder-style\": \"font-size:12px;\",\n        eventid: \"6f0131d0-0\"\n      },\n      on: { blur: _vm.bindTextAreaBlur }\n    })\n  ])\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=D:/xzapp/pages/releaseManage/price_rule/other_requirements.vue?vue&type=template&id=5e11c2d3&scoped=true&");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"view\", { staticClass: \"contanier\" }, [\n    _c(\"view\", { staticClass: \"desc_wrap\" }, [\n      _c(\"textarea\", {\n        directives: [\n          {\n            name: \"mode\",\n            rawName: \"v-mode\",\n            value: _vm.desc,\n            expression: \"desc\"\n          }\n        ],\n        attrs: {\n          \"placeholder-class\": \"placeholder\",\n          placeholder:\n            \"房客使用您的房间需要遵守的规则 (如年龄段、性别、接待时间等) ,合理的要求可使您避免一些不可必要的麻烦 (请不要发布联系方式) \",\n          maxlength: \"2000\"\n        }\n      }),\n      _c(\"view\", { staticClass: \"number_control\" }, [\n        _c(\"text\", {\n          staticStyle: { color: \"#F05B72\" },\n          domProps: { textContent: _vm._s(_vm.desc.length) }\n        }),\n        _vm._v(\"/2000\")\n      ])\n    ])\n  ])\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=D:/xzapp/pages/releaseManage/price_rule/other_requirements.vue?vue&type=template&id=5e11c2d3&scoped=true&");
 
 /***/ }),
 

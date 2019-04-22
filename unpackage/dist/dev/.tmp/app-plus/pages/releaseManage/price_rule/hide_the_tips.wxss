@@ -26,18 +26,25 @@
 /* 文章场景相关 */
 .contanier.data-v-fe9e3c42 {
   width: 100%;
-  padding: 30rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  padding: 20rpx 30rpx;
 }
-.contanier .box.data-v-fe9e3c42 {
-    width: 100%;
-    height: 600rpx;
-    border-radius: 20rpx;
-    border: 1px solid #ccc;
-    padding: 20rpx;
+.contanier .desc_wrap.data-v-fe9e3c42 {
+    position: relative;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    font-size: 14px;
+    width: 100%;
+    height: 500rpx;
+    border: 1px solid #ccc;
+    padding: 20rpx;
+    font-size: 28rpx;
+}
+.contanier .desc_wrap .number_control.data-v-fe9e3c42 {
+      position: absolute;
+      right: 20rpx;
+      bottom: 20rpx;
+      font-size: 28rpx;
+      color: #aaaaaa;
 }
 

@@ -29,7 +29,11 @@
   padding: 0 30rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: 12px;
+}
+.center .label.data-v-1397bba3 {
+    height: 56rpx;
+    line-height: 56rpx;
+    font-size: 32rpx;
 }
 .center .price-amount.data-v-1397bba3 {
     width: 100%;
@@ -50,20 +54,25 @@
     margin-bottom: 20rpx;
 }
 .center .price-amount .amout-box.data-v-1397bba3 {
+      height: 56rpx;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-          -ms-flex-align: center;
-              align-items: center;
 }
 .center .price-amount .amout-box .amount.data-v-1397bba3 {
+        height: 100%;
         text-align: right;
         width: 300rpx;
 }
+.center .price-amount .amout-box .unit.data-v-1397bba3 {
+        height: 100%;
+        margin-left: 8rpx;
+        line-height: 56rpx;
+        font-size: 28rpx;
+}
 .center .hint.data-v-1397bba3 {
-    color: #CACACA;
+    color: #cccccc;
+    font-size: 28rpx;
 }
 

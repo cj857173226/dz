@@ -9,17 +9,17 @@
 				</view>
 				<text class="open">未设置</text>
 			</view>
-			<text class="iconfont">&#xe65e;</text>
+			<text class="after_icon iconfont">&#xe65e;</text>
 		</view>
 		<view class="list-box" @click="tapPromotion">
 			<view class="left-box">
 				<view class="promotion-recommend-box">
 					<text class="promotion">开启新房促销</text>
-					<view class="recommend">推荐</view>					
+					<view class="recommend">推荐</view>
 				</view>
 				<text class="open">未开启</text>
 			</view>
-			<text class="iconfont">&#xe65e;</text>
+			<text class="after_icon iconfont">&#xe65e;</text>
 		</view>
 		<view class="list-box" @click="cashPledge">
 			<view class="left-box">
@@ -29,7 +29,7 @@
 				</view>
 				<text class="open">不收取押金</text>
 			</view>
-			<text class="iconfont">&#xe65e;</text>
+			<text class="after_icon iconfont">&#xe65e;</text>
 		</view>
 		<view class="list-box" @click="clean">
 			<view class="left-box">
@@ -39,7 +39,7 @@
 				</view>
 				<text class="open">不收取清洁费</text>
 			</view>
-			<text class="iconfont">&#xe65e;</text>
+			<text class="after_icon iconfont">&#xe65e;</text>
 		</view>
 		<view class="list-box" @click="withGuest">
 			<view class="left-box">
@@ -49,7 +49,7 @@
 				</view>
 				<text class="open">不允许加客</text>
 			</view>
-			<text class="iconfont">&#xe65e;</text>
+			<text class="after_icon iconfont">&#xe65e;</text>
 		</view>
 		<view class="list-box" @click="rests">
 			<view class="left-box">
@@ -59,7 +59,7 @@
 				</view>
 				<text class="open">对其费用进行描述</text>
 			</view>
-			<text class="iconfont">&#xe65e;</text>
+			<text class="after_icon iconfont">&#xe65e;</text>
 		</view>
 		<view class="price-discipline">入住要求</view>
 		<view class="list-box" @click="numbeDays">
@@ -70,7 +70,7 @@
 				</view>
 				<text class="open">最短一晚</text>
 			</view>
-			<text class="iconfont">&#xe65e;</text>
+			<text class="after_icon iconfont">&#xe65e;</text>
 		</view>
 		<view class="list-box" @tap="whether">
 			<view class="left-box">
@@ -79,7 +79,7 @@
 				</view>
 				<text class="open">{{whethers}}</text>
 			</view>
-			<text class="iconfont">&#xe65e;</text>
+			<text class="after_icon iconfont">&#xe65e;</text>
 		</view>
 		<view class="list-box" @tap="otherRequirements">
 			<view class="left-box">
@@ -89,7 +89,7 @@
 				</view>
 				<text class="open">性别、年龄可接待时间等其他要求</text>
 			</view>
-			<text class="iconfont">&#xe65e;</text>
+			<text class="after_icon iconfont">&#xe65e;</text>
 		</view>
 		<view class="list-box" @tap="hideTheTips">
 			<view class="left-box">
@@ -99,7 +99,7 @@
 				</view>
 				<text class="open">你可填写WIFI密码等内容</text>
 			</view>
-			<text class="iconfont">&#xe65e;</text>
+			<text class="after_icon iconfont">&#xe65e;</text>
 		</view>
 		<view class="price-discipline">交易规则</view>
 		<view class="list-box" @tap='earnest'>
@@ -109,7 +109,7 @@
 				</view>
 				<text class="open">{{earnests}}</text>
 			</view>
-			<text class="iconfont">&#xe65e;</text>
+			<text class="after_icon iconfont">&#xe65e;</text>
 		</view>
 		<view class="list-box" @tap="breakContract">
 			<view class="left-box">
@@ -119,7 +119,7 @@
 				</view>
 				<text class="open">全额退款天数为一天，违约取消扣款天数为一天</text>
 			</view>
-			<text class="iconfont">&#xe65e;</text>
+			<text class="after_icon iconfont">&#xe65e;</text>
 		</view>
 	</view>
 </template>
@@ -128,53 +128,53 @@
 	export default {
 		data() {
 			return {
-				whethers:'未选择' ,// 是否接待境外人士
-				earnests:'未选择' // 定金
+				whethers: '未选择', // 是否接待境外人士
+				earnests: '未选择' // 定金
 			};
 		},
 		methods: {
 			// 跳转页面
-			tapPriceManagement:function(){
+			tapPriceManagement: function() {
 				uni.navigateTo({
-					url:'/pages/releaseManage/price_rule/price_control' //日价管理页面
+					url: '/pages/releaseManage/price_rule/price_control' //日价管理页面
 				})
 			},
-			tapPromotion:function(){
+			tapPromotion: function() {
 				uni.navigateTo({
-					url:'/pages/releaseManage/price_rule/price_promotion' //促销说明
+					url: '/pages/releaseManage/price_rule/price_promotion' //促销说明
 				})
 			},
-			cashPledge:function(){
+			cashPledge: function() {
 				uni.navigateTo({
-					url:'/pages/releaseManage/price_rule/cash_pledge' //押金
+					url: '/pages/releaseManage/price_rule/cash_pledge' //押金
 				})
 			},
-			clean:function(){
+			clean: function() {
 				uni.navigateTo({
-					url:'/pages/releaseManage/price_rule/clean' //清洁费
+					url: '/pages/releaseManage/price_rule/clean' //清洁费
 				})
 			},
-			withGuest:function () {
+			withGuest: function() {
 				uni.navigateTo({
-					url:'/pages/releaseManage/price_rule/with_guest' //加客管理
+					url: '/pages/releaseManage/price_rule/with_guest' //加客管理
 				})
 			},
-			rests:function(){
+			rests: function() {
 				uni.navigateTo({
-					url:'/pages/releaseManage/price_rule/rests' //其他费用
+					url: '/pages/releaseManage/price_rule/rests' //其他费用
 				})
 			},
-			numbeDays:function(){
+			numbeDays: function() {
 				uni.navigateTo({
-					url:'/pages/releaseManage/price_rule/numbe_days' //入住天数限制
+					url: '/pages/releaseManage/price_rule/numbe_days' //入住天数限制
 				})
 			},
-			otherRequirements:function(){
+			otherRequirements: function() {
 				uni.navigateTo({
-					url:'/pages/releaseManage/price_rule/other_requirements' //其他要求
+					url: '/pages/releaseManage/price_rule/other_requirements' //其他要求
 				})
 			},
-			whether:function(){ //是否接待境外人士
+			whether: function() { //是否接待境外人士
 				const _that = this;
 				uni.showActionSheet({
 					itemList: ['是', '否'],
@@ -192,12 +192,12 @@
 					}
 				});
 			},
-			hideTheTips:function(){
+			hideTheTips: function() {
 				uni.navigateTo({
-					url:'/pages/releaseManage/price_rule/hide_the_tips' //隐藏贴士
+					url: '/pages/releaseManage/price_rule/hide_the_tips' //隐藏贴士
 				})
 			},
-			earnest:function(){ //定金比
+			earnest: function() { //定金比
 				const _that = this;
 				uni.showActionSheet({
 					itemList: ['每日价格的100%', '每日价格的50%', '每日价格的20%'],
@@ -216,60 +216,72 @@
 					}
 				});
 			},
-			breakContract:function(){
+			breakContract: function() {
 				uni.navigateTo({
-					url:'/pages/releaseManage/price_rule/break_contract' //隐藏贴士
+					url: '/pages/releaseManage/price_rule/break_contract' //隐藏贴士
 				})
 			}
 		}
-		
+
 	}
 </script>
 
 <style lang="scss" scoped>
-.centenr{
-	width: 100%;
-	box-sizing: border-box;
-	font-size: 12px;
-	background-color: #F4F4F4;
-	.price-discipline{
+	.centenr {
 		width: 100%;
-		height: 80upx;
-		background-color: #F4F4F4;
+		box-sizing: border-box;
 		font-size: 12px;
-		line-height: 80upx;
-		padding: 0 30upx;
-		box-sizing: border-box;
-	}
-	.list-box{
-		padding: 20upx 30upx;
-		box-sizing: border-box;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		border-bottom: 1px solid #CACACA;
-		background-color: #fff;
-		.left-box{
-			font-size: 12px;
-			.promotion-recommend-box{
-				display: flex;
-				align-items: center;
-				.recommend{
-				width: 50upx;
-				height: 30upx;
-				background-color: #F93578;
-				color: #fff;
-				border-radius:5upx;
-				text-align: center;
-				line-height: 30upx; 
-				font-size: 12px;
-				margin-left: 10upx;
+		background-color: #F4F4F4;
+
+		.price-discipline {
+			width: 100%;
+			height: 80upx;
+			background-color: #F4F4F4;
+			font-size: 32upx;
+			line-height: 80upx;
+			padding: 0 30upx;
+			box-sizing: border-box;
+		}
+
+		.list-box {
+			padding: 16upx 30upx;
+			box-sizing: border-box;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border-bottom: 1px solid #eaeaea;
+			background-color: #fff;
+
+			.left-box {
+				.promotion-recommend-box {
+					display: flex;
+					align-items: center;
+					font-size: 32upx;
+					margin-bottom: 8upx;
+
+					.recommend {
+						padding: 0 8upx;
+						height: 30upx;
+						background-color: #F05B72;
+						color: #fff;
+						border-radius: 5upx;
+						text-align: center;
+						line-height: 30upx;
+						font-size: 12px;
+						margin-left: 10upx;
+					}
+				}
+
+				.open {
+					color: #cccccc;
+					font-size: 28upx;
 				}
 			}
-			.open{
-				color: #CACACA;
+
+			.after_icon {
+				font-size: 36upx;
+				color: #cccccc;
 			}
 		}
 	}
-}
 </style>

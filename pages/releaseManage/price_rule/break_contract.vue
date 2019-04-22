@@ -114,7 +114,9 @@ export default {
   width: 100%;
   padding: 0 30upx;
   box-sizing: border-box;
-  font-size: 14px;
+	label{
+		font-size: 32upx;
+	}
   .price-amount {
     width: 100%;
     padding: 20upx 0;
@@ -124,11 +126,17 @@ export default {
     border-bottom: 1px solid #f4f4f4;
     .amout-box {
       display: flex;
-      align-items: center;
+			align-items: center;
       .amount {
         text-align: right;
         width: 300upx;
       }
+			.iconfont{
+				padding-top: 4upx;
+				display: block;
+				font-size: 32upx;
+				color: #cccccc;
+			}
     }
   }
 }

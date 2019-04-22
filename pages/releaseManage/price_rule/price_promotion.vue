@@ -1,79 +1,131 @@
 <template>
-  <view class="contenr">
-    <radio-group class="top">
-      <view class="radio-box">
-        <view class="promotion">
-          <radio class="ado" value="r1" color="#F93578"/>参与新房促销
-        </view>
-        <view class="explain">前3单入住的房客将享受8折促销。新房促销有助于提升您在众多房源中的竞争力,并增加房源的曝光度。</view>
-      </view>
-      <view class="radio-box">
-        <view class="promotion">
-          <radio class="ado" value="r2" color="#F93578"/>不参与新房促销
-        </view>
-        <view class="explain">较其他的新房源可能不具备有利的价格优势及足够的吸引力</view>
-      </view>
-    </radio-group>
-    <view class="btn">确认</view>
-  </view>
+	<view class="contenr">
+		<view class="check_box">
+			<view class="check_item" :class="{'checked':isJoin === true}" @tap="joinCheck(true)">
+				<view class="check_btn">
+				</view>
+				<view class="content_box">
+					<view class="content">参与新房促销</view>
+					<view class="desc">新房上线后90天内8折促销,提升您再众多房源中的竞争力,并增加房源的曝光度。3笔订单享受此优惠后失效。</view>
+				</view>
+			</view>
+			<view class="check_item" :class="{'checked':isJoin === false}" @tap="joinCheck(false)">
+				<view class="check_btn">
+				</view>
+				<view class="content_box">
+					<view class="content">不参与新房促销</view>
+					<view class="desc">较其他的新房源可能不具备有利的价格优势及足够的吸引你</view>
+				</view>
+			</view>
+		</view>
+		<view class="bottom-box">
+			<view class="my-btn-block">确认</view>
+		</view>
+	</view>
 </template>
 <script>
-export default {
-  data() {
-    return {};
-  }
-};
+	export default {
+		data() {
+			return {
+				isJoin: false,
+			}
+		},
+		onLoad(){
+			
+		},
+		onShow(){
+			
+		},
+		computed:{
+			
+		},
+		methods:{
+			joinCheck(is){
+				this.isJoin = is;
+			}
+		}
+	};
 </script>
 <style>
-page {
-  height: 100%;
-}
+	page {
+		height: 100%;
+	}
 </style>
 
 <style lang="scss" scoped>
+	$theme-color: #F05B72;
 
-.contenr {
-  width: 100%;
-  height: 100%;
-  padding: 30upx;
-  box-sizing: border-box;
-  font-size: 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  .top {
-    width: 100%;
-    height: 240upx;
-    .radio-box {
-      margin-bottom: 30upx;
-      .promotion {
-        font-size: 14px;
-        font-weight: 500;
-        .ado {
-          width: 28upx!important;
-          height: 28upx!important;
-          margin-right: 40upx;
-        }
-      }
-      .explain {
-        padding-left: 36px;
-        color: #cacaca;
-      }
-    }
-  }
+	.contenr {
+		box-sizing: border-box;
+		min-height: 100%;
+		width: 100%;
 
-  .btn {
-    width: 100%;
-    height: 80upx;
-    background-color: #ea516b;
-    color: #fff;
-    text-align: center;
-    font-size: 14px;
-    border-radius: 10upx;
-    line-height: 80upx;
-    &:active {
-      opacity: 0.5;
-    }
-  }
-}
+		.check_box {
+			box-sizing: border-box;
+			width: 100%;
+			padding: 20upx 30upx;
+
+			.check_item {
+				box-sizing: border-box;
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+
+				.check_btn {
+					box-sizing: border-box;
+					width: 36upx;
+					height: 36upx;
+					border: 1px solid #333333;
+					border-radius: 50%;
+					margin-top: 4upx;
+				}
+
+				.content_box {
+					box-sizing: border-box;
+					width: calc(100% - 60upx);
+					margin-bottom: 60upx;
+
+					.content {
+						font-size: 32upx;
+						color: #000000;
+						margin-bottom: 20upx;
+					}
+
+					.desc {
+						font-size: 28upx;
+						color: #aaaaaa;
+					}
+				}
+
+			}
+
+			.checked {
+				.check_btn {
+					border: 1px solid $theme-color;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					&::after{
+						content: '';
+						display: block;
+						width: 20upx;
+						height: 20upx;
+						border-radius: 50%;
+						background: $theme-color;
+					}
+				}
+			}
+
+
+		}
+
+		.bottom-box {
+			position: fixed;
+			box-sizing: border-box;
+			width: 100%;
+			padding: 20upx 30upx;
+			bottom: 0;
+			left: 0;
+		}
+	}
 </style>

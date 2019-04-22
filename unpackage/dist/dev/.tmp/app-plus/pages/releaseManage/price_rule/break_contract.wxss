@@ -29,7 +29,9 @@
   padding: 0 30rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: 14px;
+}
+.contanier ._label.data-v-7f3eb374 {
+    font-size: 32rpx;
 }
 .contanier .price-amount.data-v-7f3eb374 {
     width: 100%;
@@ -61,5 +63,11 @@
 .contanier .price-amount .amout-box .amount.data-v-7f3eb374 {
         text-align: right;
         width: 300rpx;
+}
+.contanier .price-amount .amout-box .iconfont.data-v-7f3eb374 {
+        padding-top: 4rpx;
+        display: block;
+        font-size: 32rpx;
+        color: #cccccc;
 }
 

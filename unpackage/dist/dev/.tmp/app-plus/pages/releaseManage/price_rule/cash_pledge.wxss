@@ -29,7 +29,6 @@
   padding: 30rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: 12px;
 }
 .contanier .title.data-v-4c8c2181 {
     font-size: 20px;
@@ -40,13 +39,14 @@
       margin-bottom: 40rpx;
 }
 .contanier .the-same-security.data-v-4c8c2181 {
-    font-size: 14px;
+    font-size: 32rpx;
     font-weight: 700;
     margin-bottom: 16rpx;
 }
 .contanier .verbal-content.data-v-4c8c2181 {
     color: #C6C6C6;
     margin-bottom: 10rpx;
+    font-size: 28rpx;
 }
 .contanier .border.data-v-4c8c2181 {
     border-bottom: 1px solid #e4e3e3;

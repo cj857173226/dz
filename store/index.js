@@ -112,7 +112,7 @@ const store = new Vuex.Store({
 			sb_list: [], //配套家具列表
 			dayrentprice: '', //每日租金
 			cashpledge: '', //押金
-			addtenant: '', // 是否允许附加租户
+			addtenant: '', // 是否允许加客
 			addtionalprice: '', // 加客附加收费说明
 			crvp: '', // 订金比
 			crvn: '', //下单后退款安全时间,
