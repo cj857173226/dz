@@ -205,9 +205,9 @@
 			<!-- <button class="mini-btn" type="primary">
 					立即预定
 			</button> -->
-			<view class="reserve-box">
-				<text style="font-weight:800;">￥1230</text>
-				<text style="font-size:14px;margin: 0 50upx;">1晚</text>
+			<view class="reserve-box" @tap="reservations">
+				<text style="font-weight:800;">{{orderPrice}}</text>
+				<text style="font-size:14px;margin: 0 50upx;">{{day}}</text>
 				<text>立即预定</text>
 			</view>
 		</view>
@@ -272,7 +272,11 @@
 				luId:'',
 				showPicker: false,
         type: 'range',  //时间插件类型  可选值：date（日期）、time（时间）、datetime（日期时间）、range（日期范围）、rangetime（日期时间范围）
-        value: ''
+				value: '',
+				day:null, //日历选择的天数,
+				startTime:null,
+				endTime:null,
+				orderPrice:'', // 订单结算的价格
 			}
 		},
 		methods: {
@@ -381,15 +385,49 @@
         this.value = this[type];
       },
       onSelected(e) {//选择
-        this.showPicker = false;
+				this.showPicker = false;
         if(e) {
             this[this.type] = e.value; 
             //选择的值
-            console.log('value => '+ e.value);
+						console.log('value => '+ e.value+"");
+						let tiem = e.value
+						let arrayTime = tiem.slice(0,12);
+						// console.log("开始时间",startTime);
+						let startTime,endTime;
+						for (let index = 0; index < arrayTime.length; index++) {
+							startTime = arrayTime[0];
+							endTime = arrayTime[1];
+						}
+						console.log("shenme"+startTime);
+						this.startTime = startTime;
+						this.endTime = endTime;
+						let d1 = new Date(startTime);
+						let d2 = new Date(endTime);
+						let t = Math.abs((d1-d2) / 3600000 / 24);
+						console.log(t);
+						
+						this.day = t + "晚";
             //原始的Date对象
-            console.log('date => ' + e.date);
+            // console.log('date => ' + e.date);
         }
-      }
+			},
+			reservations(){
+				const _that = this;
+				if (_that.day === null && _that.startTime === null && _that.endTime === null) {
+					_that.showPicker = true;
+				} else {
+					request({
+						url:"/wap/api/book.php?action=submit",
+						data:{luId:_that.luId,startDate:_that.startTime,endDate:_that.endTime,},
+						success:function(res){
+							console.log("回",res);
+						}
+					})
+					// console.log("有值触发");
+					
+				}
+				
+			}
 		},
 		onLoad(option) {
 			// console.log(option.id);
@@ -814,7 +852,7 @@
 		color: #fff;
 		line-height: 90upx;
 		text-align: center;
-		position: fixed;
+		margin-top: 30upx;
 		bottom: 0;
 		left: 0;
 		z-index: 999;

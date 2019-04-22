@@ -20,6 +20,12 @@
 			}
 		},
 		{
+			"path": "pages/index/searchCity",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
 			"path": "pages/particulars/particulars",
 			"style": {
 				"navigationBarTitleText": "房间详情"
@@ -34,7 +40,7 @@
 		{
 			"path": "pages/selecteds/selecteds",
 			"style": {
-				"navigationBarTitleText": "筛选"
+				"navigationBarTitleText": ""
 			}
 		},
 		{

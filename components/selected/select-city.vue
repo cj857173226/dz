@@ -1,7 +1,7 @@
 <template>
   <view class="contanier">
     <view class="top">
-      <view class="city">
+      <view class="city" @click="clickCity">
         成都
         <text class="iconfont icon-xiala- xiala"></text>
       </view>
@@ -62,6 +62,7 @@
 </template>
 <script>
 import mSearch from "./components/mehaotian-search-revision/mehaotian-search-revision"; //引入第三方搜索组件
+import calendar from '../mx-datepicker/mx-datepicker' //引入日期插件件
 import checkboxGroup from "./checjbox/group/pages/checkbox-group/checkbox-group"; //引入第三方更多选框
 export default {
   components: {
@@ -80,6 +81,12 @@ export default {
     search(e, val) {
       console.log(e, val);
       this["val" + val] = e;
+    },
+    // 点击跳转页面
+    clickCity(){
+      uni.navigateTo({
+        url:'/pages/index/searchCity'
+      })
     }
   }
 };

@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/index/searchCity",
     "pages/particulars/particulars",
     "pages/landlord_introduced/landlord_introduced",
     "pages/selecteds/selecteds",
