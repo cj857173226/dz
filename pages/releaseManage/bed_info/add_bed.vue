@@ -10,21 +10,21 @@
 				<view class="bed-size">宽{{item.weight}}m长{{item.length}}m</view>
 			</view>
 		</view>
-		<view class="add-other-bed" v-if="!customBedOption" @tap.stop="otherBed('add')">
+		<view class="add-other-bed" v-if="!CustomBedOption" @tap.stop="otherBed('add')">
 			<text class="iconfont icon-jia">其他类型和尺寸</text>
 		</view>
-		<view class="bed-other-option" v-if="customBedOption" :class="{'option-item-active':curActiveBedOption && curActiveBedOption.option == customBedOption.option}"
-		 @tap.stop="checkBedOption(customBedOption)">
+		<view class="bed-other-option" v-if="CustomBedOption" :class="{'option-item-active':curActiveBedOption && curActiveBedOption.option == CustomBedOption.option}"
+		 @tap.stop="checkBedOption(CustomBedOption)">
 			<view class="left">
-				<view class="bed-type" v-if="customBedOption.type=='double'">双人床</view>
-				<view class="bed-type" v-else-if="customBedOption.type=='single'">单人床</view>
-				<view class="bed-type" v-else-if="customBedOption.type=='sofa'">沙发</view>
-				<view class="bed-type" v-else-if="customBedOption.type=='canopy'">双层床</view>
-				<view class="bed-type" v-else-if="customBedOption.type=='tatami'">榻榻米</view>
-				<view class="bed-type" v-else-if="customBedOption.type=='other'">其他</view>
-				<view class="bed-size">宽{{customBedOption.weight}}m长{{customBedOption.length}}m</view>
+				<view class="bed-type" v-if="CustomBedOption.type=='double'">双人床</view>
+				<view class="bed-type" v-else-if="CustomBedOption.type=='single'">单人床</view>
+				<view class="bed-type" v-else-if="CustomBedOption.type=='sofa'">沙发</view>
+				<view class="bed-type" v-else-if="CustomBedOption.type=='canopy'">双层床</view>
+				<view class="bed-type" v-else-if="CustomBedOption.type=='tatami'">榻榻米</view>
+				<view class="bed-type" v-else-if="CustomBedOption.type=='other'">其他</view>
+				<view class="bed-size">宽{{CustomBedOption.weight}}m长{{CustomBedOption.length}}m</view>
 			</view>
-			<view class="edit-other-type" @tap.stop="otherBed('edit', customBedOption)">编辑</view>
+			<view class="edit-other-type" @tap.stop="otherBed('edit', CustomBedOption)">编辑</view>
 
 		</view>
 		<view class="bed-number-wrap">
@@ -47,9 +47,18 @@
 </template>
 
 <script>
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+	import {
+		request
+	} from '../../../common/request.js'
+	import helper from '../../../common/helper.js'
 	export default {
 		data() {
 			return {
+				house_id:'',// 房源id
 				defaultBedOptions: [{
 						option: 1,
 						length: "2.0",
@@ -90,33 +99,30 @@
 				// 当前选择的床铺组合
 				curActiveBedOption: null,
 				// 自定义床铺组合
-				customBedOption: null,
-				// customBedOption: null,
+				CustomBedOption:null,
 				// 选择床铺数量
 				bedNumber: 1,
-
+				isSubmiting:false,
 			}
 		},
 		onLoad() {
 
 		},
 		onShow() {
-
+			this.getCustomBed();
 		},
 		computed: {
-
+			...mapState(['releaseObj', 'customBedOption','curBedOption']),
 		},
 		methods: {
-			editOtherTypeBed() {
-
-			},
+			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus','eidtCurBedOption']),
 			// 选择床铺
 			checkBedOption(bed) {
-				this.curActiveBedOption = bed;
+				this.eidtCurBedOption(bed);
+				this.curActiveBedOption = this.curBedOption;
 			},
 			// 改变床铺数量
 			checkBedNumber(type) {
-
 				if (type == 0) {
 					if (this.bedNumber <= 1) {
 						return
@@ -130,26 +136,74 @@
 				}
 			},
 			// 提交添加床铺
-			submitAddBed(){
-				
+			submitAddBed() {
+				if(!this.curActiveBedOption || this.isSubmiting) return;
+				const _this = this;
+				const id = this.house_id;
+				const _curbed = this.curActiveBedOption;
+				let curBedList = this.releaseObj.bed?JSON.parse(this.releaseObj.bed):[];
+				let _bedInfo = {
+					type:_curbed.type,
+					length:_curbed.length,
+					weight:_curbed.weight,
+					num:_this.bedNumber
+				}
+				curBedList.unshift(_bedInfo);
+				let bedParam = JSON.stringify(curBedList)
+				_this.isSubmiting = true;
+				uni.showLoading({
+					title:'添加床铺..',
+					mask:true,
+				})
+				request({
+					url:'/wap/api/fangdong.php?action=improveHouse',
+					method:'POST',
+					data:{
+						house_id:id,
+						bed:bedParam,
+					},
+					success:(res)=>{
+						if(res.data.status === 'success'){
+							let _data = res.data.content;
+							_this.editReleaseInfo(_data);
+							_this.editReleaseInfoStatus(true);
+							uni.hideLoading();
+							uni.navigateBack({
+								delta:1,
+							})
+							
+						}else{
+							helper.layer('添加失败')
+						}
+					},
+					complete:()=>{
+						_this.isSubmiting = false;
+					}
+				})
 			},
 			// 到添加或编辑其他尺寸床铺页面
 			// handle 操作方式   add:添加  edit:编辑
-			otherBed(handle, par){
+			otherBed(handle, par) {
 				let url = '';
 				let params = '';
-				if(par){
-				 params = JSON.stringify(par);
+				if (par) {
+					params = JSON.stringify(par);
 				}
-				if(handle === 'add'){
+				if (handle === 'add') {
 					url = '/pages/releaseManage/bed_info/other_bed?type=add'
-				}else if(handle === 'edit'){
-					url = '/pages/releaseManage/bed_info/other_bed?type=edit&param='+ params
+				} else if (handle === 'edit') {
+					url = '/pages/releaseManage/bed_info/other_bed?type=edit&param=' + params
 				}
 				uni.navigateTo({
-					url:url
+					url: url
 				})
 			},
+			// 获取当前床铺组合
+			getCustomBed(){
+				this.house_id = this.releaseObj.id;
+				this.CustomBedOption = this.customBedOption;
+				this.curActiveBedOption = this.curBedOption;
+			}
 		}
 	}
 </script>
@@ -229,6 +283,7 @@
 
 		.bed-other-option {
 			box-sizing: border-box;
+			border-radius: 8upx;
 			height: 100upx;
 			line-height: 100upx;
 			width: 100%;

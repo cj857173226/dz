@@ -1,3 +1,6 @@
+<<<<<<< HEAD
 <import src="/components/mpvue-echarts/src/echarts.vue.wxml" />
 <import src="/components/w-picker/w-picker.vue.wxml" />
+=======
+>>>>>>> f3e98196af425dc4d8f4f2465a47da7df3af381a
 

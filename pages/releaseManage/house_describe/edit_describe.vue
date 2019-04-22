@@ -142,48 +142,54 @@
 				const _this = this;
 				const id = this.house_id;
 				const describeType = _this.describeType;
-				let param = {
-					house_id:id,
+				if(describeType === 'title' && _this.describeContent.trim() === ''){
+					helper.layer('标题不能为空');
+				} else if(describeType === 'inside' && _this.describeContent.trim() === ''){
+					helper.layer('内部情况描述不能为空');
+				} else {
+					let param = {
+						house_id:id,
+					}
+					switch (describeType) {
+						case 'title':
+							param['title'] = _this.describeContent;
+							break;
+						case 'personality':
+							param['roomServiceIntro'] = _this.describeContent;
+							break;
+						case 'inside':
+							param['roomRoominnerIntro'] = _this.describeContent;
+							break;
+						case 'traffic':
+							param['roomLocationIntro'] = _this.describeContent;
+							break;
+						case 'periphery':
+							param['roomAroundIntro'] = _this.describeContent;
+							break;
+					}
+					request({
+						url:'/wap/api/fangdong.php?action=improveHouse',
+						method:'POST',
+						data:param,
+						success:(res)=>{
+							if(res.data.status === 'success'){
+								let _data = res.data.content;
+								_this.editReleaseInfo(_data);
+								_this.editReleaseInfoStatus(true);
+								uni.navigateBack({
+									delta:1,
+								})
+							}else{
+								helper.layer('保存失败')
+							}
+						},
+						complete:()=>{
+							_this.isSubmiting = false;
+							_this.getHouseDecs()
+						}
+					})
 				}
-				switch (describeType) {
-					case 'title':
-						param['title'] = _this.describeContent;
-						break;
-					case 'personality':
-						param['roomServiceIntro'] = _this.describeContent;
-						break;
-					case 'inside':
-						param['roomRoominnerIntro'] = _this.describeContent;
-						break;
-					case 'traffic':
-						param['roomLocationIntro'] = _this.describeContent;
-						break;
-					case 'periphery':
-						param['roomAroundIntro'] = _this.describeContent;
-						break;
-				}
-				console.log(param)
-// 				request({
-// 					url:'/wap/api/fangdong.php?action=improveHouse',
-// 					method:'POST',
-// 					data:param,
-// 					success:(res)=>{
-// 						if(res.data.status === 'success'){
-// 							let _data = res.data.content;
-// 							_this.editReleaseInfo(_data);
-// 							_this.editReleaseInfoStatus(true);
-// 							uni.navigateBack({
-// 								delta:1,
-// 							})
-// 						}else{
-// 							helper.layer('保存失败')
-// 						}
-// 					},
-// 					complete:()=>{
-// 						_this.isSubmiting = false;
-// 						_this.getHouseDecs()
-// 					}
-// 				})
+
 			},
 			// 获取房源描述
 			getHouseDecs() {
@@ -208,7 +214,6 @@
 						_this.describeContent = _this.releaseObj.roomAroundIntro?_this.releaseObj.roomAroundIntro:'';
 						break;
 				}
-				console.log(_this.describeContent)
 			},
 		}
 	}

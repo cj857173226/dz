@@ -352,7 +352,7 @@
 					}
 				}
 			}
-		},{
+		}, {
 			"path": "pages/releaseManage/local_set",
 			"style": {
 				"navigationBarTitleText": "地址详情",
@@ -360,7 +360,7 @@
 					"bounce": "none"
 				}
 			}
-		},{
+		}, {
 			"path": "pages/releaseManage/rent_type",
 			"style": {
 				"navigationBarTitleText": "出租类型",
@@ -483,7 +483,15 @@
 			"style": {
 				"navigationBarTitleText": "床铺信息",
 				"app-plus": {
-					// "bounce": "none",
+					"bounce": "none",
+					"titleNView": {
+						"buttons": [{
+							"text": "添加床铺",
+							"fontSize": "14px",
+							"float": "right",
+							"width":"60px"
+						}]
+					}
 				}
 			}
 		}, {
@@ -492,6 +500,7 @@
 				"navigationBarTitleText": "编辑床铺",
 				"app-plus": {
 					// "bounce": "none",
+
 				}
 			}
 		}, {
@@ -713,10 +722,9 @@
 			"style": {
 				"navigationBarTitleText": ""
 			}
-		}
-	    ,{
-            "path" : "pages/setting/setting",
-            "style" : {
+		}, {
+			"path": "pages/setting/setting",
+			"style": {
 				"navigationBarTitleText": "设置",
 				"app-plus": {
 					"bounce": "none"

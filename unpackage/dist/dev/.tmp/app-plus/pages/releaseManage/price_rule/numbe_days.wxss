@@ -24,14 +24,13 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-efab8ab2 {
+.contanier.data-v-354d4701 {
   width: 100%;
   padding: 0 30rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: 14px;
 }
-.contanier .box.data-v-efab8ab2 {
+.contanier .box.data-v-354d4701 {
     width: 100%;
     display: -webkit-box;
     display: -webkit-flex;
@@ -48,7 +47,10 @@
     border-bottom: 1px solid #eaeaea;
     padding: 20rpx 0;
 }
-.contanier .box .right-box.data-v-efab8ab2 {
+.contanier .box .label.data-v-354d4701 {
+      font-size: 32rpx;
+}
+.contanier .box .right-box.data-v-354d4701 {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -57,10 +59,24 @@
       -webkit-align-items: center;
           -ms-flex-align: center;
               align-items: center;
+      font-size: 28rpx;
 }
-.contanier .box .right-box .day.data-v-efab8ab2 {
+.contanier .box .right-box .day.data-v-354d4701 {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        height: 58rpx;
         width: 300rpx;
         text-align: right;
         margin-right: 10rpx;
+}
+.contanier .box .right-box .unit.data-v-354d4701 {
+        height: 58rpx;
+        line-height: 58rpx;
 }
 

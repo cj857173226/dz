@@ -26,6 +26,16 @@ const phoneReg = function(phone) {
 	}
 }
 
+// 正整数验证
+const intNumReg = function(num){
+	const intReg = /^[0-9]\d*$/;
+	if(intReg.test(num)){
+		return true
+	} else {
+		return false;
+	}
+}
+
 // 邮箱验证
 const emailReg = function(email) {
 	const emailReg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;;
@@ -202,6 +212,7 @@ const getLocalDefaultValue = function(province, city, district) {
 export default {
 	isLogin,
 	phoneReg,
+	intNumReg,
 	emailReg,
 	idCardReg,
 	nameRge,

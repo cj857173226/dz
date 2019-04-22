@@ -1,3 +1,14 @@
 {
-  "navigationBarTitleText": "床铺信息"
+  "navigationBarTitleText": "床铺信息",
+  "bounce": "none",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "添加床铺",
+        "fontSize": "14px",
+        "float": "right",
+        "width": "60px"
+      }
+    ]
+  }
 }
