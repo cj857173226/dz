@@ -407,6 +407,7 @@
 						console.log(t);
 						
 						this.day = t + "晚";
+						this.orderPrice = "￥"+ this.price * t ; // 拿到当前房源的价格乘于选定的天数得到总价格
             //原始的Date对象
             // console.log('date => ' + e.date);
         }
@@ -416,14 +417,16 @@
 				if (_that.day === null && _that.startTime === null && _that.endTime === null) {
 					_that.showPicker = true;
 				} else {
-					request({
-						url:"/wap/api/book.php?action=submit",
-						data:{luId:_that.luId,startDate:_that.startTime,endDate:_that.endTime,},
-						success:function(res){
-							console.log("回",res);
-						}
+					// request({
+					// 	url:"/wap/api/book.php?action=submit",
+					// 	data:{luId:_that.luId,startDate:_that.startTime,endDate:_that.endTime,},
+					// 	success:function(res){
+					// 		console.log("回",res);
+					// 	}
+					// })
+					uni.navigateTo({
+						url:`/pages/particulars/place_order?startTime=${_that.startTime}&endTime=${_that.endTime}&luId=${_that.luId}&day=${_that.day}&orderPrice=${_that.orderPrice}`
 					})
-					// console.log("有值触发");
 					
 				}
 				
