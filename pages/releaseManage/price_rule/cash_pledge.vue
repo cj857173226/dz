@@ -10,7 +10,7 @@
 			<view class="deposit">
 				<label style="font-size:32upx;">收取押金</label>
 				<label class="switch-box">
-					<switch @change="switch1Change" color="#EA516B" />
+					<switch @change="switch1Change" :checked="show" color="#EA516B" />
 				</label>
 			</view>
 			<input v-if="show" type="number" placeholder="押金金额最高设置金额9999元" placeholder-class="placeholder" style="font-size: 28upx;"
@@ -31,26 +31,28 @@
 
 		data() {
 			return {
-				show: false,
-				money: '',
+				house_id: '', //房源id
+				show: false, // 是否收取押金
+				money: '', //押金金额
 				isSubmiting: false,
 			}
 		},
 		onLoad() {
-
+			this.getCurData();
 		},
 		onShow() {
 
 		},
-		onNavigationBarButtonTap(e){
-			if(e.index === 0){
+		onNavigationBarButtonTap(e) {
+			if (e.index === 0) {
 				this.save()
 			}
 		},
 		computed: {
-
+			...mapState(['releaseObj']),
 		},
 		methods: {
+			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
 			switch1Change: function(e) {
 				// console.log('switch1 发生 change 事件，携带值为', e.target.value);
 				if (e.target.value === true) {
@@ -65,13 +67,53 @@
 				if (this.isSubmiting) return;
 				const _this = this;
 				const money = _this.money;
+				const id = _this.house_id;
+				let param = {
+					house_id: id,
+				}
 				if (_this.show) {
-					if (!helper.intNumReg(money)) {
+					if (!helper.intNumReg(money) || money < 0 || money > 9999) {
 						helper.layer('请输入0~9999的正整数')
+						return;
 					} else {
-						console.log(money)
+						let _money = money<=0?'':money;
+						param = Object.assign(param,{cashpledge:_money})
 					}
-
+				}else{
+					param = Object.assign(param,{cashpledge:''})
+				}
+				
+				_this.isSubmiting = true;
+				request({
+					url:'/wap/api/fangdong.php?action=improveHouse',
+					method:'POST',
+					data:param,
+					success:(res)=>{
+						if(res.data.status === 'success'){
+							let _data = res.data.content;
+							_this.editReleaseInfo(_data);
+							_this.editReleaseInfoStatus(true);
+							uni.navigateBack({
+								delta:1,
+							})
+						}else{
+							helper.layer('保存失败')
+						}
+					},
+					complete:()=>{
+						_this.isSubmiting = false;
+					}
+				})
+			},
+			//获取当前数据
+			getCurData() {
+				const _cashpledge = this.releaseObj.cashpledge;
+				this.house_id = this.releaseObj.id;
+				this.money = _cashpledge <= '0' ? '' : _cashpledge;
+				if (_cashpledge > 0) {
+					this.show = true;
+				} else {
+					this.show = false;
 				}
 			}
 		}
