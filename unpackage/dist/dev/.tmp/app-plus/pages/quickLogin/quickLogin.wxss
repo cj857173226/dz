@@ -31,10 +31,10 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.page_quick_login.data-v-28774569 {
+.page_quick_login.data-v-606a18e2 {
   padding: 10px;
 }
-.quick_login_form.data-v-28774569 {
+.quick_login_form.data-v-606a18e2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -56,12 +56,12 @@ page {
   border: 1px solid #d6d6d6;
   border-radius: 10px;
 }
-.quick_login_form .line.data-v-28774569 {
+.quick_login_form .line.data-v-606a18e2 {
     width: 100%;
     height: 1px;
     background-color: #d6d6d6;
 }
-.quick_login_form .input.data-v-28774569 {
+.quick_login_form .input.data-v-606a18e2 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
@@ -85,7 +85,7 @@ page {
         -ms-flex-pack: center;
             justify-content: center;
 }
-.quick_login_form .input .img.data-v-28774569 {
+.quick_login_form .input .img.data-v-606a18e2 {
       min-width: 40px;
       min-height: 40px;
       display: -webkit-box;
@@ -101,11 +101,11 @@ page {
           -ms-flex-pack: center;
               justify-content: center;
 }
-.quick_login_form .input .img .iconfont.data-v-28774569 {
+.quick_login_form .input .img .iconfont.data-v-606a18e2 {
         font-size: 18px;
         color: #F05B72;
 }
-.quick_login_form .input .get_img_code.data-v-28774569 {
+.quick_login_form .input .get_img_code.data-v-606a18e2 {
       min-width: 60px;
       min-height: 40px;
       display: -webkit-box;
@@ -117,11 +117,11 @@ page {
           -ms-flex-align: center;
               align-items: center;
 }
-.quick_login_form .input .get_img_code .code_img.data-v-28774569 {
+.quick_login_form .input .get_img_code .code_img.data-v-606a18e2 {
         width: 60px;
         height: 30px;
 }
-.quick_login_form .input .get_code.data-v-28774569 {
+.quick_login_form .input .get_code.data-v-606a18e2 {
       min-width: 90px;
       min-height: 40px;
       display: -webkit-box;
@@ -133,7 +133,7 @@ page {
           -ms-flex-align: center;
               align-items: center;
 }
-.quick_login_form .input .get_code .get_code_btn.data-v-28774569 {
+.quick_login_form .input .get_code .get_code_btn.data-v-606a18e2 {
         height: 30px;
         width: 100%;
         line-height: 30px;
@@ -143,23 +143,23 @@ page {
         border-radius: 8px;
         font-size: 14px;
 }
-.quick_login_form .input .get_code .get_code_btn.data-v-28774569:active {
+.quick_login_form .input .get_code .get_code_btn.data-v-606a18e2:active {
           opacity: 0.8;
 }
-.quick_login_form .input .icon_del .iconfont.data-v-28774569,
-    .quick_login_form .input .icon_pwd_switch .iconfont.data-v-28774569 {
+.quick_login_form .input .icon_del .iconfont.data-v-606a18e2,
+    .quick_login_form .input .icon_pwd_switch .iconfont.data-v-606a18e2 {
       color: #A0A0A0;
 }
-.quick_login_form .input ._input.data-v-28774569 {
+.quick_login_form .input ._input.data-v-606a18e2 {
       outline: none;
       height: 30px;
       width: 100%;
       font-size: 14px;
 }
-.quick_login_form .input ._input.data-v-28774569:focus {
+.quick_login_form .input ._input.data-v-606a18e2:focus {
         outline: none;
 }
-.submit.data-v-28774569 {
+.submit.data-v-606a18e2 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 40px;
@@ -169,10 +169,10 @@ page {
   background-color: #F05B72;
   -webkit-tap-highlight-color: #F05B72;
 }
-.submit.data-v-28774569:active {
+.submit.data-v-606a18e2:active {
     opacity: 0.8;
 }
-.opts.data-v-28774569 {
+.opts.data-v-606a18e2 {
   margin-top: 5px;
   margin-left: 25px;
   margin-right: 25px;
@@ -194,11 +194,11 @@ page {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.opts .text.data-v-28774569 {
+.opts .text.data-v-606a18e2 {
     font-size: 14px;
     color: #B6B6B6;
 }
-.quick_login_line.data-v-28774569 {
+.quick_login_line.data-v-606a18e2 {
   margin-top: 40px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -218,17 +218,17 @@ page {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.quick_login_line .line.data-v-28774569 {
+.quick_login_line .line.data-v-606a18e2 {
     height: 1px;
     width: 38%;
     background-color: #d3d3d5;
 }
-.quick_login_line .text.data-v-28774569 {
+.quick_login_line .text.data-v-606a18e2 {
     font-size: 13px;
     color: #c8c8c8;
     margin: 2px;
 }
-.quick_login_list.data-v-28774569 {
+.quick_login_list.data-v-606a18e2 {
   margin-top: 30px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -248,7 +248,7 @@ page {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.quick_login_list .item.data-v-28774569 {
+.quick_login_list .item.data-v-606a18e2 {
     width: 50px;
     height: 50px;
     margin: 20px;

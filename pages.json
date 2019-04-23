@@ -20,9 +20,31 @@
 			}
 		},
 		{
+			"path": "pages/index/searchCity",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
 			"path": "pages/particulars/particulars",
 			"style": {
 				"navigationBarTitleText": "房间详情"
+			}
+		},
+		{
+			"path": "pages/particulars/selectors",
+			"style": {
+				"navigationBarTitleText": "选择入住人",
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": {
+						"buttons": [{
+							"text": "完成",
+							"fontSize": "14px",
+							"float": "right"
+						}]
+					}
+				}
 			}
 		},
 		{
@@ -32,9 +54,15 @@
 			}
 		},
 		{
+			"path": "pages/particulars/place_order",
+			"style": {
+				"navigationBarTitleText": "开始下单"
+			}
+		},
+		{
 			"path": "pages/selecteds/selecteds",
 			"style": {
-				"navigationBarTitleText": "筛选"
+				"navigationBarTitleText": ""
 			}
 		},
 		{

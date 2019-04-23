@@ -3,7 +3,7 @@
 		<view class="content" :style="{'border-radius':radius+'px'}">
 			<!-- HM修改 增加进入输入状态的点击范围 -->
 			<view class="content-box" :class="{'center':mode === 2}" @click="getFocus">
-				<text class="icon icon-serach">&#xe61c;</text>
+				<text class="icon icon-serach pick">&#xe61c;</text>
 				<!-- HM修改 增加placeholder input confirm-type confirm-->
 				<input  :placeholder="placeholder" @input="inputChange" confirm-type="search" @confirm="triggerConfirm" class="input" :class="{'center':!active && mode === 2}" :focus="isFocus" v-model="inputVal" @focus="focus" @blur="blur"/>
 				<!-- <view v-if="!active && mode === 2" class="input sub" @click="getFocus">请输入搜索内容</view> -->

@@ -167,9 +167,12 @@ export default {
           console.log(err);
         }
       });
-    },
+		},
+		// 搜索城市
     tapSelect:function(){
-				console.log('111111')
+				uni.navigateTo({
+					url:"/pages/index/searchCity"
+				})
 			},
 			change({choiceDate, dayCount})
 			{
@@ -475,23 +478,23 @@ page {
 	}
   .containers{
 		width: 100%;
-		height: 420upx;
+		height: 432upx;
 		background-color: #ededed;
 		box-sizing: border-box;
 		padding: 30upx;
 	}
 	.box{
 		width: 100%;
-		height: 360upx;
+		height: 372upx;
 		padding: 0 46upx 0 46upx;
 		background-color: #fff;
 		box-sizing: border-box;
 	}	
 	.btn{
     width: 360upx;
-		height: 60upx;
+		height: 80upx;
     font-size: 14px;
-    line-height: 60upx;
+    line-height: 80upx;
 		background-color: #ef5b72;
 	}
 	.list-box{
