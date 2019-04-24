@@ -1,2 +1,2 @@
 <import src="./invoice.vue.wxml" />
-    <template is="af5c02ca" data="{{ ...$root['0'], $root }}"/>
+    <template is="1d448e0a" data="{{ ...$root['0'], $root }}"/>

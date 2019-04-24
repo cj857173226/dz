@@ -24,12 +24,12 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-d45b138e {
+.contanier.data-v-42f58293 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
 }
-.contanier .form_item.data-v-d45b138e {
+.contanier .form_item.data-v-42f58293 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     min-height: 90rpx;
@@ -49,7 +49,7 @@
         -ms-flex-align: center;
             align-items: center;
 }
-.contanier .form_item .radio_wrap.data-v-d45b138e {
+.contanier .form_item .radio_wrap.data-v-42f58293 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       display: -webkit-box;
@@ -57,7 +57,7 @@
       display: -ms-flexbox;
       display: flex;
 }
-.contanier .form_item .radio_wrap .radio_item.data-v-d45b138e {
+.contanier .form_item .radio_wrap .radio_item.data-v-42f58293 {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -72,7 +72,7 @@
                 align-items: center;
         margin-left: 60rpx;
 }
-.contanier .form_item .radio_wrap .radio_item .radio_btn.data-v-d45b138e {
+.contanier .form_item .radio_wrap .radio_item .radio_btn.data-v-42f58293 {
           -webkit-box-sizing: border-box;
                   box-sizing: border-box;
           width: 36rpx;
@@ -93,40 +93,40 @@
               -ms-flex-align: center;
                   align-items: center;
 }
-.contanier .form_item .radio_wrap .radio_item .radio_btn .iconfont.data-v-d45b138e {
+.contanier .form_item .radio_wrap .radio_item .radio_btn .iconfont.data-v-42f58293 {
             font-size: 32rpx;
             color: #F05B72;
 }
-.contanier .form_item .radio_wrap .radio_item .r_label.data-v-d45b138e {
+.contanier .form_item .radio_wrap .radio_item .r_label.data-v-42f58293 {
           font-size: 32rpx;
 }
-.contanier .form_item .radio_wrap .checked .radio_btn.data-v-d45b138e {
+.contanier .form_item .radio_wrap .checked .radio_btn.data-v-42f58293 {
         border: 1px solid #F05B72;
 }
-.contanier .form_item .content_wrap.data-v-d45b138e {
+.contanier .form_item .content_wrap.data-v-42f58293 {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
 }
-.contanier .form_item .content_wrap ._input.data-v-d45b138e {
+.contanier .form_item .content_wrap ._input.data-v-42f58293 {
         text-align: right;
         padding-right: 16rpx;
         font-size: 28rpx;
 }
-.contanier .form_item .content_wrap .unit.data-v-d45b138e {
+.contanier .form_item .content_wrap .unit.data-v-42f58293 {
         font-size: 28rpx;
         line-height: 52.5rpx;
 }
-.contanier .guest_desc_wrap.data-v-d45b138e {
+.contanier .guest_desc_wrap.data-v-42f58293 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     padding: 20rpx 30rpx;
 }
-.contanier .guest_desc_wrap .tips.data-v-d45b138e {
+.contanier .guest_desc_wrap .tips.data-v-42f58293 {
       font-size: 28rpx;
 }
-.contanier .guest_desc_wrap .desc_content.data-v-d45b138e {
+.contanier .guest_desc_wrap .desc_content.data-v-42f58293 {
       position: relative;
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
@@ -136,11 +136,12 @@
       border: 1px solid #cccccc;
       padding: 20rpx;
 }
-.contanier .guest_desc_wrap .desc_content ._textarea.data-v-d45b138e {
+.contanier .guest_desc_wrap .desc_content ._textarea.data-v-42f58293 {
         width: 100%;
         height: 100%;
+        font-size: 28rpx;
 }
-.contanier .guest_desc_wrap .desc_content .number_control.data-v-d45b138e {
+.contanier .guest_desc_wrap .desc_content .number_control.data-v-42f58293 {
         position: absolute;
         right: 20rpx;
         bottom: 20rpx;

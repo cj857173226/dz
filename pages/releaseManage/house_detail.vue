@@ -7,7 +7,7 @@
 			<view class="form_item" @tap="pageTo('house_basic_info/house_basic_info')">
 				<view class="label">基本信息</view>
 				<view class="ipt">
-					<view class="empty">未完成</view>
+					<view class="empty" v-if="!basicComplete">未完成</view>
 					<view class="data_box"></view>
 				</view>
 				<view class="after_icon">
@@ -17,7 +17,7 @@
 			<view class="form_item" @tap="pageTo('bed_info/bed_info')">
 				<view class="label">床铺信息</view>
 				<view class="ipt">
-					<view class="empty">未完成</view>
+					<view class="empty" v-if="!bedComplete">未完成</view>
 					<view class="data_box"></view>
 				</view>
 				<view class="after_icon">
@@ -27,7 +27,7 @@
 			<view class="form_item" @tap="pageTo('house_describe/house_describe')">
 				<view class="label">房间描述</view>
 				<view class="ipt">
-					<view class="empty">未完成</view>
+					<view class="empty" v-if="!houseDescComplete">未完成</view>
 					<view class="data_box"></view>
 				</view>
 				<view class="after_icon">
@@ -37,7 +37,7 @@
 			<view class="form_item" @tap="pageTo('house_facilities/house_facilities')">
 				<view class="label">配套设施</view>
 				<view class="ipt">
-					<view class="empty">未完成</view>
+					<view class="empty" v-if="!facilitiesComplete">未完成</view>
 					<view class="data_box"></view>
 				</view>
 				<view class="after_icon">
@@ -45,7 +45,7 @@
 				</view>
 			</view>
 			<view class="form_item" @tap="pageTo('price_rule/price_rule')">
-				<view class="label">价格规则</view>
+				<view class="label" v-if="!priceComplete">价格规则</view>
 				<view class="ipt">
 					<view class="empty">未完成</view>
 					<view class="data_box"></view>
@@ -57,14 +57,14 @@
 			<view class="form_item" @tap="pageTo('room_photograph/room_photograph')">
 				<view class="label">房间照片</view>
 				<view class="ipt">
-					<view class="empty">未完成</view>
+					<view class="empty" v-if="!pictureComplete">未完成</view>
 					<view class="data_box"></view>
 				</view>
 				<view class="after_icon">
 					<text class="iconfont icon-right"></text>
 				</view>
 			</view>
-			<view class="form_item">
+			<view class="form_item" @tap="editRentType()">
 				<view class="label">出租类型</view>
 				<view class="ipt">
 					<view class="empty" v-if="!houseInfo.leasetype">未完成</view>
@@ -78,7 +78,7 @@
 					<text class="iconfont icon-right"></text>
 				</view>
 			</view>
-			<view class="form_item">
+			<view class="form_item" @tap="editLocal()">
 				<view class="label">房源地址</view>
 				<view class="ipt">
 					<view class="empty" v-if="!houseInfo.xz_local">未完成</view>
@@ -95,14 +95,14 @@
 					<text>《房源上线标准》</text>
 				</view>
 				<view class="ipt">
-					<switch class="o-switch" color="#F05B72" />
+					<switch class="o-switch" color="#F05B72" :checked="isAgree" @change="agreeChange"/>
 				</view>
 			</view>
 		</view>
 		<view class="bottom_wrap">
 			<view class="del_house" @tap="deleteHouse()">删除房源</view>
-		</view>
-		<button class="release_btn my-btn-block">发布按钮</button>
+		</view>	
+		<button class="release_btn my-btn-block"  :class="{'dis_btn':!isReleaseHouse}">马上发布</button>
 	</view>
 </template>
 
@@ -124,6 +124,13 @@
 				pageType: '', // 页面进入的类型 add添加
 				houseInfo: {}, // 当前房屋的信息
 				isDeling: false, // 是否正在删除房源
+				isAgree: false, // 是否同意发布规章
+				basicComplete: false, // 基本信息是否完成
+				bedComplete:false, // 床铺信息是否完成
+				houseDescComplete:false, // 房源描述是否完成
+				facilitiesComplete:false, // 配套设施是否完成
+				priceComplete:false,// 价格规则是否完成
+				pictureComplete:false, // 房源图片是否完成
 			}
 		},
 		onLoad(e) {
@@ -133,14 +140,24 @@
 		},
 		onShow() {
 			this.houseInfo = this.releaseObj;
+			this.checkoutHouseInfo();
 		},
 		onBackPress(options) {
-
+		
 			// console.log(options)
 		},
 		computed: {
-			...mapState(['releaseObj']),
-			//基本信息
+			...mapState(['releaseObj','isEditReleaseInfo']),
+			// 判断是否可以发布房源
+			isReleaseHouse:{
+				get(){
+					if(!this.isAgree || !this.basicComplete || !this.bedComplete || !this.houseDescComplete || !this.facilitiesComplete || !this.priceComplete || !this.pictureComplete){
+						return false;
+					} else {
+						return true;
+					}
+				}
+			}
 		},
 		methods: {
 			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
@@ -157,6 +174,46 @@
 					url: url
 				})
 			},
+			// 切换是否同意发布规则
+			agreeChange(e){
+				this.isAgree = e.detail.value;
+			},
+			// 验证房源信息是否完整
+			checkoutHouseInfo() {
+				const id = this.releaseObj.id;
+				const _this = this;
+				request({
+					url: '/wap/api/fangdong.php?action=checkHouseInfo&house_id=' + id,
+					success: (res) => {
+						if (res.data.status === 'success') {
+							const _data = res.data.content;
+							_this.basicComplete = _data.simple === 1?true:false;
+							_this.bedComplete = _data.bed=== 1?true:false;
+							_this.houseDescComplete = _data.description=== 1?true:false;
+							_this.facilitiesComplete = _data.facilities=== 1?true:false;
+							_this.priceComplete = _data.money=== 1?true:false;
+							_this.pictureComplete = _data.picture=== 1?true:false;
+						} else {
+							helper.layer('验证房源信息失败')
+						}
+					},
+					complete: () => {
+					}
+				})
+			},
+			// 编辑出租类型 
+			editRentType() {
+				uni.navigateTo({
+					url: '/pages/releaseManage/rent_type?type=edit'
+				})
+			},
+			// 编辑地址
+			editLocal() {
+				uni.navigateTo({
+					url: '/pages/releaseManage/local_set?type=edit'
+				})
+			},
+
 			// 删除房源
 			deleteHouse() {
 				if (this.isDeling) return;

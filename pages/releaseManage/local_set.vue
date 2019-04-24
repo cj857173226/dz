@@ -33,7 +33,8 @@
 				</view>
 			</view>
 		</view>
-		<button class="my-btn-block" :class="{'dis_btn':btnIsDis}" style="margin-top: 40upx ;" v-text="type==='add'?'下一步':'保存'" @tap="completeLocal"></button>
+		<button v-if="type==='add'" class="my-btn-block" :class="{'dis_btn':btnIsDis}" style="margin-top: 40upx ;"  @tap="completeLocal">下一步</button>
+		<button v-if="type==='edit'" class="my-btn-block" :class="{'dis_btn':btnIsDis}" style="margin-top: 40upx ;"  @tap="save">保存</button>
 		<mpvue-city-picker ref="localPicker" :pickerValueDefault="cityVlue" @onCancel="onCancel" @onConfirm="onConfirm"></mpvue-city-picker>
 	</view>
 </template>
@@ -60,13 +61,21 @@
 				number:'', // 门牌号
 				// 城市选择 默认值
 				cityVlue:[0,0,0],
+				isSubmiting:false,
 			}
 		},
 		onLoad(e){
 			if(e.type){
 				this.type = e.type;
 			}
-			helper.getLocalDefaultValue(this.province, this.city, this.district);
+			if(this.type === 'edit'){
+				this.province =this.releaseObj.xz_province;
+				this.city = this.releaseObj.xz_city;
+				this.district =this.releaseObj.xz_district;
+				this.address = this.releaseObj.xz_address;
+				this.number = this.releaseObj.xz_number;
+			}
+			this.cityVlue = helper.getLocalDefaultValue(this.province, this.city, this.district);
 		},
 		onShow(){
 			
@@ -98,14 +107,13 @@
 			},
 		},
 		methods:{
-			...mapMutations(['editCreateHouseInfo','editReleaseInfo','clearReleaseInfo']),
+			...mapMutations(['editCreateHouseInfo','editReleaseInfo','clearReleaseInfo','editReleaseInfoStatus']),
 			// 弹出城市选择器
 			cityPickerShow(){
 				this.$refs.localPicker.show();
 			},
 			// 确认选择城市
 			onConfirm(e){
-				console.log(e)
 				const _local = e.label.split('-');
 				this.province = _local[0];
 				this.city = _local[1];
@@ -116,8 +124,9 @@
 			onCancel(e){
 				
 			},
-			// 下一步或保存
+			// 下一步（状态为新增）
 			completeLocal(){
+				if(this.type!=='add') return;
 				if(this.local === ''|| this.address ==='' || this.number ==='') return;
 				const _this = this;
 				const local = _this.local
@@ -140,6 +149,48 @@
 				} else if(this.type === 'edit'){
 					console.log('保存')
 				}
+			},
+			// 保存  （状态为编辑）
+			save(){
+				if(this.type!=='edit') return;
+				if(this.isSubmiting) return;
+				const _this = this;
+				const id = _this.releaseObj.id;
+				const province = _this.province;
+				const city = _this.city;
+				const district = _this.district;
+				const address = _this.address;
+				const number = _this.number;
+				const param = {
+					house_id:id,
+					xz_province:province,
+					xz_city:city,
+					xz_district:district,
+					xz_address:address,
+					xz_number:number
+				}
+				_this.isSubmiting = true;
+				request({
+					url:'/wap/api/fangdong.php?action=improveHouse',
+					method:'POST',
+					data:param,
+					success:(res)=>{
+						if(res.data.status === 'success'){
+							let _data = res.data.content;
+							_this.editReleaseInfo(_data);
+							_this.editReleaseInfoStatus(true);
+							uni.navigateBack({
+								delta:1,
+							})
+						}else{
+							helper.layer('保存失败')
+						}
+					},
+					complete:()=>{
+						_this.isSubmiting = false;
+					}
+				})
+				
 			}
 		}
 	}

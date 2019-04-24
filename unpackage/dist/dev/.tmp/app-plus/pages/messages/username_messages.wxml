@@ -1,2 +1,2 @@
 <import src="./username_messages.vue.wxml" />
-    <template is="11c97a42" data="{{ ...$root['0'], $root }}"/>
+    <template is="02fe3f73" data="{{ ...$root['0'], $root }}"/>

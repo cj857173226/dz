@@ -73,6 +73,9 @@
 			if (e.type) {
 				this.type = e.type;
 			}
+			if(this.type === 'edit'){
+				this.leasetype = this.releaseObj.leasetype;
+			}
 		},
 		onShow() {
 			if (this.type === 'add') {}
@@ -128,7 +131,32 @@
 						}
 					})
 				} else if (this.type === 'edit') {
-
+					const id = _this.releaseObj.id;
+					const param = {
+						house_id:id,
+						leasetype: leasetype,
+					}
+					_this.submiting = true;
+					request({
+						url:'/wap/api/fangdong.php?action=improveHouse',
+						method:'POST',
+						data:param,
+						success:(res)=>{
+							if(res.data.status === 'success'){
+								let _data = res.data.content;
+								_this.editReleaseInfo(_data);
+								_this.editReleaseInfoStatus(true);
+								uni.navigateBack({
+									delta:1,
+								})
+							}else{
+								helper.layer('保存失败')
+							}
+						},
+						complete:()=>{
+							_this.submiting = false;
+						}
+					})
 				}
 
 			},

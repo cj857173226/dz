@@ -53,7 +53,7 @@
 					<!-- <view class="recommend">推荐</view>					 -->
 				</view>
 				<text class="open">
-					<text v-if="!addtenant">不允许加客</text>
+					<text v-if="addtenant==='0'">不允许加客</text>
 					<text v-else>
 						<text>允许加客</text>
 						<text v-if="addtionalprice>0">,{{addtionalprice}}/每位每晚</text>
@@ -161,7 +161,7 @@
 				house_id: '', //房源id
 				dayPrice: '', //日价
 				cashpledge: '', // 押金
-				addtenant: false, //是否允许加客
+				addtenant: '0', //是否允许加客
 				addtionalprice: '', // 加客费用
 				addtenanttips: '', // 加客说明
 				minday: '', // 最小入住天数
@@ -335,10 +335,11 @@
 			// 获取当前数据
 			getCurData() {
 				const releaseObj = this.releaseObj;
+				console.log(releaseObj.addtenant)
 				this.house_id = releaseObj.id; //房源id
 				this.dayPrice = releaseObj.dayrentprice == "0" ? "" : releaseObj.dayrentprice; // 日价
 				this.cashpledge = releaseObj.cashpledge == "0" ? "" : releaseObj.cashpledge; // 押金
-				this.addtenant = releaseObj.addtenant ? true : false; // 允许加客
+				this.addtenant = releaseObj.addtenant=== '1' ? '1' : '0'; // 允许加客
 				this.addtionalprice = releaseObj.addtionalprice ? releaseObj.addtionalprice : ""; // 加客费用
 				this.addtenanttips = releaseObj.addtenanttips; // 加客说明
 				this.minday = releaseObj.minday; // 最短入住天数
