@@ -204,6 +204,7 @@
 					sourceType: ['album', 'camera'], //从相册选择
 					success: function(res) {
 						let _avatar = res.tempFiles[0].path;
+						// let fileType = _avatar.
 						uni.uploadFile({
 							url: 'http://dz.abontest.com/e/extend/uploadify/uploadify.php?dir=duanzu_head_no_mark&type=head_no_mark', //仅为示例，非真实的接口地址
 							filePath: _avatar,
