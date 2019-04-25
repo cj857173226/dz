@@ -114,18 +114,18 @@ const store = new Vuex.Store({
 			dayrentprice: '', //每日租金
 			cashpledge: '', //押金
 			addtenant: '', // 是否允许加客
-			addtionalprice: '', // 加客附加收费说明
+			addtionalprice: '', // 加客费用
 			crvp: '', // 订金比
 			crvn: '', //下单后退款安全时间,
 			crva: '', //退款扣除订金天数
-			minday: '', //最少入住天数
+			minday: '1', //最少入住天数
 			maxday: '', //最大入住天数
 			foreigner: '', //是否接受海外用户
 			userule: '', //使用规则
-			hiddentips: '', //隐藏提示
+			hiddentips: '', //隐藏贴士
 			pics: '', //图片信息
 			renzheng: '', //认证
-			addtenanttips: '', //加客费
+			addtenanttips: '', //加客说明
 			status: -1, // 状态 -1待发布，0,待审核1上架2下架
 			daohang: '', //定位导航
 			is_complete: 0, //是否完成信息

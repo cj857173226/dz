@@ -1,31 +1,85 @@
 <template>
 	<view class="contanier">
 		<view class="desc_wrap">
-			<textarea placeholder-class="placeholder" placeholder="房客使用您的房间需要遵守的规则 (如年龄段、性别、接待时间等) ,合理的要求可使您避免一些不可必要的麻烦 (请不要发布联系方式) " maxlength="2000" v-mode="desc"></textarea>
+			<textarea placeholder-class="placeholder" placeholder="房客使用您的房间需要遵守的规则 (如年龄段、性别、接待时间等) ,合理的要求可使您避免一些不可必要的麻烦 (请不要发布联系方式) "
+			 maxlength="2000" v-model="desc"></textarea>
 			<view class="number_control"><text style="color: #F05B72;" v-text="desc.length"></text>/2000</view>
 		</view>
 	</view>
 </template>
 <script>
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+	import {
+		request
+	} from '../../../common/request.js'
+	import helper from '../../../common/helper.js'
 	export default {
 		data() {
 			return {
-				desc: '',
-
+				house_id: '', // 房源id
+				desc: '', //其他要求描述
+				isSubmiting: false,
 			}
 		},
 		onLoad() {
-
+			this.getCurData();
 		},
 		onShow() {
 
 		},
+		onNavigationBarButtonTap(e) {
+			if (e.index === 0) {
+				this.save();
+			}
+		},
 		computed: {
-
+			...mapState(['releaseObj']),
 		},
 		methods: {
+			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
+			// 保存入住天数
+			save() {
+				if (this.isSubmiting) return;
+				const _this = this;
+				const id = _this.house_id;
+				const desc = _this.desc;
+				let param = {
+					house_id: id,
+					userule: desc,
+				}
+				_this.isSubmiting = true;
+				request({
+					url: '/wap/api/fangdong.php?action=improveHouse',
+					method: 'POST',
+					data: param,
+					success: (res) => {
+						if (res.data.status === 'success') {
+							let _data = res.data.content;
+							_this.editReleaseInfo(_data);
+							_this.editReleaseInfoStatus(true);
+							uni.navigateBack({
+								delta: 1,
+							})
+						} else {
+							helper.layer('保存失败')
+						}
+					},
+					complete: () => {
+						_this.isSubmiting = false;
+					}
+				})
+			},
+			//获取当前数据
+			getCurData() {
+				const _releaseObj = this.releaseObj;
+				this.house_id = _releaseObj.id;
+				this.desc = _releaseObj.userule ? _releaseObj.userule : '';
+			}
 		}
-	};
+	}
 </script>
 <style lang="scss" scoped>
 	.contanier {
@@ -41,7 +95,14 @@
 			border: 1px solid #ccc;
 			padding: 20upx;
 			font-size: 28upx;
-			.number_control{
+
+			textarea {
+				width: 100%;
+				height: 100%;
+				font-size: 28upx;
+			}
+
+			.number_control {
 				position: absolute;
 				right: 20upx;
 				bottom: 20upx;

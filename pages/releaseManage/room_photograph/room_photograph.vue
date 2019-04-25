@@ -1,243 +1,359 @@
 <template>
-  <view class="contanier">
-    <view class="title">上传房源照片要求</view>
-    <view class="demand-box">
-      <text>1.无明显修改</text>
-      <text>2.无拉伸变形</text>
-      <text>3.无水印</text>
-      <text>4.不能出现联系方式或品牌宣传</text>
-    </view>
-    <view class="bedroom-box">
-      <view class="top-bedroom">
-        <text style="font-weight: 700;">卧室</text>
-        <view class="example" @tap="previewImage">
-          范例
-          <text class="iconfont">&#xe65e;</text>
-        </view>
-      </view>
-      <view class="hint-bedroom">
-        填写户型和床铺信息后将有更多要求处理。请确保
-        <text class="hint-bedroom-color">卧室、床铺、床单、枕头展示齐全</text>
-      </view>
-      <view>
-        <!-- 不会覆盖限制上传图片数量（也就是count参数生效），notli默认false -->
-        <sunui-upimg :upImgConfig="upImgConfig" @onUpImg="upImgData" ref="uImage"/>
-      </view>
-    </view>
-    <view class="bedroom-box">
-      <view class="top-bedroom">
-        <text style="font-weight: 700;">客厅</text>
-        <view class="example">
-          范例
-          <text class="iconfont">&#xe65e;</text>
-        </view>
-      </view>
-      <view class="hint-bedroom">
-        建议上传。站在厅角拍摄，事业会更广阔。
-      </view>
-      <view>
-        <!-- 不会覆盖限制上传图片数量（也就是count参数生效），notli默认false -->
-        <sunui-upimg :upImgConfig="upImgConfig" @onUpImg="upImgData" ref="uImage"/>
-      </view>
-    </view>
-    <view class="bedroom-box">
-      <view class="top-bedroom">
-        <text style="font-weight: 700;">卫生间</text>
-        <view class="example">
-          范例
-          <text class="iconfont">&#xe65e;</text>
-        </view>
-      </view>
-      <view class="hint-bedroom">
-        必须上传卫生间照片。请确保
-        <text class="hint-bedroom-color">马桶卫浴、地面细节完整。</text>
-      </view>
-      <view>
-        <!-- 不会覆盖限制上传图片数量（也就是count参数生效），notli默认false -->
-        <sunui-upimg :upImgConfig="upImgConfig" @onUpImg="upImgData" ref="uImage"/>
-      </view>
-    </view>
-    <view class="bedroom-box">
-      <view class="top-bedroom">
-        <text style="font-weight: 700;">厨房</text>
-        <view class="example">
-          范例
-          <text class="iconfont">&#xe65e;</text>
-        </view>
-      </view>
-      <view class="hint-bedroom">
-        建议上传。
-      </view>
-      <view>
-        <!-- 不会覆盖限制上传图片数量（也就是count参数生效），notli默认false -->
-        <sunui-upimg :upImgConfig="upImgConfig" @onUpImg="upImgData" ref="uImage"/>
-      </view>
-    </view>
-    <view class="bedroom-box">
-      <view class="top-bedroom">
-        <text style="font-weight: 700;">其他</text>
-        <view class="example">
-          范例
-          <text class="iconfont">&#xe65e;</text>
-        </view>
-      </view>
-      <view class="hint-bedroom">
-        建议上传。可以是其他室内空间、物件、小区周边环境等。更多的照片往往能吸引更多的房客。
-      </view>
-      <view>
-        <!-- 不会覆盖限制上传图片数量（也就是count参数生效），notli默认false -->
-        <sunui-upimg :upImgConfig="upImgConfig" @onUpImg="upImgData" ref="uImage"/>
-      </view>
-    </view>
-    <view class="btn">保存</view>
-  </view>
+	<view class="contanier">
+		<view class="title">上传房源照片要求</view>
+		<view class="demand-box">
+			<text>1.无明显修改</text>
+			<text>2.无拉伸变形</text>
+			<text>3.无水印</text>
+			<text>4.不能出现联系方式或品牌宣传</text>
+		</view>
+		<view class="bedroom-box">
+			<view class="top-bedroom">
+				<text style="font-weight: 700;">卧室</text>
+				<view class="example" @tap="previewImage">
+					范例
+					<text class="iconfont">&#xe65e;</text>
+				</view>
+			</view>
+			<view class="hint-bedroom">
+				填写户型和床铺信息后将有更多要求处理。请确保
+				<text class="hint-bedroom-color">卧室、床铺、床单、枕头展示齐全</text>
+			</view>
+			<view class="image_wrap">
+				
+				<view class="img_item"  v-if="bedRoomImages.length>0" v-for="(item, index) in bedRoomImages" :key="index">
+					<image src="/static/images/meitu1.jpg">
+					</image>
+					<view class="del_img">
+						<text class="iconfont icon-duomeitiicon-"></text>
+					</view>
+				</view>
+				<view class="choose_img">
+					<text class="iconfont icon-jia"></text>
+				</view>
+			</view>
+
+		</view>
+		<view class="bedroom-box">
+			<view class="top-bedroom">
+				<text style="font-weight: 700;">客厅</text>
+				<view class="example">
+					范例
+					<text class="iconfont">&#xe65e;</text>
+				</view>
+			</view>
+			<view class="hint-bedroom">
+				建议上传。站在厅角拍摄，事业会更广阔。
+			</view>
+			<view class="image_wrap">
+				<view class="img_item" v-if="liveRoomImages.length>0" v-for="(item, index) in liveRoomImages" :key="index">
+					<image src="/static/images/meitu1.jpg">
+					</image>
+				</view>
+				<view class="choose_img">
+					<text class="iconfont icon-jia"></text>
+				</view>
+			</view>
+		</view>
+		<view class="bedroom-box">
+			<view class="top-bedroom">
+				<text style="font-weight: 700;">卫生间</text>
+				<view class="example">
+					范例
+					<text class="iconfont">&#xe65e;</text>
+				</view>
+			</view>
+			<view class="hint-bedroom">
+				必须上传卫生间照片。请确保
+				<text class="hint-bedroom-color">马桶卫浴、地面细节完整。</text>
+			</view>
+			<view class="image_wrap">
+				<view class="img_item" v-if="toiletImages.length>0" v-for="(item, index) in toiletImages" :key="index">
+					<image src="/static/images/meitu1.jpg">
+					</image>
+				</view>
+				<view class="choose_img">
+					<text class="iconfont icon-jia"></text>
+				</view>
+			</view>
+		</view>
+		<view class="bedroom-box">
+			<view class="top-bedroom">
+				<text style="font-weight: 700;">厨房</text>
+				<view class="example">
+					范例
+					<text class="iconfont">&#xe65e;</text>
+				</view>
+			</view>
+			<view class="hint-bedroom">
+				建议上传。
+			</view>
+			<view class="image_wrap">
+				<view class="img_item" v-if="kitchenImages.length>0" v-for="(item, index) in kitchenImages" :key="index">
+					<image src="/static/images/meitu1.jpg">
+					</image>
+				</view>
+				<view class="choose_img">
+					<text class="iconfont icon-jia"></text>
+				</view>
+			</view>
+		</view>
+		<view class="bedroom-box">
+			<view class="top-bedroom">
+				<text style="font-weight: 700;">其他</text>
+				<view class="example">
+					范例
+					<text class="iconfont">&#xe65e;</text>
+				</view>
+			</view>
+			<view class="hint-bedroom">
+				建议上传。可以是其他室内空间、物件、小区周边环境等。更多的照片往往能吸引更多的房客。
+			</view>
+			<view class="image_wrap">
+				<view class="img_item" v-if="otherImages.length>0" v-for="(item, index) in otherImages" :key="index">
+					<image src="/static/images/meitu1.jpg">
+					</image>
+				</view>
+				<view class="choose_img">
+					<text class="iconfont icon-jia"></text>
+				</view>
+			</view>
+		</view>
+		<view class="btn">保存</view>
+	</view>
 </template>
 <script>
-import sunUpImg from "../../../components/sunui-upimg/sunui-upimg.vue"; //图片上传组件
-export default {
-  components: {
-    "sunui-upimg": sunUpImg
-  },
-  data() {
-    return {
-      /**
-       * 图片上传配置项
-       *
-       * 关于阿里云oos,开启oos的话(需要配置./ali-oos/config.js的配置项)
-       */
-      upImgConfig: {
-        // 是否阿里云oos且oos地址必须是https
-        oos: true,
-        aliConfig: {
-          // 阿里云oos上传key_secret(后端传)
-          AccessKeySecret: "zmOJcaqKJB5e4gqtLunHcNoMBTdDgp",
-          // 阿里云oos上传key_id(后端传)
-          OSSAccessKeyId: "LTAIPcJL9J5OZr2G",
-          // 阿里云oos上传目录(必须存在)
-          oosDirectory: "mifanimg"
-        },
-        // 后端图片接口地址(阿里云开启oos的话就填写阿里云上传服务器url：http://4zlinkimgtest.oss-cn-beijing.aliyuncs.com/否则的话写自己后端上传图片地址，注意把oos置为false!!!)
-        url: "http://4zlinkimgtest.oss-cn-beijing.aliyuncs.com/",
-        // 是否开启notli(开启的话就是选择完直接上传，关闭的话当count满足数量时才上传)
-        notli: true,
-        // 图片数量
-        count: 9,
-        // 相机来源([相机,相册],[相机])
-        sourceType: true,
-        // 是否压缩上传照片(仅小程序生效)
-        sizeType: true,
-        // 新增上传背景修改
-        bgColor: "#E3E0E4",
-        // 新增上传icon图标颜色修改
-        iconColor: "#fff",
-        // 上传文字描述(仅限四个字)
-        text: "上传图片",
-        // 删除图标定义背景颜色
-        delIconColor: "",
-        // 删除图标字体颜色
-        delIconText: "",
-        // 上传图标替换(+),是个http,https图片地址(https://www.playsort.cn/right.png)
-        iconReplace: ""
-      },
-      imgArr: []
-    };
-  },
-  methods: {
-    // 上传图片(2019/3/29新增) -> 手动上传(需要传入上传url,还需要搭配count参数使用!)
-    uImageTap() {
-      this.$refs.uImage.uploadimage(
-        "http://4zlinkimgtest.oss-cn-beijing.aliyuncs.com/"
-      );
-    },
-    //获取上传图片返回来的数组(Step1)
-    upImgData(e) {
-      // 上传图片数组
-      let arrImg = [];
-      for (let i = 0, len = e.length; i < len; i++) {
-        if (e[i].path_server != "") {
-          arrImg.push(e[i].path_server.split(","));
-        }
-      }
-      // 图片信息保存到data数组
-      this.imgArr = arrImg;
-    },
-    // 获取上传图片的所有信息(Step2)
-    getUpImgInfo() {
-      console.log("转成多维数组:", this.imgArr);
-      console.log("转成一维数组:", this.imgArr.join().split(","));
-    },
-    previewImage() {
-      // 从相册选择6张图
-      uni.previewImage({
-        current:'../../../static/images/meitu1.jpg',
-        indicator:'number',
-        loop:true,
-        urls:['../../../static/images/meitu1.jpg','../../../static/images/meitu.jpeg','../../../static/images/meitu2.jpeg','../../../static/images/meitu3.jpg'],
-        success:function(res){
-          console.log(res);
-        },
-        fail:function(err){
-          console.log(err);
-        }
-      });
-    }
-  }
-};
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+	import {
+		request
+	} from '../../../common/request.js'
+	import helper from '../../../common/helper.js'
+	export default {
+		data() {
+			return {
+				house_id: '', //房源id
+				picsList: [], // 所有图片的集合
+			}
+		},
+		onLoad() {
+			this.getCurData();
+		},
+		onShow() {
+
+		},
+		computed: {
+			...mapState(['releaseObj']),
+			// 获取不同类型照片列表
+			// type---> bedroom 卧室   liveroom客厅  toilet卫生间  kitchen厨房  other 其他
+
+			// 卧室照片
+			bedRoomImages: {
+				get() {
+					let _pics = [];
+					if (this.picsList.length > 0) {
+						_pics.forEach((item) => {
+							if (item.type === 'bedroom') {
+								_pics.push(item)
+							}
+						})
+					}
+					return _pics;
+				}
+			},
+			// 客厅照片
+			liveRoomImages: {
+				get() {
+					let _pics = [];
+					if (this.picsList.length > 0) {
+						_pics.forEach((item) => {
+							if (item.type === 'liveroom') {
+								_pics.push(item)
+							}
+						})
+					}
+					return _pics;
+				}
+			},
+			// 卫生间
+			toiletImages: {
+				get() {
+					let _pics = [];
+					if (this.picsList.length > 0) {
+						_pics.forEach((item) => {
+							if (item.type === 'toilet') {
+								_pics.push(item)
+							}
+						})
+					}
+					return _pics;
+				}
+			},
+			// 厨房
+			kitchenImages: {
+				get() {
+					let _pics = [];
+					if (this.picsList.length > 0) {
+						_pics.forEach((item) => {
+							if (item.type === 'kitchen') {
+								_pics.push(item)
+							}
+						})
+					}
+					return _pics;
+				}
+			},
+			// 其他
+			otherImages: {
+				get() {
+					let _pics = [];
+					if (this.picsList.length > 0) {
+						_pics.forEach((item) => {
+							if (item.type === 'other') {
+								_pics.push(item)
+							}
+						})
+					}
+					return _pics;
+				}
+			},
+		},
+		methods: {
+			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
+
+			// 获取当前页面的数据
+			getCurData() {
+				const _releaseObj = this.releaseObj;
+				this.house_id = _releaseObj.id;
+				this.picsList = _releaseObj.pics ? JSON.parse(_releaseObj.pics) : [];
+			}
+		}
+	};
 </script>
 <style lang="scss" scoped>
-.contanier {
-  width: 100%;
-  padding: 30upx;
-  box-sizing: border-box;
-  font-size: 14px;
-  .title {
-    text-align: center;
-    padding: 30upx 0;
-    box-sizing: border-box;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  .demand-box {
-    width: 520upx;
-    padding: 30upx;
-    box-sizing: border-box;
-    background-color: #f1f1f1;
-    border-radius: 10upx;
-    margin: 0 auto;
-  }
-  .bedroom-box {
-    margin-top: 40upx;
-    border-bottom: 1px solid #efefef;
-    .top-bedroom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 10upx;
-      .example {
-        color: #acacac;
-      }
-    }
-    .hint-bedroom {
-      font-size: 12px;
-      color: #acacac;
-      .hint-bedroom-color {
-        color: #000;
-        font-weight: 700;
-      }
-    }
-  }
-  .btn {
-    width: 100%;
-    height: 90upx;
-    background-color: #ea516b;
-    color: #fff;
-    border-radius: 10upx;
-    text-align: center;
-    line-height: 90upx;
-    margin-top: 40upx;
-    &:active{
-      opacity: 0.5;
-    }
-  }
-}
+	.contanier {
+		width: 100%;
+		padding: 30upx;
+		box-sizing: border-box;
+		font-size: 14px;
+
+		.title {
+			text-align: center;
+			padding: 30upx 0;
+			box-sizing: border-box;
+			font-size: 16px;
+			font-weight: bold;
+		}
+
+		.demand-box {
+			width: 520upx;
+			padding: 30upx;
+			box-sizing: border-box;
+			background-color: #f1f1f1;
+			border-radius: 10upx;
+			margin: 0 auto;
+		}
+
+		.bedroom-box {
+			margin-top: 40upx;
+			border-bottom: 1px solid #efefef;
+
+			.top-bedroom {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-top: 10upx;
+
+				.example {
+					color: #acacac;
+				}
+			}
+
+			.hint-bedroom {
+				font-size: 12px;
+				color: #acacac;
+
+				.hint-bedroom-color {
+					color: #000;
+					font-weight: 700;
+				}
+			}
+
+			.image_wrap {
+				box-sizing: border-box;
+				width: 100%;
+				padding: 30upx 0;
+				min-height: 260upx;
+				display: inline-flex;
+				flex-wrap: wrap;
+
+				.img_item {
+					position: relative;
+					box-sizing: border-box;
+					display: inline-flex;
+					height: 200upx;
+					width: 200upx;
+					margin-bottom: 20upx;
+					margin-right: 20upx;
+
+					image {
+						height: 100%;
+						width: 100%;
+						border-radius: 8upx;
+					}
+					.del_img {
+						position: absolute;
+						top: 0;
+						right: 0;
+						color: #ffffff;
+						width: 36upx;
+						height: 36upx;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						background: #f66;
+						border-radius: 0 8upx 0 0;
+						.iconfont{
+							font-size: 28upx;
+						}
+					}
+				}
+
+				.choose_img {
+					box-sizing: border-box;
+					display: inline-flex;
+					justify-content: center;
+					align-items: center;
+					height: 200upx;
+					width: 200upx;
+					border: 1px solid #eaeaea;
+					border-radius: 8upx;
+					margin-bottom: 20upx;
+					margin-right: 20upx;
+
+					.iconfont {
+						font-size: 80upx;
+						color: #cccccc;
+					}
+				}
+			}
+		}
+
+		.btn {
+			width: 100%;
+			height: 90upx;
+			background-color: #ea516b;
+			color: #fff;
+			border-radius: 10upx;
+			text-align: center;
+			line-height: 90upx;
+			margin-top: 40upx;
+
+			&:active {
+				opacity: 0.5;
+			}
+		}
+	}
 </style>

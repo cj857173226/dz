@@ -7,7 +7,7 @@
 						<text class="iconfont icon-dizhi-01 "></text>
 						{{item.xz_local}}
 					</view>
-					<button class="modify_local_btn">修改地址</button>
+					<button class="modify_local_btn" @tap="editLocal(item)">修改地址</button>
 				</view>
 				<view class="item_body">
 					<img class="house_pic" v-if="item.titlepic" :src="item.titlepic" alt="">
@@ -117,6 +117,7 @@
 			if(this.isEditReleaseInfo){
 				this.getHouseLists();
 			}
+			this.clearReleaseInfo();
 			this.editReleaseInfoStatus(false);
 		},
 
@@ -167,12 +168,20 @@
 					}
 				})
 			},
+			// 编辑地址
+			editLocal(par){
+				this.clearReleaseInfo();
+				this.editReleaseInfo(par);
+				uni.navigateTo({
+					url: '/pages/releaseManage/local_set?type=edit'
+				})
+			},
 			// 修改房屋发布信息
 			editHouseInfo(par) {
 				// 先清空房源信息
 				this.clearReleaseInfo();
 				// 带入当前要修改的房源信息
-				this.editReleaseInfo(par,1);
+				this.editReleaseInfo(par);
 				this.editReleaseInfoStatus(false);
 				uni.navigateTo({
 					url: '/pages/releaseManage/house_detail?type=edit'

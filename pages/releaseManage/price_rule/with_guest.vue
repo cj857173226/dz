@@ -3,32 +3,32 @@
 		<view class="form_item">
 			<view class="label">允许加客</view>
 			<view class="radio_wrap">
-				<view class="radio_item" :class="{'checked':isAddGuest===true}" @tap="addGuestCheck(true)">
+				<view class="radio_item" :class="{'checked':isAddGuest==='1'}" @tap="addGuestCheck('1')">
 					<view class="radio_btn">
-						<text class="iconfont icon-gou" v-if="isAddGuest===true"></text>
+						<text class="iconfont icon-gou" v-if="isAddGuest==='1'"></text>
 					</view>
 					<view class="r_label">是</view>
 				</view>
-				<view class="radio_item" :class="{'checked':isAddGuest===false}" @tap="addGuestCheck(false)">
+				<view class="radio_item" :class="{'checked':isAddGuest==='0'}" @tap="addGuestCheck('0')">
 					<view class="radio_btn">
-						<text class="iconfont icon-gou" v-if="isAddGuest===false"></text>
+						<text class="iconfont icon-gou" v-if="isAddGuest==='0'"></text>
 					</view>
 					<view class="r_label">否</view>
 				</view>
 			</view>
 		</view>
-		<view class="form_item" v-if="isAddGuest===true">
+		<view class="form_item" v-if="isAddGuest==='1'">
 			<view class="label">加客费用</view>
 			<view class="content_wrap">
 				<input type="number" placeholder-class="placeholder" placeholder="最高设置金额999" maxlength="3" v-model="money">
 				<view class="unit">元/每位每晚</view>
 			</view>
 		</view>
-		
-		<view class="guest_desc_wrap" v-if="isAddGuest===true">
+
+		<view class="guest_desc_wrap" v-if="isAddGuest==='1'">
 			<view class="tips">加客费用只做展示,请自行线下收取</view>
 			<view class="desc_content">
-				<textarea placeholder="加客费用描述,可用于描述最大加客人数等(选填)" placeholder-class="placeholder" maxlength="100" v-model="desc"/>
+				<textarea placeholder="加客费用描述,可用于描述最大加客人数等(选填)" placeholder-class="placeholder" maxlength="100" v-model="desc" />
 				<view class="number_control"><text style="color: #F05B72;" v-text="desc.length"></text>/100</view>
 			</view>
 		</view>
@@ -46,24 +46,90 @@
 	export default {
 		data() {
 			return {
+				house_id: '', // 房源id
 				isAddGuest: false,// 是否允许加客
 				money:'',// 加客费用
 				desc: '', // 加客描述
-				
+				isSubmiting: false,
 			}
 		},
 		onLoad() {
-
+			this.getCurData()
 		},
 		onShow() {
-
+			
+		},
+		onNavigationBarButtonTap(e) {
+			if(e.index === 0){
+				this.save();
+			}
 		},
 		computed: {
-
+			...mapState(['releaseObj']),
 		},
 		methods: {
+			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
 			addGuestCheck(is){
 				this.isAddGuest = is;
+			},
+			// 保存加客设置
+			save(){
+				if(this.isSubmiting) return;
+				const _this = this;
+				const id = _this.house_id;
+				const isAddGuest = _this.isAddGuest;
+				const money = _this.money;
+				const desc = _this.desc;
+				let param = {
+					house_id: id,
+				}
+				if(isAddGuest==='1'){
+					if(money!==''&&(!helper.intNumReg(money))){
+						helper.layer('请填写0~999的整数');
+						return;
+					}else{
+						param = Object.assign(param,{
+							addtionalprice:money,
+							addtenanttips:desc,
+							addtenant:isAddGuest,
+						})
+					}
+				}else{
+					param = Object.assign(param,{
+						addtionalprice:'',
+						addtenanttips:'',
+						addtenant:isAddGuest,
+					})
+				}
+				_this.isSubmiting = true;
+				request({
+					url:'/wap/api/fangdong.php?action=improveHouse',
+					method:'POST',
+					data:param,
+					success:(res)=>{
+						if(res.data.status === 'success'){
+							let _data = res.data.content;
+							_this.editReleaseInfo(_data);
+							_this.editReleaseInfoStatus(true);
+							uni.navigateBack({
+								delta:1,
+							})
+						}else{
+							helper.layer('保存失败')
+						}
+					},
+					complete:()=>{
+						_this.isSubmiting = false;
+					}
+				})
+			},
+				//获取当前数据
+			getCurData() {
+				const _releaseObj = this.releaseObj;
+				this.house_id = _releaseObj.id;
+				this.isAddGuest = _releaseObj.addtenant=== '1' ? '1' : '0';
+				this.money = _releaseObj.addtionalprice ? _releaseObj.addtionalprice : '';
+				this.desc = _releaseObj.addtenanttips?_releaseObj.addtenanttips:'';
 			}
 		}
 	}
@@ -154,6 +220,7 @@
 				textarea{
 					width: 100%;
 					height: 100%;
+					font-size: 28upx;
 				}
 				.number_control{
 					position: absolute;
