@@ -159,8 +159,6 @@ export default {
         method: "GET",
         success: res => {
           let array = res.data.content
-          // console.log('res:',res);
-          
           _that.contentArray = array;
         },
         fail: err => {
@@ -251,7 +249,7 @@ export default {
 				if (coll === true) {
 					setTimeout(()=>{
 						_this.$refs.mpvuePicker.show() // 点击弹出mpvuePickerpicker
-					},2000)
+					},1000)
 				} else if (coll === false) {
 					request({
 						url:'/wap/api/my.php?action=modifyFavorite',

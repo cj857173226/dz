@@ -43,10 +43,6 @@
 </template>
 
 <script>
-	import {
-		mapState,
-		mapMutations
-	} from 'vuex'
 	import helper from '../../common/helper.js'
 	import {
 		request
@@ -59,23 +55,22 @@
           idcardno: "",
           name: "",
           mobile:"",
-          passportno:"",
-        },
+					passportno:"",
+				},
+				type:"",
 				isLoding: false, //是否正在请求
 			};
     },
-    computed: {
-			...mapState(['isEditCheck'])
-		},
 		onLoad(option) {
       console.log(option);
       this.checkForm.id = option.id;
       this.checkForm.name = option.name;
-      this.checkForm.idcardno = option.idcardno;
+			this.checkForm.idcardno = option.idcardno;
+			this.type = option.type
 		},
 		onShow() {},
 		methods: {
-      ...mapMutations(['checkIn']),
+      // ...mapMutations(['checkIn']),
 			// 提交添加或者修改常用入住人
 			submitCheck() {
 				if (this.isLoding) return;
@@ -105,40 +100,87 @@
 				} else if (mobile !== '' && !helper.phoneReg(mobile)) {
 					helper.layer('手机号格式有误')
 				} else {
-          // 这里是编辑联系人请求
-          _this.isLoding = true;
-          const param = {
+					/* _this.type 接收到的值为indent表示是从下单页面过来修改的
+						 _this.type 接收到的值为list表示是从添加入住人页面过来修改的
+					*/
+					if (_this.type == "indent") {
+						// 这里是编辑联系人请求
+						_this.isLoding = true;
+						const param = {
+								id:id,
+								name: name,
+								mobile: mobile,
+								idcardno: idcard,
+								passportno: passportno
+							}
+						request({
+							url: '/wap/api/my.php?action=UpdateContact',
+							method: 'GET',
+							data: param,
+							success: function(res) {
+								if (res.data.status === "success") {
+									let checkData = _this.$store.state.addCheckin;
+									for (let j = 0; j < checkData.length; j++) {
+										if (checkData[j].id === id) {
+											checkData[j].name = _this.checkForm.name;
+											checkData[j].idcardno = _this.checkForm.idcardno;
+											// console.log(array);
+											_this.$store.commit('checkIn',checkData)
+										}
+									}
+									
+									helper.layer('修改成功');
+									setTimeout(()=>{
+										uni.navigateBack({
+											delta: 1
+										});
+									},1000)
+									
+								} else {
+									helper.layer(res.data.errorMsg)
+								}
+							},
+							fail: function(err) {
+								helper.layer('系统异常,请稍后再试')
+							},
+							complete: function() {
+								_this.isLoding = false;
+							}
+						})
+					} else if (this.type == "list") {
+						console.log('哈哈哈哈');
+						_this.isLoding = true;
+						const param = {
 							id:id,
 							name: name,
 							mobile: mobile,
 							idcardno: idcard,
 							passportno: passportno
-            }
-          request({
-            url: '/wap/api/my.php?action=UpdateContact',
-            method: 'GET',
-            data: param,
-            success: function(res) {
-              if (res.data.status === "success") {
-                helper.layer('修改成功');
-               _this.checkIn(true)
-                setTimeout(()=>{
-                  uni.navigateBack({
-                    delta: 1
-                  });
-                },1000)
-                
-              } else {
-                helper.layer(res.data.errorMsg)
-              }
-            },
-            fail: function(err) {
-              helper.layer('系统异常,请稍后再试')
-            },
-            complete: function() {
-              _this.isLoding = false;
-            }
-          })
+						};
+						request({
+							url:"/wap/api/my.php?action=UpdateContact",
+							method: 'GET',
+							data: param,
+							success:res => {
+								if (res.data.status === "success") {
+										helper.layer('修改成功');
+										setTimeout(()=>{
+											uni.navigateTo({
+												url:'/pages/particulars/selectors'
+											});
+										},1000)
+								} else {
+									helper.layer(res.data.errorMsg)
+								}
+							},
+							fail: function(err) {
+								helper.layer('系统异常,请稍后再试')
+							},
+							complete: function() {
+								_this.isLoding = false;
+							}
+						})
+					}
 				}
 			}
 		},

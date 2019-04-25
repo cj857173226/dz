@@ -1,8 +1,8 @@
 <template>
 	<view class="segmented-control" :class="styleType" :style="wrapStyle">
-		<view v-for="(item, index) in values" class="segmented-control-item" :class="styleType" :key="index" :style="index === currentIndex ? activeStyle : itemStyle" @click="onClick(index)">
+			<view v-for="(item, index) in values" class="segmented-control-item" :class="styleType" :key="index" :style="index === currentIndex ? activeStyle : itemStyle" @click="onClick(index)">
 			{{item}}
-		</view>
+			</view>
 	</view>
 </template>
 
@@ -96,7 +96,7 @@
 		flex-direction: row;
 		justify-content: center;
 		width: 100%;
-		font-size: 32upx;
+		font-size: 28upx;
 		border-radius: 10upx;
 		box-sizing: border-box;
 		margin: 0 auto;

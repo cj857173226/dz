@@ -13,7 +13,7 @@
             <view class="right-box">
               <view class="name-box">
                 <text class="name">{{item.name}}</text>
-                <text class="iconfont jiantou" @click.stop="clickCompile">&#xe634;</text>
+                <text class="iconfont jiantou" @click.stop="clickCompile(item.name,item.idcardno,item.id)">&#xe634;</text>
               </view>
               <view class="identity-card-box">
                 <text class="identity-card">身份证</text>
@@ -39,14 +39,22 @@ export default {
   },
   onNavigationBarButtonTap(e){
       console.log(e);
-      console.log(this.indexes);
+      // console.log(JSON.parse(this.indexes));
+      let array = [];
+      for (let index = 0; index < this.indexes.length; index++) {
+        // console.log(this.indexes[index]);
+        let data = JSON.parse(this.indexes[index])
+        array.push(data)
+      }
+      console.log(array);
+      
       if (this.indexes.length === 0) {
         uni.showToast({
           title:"请选择入住人",
           icon:'none'
         })
       } else {
-        this.$store.commit('checkIn',this.indexes);
+        this.$store.commit('checkIn',array);
         uni.navigateBack({
           delta:1
         })
@@ -63,12 +71,13 @@ export default {
       console.log(e);
       
       let index = e.detail.value[0];
-      console.log(index);
-      
       this.indexes.push(index);
     },
-    clickCompile() {
+    clickCompile(name,idcardno,id) {
       // 跳转编辑页面
+      uni.navigateTo({
+        url:`/pages/particulars/editor_check_in?name=${name}&idcardno=${idcardno}&id=${id}&type=list`
+      })
       console.log("再点击我呢");
     }
   },

@@ -97,7 +97,7 @@
 import MxDatePicker from "@/components/mx-datepicker/mx-datepicker.vue"; // 引入时间组件
 import {request} from '../../common/request.js' // 封装的带有token的请求方法
 import {shortHttp,room} from "../../common/requestUrl.json"; // 接口文件
-import {mapState,mapMutations} from 'vuex'
+// import {mapState,mapMutations} from 'vuex'
 export default {
   components: {MxDatePicker},
   data () {
@@ -127,7 +127,7 @@ export default {
     }
   },
   computed: {
-		...mapState(['isEditCheck'])
+		// ...mapState(['isEditCheck'])
 	},
   onLoad(option){
     let whatDay = new Date(option.endTime).getDay();
@@ -194,7 +194,7 @@ export default {
     })
   },
   methods: {
-    ...mapMutations(['checkIn']),
+    // ...mapMutations(['checkIn']),
     // 调整时间
     onShowDatePicker(type){//显示
       this.type = type;
@@ -238,6 +238,11 @@ export default {
           title:"你未同意相关条款，不可下单",
           icon:"none"
         })
+      } else if (this.listData.length == 0) {
+        uni.showToast({
+          title:"请添加入住人",
+          icon:"none"
+        })
       } else {
         console.log("对了");
       }
@@ -248,7 +253,7 @@ export default {
         url:room,
         data:{luId:_that.luId},
         success: function(res) {
-          console.log('数据：'+res.data);
+          // console.log('数据：'+res.data);
           let arrayImg = res.data.content.images;
           let img;
           for (let index = 0; index < arrayImg.length; index++) {
@@ -262,13 +267,11 @@ export default {
     },
     clickDelete(type){
       // 删除回调函数
-      console.log(type);
       let array = this.listData
       let a = array.indexOf(type);
       array.splice(a,1);
-      
-    },
-    clickCheck(){
+    }, 
+    clickCheck(){ // 跳转到添加入住人页面
       uni.navigateTo({
         url:'/pages/particulars/selectors'
       })
@@ -276,23 +279,14 @@ export default {
     clickAmend(name,idcardno,id){ // 编辑
       console.log(name,idcardno,id);
       uni.navigateTo({
-        url:`/pages/particulars/editor_check_in?name=${name}&idcardno=${idcardno}&id=${id}`
+        url:`/pages/particulars/editor_check_in?name=${name}&idcardno=${idcardno}&id=${id}&type=indent`
       })
     }
   },
   onShow(){
-    // console.log(this.checkIn);
     let listData=[];
     let data = this.$store.state.addCheckin;
-    console.log("vuex:",data);
-    
-    for (let index = 0; index < data.length; index++) {
-      let a = JSON.parse(data[index]);
-      listData.push(a);
-    }
-    this.listData = listData;
-    this.checkIn(false)
-      // console.log("11",this.listData);
+    this.listData = data
   }
 }
 </script>
