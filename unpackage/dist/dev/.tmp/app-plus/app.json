@@ -16,6 +16,7 @@
     "pages/messages/system_messages",
     "pages/messages/username_messages",
     "pages/messages/favorable",
+    "pages/messages/chat",
     "pages/my/my",
     "pages/my/ad",
     "pages/login/login",

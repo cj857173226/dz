@@ -1,10 +1,10 @@
 <template>
 	<view class="message-list">
-		<block v-for="(it,i) of messagesList" :key="i">
-			<view class="uni-swipe-action">
+		<block v-for="(it,i) of messagesList" :key="i" >
+			<view class="uni-swipe-action" @tap.stop="toMessageDetail(it)">
 				<view class="uni-swipe-action__container" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd"
 				 @touchcancel="touchEnd" :style="{'transform':messageIndex == i ? transformX : 'translateX(0px)','-webkit-transform':messageIndex == i ? transformX : 'translateX(0px)'}" :data-index="i" :data-disabled="it.disabled">
-					<view class="uni-swipe-action__content " @click="toMessageDetail(i)">
+					<view class="uni-swipe-action__content">
 						<view class="item" :class="it.stick  ? 'stick' : ''">
 							<view class="item-left">
 								<image :src="it.url" class="image"/>
@@ -21,7 +21,7 @@
 					</view>
 					<view class="uni-swipe-action__btn-group" :id="elId">
 						<div v-for="(item,index) in options" :key="index" class="uni-swipe-action--btn" :style="{backgroundColor: item.style && item.style.backgroundColor ? item.style.backgroundColor : '#C7C6CD',color: item.style && item.style.color ? item.style.color : '#FFFFFF',fontSize: item.style && item.style.fontSize ? item.style.fontSize : '28upx'}"
-						 @click="bindClickBtn(item,i)">
+						 @tap.stop="bindClickBtn(item,i)">
 							{{item.text }}
 						</div>
 					</view>
@@ -65,22 +65,11 @@
 		},
 		// #endif
 		methods: {
-			toMessageDetail(i){
-				// 根据id判断跳转页面
-				if (i === 0) {
-					uni.navigateTo({
-						url:'/pages/messages/system_messages' //系统消息页面
-					})
-				} else if (i === 1) {
-					uni.navigateTo({
-						url:'/pages/messages/favorable' //活动页面
-					})
-				} else {
-					uni.navigateTo({
-						url:'/pages/messages/username_messages' // 用户聊天页面
-					})
-				}
-				console.log('进入到聊天界面'+i)
+			toMessageDetail(item){
+				console.log(item)
+				uni.navigateTo({
+					url:'/pages/messages/chat?title='+item.title,
+				})
 			},
 			getSize() {
 				uni.createSelectorQuery().in(this).select(`#${this.elId}`).boundingClientRect().exec((ret) => {

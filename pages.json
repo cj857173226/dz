@@ -148,6 +148,13 @@
 				"navigationBarTitleText": "优惠活动"
 			}
 		},
+			{
+			// 优惠活动
+			"path": "pages/messages/chat",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
 		{
 			// 我的
 			"path": "pages/my/my",

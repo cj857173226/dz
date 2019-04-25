@@ -10,7 +10,7 @@
 		<view class="bedroom-box">
 			<view class="top-bedroom">
 				<text style="font-weight: 700;">卧室</text>
-				<view class="example" @tap="previewImage">
+				<view class="example">
 					范例
 					<text class="iconfont">&#xe65e;</text>
 				</view>
@@ -20,15 +20,15 @@
 				<text class="hint-bedroom-color">卧室、床铺、床单、枕头展示齐全</text>
 			</view>
 			<view class="image_wrap">
-				
-				<view class="img_item"  v-if="bedRoomImages.length>0" v-for="(item, index) in bedRoomImages" :key="index">
+
+				<view class="img_item" v-if="bedRoomImages.length>0" v-for="(item, index) in bedRoomImages" :key="index">
 					<image src="/static/images/meitu1.jpg">
 					</image>
 					<view class="del_img">
 						<text class="iconfont icon-duomeitiicon-"></text>
 					</view>
 				</view>
-				<view class="choose_img">
+				<view class="choose_img" @tap.stop="chooseImg('bedroom')">
 					<text class="iconfont icon-jia"></text>
 				</view>
 			</view>
@@ -135,7 +135,7 @@
 		data() {
 			return {
 				house_id: '', //房源id
-				picsList: [], // 所有图片的集合
+				pics: {}, // 所有图片的集合
 			}
 		},
 		onLoad() {
@@ -153,12 +153,8 @@
 			bedRoomImages: {
 				get() {
 					let _pics = [];
-					if (this.picsList.length > 0) {
-						_pics.forEach((item) => {
-							if (item.type === 'bedroom') {
-								_pics.push(item)
-							}
-						})
+					if (this.pics.bedroom && this.pics.bedroom.length > 0) {
+						_pics = this.pics.bedroom;
 					}
 					return _pics;
 				}
@@ -167,12 +163,8 @@
 			liveRoomImages: {
 				get() {
 					let _pics = [];
-					if (this.picsList.length > 0) {
-						_pics.forEach((item) => {
-							if (item.type === 'liveroom') {
-								_pics.push(item)
-							}
-						})
+					if (this.pics.liveroom && this.pics.liveroom.length > 0) {
+						_pics = this.pics.liveroom;
 					}
 					return _pics;
 				}
@@ -181,12 +173,8 @@
 			toiletImages: {
 				get() {
 					let _pics = [];
-					if (this.picsList.length > 0) {
-						_pics.forEach((item) => {
-							if (item.type === 'toilet') {
-								_pics.push(item)
-							}
-						})
+					if (this.pics.toilet && this.pics.toilet.length > 0) {
+						_pics = this.pics.toilet;
 					}
 					return _pics;
 				}
@@ -195,12 +183,8 @@
 			kitchenImages: {
 				get() {
 					let _pics = [];
-					if (this.picsList.length > 0) {
-						_pics.forEach((item) => {
-							if (item.type === 'kitchen') {
-								_pics.push(item)
-							}
-						})
+					if (this.pics.kitchen && this.pics.kitchen.length > 0) {
+						_pics = this.pics.kitchen;
 					}
 					return _pics;
 				}
@@ -209,12 +193,8 @@
 			otherImages: {
 				get() {
 					let _pics = [];
-					if (this.picsList.length > 0) {
-						_pics.forEach((item) => {
-							if (item.type === 'other') {
-								_pics.push(item)
-							}
-						})
+					if (this.pics.other && this.pics.other.length > 0) {
+						_pics = this.pics.other;
 					}
 					return _pics;
 				}
@@ -222,12 +202,41 @@
 		},
 		methods: {
 			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
-
+			// 选择照片
+			chooseImg(type) {
+				const _this =this;
+				uni.chooseImage({
+					count: 9, //默认9
+					sizeType: ['original'], //可以指定是原图还是压缩图，默认二者都有
+					sourceType: ['album','camera'], //从相册选择
+					success: function(res) {
+						console.log(res);
+						let _imgs =  res.tempFiles[0];
+						console.log(_this.getImgInfo(_imgs))
+					}
+				});
+			},
+			getImgInfo(img){
+				let _obj = {};
+				uni.getImageInfo({
+            src: img.path,
+            success: function (image) {
+                _obj = {
+									width:image.width,
+									height:image.height,
+									path:image.path?image.path:'',
+									size:img.size / 1024/ 1024,
+								};
+            }
+        });
+				return _obj
+			},
 			// 获取当前页面的数据
 			getCurData() {
 				const _releaseObj = this.releaseObj;
 				this.house_id = _releaseObj.id;
-				this.picsList = _releaseObj.pics ? JSON.parse(_releaseObj.pics) : [];
+				console.log(_releaseObj.pics)
+				this.pics = _releaseObj.pics ? JSON.parse(_releaseObj.pics) : {};
 			}
 		}
 	};
@@ -303,6 +312,7 @@
 						width: 100%;
 						border-radius: 8upx;
 					}
+
 					.del_img {
 						position: absolute;
 						top: 0;
@@ -315,7 +325,8 @@
 						align-items: center;
 						background: #f66;
 						border-radius: 0 8upx 0 0;
-						.iconfont{
+
+						.iconfont {
 							font-size: 28upx;
 						}
 					}

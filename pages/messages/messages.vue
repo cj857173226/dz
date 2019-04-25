@@ -1,10 +1,18 @@
 <template>
   <view class="contanier">
-    <wkiwi-swipe-action :options="options" :messagesList="messages"></wkiwi-swipe-action>
+    <wkiwi-swipe-action :options="options" :messagesList="messages" @></wkiwi-swipe-action>
   </view>
 </template>
 
 <script>
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+	import {
+		request
+	} from '../../common/request.js'
+	import helper from 'common/helper.js'
 import wkiwiSwipeAction from "./lign-in/components/wkiwi-swipe-action";
 export default {
   components: { wkiwiSwipeAction },
@@ -13,18 +21,6 @@ export default {
       focus: false,
       isShowView: true,
       options: [
-        {
-          text: "置顶",
-          style: {
-            backgroundColor: "#C7C6CD"
-          }
-        },
-        {
-          text: "删除",
-          style: {
-            backgroundColor: "#dd524d"
-          }
-        }
       ],
       messages: [
 				{
@@ -54,6 +50,7 @@ export default {
           message: "什么鬼，我有支付宝",
           time: "15:15",
           count: 5,
+					type:'user',
           stick: false, //是否为置顶状态
           disabled: false //是否禁止滑动
         },
@@ -64,6 +61,7 @@ export default {
           message: "哈哈哈，我要一统江湖啦",
           time: "15:15",
           count: 22,
+					type:'user',
           stick: false,
           disabled: false
         },
@@ -74,6 +72,7 @@ export default {
           message: "抄袭我的吧，我早都做过了",
           time: "12:13",
           count: 1,
+					type:'user',
           stick: false,
           disabled: false
         },
@@ -159,7 +158,28 @@ export default {
         }
       ]
     };
-  }
+  },
+	onLoad() {
+		this.getAdList()
+	},
+	onShow(){
+		
+	},
+	computed:{
+		
+	},
+	methods:{
+		// 获取广告列表
+		getAdList(){
+			request({
+				url:'/wap/api/my.php?action=messageListAd',
+				success:(res)=>{
+						console.log(res)
+				},
+				
+			})
+		}
+	}
 };
 </script>
 
