@@ -4,8 +4,8 @@
       <image class="top-caption-img" :src="shortHttp+ImageUrl"></image>
       <view class="title">{{title}}</view>
     </view>
-    <view class="time-box" @click="onShowDatePicker('range')">
-      <view class="affirm-box">
+    <view class="time-box">
+      <view class="affirm-box" @click="onShowDatePicker('range')">
         <view class="week-box">
           <view class="week">{{startDay}}</view>
           <view class="date">{{startTime}}</view>
@@ -25,20 +25,22 @@
       </view>
       <view></view>
       <view class="border"></view>
-      <view v-show="check" class="check-person-box">
-        <view class="name-box">
-          <text class="name">姓名</text>
-          <view class="icon-box">
-            <text class="iconfont xiugai" @tap="clickAmend">&#xe645;</text>
-            <text class="shanchu" @tap="clickDelete">—</text>
+      <view v-if="listData.length > 0">
+        <view class="check-person-box" v-for="(item,index) in listData" :key="index">
+          <view class="name-box">
+            <text class="name">{{item.name}}</text>
+            <view class="icon-box">
+              <text class="iconfont xiugai" @tap="clickAmend(item.name,item.idcardno,item.id)">&#xe645;</text>
+              <text class="shanchu" @tap="clickDelete(index)">—</text>
+            </view>
           </view>
+          <view class="nformation-complete" >{{item.idcardno == "" ? "信息不完整" : "信息完整，免费获赠保险"}}</view>
         </view>
-        <view class="nformation-complete">信息完整，免费获赠保险</view>
       </view>
       <view class="add-check-in" @tap="clickCheck">添加入住人</view>
       <view class="booking-people-box">
-        <view class="booking-people">预订人:城府</view>
-        <view class="cell-phone-number">+86 18284220103</view>
+        <view class="booking-people">预订人:{{nickname}}</view>
+        <view class="cell-phone-number">+86 {{phone}}</view>
       </view>
     </view>
     <view class="list-box">
@@ -95,12 +97,12 @@
 import MxDatePicker from "@/components/mx-datepicker/mx-datepicker.vue"; // 引入时间组件
 import {request} from '../../common/request.js' // 封装的带有token的请求方法
 import {shortHttp,room} from "../../common/requestUrl.json"; // 接口文件
+import {mapState,mapMutations} from 'vuex'
 export default {
   components: {MxDatePicker},
   data () {
     return {
       shortHttp,
-      check:false,
       choice:false, // radio组件是否勾选
       showPicker: false, // 是否显示时间组件  显示：true 不显示：false
       type: 'range',  //时间插件类型  可选值：date（日期）、time（时间）、datetime（日期时间）、range（日期范围）、rangetime（日期时间范围）
@@ -119,8 +121,14 @@ export default {
       title:'', // 标题
       cashplege:null, // 押金
       orderPrice:'', // 计算价格
+      nickname:'', // 用户昵称
+      phone:'', // 用户手机号
+      listData:[],
     }
   },
+  computed: {
+		...mapState(['isEditCheck'])
+	},
   onLoad(option){
     let whatDay = new Date(option.endTime).getDay();
     let whatsDay = new Date(option.startTime).getDay();
@@ -176,8 +184,17 @@ export default {
         break;
     }
     this.particulars();
+    // 获取本地储存的用户信息
+    uni.getStorage({
+      key:"dz_userInfo",
+      success:res => {
+        this.nickname = res.data.nickname
+        this.phone = res.data.phone
+      }
+    })
   },
   methods: {
+    ...mapMutations(['checkIn']),
     // 调整时间
     onShowDatePicker(type){//显示
       this.type = type;
@@ -243,19 +260,39 @@ export default {
         }
       })
     },
-    clickDelete(){
+    clickDelete(type){
       // 删除回调函数
+      console.log(type);
+      let array = this.listData
+      let a = array.indexOf(type);
+      array.splice(a,1);
+      
     },
     clickCheck(){
       uni.navigateTo({
         url:'/pages/particulars/selectors'
       })
     },
-    clickAmend(){
+    clickAmend(name,idcardno,id){ // 编辑
+      console.log(name,idcardno,id);
       uni.navigateTo({
-        url:'/pages/check_in/edit_check_in?type=edit'
+        url:`/pages/particulars/editor_check_in?name=${name}&idcardno=${idcardno}&id=${id}`
       })
     }
+  },
+  onShow(){
+    // console.log(this.checkIn);
+    let listData=[];
+    let data = this.$store.state.addCheckin;
+    console.log("vuex:",data);
+    
+    for (let index = 0; index < data.length; index++) {
+      let a = JSON.parse(data[index]);
+      listData.push(a);
+    }
+    this.listData = listData;
+    this.checkIn(false)
+      // console.log("11",this.listData);
   }
 }
 </script>
