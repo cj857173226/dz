@@ -72,6 +72,12 @@
 			}
 		},
 		{
+			"path": "pages/particulars/pay",
+			"style": {
+				"navigationBarTitleText": "支付"
+			}
+		},
+		{
 			"path": "pages/selecteds/selecteds",
 			"style": {
 				"navigationBarTitleText": ""

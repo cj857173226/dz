@@ -1,6 +1,75 @@
 <template>
   <view class="unclosed-contanier">
-    <view class="unclosed-box" v-for="(item,i) in list" :key="i" >
+     <view class="conter-box">
+      <view class="img-box">
+        <image class="obligation-img" src="../../static/images/meitu3.jpg"/>
+        <view class="title">名称</view>
+        <view class="state">待支付</view>
+      </view>
+      <view class="price-endtiem-box">
+        <view style="text-align: left;">
+          <view>金额：共<text style="color:#ef5b72;margin-right:30upx;">1000.00</text>元</view>
+          <view style="font-size:12px;margin:10upx 0;">入住日期：2019/4/9-2019/4/15</view>
+          <view>剩余时间<text>30:00</text></view>
+        </view>
+        <view style="text-align: right;">
+          <!-- <text>等待客户入住</text> -->
+          <view>等待支付</view>
+          <view>入住天数：<text>1天</text></view>
+          <view style="display: flex;flex-direction: row;">
+            <view class="btn">取消</view>
+            <view class="btn">支付</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="has-been-in-box">
+      <view class="has-been-in-img-box">
+        <image class="has-been-in-img" src="../../static/images/meitu3.jpg"/>
+        <view class="title">名称</view>
+        <view class="state">已入住</view>
+      </view>
+      <view class="price-endtiem-box">
+        <view style="text-align: left;">
+          <view>金额：共<text style="color:#ef5b72;margin-right:30upx;">1000.00</text>元</view>
+          <view style="font-size:12px;margin:10upx 0;">入住日期：2019/4/9-2019/4/15</view>
+          <!-- <view>剩余时间<text>30:00</text></view> -->
+        </view>
+        <view style="text-align: right;">
+          <!-- <text>等待客户入住</text> -->
+          <view class="check-out-btn">退房</view>
+          <view>入住天数：<text>1天</text></view>
+          <!-- <view style="display: flex;flex-direction: row;">
+            <view class="btn">取消</view>
+            <view class="btn">支付</view>
+          </view> -->
+        </view>
+      </view>
+    </view>
+    <view class="has-been-in-box">
+      <view class="has-been-in-img-box">
+        <image class="has-been-in-img" src="../../static/images/meitu3.jpg"/>
+        <view class="title">名称</view>
+        <view class="state">待入住</view>
+      </view>
+      <view class="price-endtiem-box">
+        <view style="text-align: left;">
+          <view>金额：共<text style="color:#ef5b72;margin-right:30upx;">1000.00</text>元</view>
+          <view style="font-size:12px;margin:10upx 0;">入住日期：2019/4/9-2019/4/15</view>
+          <!-- <view>剩余时间<text>30:00</text></view> -->
+        </view>
+        <view style="text-align: right;">
+          <!-- <text>等待客户入住</text> -->
+          <view class="check-out-btn">退房</view>
+          <view>入住天数：<text>1天</text></view>
+          <!-- <view style="display: flex;flex-direction: row;">
+            <view class="btn">取消</view>
+            <view class="btn">支付</view>
+          </view> -->
+        </view>
+      </view>
+    </view>
+    <!-- <view class="unclosed-box" v-for="(item,i) in list" :key="i" >
       <view class="unclosed-img-box">
         <image class="unclosed-img" :src="item.imgUrl"></image>
         <view class="whether-to-stay-in">{{item.whetherToStayIn}}</view>
@@ -17,7 +86,7 @@
         </view>
         <view class="btn">退房</view>
       </view>
-    </view>
+    </view> -->
   </view>
 </template>
 <script>
@@ -43,7 +112,112 @@ export default {
 <style lang="scss" scoped>
 .unclosed-contanier{
   width: 100%;
-  .unclosed-box{
+  font-size: 14px;
+  .conter-box{
+    width: 100%;
+    margin-top: 30upx;
+    border-bottom: 1px solid #adadad;
+    .img-box{
+      width: 100%;
+      height: 460upx;
+      padding: 40upx 80upx;
+      box-sizing: border-box;
+      background-color: #ececec;
+      position: relative;
+      .obligation-img{
+        width: 100%;
+        height: 100%;
+        border-radius: 60upx;
+      }
+      .title{
+        position: absolute;
+        left: 30upx;
+        bottom: 0;
+      }
+      .state{
+        position: absolute;
+        top: 0;
+        right: 30upx;
+      }
+    }
+    
+    .price-endtiem-box{
+      width: 100%;
+      padding: 30upx;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      
+    }
+  }
+  .btn{
+    width:140upx;
+    height:60upx;
+    background-color:#1592C8;
+    border-radius: 10upx;
+    text-align:center;
+    line-height:60upx;
+    color:#fff;
+    &:nth-of-type(2){
+      margin-left: 10upx;
+    }
+    &:active{
+      opacity: .5;
+    }
+  }
+  .has-been-in-box{
+    width: 100%;
+    margin-top: 30upx;
+    border-bottom: 1px solid #adadad;
+    .has-been-in-img-box{
+      width: 100%;
+      height: 460upx;
+      padding: 40upx 80upx;
+      box-sizing: border-box;
+      background-color: #ececec;
+      position: relative;
+      .has-been-in-img{
+        width: 100%;
+        height: 100%;
+        border-radius: 60upx;
+      }
+      .title{
+        position: absolute;
+        left: 30upx;
+        bottom: 0;
+      }
+      .state{
+        position: absolute;
+        top: 0;
+        right: 30upx;
+      }
+    }
+    .price-endtiem-box{
+      width: 100%;
+      padding: 30upx;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      .check-out-btn{
+        width: 140upx;
+        height:60upx;
+        color: #fff;
+        background-color: #1592C8;
+        border-radius:10upx;
+        text-align: center;
+        line-height: 60upx;
+        margin-bottom: 10upx;
+        &:active{
+          opacity: .5;
+        }
+      }
+    }
+  }
+  /* .unclosed-box{
     width: 100%;
     height: 600upx;
     margin-top: 30upx;
@@ -96,7 +270,7 @@ export default {
         }
       }
     }
-  }
+  } */
 }
 </style>
 

@@ -47,37 +47,47 @@
         </swiper-item>
         <swiper-item :key="2">
           <div class="bg-white padding margin text-center text-black">
-           3
+            <toBeConfirmed></toBeConfirmed>
           </div>
         </swiper-item>
         <swiper-item :key="3">
           <div class="bg-white padding margin text-center text-black">
-            4
+            <toStayIn></toStayIn>
           </div>
         </swiper-item>
         <swiper-item :key="4">
           <div class="bg-white padding margin text-center text-black">
-           5
+            <stayInThe></stayInThe>
           </div>
         </swiper-item>
         <swiper-item :key="5">
           <div class="bg-white padding margin text-center text-black">
-            6
+            <offTheStocks></offTheStocks>
           </div>
         </swiper-item>
         <swiper-item :key="6">
           <div class="bg-white padding margin text-center text-black">
-            7
+            <canceled></canceled>
           </div>
         </swiper-item>
         <swiper-item :key="7">
           <div class="bg-white padding margin text-center text-black">
-            8
+            <hasRefusedTo></hasRefusedTo>
           </div>
         </swiper-item>
         <swiper-item :key="8">
           <div class="bg-white padding margin text-center text-black">
-            9
+            <stale></stale>
+          </div>
+        </swiper-item>
+        <swiper-item :key="9">
+          <div class="bg-white padding margin text-center text-black">
+            <pendingInvestigationRoom></pendingInvestigationRoom>
+          </div>
+        </swiper-item>
+        <swiper-item :key="10">
+          <div class="bg-white padding margin text-center text-black">
+            <haveMoney></haveMoney>
           </div>
         </swiper-item>
       </swiper>
@@ -87,17 +97,41 @@
 
 <script>
 import uniSegmentedControl from "@/components/orlderList/uni-segmented-control.vue"; //选项卡
-import WucTab from "@/components/orlderList/wuc-tab/wuc-tab.vue";
+import WucTab from "@/components/orlderList/wuc-tab/wuc-tab.vue"; // 可滑动选项卡
 import unclosed from '@/components/orlderList/unclosed.vue' //进行中组件
 import over from '@/components/orlderList/over.vue'; //已结束组件
 import completeAll from '@/components/orlderList/completeAll.vue'; // 全部订单组件
 import obligation from '@/components/orlderList/obligation.vue'; // 待付款组件
+import toStayIn from '@/components/orlderList/to_stay_in.vue'; // 待入住组件
+import toBeConfirmed from '@/components/orlderList/to_be_confirmed.vue'; // 待确认组件
+import stayInThe from '@/components/orlderList/stay_in_the.vue'; // 入住中组件
+import offTheStocks from '@/components/orlderList/off_the_stocks.vue'; //已完成组件
+import canceled from '@/components/orlderList/canceled'; // 已取消组件
+import hasRefusedTo from '@/components/orlderList/has_refused_to.vue'; // 已拒绝组件
+import stale from '@/components/orlderList/stale'; // 已过期组件
+import pendingInvestigationRoom from '@/components/orlderList/pending_investigation_room';//带查房组件
+import haveMoney from '@/components/orlderList/have_money'; // 已结款组件
 export default {
-  components: { uniSegmentedControl,unclosed,over,WucTab,completeAll,obligation },
+  components: { 
+    uniSegmentedControl,
+    unclosed,
+    over,
+    WucTab,
+    completeAll,
+    obligation,
+    toStayIn,
+    toBeConfirmed,
+    stayInThe,
+    offTheStocks,
+    canceled,
+    hasRefusedTo,
+    stale,
+    pendingInvestigationRoom,
+    haveMoney
+    },
   data() {
     return {
       items: ["进行中", "已结束"],
-      // listItem:["全部","待支付","待确认","待入住","入住中","已完成","已取消","已拒绝","已过期"],
       tabList4: [
         { name: "全部" },
         { name: "待付款" },
@@ -106,11 +140,13 @@ export default {
         { name: "入住中" },
         { name: "已完成" },
         { name: "已取消" },
-        { name: "已拒绝" },
-        { name: "已过期" }
+        { name: "拒绝订单" },
+        { name: "已过期" },
+        { name: "待查房" },
+        { name: "已结款" },
       ],
       current: 0,
-      reveal:false,
+      reveal:true, //判断用户是房东还是房客
       TabCur4: 0,
     };
   },
@@ -124,7 +160,7 @@ export default {
       // console.log('到顶了',e)
     },
     lower:function(e){ //scroll-view触底事件
-      // console.log('到底了',e)
+      console.log('到底了',e)
     },
     scroll:function(e){ //scroll-view滚动事件(滚动触发)
       // console.log('scroll:',e)
@@ -149,10 +185,11 @@ export default {
     height: 100%;
     .client-box{
       width: 100%;
+      height: 100%;
       .content{
         box-sizing: border-box;
         width: 100%;
-        height: calc(100% - 92upx);
+        height: calc(100% - 62upx);
       }
     }
     .landlord-box{

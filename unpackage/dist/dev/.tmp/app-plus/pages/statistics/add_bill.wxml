@@ -1,2 +1,2 @@
 <import src="./add_bill.vue.wxml" />
-    <template is="64783890" data="{{ ...$root['0'], $root }}"/>
+    <template is="596e0ebe" data="{{ ...$root['0'], $root }}"/>

@@ -425,7 +425,7 @@
 					// 	}
 					// })
 					uni.navigateTo({
-						url:`/pages/particulars/place_order?startTime=${_that.startTime}&endTime=${_that.endTime}&luId=${_that.luId}&day=${_that.day}&orderPrice=${_that.orderPrice}`
+						url:`/pages/particulars/place_order?startTime=${_that.startTime}&endTime=${_that.endTime}&luId=${_that.luId}&day=${_that.day}&orderPrice=${_that.orderPrice}&price=${_that.price}`
 					})
 					
 				}

@@ -20,7 +20,8 @@
   "permissions": {
     "Maps": {
       "coordType": "gcj02"
-    }
+    },
+    "Payment": {}
   },
   "plus": {
     "useragent": {

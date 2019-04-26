@@ -120,6 +120,7 @@ export default {
       ImageUrl:null, // 图片地址
       title:'', // 标题
       cashplege:null, // 押金
+      price:'', // 房间价格
       orderPrice:'', // 计算价格
       nickname:'', // 用户昵称
       phone:'', // 用户手机号
@@ -130,12 +131,15 @@ export default {
 		// ...mapState(['isEditCheck'])
 	},
   onLoad(option){
+    console.log(option);
+    
     let whatDay = new Date(option.endTime).getDay();
     let whatsDay = new Date(option.startTime).getDay();
     this.luId = option.luId;
     this.endTime = option.endTime;
     this.startTime = option.startTime;
     this.day = option.day;
+    this.price = option.price;
     this.orderPrice = option.orderPrice
     switch (whatsDay) {
       case 0:
@@ -233,18 +237,43 @@ export default {
       this.choice = !this.choice
     },
     clickSubmit(){
-      if (this.choice === false) {
+      const _that = this
+      let data = JSON.stringify(_that.listData);
+      console.log(data)
+      if (_that.choice === false) {
         uni.showToast({
           title:"你未同意相关条款，不可下单",
           icon:"none"
         })
-      } else if (this.listData.length == 0) {
+      } else if (_that.listData.length == 0) {
         uni.showToast({
           title:"请添加入住人",
           icon:"none"
         })
       } else {
-        console.log("对了");
+        request({
+          url:'/wap/api/book.php?action=submit',
+          data:{luId:_that.luId,startDate:_that.startTime,endDate:_that.endTime,roomNum:'1',tenants:data},
+          success:res => {
+            console.log("提交订单：",res);
+            if (res.data.status === "success") {
+              uni.navigateTo({
+                url:`/pages/particulars/pay?bookOrderId=${res.data.content.bookOrderId}`
+              })
+            } else {
+              uni.showToast({
+                title:res.data.errorMsg,
+                icon:"none"
+              })
+            }
+          },
+          fail:function(err){
+            uni.showToast({
+              title:"系统错误",
+            })
+          }
+        })
+        
       }
     },
     particulars(){

@@ -1,11 +1,8 @@
-<<<<<<< HEAD
 
 page {
   height: 100%;
 }
 
-=======
->>>>>>> 65f154fff684259729b33a5db1f1d38d743b1584
 @charset "UTF-8";
 /**
  * 这里是uni-app内置的常用样式变量
@@ -32,35 +29,22 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-<<<<<<< HEAD
 .contanier.data-v-7f7a44fa {
   width: 100%;
   height: 100%;
-=======
-.contanier.data-v-18ef2f5d {
-  width: 100%;
->>>>>>> 65f154fff684259729b33a5db1f1d38d743b1584
   padding: 30rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-<<<<<<< HEAD
 .contanier .selectors-btn.data-v-7f7a44fa {
     width: 100%;
     height: 80rpx;
     background-color: #ea516b;
-=======
-.contanier .selectors-btn.data-v-18ef2f5d {
-    width: 100%;
-    height: 80rpx;
-    background-color: #EA516B;
->>>>>>> 65f154fff684259729b33a5db1f1d38d743b1584
     color: #fff;
     line-height: 80rpx;
     text-align: center;
     border-radius: 8rpx;
 }
-<<<<<<< HEAD
 .contanier .selectors-btn.data-v-7f7a44fa:active {
       opacity: 0.5;
 }
@@ -78,32 +62,6 @@ page {
       border-bottom: 1px solid #aba7a7;
 }
 .contanier .check_list_wrap .message-box .checkbox-box.data-v-7f7a44fa {
-=======
-.contanier .selectors-btn.data-v-18ef2f5d:active {
-      opacity: .5;
-}
-.contanier .message-box.data-v-18ef2f5d {
-    width: 100%;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    font-size: 14px;
-    margin-top: 40rpx;
-}
-.contanier .message-box .radio-box.data-v-18ef2f5d {
-      margin-right: 20rpx;
-}
-.contanier .message-box .right-box.data-v-18ef2f5d {
-      width: 100%;
-}
-.contanier .message-box .right-box .name-box.data-v-18ef2f5d {
->>>>>>> 65f154fff684259729b33a5db1f1d38d743b1584
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -113,7 +71,6 @@ page {
         -webkit-flex-direction: row;
             -ms-flex-direction: row;
                 flex-direction: row;
-<<<<<<< HEAD
 }
 .contanier .check_list_wrap .message-box .checkbox-box .radio-box.data-v-7f7a44fa {
           margin-right: 20rpx;
@@ -165,40 +122,5 @@ page {
 }
 .contanier .check_list_wrap .message-box .checkbox-box .right-box .identity-card-box .identity-card.data-v-7f7a44fa {
               margin-right: 16rpx;
-=======
-        -webkit-box-pack: justify;
-        -webkit-justify-content: space-between;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
-}
-.contanier .message-box .right-box .name-box .name.data-v-18ef2f5d {
-          font-weight: 600;
-}
-.contanier .message-box .right-box .name-box .jiantou.data-v-18ef2f5d {
-          color: #9a9797;
-          font-size: 16px;
-}
-.contanier .message-box .right-box .identity-card-box.data-v-18ef2f5d {
-        width: 100%;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: row;
-            -ms-flex-direction: row;
-                flex-direction: row;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-            -ms-flex-align: center;
-                align-items: center;
-        color: #9a9797;
-        margin-top: 20rpx;
-        font-size: 12px;
-}
-.contanier .message-box .right-box .identity-card-box .identity-card.data-v-18ef2f5d {
-          margin-right: 16rpx;
->>>>>>> 65f154fff684259729b33a5db1f1d38d743b1584
 }
 
