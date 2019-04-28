@@ -29,10 +29,10 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.chat_page.data-v-ef847096 {
+.chat_page.data-v-55dcfbdb {
   height: 100%;
 }
-.chat_page .main.data-v-ef847096 {
+.chat_page .main.data-v-55dcfbdb {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     height: 100%;
@@ -46,13 +46,13 @@ page {
         -ms-flex-direction: column;
             flex-direction: column;
 }
-.chat_page .main .chat_box.data-v-ef847096 {
+.chat_page .main .chat_box.data-v-55dcfbdb {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       height: calc(100% - 92rpx);
       overflow-y: auto;
 }
-.chat_page .main .send_box.data-v-ef847096 {
+.chat_page .main .send_box.data-v-55dcfbdb {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       height: 92rpx;
@@ -63,7 +63,7 @@ page {
       display: -ms-flexbox;
       display: flex;
 }
-.chat_page .main .send_box .cur_msg.data-v-ef847096 {
+.chat_page .main .send_box .cur_msg.data-v-55dcfbdb {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         background: #ffffff;
@@ -74,7 +74,7 @@ page {
         padding: 17rpx 10rpx;
         border-radius: 16rpx;
 }
-.chat_page .main .send_box .send_btn.data-v-ef847096 {
+.chat_page .main .send_box .send_btn.data-v-55dcfbdb {
         height: 72rpx;
         line-height: 72rpx;
         width: 160rpx;

@@ -53,6 +53,7 @@
 // 引入第三方评分插件
 import uniRate from '../particulars/uni-rate/uni-rate'
 import { shortHttp,portrait } from "../../common/requestUrl.json"; // 接口文件
+import {request} from '../../common/request.js' // 封装的带有token的请求方法
 export default {
   components: {
     uniRate
@@ -84,8 +85,8 @@ export default {
   },
   mounted () {
     let id = this.landlord
-    uni.request({
-      url:shortHttp+portrait,
+    request({
+      url:portrait,
       data:{landlordId:id},
       success: res => {
         console.log("房东详情：",res);

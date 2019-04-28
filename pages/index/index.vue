@@ -29,7 +29,7 @@
 				</view>
 				<view class="list-box" @tap="tapOrientation">
 					<i class="iconfont icon-place">&#xe793;</i>
-					<text class="my-place">{{city}}</text>
+					<text class="my-place">名宿</text>
 				</view>
 			</view>
 			<view class="calendar">
@@ -107,7 +107,7 @@ export default {
     return {
       indicatorDots: true,
       autoplay: true,
-      interval: 2000,
+      interval: 5000,
 			duration: 500,
       shortHttp, //域名
       weather: {  
@@ -137,7 +137,6 @@ export default {
         });
       }, 0);
 		}
-		
 		this.cityGps(); //调用获取城市名
   },
   onReady() {
@@ -153,15 +152,24 @@ export default {
 		},
     // 轮播图请求方法
     bannerFn: function() {
+			uni.showLoading({
+				title:'加载中'
+			})
       const _that = this;
       uni.request({
         url: shortHttp + banner,
         method: "GET",
         success: res => {
-          let array = res.data.content
-          // console.log('res:',res);
-          
-          _that.contentArray = array;
+					if(res.data.status === 'success'){
+						uni.hideLoading()
+						let array = res.data.content
+						_that.contentArray = array;
+					} else {
+						uni.showToast({
+							title:res.data.errorMsg,
+							icon:'none'
+						})
+					}
         },
         fail: err => {
           console.log(err);
@@ -170,10 +178,11 @@ export default {
 		},
 		// 搜索城市
     tapSelect:function(){
-				uni.navigateTo({
-					url:"/pages/index/searchCity"
-				})
-			},
+			console.warn("城市",this.city)  
+			uni.navigateTo({
+				url:"/pages/index/searchCity"
+			})
+		},
 			change({choiceDate, dayCount})
 			{
 				//1.choiceDate 时间区间（开始时间和结束时间）
@@ -199,13 +208,15 @@ export default {
     },
     // 周边推荐
      recommended() {
-      
+      uni.showLoading({
+				title:'加载中'
+			})
       const _that = this;
       request({
         url: "/wap/api/search.php?action=index",
 				data: { cityName: "广州" },  //*：有问题，无法拿到当前城市
 				success: function(res) {
-					//  console.log("同步操作", res);
+					uni.hideLoading();
 					  _that.ambitusArray = res.data.content.item;
 				}
       });
@@ -251,7 +262,7 @@ export default {
 				if (coll === true) {
 					setTimeout(()=>{
 						_this.$refs.mpvuePicker.show() // 点击弹出mpvuePickerpicker
-					},2000)
+					},1000)
 				} else if (coll === false) {
 					request({
 						url:'/wap/api/my.php?action=modifyFavorite',

@@ -20,7 +20,7 @@
 			}
 		},
 		{
-			"path": "pages/index/SearchCity",
+			"path": "pages/index/searchCity",
 			"style": {
 				"navigationBarTitleText": ""
 			}
@@ -48,6 +48,18 @@
 			}
 		},
 		{
+			"path": "pages/particulars/addition",
+			"style": {
+				"navigationBarTitleText": "添加入住人"
+			}
+		},
+		{
+			"path": "pages/particulars/editor_check_in",
+			"style": {
+				"navigationBarTitleText": "编辑入住人"
+			}
+		},
+		{
 			"path": "pages/landlord_introduced/landlord_introduced",
 			"style": {
 				"navigationBarTitleText": "房东介绍"
@@ -57,6 +69,12 @@
 			"path": "pages/particulars/place_order",
 			"style": {
 				"navigationBarTitleText": "开始下单"
+			}
+		},
+		{
+			"path": "pages/particulars/pay",
+			"style": {
+				"navigationBarTitleText": "支付"
 			}
 		},
 		{
@@ -117,7 +135,9 @@
 			// 订单
 			"path": "pages/orderList/orderList",
 			"style": {
-				"navigationBarTitleText": "订单"
+				"navigationBarTitleText": "订单",
+				"enablePullDownRefresh": true,
+				"backgroundTextStyle": "dark"
 			}
 		},
 		{

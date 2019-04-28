@@ -20,7 +20,8 @@
   "permissions": {
     "Maps": {
       "coordType": "gcj02"
-    }
+    },
+    "Payment": {}
   },
   "plus": {
     "useragent": {
@@ -84,6 +85,12 @@
         },
         "oauth": {},
         "push": {},
+        "payment": {
+          "alipay": {
+            "scheme": ""
+          },
+          "appleiap": {}
+        },
         "audio": {
           "mp3": {
             "description": "Android平台录音支持MP3格式文件"

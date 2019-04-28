@@ -11,6 +11,7 @@ const store = new Vuex.Store({
 		isEditUserInfo:false, // 是否修改个人资料
 		isEditStatistics:false, //是否修改了统计账单
 		isEditReleaseInfo:false, // 是否修改房源发布信息
+		isEditCheck:false, // 下单页面的是否编辑了常住人
 		// 初始化的创建房源信息(不做修改)
 		initCreateHouseInfo:{
 			xz_province: '', //省
@@ -133,6 +134,8 @@ const store = new Vuex.Store({
 		customBedOption:null,
 		// 当前选择的床铺
 		curBedOption:null,
+		// 初始添加入住人勾选获取的索引数组
+		addCheckin:[],
 	},
 	mutations: {
 		// 收货地址是否编辑状态更新
@@ -198,8 +201,11 @@ const store = new Vuex.Store({
 		// 清空自定义床铺组合
 		clearCurBedOption(state){
 			state.curBedOption = null;
+		},
+		// 修改索引数组的内容
+		checkIn(state,ary){
+			state.addCheckin = ary;
 		}
-		
 	}
 })
 export default store

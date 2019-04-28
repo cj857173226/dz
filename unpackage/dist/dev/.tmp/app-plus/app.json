@@ -1,11 +1,14 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/index/SearchCity",
+    "pages/index/searchCity",
     "pages/particulars/particulars",
     "pages/particulars/selectors",
+    "pages/particulars/addition",
+    "pages/particulars/editor_check_in",
     "pages/landlord_introduced/landlord_introduced",
     "pages/particulars/place_order",
+    "pages/particulars/pay",
     "pages/selecteds/selecteds",
     "pages/collection/collection",
     "pages/collection/new_group",

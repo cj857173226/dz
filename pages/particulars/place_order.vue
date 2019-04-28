@@ -4,8 +4,8 @@
       <image class="top-caption-img" :src="shortHttp+ImageUrl"></image>
       <view class="title">{{title}}</view>
     </view>
-    <view class="time-box" @click="onShowDatePicker('range')">
-      <view class="affirm-box">
+    <view class="time-box">
+      <view class="affirm-box" @click="onShowDatePicker('range')">
         <view class="week-box">
           <view class="week">{{startDay}}</view>
           <view class="date">{{startTime}}</view>
@@ -25,20 +25,22 @@
       </view>
       <view></view>
       <view class="border"></view>
-      <view v-show="check" class="check-person-box">
-        <view class="name-box">
-          <text class="name">姓名</text>
-          <view class="icon-box">
-            <text class="iconfont xiugai" @tap="clickAmend">&#xe645;</text>
-            <text class="shanchu" @tap="clickDelete">—</text>
+      <view v-if="listData.length > 0">
+        <view class="check-person-box" v-for="(item,index) in listData" :key="index">
+          <view class="name-box">
+            <text class="name">{{item.name}}</text>
+            <view class="icon-box">
+              <text class="iconfont xiugai" @tap="clickAmend(item.name,item.idcardno,item.id)">&#xe645;</text>
+              <text class="shanchu" @tap="clickDelete(index)">—</text>
+            </view>
           </view>
+          <view class="nformation-complete" >{{item.idcardno == "" ? "信息不完整" : "信息完整，免费获赠保险"}}</view>
         </view>
-        <view class="nformation-complete">信息完整，免费获赠保险</view>
       </view>
       <view class="add-check-in" @tap="clickCheck">添加入住人</view>
       <view class="booking-people-box">
-        <view class="booking-people">预订人:城府</view>
-        <view class="cell-phone-number">+86 18284220103</view>
+        <view class="booking-people">预订人:{{nickname}}</view>
+        <view class="cell-phone-number">+86 {{phone}}</view>
       </view>
     </view>
     <view class="list-box">
@@ -95,12 +97,12 @@
 import MxDatePicker from "@/components/mx-datepicker/mx-datepicker.vue"; // 引入时间组件
 import {request} from '../../common/request.js' // 封装的带有token的请求方法
 import {shortHttp,room} from "../../common/requestUrl.json"; // 接口文件
+// import {mapState,mapMutations} from 'vuex'
 export default {
   components: {MxDatePicker},
   data () {
     return {
       shortHttp,
-      check:false,
       choice:false, // radio组件是否勾选
       showPicker: false, // 是否显示时间组件  显示：true 不显示：false
       type: 'range',  //时间插件类型  可选值：date（日期）、time（时间）、datetime（日期时间）、range（日期范围）、rangetime（日期时间范围）
@@ -118,16 +120,26 @@ export default {
       ImageUrl:null, // 图片地址
       title:'', // 标题
       cashplege:null, // 押金
+      price:'', // 房间价格
       orderPrice:'', // 计算价格
+      nickname:'', // 用户昵称
+      phone:'', // 用户手机号
+      listData:[],
     }
   },
+  computed: {
+		// ...mapState(['isEditCheck'])
+	},
   onLoad(option){
+    console.log(option);
+    
     let whatDay = new Date(option.endTime).getDay();
     let whatsDay = new Date(option.startTime).getDay();
     this.luId = option.luId;
     this.endTime = option.endTime;
     this.startTime = option.startTime;
     this.day = option.day;
+    this.price = option.price;
     this.orderPrice = option.orderPrice
     switch (whatsDay) {
       case 0:
@@ -176,8 +188,17 @@ export default {
         break;
     }
     this.particulars();
+    // 获取本地储存的用户信息
+    uni.getStorage({
+      key:"dz_userInfo",
+      success:res => {
+        this.nickname = res.data.nickname
+        this.phone = res.data.phone
+      }
+    })
   },
   methods: {
+    // ...mapMutations(['checkIn']),
     // 调整时间
     onShowDatePicker(type){//显示
       this.type = type;
@@ -216,13 +237,43 @@ export default {
       this.choice = !this.choice
     },
     clickSubmit(){
-      if (this.choice === false) {
+      const _that = this
+      let data = JSON.stringify(_that.listData);
+      console.log(data)
+      if (_that.choice === false) {
         uni.showToast({
           title:"你未同意相关条款，不可下单",
           icon:"none"
         })
+      } else if (_that.listData.length == 0) {
+        uni.showToast({
+          title:"请添加入住人",
+          icon:"none"
+        })
       } else {
-        console.log("对了");
+        request({
+          url:'/wap/api/book.php?action=submit',
+          data:{luId:_that.luId,startDate:_that.startTime,endDate:_that.endTime,roomNum:'1',tenants:data},
+          success:res => {
+            console.log("提交订单：",res);
+            if (res.data.status === "success") {
+              uni.navigateTo({
+                url:`/pages/particulars/pay?bookOrderId=${res.data.content.bookOrderId}`
+              })
+            } else {
+              uni.showToast({
+                title:res.data.errorMsg,
+                icon:"none"
+              })
+            }
+          },
+          fail:function(err){
+            uni.showToast({
+              title:"系统错误",
+            })
+          }
+        })
+        
       }
     },
     particulars(){
@@ -231,7 +282,7 @@ export default {
         url:room,
         data:{luId:_that.luId},
         success: function(res) {
-          console.log('数据：'+res.data);
+          // console.log('数据：'+res.data);
           let arrayImg = res.data.content.images;
           let img;
           for (let index = 0; index < arrayImg.length; index++) {
@@ -243,19 +294,28 @@ export default {
         }
       })
     },
-    clickDelete(){
+    clickDelete(type){
       // 删除回调函数
-    },
-    clickCheck(){
+      let array = this.listData
+      let a = array.indexOf(type);
+      array.splice(a,1);
+    }, 
+    clickCheck(){ // 跳转到添加入住人页面
       uni.navigateTo({
         url:'/pages/particulars/selectors'
       })
     },
-    clickAmend(){
+    clickAmend(name,idcardno,id){ // 编辑
+      console.log(name,idcardno,id);
       uni.navigateTo({
-        url:'/pages/check_in/edit_check_in?type=edit'
+        url:`/pages/particulars/editor_check_in?name=${name}&idcardno=${idcardno}&id=${id}&type=indent`
       })
     }
+  },
+  onShow(){
+    let listData=[];
+    let data = this.$store.state.addCheckin;
+    this.listData = data
   }
 }
 </script>

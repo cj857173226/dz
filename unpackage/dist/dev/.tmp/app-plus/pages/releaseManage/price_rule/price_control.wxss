@@ -24,18 +24,18 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.center.data-v-1397bba3 {
+.center.data-v-1c054386 {
   width: 100%;
   padding: 0 30rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.center .label.data-v-1397bba3 {
+.center .label.data-v-1c054386 {
     height: 56rpx;
     line-height: 56rpx;
     font-size: 32rpx;
 }
-.center .price-amount.data-v-1397bba3 {
+.center .price-amount.data-v-1c054386 {
     width: 100%;
     padding: 20rpx 0;
     display: -webkit-box;
@@ -53,25 +53,25 @@
     border-bottom: 1px solid #F4F4F4;
     margin-bottom: 20rpx;
 }
-.center .price-amount .amout-box.data-v-1397bba3 {
+.center .price-amount .amout-box.data-v-1c054386 {
       height: 56rpx;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
 }
-.center .price-amount .amout-box .amount.data-v-1397bba3 {
+.center .price-amount .amout-box .amount.data-v-1c054386 {
         height: 100%;
         text-align: right;
         width: 300rpx;
 }
-.center .price-amount .amout-box .unit.data-v-1397bba3 {
+.center .price-amount .amout-box .unit.data-v-1c054386 {
         height: 100%;
         margin-left: 8rpx;
         line-height: 56rpx;
         font-size: 28rpx;
 }
-.center .hint.data-v-1397bba3 {
+.center .hint.data-v-1c054386 {
     color: #cccccc;
     font-size: 28rpx;
 }

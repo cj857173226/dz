@@ -14,7 +14,8 @@
             "delay" : 0
         },
         "modules" : {
-            "Maps" : {}
+            "Maps" : {},
+            "Payment" : {}
         },
         /* 模块配置 */
         "distribute" : {
@@ -61,7 +62,13 @@
                     }
                 },
                 "oauth" : {},
-                "push" : {}
+                "push" : {},
+                "payment" : {
+                    "alipay" : {
+                        "scheme" : ""
+                    },
+                    "appleiap" : {}
+                }
             }
         }
     },
