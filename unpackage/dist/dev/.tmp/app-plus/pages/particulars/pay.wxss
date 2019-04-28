@@ -102,4 +102,7 @@
     border-radius: 10rpx;
     margin-top: 30%;
 }
+.contanier .pay-btn.data-v-314d30f7:active {
+      opacity: .5;
+}
 

@@ -96,7 +96,6 @@ export default {
               self[index]['_val'] = JSON.stringify(item);
             })
           }
-        
         _that.listData = _data;
         console.log(_that.listData)
 

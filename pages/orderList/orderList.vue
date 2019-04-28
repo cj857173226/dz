@@ -170,6 +170,9 @@ export default {
       let { current } = e.target;
       this.TabCur4 = current;
     },
+  },
+  onPullDownRefresh(){
+    console.log('正在下拉')
   }
 };
 </script>

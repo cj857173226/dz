@@ -27,18 +27,34 @@
 				uni.navigateTo({
 					url:`/pages/collection/custom?id=${id}&title=${cname}`
 				})
+			},
+			grouping(){
+				const _that = this
+				// 获取分组列表
+				request({
+					url:"/wap/api/my.php?action=favoriteClass",
+					success: function(res) {
+						if (res.data.status === "success") {
+							_that.groupingList = res.data.content.item;
+						} else {
+							uni.showToast({
+								title:res.data.errorMsg
+							})
+						};
+					},
+					fail:function(err){
+						uni.showToast({
+							title:err
+						})
+					}
+				})
 			}
 		},
 		onLoad(){
-			const _that = this
-			// 获取分组列表
-			request({
-				url:"/wap/api/my.php?action=favoriteClass",
-				success: function(res) {
-					console.log("分组列表:",res);
-					_that.groupingList = res.data.content.item;
-				}
-			})
+			this.grouping() // 调用请求获取数据的回调
+		},
+		onShow(){
+			this.grouping() // 调用请求获取数据的回调
 		}
 	}
 </script>

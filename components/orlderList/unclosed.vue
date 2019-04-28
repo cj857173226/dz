@@ -69,27 +69,10 @@
         </view>
       </view>
     </view>
-    <!-- <view class="unclosed-box" v-for="(item,i) in list" :key="i" >
-      <view class="unclosed-img-box">
-        <image class="unclosed-img" :src="item.imgUrl"></image>
-        <view class="whether-to-stay-in">{{item.whetherToStayIn}}</view>
-      </view>
-      <view class=" introduced">
-        <view class="left-amount-box">
-          <view class="title">{{item.title}}</view>
-          <view class="amount-box">
-            <text style="color:#000;margin-right:10upx;">金额</text>
-            <text style="color:#ef5b72;margin-right:28upx;">{{item.amount}}</text>
-            |<text style="color:#000;margin-right:10upx;margin-left:28upx;">剩余时间</text>
-            <text style="color:#ef5b72">{{item.timeRemaining}}</text>
-          </view>
-        </view>
-        <view class="btn">退房</view>
-      </view>
-    </view> -->
   </view>
 </template>
 <script>
+import {request} from '../../common/request.js' // 封装的带有token的请求方法
 export default {
   data () {
     return {
@@ -106,7 +89,24 @@ export default {
   },
   methods: {
     
-  }
+  },
+  mounted () {
+    request({
+      url:"/wap/api/order.php?action=list&bizState=进行中",
+      success:function(res){
+        console.log("订单数据",res)
+        if(res.data.status === "success") {
+          console.log('123')
+        } else {
+          uni.showToast({
+            title:res.data.errorMsg,
+            icon:'none'
+          })
+        }
+      }
+    })
+  },
+  
 }
 </script>
 <style lang="scss" scoped>

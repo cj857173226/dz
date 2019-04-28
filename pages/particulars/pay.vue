@@ -26,6 +26,7 @@
       </view>
     </radio-group>
     <view class="pay-btn" @click="clickPayment">支付</view>
+    <!-- <view v-if="from != null">{{from}}</view> -->
   </view>
 </template>
 <script>
@@ -34,7 +35,8 @@ export default {
   data(){
     return {
       patternPayment:'', // 支付方式
-      id:''
+      id:'',
+      // from:null,
     }
   },
   onLoad(option){
@@ -47,15 +49,53 @@ export default {
     },
     clickPayment(){
       console.log('支付')
-      let payment = this.patternPayment;
+      uni.showLoading({
+        title: '加载中'
+      });
+      const _that = this;
+      let payment = _that.patternPayment; // 支付方式
       request({
         url:'/wap/api/pay.php',
-        data:{action:payment,dd_id:this.id},
-         success:res => {
-           if(res.statusCode == 200){
-            // document.write(res.data)
-           }
+        data:{action:payment,dd_id:_that.id},
+          success:function(res) {
+            uni.hideLoading();
+          //  if(res.data.status ==="success"){
+            // console.warn(res.data)
+            // let  orderFormData= res.data;
+            // const div = document.createElement('div');
+            // div.innerHTML = orderFormData;
+            // document.body.appendChild(div)
+            // document.forms[0].submit()
+            // _that.from = orderFormData
+            uni.getProvider({ // 获取用户手机中的支付服务商
+              service:'payment',
+              success:function (res) {
+                console.warn("服务商",res.provider)
+              }
+            })
+            if (payment === _that.patternPayment) {
+
+              uni.requestPayment({
+                provider: "alipay", // 支付方式
+                orderInfo: res.data, // 订单数据
+                success: function(res) {
+                  console.warn("uniapp",JSON.stringify(res))
+                },
+                fail: function(err) {
+                  console.log('fail:' + JSON.stringify(err));
+                }
+              })
+            }
+         /*   } else {
+             uni.showToast({
+               title:res.data.errorMsg,
+               icon:'none'
+             })
+           } */
            console.log(res)
+         },
+         fail: function(err) {
+           console.log(err)
          }
       })
     }
