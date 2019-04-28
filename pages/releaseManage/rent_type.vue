@@ -150,7 +150,7 @@
 									delta:1,
 								})
 							}else{
-								helper.layer('保存失败')
+								helper.layer(res.data.errorMsg)
 							}
 						},
 						complete:()=>{

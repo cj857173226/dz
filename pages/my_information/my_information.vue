@@ -58,7 +58,7 @@
 			<view class="form_item" @click="changeLocal">
 				<view class="label">地区</view>
 				<view class="ipt">
-					<view class="empty" v-if="infoForm.province===''&&infoForm.city===''">请选择</view>
+					<view class="empty" v-if="infoForm.province===''||infoForm.city===''">请选择</view>
 					<view class="data_box" v-else>{{infoForm.province}}-{{infoForm.city}}</view>
 				</view>
 				<view class="after_icon">
@@ -215,6 +215,7 @@
 							success: (res) => {
 								const data = JSON.parse(res.data)
 								if (data.status === 'success') {
+									console.log(data)
 									_this.storageInfo.headImgurl = data.content.url;
 									_this.avatar = data.content.url;
 									uni.setStorageSync('dz_userInfo', _this.storageInfo);
@@ -262,7 +263,8 @@
 						self[index] = Number(item);
 					})
 				}
-				this.defaultLocal = _arr.splice(0)
+				this.defaultLocal = _arr
+				console.log(this.defaultLocal)
 				this.mode = 'multiLinkageSelector'
 				this.deepLength = 2;
 				this.$refs.ciytPicker.show()
@@ -273,6 +275,7 @@
 				this.infoForm.province = localArr[0];
 				this.infoForm.city = localArr[1];
 				this.infoForm.localIndex = e.index.join(',');
+				
 			},
 			//取消城市选择
 			cancelLocal(e) {},
@@ -389,7 +392,7 @@
 							}
 						},
 						complete: () => {
-							this.idLoding = false;
+							_this.idLoding = false;
 						}
 					})
 				}

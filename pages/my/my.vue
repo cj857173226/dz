@@ -33,8 +33,8 @@
 							<p class="name">我的资料</p>
 						</view>
 					</view>
-					<!-- v-if="curPowerType==='fd' && userInfo.isFangDong" -->
-					<view class="basic-info-item" @click.stop="pageTo('/pages/releaseManage/releaseManage')" >
+					
+					<view class="basic-info-item" @click.stop="pageTo('/pages/releaseManage/releaseManage')" v-if="curPowerType==='fd' && userInfo.isFangDong">
 						<view class="_box">
 							<text class="iconfont icon-fabu"></text> 
 							<p class="name">发布管理</p>
@@ -60,8 +60,7 @@
 			<view class="more-fun-wrap">
 				<p class="more-fun-title">更多功能</p>
 				<view class="more-fun-item-wrap">
-					<!-- v-if="curPowerType==='fd' && userPower==='5'" -->
-					<view class="more-fun-item" @click.stop="pageTo('/pages/statistics/statistics')">
+					<view class="more-fun-item" @click.stop="pageTo('/pages/statistics/statistics')" v-if="curPowerType==='fd' && userInfo.isFangDong"> 
 						<view class="_box">
 							<text class="iconfont icon-tongji1"></text> 
 							<p class="name">统计</p>
@@ -99,7 +98,7 @@
 					</view>
 				</view>
 			</view>
-			<button id="change-fd" class="change-fd my-del-block" @tap="pageTo('/pages/landlord/landlord')">成为房东</button>
+			<button v-if="!userInfo.isFangDong" id="change-fd" class="change-fd my-del-block" @tap="pageTo('/pages/landlord/landlord')">成为房东</button>
 		</view>
 	</scroll-view>
 </template>
@@ -162,7 +161,7 @@
 			}
 			this.userInfo = uni.getStorageSync('dz_userInfo');
 			// 获取当前房东权限
-			this.curPowerType = this.userInfo.isFangDong? 'fk' : uni.getStorageSync('dz_curPower');
+			this.curPowerType = this.userInfo.isFangDong?uni.getStorageSync('dz_curPower'):'fk' ;
 			this.isUserInfoEditStatus(false);
 		},
 		onNavigationBarButtonTap(e){

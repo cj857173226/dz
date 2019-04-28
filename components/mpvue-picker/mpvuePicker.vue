@@ -216,7 +216,6 @@
 				}
 			},
 			show() {
-				this.pickerValue = this.pickerValueDefault;
 				setTimeout(() => {
 					if (this.pickerValueArrayChange || this.modeChange) {
 						this.initPicker(this.pickerValueArray);
@@ -226,6 +225,7 @@
 					} else {
 						this.showPicker = true;
 					}
+					this.pickerValue = this.pickerValueDefault;
 				}, 0);
 			},
 			maskClick() {

@@ -1,81 +1,157 @@
 <template>
-  <view class="centenr">
-    <view class="china" v-if="show">
-      <view class="identity-card">
-        <label class="name">真实姓名</label>
-        <input class="name-card" placeholder="请输入证件上的真实姓名" type="text"/>
-      </view>
-      <view class="identity-card">
-        <label class="name">身份证号</label>
-        <input class="name-card" placeholder="请输入身份证号码" type="idcard"/>
-      </view>
-      <view class="hint" @tap='onShow'>如你是非中国大陆地区用户，请点击这里▶</view>
-    </view>
-    <view class="china" v-else>
-      <view class="identity-card">
-        <label class="name">真实姓名</label>
-        <input class="name-card" placeholder="请输入证件上的真实姓名" type="text"/>
-      </view>
-      <view class="identity-card">
+	<view class="centenr">
+		<view class="china" v-if="show">
+			<view class="identity-card">
+				<label class="name">真实姓名</label>
+				<input class="name-card" placeholder="请输入证件上的真实姓名" type="text" v-model="realname" />
+			</view>
+			<view class="identity-card">
+				<label class="name">身份证号</label>
+				<input class="name-card" placeholder="请输入身份证号码" type="idcard" v-model="idcard" />
+			</view>
+			<view class="hint" @tap='onShow'>如你是非中国大陆地区用户，请点击这里▶</view>
+		</view>
+		<view class="china" v-else>
+			<view class="identity-card">
+				<label class="name">真实姓名</label>
+				<input class="name-card" placeholder="请输入证件上的真实姓名" type="text" v-model="realname" />
+			</view>
+			<!-- <view class="identity-card">
         <label class="name">护照所属国家或地区</label>
         <view class="name-card">请选择<text class="iconfont">&#xe65e;</text></view>
-      </view>
-      <view class="identity-card">
-        <label class="name">护照号</label>
-        <input class="name-card" placeholder="请输入护照号" type="idcard"/>
-      </view>
-      <view class="hint" @tap='onShow'>如你是中国大陆地区用户，请点击这里填写▶</view>
-    </view>
-  </view>
+      </view> -->
+			<view class="identity-card">
+				<label class="name">护照号</label>
+				<input class="name-card" placeholder="请输入护照号" type="idcard" v-model="passCard" />
+			</view>
+			<view class="hint" @tap='onShow'>如你是中国大陆地区用户，请点击这里填写▶</view>
+		</view>
+	</view>
 </template>
 <script>
-export default {
-  data () {
-    return {
-      show:true,
-      // hidden:false
-    }
-  },
-  methods: {
-    // 切换是中国还是国外的填写信息
-    onShow:function(){
-      this.show=!this.show
-    }
-  }
-};
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+	import {
+		request
+	} from '../../common/request.js'
+	import helper from 'common/helper.js'
+	export default {
+		data() {
+			return {
+				realname: '', //真实姓名
+				idcard: '', // 身份证
+				passCard: '', //护照号
+				show: true,
+				isloading: false,
+				// hidden:false
+			}
+		},
+		onLoad() {
+			const userInfo = uni.getStorageSync('dz_userInfo');
+			this.passCard = userInfo.passport;
+			this.realname = userInfo.realname;
+			this.idcard = userInfo.idcard;
+		},
+		onShow() {
+
+		},
+		onNavigationBarButtonTap(e) {
+			if (e.index === 0) {
+				this.editInfo();
+			}
+		},
+		computed: {
+			...mapState(['isEditUserInfo']),
+		},
+		methods: {
+			...mapMutations(['isUserInfoEditStatus']),
+			// 切换是中国还是国外的填写信息
+			onShow: function() {
+				this.show = !this.show
+			},
+			// 修改信息
+			editInfo() {
+				if (this.isloading) return;
+				const _this = this;
+				const truename = _this.realname;
+				const idCard = _this.idcard;
+				const passCard = _this.passCard;
+				if (truename.trim() === '' || !helper.nameRge(truename)) {
+					helper.layer('姓名必须为中文')
+				} else if (idCard.trim() === '' || !helper.idCardReg(idCard)) {
+					helper.layer('身份证格式有误')
+				} else {
+					this.isloading = true;
+					const param = {
+						idcard: idCard,
+						passport: passCard,
+						realname: truename,
+					}
+					request({
+						url: '/wap/api/my.php?action=updateInfo',
+						method: 'POST',
+						data: param,
+						success: (res) => {
+							if (res.data.status === 'success') {
+								let _uinfo = uni.getStorageSync('dz_userInfo');
+								let _data = Object.assign(_uinfo, param);
+								uni.setStorageSync('dz_userInfo', _data);
+								_this.isUserInfoEditStatus(true);
+								uni.navigateBack({
+									delta: 1
+								})
+								helper.layer('修改成功')
+							} else {
+								helper.layer('修改失败')
+							}
+						},
+						complete: () => {
+							_this.isloading = false;
+						}
+					})
+				}
+			}
+		}
+	};
 </script>
 
 <style lang="scss" scoped>
-.centenr {
-  width: 100%;
-  padding: 0 30upx;
-  box-sizing: border-box;
-  .china {
-    width: 100%;
-    .identity-card {
-      height: 40upx;
-      padding: 20upx 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #ececec;
-      font-size: 14px;
-      .name {
-        font-weight: 600;
-      }
-      .name-card {
-        width: 360upx;
-        text-align: right;
-        color: #777777;
-      }
-    }
-    .hint{
-      font-size: 12px;
-      font-weight: bold;
-      text-align: center;
-      margin-top: 30upx;
-    }
-  }
-}
-</style>
+	.centenr {
+		width: 100%;
+		padding: 0 30upx;
+		box-sizing: border-box;
 
+		.china {
+			width: 100%;
+
+			.identity-card {
+				height: 40upx;
+				padding: 20upx 0;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				border-bottom: 1px solid #ececec;
+				font-size: 14px;
+
+				.name {
+					font-weight: 600;
+				}
+
+				.name-card {
+					width: 360upx;
+					text-align: right;
+					color: #777777;
+				}
+			}
+
+			.hint {
+				font-size: 12px;
+				font-weight: bold;
+				text-align: center;
+				margin-top: 30upx;
+			}
+		}
+	}
+</style>

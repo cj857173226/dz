@@ -116,7 +116,7 @@
 	} from '../../common/request.js'
 	import helper from '../../common/helper.js'
 	import {
-		shortHttp
+		shortHttp	
 	} from '../../common/requestUrl.json'
 	export default {
 		data() {
@@ -241,7 +241,7 @@
 											delta: 1,
 										})
 									} else {
-										helper.layer('删除失败')
+										helper.layer(res.data.errorMsg)
 									}
 								},
 								complete: () => {

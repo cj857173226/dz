@@ -2,10 +2,11 @@
 	<view class="contanier">
 		<view class="title">上传房源照片要求</view>
 		<view class="demand-box">
-			<text>1.无明显修改</text>
-			<text>2.无拉伸变形</text>
-			<text>3.无水印</text>
-			<text>4.不能出现联系方式或品牌宣传</text>
+			<text>1.无明显修改&nbsp;</text>
+			<text>2.无拉伸变形 </text>
+			<text>3.无水印 </text>
+			<text>4.不能出现联系方式或品牌宣传&nbsp;</text>
+			<view style="color:#F05B72;">5.图片大小不超过20M,尺寸800*800以上,必须是png/jpg格式!!!&nbsp;</view>
 		</view>
 		<view class="bedroom-box">
 			<view class="top-bedroom">
@@ -136,6 +137,11 @@
 			return {
 				house_id: '', //房源id
 				pics: {}, // 所有图片的集合
+				bedRoomImages:[], //卧室
+				liveRoomImages:[], //客厅
+				toiletImages:[], //卫生间
+				kitchenImages:[], //厨房
+				otherImages:[], //其他
 			}
 		},
 		onLoad() {
@@ -147,58 +153,6 @@
 		computed: {
 			...mapState(['releaseObj']),
 			// 获取不同类型照片列表
-			// type---> bedroom 卧室   liveroom客厅  toilet卫生间  kitchen厨房  other 其他
-
-			// 卧室照片
-			bedRoomImages: {
-				get() {
-					let _pics = [];
-					if (this.pics.bedroom && this.pics.bedroom.length > 0) {
-						_pics = this.pics.bedroom;
-					}
-					return _pics;
-				}
-			},
-			// 客厅照片
-			liveRoomImages: {
-				get() {
-					let _pics = [];
-					if (this.pics.liveroom && this.pics.liveroom.length > 0) {
-						_pics = this.pics.liveroom;
-					}
-					return _pics;
-				}
-			},
-			// 卫生间
-			toiletImages: {
-				get() {
-					let _pics = [];
-					if (this.pics.toilet && this.pics.toilet.length > 0) {
-						_pics = this.pics.toilet;
-					}
-					return _pics;
-				}
-			},
-			// 厨房
-			kitchenImages: {
-				get() {
-					let _pics = [];
-					if (this.pics.kitchen && this.pics.kitchen.length > 0) {
-						_pics = this.pics.kitchen;
-					}
-					return _pics;
-				}
-			},
-			// 其他
-			otherImages: {
-				get() {
-					let _pics = [];
-					if (this.pics.other && this.pics.other.length > 0) {
-						_pics = this.pics.other;
-					}
-					return _pics;
-				}
-			},
 		},
 		methods: {
 			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
@@ -235,13 +189,18 @@
 			getCurData() {
 				const _releaseObj = this.releaseObj;
 				this.house_id = _releaseObj.id;
-				console.log(_releaseObj.pics)
-				this.pics = _releaseObj.pics ? JSON.parse(_releaseObj.pics) : {};
+				const pics = _releaseObj.pics ? JSON.parse(_releaseObj.pics) : {};
+				this.bedRoomImages = pics.bedroom;
+				this.liveRoomImages = pics.liveroom;
+				this.toiletImages = pics.toilet;
+				this.kitchenImages = pics.kitchen;
+				this.otherImages = pics.other;
 			}
 		}
 	};
 </script>
 <style lang="scss" scoped>
+	$theme-color: #F05B72;
 	.contanier {
 		width: 100%;
 		padding: 30upx;
