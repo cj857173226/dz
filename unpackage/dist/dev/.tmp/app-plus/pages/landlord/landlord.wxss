@@ -1,6 +1,6 @@
 
 page {
-  height: 100%;
+	height: 100%;
 }
 
 @charset "UTF-8";
@@ -125,20 +125,42 @@ page {
         margin-left: 20rpx;
 }
 .contaniers .landlord-box .box .list-box .list-title-box .mobile-phone-box .mobile-phone.data-v-dee18e62 {
-          font-size: 12px;
-          font-weight: bold;
+          font-size: 32rpx;
 }
 .contaniers .landlord-box .box .list-box .list-title-box .mobile-phone-box .phone-number.data-v-dee18e62 {
-          font-size: 12px;
+          font-size: 28rpx;
           font-weight: 300;
-          color: #a5a6a6;
+          color: #cccccc;
 }
 .contaniers .landlord-box .box .list-box .list-title-box .off-the-stocks.data-v-dee18e62 {
-          font-size: 14px;
-          font-weight: bold;
+          font-size: 32rpx;
 }
 .contaniers .landlord-box .box .list-box .list-title-box .off-the-stocks .right.data-v-dee18e62 {
-            color: #a5a6a6;
+            color: #cccccc;
+            font-size: 32rpx;
+}
+.contaniers .landlord-box .box .status_wrap.data-v-dee18e62 {
+      margin-top: 30rpx;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: reverse;
+      -webkit-flex-direction: row-reverse;
+          -ms-flex-direction: row-reverse;
+              flex-direction: row-reverse;
+}
+.contaniers .landlord-box .box .status_wrap .landlord_status.data-v-dee18e62 {
+        display: inline-block;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        padding: 8rpx 14rpx;
+        border: 1px solid #F05B72;
+        font-size: 28rpx;
+        border-radius: 8rpx;
+        color: #F05B72;
+        background: #ffe3e3;
 }
 .contaniers .landlord-box .btn.data-v-dee18e62 {
       width: 100%;

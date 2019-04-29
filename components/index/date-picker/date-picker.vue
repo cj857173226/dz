@@ -119,6 +119,7 @@
 
 			this.dateData();
 			// this.showCalendar();
+			
 		},
 		created() {
 			//#ifdef H5
@@ -551,6 +552,7 @@
 
 	.layer-white-space {
 		position: fixed;
+		font-size: 14px;
 		height: 100%;
 		width: 100%;
 		background-color: #ccc;
@@ -920,7 +922,7 @@
 	.date-wrappper {
 		position: relative;
 		padding: 0 16upx;
-		font-size: 32upx;
+		font-size: 28upx;
 		color: black;
 	}
 
