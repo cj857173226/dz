@@ -38,7 +38,7 @@
 			<view class="search" @tap="tapSelect">
 				<view class="list-box">
 					<i class="iconfont icon-city">&#xe611;</i>
-					<text class="city">试试搜:花水湾</text>
+					<text class="city">{{searchCity}}</text>
 				</view>
 				<view>
 					<i class="iconfont right">&#xe65e;</i>
@@ -93,7 +93,6 @@
 
 <script>
 import mpvuePicker from '../../components/index/mpvue-picker/mpvuePicker';
-// 引入自定义组件
 import calendar from '../../components/index/date-picker/date-picker' //引入日期插件件
 import {request} from '../../common/request.js' // 封装的带有token的请求方法
 import { shortHttp, banner, ambitus } from "../../common/requestUrl.json"; // 接口文件
@@ -124,10 +123,15 @@ export default {
       mode: 'selector',
       deepLength: 1,
       pickerValueDefault: [0],
-      pickerValueArray:[]
+			pickerValueArray:[],
+			searchCity:'试试搜:花水湾',
+			startTime:'', // 开始时间
+			endTime:'', // 结束时间
     };
   },
   onLoad() {
+		console.log("时间",this.startTime);
+		
     // 判断用户是否登录
     let token = uni.getStorageSync("dz_token");
     if (!token) {
@@ -183,20 +187,22 @@ export default {
 				url:"/pages/index/searchCity"
 			})
 		},
-			change({choiceDate, dayCount})
-			{
-				//1.choiceDate 时间区间（开始时间和结束时间）
-				//2.dayCount 共多少晚
-				console.dir(choiceDate)
-				console.log("入住从 "+ choiceDate[0].re + "  到 " + choiceDate[1].re + "  共 " + dayCount +" 晚");
-			},
-			// 点击按钮跳转到搜索页面
-			clickSelect:function () {
-				console.log('1111')
-				uni.navigateTo({
-					url:'/pages/selecteds/selecteds'
-				})
-			},
+		change({choiceDate, dayCount}){
+			//1.choiceDate 时间区间（开始时间和结束时间）
+			//2.dayCount 共多少晚
+			console.log("入住从 "+ choiceDate[0].re + "  到 " + choiceDate[1].re + "  共 " + dayCount +" 晚");
+			this.startTime = choiceDate[0].re;
+			this.endTime = choiceDate[1].re;
+		},
+		// 点击按钮跳转到搜索页面
+		clickSelect:function () {
+			console.log('1111')
+			let startTime = this.startTime;
+			let endTime = this.endTime;
+			uni.navigateTo({
+				url:`/pages/selecteds/selecteds?start=${startTime}&end=${endTime}`
+			})
+		},
     cityGps() {
       // 获取当前位置
       const _that = this;
@@ -347,6 +353,7 @@ page {
 		text-align: center;
 		padding: 42upx 30upx 30upx 30upx;
 		box-sizing: border-box;
+		font-size: 28upx;
 		.title-box{
 			display: flex;
 			flex-direction: row;
@@ -513,6 +520,7 @@ page {
 		align-items: center;
 	}
 	.location{
+		font-size: 28upx;
 		height: 90upx;
 		border-bottom: 1px solid #dedede;
 		display: flex;
@@ -530,7 +538,7 @@ page {
 	}
 	.my-place{
 		color: #9d9d9d;
-		font-size: 14px;
+		font-size: 28upx;
 		margin-left: 20upx;
 	}
 	.city{
@@ -546,6 +554,7 @@ page {
 	}	
 	.search{
 		height: 90upx;
+		font-size: 28upx;
 		display: flex;
 		flex-direction: row;
 		align-items: center;

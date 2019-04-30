@@ -25,7 +25,7 @@
         <radio  color="#EA516B" value="微信"/>
       </view>
     </radio-group>
-    <view class="pay-btn" @click="clickPayment">支付</view>
+    <button class="pay-btn" :disabled="WhetherDisable" @click="clickPayment">支付</button>
     <!-- <view v-if="from != null">{{from}}</view> -->
   </view>
 </template>
@@ -36,11 +36,10 @@ export default {
     return {
       patternPayment:'', // 支付方式
       id:'',
-      // from:null,
+      WhetherDisable:false,
     }
   },
   onLoad(option){
-    console.log(option);
     this.id = option.bookOrderId
   },
   methods: {
@@ -48,56 +47,51 @@ export default {
       this.patternPayment = e.detail.value;
     },
     clickPayment(){
-      console.log('支付')
-      uni.showLoading({
-        title: '加载中'
-      });
       const _that = this;
-      let payment = _that.patternPayment; // 支付方式
-      request({
-        url:'/wap/api/pay.php',
-        data:{action:payment,dd_id:_that.id},
+      // 判断patternPayment的值是否为空，如果为空提示用户，如果有值发起请求
+      if (_that.patternPayment === '') {
+        uni.showToast({
+          title:'请选择一种支付方式',
+          icon:'none'
+        })
+      } else {
+        uni.showLoading({
+          title: '加载中'
+        });
+        _that.WhetherDisable = true; // 用户点击一次之后按钮禁用不可在此点击
+        setTimeout(()=>{
+          _that.WhetherDisable = false;
+        },2000);
+        let payment = _that.patternPayment; // 支付方式
+        console.warn("订单id",_that.id)
+        request({
+          url:'/wap/api/pay.php',
+          data:{action:payment,dd_id:_that.id},
           success:function(res) {
             uni.hideLoading();
-          //  if(res.data.status ==="success"){
-            // console.warn(res.data)
-            // let  orderFormData= res.data;
-            // const div = document.createElement('div');
-            // div.innerHTML = orderFormData;
-            // document.body.appendChild(div)
-            // document.forms[0].submit()
-            // _that.from = orderFormData
-            uni.getProvider({ // 获取用户手机中的支付服务商
-              service:'payment',
-              success:function (res) {
-                console.warn("服务商",res.provider)
-              }
-            })
+            console.warn(res.data)
             if (payment === _that.patternPayment) {
-
-              uni.requestPayment({
-                provider: "alipay", // 支付方式
-                orderInfo: res.data, // 订单数据
-                success: function(res) {
-                  console.warn("uniapp",JSON.stringify(res))
-                },
-                fail: function(err) {
-                  console.log('fail:' + JSON.stringify(err));
-                }
-              })
+              document.write(res.data);
+              // uni.requestPayment({
+              //   provider: "alipay", // 支付方式
+              //   orderInfo: res.data, // 订单数据
+              //   success: function(res) {
+              //     console.warn("uniapp",JSON.stringify(res))
+              //   },
+              //   fail: function(err) {
+              //     console.log('fail:' + JSON.stringify(err));
+              //   }
+              // })
             }
-         /*   } else {
-             uni.showToast({
-               title:res.data.errorMsg,
-               icon:'none'
-             })
-           } */
-           console.log(res)
-         },
-         fail: function(err) {
-           console.log(err)
-         }
-      })
+          },
+          fail: function(err) {
+            console.log(err)
+          }
+        })
+      }
+      
+      
+      
     }
   }
 }

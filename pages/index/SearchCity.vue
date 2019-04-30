@@ -28,6 +28,9 @@ export default {
     },
     onSelect(city) {
       console.log(city)
+      uni.navigateTo({
+        url:`/pages/selecteds/selecteds?city=${city}`
+      })
     }
   },
   onLoad(){
