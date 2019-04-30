@@ -141,11 +141,9 @@ export default {
         });
       }, 0);
 		}
-		this.cityGps(); //调用获取城市名
-  },
-  onReady() {
-    this.bannerFn();
+		this.bannerFn();
     this.recommended();
+		this.cityGps(); //调用获取城市名
   },
   methods: {
     onDetails(id){
@@ -338,7 +336,15 @@ export default {
     if (this.$refs.mpvueCityPicker.showPicker) {
       this.$refs.mpvueCityPicker.pickerCancel()
     }
-  }
+	},
+	onPullDownRefresh() { // 监听用户下拉事件
+		console.log('refresh');
+		this.bannerFn();
+		this.recommended();
+		setTimeout(()=> {
+			uni.stopPullDownRefresh();  //停止下拉刷新动画
+		},2000)
+	},
 };
 </script>
 <style>

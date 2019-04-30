@@ -273,7 +273,7 @@
 				showPicker: false,
         type: 'range',  //时间插件类型  可选值：date（日期）、time（时间）、datetime（日期时间）、range（日期范围）、rangetime（日期时间范围）
 				value: '',
-				day:null, //日历选择的天数,
+				day:'', //日历选择的天数,
 				startTime:null,
 				endTime:null,
 				orderPrice:'', // 订单结算的价格
