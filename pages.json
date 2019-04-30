@@ -22,7 +22,7 @@
 			}
 		},
 		{
-			"path": "pages/index/SearchCity",
+			"path": "pages/index/searchCity",
 			"style": {
 				"navigationBarTitleText": ""
 			}
