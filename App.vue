@@ -2,7 +2,7 @@
 	export default {
 		data() {
 			return {
-
+				
 			}
 		},
 		computed: {},
@@ -16,6 +16,7 @@
 						url: "/pages/login/login"
 					})
 				}, 0)
+			}else{
 			}
 		},
 		onShow: function() {
