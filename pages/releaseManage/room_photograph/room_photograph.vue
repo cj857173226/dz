@@ -21,12 +21,23 @@
 				<text class="hint-bedroom-color">卧室、床铺、床单、枕头展示齐全</text>
 			</view>
 			<view class="image_wrap">
-
 				<view class="img_item" v-if="bedRoomImages.length>0" v-for="(item, index) in bedRoomImages" :key="index">
 					<image src="/static/images/meitu1.jpg">
 					</image>
 					<view class="del_img">
 						<text class="iconfont icon-duomeitiicon-"></text>
+					</view>
+				</view>
+				
+				<!-- 临时缓存地址 -->
+				<view class="img_item2" v-if="bedRoomPics.length>0 && isUploading" v-for="(item, index) in bedRoomPics" :key="index">
+					<image src="/static/images/meitu1.jpg">
+					</image>
+					<view class="mask">
+						<text class="progress">
+							<text class="num">100</text>%
+						</text>
+						<!-- <text class="err">此图不符合规范!!</text> -->
 					</view>
 				</view>
 				<view class="choose_img" @tap.stop="chooseImg('bedroom')">
@@ -137,11 +148,19 @@
 			return {
 				house_id: '', //房源id
 				pics: {}, // 所有图片的集合
-				bedRoomImages:[], //卧室
-				liveRoomImages:[], //客厅
-				toiletImages:[], //卫生间
-				kitchenImages:[], //厨房
-				otherImages:[], //其他
+				bedRoomImages: [], //卧室
+				liveRoomImages: [], //客厅
+				toiletImages: [], //卫生间
+				kitchenImages: [], //厨房
+				otherImages: [], //其他
+
+				// 图片临时存储
+				bedRoomPics: [], //卧室
+				liveRoomPics: [], //客厅
+				toiletPics: [], //卫生间
+				kitchenPics: [], //厨房
+				otherPics: [], //其他
+				isUploading: false,// 是否正在上传
 			}
 		},
 		onLoad() {
@@ -158,31 +177,69 @@
 			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
 			// 选择照片
 			chooseImg(type) {
-				const _this =this;
+				const _this = this;
 				uni.chooseImage({
 					count: 9, //默认9
 					sizeType: ['original'], //可以指定是原图还是压缩图，默认二者都有
-					sourceType: ['album','camera'], //从相册选择
+					sourceType: ['album', 'camera'], //从相册选择
 					success: function(res) {
-						console.log(res);
-						let _imgs =  res.tempFiles[0];
-						console.log(_this.getImgInfo(_imgs))
+						// console.log(res);
+						let _imgs = res.tempFiles;
+						console.log(_imgs)
+						_imgs.forEach((item, i) => {
+							let _img = item.path;
+							_this.uploadImg(_img, i)
+						})
+						// _this.uploadImg(_imgs)
+
 					}
 				});
 			},
-			getImgInfo(img){
+			// 图片上传
+			uploadImg(img, index) {
+				const token = uni.getStorageSync('dz_token');
+				const uploadTask = uni.uploadFile({
+					url: 'http://dz.abontest.com/wap/api/upload.php', //仅为示例，非真实的接口地址
+					filePath: img,
+					name: 'file',
+					header: {
+						"Authorization": 'Bearer ' + token,
+					},
+					success: (uploadFileRes) => {
+						console.log(uploadFileRes.data);
+					},
+					fail: () => {
+
+					},
+					complete: (res) => {
+						console.log(res)
+					}
+				});
+				uploadTask.onProgressUpdate((res) => {
+					console.log(`第${index+1}张图上传进度:${res.progress}`);
+					console.log(`第${index+1}张图已经上传的数据长度:${res.totalBytesSent}`);
+					console.log(`第${index+1}张图预期需要上传的数据总长度:${res.totalBytesExpectedToSend}`);
+
+					// 测试条件，取消上传任务。
+					// 					if (res.progress > 50) {
+					// 						uploadTask.abort();
+					// 					}
+				});
+			},
+			// 获取图片信息
+			getImgInfo(img) {
 				let _obj = {};
 				uni.getImageInfo({
-            src: img.path,
-            success: function (image) {
-                _obj = {
-									width:image.width,
-									height:image.height,
-									path:image.path?image.path:'',
-									size:img.size / 1024/ 1024,
-								};
-            }
-        });
+					src: img.path,
+					success: function(image) {
+						_obj = {
+							width: image.width,
+							height: image.height,
+							path: image.path ? image.path : '',
+							size: img.size / 1024 / 1024,
+						};
+					}
+				});
 				return _obj
 			},
 			// 获取当前页面的数据
@@ -190,6 +247,7 @@
 				const _releaseObj = this.releaseObj;
 				this.house_id = _releaseObj.id;
 				const pics = _releaseObj.pics ? JSON.parse(_releaseObj.pics) : {};
+				this.pics = pics;
 				this.bedRoomImages = pics.bedroom;
 				this.liveRoomImages = pics.liveroom;
 				this.toiletImages = pics.toilet;
@@ -201,6 +259,7 @@
 </script>
 <style lang="scss" scoped>
 	$theme-color: #F05B72;
+
 	.contanier {
 		width: 100%;
 		padding: 30upx;
@@ -257,7 +316,8 @@
 				display: inline-flex;
 				flex-wrap: wrap;
 
-				.img_item {
+				.img_item,
+				.img_item2 {
 					position: relative;
 					box-sizing: border-box;
 					display: inline-flex;
@@ -271,7 +331,9 @@
 						width: 100%;
 						border-radius: 8upx;
 					}
+				}
 
+				.img_item {
 					.del_img {
 						position: absolute;
 						top: 0;
@@ -287,6 +349,43 @@
 
 						.iconfont {
 							font-size: 28upx;
+						}
+					}
+				}
+
+				.img_item2 {
+					.mask {
+						position: absolute;
+						box-sizing: border-box;
+						padding: 20upx;
+						height: 100%;
+						width: 100%;
+						border-radius: 8upx;
+						top: 0;
+						left: 0;
+						background: rgba(114, 114, 114, 0.4);
+						display: flex;
+						justify-content: center;
+						align-items: center;
+
+						.progress {
+							font-weight: 800;
+							font-size: 24upx;
+							color: #fff;
+							text-align: center;
+							word-break: break-all;
+							.num{
+								display: inline-block;
+								width: 56upx;
+								text-align: right;
+							}
+						}
+						.err{
+							font-size: 24upx;
+							font-weight: 800;
+							color: #fe7c4e;
+							text-align: center;
+							word-break: break-all;
 						}
 					}
 				}

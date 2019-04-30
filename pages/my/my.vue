@@ -48,9 +48,9 @@
 				 :duration="duration" :indicator-active-color="indicatorActiveColor">
 					<swiper-item v-for="(item,index) in adList" :key="index">
 						<view class="swiper-item" @tap="adDetail(item)">
-							<img v-if="item.picture" src="/static/images/landlordguide/pic1_1.png" alt="">
+							<img v-if="item.picture" :src="host+item.picture" alt="">
 							<div v-if="!item.picture" class="no_img">
-								暂无图片
+								广告{{index+1}}
 							</div>
 						</view>
 					</swiper-item>
@@ -251,11 +251,13 @@
 	.swiper .swiper-item {
 		width: 100%;
 		height: 100%;
+		border-radius: 8upx;
 	}
 
 	.swiper .swiper-item img {
 		width: 100%;
 		height: 100%;
+		border-radius: 8upx;
 	}
 	
 	.swiper .swiper-item .no_img{
@@ -268,6 +270,7 @@
 		align-items: center;
 		font-size: 40upx;
 		color: #FFFFFF;
+		border-radius: 8upx;
 	}
 
 	#my-index-head {

@@ -45,9 +45,9 @@
 				</view>
 			</view>
 			<view class="form_item" @tap="pageTo('price_rule/price_rule')">
-				<view class="label" v-if="!priceComplete">价格规则</view>
+				<view class="label">价格规则</view>
 				<view class="ipt">
-					<view class="empty">未完成</view>
+					<view class="empty" v-if="!priceComplete">未完成</view>
 					<view class="data_box"></view>
 				</view>
 				<view class="after_icon">

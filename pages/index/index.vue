@@ -349,7 +349,7 @@ export default {
 </script>
 <style>
 page {
-  height: 100%;
+  min-height: 100%;
 }
 </style>
 

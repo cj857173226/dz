@@ -29,20 +29,20 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.house_area_page.data-v-6fb870fb {
+.house_area_page.data-v-2d14a9e1 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 100%;
   padding: 40rpx 30rpx 20rpx;
 }
-.house_area_page .tips_wrap.data-v-6fb870fb {
+.house_area_page .tips_wrap.data-v-2d14a9e1 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
     font-size: 40rpx;
     margin-bottom: 80rpx;
 }
-.house_area_page .tips_wrap .one_line.data-v-6fb870fb {
+.house_area_page .tips_wrap .one_line.data-v-2d14a9e1 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
@@ -51,10 +51,10 @@ page {
       margin-bottom: 6rpx;
       color: #888888;
 }
-.house_area_page .tips_wrap .one_line .b_text.data-v-6fb870fb {
+.house_area_page .tips_wrap .one_line .b_text.data-v-2d14a9e1 {
         color: #000000;
 }
-.house_area_page .input_wrap.data-v-6fb870fb {
+.house_area_page .input_wrap.data-v-2d14a9e1 {
     margin: 0 auto;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -79,7 +79,7 @@ page {
     height: 100rpx;
     border: 1px solid #cccccc;
 }
-.house_area_page .input_wrap ._input.data-v-6fb870fb {
+.house_area_page .input_wrap ._input.data-v-2d14a9e1 {
       text-align: right;
       width: 120rpx;
 }
