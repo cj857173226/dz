@@ -7,6 +7,8 @@
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "首页",
+				"enablePullDownRefresh": true,
+				"backgroundTextStyle": "dark",
 				"app-plus": {
 					"titleNView": {
 						"buttons": [{
@@ -20,7 +22,7 @@
 			}
 		},
 		{
-			"path": "pages/index/SearchCity",
+			"path": "pages/index/searchCity",
 			"style": {
 				"navigationBarTitleText": ""
 			}

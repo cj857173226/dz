@@ -86,6 +86,7 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 	import mpvuePicker from '../../components/index/mpvue-picker/mpvuePicker';
 	import calendar from '../../components/index/date-picker/date-picker' //引入日期插件件
 	import {
@@ -102,6 +103,93 @@
 			//注册组件
 			calendar,
 			mpvuePicker,
+=======
+import mpvuePicker from '../../components/index/mpvue-picker/mpvuePicker';
+import calendar from '../../components/index/date-picker/date-picker' //引入日期插件件
+import {request} from '../../common/request.js' // 封装的带有token的请求方法
+import { shortHttp, banner, ambitus } from "../../common/requestUrl.json"; // 接口文件
+export default {
+  components: {
+    //注册组件
+    calendar,
+    mpvuePicker,
+  },
+  data() {
+    return {
+      indicatorDots: true,
+      autoplay: true,
+      interval: 5000,
+			duration: 500,
+      shortHttp, //域名
+      weather: {  
+        hasData: false,  
+        data: []  
+			},
+      contentArray: null, //轮播图
+			ambitusArray: null, //周边推荐
+			i:null,
+			luId:"",//房源id
+      city: "", // gps获取当前设备城市名
+      cityPickerValueDefault: [0, 0, 1],
+      themeColor: '#007AFF',
+      mode: 'selector',
+      deepLength: 1,
+      pickerValueDefault: [0],
+			pickerValueArray:[],
+			searchCity:'试试搜:花水湾',
+			startTime:'', // 开始时间
+			endTime:'', // 结束时间
+    };
+  },
+  onLoad() {
+		console.log("时间",this.startTime);
+		
+    // 判断用户是否登录
+    let token = uni.getStorageSync("dz_token");
+    if (!token) {
+      setTimeout(function() {
+        uni.reLaunch({
+          url: "/pages/login/login"
+        });
+      }, 0);
+		}
+		this.bannerFn();
+    this.recommended();
+		this.cityGps(); //调用获取城市名
+  },
+  methods: {
+    onDetails(id){
+			console.log('id:',id);
+			uni.navigateTo({
+				url: `/pages/particulars/particulars?id=${id}`
+			})
+		},
+    // 轮播图请求方法
+    bannerFn: function() {
+			uni.showLoading({
+				title:'加载中'
+			})
+      const _that = this;
+      uni.request({
+        url: shortHttp + banner,
+        method: "GET",
+        success: res => {
+					if(res.data.status === 'success'){
+						uni.hideLoading()
+						let array = res.data.content
+						_that.contentArray = array;
+					} else {
+						uni.showToast({
+							title:res.data.errorMsg,
+							icon:'none'
+						})
+					}
+        },
+        fail: err => {
+          console.log(err);
+        }
+      });
+>>>>>>> ed82d5d149ca362043612d05e68e00d15aa5adea
 		},
 		data() {
 			return {
@@ -302,6 +390,7 @@
 				for (let index = 0; index < value.length; index++) {
 					collectId = value[index];
 				}
+<<<<<<< HEAD
 				request({
 					url: '/wap/api/my.php?action=modifyFavorite',
 					data: {
@@ -345,6 +434,38 @@
 			}
 		}
 	};
+=======
+			})
+    }
+  },
+  onBackPress() {
+    if (this.$refs.mpvuePicker.showPicker) {
+      this.$refs.mpvuePicker.pickerCancel();
+      return true;
+    }
+    if (this.$refs.mpvueCityPicker.showPicker) {
+      this.$refs.mpvueCityPicker.pickerCancel();
+       return true;
+    }
+  },
+  onUnload() {
+    if (this.$refs.mpvuePicker.showPicker) {
+      this.$refs.mpvuePicker.pickerCancel()
+    }
+    if (this.$refs.mpvueCityPicker.showPicker) {
+      this.$refs.mpvueCityPicker.pickerCancel()
+    }
+	},
+	onPullDownRefresh() { // 监听用户下拉事件
+		console.log('refresh');
+		this.bannerFn();
+		this.recommended();
+		setTimeout(()=> {
+			uni.stopPullDownRefresh();  //停止下拉刷新动画
+		},2000)
+	},
+};
+>>>>>>> ed82d5d149ca362043612d05e68e00d15aa5adea
 </script>
 <style>
 	page {

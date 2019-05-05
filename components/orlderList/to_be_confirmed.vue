@@ -20,8 +20,16 @@
   </view>
 </template>
 <script>
+import {request} from '../../common/request.js' // 封装的带有token的请求方法
 export default {
-  
+  mounted () {
+    request({
+      url:"/wap/api/order.php?action=landlordList&bizState=待确认",
+      success: function(res) {
+        console.log("房东确认",res)
+      }
+    })
+  }
 }
 </script>
 <style lang="scss" scoped>

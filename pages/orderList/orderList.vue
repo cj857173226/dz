@@ -12,7 +12,7 @@
       <scroll-view class="content" scroll-y="true" @scrolltolower="lower" @scrolltoupper="roof" @scroll="scroll">
         <!-- 内容 -->
         <view v-show="current === 0">
-          <unclosed></unclosed>
+          <unclosed ref="underway"></unclosed>
         </view>
         <view v-show="current === 1">
           <over></over>
@@ -147,7 +147,7 @@ export default {
         { name: "已结款" },
       ],
       current: 0,
-      reveal:false, //判断用户是房东还是房客
+      reveal:true, //判断用户是房东还是房客
       TabCur4: 0,
     };
   },
@@ -177,6 +177,11 @@ export default {
   },
   onPullDownRefresh(){
     console.log('正在下拉')
+    this.$refs.underway.httpRequest(); // 调用子组件进行中的方法
+    setTimeout(()=>{
+      uni.stopPullDownRefresh();
+    },2000)
+
   }
 };
 </script>

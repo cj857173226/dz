@@ -1,98 +1,116 @@
 <template>
   <view class="unclosed-contanier">
-    <view class="has-been-in-box">
-      <view class="has-been-in-img-box">
-        <image class="has-been-in-img" src="../../static/images/meitu3.jpg"/>
-        <view class="title">名称</view>
-        <view class="state">待入住</view>
-      </view>
-      <view class="price-endtiem-box">
-        <view style="text-align: left;">
-          <view>金额：共<text style="color:#ef5b72;margin-right:30upx;">1000.00</text>元</view>
-          <view style="font-size:12px;margin:10upx 0;">入住日期：2019/4/9-2019/4/15</view>
-          <!-- <view>剩余时间<text>30:00</text></view> -->
+    <view v-if="dataList.length > 0">
+      <view class="has-been-in-box" v-for="(item,i) in dataList" :key="i">
+        <view class="has-been-in-img-box">
+          <image class="has-been-in-img" :src="item.lodgeUnitImageUrl === null ? '../../static/images/meitu3.jpg' : shortHttp+item.lodgeUnitImageUrl"/>
+          <view class="title">{{item.lodgeUnitName === null ? '占无名称' : item.lodgeUnitName}}</view>
+          <view class="state">{{item.state}}</view>
         </view>
-        <view style="text-align: right;">
-          <!-- <text>等待客户入住</text> -->
-          <view class="check-out-btn">退房</view>
-          <view>入住天数：<text>1天</text></view>
-          <!-- <view style="display: flex;flex-direction: row;">
+        <view class="price-endtiem-box">
+          <view style="text-align: left;">
+            <view>
+              金额：共
+              <text style="color:#ef5b72;margin-right:30upx;">{{item.actualTotalPrice}}</text>元
+            </view>
+            <view style="font-size:12px;margin:10upx 0;">入住日期：{{item.startDate}}/{{item.endDate}}</view>
+            <!-- <view>剩余时间<text>30:00</text></view> -->
+          </view>
+          <view style="display: flex;flex-direction: column;justify-content:flex-end">
+            <!-- <text>等待客户入住</text> -->
+            <!-- <view class="check-out-btn" @tap="deleteOrder(item.bookOrderId)">删除</view> -->
+            <view>
+              入住天数：
+              <text>{{item.dayCount}}天</text>
+            </view>
+            <!-- <view style="display: flex;flex-direction: row;">
             <view class="btn">取消</view>
             <view class="btn">支付</view>
-          </view> -->
+            </view>-->
+          </view>
         </view>
       </view>
     </view>
-    <!-- <view class="unclosed-box" v-for="(item,i) in list" :key="i" >
-      <view class="unclosed-img-box">
-        <image class="unclosed-img" :src="item.imgUrl"></image>
-        <view class="whether-to-stay-in">{{item.whetherToStayIn}}</view>
-      </view>
-      <view class=" introduced">
-        <view class="left-amount-box">
-          <view class="title">{{item.title}}</view>
-          <view class="amount-box">
-            <text style="color:#000;margin-right:10upx;">金额</text>
-            <text style="color:#ef5b72;margin-right:28upx;">{{item.amount}}</text>
-          </view>
-        </view>
-        <view class="btn">
-           <view class="mini-btn">开发票</view>
-           <view class="mini-btn">评价</view>
-        </view>
-      </view>
-    </view> -->
+    <view v-else>你暂时还没有相关的订单</view>
   </view>
 </template>
 <script>
+import { request } from "../../common/request.js"; // 封装的带有token的请求方法
+import { shortHttp } from "../../common/requestUrl.json"; // 接口文件
 export default {
-  data () {
+  data() {
     return {
-      list:[
-        {imgUrl:'../../static/images/meitu.jpeg',whetherToStayIn:'已结束',title:'后海胡同里咖啡厅风格小白楼',amount:'1000'},
-        {imgUrl:'../../static/images/meitu1.jpg',whetherToStayIn:'已结束',title:'后海胡同里咖啡厅风格小白楼',amount:'1000'},
-        {imgUrl:'../../static/images/meitu2.jpeg',whetherToStayIn:'已结束',title:'后海胡同里咖啡厅风格小白楼',amount:'1000'},
-        {imgUrl:'../../static/images/meitu3.jpg',whetherToStayIn:'已结束',title:'后海胡同里咖啡厅风格小白楼',amount:'1000'},
-        {imgUrl:'../../static/images/meitu4.jpeg',whetherToStayIn:'已结束',title:'后海胡同里咖啡厅风格小白楼',amount:'1000'},
-        {imgUrl:'../../static/images/meitu5.jpg',whetherToStayIn:'已结束',title:'后海胡同里咖啡厅风格小白楼',amount:'1000'},
-        {imgUrl:'../../static/images/meitu6.jpeg',whetherToStayIn:'已结束',title:'后海胡同里咖啡厅风格小白楼',amount:'1000'},
-      ]
+      shortHttp,
+      dataList:[], 
+
+    };
+  },
+  methods: {
+    deleteOrder( orderId){
+      console.log(orderId);
+      
     }
+  },
+  mounted() {
+    const _that = this;
+    uni.showLoading({
+      title:'加载中'
+    })
+    request({
+      url: "/wap/api/order.php?action=list&bizState=closed",
+      success: function(res) {
+        uni.hideLoading()
+        console.log("已结束：", res.data.content.orders);
+        if (res.data.status === 'success') {
+          _that.dataList = res.data.content.orders;
+        } else {
+          uni.showToast({
+            title:res.data.errorMsg,
+            icon:'none'
+          })
+        }
+      },
+      fail: function(err) {
+        uni.showToast({
+          title:err
+        })
+      }
+    });
   }
-}
+};
 </script>
 <style lang="scss" scoped>
-.unclosed-contanier{
+.unclosed-contanier {
   width: 100%;
   font-size: 14px;
-  .has-been-in-box{
+  .has-been-in-box {
     width: 100%;
     margin-top: 30upx;
     border-bottom: 1px solid #adadad;
-    .has-been-in-img-box{
+    .has-been-in-img-box {
       width: 100%;
       height: 460upx;
       padding: 40upx 80upx;
       box-sizing: border-box;
       background-color: #ececec;
       position: relative;
-      .has-been-in-img{
+      .has-been-in-img {
         width: 100%;
         height: 100%;
         border-radius: 60upx;
       }
-      .title{
+      .title {
         position: absolute;
         left: 30upx;
         bottom: 0;
       }
-      .state{
+      .state {
         position: absolute;
         top: 0;
         right: 30upx;
       }
     }
-    .price-endtiem-box{
+    .price-endtiem-box {
       width: 100%;
       padding: 30upx;
       box-sizing: border-box;
@@ -100,17 +118,21 @@ export default {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      .check-out-btn{
+      .check-out-btn {
         width: 140upx;
-        height:60upx;
+        height: 60upx;
         color: #fff;
-        background-color: #1592C8;
-        border-radius:10upx;
+        background-color: #1592c8;
+        border-radius: 10upx;
         text-align: center;
         line-height: 60upx;
         margin-bottom: 10upx;
-        &:active{
-          opacity: .5;
+        // position: absolute;
+        // right: 0;
+        // top: 0;
+        &:active {
+          opacity: 0.5;
+          
         }
       }
     }

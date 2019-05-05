@@ -63,7 +63,7 @@ export default {
           _that.WhetherDisable = false;
         },2000);
         let payment = _that.patternPayment; // 支付方式
-        console.warn("订单id",_that.id)
+        // console.warn("订单id",_that.id)
         request({
           url:'/wap/api/pay.php',
           data:{action:payment,dd_id:_that.id},
@@ -71,17 +71,17 @@ export default {
             uni.hideLoading();
             console.warn(res.data)
             if (payment === _that.patternPayment) {
-              document.write(res.data);
-              // uni.requestPayment({
-              //   provider: "alipay", // 支付方式
-              //   orderInfo: res.data, // 订单数据
-              //   success: function(res) {
-              //     console.warn("uniapp",JSON.stringify(res))
-              //   },
-              //   fail: function(err) {
-              //     console.log('fail:' + JSON.stringify(err));
-              //   }
-              // })
+              // document.write(res.data);
+              uni.requestPayment({
+                provider: "alipay", // 支付方式
+                orderInfo: res.data, // 订单数据
+                success: function(res) {
+                  console.warn("uniapp",JSON.stringify(res))
+                },
+                fail: function(err) {
+                  console.log('fail:' + JSON.stringify(err));
+                }
+              })
             }
           },
           fail: function(err) {
