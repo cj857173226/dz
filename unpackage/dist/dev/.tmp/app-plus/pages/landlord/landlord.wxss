@@ -29,11 +29,11 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contaniers.data-v-68daf0ae {
+.contaniers.data-v-dee18e62 {
   width: 100%;
   height: 100%;
 }
-.contaniers .img-box.data-v-68daf0ae {
+.contaniers .img-box.data-v-dee18e62 {
     width: 100%;
     height: 250rpx;
     color: #fff;
@@ -46,7 +46,7 @@ page {
     position: relative;
     z-index: 1;
 }
-.contaniers .img-box.data-v-68daf0ae::after {
+.contaniers .img-box.data-v-dee18e62::after {
       content: "";
       width: 100%;
       height: 100%;
@@ -58,7 +58,7 @@ page {
               filter: blur(2px);
       z-index: 2;
 }
-.contaniers .img-box .backgroun-img.data-v-68daf0ae {
+.contaniers .img-box .backgroun-img.data-v-dee18e62 {
       position: absolute;
       left: 50%;
       top: 50%;
@@ -70,7 +70,7 @@ page {
       text-align: center;
       z-index: 11;
 }
-.contaniers .landlord-box.data-v-68daf0ae {
+.contaniers .landlord-box.data-v-dee18e62 {
     width: 100%;
     height: calc(100% - 250rpx);
     padding: 0 30rpx 30rpx 30rpx;
@@ -90,7 +90,7 @@ page {
         -ms-flex-pack: justify;
             justify-content: space-between;
 }
-.contaniers .landlord-box .box .list-box.data-v-68daf0ae {
+.contaniers .landlord-box .box .list-box.data-v-dee18e62 {
       width: 100%;
       display: -webkit-box;
       display: -webkit-flex;
@@ -102,11 +102,11 @@ page {
               align-items: center;
       margin-top: 10rpx;
 }
-.contaniers .landlord-box .box .list-box .iphone.data-v-68daf0ae {
+.contaniers .landlord-box .box .list-box .iphone.data-v-dee18e62 {
         font-size: 30px;
         color: #76808a;
 }
-.contaniers .landlord-box .box .list-box .list-title-box.data-v-68daf0ae {
+.contaniers .landlord-box .box .list-box .list-title-box.data-v-dee18e62 {
         padding: 16rpx 0;
         display: -webkit-box;
         display: -webkit-flex;
@@ -124,36 +124,6 @@ page {
         border-bottom: 1px solid #c0c0c0;
         margin-left: 20rpx;
 }
-<<<<<<< HEAD
-.contaniers .landlord-box .box .list-box .list-title-box .mobile-phone-box .mobile-phone.data-v-68daf0ae {
-          font-size: 32rpx;
-}
-.contaniers .landlord-box .box .list-box .list-title-box .mobile-phone-box .phone-number.data-v-68daf0ae {
-          font-size: 28rpx;
-          font-weight: 300;
-          color: #cccccc;
-}
-.contaniers .landlord-box .box .list-box .list-title-box .off-the-stocks.data-v-68daf0ae {
-          font-size: 32rpx;
-}
-.contaniers .landlord-box .box .list-box .list-title-box .off-the-stocks .right.data-v-68daf0ae {
-            color: #cccccc;
-            font-size: 32rpx;
-}
-.contaniers .landlord-box .box .status_wrap.data-v-68daf0ae {
-      margin-top: 30rpx;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: reverse;
-      -webkit-flex-direction: row-reverse;
-          -ms-flex-direction: row-reverse;
-              flex-direction: row-reverse;
-}
-.contaniers .landlord-box .box .status_wrap .landlord_status.data-v-68daf0ae {
-=======
 .contaniers .landlord-box .box .list-box .list-title-box .mobile-phone-box .mobile-phone.data-v-dee18e62 {
           font-size: 32rpx;
 }
@@ -182,7 +152,6 @@ page {
               flex-direction: row-reverse;
 }
 .contaniers .landlord-box .box .status_wrap .landlord_status.data-v-dee18e62 {
->>>>>>> 79d8a1b6483056009723823e80141d79157b38a6
         display: inline-block;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
@@ -193,7 +162,7 @@ page {
         color: #F05B72;
         background: #ffe3e3;
 }
-.contaniers .landlord-box .btn.data-v-68daf0ae {
+.contaniers .landlord-box .btn.data-v-dee18e62 {
       width: 100%;
       height: 76rpx;
       background-color: #fa3679;
@@ -202,7 +171,7 @@ page {
       text-align: center;
       line-height: 76rpx;
 }
-.contaniers .landlord-box .btn.data-v-68daf0ae:active {
+.contaniers .landlord-box .btn.data-v-dee18e62:active {
         opacity: 0.5;
 }
 
