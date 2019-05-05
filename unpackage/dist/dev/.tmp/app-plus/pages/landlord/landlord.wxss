@@ -124,7 +124,6 @@ page {
         border-bottom: 1px solid #c0c0c0;
         margin-left: 20rpx;
 }
-<<<<<<< HEAD
 .contaniers .landlord-box .box .list-box .list-title-box .mobile-phone-box .mobile-phone.data-v-68daf0ae {
           font-size: 32rpx;
 }
@@ -153,36 +152,6 @@ page {
               flex-direction: row-reverse;
 }
 .contaniers .landlord-box .box .status_wrap .landlord_status.data-v-68daf0ae {
-=======
-.contaniers .landlord-box .box .list-box .list-title-box .mobile-phone-box .mobile-phone.data-v-dee18e62 {
-          font-size: 32rpx;
-}
-.contaniers .landlord-box .box .list-box .list-title-box .mobile-phone-box .phone-number.data-v-dee18e62 {
-          font-size: 28rpx;
-          font-weight: 300;
-          color: #cccccc;
-}
-.contaniers .landlord-box .box .list-box .list-title-box .off-the-stocks.data-v-dee18e62 {
-          font-size: 32rpx;
-}
-.contaniers .landlord-box .box .list-box .list-title-box .off-the-stocks .right.data-v-dee18e62 {
-            color: #cccccc;
-            font-size: 32rpx;
-}
-.contaniers .landlord-box .box .status_wrap.data-v-dee18e62 {
-      margin-top: 30rpx;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: reverse;
-      -webkit-flex-direction: row-reverse;
-          -ms-flex-direction: row-reverse;
-              flex-direction: row-reverse;
-}
-.contaniers .landlord-box .box .status_wrap .landlord_status.data-v-dee18e62 {
->>>>>>> 79d8a1b6483056009723823e80141d79157b38a6
         display: inline-block;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;

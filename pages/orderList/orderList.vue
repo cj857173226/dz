@@ -111,6 +111,7 @@ import hasRefusedTo from '@/components/orlderList/has_refused_to.vue'; // 已拒
 import stale from '@/components/orlderList/stale'; // 已过期组件
 import pendingInvestigationRoom from '@/components/orlderList/pending_investigation_room';//带查房组件
 import haveMoney from '@/components/orlderList/have_money'; // 已结款组件
+import helper from '../../common/helper.js'
 export default {
   components: { 
     uniSegmentedControl,
@@ -150,6 +151,9 @@ export default {
       TabCur4: 0,
     };
   },
+	onLoad() {
+		helper.isLogin();
+	},
   methods: {
     onClickItem(index) {
       if (this.current !== index) {

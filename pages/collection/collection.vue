@@ -9,6 +9,7 @@
 
 <script>
 	import {request} from '../../common/request.js' // 封装的带有token的请求方法
+	import helper from '../../common/helper.js'
 	export default {
 		data() {
 			return {
@@ -51,6 +52,7 @@
 			}
 		},
 		onLoad(){
+			helper.isLogin();
 			this.grouping() // 调用请求获取数据的回调
 		},
 		onShow(){

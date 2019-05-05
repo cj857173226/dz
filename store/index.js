@@ -12,6 +12,7 @@ const store = new Vuex.Store({
 		isEditStatistics:false, //是否修改了统计账单
 		isEditReleaseInfo:false, // 是否修改房源发布信息
 		isEditCheck:false, // 下单页面的是否编辑了常住人
+		
 		// 初始化的创建房源信息(不做修改)
 		initCreateHouseInfo:{
 			xz_province: '', //省
