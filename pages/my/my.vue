@@ -194,6 +194,7 @@
 			},
 			// 获取广告接口
 			getAddList(){
+				console.log(1)
 				const _this = this;
 				request({
 					url:'/wap/api/my.php?action=messageListAd ',

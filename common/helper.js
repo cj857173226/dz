@@ -3,6 +3,7 @@ import provinceData from '../common/city-data/province.js'
 import cityData from '../common/city-data/city.js'
 import areaData from '../common/city-data/area.js'
 
+var socketOpen = false;
 
 // 检测是否登录
 const isLogin = function() {
@@ -13,6 +14,8 @@ const isLogin = function() {
 				url: "/pages/login/login"
 			})
 		}, 0)
+	} else {
+	
 	}
 }
 
@@ -27,9 +30,9 @@ const phoneReg = function(phone) {
 }
 
 // 正整数验证
-const intNumReg = function(num){
+const intNumReg = function(num) {
 	const intReg = /^[0-9]\d*$/;
-	if(intReg.test(num)){
+	if (intReg.test(num)) {
 		return true
 	} else {
 		return false;

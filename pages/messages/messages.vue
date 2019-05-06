@@ -23,7 +23,7 @@
 	import {
 		request
 	} from '../../common/request.js'
-	import helper from 'common/helper.js'
+	import helper from '../../common/helper.js'
 	import wkiwiSwipeAction from "./lign-in/components/wkiwi-swipe-action";
 	export default {
 		components: {
@@ -161,7 +161,8 @@
 			};
 		},
 		onLoad() {
-			this.getAdList()
+			helper.isLogin();
+			this.getAdList();
 		},
 		onShow() {
 

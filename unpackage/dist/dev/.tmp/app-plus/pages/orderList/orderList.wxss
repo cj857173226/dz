@@ -821,6 +821,11 @@ image {
           opacity: 0.5;
 }
 
+
+page {
+  min-height: 100%;
+}
+
 @charset "UTF-8";
 /**
  * 这里是uni-app内置的常用样式变量
@@ -849,18 +854,477 @@ image {
 /* 文章场景相关 */
 .contanier.data-v-7af300e3 {
   width: 100%;
+  height: calc(100% - 100rpx);
 }
-.contanier .conter-box.data-v-7af300e3 {
+.contanier .affirm .conter-box.data-v-7af300e3 {
     width: 100%;
     margin-top: 30rpx;
-    background-color: #e4e4e4;
-    padding: 30rpx;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    border-bottom: 1px solid #adadad;
 }
-.contanier .conter-box .all-img.data-v-7af300e3 {
+.contanier .affirm .conter-box .img-box.data-v-7af300e3 {
       width: 100%;
       height: 460rpx;
+      padding: 40rpx 80rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      background-color: #ececec;
+      position: relative;
+}
+.contanier .affirm .conter-box .img-box .obligation-img.data-v-7af300e3 {
+        width: 100%;
+        height: 100%;
+        border-radius: 60rpx;
+}
+.contanier .affirm .conter-box .img-box .title.data-v-7af300e3 {
+        position: absolute;
+        left: 30rpx;
+        bottom: 0;
+}
+.contanier .affirm .conter-box .price-endtiem-box.data-v-7af300e3 {
+      width: 100%;
+      padding: 30rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+}
+.contanier .affirm .conter-box .price-endtiem-box .btn-box .btn.data-v-7af300e3 {
+        width: 160rpx;
+        height: 60rpx;
+        background-color: #1592C8;
+        border-radius: 10rpx;
+        color: #fff;
+        text-align: center;
+        line-height: 60rpx;
+}
+.contanier .affirm .conter-box .price-endtiem-box .btn-box .btn.data-v-7af300e3:active {
+          opacity: .5;
+}
+.contanier .affirm .conter-box .price-endtiem-box .btn-box .btn.data-v-7af300e3:nth-of-type(2) {
+          margin-top: 10rpx;
+}
+.contanier .payment .conter-box.data-v-7af300e3 {
+    width: 100%;
+    margin-top: 30rpx;
+    border-bottom: 1px solid #adadad;
+}
+.contanier .payment .conter-box .img-box.data-v-7af300e3 {
+      width: 100%;
+      height: 460rpx;
+      padding: 40rpx 80rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      background-color: #ececec;
+      position: relative;
+}
+.contanier .payment .conter-box .img-box .obligation-img.data-v-7af300e3 {
+        width: 100%;
+        height: 100%;
+        border-radius: 60rpx;
+}
+.contanier .payment .conter-box .img-box .title.data-v-7af300e3 {
+        position: absolute;
+        left: 30rpx;
+        bottom: 0;
+}
+.contanier .payment .conter-box .price-endtiem-box.data-v-7af300e3 {
+      width: 100%;
+      padding: 30rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+}
+.contanier .check .conter-box.data-v-7af300e3 {
+    width: 100%;
+    margin-top: 30rpx;
+    border-bottom: 1px solid #adadad;
+}
+.contanier .check .conter-box .img-box.data-v-7af300e3 {
+      width: 100%;
+      height: 460rpx;
+      padding: 40rpx 80rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      background-color: #ececec;
+      position: relative;
+}
+.contanier .check .conter-box .img-box .obligation-img.data-v-7af300e3 {
+        width: 100%;
+        height: 100%;
+        border-radius: 60rpx;
+}
+.contanier .check .conter-box .img-box .title.data-v-7af300e3 {
+        position: absolute;
+        left: 30rpx;
+        bottom: 0;
+}
+.contanier .check .conter-box .price-endtiem-box.data-v-7af300e3 {
+      width: 100%;
+      padding: 30rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+}
+.contanier .lived .conter-box.data-v-7af300e3 {
+    width: 100%;
+    margin-top: 30rpx;
+    border-bottom: 1px solid #adadad;
+}
+.contanier .lived .conter-box .img-box.data-v-7af300e3 {
+      width: 100%;
+      height: 460rpx;
+      padding: 40rpx 80rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      background-color: #ececec;
+      position: relative;
+}
+.contanier .lived .conter-box .img-box .obligation-img.data-v-7af300e3 {
+        width: 100%;
+        height: 100%;
+        border-radius: 60rpx;
+}
+.contanier .lived .conter-box .img-box .title.data-v-7af300e3 {
+        position: absolute;
+        left: 30rpx;
+        bottom: 0;
+}
+.contanier .lived .conter-box .price-endtiem-box.data-v-7af300e3 {
+      width: 100%;
+      padding: 30rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+}
+.contanier .accomplish .conter-box.data-v-7af300e3 {
+    width: 100%;
+    margin-top: 30rpx;
+    border-bottom: 1px solid #adadad;
+}
+.contanier .accomplish .conter-box .img-box.data-v-7af300e3 {
+      width: 100%;
+      height: 460rpx;
+      padding: 40rpx 80rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      background-color: #ececec;
+      position: relative;
+}
+.contanier .accomplish .conter-box .img-box .obligation-img.data-v-7af300e3 {
+        width: 100%;
+        height: 100%;
+        border-radius: 60rpx;
+}
+.contanier .accomplish .conter-box .img-box .title.data-v-7af300e3 {
+        position: absolute;
+        left: 30rpx;
+        bottom: 0;
+}
+.contanier .accomplish .conter-box .price-endtiem-box.data-v-7af300e3 {
+      width: 100%;
+      padding: 30rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+}
+.contanier .cancel .conter-box.data-v-7af300e3 {
+    width: 100%;
+    margin-top: 30rpx;
+    border-bottom: 1px solid #adadad;
+}
+.contanier .cancel .conter-box .img-box.data-v-7af300e3 {
+      width: 100%;
+      height: 460rpx;
+      padding: 40rpx 80rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      background-color: #ececec;
+      position: relative;
+}
+.contanier .cancel .conter-box .img-box .obligation-img.data-v-7af300e3 {
+        width: 100%;
+        height: 100%;
+        border-radius: 60rpx;
+}
+.contanier .cancel .conter-box .img-box .title.data-v-7af300e3 {
+        position: absolute;
+        left: 30rpx;
+        bottom: 0;
+}
+.contanier .cancel .conter-box .price-endtiem-box.data-v-7af300e3 {
+      width: 100%;
+      padding: 30rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+}
+.contanier .refuse .conter-box.data-v-7af300e3 {
+    width: 100%;
+    margin-top: 30rpx;
+    border-bottom: 1px solid #adadad;
+}
+.contanier .refuse .conter-box .img-box.data-v-7af300e3 {
+      width: 100%;
+      height: 460rpx;
+      padding: 40rpx 80rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      background-color: #ececec;
+      position: relative;
+}
+.contanier .refuse .conter-box .img-box .obligation-img.data-v-7af300e3 {
+        width: 100%;
+        height: 100%;
+        border-radius: 60rpx;
+}
+.contanier .refuse .conter-box .img-box .title.data-v-7af300e3 {
+        position: absolute;
+        left: 30rpx;
+        bottom: 0;
+}
+.contanier .refuse .conter-box .price-endtiem-box.data-v-7af300e3 {
+      width: 100%;
+      padding: 30rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+}
+.contanier .pastDue .conter-box.data-v-7af300e3 {
+    width: 100%;
+    margin-top: 30rpx;
+    border-bottom: 1px solid #adadad;
+}
+.contanier .pastDue .conter-box .img-box.data-v-7af300e3 {
+      width: 100%;
+      height: 460rpx;
+      padding: 40rpx 80rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      background-color: #ececec;
+      position: relative;
+}
+.contanier .pastDue .conter-box .img-box .obligation-img.data-v-7af300e3 {
+        width: 100%;
+        height: 100%;
+        border-radius: 60rpx;
+}
+.contanier .pastDue .conter-box .img-box .title.data-v-7af300e3 {
+        position: absolute;
+        left: 30rpx;
+        bottom: 0;
+}
+.contanier .pastDue .conter-box .price-endtiem-box.data-v-7af300e3 {
+      width: 100%;
+      padding: 30rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+}
+.contanier .wardRoundDoctor .conter-box.data-v-7af300e3 {
+    width: 100%;
+    margin-top: 30rpx;
+    border-bottom: 1px solid #adadad;
+}
+.contanier .wardRoundDoctor .conter-box .img-box.data-v-7af300e3 {
+      width: 100%;
+      height: 460rpx;
+      padding: 40rpx 80rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      background-color: #ececec;
+      position: relative;
+}
+.contanier .wardRoundDoctor .conter-box .img-box .obligation-img.data-v-7af300e3 {
+        width: 100%;
+        height: 100%;
+        border-radius: 60rpx;
+}
+.contanier .wardRoundDoctor .conter-box .img-box .title.data-v-7af300e3 {
+        position: absolute;
+        left: 30rpx;
+        bottom: 0;
+}
+.contanier .wardRoundDoctor .conter-box .price-endtiem-box.data-v-7af300e3 {
+      width: 100%;
+      padding: 30rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+}
+.contanier .overMoney .conter-box.data-v-7af300e3 {
+    width: 100%;
+    margin-top: 30rpx;
+    border-bottom: 1px solid #adadad;
+}
+.contanier .overMoney .conter-box .img-box.data-v-7af300e3 {
+      width: 100%;
+      height: 460rpx;
+      padding: 40rpx 80rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      background-color: #ececec;
+      position: relative;
+}
+.contanier .overMoney .conter-box .img-box .obligation-img.data-v-7af300e3 {
+        width: 100%;
+        height: 100%;
+        border-radius: 60rpx;
+}
+.contanier .overMoney .conter-box .img-box .title.data-v-7af300e3 {
+        position: absolute;
+        left: 30rpx;
+        bottom: 0;
+}
+.contanier .overMoney .conter-box .price-endtiem-box.data-v-7af300e3 {
+      width: 100%;
+      padding: 30rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+}
+
+
+page{
+  height: 100%;
 }
 
 @charset "UTF-8";
@@ -891,6 +1355,7 @@ image {
 /* 文章场景相关 */
 .contanier.data-v-7c20f7da {
   width: 100%;
+  height: calc(100% - 100rpx);
 }
 .contanier .conter-box.data-v-7c20f7da {
     width: 100%;
@@ -1009,6 +1474,11 @@ image {
               justify-content: space-between;
 }
 
+
+page{
+  height: 100%;
+}
+
 @charset "UTF-8";
 /**
  * 这里是uni-app内置的常用样式变量
@@ -1037,6 +1507,7 @@ image {
 /* 文章场景相关 */
 .contanier.data-v-69ae583c {
   width: 100%;
+  height: calc(100% - 100rpx);
 }
 .contanier .conter-box.data-v-69ae583c {
     width: 100%;
@@ -1324,6 +1795,11 @@ image {
               align-items: center;
 }
 
+
+page{
+  height: 100%;
+}
+
 @charset "UTF-8";
 /**
  * 这里是uni-app内置的常用样式变量
@@ -1352,6 +1828,7 @@ image {
 /* 文章场景相关 */
 .contanier.data-v-2f6f00a4 {
   width: 100%;
+  height: calc(100% - 100rpx);
 }
 .contanier .conter-box.data-v-2f6f00a4 {
     width: 100%;
@@ -1401,6 +1878,11 @@ image {
               align-items: center;
 }
 
+
+page{
+  height: 100%;
+}
+
 @charset "UTF-8";
 /**
  * 这里是uni-app内置的常用样式变量
@@ -1429,6 +1911,7 @@ image {
 /* 文章场景相关 */
 .contanier.data-v-b2ed7ed8 {
   width: 100%;
+  height: calc(100% - 100rpx);
 }
 .contanier .conter-box.data-v-b2ed7ed8 {
     width: 100%;
@@ -1683,5 +2166,9 @@ page{
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       height: calc(100% - 92rpx);
+}
+.bg-white.data-v-3404872e {
+  width: 100%;
+  height: 100%;
 }
 

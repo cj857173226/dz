@@ -1,24 +1,34 @@
 <script>
+	import helper from './common/helper.js'
 	export default {
 		data() {
 			return {
 				
 			}
 		},
-		computed: {},
+		computed: {
+			
+		},
 
 		onLaunch: function() {
 			console.log('App Launch')
-			let token = uni.getStorageSync('dz_token');
-			if (!token) {
-				setTimeout(function() {
-					uni.reLaunch({
-						url: "/pages/login/login"
-					})
-				}, 0)
-			}else{
-			}
+			console.log(uni.getStorageSync('dz_token'))
+			uni.connectSocket({
+					url: 'ws://woker.abontest.com:7272'
+				});
+			uni.onSocketOpen(function(res) {
+				console.log('WebSocket连接已打开！');
+			});
+			uni.onSocketError(function(res) {
+				console.log('WebSocket连接打开失败，请检查！');
+			});
+			
+			uni.onSocketMessage(function(res){
+				console.log(res)
+			})
+		
 		},
+	
 		onShow: function() {
 			console.log('App Show')
 		},
