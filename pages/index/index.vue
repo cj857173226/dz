@@ -228,66 +228,64 @@ export default {
      
     },
     // 点击图片跳转页面查看房间详情
-			clickDetails(id){
-				uni.navigateTo({
-					url:`/pages/particulars/particulars?id=${id}`
-				})
-			},
-			// 点击头像携带房东唯一id跳转到房东介绍
-			clickPhoto(id){
-				console.log(id);
-				uni.navigateTo({
-					url:`/pages/landlord_introduced/landlord_introduced?id=${id}`
-				})
-			},
-			onCollect(id,index){
-				// 请求分组列表
-				const _this = this;
-				let pickerValueArray = []
+		clickDetails(id){
+			uni.navigateTo({
+				url:`/pages/particulars/particulars?id=${id}`
+			})
+		},
+		// 点击头像携带房东唯一id跳转到房东介绍
+		clickPhoto(id){
+			console.log(id);
+			uni.navigateTo({
+				url:`/pages/landlord_introduced/landlord_introduced?id=${id}`
+			})
+		},
+		onCollect(id,index){
+			// 请求分组列表
+			const _this = this;
+			let pickerValueArray = []
+			request({
+				url:'/wap/api/my.php?action=favoriteClass',
+				success: function(res) {	
+					let array = res.data.content.item
+					for (let i = 0; i < array.length; i++) {
+						pickerValueArray.push({
+							label:array[i].cname,
+							value:array[i].cid
+						})
+						_this.pickerValueArray = pickerValueArray 
+					}		
+				}
+			})
+			let coll = !_this.ambitusArray[index].isFavorite //获取原本的收藏值并取反
+			_this.i = _this.ambitusArray[index]
+			_this.luId = _this.ambitusArray[index].luId
+			_this.$set(_this.ambitusArray[index],'isFavorite',coll) //更改
+			
+			// 判断
+			if (coll === true) {
+				setTimeout(()=>{
+					_this.$refs.mpvuePicker.show() // 点击弹出mpvuePickerpicker
+				},1000)
+			} else if (coll === false) {
 				request({
-					url:'/wap/api/my.php?action=favoriteClass',
-					success: function(res) {	
-						let array = res.data.content.item
-						for (let i = 0; i < array.length; i++) {
-							pickerValueArray.push({
-								label:array[i].cname,
-								value:array[i].cid
+					url:'/wap/api/my.php?action=modifyFavorite',
+					data:{luId:_this.luId,favAction:"del"},
+					success:res => {
+						console.log('取消了:',res);
+						if (res.data.status == "success") {
+							uni.showToast({
+								title:"取消收藏",
+								duration:2000
 							})
-							_this.pickerValueArray = pickerValueArray 
-						}		
+						}
 					}
 				})
-				let coll = !_this.ambitusArray[index].isFavorite //获取原本的收藏值并取反
-				_this.i = _this.ambitusArray[index]
-				_this.luId = _this.ambitusArray[index].luId
-				_this.$set(_this.ambitusArray[index],'isFavorite',coll) //更改
-				
-				// 判断
-				if (coll === true) {
-					setTimeout(()=>{
-						_this.$refs.mpvuePicker.show() // 点击弹出mpvuePickerpicker
-					},1000)
-				} else if (coll === false) {
-					request({
-						url:'/wap/api/my.php?action=modifyFavorite',
-						data:{luId:_this.luId,favAction:"del"},
-						success:res => {
-							console.log('取消了:',res);
-							if (res.data.status == "success") {
-								uni.showToast({
-									title:"取消收藏",
-									duration:2000
-								})
-							}
-						}
-					})
-				}
-        
-      },
+			}
+			
+		},
     // picker 组件点击取消时回调
     onCancel(e) {
-			// console.log(this.i);
-			
 			this.i.isFavorite = false
     },
     // picker 组件点击确定时回调，返回选中的 label, value 和数组索引 index 的值
