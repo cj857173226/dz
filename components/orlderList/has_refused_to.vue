@@ -13,7 +13,7 @@
             
           </view>
           <view style="text-align: right;">
-            <text>订单已过期</text>
+            <text>订单已拒绝</text>
             <view>入住天数：<text>{{item.dayCount}}天</text></view>
             <!-- <view style="width:160upx;height:60upx;color:#fff;line-height:60upx;text-align:center;background-color:#1592C8;border-radius:10upx;margin-top:10upx;">删除</view> -->
           </view>

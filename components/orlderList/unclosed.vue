@@ -27,7 +27,7 @@
               <text>{{item.dayCount}}天</text>
             </view>
             <view style="display: flex;flex-direction: row;">
-              <view class="btn" @tap="clickCancel(item.bookOrderId)">取消</view>
+              <!-- <view class="btn" @tap="clickCancel(item.bookOrderId)">取消订单</view> -->
               <view class="btn" @tap="clickPay(item.bookOrderId)">支付</view>
             </view>
           </view>
@@ -52,7 +52,7 @@
           </view>
           <view style="text-align: right;">
             <!-- <text>等待客户入住</text> -->
-            <view class="check-out-btn" @tap.stop="clickCheckOut(item.bookOrderId)">退房</view>
+            <view class="check-out-btn" @tap.stop="clickCheckOut(item.bookOrderId,'out')">退房</view>
             <view>
               入住天数：
               <text>{{item.dayCount}}天</text>
@@ -65,7 +65,7 @@
         </view>
       </view>
     </view>
-    <view v-if="waitingCheck.length > 0">
+    <!-- <view v-if="waitingCheck.length > 0">
       <view class="has-been-in-box">
         <view class="has-been-in-img-box">
           <image class="has-been-in-img" src="../../static/images/meitu3.jpg"/>
@@ -79,23 +79,20 @@
               <text style="color:#ef5b72;margin-right:30upx;">1000.00</text>元
             </view>
             <view style="font-size:12px;margin:10upx 0;">入住日期：2019/4/9-2019/4/15</view>
-            <!-- <view>剩余时间<text>30:00</text></view> -->
           </view>
           <view style="text-align: right;">
-            <!-- <text>等待客户入住</text> -->
-            <view class="check-out-btn" >退房</view>
+            <view style="display:flex;align-items: center;flex-direction: row;">
+              <view class="check-out-btn" >退房</view>
+              <view class="check-out-btn">确认入住</view>
+            </view>
             <view>
               入住天数：
               <text>1天</text>
             </view>
-            <!-- <view style="display: flex;flex-direction: row;">
-            <view class="btn">取消</view>
-            <view class="btn">支付</view>
-            </view>-->
           </view>
         </view>
       </view>
-    </view>
+    </view> -->
     <view v-if="affirm.length > 0">
       <view class="has-been-in-box" v-for="(item,i) in affirm" :key="i" @tap="clickDetails()">
         <view class="has-been-in-img-box">
@@ -228,8 +225,10 @@
               <!-- <view>剩余时间<text>30:00</text></view> -->
             </view>
             <view style="text-align: right;">
-              <!-- <text>等待房东确认</text> -->
-              <view class="check-out-btn" @tap.stop="clickCheckOut(item.bookOrderId)">退房</view>
+              <view style="display: flex;flex-direction: row;">
+                <view class="check-out-btn" @tap.stop="clickCancelOrder(item.bookOrderId,'cancelOrder')">取消订单</view> 
+                <view class="check-out-btn" @tap.stop="clickCheckIn(item.bookOrderId,'checkIn')">确认入住</view>
+              </view>
               <view>
                 入住天数：
                 <text>{{item.dayCount}}天</text>
@@ -248,7 +247,7 @@
       :show="show" 
       @close="closeModal"
       align="center" 
-      content="是否确认取消订单"
+      :content="content"
       @cancel="bindBtn('cancel')"
       @confirm="bindBtn('confirm')"
       >
@@ -275,6 +274,8 @@ export default {
       wardRoundDoctor: [], // 待查房
       show:false, // 是否显示弹出框 *false为不显示 true为显示
       orderFromId:'', // 订单id
+      content:'', // 提示信息
+      status:'', // 状态
     };
   },
   methods: {
@@ -282,49 +283,23 @@ export default {
     clickDetails() {
       console.log("点击进入房间详情");
     },
-    // 点击退房
-    clickCheckOut(id){
+    // 取消订单
+    clickCancelOrder(id,type){
       const _that = this
       console.log(id);
-      request({
-        url:'/wap/api/order.php?action=changeState',
-        data:{id},
-        success: function(res) {
-          if (res.data.status === 'success') {
-            uni.showToast({
-              title:"退房成功",
-              icon:'none'
-            })
-            // 等待一秒之后重新请求页面渲染数据
-            setTimeout(()=>{
-              _that.httpRequest();
-            },1000)
-          } else {
-            uni.showToast({
-              title:res.data.errorMsg,
-              icon:'none'
-            })
-          }
-        },
-        fail: function(err) {
-          uni.showToast({
-            title:err,
-            icon:'none'
-          })
-        }
-      })
+      _that.show = true; // show改变为true 
+      _that.orderFromId = id;
+      _that.content = '是否确认取消订单';
+      _that.status = type;
     },
+    // 进入支付
     clickPay(id){
       console.log(id);
       uni.navigateTo({
         url:`/pages/particulars/pay?bookOrderId=${id}`
       })
-      // request({
-      //   url:'/wap/api/pay.php?action=submitAliPay',
-      //   data:{dd_id:id},
-      //   s
-      // })
     },
+    // 列表数据请求
     httpRequest(){
       const _that = this;
       uni.showLoading({
@@ -382,34 +357,134 @@ export default {
         }
       });
     },
-    /* ------------------------------弹出框方法-------------------------------------- */
-    // 点击待支付取消按钮显示弹框
+    // 确认入住
+    clickCheckIn(id,type){
+      console.log("确认入住",id,type);
+      const _that =this;
+      _that.show = true; // show改变为true 
+      _that.orderFromId = id;
+      _that.content = '是否确认入住';
+      _that.status = type;
+    },
+    // 退房
+    clickCheckOut(id,type){
+      const _that =this;
+      _that.show = true; // show改变为true 
+      _that.orderFromId = id;
+      _that.content = '是否确认退房，退房后等待房东查房完后，退返押金';
+      _that.status = type;
+    },
+   /*  // 点击待支付取消按钮显示弹框
     clickCancel(id){
       const _that =this;
       _that.show = true; // show改变为true 
       _that.orderFromId = id;
-    },
+    }, */
     closeModal() {
       console.log(`监听到close`)
       this.show = false
     },
     bindBtn(type) {
-      if (type ==='confirm') {
-        request({
-          url:'/wap/api/order.php?action=changeState&status=cancle',
-          data:{id:this.orderFromId},
-          success: function(res) {
-            console.log("取消订单",res);
-          },
-          fail: function(err) {
-            uni.showToast({
-              title:'系统异常，请稍后再试',
-              icon:'none'
-            })
-          }
-        })
+      const _that = this;
+      /* 
+      checkIn:确认入住标识
+      cancelOrder:取消订单标识
+      out:退房标识
+       */
+      if (_that.status === 'checkIn') {
+        if (type ==='confirm') {
+          request({
+            url:'/wap/api/order.php?action=changeState&',
+            data:{id:_that.orderFromId},
+            success: function(res) {
+              if (res.data.status === 'success') {
+                console.log("确认入住",res);
+                uni.showToast({
+                  title:'入住成功',
+                  icon:'none'
+                });
+                setTimeout(()=>{
+                  _that.httpRequest()
+                },2000)
+              } else {
+                uni.showToast({
+                  title:res.data.errorMsg,
+                  icon:'none'
+                })
+              }
+              
+            },
+            fail: function(err) {
+              uni.showToast({
+                title:'系统异常，请稍后再试',
+                icon:'none'
+              })
+            }
+          })
+        }
+      } else if (_that.status === 'cancelOrder') {
+        if (type ==='confirm') {
+          request({
+            url:'/wap/api/order.php?action=changeState&status=cancle',
+            data:{id:_that.orderFromId},
+            success: function(res) {
+              if (res.data.status === 'success') {
+                console.log("取消订单",res);
+                uni.showToast({
+                  title:'取消成功',
+                  icon:'none'
+                });
+                setTimeout(()=>{
+                  _that.httpRequest()
+                },2000)
+              } else {
+                uni.showToast({
+                  title:res.data.errorMsg,
+                  icon:'none'
+                })
+              }
+              
+            },
+            fail: function(err) {
+              uni.showToast({
+                title:'系统异常，请稍后再试',
+                icon:'none'
+              })
+            }
+          })
+        }
+      } else if (_that.status === 'out') { // 退房
+        if (type ==='confirm') {
+          request({
+            url:'/wap/api/order.php?action=changeState',
+            data:{id:_that.orderFromId},
+            success: function(res) {
+              if (res.data.status === 'success') {
+                console.log("退房",res);
+                uni.showToast({
+                  title:'退房成功',
+                  icon:'none'
+                });
+                setTimeout(()=>{
+                  _that.httpRequest()
+                },2000)
+              } else {
+                uni.showToast({
+                  title:res.data.errorMsg,
+                  icon:'none'
+                })
+              }
+              
+            },
+            fail: function(err) {
+              uni.showToast({
+                title:'系统异常，请稍后再试',
+                icon:'none'
+              })
+            }
+          })
+        }
       }
-      console.log(`点击了${type==='cancel'?'取消':'确定'}按钮`);
     }
   },
   mounted() {
@@ -422,6 +497,7 @@ export default {
 .unclosed-contanier {
   width: 100%;
   font-size: 14px;
+  
   .conter-box {
     width: 100%;
     margin-top: 30upx;
@@ -511,7 +587,8 @@ export default {
       justify-content: space-between;
       align-items: center;
       .check-out-btn {
-        width: 140upx;
+        font-size: 24upx;
+        width: 132upx;
         height: 60upx;
         color: #fff;
         background-color: #1592c8;
@@ -519,6 +596,9 @@ export default {
         text-align: center;
         line-height: 60upx;
         margin-bottom: 10upx;
+        &:nth-of-type(2){
+          margin-left: 10upx;
+        }
         &:active {
           opacity: 0.5;
         }

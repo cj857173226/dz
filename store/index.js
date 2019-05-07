@@ -1,20 +1,35 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import helper from '../common/helper.js'
+import {
+		shortHttp	
+	} from '../common/requestUrl.json'
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
 	state: {
-		isEditAddress:false, // 是编辑了收货地址列表
-		isEditCheckIn:false, // 是编辑了 常住人
-		isEditInvoiceHead:false, // 是否编辑了发票抬头
-		isEditUserInfo:false, // 是否修改个人资料
-		isEditStatistics:false, //是否修改了统计账单
-		isEditReleaseInfo:false, // 是否修改房源发布信息
-		isEditCheck:false, // 下单页面的是否编辑了常住人
-		
+		isEditAddress: false, // 是编辑了收货地址列表
+		isEditCheckIn: false, // 是编辑了 常住人
+		isEditInvoiceHead: false, // 是否编辑了发票抬头
+		isEditUserInfo: false, // 是否修改个人资料
+		isEditStatistics: false, //是否修改了统计账单
+		isEditReleaseInfo: false, // 是否修改房源发布信息
+		isEditCheck: false, // 下单页面的是否编辑了常住人
+		socketOpen: false, // 是否已登录聊天
+		chatList: [], // 聊天列表 
+		socketError: false, // 是否连接失败
+		socketLoading: false, // 是否在重连聊天
+		socketCount: 0, // 重连次数
+		socketMax: 5, // 重连最大次数
+		socketObj: null, // socket对象
+		socketOnopen: null,
+		socketOnmessage: null,
+		socketOnonclose: null,
+		socketOnerror: null,
+		socketSatus:'',
+		socketTimer:null,//socket重连计时器
 		// 初始化的创建房源信息(不做修改)
-		initCreateHouseInfo:{
+		initCreateHouseInfo: {
 			xz_province: '', //省
 			xz_city: '', //市
 			xz_district: '', //区
@@ -23,7 +38,7 @@ const store = new Vuex.Store({
 			leasetype: '', //出租类型：1：整套出租；2：独立房间；3：合住房间
 		},
 		// 创建房源信息
-		createHouseInfo:{
+		createHouseInfo: {
 			xz_province: '', //省
 			xz_city: '', //市
 			xz_district: '', //区
@@ -32,8 +47,8 @@ const store = new Vuex.Store({
 			leasetype: '', //出租类型：1：整套出租；2：独立房间；3：合住房间
 		},
 		// 初始化的房源发布信息 (不修改)
-		initReleaseObj:{
-			id:'',
+		initReleaseObj: {
+			id: '',
 			title: '', //房屋标题
 			titlepic: '', // 标题配图
 			// titlepic: '',
@@ -82,8 +97,8 @@ const store = new Vuex.Store({
 			is_complete: 0, //是否完成信息
 		},
 		// 房源发布信息
-		releaseObj:{
-			id:'',
+		releaseObj: {
+			id: '',
 			title: '', //房屋标题
 			titlepic: '', // 标题配图
 			// titlepic: '',
@@ -132,81 +147,161 @@ const store = new Vuex.Store({
 			is_complete: 0, //是否完成信息
 		},
 		// 自定义床铺组合
-		customBedOption:null,
+		customBedOption: null,
 		// 当前选择的床铺
-		curBedOption:null,
+		curBedOption: null,
 		// 初始添加入住人勾选获取的索引数组
-		addCheckin:[],
+		addCheckin: [],
 	},
 	mutations: {
 		// 收货地址是否编辑状态更新
-		addressEditStatus(state, is){
+		addressEditStatus(state, is) {
 			state.isEditAddress = is;
 		},
 		// 常住人编辑状态更新
-		checkInEditStatus(state, is){
+		checkInEditStatus(state, is) {
 			state.isEditCheckIn = is;
 		},
 		// 发票抬头编辑状态更新
-		invoiceHeadEditStatus(state, is){
+		invoiceHeadEditStatus(state, is) {
 			state.isEditInvoiceHead = is;
 		},
 		// 个人资料编辑状态更新
-		isUserInfoEditStatus(state, is){
+		isUserInfoEditStatus(state, is) {
 			state.isEditUserInfo = is;
 		},
 		// 统计账单编辑状态更新
-		statisticsEditStatus(state,is){
+		statisticsEditStatus(state, is) {
 			state.isEditStatistics = is;
 		},
 		// 修改创建房源信息
-		editCreateHouseInfo(state,obj){
-			for(let key in obj){
-				if(state.createHouseInfo.hasOwnProperty(key)){
+		editCreateHouseInfo(state, obj) {
+			for (let key in obj) {
+				if (state.createHouseInfo.hasOwnProperty(key)) {
 					state.createHouseInfo[key] = obj[key];
 				}
 			}
 		},
 		// 初始化(清空)创建房源信息
-		clearCreateHouseInfo(state){
+		clearCreateHouseInfo(state) {
 			state.createHouseInfo = helper.deepCopy(state.initCreateHouseInfo)
 		},
 		// 修改房源信息
-		editReleaseInfo(state,obj){
-			for(let key in obj){
-				if(state.releaseObj.hasOwnProperty(key)){
+		editReleaseInfo(state, obj) {
+			for (let key in obj) {
+				if (state.releaseObj.hasOwnProperty(key)) {
 					state.releaseObj[key] = obj[key];
 				}
 			}
 		},
 		//初始化(清空)房源信息
-		clearReleaseInfo(state){
+		clearReleaseInfo(state) {
 			state.releaseObj = helper.deepCopy(state.initReleaseObj)
 		},
 		// 修改房源发布信息修改状态
-		editReleaseInfoStatus(state,is){
+		editReleaseInfoStatus(state, is) {
 			state.isEditReleaseInfo = is;
 		},
 		// 修改自定义床铺组合
-		eidtCustomBedOption(state,bed){
+		eidtCustomBedOption(state, bed) {
 			state.customBedOption = bed;
 		},
 		// 清空自定义床铺组合
-		clearCustomBedOption(state){
+		clearCustomBedOption(state) {
 			state.customBedOption = null;
 		},
 		// 修改自定义床铺组合
-		eidtCurBedOption(state,bed){
+		eidtCurBedOption(state, bed) {
 			state.curBedOption = bed;
 		},
 		// 清空自定义床铺组合
-		clearCurBedOption(state){
+		clearCurBedOption(state) {
 			state.curBedOption = null;
 		},
 		// 修改索引数组的内容
-		checkIn(state,ary){
+		checkIn(state, ary) {
 			state.addCheckin = ary;
-		}
+		},
+		//建立聊天
+		createChatSocket(state) {
+			const _this = this;
+			state.socketObj = uni.connectSocket({
+				url: 'ws://woker.abontest.com:7272',
+				success:()=>{
+					if(state.socketLoading){
+						helper.layer('聊天室已重连')
+					}
+					state.socketLoading = false;
+					state.socketError = false;
+				},
+				complete: () => {}
+			});
+			state.socketSatus = state.socketObj.readyState;
+			state.socketObj.onOpen(function(res) {
+				let userInfo = uni.getStorageSync('dz_userInfo');
+				let userid = userInfo.userid;
+				let _data = {
+					type: 'login',
+					client_user_id: userid,
+				}
+				// 登录 
+				state.socketObj.send({
+					data: JSON.stringify(_data),
+					success: () => {
+						console.log('登录')
+						state.socketOpen = true;
+					},
+					fail: () => {},
+					complete: (res) => {}
+				})
+			});
+			state.socketObj.onClose(function() {
+				state.socketOpen = false;
+				state.socketError = true;
+				console.log('WebSocket 断开连接');
+				_this.commit('reconnectChat')
+			});
+			state.socketObj.onMessage(function(res) {
+				let _data = JSON.parse(res.data);
+				if (_data.type === 'list') {
+					let _chatList = _data.list?_data.list:[];
+					console.log(_chatList)
+					if(_chatList.length>0){
+						_chatList.map((item,index,self)=>{
+							self[index]['title'] = item.realname;
+							self[index]['url'] = shortHttp + item.userpic;
+							self[index]['count'] = item.read_count;
+							self[index]['time'] = item.msg_time;
+							self[index]['stick'] = false;
+							self[index]['disabled'] = false;
+							self[index]['message'] = item.message?item.message.content:'';
+						})
+					}
+					state.chatList = _chatList;
+					
+				}else if (_data.type === 'one'){
+					
+				}
+			})
+		},
+		reconnectChat(state) {
+			state.socketCount += 1;
+			state.socketLoading = true;
+			const _this = this;
+			const max = state.socketMax;
+			if (state.socketCount >= max) {
+				state.socketCount = 0;
+				state.socketLoading = false;
+			} else {
+				setTimeout(() => {
+					_this.commit('createChatSocket');
+					console.log('重连')
+				}, 2000)
+			}
+
+
+		},
+
 	}
 })
 export default store

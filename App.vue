@@ -1,5 +1,9 @@
 <script>
 	import helper from './common/helper.js'
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
 	export default {
 		data() {
 			return {
@@ -12,20 +16,29 @@
 
 		onLaunch: function() {
 			console.log('App Launch')
-			console.log(uni.getStorageSync('dz_token'))
-			uni.connectSocket({
-					url: 'ws://woker.abontest.com:7272'
-				});
-			uni.onSocketOpen(function(res) {
-				console.log('WebSocket连接已打开！');
-			});
-			uni.onSocketError(function(res) {
-				console.log('WebSocket连接打开失败，请检查！');
-			});
-			
-			uni.onSocketMessage(function(res){
-				console.log(res)
-			})
+			const token = uni.getStorageSync('dz_token');
+			if (!token) {
+				setTimeout(function() {
+					uni.reLaunch({
+						url: "/pages/login/login"
+					})
+				}, 0)
+			} else {
+				this.createChatSocket();
+			}
+// 			uni.connectSocket({
+// 					url: 'ws://woker.abontest.com:7272'
+// 				});
+// 			uni.onSocketOpen(function(res) {
+// 				console.log('WebSocket连接已打开！');
+// 			});
+// 			uni.onSocketError(function(res) {
+// 				console.log('WebSocket连接打开失败，请检查！');
+// 			});
+// 			
+// 			uni.onSocketMessage(function(res){
+// 				console.log(res)
+// 			})
 		
 		},
 	
@@ -35,7 +48,9 @@
 		onHide: function() {
 			console.log('App Hide')
 		},
-		methods: {}
+		methods: {
+			...mapMutations(['createChatSocket','chatconnection'])
+		}
 	}
 </script>
 

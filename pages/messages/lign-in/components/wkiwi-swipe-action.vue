@@ -11,7 +11,7 @@
 							</view>
 							<view class="item-middle">
 								<text class="title">{{it.title}}</text>
-								<text class="message">{{it.message}}</text>
+								<text class="message" v-html="it.message"></text>
 						  </view>
 						  <view class="item-right">
 								<view class="time">{{it.time}}</view>
@@ -32,6 +32,17 @@
 </template>
 
 <script>
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+	import {
+		request
+	} from '../../../../common/request.js'
+	import helper from '../../../../common/helper.js'
+	import {
+		shortHttp	
+	} from '../../../../common/requestUrl.json'
 	export default {
 		name: 'wkiwi-swipe-action',
 		props: {
@@ -63,10 +74,23 @@
 		onReady() {
 			this.getSize()
 		},
+		computed:{
+			...mapState(['socketOpen','chatList','socketError','socketLoading','socketObj']),
+		},
 		// #endif
 		methods: {
+			...mapMutations(['reconnectChat']),
 			toMessageDetail(item){
 				console.log(item)
+				const _this = this;
+				if(_this.socketLoading){
+					helper.layer('正在重连聊天室,请稍后..');
+					return;
+				}else if(!_this.socketLoading&&_this.socketError){
+					helper.layer('与聊天室断开,为您重连...')
+					_this.reconnectChat();
+					return;
+				}
 				uni.navigateTo({
 					url:'/pages/messages/chat?title='+item.title,
 				})
@@ -207,7 +231,7 @@
 			  color: #808080;
 				height: 50upx;
 			  line-height: 40upx;
-			  font-size: 24upx;
+			  font-size: 28upx;
 			  overflow: hidden; /**自动隐藏文字*/
 			  text-overflow: ellipsis; /**文字隐藏后添加省略号*/
 			  white-space: nowrap; /**强制不换行*/
@@ -217,7 +241,7 @@
 		  overflow: hidden;
 		  display: flex;
 		  flex-direction: column;
-		  align-items: center;
+		  align-items: flex-end;
 			.time {
 			  color: #808080;
 			  font-size: 18upx;

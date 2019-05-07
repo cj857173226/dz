@@ -147,7 +147,7 @@ export default {
         { name: "已结款" },
       ],
       current: 0,
-      reveal:true, //判断用户是房东还是房客
+      reveal:false, //判断用户是房东还是房客
       TabCur4: 0,
     };
   },

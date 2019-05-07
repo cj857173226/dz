@@ -1,31 +1,68 @@
 <template>
-  <view class="contanier">
-    <view class="conter-box">
-      <view class="img-box">
-        <image class="obligation-img" src="../../static/images/meitu3.jpg"/>
-        <view class="title">名称</view>
-      </view>
-      <view class="price-endtiem-box">
-        <view style="text-align: left;">
-          <view>金额：共<text style="color:#ef5b72;margin-right:30upx;">1000.00</text>元</view>
-          <view>入住日期：2019/4/9-2019/4/15</view>
+  <scroll-view class="contanier" scroll-y="true">
+    <view v-if="listData.length > 0">
+      <view class="conter-box" v-for="(item,i) in listData" :key="i">
+        <view class="img-box">
+          <image class="obligation-img" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
+          <view class="title">{{item.lodgeUnitName===null?'占无标题':item.lodgeUnitName}}</view>
         </view>
-        <view style="text-align: right;">
-          <text>客户入住中</text>
-          <view>入住天数：<text>1天</text></view>
+        <view class="price-endtiem-box">
+          <view style="text-align: left;">
+            <view>金额：共<text style="color:#ef5b72;margin-right:30upx;">{{item.actualTotalPrice}}</text>元</view>
+            <view>入住日期：{{item.startDate}}/{{item.endDate}}</view>
+          </view>
+          <view style="text-align: right;">
+            <text>客户入住中</text>
+            <view>入住天数：<text>{{item.dayCount}}天</text></view>
+          </view>
         </view>
       </view>
     </view>
-  </view>
+    <view v-else>你暂时还没有相关的订单</view>
+  </scroll-view>
 </template>
 <script>
+import {request} from '../../common/request.js' // 封装的带有token的请求方法
+import { shortHttp } from "../../common/requestUrl.json"; // 接口文件
 export default {
-  
+  data () {
+    return {
+      listData:[], 
+      shortHttp
+    }
+  },
+  mounted () {
+    this.stayRequert()
+  },
+  methods: {
+    stayRequert(){
+      const _that = this;
+      request({
+        url:"/wap/api/order.php?action=landlordList&bizState=lived",
+        success: function(res) {
+          if (res.data.status === 'success') {
+            _that.listData = res.data.content.orders;
+          } else {
+            uni.showToast({
+              title:res.data.errorMsg,
+              icon:'none'
+            })
+          }
+        }
+      })
+    }
+  }
 }
 </script>
+<style>
+page{
+  height: 100%;
+}
+</style>
 <style lang="scss" scoped>
 .contanier{
   width: 100%;
+  height: calc(100% - 100upx);
   .conter-box{
     width: 100%;
     margin-top: 30upx;

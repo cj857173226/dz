@@ -69,24 +69,24 @@
       </view>
     </view>
     <!-- 入住中 -->
-    <!-- <view class="lived" v-if="lived.length > 0">
-      <view class="conter-box">
+    <view class="lived" v-if="lived.length > 0">
+      <view class="conter-box" v-for="(item,i) in lived" :key="i">
         <view class="img-box">
-          <image class="obligation-img" src="../../static/images/meitu3.jpg"/>
-          <view class="title">名称</view>
+          <image class="obligation-img" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
+          <view class="title">{{item.lodgeUnitName===null?'占无标题':item.lodgeUnitName}}</view>
         </view>
         <view class="price-endtiem-box">
           <view style="text-align: left;">
-            <view>金额：共<text style="color:#ef5b72;margin-right:30upx;">1000.00</text>元</view>
-            <view>入住日期：2019/4/9-2019/4/15</view>
+            <view>金额：共<text style="color:#ef5b72;margin-right:30upx;">{{item.actualTotalPrice}}</text>元</view>
+            <view>入住日期：{{item.startDate}}/{{item.endDate}}</view>
           </view>
           <view style="text-align: right;">
             <text>客户入住中</text>
-            <view>入住天数：<text>1天</text></view>
+            <view>入住天数：<text>{{item.dayCount}}天</text></view>
           </view>
         </view>
       </view>
-    </view> -->
+    </view>
     <!-- 已完成 -->
     <!-- <view class="accomplish" v-if="accomplish.length > 0">
       <view class="conter-box">
@@ -293,21 +293,14 @@ export default {
                 case "待入住":
                   checkData.push(data[i])
                   break;
+                case "入住中":
+                  livedData.push(data[i])
+                  break;
                 // case "已结款":
 
                 //   break;
               }
-            }
-            console.log('1',affirmData);
-            console.log('2',pastDueData);
-            console.log('3',refundData);
-            console.log('4',wardRoundDoctorData);
-            console.log('5',refuseData);
-            console.log('6',accomplishData);
-            console.log('7',cancelData);
-            console.log('8',paymentData);
-            // console.log('9',affirmData);
-            // console.log('10',affirmData);
+            };
             _that.affirm = affirmData;
             _that.pastDue = pastDueData;
             _that.refund = refundData;
@@ -317,6 +310,7 @@ export default {
             _that.cancel = cancelData;
             _that.payment = paymentData;
             _that.check = checkData;
+            _that.lived = livedData;
           } else {
             uni.showToast({
               title: res.data.errorMsg,
@@ -335,8 +329,6 @@ export default {
     },
     // 点击确认订单弹出模态框让房东再次确认
     clickNotarize(id,type){
-      // id = 订单id 
-      // console.log(id)
       this.confirmDeletion = type;
       this.id = id;
       this.content = '是否确认接收订单';
