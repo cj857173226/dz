@@ -77,16 +77,17 @@
 			}
 		},
 		onLoad(e) {
-			console.log(e)
-			const _title = e.title;
+			let param = JSON.parse(e.param);
+			const _title = param.title;
 			uni.setNavigationBarTitle({
 				title: _title
 			});
 			const userInfo = uni.getStorageSync('dz_userInfo');
-			this.toId = e.list_id;
+			this.toId = param.list_id;
 			this.meId = userInfo.userid;
 			this.meHead = userInfo.headImgurl?this.host+userInfo.headImgurl:'';
-			this.userHead =e.userpic?this.host+e.userpic:'';
+			this.userHead =param.userpic?this.host+param.userpic:'';
+			
 			// 获取设备信息
 			const res = uni.getSystemInfoSync();
 			this.style.pageHeight = res.windowHeight;
@@ -95,11 +96,10 @@
 			this.$nextTick(function(){
 				this.scrollTop =99999;
 			});
-
+			this.getMsg();
 		},
 		onShow() {
-			this.getMsg();
-			
+		
 		},
 		computed: {
 			...mapState(['socketOpen','chatList','socketError','socketLoading','socketObj'])
@@ -122,7 +122,7 @@
 				let param = {
 					type:'one',
 					content: _this.msg,
-					to_id: '118',
+					to_id: _this.toId,
 				}
 				
 				_this.socketObj.send({
@@ -165,17 +165,13 @@
 				const _this = this;
 				let param = {
 					type:'history',
-					to_id: '118',
+					to_id: _this.toId,
 				}
 				_this.socketObj.send({
 					data:JSON.stringify(param),
 					success: (res) => {
-						
-						console.log(_list)
-						
 					},
 					fail: (res) => {
-						console.log()
 					},
 					complete: (res) => {}
 				})
@@ -204,7 +200,14 @@
 						_this.msgList = _list;
 						_this.handleMsg(_this.msgList[_this.msgList.length - 1])
 					}else if(_data.type === 'one'){
+						const _msg =  _data.message;
+						if(_msg.from_id == _this.toId);{
+							let _id = _this.msgList.length
+							_this.msgList.push({type:'user',header:_this.userHead,id:_id,msg:_msg.content,date:_msg.time});
+							_this.handleMsg(_this.msgList[_this.msgList.length - 1]);
+						}
 						
+						console.log(_data)
 					}
 				})
 			}

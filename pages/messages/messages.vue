@@ -37,6 +37,7 @@
 				//广告最后一项
 				lastAd: null,
 				isLoading: false,
+				timer:null,
 				messages: [
 // 					{
 // 							title: "系统消息",
@@ -167,6 +168,10 @@
 		},
 		onShow() {
 			// this.messages = this.chatList;
+			if(this.timer){
+				clearInterval(this.timer);
+				this.timer = null;
+			}
 			this.waitList()
 			this.reconnet();
 		},
@@ -227,12 +232,9 @@
 			// 等待获取列表
 			waitList(){
 				const _this = this;
-				let timer;
-				timer = setInterval(()=>{
+				_this.messages = _this.chatList;
+				this.timer = setInterval(()=>{
 					_this.messages = _this.chatList;
-					if(_this.socketOpen){
-						clearInterval(timer);
-					}
 				},500)
 			}
 		}
