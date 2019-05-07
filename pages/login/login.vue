@@ -44,6 +44,10 @@
 	</view>
 </template>
 <script>
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
 	export default {
 		data() {
 			const isUni = typeof(uni) !== 'undefined'
@@ -66,6 +70,7 @@
 		computed: {
 		},
 		methods: {
+			...mapMutations(['createChatSocket']),
 			inputUsername(e) {
 				this.username = e.target.value
 			},
@@ -125,9 +130,11 @@
 							if (res.data.status === 'success') {
 								uni.setStorageSync('dz_userInfo', res.data.content);
 								uni.setStorageSync('dz_token', res.data.content.token);
+								that.createChatSocket();
 								uni.reLaunch({
 									url: "/pages/index/index"
 								})
+								
 							} else {
 								uni.showToast({
 									title: res.data.msg,

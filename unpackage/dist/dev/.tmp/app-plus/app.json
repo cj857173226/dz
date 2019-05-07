@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/index/searchCity",
+    "pages/index/SearchCity",
     "pages/particulars/particulars",
     "pages/particulars/selectors",
     "pages/particulars/addition",

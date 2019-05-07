@@ -3,7 +3,7 @@ import provinceData from '../common/city-data/province.js'
 import cityData from '../common/city-data/city.js'
 import areaData from '../common/city-data/area.js'
 
-var socketOpen = false;
+
 
 // 检测是否登录
 const isLogin = function() {

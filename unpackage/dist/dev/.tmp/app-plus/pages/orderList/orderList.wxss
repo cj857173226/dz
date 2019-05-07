@@ -473,7 +473,7 @@ image {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.unclosed-contanier.data-v-a8c6d8cc {
+.unclosed-contanier.data-v-aeb48900 {
   width: 100%;
   font-size: 14px;
   /* .unclosed-box{
@@ -531,12 +531,12 @@ image {
     }
   } */
 }
-.unclosed-contanier .conter-box.data-v-a8c6d8cc {
+.unclosed-contanier .conter-box.data-v-aeb48900 {
     width: 100%;
     margin-top: 30rpx;
     border-bottom: 1px solid #adadad;
 }
-.unclosed-contanier .conter-box .img-box.data-v-a8c6d8cc {
+.unclosed-contanier .conter-box .img-box.data-v-aeb48900 {
       width: 100%;
       height: 460rpx;
       padding: 40rpx 80rpx;
@@ -545,22 +545,22 @@ image {
       background-color: #ececec;
       position: relative;
 }
-.unclosed-contanier .conter-box .img-box .obligation-img.data-v-a8c6d8cc {
+.unclosed-contanier .conter-box .img-box .obligation-img.data-v-aeb48900 {
         width: 100%;
         height: 100%;
         border-radius: 60rpx;
 }
-.unclosed-contanier .conter-box .img-box .title.data-v-a8c6d8cc {
+.unclosed-contanier .conter-box .img-box .title.data-v-aeb48900 {
         position: absolute;
         left: 30rpx;
         bottom: 0;
 }
-.unclosed-contanier .conter-box .img-box .state.data-v-a8c6d8cc {
+.unclosed-contanier .conter-box .img-box .state.data-v-aeb48900 {
         position: absolute;
         top: 0;
         right: 30rpx;
 }
-.unclosed-contanier .conter-box .price-endtiem-box.data-v-a8c6d8cc {
+.unclosed-contanier .conter-box .price-endtiem-box.data-v-aeb48900 {
       width: 100%;
       padding: 30rpx;
       -webkit-box-sizing: border-box;
@@ -583,7 +583,7 @@ image {
           -ms-flex-align: center;
               align-items: center;
 }
-.unclosed-contanier .btn.data-v-a8c6d8cc {
+.unclosed-contanier .btn.data-v-aeb48900 {
     width: 140rpx;
     height: 60rpx;
     background-color: #1592c8;
@@ -592,18 +592,18 @@ image {
     line-height: 60rpx;
     color: #fff;
 }
-.unclosed-contanier .btn.data-v-a8c6d8cc:nth-of-type(2) {
+.unclosed-contanier .btn.data-v-aeb48900:nth-of-type(2) {
       margin-left: 10rpx;
 }
-.unclosed-contanier .btn.data-v-a8c6d8cc:active {
+.unclosed-contanier .btn.data-v-aeb48900:active {
       opacity: 0.5;
 }
-.unclosed-contanier .has-been-in-box.data-v-a8c6d8cc {
+.unclosed-contanier .has-been-in-box.data-v-aeb48900 {
     width: 100%;
     margin-top: 30rpx;
     border-bottom: 1px solid #adadad;
 }
-.unclosed-contanier .has-been-in-box .has-been-in-img-box.data-v-a8c6d8cc {
+.unclosed-contanier .has-been-in-box .has-been-in-img-box.data-v-aeb48900 {
       width: 100%;
       height: 460rpx;
       padding: 40rpx 80rpx;
@@ -612,22 +612,22 @@ image {
       background-color: #ececec;
       position: relative;
 }
-.unclosed-contanier .has-been-in-box .has-been-in-img-box .has-been-in-img.data-v-a8c6d8cc {
+.unclosed-contanier .has-been-in-box .has-been-in-img-box .has-been-in-img.data-v-aeb48900 {
         width: 100%;
         height: 100%;
         border-radius: 60rpx;
 }
-.unclosed-contanier .has-been-in-box .has-been-in-img-box .title.data-v-a8c6d8cc {
+.unclosed-contanier .has-been-in-box .has-been-in-img-box .title.data-v-aeb48900 {
         position: absolute;
         left: 30rpx;
         bottom: 0;
 }
-.unclosed-contanier .has-been-in-box .has-been-in-img-box .state.data-v-a8c6d8cc {
+.unclosed-contanier .has-been-in-box .has-been-in-img-box .state.data-v-aeb48900 {
         position: absolute;
         top: 0;
         right: 30rpx;
 }
-.unclosed-contanier .has-been-in-box .price-endtiem-box.data-v-a8c6d8cc {
+.unclosed-contanier .has-been-in-box .price-endtiem-box.data-v-aeb48900 {
       width: 100%;
       padding: 30rpx;
       -webkit-box-sizing: border-box;
@@ -650,7 +650,7 @@ image {
           -ms-flex-align: center;
               align-items: center;
 }
-.unclosed-contanier .has-been-in-box .price-endtiem-box .check-out-btn.data-v-a8c6d8cc {
+.unclosed-contanier .has-been-in-box .price-endtiem-box .check-out-btn.data-v-aeb48900 {
         width: 140rpx;
         height: 60rpx;
         color: #fff;
@@ -660,7 +660,7 @@ image {
         line-height: 60rpx;
         margin-bottom: 10rpx;
 }
-.unclosed-contanier .has-been-in-box .price-endtiem-box .check-out-btn.data-v-a8c6d8cc:active {
+.unclosed-contanier .has-been-in-box .price-endtiem-box .check-out-btn.data-v-aeb48900:active {
           opacity: 0.5;
 }
 
@@ -690,7 +690,7 @@ image {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.unclosed-contanier.data-v-739e3e29 {
+.unclosed-contanier.data-v-4cd96de2 {
   width: 100%;
   font-size: 14px;
   /* .unclosed-box{
@@ -755,12 +755,12 @@ image {
     }
   } */
 }
-.unclosed-contanier .has-been-in-box.data-v-739e3e29 {
+.unclosed-contanier .has-been-in-box.data-v-4cd96de2 {
     width: 100%;
     margin-top: 30rpx;
     border-bottom: 1px solid #adadad;
 }
-.unclosed-contanier .has-been-in-box .has-been-in-img-box.data-v-739e3e29 {
+.unclosed-contanier .has-been-in-box .has-been-in-img-box.data-v-4cd96de2 {
       width: 100%;
       height: 460rpx;
       padding: 40rpx 80rpx;
@@ -769,22 +769,22 @@ image {
       background-color: #ececec;
       position: relative;
 }
-.unclosed-contanier .has-been-in-box .has-been-in-img-box .has-been-in-img.data-v-739e3e29 {
+.unclosed-contanier .has-been-in-box .has-been-in-img-box .has-been-in-img.data-v-4cd96de2 {
         width: 100%;
         height: 100%;
         border-radius: 60rpx;
 }
-.unclosed-contanier .has-been-in-box .has-been-in-img-box .title.data-v-739e3e29 {
+.unclosed-contanier .has-been-in-box .has-been-in-img-box .title.data-v-4cd96de2 {
         position: absolute;
         left: 30rpx;
         bottom: 0;
 }
-.unclosed-contanier .has-been-in-box .has-been-in-img-box .state.data-v-739e3e29 {
+.unclosed-contanier .has-been-in-box .has-been-in-img-box .state.data-v-4cd96de2 {
         position: absolute;
         top: 0;
         right: 30rpx;
 }
-.unclosed-contanier .has-been-in-box .price-endtiem-box.data-v-739e3e29 {
+.unclosed-contanier .has-been-in-box .price-endtiem-box.data-v-4cd96de2 {
       width: 100%;
       padding: 30rpx;
       -webkit-box-sizing: border-box;
@@ -807,7 +807,7 @@ image {
           -ms-flex-align: center;
               align-items: center;
 }
-.unclosed-contanier .has-been-in-box .price-endtiem-box .check-out-btn.data-v-739e3e29 {
+.unclosed-contanier .has-been-in-box .price-endtiem-box .check-out-btn.data-v-4cd96de2 {
         width: 140rpx;
         height: 60rpx;
         color: #fff;
@@ -817,7 +817,7 @@ image {
         line-height: 60rpx;
         margin-bottom: 10rpx;
 }
-.unclosed-contanier .has-been-in-box .price-endtiem-box .check-out-btn.data-v-739e3e29:active {
+.unclosed-contanier .has-been-in-box .price-endtiem-box .check-out-btn.data-v-4cd96de2:active {
           opacity: 0.5;
 }
 
@@ -847,10 +847,10 @@ image {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-7af300e3 {
+.contanier.data-v-f125f186 {
   width: 100%;
 }
-.contanier .conter-box.data-v-7af300e3 {
+.contanier .conter-box.data-v-f125f186 {
     width: 100%;
     margin-top: 30rpx;
     background-color: #e4e4e4;
@@ -858,7 +858,7 @@ image {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
-.contanier .conter-box .all-img.data-v-7af300e3 {
+.contanier .conter-box .all-img.data-v-f125f186 {
       width: 100%;
       height: 460rpx;
 }
@@ -889,15 +889,15 @@ image {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-7c20f7da {
+.contanier.data-v-bd636b0e {
   width: 100%;
 }
-.contanier .conter-box.data-v-7c20f7da {
+.contanier .conter-box.data-v-bd636b0e {
     width: 100%;
     margin-top: 30rpx;
     border-bottom: 1px solid #adadad;
 }
-.contanier .conter-box .img-box.data-v-7c20f7da {
+.contanier .conter-box .img-box.data-v-bd636b0e {
       width: 100%;
       height: 460rpx;
       padding: 40rpx 80rpx;
@@ -906,17 +906,17 @@ image {
       background-color: #ececec;
       position: relative;
 }
-.contanier .conter-box .img-box .obligation-img.data-v-7c20f7da {
+.contanier .conter-box .img-box .obligation-img.data-v-bd636b0e {
         width: 100%;
         height: 100%;
         border-radius: 60rpx;
 }
-.contanier .conter-box .img-box .title.data-v-7c20f7da {
+.contanier .conter-box .img-box .title.data-v-bd636b0e {
         position: absolute;
         left: 30rpx;
         bottom: 0;
 }
-.contanier .conter-box .price-endtiem-box.data-v-7c20f7da {
+.contanier .conter-box .price-endtiem-box.data-v-bd636b0e {
       width: 100%;
       padding: 30rpx;
       -webkit-box-sizing: border-box;
@@ -962,15 +962,15 @@ image {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-08ba991c {
+.contanier.data-v-2fcd40fc {
   width: 100%;
 }
-.contanier .conter-box.data-v-08ba991c {
+.contanier .conter-box.data-v-2fcd40fc {
     width: 100%;
     margin-top: 30rpx;
     border-bottom: 1px solid #adadad;
 }
-.contanier .conter-box .img-box.data-v-08ba991c {
+.contanier .conter-box .img-box.data-v-2fcd40fc {
       width: 100%;
       height: 460rpx;
       padding: 40rpx 80rpx;
@@ -979,17 +979,17 @@ image {
       background-color: #ececec;
       position: relative;
 }
-.contanier .conter-box .img-box .obligation-img.data-v-08ba991c {
+.contanier .conter-box .img-box .obligation-img.data-v-2fcd40fc {
         width: 100%;
         height: 100%;
         border-radius: 60rpx;
 }
-.contanier .conter-box .img-box .title.data-v-08ba991c {
+.contanier .conter-box .img-box .title.data-v-2fcd40fc {
         position: absolute;
         left: 30rpx;
         bottom: 0;
 }
-.contanier .conter-box .price-endtiem-box.data-v-08ba991c {
+.contanier .conter-box .price-endtiem-box.data-v-2fcd40fc {
       width: 100%;
       padding: 30rpx;
       -webkit-box-sizing: border-box;
@@ -1035,15 +1035,15 @@ image {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-69ae583c {
+.contanier.data-v-64241d3c {
   width: 100%;
 }
-.contanier .conter-box.data-v-69ae583c {
+.contanier .conter-box.data-v-64241d3c {
     width: 100%;
     margin-top: 30rpx;
     border-bottom: 1px solid #adadad;
 }
-.contanier .conter-box .img-box.data-v-69ae583c {
+.contanier .conter-box .img-box.data-v-64241d3c {
       width: 100%;
       height: 460rpx;
       padding: 40rpx 80rpx;
@@ -1052,17 +1052,17 @@ image {
       background-color: #ececec;
       position: relative;
 }
-.contanier .conter-box .img-box .obligation-img.data-v-69ae583c {
+.contanier .conter-box .img-box .obligation-img.data-v-64241d3c {
         width: 100%;
         height: 100%;
         border-radius: 60rpx;
 }
-.contanier .conter-box .img-box .title.data-v-69ae583c {
+.contanier .conter-box .img-box .title.data-v-64241d3c {
         position: absolute;
         left: 30rpx;
         bottom: 0;
 }
-.contanier .conter-box .price-endtiem-box.data-v-69ae583c {
+.contanier .conter-box .price-endtiem-box.data-v-64241d3c {
       width: 100%;
       padding: 30rpx;
       -webkit-box-sizing: border-box;
@@ -1085,7 +1085,7 @@ image {
           -ms-flex-align: center;
               align-items: center;
 }
-.contanier .conter-box .price-endtiem-box .btn-box .btn.data-v-69ae583c {
+.contanier .conter-box .price-endtiem-box .btn-box .btn.data-v-64241d3c {
         width: 160rpx;
         height: 60rpx;
         background-color: #1592C8;
@@ -1094,10 +1094,10 @@ image {
         text-align: center;
         line-height: 60rpx;
 }
-.contanier .conter-box .price-endtiem-box .btn-box .btn.data-v-69ae583c:active {
+.contanier .conter-box .price-endtiem-box .btn-box .btn.data-v-64241d3c:active {
           opacity: .5;
 }
-.contanier .conter-box .price-endtiem-box .btn-box .btn.data-v-69ae583c:nth-of-type(2) {
+.contanier .conter-box .price-endtiem-box .btn-box .btn.data-v-64241d3c:nth-of-type(2) {
           margin-top: 10rpx;
 }
 
@@ -1127,15 +1127,15 @@ image {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-7467e7b8 {
+.contanier.data-v-fe3c23dc {
   width: 100%;
 }
-.contanier .conter-box.data-v-7467e7b8 {
+.contanier .conter-box.data-v-fe3c23dc {
     width: 100%;
     margin-top: 30rpx;
     border-bottom: 1px solid #adadad;
 }
-.contanier .conter-box .img-box.data-v-7467e7b8 {
+.contanier .conter-box .img-box.data-v-fe3c23dc {
       width: 100%;
       height: 460rpx;
       padding: 40rpx 80rpx;
@@ -1144,17 +1144,17 @@ image {
       background-color: #ececec;
       position: relative;
 }
-.contanier .conter-box .img-box .obligation-img.data-v-7467e7b8 {
+.contanier .conter-box .img-box .obligation-img.data-v-fe3c23dc {
         width: 100%;
         height: 100%;
         border-radius: 60rpx;
 }
-.contanier .conter-box .img-box .title.data-v-7467e7b8 {
+.contanier .conter-box .img-box .title.data-v-fe3c23dc {
         position: absolute;
         left: 30rpx;
         bottom: 0;
 }
-.contanier .conter-box .price-endtiem-box.data-v-7467e7b8 {
+.contanier .conter-box .price-endtiem-box.data-v-fe3c23dc {
       width: 100%;
       padding: 30rpx;
       -webkit-box-sizing: border-box;
@@ -1200,15 +1200,15 @@ image {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-55660210 {
+.contanier.data-v-418f2576 {
   width: 100%;
 }
-.contanier .conter-box.data-v-55660210 {
+.contanier .conter-box.data-v-418f2576 {
     width: 100%;
     margin-top: 30rpx;
     border-bottom: 1px solid #adadad;
 }
-.contanier .conter-box .img-box.data-v-55660210 {
+.contanier .conter-box .img-box.data-v-418f2576 {
       width: 100%;
       height: 460rpx;
       padding: 40rpx 80rpx;
@@ -1217,17 +1217,17 @@ image {
       background-color: #ececec;
       position: relative;
 }
-.contanier .conter-box .img-box .obligation-img.data-v-55660210 {
+.contanier .conter-box .img-box .obligation-img.data-v-418f2576 {
         width: 100%;
         height: 100%;
         border-radius: 60rpx;
 }
-.contanier .conter-box .img-box .title.data-v-55660210 {
+.contanier .conter-box .img-box .title.data-v-418f2576 {
         position: absolute;
         left: 30rpx;
         bottom: 0;
 }
-.contanier .conter-box .price-endtiem-box.data-v-55660210 {
+.contanier .conter-box .price-endtiem-box.data-v-418f2576 {
       width: 100%;
       padding: 30rpx;
       -webkit-box-sizing: border-box;
@@ -1273,15 +1273,15 @@ image {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-592a74ee {
+.contanier.data-v-56339cd4 {
   width: 100%;
 }
-.contanier .conter-box.data-v-592a74ee {
+.contanier .conter-box.data-v-56339cd4 {
     width: 100%;
     margin-top: 30rpx;
     border-bottom: 1px solid #adadad;
 }
-.contanier .conter-box .img-box.data-v-592a74ee {
+.contanier .conter-box .img-box.data-v-56339cd4 {
       width: 100%;
       height: 460rpx;
       padding: 40rpx 80rpx;
@@ -1290,94 +1290,17 @@ image {
       background-color: #ececec;
       position: relative;
 }
-.contanier .conter-box .img-box .obligation-img.data-v-592a74ee {
+.contanier .conter-box .img-box .obligation-img.data-v-56339cd4 {
         width: 100%;
         height: 100%;
         border-radius: 60rpx;
 }
-.contanier .conter-box .img-box .title.data-v-592a74ee {
+.contanier .conter-box .img-box .title.data-v-56339cd4 {
         position: absolute;
         left: 30rpx;
         bottom: 0;
 }
-.contanier .conter-box .price-endtiem-box.data-v-592a74ee {
-      width: 100%;
-      padding: 30rpx;
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: row;
-          -ms-flex-direction: row;
-              flex-direction: row;
-      -webkit-box-pack: justify;
-      -webkit-justify-content: space-between;
-          -ms-flex-pack: justify;
-              justify-content: space-between;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-          -ms-flex-align: center;
-              align-items: center;
-}
-
-@charset "UTF-8";
-/**
- * 这里是uni-app内置的常用样式变量
- *
- * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
- * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
- *
- */
-/**
- * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
- *
- * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
- */
-/* 颜色变量 */
-/* 行为相关颜色 */
-/* 文字基本颜色 */
-/* 背景颜色 */
-/* 边框颜色 */
-/* 尺寸变量 */
-/* 文字尺寸 */
-/* 图片尺寸 */
-/* Border Radius */
-/* 水平间距 */
-/* 垂直间距 */
-/* 透明度 */
-/* 文章场景相关 */
-.contanier.data-v-2f6f00a4 {
-  width: 100%;
-}
-.contanier .conter-box.data-v-2f6f00a4 {
-    width: 100%;
-    margin-top: 30rpx;
-    border-bottom: 1px solid #adadad;
-}
-.contanier .conter-box .img-box.data-v-2f6f00a4 {
-      width: 100%;
-      height: 460rpx;
-      padding: 40rpx 80rpx;
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box;
-      background-color: #ececec;
-      position: relative;
-}
-.contanier .conter-box .img-box .obligation-img.data-v-2f6f00a4 {
-        width: 100%;
-        height: 100%;
-        border-radius: 60rpx;
-}
-.contanier .conter-box .img-box .title.data-v-2f6f00a4 {
-        position: absolute;
-        left: 30rpx;
-        bottom: 0;
-}
-.contanier .conter-box .price-endtiem-box.data-v-2f6f00a4 {
+.contanier .conter-box .price-endtiem-box.data-v-56339cd4 {
       width: 100%;
       padding: 30rpx;
       -webkit-box-sizing: border-box;
@@ -1427,15 +1350,15 @@ image {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-b2ed7ed8 {
+.contanier.data-v-1b98240a {
   width: 100%;
 }
-.contanier .conter-box.data-v-b2ed7ed8 {
+.contanier .conter-box.data-v-1b98240a {
     width: 100%;
     margin-top: 30rpx;
     border-bottom: 1px solid #adadad;
 }
-.contanier .conter-box .img-box.data-v-b2ed7ed8 {
+.contanier .conter-box .img-box.data-v-1b98240a {
       width: 100%;
       height: 460rpx;
       padding: 40rpx 80rpx;
@@ -1444,17 +1367,17 @@ image {
       background-color: #ececec;
       position: relative;
 }
-.contanier .conter-box .img-box .obligation-img.data-v-b2ed7ed8 {
+.contanier .conter-box .img-box .obligation-img.data-v-1b98240a {
         width: 100%;
         height: 100%;
         border-radius: 60rpx;
 }
-.contanier .conter-box .img-box .title.data-v-b2ed7ed8 {
+.contanier .conter-box .img-box .title.data-v-1b98240a {
         position: absolute;
         left: 30rpx;
         bottom: 0;
 }
-.contanier .conter-box .price-endtiem-box.data-v-b2ed7ed8 {
+.contanier .conter-box .price-endtiem-box.data-v-1b98240a {
       width: 100%;
       padding: 30rpx;
       -webkit-box-sizing: border-box;
@@ -1504,15 +1427,15 @@ image {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-63c89735 {
+.contanier.data-v-0194db24 {
   width: 100%;
 }
-.contanier .conter-box.data-v-63c89735 {
+.contanier .conter-box.data-v-0194db24 {
     width: 100%;
     margin-top: 30rpx;
     border-bottom: 1px solid #adadad;
 }
-.contanier .conter-box .img-box.data-v-63c89735 {
+.contanier .conter-box .img-box.data-v-0194db24 {
       width: 100%;
       height: 460rpx;
       padding: 40rpx 80rpx;
@@ -1521,17 +1444,17 @@ image {
       background-color: #ececec;
       position: relative;
 }
-.contanier .conter-box .img-box .obligation-img.data-v-63c89735 {
+.contanier .conter-box .img-box .obligation-img.data-v-0194db24 {
         width: 100%;
         height: 100%;
         border-radius: 60rpx;
 }
-.contanier .conter-box .img-box .title.data-v-63c89735 {
+.contanier .conter-box .img-box .title.data-v-0194db24 {
         position: absolute;
         left: 30rpx;
         bottom: 0;
 }
-.contanier .conter-box .price-endtiem-box.data-v-63c89735 {
+.contanier .conter-box .price-endtiem-box.data-v-0194db24 {
       width: 100%;
       padding: 30rpx;
       -webkit-box-sizing: border-box;
@@ -1581,15 +1504,15 @@ image {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-3d71b784 {
+.contanier.data-v-4c89d19b {
   width: 100%;
 }
-.contanier .conter-box.data-v-3d71b784 {
+.contanier .conter-box.data-v-4c89d19b {
     width: 100%;
     margin-top: 30rpx;
     border-bottom: 1px solid #adadad;
 }
-.contanier .conter-box .img-box.data-v-3d71b784 {
+.contanier .conter-box .img-box.data-v-4c89d19b {
       width: 100%;
       height: 460rpx;
       padding: 40rpx 80rpx;
@@ -1598,17 +1521,94 @@ image {
       background-color: #ececec;
       position: relative;
 }
-.contanier .conter-box .img-box .obligation-img.data-v-3d71b784 {
+.contanier .conter-box .img-box .obligation-img.data-v-4c89d19b {
         width: 100%;
         height: 100%;
         border-radius: 60rpx;
 }
-.contanier .conter-box .img-box .title.data-v-3d71b784 {
+.contanier .conter-box .img-box .title.data-v-4c89d19b {
         position: absolute;
         left: 30rpx;
         bottom: 0;
 }
-.contanier .conter-box .price-endtiem-box.data-v-3d71b784 {
+.contanier .conter-box .price-endtiem-box.data-v-4c89d19b {
+      width: 100%;
+      padding: 30rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+}
+
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.contanier.data-v-7eb42ab8 {
+  width: 100%;
+}
+.contanier .conter-box.data-v-7eb42ab8 {
+    width: 100%;
+    margin-top: 30rpx;
+    border-bottom: 1px solid #adadad;
+}
+.contanier .conter-box .img-box.data-v-7eb42ab8 {
+      width: 100%;
+      height: 460rpx;
+      padding: 40rpx 80rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      background-color: #ececec;
+      position: relative;
+}
+.contanier .conter-box .img-box .obligation-img.data-v-7eb42ab8 {
+        width: 100%;
+        height: 100%;
+        border-radius: 60rpx;
+}
+.contanier .conter-box .img-box .title.data-v-7eb42ab8 {
+        position: absolute;
+        left: 30rpx;
+        bottom: 0;
+}
+.contanier .conter-box .price-endtiem-box.data-v-7eb42ab8 {
       width: 100%;
       padding: 30rpx;
       -webkit-box-sizing: border-box;
@@ -1659,26 +1659,26 @@ page{
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-3404872e {
+.contanier.data-v-6d68bcc3 {
   width: 100%;
   height: 100%;
 }
-.contanier .client-box.data-v-3404872e {
+.contanier .client-box.data-v-6d68bcc3 {
     width: 100%;
     height: 100%;
 }
-.contanier .client-box .content.data-v-3404872e {
+.contanier .client-box .content.data-v-6d68bcc3 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
       height: calc(100% - 62rpx);
 }
-.contanier .landlord-box.data-v-3404872e {
+.contanier .landlord-box.data-v-6d68bcc3 {
     font-size: 14px;
     width: 100%;
     height: 100%;
 }
-.contanier .landlord-box .swiper.data-v-3404872e {
+.contanier .landlord-box .swiper.data-v-6d68bcc3 {
       width: 100%;
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
