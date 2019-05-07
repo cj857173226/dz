@@ -14,22 +14,50 @@
           </view>
           <view style="text-align: right;">
             <text>等待查房</text>
-            <view style="width:160upx;height:60upx;color:#fff;line-height:60upx;text-align:center;background-color:#1592C8;border-radius:10upx;margin-top:10upx;">退押金</view>
+            <view style="width:160upx;height:60upx;color:#fff;line-height:60upx;text-align:center;background-color:#1592C8;border-radius:10upx;margin-top:10upx;" @tap="clickWorkRound(item.bookOrderId)">已查房</view>
           </view>
         </view>
       </view>
     </view>
-    <view v-else>你暂时还没有相关的订单</view>
+    <view v-else>
+      <view style="width:100%;height: calc(100% - 100upx);text-align: center;"><image style="width:100%;height: 460upx;" src="../../static/images/deault_list.png" mode="aspectFit"></image></view>
+      你暂时还没有相关的订单
+    </view>
+    <neil-modal 
+      :show="show" 
+      @close="closeModal"
+      title="提示"
+      align="center"
+      @cancel="bindBtn('cancel')"
+      @confirm="bindBtn('confirm')"
+      >
+        <view>
+          是否需要修改退款金额
+        </view>
+        <view class="input-name">
+          <view style="margin-left:40upx;">退还金额:</view>
+          <view class="input-box">
+            <input type="text" placeholder="请输入退款金额" @blur="blurInput" />
+          </view>
+        </view>
+    </neil-modal>
   </scroll-view>
 </template>
 <script>
 import {request} from '../../common/request.js' // 封装的带有token的请求方法
 import { shortHttp } from "../../common/requestUrl.json"; // 接口文件
+import neilModal from '../neil-modal/neil-modal'; // 引入弹出框插件
 export default {
+  components: { neilModal },
   data () {
     return {
       listData:[], 
-      shortHttp
+      shortHttp,
+      content:'', // 弹出框里面的内容
+      // title:'提示', // 弹出框的标题
+      show:false, // 是否显示模态框
+      id:'', // 订单id
+      value:'', // 房东修改退款金额
     }
   },
   mounted () {
@@ -42,7 +70,6 @@ export default {
         url:"/wap/api/order.php?action=landlordList&bizState=check",
         success: function(res) {
           console.log('带查房',res);
-          
           if (res.data.status === 'success') {
             _that.listData = res.data.content.orders;
           } else {
@@ -53,6 +80,53 @@ export default {
           }
         }
       })
+    },
+    blurInput(e){
+    this.value = e.detail.value
+    },
+    // 已查房
+    clickWorkRound(id){
+      console.log();
+      this.id = id;
+      this.show = true;
+      this.content = '确认查房是否没有问题'
+    },
+    // 监听模态框
+    closeModal() {
+      this.show = false
+    },
+    // 监听房东的按键操作
+    bindBtn(type){
+      const _that = this;
+      if (type === 'confirm') {
+        request({
+          url:'/wap/api/order.php?action=changeState',
+          data:{id:_that.id},
+          success: function(res) {
+            if (res.data.status === 'success') {
+              uni.showToast({
+                title:'查房成功',
+                icon:'none'
+              });
+              setTimeout(() => {
+                _that.pendRequert()
+              }, 2000);
+            } else {
+              uni.showToast({
+                title:res.data.errorMsg,
+                icon:'none'
+              })
+            }
+            console.log("取消订单",res);
+          },
+          fail: function(err) {
+            uni.showToast({
+              title:'系统异常，请稍后再试',
+              icon:'none'
+            })
+          }
+        })
+      }
     }
   }
 }
@@ -65,7 +139,7 @@ page{
 <style lang="scss" scoped>
 .contanier{
   width: 100%;
-  height: calc(100% - 100upx);
+  height: calc(100% - 20upx);
   .conter-box{
     width: 100%;
     margin-top: 30upx;
@@ -100,4 +174,12 @@ page{
     }
   }
 }
+.input-name{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  text-align: center;
+  height: 114upx;
+}
+
 </style>

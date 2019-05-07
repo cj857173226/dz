@@ -1,36 +1,4 @@
-<import src="/components/index/date-picker/date-picker.vue.wxml" />
-<import src="/components/index/mpvue-picker/mpvuePicker.vue.wxml" />
-<import src="/components/landlord_introduced/head_portrait.vue.wxml" />
-<import src="/components/particulars/map.vue.wxml" />
-<import src="/components/particulars/uni-rate/uni-rate.vue.wxml" />
-<import src="/components/particulars/supporting-facility.vue.wxml" />
-<import src="/components/particulars/unsubscribe-rules.vue.wxml" />
-<import src="/components/mx-datepicker/mx-datepicker.vue.wxml" />
-<import src="/components/selected/mehaotian-search-revision/mehaotian-search-revision.vue.wxml" />
-<import src="/components/selected/checjbox/group/pages/checkbox-group/checkbox-group.vue.wxml" />
-<import src="/components/mpvue-citypicker/mpvueCityPicker.vue.wxml" />
-<import src="/components/mpvue-picker/mpvuePicker.vue.wxml" />
-<import src="/components/mpvue-echarts/src/echarts.vue.wxml" />
-<import src="/components/w-picker/w-picker.vue.wxml" />
-<import src="/pages/messages/lign-in/components/wkiwi-swipe-action.vue.wxml" />
-<import src="/components/orlderList/uni-segmented-control.vue.wxml" />
-<import src="/components/orlderList/unclosed.vue.wxml" />
-<import src="/components/orlderList/over.vue.wxml" />
-<import src="/components/orlderList/wuc-tab/wuc-tab.vue.wxml" />
-<import src="/components/orlderList/completeAll.vue.wxml" />
-<import src="/components/orlderList/obligation.vue.wxml" />
-<import src="/components/orlderList/to_be_confirmed.vue.wxml" />
-<import src="/components/orlderList/to_stay_in.vue.wxml" />
-<import src="/components/orlderList/stay_in_the.vue.wxml" />
-<import src="/components/orlderList/off_the_stocks.vue.wxml" />
-<import src="/components/orlderList/canceled.vue.wxml" />
-<import src="/components/orlderList/has_refused_to.vue.wxml" />
-<import src="/components/orlderList/stale.vue.wxml" />
-<import src="/components/orlderList/pending_investigation_room.vue.wxml" />
-<import src="/components/orlderList/have_money.vue.wxml" />
 <import src="/components/neil-modal/neil-modal.vue.wxml" />
-<import src="/components/particulars/uni-icon/uni-icon.vue.wxml" />
-<import src="/components/particulars/plug/uni-steps/uni-steps.vue.wxml" />
-<import src="/components/particulars/plug/uni-icon/uni-icon.vue.wxml" />
-<import src="/common/slots.wxml" />
+
+<template name="data-v-63c89735-default-b07c9756-0"><view class="_view data-v-63c89735">是否需要修改退款金额</view><view class="_view data-v-63c89735 input-name"><view style="margin-left:40rpx;" class="_view data-v-63c89735">退还金额:</view><view class="_view data-v-63c89735 input-box"><input type="text" placeholder="请输入退款金额" bindblur="handleProxy" data-eventid="{{'b07c9756-1'}}" data-comkey="{{$k}}" class="_input data-v-63c89735" /></view></view></template>
 

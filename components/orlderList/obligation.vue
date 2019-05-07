@@ -15,7 +15,10 @@
         </view>
       </view>
     </view>
-    <view v-else>你暂时还没有相关的订单</view>
+    <view v-else style="text-align:center">
+      <view style="width:100%;height: calc(100% - 100upx);text-align: center;"><image style="width:100%;height: 460upx;" src="../../static/images/deault_list.png" mode="aspectFit"></image></view>
+      你暂时还没有相关的订单
+    </view>
   </scroll-view>
 </template>
 <script>
@@ -66,7 +69,7 @@ export default {
 <style lang="scss" scoped>
 .contanier{
   width: 100%;
-  height: calc(100% - 100upx);
+  height: calc(100% - 20upx);
   .conter-box{
     width: 100%;
     margin-top: 30upx;

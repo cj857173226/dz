@@ -274,8 +274,8 @@
         type: 'range',  //时间插件类型  可选值：date（日期）、time（时间）、datetime（日期时间）、range（日期范围）、rangetime（日期时间范围）
 				value: '',
 				day:'', //日历选择的天数,
-				startTime:null,
-				endTime:null,
+				startTime:'',
+				endTime:'',
 				orderPrice:'', // 订单结算的价格
 			}
 		},
@@ -412,22 +412,15 @@
             // console.log('date => ' + e.date);
         }
 			},
+			// 立即预定
 			reservations(){
 				const _that = this;
-				if (_that.day === null && _that.startTime === null && _that.endTime === null) {
+				if (_that.day === '' && _that.startTime === '' && _that.endTime === '') {
 					_that.showPicker = true;
 				} else {
-					// request({
-					// 	url:"/wap/api/book.php?action=submit",
-					// 	data:{luId:_that.luId,startDate:_that.startTime,endDate:_that.endTime,},
-					// 	success:function(res){
-					// 		console.log("回",res);
-					// 	}
-					// })
 					uni.navigateTo({
 						url:`/pages/particulars/place_order?startTime=${_that.startTime}&endTime=${_that.endTime}&luId=${_that.luId}&day=${_that.day}&orderPrice=${_that.orderPrice}&price=${_that.price}`
 					})
-					
 				}
 				
 			}

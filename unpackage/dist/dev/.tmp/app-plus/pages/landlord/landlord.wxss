@@ -124,22 +124,14 @@ page {
         border-bottom: 1px solid #c0c0c0;
         margin-left: 20rpx;
 }
-<<<<<<< HEAD
 .contaniers .landlord-box .box .list-box .list-title-box .mobile-phone-box .mobile-phone.data-v-dee18e62 {
           font-size: 32rpx;
 }
 .contaniers .landlord-box .box .list-box .list-title-box .mobile-phone-box .phone-number.data-v-dee18e62 {
-=======
-.contaniers .landlord-box .box .list-box .list-title-box .mobile-phone-box .mobile-phone.data-v-68daf0ae {
-          font-size: 32rpx;
-}
-.contaniers .landlord-box .box .list-box .list-title-box .mobile-phone-box .phone-number.data-v-68daf0ae {
->>>>>>> 675bb61a8bdd7afb506abda6c2f9dd53d7d44ed2
           font-size: 28rpx;
           font-weight: 300;
           color: #cccccc;
 }
-<<<<<<< HEAD
 .contaniers .landlord-box .box .list-box .list-title-box .off-the-stocks.data-v-dee18e62 {
           font-size: 32rpx;
 }
@@ -148,16 +140,6 @@ page {
             font-size: 32rpx;
 }
 .contaniers .landlord-box .box .status_wrap.data-v-dee18e62 {
-=======
-.contaniers .landlord-box .box .list-box .list-title-box .off-the-stocks.data-v-68daf0ae {
-          font-size: 32rpx;
-}
-.contaniers .landlord-box .box .list-box .list-title-box .off-the-stocks .right.data-v-68daf0ae {
-            color: #cccccc;
-            font-size: 32rpx;
-}
-.contaniers .landlord-box .box .status_wrap.data-v-68daf0ae {
->>>>>>> 675bb61a8bdd7afb506abda6c2f9dd53d7d44ed2
       margin-top: 30rpx;
       display: -webkit-box;
       display: -webkit-flex;
@@ -169,11 +151,7 @@ page {
           -ms-flex-direction: row-reverse;
               flex-direction: row-reverse;
 }
-<<<<<<< HEAD
 .contaniers .landlord-box .box .status_wrap .landlord_status.data-v-dee18e62 {
-=======
-.contaniers .landlord-box .box .status_wrap .landlord_status.data-v-68daf0ae {
->>>>>>> 675bb61a8bdd7afb506abda6c2f9dd53d7d44ed2
         display: inline-block;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;

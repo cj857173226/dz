@@ -61,17 +61,10 @@ page {
               box-sizing: border-box;
       overflow-y: auto;
 }
-<<<<<<< HEAD
 .chat_page .main .chat_box .msg_list_wrap.data-v-55dcfbdb {
         overflow: hidden;
 }
 .chat_page .main .chat_box .msg_list_wrap .msg_list.data-v-55dcfbdb {
-=======
-.chat_page .main .chat_box .msg_list_wrap.data-v-ef847096 {
-        overflow: hidden;
-}
-.chat_page .main .chat_box .msg_list_wrap .msg_list.data-v-ef847096 {
->>>>>>> 675bb61a8bdd7afb506abda6c2f9dd53d7d44ed2
           -webkit-box-sizing: border-box;
                   box-sizing: border-box;
           padding: 20rpx 0;
@@ -149,7 +142,7 @@ page {
               background: #e76c7f;
               color: #ffffff;
 }
-.chat_page .send_box.data-v-ef847096 {
+.chat_page .send_box.data-v-55dcfbdb {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -171,7 +164,7 @@ page {
     -o-transition: all .15s linear;
     transition: all .15s linear;
 }
-.chat_page .send_box .cur_msg.data-v-ef847096 {
+.chat_page .send_box .cur_msg.data-v-55dcfbdb {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       background: #ffffff;
@@ -181,13 +174,13 @@ page {
       padding: 18rpx;
       border-radius: 16rpx;
 }
-.chat_page .send_box .cur_msg ._textarea.data-v-ef847096 {
+.chat_page .send_box .cur_msg ._textarea.data-v-55dcfbdb {
         font-size: 28rpx;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         width: 100%;
 }
-.chat_page .send_box .send_btn.data-v-ef847096 {
+.chat_page .send_box .send_btn.data-v-55dcfbdb {
       height: 72rpx;
       line-height: 72rpx;
       width: 160rpx;
@@ -196,10 +189,10 @@ page {
       background: #F05B72;
       color: #ffffff;
 }
-.chat_page .send_box .send_btn.data-v-ef847096:active {
+.chat_page .send_box .send_btn.data-v-55dcfbdb:active {
         opacity: 0.8;
 }
-.chat_page .send_box .send_btn.data-v-ef847096:after {
+.chat_page .send_box .send_btn.data-v-55dcfbdb:after {
         border: none;
 }
 
