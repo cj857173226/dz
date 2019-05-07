@@ -81,7 +81,7 @@
 		methods: {
 			...mapMutations(['reconnectChat']),
 			toMessageDetail(item){
-				console.log(item)
+				let param = JSON.stringify(item);
 				const _this = this;
 				if(_this.socketLoading){
 					helper.layer('正在重连聊天室,请稍后..');
@@ -92,7 +92,7 @@
 					return;
 				}
 				uni.navigateTo({
-					url:'/pages/messages/chat?title='+item.title,
+					url:'/pages/messages/chat?param='+param,
 				})
 			},
 			getSize() {
@@ -244,7 +244,7 @@
 		  align-items: flex-end;
 			.time {
 			  color: #808080;
-			  font-size: 18upx;
+			  font-size: 28upx;
 				height:60upx;
 				line-height: 60upx;
 			}

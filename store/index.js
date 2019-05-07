@@ -2,8 +2,8 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import helper from '../common/helper.js'
 import {
-		shortHttp	
-	} from '../common/requestUrl.json'
+	shortHttp
+} from '../common/requestUrl.json'
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
@@ -17,6 +17,7 @@ const store = new Vuex.Store({
 		isEditCheck: false, // 下单页面的是否编辑了常住人
 		socketOpen: false, // 是否已登录聊天
 		chatList: [], // 聊天列表 
+		totalCount: 0, // 未读消息总数
 		socketError: false, // 是否连接失败
 		socketLoading: false, // 是否在重连聊天
 		socketCount: 0, // 重连次数
@@ -26,8 +27,8 @@ const store = new Vuex.Store({
 		socketOnmessage: null,
 		socketOnonclose: null,
 		socketOnerror: null,
-		socketSatus:'',
-		socketTimer:null,//socket重连计时器
+		socketSatus: '',
+		socketTimer: null, //socket重连计时器
 		// 初始化的创建房源信息(不做修改)
 		initCreateHouseInfo: {
 			xz_province: '', //省
@@ -227,8 +228,8 @@ const store = new Vuex.Store({
 			const _this = this;
 			state.socketObj = uni.connectSocket({
 				url: 'ws://woker.abontest.com:7272',
-				success:()=>{
-					if(state.socketLoading){
+				success: () => {
+					if (state.socketLoading) {
 						helper.layer('聊天室已重连')
 					}
 					state.socketLoading = false;
@@ -264,23 +265,41 @@ const store = new Vuex.Store({
 			state.socketObj.onMessage(function(res) {
 				let _data = JSON.parse(res.data);
 				if (_data.type === 'list') {
-					let _chatList = _data.list?_data.list:[];
-					console.log(_chatList)
-					if(_chatList.length>0){
-						_chatList.map((item,index,self)=>{
+					let total = 0;
+					let _chatList = _data.list ? _data.list : [];
+					// console.log(_chatList)
+					if (_chatList.length > 0) {
+						_chatList.map((item, index, self) => {
+							total += item.read_count;
 							self[index]['title'] = item.realname;
 							self[index]['url'] = shortHttp + item.userpic;
 							self[index]['count'] = item.read_count;
 							self[index]['time'] = item.msg_time;
 							self[index]['stick'] = false;
 							self[index]['disabled'] = false;
-							self[index]['message'] = item.message?item.message.content:'';
+							self[index]['message'] = item.message ? item.message.content : '';
 						})
 					}
+// 					if (total >= 1 && total < 99) {
+// 						uni.setTabBarBadge({
+// 							index: 3,
+// 							text: total.toString()
+// 						})
+// 					}else if(total>=99){
+// 						uni.setTabBarBadge({
+// 							index: 3,
+// 							text: '99'
+// 						})
+// 					} else{
+// 						uni.removeTabBarBadge({
+// 							index: 3,
+// 						})
+// 					}
+						
+					state.totalCount = total;
 					state.chatList = _chatList;
-					
-				}else if (_data.type === 'one'){
-					
+
+
 				}
 			})
 		},
