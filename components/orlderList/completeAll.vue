@@ -50,7 +50,7 @@
       </view>
     </view>
     <!-- 待入住 -->
-    <!-- <view class="check" v-if="check.length > 0">
+    <view class="check" v-if="check.length > 0">
       <view class="conter-box" v-for="(item,i) in check" :key="i">
         <view class="img-box">
           <image class="obligation-img" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
@@ -67,7 +67,7 @@
           </view>
         </view>
       </view>
-    </view> -->
+    </view>
     <!-- 入住中 -->
     <!-- <view class="lived" v-if="lived.length > 0">
       <view class="conter-box">
@@ -290,9 +290,9 @@ export default {
                 case "待付款":
                   paymentData.push(data[i])
                   break;
-                // case "待入住":
-                
-                //   break;
+                case "待入住":
+                  checkData.push(data[i])
+                  break;
                 // case "已结款":
 
                 //   break;
@@ -316,6 +316,7 @@ export default {
             _that.accomplish = accomplishData;
             _that.cancel = cancelData;
             _that.payment = paymentData;
+            _that.check = checkData;
           } else {
             uni.showToast({
               title: res.data.errorMsg,

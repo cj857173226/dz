@@ -1401,6 +1401,11 @@ page{
               justify-content: space-between;
 }
 
+
+page {
+  min-height: 100%;
+}
+
 @charset "UTF-8";
 /**
  * 这里是uni-app内置的常用样式变量
@@ -1429,6 +1434,7 @@ page{
 /* 文章场景相关 */
 .contanier.data-v-08ba991c {
   width: 100%;
+  height: calc(100% - 100rpx);
 }
 .contanier .conter-box.data-v-08ba991c {
     width: 100%;
