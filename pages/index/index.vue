@@ -86,269 +86,273 @@
 </template>
 
 <script>
-import mpvuePicker from "../../components/index/mpvue-picker/mpvuePicker";
-import calendar from "../../components/index/date-picker/date-picker"; //引入日期插件件
-import { request } from "../../common/request.js"; // 封装的带有token的请求方法
-import helper from "../../common/helper.js";
-import { shortHttp, banner, ambitus } from "../../common/requestUrl.json"; // 接口文件
-export default {
-  components: {
-    //注册组件
-    calendar,
-    mpvuePicker
-  },
-  data() {
-    return {
-      indicatorDots: true,
-      autoplay: true,
-      interval: 5000,
-      duration: 500,
-      shortHttp, //域名
-      weather: {
-        hasData: false,
-        data: []
-      },
-      contentArray: null, //轮播图
-      ambitusArray: null, //周边推荐
-      i: null,
-      luId: "", //房源id
-      city: "", // gps获取当前设备城市名
-      cityPickerValueDefault: [0, 0, 1],
-      themeColor: "#007AFF",
-      mode: "selector",
-      deepLength: 1,
-      pickerValueDefault: [0],
-      pickerValueArray: [],
-      searchCity: "试试搜:花水湾",
-      startTime: "", // 开始时间
-      endTime: "" // 结束时间
-    };
-  },
-  onLoad() {
-    console.log("时间", this.startTime);
-    //判断是否登录
-    helper.isLogin();
-    this.cityGps(); //调用获取城市名
-  },
-  onReady() {
-    this.bannerFn();
-    this.recommended();
-  },
-  methods: {
-    onDetails(id) {
-      console.log("id:", id);
-      uni.navigateTo({
-        url: `/pages/particulars/particulars?id=${id}`
-      });
-    },
-    // 轮播图请求方法
-    bannerFn: function() {
-      uni.showLoading({
-        title: "加载中"
-      });
-      const _that = this;
-      uni.request({
-        url: shortHttp + banner,
-        method: "GET",
-        success: res => {
-          if (res.data.status === "success") {
-            uni.hideLoading();
-            let array = res.data.content;
-            _that.contentArray = array;
-          } else {
-            uni.showToast({
-              title: res.data.errorMsg,
-              icon: "none"
-            });
-          }
-        },
-        fail: err => {
-          console.log(err);
-        }
-      });
-    },
-    // 搜索城市
-    tapSelect: function() {
-      console.warn("城市", this.city);
-      uni.navigateTo({
-        url: "/pages/index/searchCity"
-      });
-    },
-    change({ choiceDate, dayCount }) {
-      //1.choiceDate 时间区间（开始时间和结束时间）
-      //2.dayCount 共多少晚
-      console.log(
-        "入住从 " +
-          choiceDate[0].re +
-          "  到 " +
-          choiceDate[1].re +
-          "  共 " +
-          dayCount +
-          " 晚"
-      );
-      this.startTime = choiceDate[0].re;
-      this.endTime = choiceDate[1].re;
-    },
-    // 点击按钮跳转到搜索页面
-    clickSelect: function() {
-      console.log("1111");
-      let startTime = this.startTime;
-      let endTime = this.endTime;
-      uni.navigateTo({
-        url: `/pages/selecteds/selecteds?start=${startTime}&end=${endTime}`
-      });
-    },
-    cityGps() {
-      // 获取当前位置
-      const _that = this;
-      plus.geolocation.getCurrentPosition(p => {
-        _that.city = p.address.city; //当前城市名
-        console.log(_that.city);
-      });
-    },
-    // 周边推荐
-    recommended() {
-      uni.showLoading({
-        title: "加载中"
-      });
-      const _that = this;
-      request({
-        url: "/wap/api/search.php?action=index",
-        data: {
-          cityName: "广州"
-        }, //*：有问题，无法拿到当前城市
-        success: function(res) {
-          uni.hideLoading();
-          _that.ambitusArray = res.data.content.item;
-        }
-      });
-    },
-    // 点击图片跳转页面查看房间详情
-    clickDetails(id) {
-      uni.navigateTo({
-        url: `/pages/particulars/particulars?id=${id}`
-      });
-    },
-    // 点击头像携带房东唯一id跳转到房东介绍
-    clickPhoto(id) {
-      console.log(id);
-      uni.navigateTo({
-        url: `/pages/landlord_introduced/landlord_introduced?id=${id}`
-      });
-    },
-    onCollect(id, index) {
-      // 请求分组列表
-      const _this = this;
-      let pickerValueArray = [];
-      request({
-        url: "/wap/api/my.php?action=favoriteClass",
-        success: function(res) {
-          let array = res.data.content.item;
-          for (let i = 0; i < array.length; i++) {
-            pickerValueArray.push({
-              label: array[i].cname,
-              value: array[i].cid
-            });
-            _this.pickerValueArray = pickerValueArray;
-          }
-        }
-      });
-      let coll = !_this.ambitusArray[index].isFavorite; //获取原本的收藏值并取反
-      _this.i = _this.ambitusArray[index];
-      _this.luId = _this.ambitusArray[index].luId;
-      _this.$set(_this.ambitusArray[index], "isFavorite", coll); //更改
+	import mpvuePicker from '../../components/index/mpvue-picker/mpvuePicker';
+	import calendar from '../../components/index/date-picker/date-picker' //引入日期插件件
+	import {
+		request
+	} from '../../common/request.js' // 封装的带有token的请求方法
+	import helper from '../../common/helper.js'
+	import {
+		shortHttp,
+		banner,
+		ambitus
+	} from "../../common/requestUrl.json"; // 接口文件
+	export default {
+		components: {
+			//注册组件
+			calendar,
+			mpvuePicker,
+		},
+		data() {
+			return {
+				indicatorDots: true,
+				autoplay: true,
+				interval: 5000,
+				duration: 500,
+				shortHttp, //域名
+				weather: {
+					hasData: false,
+					data: []
+				},
+				contentArray: null, //轮播图
+				ambitusArray: null, //周边推荐
+				i: null,
+				luId: "", //房源id
+				city: "", // gps获取当前设备城市名
+				cityPickerValueDefault: [0, 0, 1],
+				themeColor: '#007AFF',
+				mode: 'selector',
+				deepLength: 1,
+				pickerValueDefault: [0],
+				pickerValueArray: [],
+				searchCity: '试试搜:花水湾',
+				startTime: '', // 开始时间
+				endTime: '', // 结束时间
+			};
+		},
+		onLoad() {
+			console.log("时间", this.startTime);
+			//判断是否登录
+			helper.isLogin();
+			this.cityGps(); //调用获取城市名
+		},
+		onReady() {
+			this.bannerFn();
+			this.recommended();
+		},
+		methods: {
+			onDetails(id) {
+				console.log('id:', id);
+				uni.navigateTo({
+					url: `/pages/particulars/particulars?id=${id}`
+				})
+			},
+			// 轮播图请求方法
+			bannerFn: function() {
+				uni.showLoading({
+					title: '加载中'
+				})
+				const _that = this;
+				uni.request({
+					url: shortHttp + banner,
+					method: "GET",
+					success: res => {
+						if (res.data.status === 'success') {
+							uni.hideLoading()
+							let array = res.data.content
+							_that.contentArray = array;
+						} else {
+							uni.showToast({
+								title: res.data.errorMsg,
+								icon: 'none'
+							})
+						}
+					},
+					fail: err => {
+						console.log(err);
+					}
+				});
+			},
+			// 搜索城市
+			tapSelect: function() {
+				console.warn("城市", this.city)
+				uni.navigateTo({
+					url: "/pages/index/searchCity"
+				})
+			},
+			change({
+				choiceDate,
+				dayCount
+			}) {
+				//1.choiceDate 时间区间（开始时间和结束时间）
+				//2.dayCount 共多少晚
+				console.log("入住从 " + choiceDate[0].re + "  到 " + choiceDate[1].re + "  共 " + dayCount + " 晚");
+				this.startTime = choiceDate[0].re;
+				this.endTime = choiceDate[1].re;
+			},
+			// 点击按钮跳转到搜索页面
+			clickSelect: function() {
+				console.log('1111')
+				let startTime = this.startTime;
+				let endTime = this.endTime;
+				uni.navigateTo({
+					url: `/pages/selecteds/selecteds?start=${startTime}&end=${endTime}`
+				})
+			},
+			cityGps() {
+				// 获取当前位置
+				const _that = this;
+				plus.geolocation.getCurrentPosition(p => {
+					_that.city = p.address.city; //当前城市名
+					console.log(_that.city)
+				});
 
-      // 判断
-      if (coll === true) {
-        setTimeout(() => {
-          _this.$refs.mpvuePicker.show(); // 点击弹出mpvuePickerpicker
-        }, 1000);
-      } else if (coll === false) {
-        request({
-          url: "/wap/api/my.php?action=modifyFavorite",
-          data: {
-            luId: _this.luId,
-            favAction: "del"
-          },
-          success: res => {
-            console.log("取消了:", res);
-            if (res.data.status == "success") {
-              uni.showToast({
-                title: "取消收藏",
-                duration: 2000
-              });
-            }
-          }
-        });
-      }
-    },
-    // picker 组件点击取消时回调
-    onCancel(e) {
-      // console.log(this.i);
+			},
+			// 周边推荐
+			recommended() {
+				uni.showLoading({
+					title: '加载中'
+				})
+				const _that = this;
+				request({
+					url: "/wap/api/search.php?action=index",
+					data: {
+						cityName: "广州"
+					}, //*：有问题，无法拿到当前城市
+					success: function(res) {
+						uni.hideLoading();
+						_that.ambitusArray = res.data.content.item;
+					}
+				});
 
-      this.i.isFavorite = false;
-    },
-    // picker 组件点击确定时回调，返回选中的 label, value 和数组索引 index 的值
-    onConfirm(e) {
-      console.log("确认：", e.value);
-      const _that = this;
-      let value = e.value;
-      let collectId;
-      for (let index = 0; index < value.length; index++) {
-        collectId = value[index];
-      }
-      request({
-        url: "/wap/api/my.php?action=modifyFavorite",
-        data: {
-          luId: _that.luId,
-          classId: collectId,
-          favAction: "add"
-        },
-        success: res => {
-          console.log("收藏：", res);
-          if (res.data.status == "success") {
-            uni.showToast({
-              title: "收藏成功",
-              duration: 2000
-            });
-          } else {
-            uni.showToast({
-              title: "收藏失败",
-              duration: 2000
-            });
-          }
-        }
-      });
-    }
-  },
-  onBackPress() {
-    if (this.$refs.mpvuePicker.showPicker) {
-      this.$refs.mpvuePicker.pickerCancel();
-      return true;
-    }
-    if (this.$refs.mpvueCityPicker.showPicker) {
-      this.$refs.mpvueCityPicker.pickerCancel();
-      return true;
-    }
-  },
-  onUnload() {
-    if (this.$refs.mpvuePicker.showPicker) {
-      this.$refs.mpvuePicker.pickerCancel();
-    }
-    if (this.$refs.mpvueCityPicker.showPicker) {
-      this.$refs.mpvueCityPicker.pickerCancel();
-    }
-  },
-  onPullDownRefresh() {
-    // 监听用户下拉事件
-    console.log("refresh");
-    this.bannerFn();
-    this.recommended();
-    setTimeout(() => {
-      uni.stopPullDownRefresh(); //停止下拉刷新动画
-    }, 2000);
-  }
-};
+
+			},
+			// 点击图片跳转页面查看房间详情
+			clickDetails(id) {
+				uni.navigateTo({
+					url: `/pages/particulars/particulars?id=${id}`
+				})
+			},
+			// 点击头像携带房东唯一id跳转到房东介绍
+			clickPhoto(id) {
+				console.log(id);
+				uni.navigateTo({
+					url: `/pages/landlord_introduced/landlord_introduced?id=${id}`
+				})
+			},
+			onCollect(id, index) {
+				// 请求分组列表
+				const _this = this;
+				let pickerValueArray = []
+				request({
+					url: '/wap/api/my.php?action=favoriteClass',
+					success: function(res) {
+						let array = res.data.content.item
+						for (let i = 0; i < array.length; i++) {
+							pickerValueArray.push({
+								label: array[i].cname,
+								value: array[i].cid
+							})
+							_this.pickerValueArray = pickerValueArray
+						}
+					}
+				})
+				let coll = !_this.ambitusArray[index].isFavorite //获取原本的收藏值并取反
+				_this.i = _this.ambitusArray[index]
+				_this.luId = _this.ambitusArray[index].luId
+				_this.$set(_this.ambitusArray[index], 'isFavorite', coll) //更改
+
+				// 判断
+				if (coll === true) {
+					setTimeout(() => {
+						_this.$refs.mpvuePicker.show() // 点击弹出mpvuePickerpicker
+					}, 1000)
+				} else if (coll === false) {
+					request({
+						url: '/wap/api/my.php?action=modifyFavorite',
+						data: {
+							luId: _this.luId,
+							favAction: "del"
+						},
+						success: res => {
+							console.log('取消了:', res);
+							if (res.data.status == "success") {
+								uni.showToast({
+									title: "取消收藏",
+									duration: 2000
+								})
+							}
+						}
+					})
+				}
+
+			},
+			// picker 组件点击取消时回调
+			onCancel(e) {
+				// console.log(this.i);
+
+				this.i.isFavorite = false
+			},
+			// picker 组件点击确定时回调，返回选中的 label, value 和数组索引 index 的值
+			onConfirm(e) {
+				console.log("确认：", e.value);
+				const _that = this;
+				let value = e.value;
+				let collectId;
+				for (let index = 0; index < value.length; index++) {
+					collectId = value[index];
+				}
+				request({
+					url: '/wap/api/my.php?action=modifyFavorite',
+					data: {
+						luId: _that.luId,
+						classId: collectId,
+						favAction: "add"
+					},
+					success: res => {
+						console.log("收藏：", res);
+						if (res.data.status == "success") {
+							uni.showToast({
+								title: "收藏成功",
+								duration: 2000
+							})
+						} else {
+							uni.showToast({
+								title: "收藏失败",
+								duration: 2000
+							})
+						}
+					}
+				})
+			}
+		},
+		onBackPress() {
+			if (this.$refs.mpvuePicker.showPicker) {
+				this.$refs.mpvuePicker.pickerCancel();
+				return true;
+			}
+			if (this.$refs.mpvueCityPicker.showPicker) {
+				this.$refs.mpvueCityPicker.pickerCancel();
+				return true;
+			}
+		},
+		onUnload() {
+			if (this.$refs.mpvuePicker.showPicker) {
+				this.$refs.mpvuePicker.pickerCancel()
+			}
+			if (this.$refs.mpvueCityPicker.showPicker) {
+				this.$refs.mpvueCityPicker.pickerCancel()
+			}
+		},
+		onPullDownRefresh() { // 监听用户下拉事件
+			console.log('refresh');
+			this.bannerFn();
+			this.recommended();
+			setTimeout(()=> {
+				uni.stopPullDownRefresh();  //停止下拉刷新动画
+			},2000)
+		},
+	};
 </script>
 <style>
 page {

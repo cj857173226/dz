@@ -35,6 +35,8 @@
 				request({
 					url:"/wap/api/my.php?action=favoriteClass",
 					success: function(res) {
+						console.log(res);
+						
 						if (res.data.status === "success") {
 							_that.groupingList = res.data.content.item;
 						} else {
