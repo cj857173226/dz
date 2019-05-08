@@ -74,6 +74,7 @@
 				toId:'',//聊天对象id
 				meHead:'',//自己的头像
 				userHead:'',//用户头像
+				historyLoading:false,
 			}
 		},
 		onLoad(e) {
@@ -96,10 +97,12 @@
 				this.scrollTop =99999;
 			});
 			this.getMsg();
-			console.log(this.toId)
 		},
 		onShow() {
 		
+		},
+		onBackPress(){
+			this.getChatHistory();
 		},
 		computed: {
 			...mapState(['socketOpen','chatList','socketError','socketLoading','socketObj'])

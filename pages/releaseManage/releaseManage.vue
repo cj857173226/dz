@@ -120,7 +120,7 @@
 			this.clearReleaseInfo();
 			this.editReleaseInfoStatus(false);
 		},
-
+			
 		onNavigationBarButtonTap(e) {
 			if (e.index === 0) {
 				// 清空创建房源的信息
@@ -131,6 +131,7 @@
 				})
 			}
 		},
+		
 		computed: {
 			...mapState(['isEditReleaseInfo']),
 		},

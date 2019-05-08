@@ -8,7 +8,7 @@
 					<view class="uni-swipe-action__content">
 						<view class="item" :class="it.stick  ? 'stick' : ''">
 							<view class="item-left">
-								<image :src="it.url" class="image" />
+								<image :src="it.url?it.url:'/static/images/default_avatar.jpg'" class="image" />
 							</view>
 							<view class="item-middle">
 								<text class="title">{{it.title}}</text>
