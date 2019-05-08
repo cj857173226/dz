@@ -90,6 +90,11 @@
             <haveMoney></haveMoney>
           </div>
         </swiper-item>
+        <swiper-item :key="11">
+          <div class="bg-white padding margin text-center text-black">
+            <forRefund></forRefund>
+          </div>
+        </swiper-item>
       </swiper>
     </view>
   </view>
@@ -111,6 +116,7 @@ import hasRefusedTo from '@/components/orlderList/has_refused_to.vue'; // 已拒
 import stale from '@/components/orlderList/stale'; // 已过期组件
 import pendingInvestigationRoom from '@/components/orlderList/pending_investigation_room';//带查房组件
 import haveMoney from '@/components/orlderList/have_money'; // 已结款组件
+import forRefund from '@/components/orlderList/for_refund'; // 待退款组件
 import helper from '../../common/helper.js'
 export default {
   components: { 
@@ -128,7 +134,8 @@ export default {
     hasRefusedTo,
     stale,
     pendingInvestigationRoom,
-    haveMoney
+    haveMoney,
+    forRefund
     },
   data() {
     return {
@@ -145,9 +152,10 @@ export default {
         { name: "已过期" },
         { name: "待查房" },
         { name: "已结款" },
+        { name: "待退款" }
       ],
       current: 0,
-      reveal:false, //判断用户是房东还是房客
+      reveal:true, //判断用户是房东还是房客
       TabCur4: 0,
     };
   },
@@ -176,11 +184,15 @@ export default {
     },
   },
   onPullDownRefresh(){
+    if (this.reveal === true) {
+      this.$refs.underway.httpRequest(); // 调用子组件进行中的方法
+      setTimeout(()=>{
+        uni.stopPullDownRefresh();
+      },2000)
+    } else {
+      
+    }
     console.log('正在下拉')
-    this.$refs.underway.httpRequest(); // 调用子组件进行中的方法
-    setTimeout(()=>{
-      uni.stopPullDownRefresh();
-    },2000)
 
   }
 };

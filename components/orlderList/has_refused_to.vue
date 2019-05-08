@@ -13,14 +13,17 @@
             
           </view>
           <view style="text-align: right;">
-            <text>订单已过期</text>
+            <text>订单已拒绝</text>
             <view>入住天数：<text>{{item.dayCount}}天</text></view>
             <!-- <view style="width:160upx;height:60upx;color:#fff;line-height:60upx;text-align:center;background-color:#1592C8;border-radius:10upx;margin-top:10upx;">删除</view> -->
           </view>
         </view>
       </view>
     </view>
-    <view v-else>你暂时还没有相关的订单</view>
+    <view v-else>
+      <view style="width:100%;height: calc(100% - 100upx);text-align: center;"><image style="width:100%;height: 460upx;" src="../../static/images/deault_list.png" mode="aspectFit"></image></view>
+      你暂时还没有相关的订单
+    </view>
   </scroll-view>
 </template>
 <script>
@@ -71,7 +74,7 @@ export default {
 <style lang="scss" scoped>
 .contanier{
   width: 100%;
-  height: calc(100% - 100upx);
+  height: calc(100% - 20upx);
   .conter-box{
     width: 100%;
     margin-top: 30upx;

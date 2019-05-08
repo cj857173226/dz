@@ -29,32 +29,32 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.message_ad.data-v-3149deea {
+.message_ad.data-v-7c16f7b6 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
   padding: 60rpx 40rpx;
 }
-.message_ad .ad_list.data-v-3149deea {
+.message_ad .ad_list.data-v-7c16f7b6 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
 }
-.message_ad .ad_list .ad_item.data-v-3149deea {
+.message_ad .ad_list .ad_item.data-v-7c16f7b6 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
       height: 340rpx;
       margin-bottom: 60rpx;
 }
-.message_ad .ad_list .ad_item .ad_img.data-v-3149deea {
+.message_ad .ad_list .ad_item .ad_img.data-v-7c16f7b6 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         width: 100%;
         height: 100%;
         border-radius: 12rpx;
 }
-.message_ad .ad_list .ad_item .no_img.data-v-3149deea {
+.message_ad .ad_list .ad_item .no_img.data-v-7c16f7b6 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         width: 100%;
@@ -78,7 +78,7 @@ page {
         font-size: 40rpx;
         color: #ffffff;
 }
-.message_ad .ad_list .ad_item.data-v-3149deea:last-child {
+.message_ad .ad_list .ad_item.data-v-7c16f7b6:last-child {
         margin-bottom: 0;
 }
 

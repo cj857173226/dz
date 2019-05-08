@@ -1,6 +1,6 @@
 <template>
   <scroll-view class="contanier" scroll-y="true">
-    <!-- 等待房客支付 -->
+    <!-- 待支付 -->
     <view class="payment" v-if="payment.length > 0">
       <view class="conter-box" v-for="(item,i) in payment" :key="i">
         <view class="img-box">
@@ -23,7 +23,7 @@
         </view>
       </view>
     </view>
-    <!-- 是否同意房客订单 -->
+    <!-- 待确定 -->
     <view class="affirm" v-if="affirm.length > 0">
       <view class="conter-box" v-for="(item,i) in affirm" :key="i">
         <view class="img-box">
@@ -50,7 +50,7 @@
       </view>
     </view>
     <!-- 待入住 -->
-    <!-- <view class="check" v-if="check.length > 0">
+    <view class="check" v-if="check.length > 0">
       <view class="conter-box" v-for="(item,i) in check" :key="i">
         <view class="img-box">
           <image class="obligation-img" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
@@ -67,64 +67,64 @@
           </view>
         </view>
       </view>
-    </view> -->
+    </view>
     <!-- 入住中 -->
-    <!-- <view class="lived" v-if="lived.length > 0">
-      <view class="conter-box">
+    <view class="lived" v-if="lived.length > 0">
+      <view class="conter-box" v-for="(item,i) in lived" :key="i">
         <view class="img-box">
-          <image class="obligation-img" src="../../static/images/meitu3.jpg"/>
-          <view class="title">名称</view>
+          <image class="obligation-img" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
+          <view class="title">{{item.lodgeUnitName===null?'占无标题':item.lodgeUnitName}}</view>
         </view>
         <view class="price-endtiem-box">
           <view style="text-align: left;">
-            <view>金额：共<text style="color:#ef5b72;margin-right:30upx;">1000.00</text>元</view>
-            <view>入住日期：2019/4/9-2019/4/15</view>
+            <view>金额：共<text style="color:#ef5b72;margin-right:30upx;">{{item.actualTotalPrice}}</text>元</view>
+            <view>入住日期：{{item.startDate}}/{{item.endDate}}</view>
           </view>
           <view style="text-align: right;">
             <text>客户入住中</text>
-            <view>入住天数：<text>1天</text></view>
+            <view>入住天数：<text>{{item.dayCount}}天</text></view>
           </view>
         </view>
       </view>
-    </view> -->
+    </view>
     <!-- 已完成 -->
-    <!-- <view class="accomplish" v-if="accomplish.length > 0">
-      <view class="conter-box">
+    <view class="accomplish" v-if="accomplish.length > 0">
+      <view class="conter-box" v-for="(item,i) in accomplish" :key="i">
         <view class="img-box">
-          <image class="obligation-img" src="../../static/images/meitu3.jpg"/>
-          <view class="title">名称</view>
+          <image class="obligation-img" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
+          <view class="title">{{item.lodgeUnitName===null?'占无标题':item.lodgeUnitName}}</view>
         </view>
         <view class="price-endtiem-box">
           <view style="text-align: left;">
-            <view>金额：共<text style="color:#ef5b72;margin-right:30upx;">1000.00</text>元</view>
-            <view>入住日期：2019/4/9-2019/4/15</view>
+            <view>金额：共<text style="color:#ef5b72;margin-right:30upx;">{{item.actualTotalPrice}}</text>元</view>
+            <view>入住日期：{{item.startDate}}/{{item.endDate}}</view>
           </view>
           <view style="text-align: right;">
             <text>订单已完成</text>
-            <view>入住天数：<text>1天</text></view>
+            <view>入住天数：<text>{{item.dayCount}}天</text></view>
           </view>
         </view>
       </view>
-    </view> -->
+    </view>
     <!-- 已取消 -->
-    <!-- <view class="cancel" v-if="cancel.length > 0">
-      <view class="conter-box">
+    <view class="cancel" v-if="cancel.length > 0">
+      <view class="conter-box" v-for="(item,i) in cancel" :key="i">
         <view class="img-box">
-          <image class="obligation-img" src="../../static/images/meitu3.jpg"/>
-          <view class="title">名称</view>
+          <image class="obligation-img" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
+          <view class="title">{{item.lodgeUnitName===null?'占无标题':item.lodgeUnitName}}</view>
         </view>
         <view class="price-endtiem-box">
           <view style="text-align: left;">
-            <view>金额：共<text style="color:#ef5b72;margin-right:30upx;">1000.00</text>元</view>
-            <view>入住日期：2019/4/9-2019/4/15</view>
+            <view>金额：共<text style="color:#ef5b72;margin-right:30upx;">{{item.actualTotalPrice}}</text>元</view>
+            <view>入住日期：{{item.startDate}}/{{item.endDate}}</view>
           </view>
           <view style="text-align: right;">
             <text>订单已取消</text>
-            <view>入住天数：<text>1天</text></view>
+            <view>入住天数：<text>{{item.dayCount}}天</text></view>
           </view>
         </view>
       </view>
-    </view> -->
+    </view>
     <!-- 已拒绝 -->
     <view class="refuse" v-if="refuse.length > 0">
       <view class="conter-box" v-for="(item,i) in refuse" :key="i">
@@ -165,43 +165,66 @@
       </view>
     </view>
     <!-- 待查房 -->
-    <!-- <view class="wardRoundDoctor" v-if="wardRoundDoctor.length > 0">
-      <view class="conter-box">
+    <view class="wardRoundDoctor" v-if="wardRoundDoctor.length > 0">
+      <view class="conter-box" v-for="(item,i) in wardRoundDoctor" :key="i">
         <view class="img-box">
-          <image class="obligation-img" src="../../static/images/meitu3.jpg"/>
-          <view class="title">名称</view>
+          <image class="obligation-img" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
+          <view class="title">{{item.lodgeUnitName===null?'占无标题':item.lodgeUnitName}}</view>
         </view>
         <view class="price-endtiem-box">
           <view style="text-align: left;">
-            <view>金额：共<text style="color:#ef5b72;margin-right:30upx;">1000.00</text>元</view>
-            <view>入住日期：2019/4/9-2019/4/15</view>
-            <view>入住天数：<text>1天</text></view>
+            <view>金额：共<text style="color:#ef5b72;margin-right:30upx;">{{item.actualTotalPrice}}</text>元</view>
+            <view>入住日期：{{item.startDate}}/{{item.endDate}}</view>
+            <view>入住天数：<text>{{item.dayCount}}天</text></view>
           </view>
           <view style="text-align: right;">
             <text>等待查房</text>
-            <view style="width:160upx;height:60upx;color:#fff;line-height:60upx;text-align:center;background-color:#1592C8;border-radius:10upx;margin-top:10upx;">退押金</view>
+            <view style="width:160upx;height:60upx;color:#fff;line-height:60upx;text-align:center;background-color:#1592C8;border-radius:10upx;margin-top:10upx;" @tap.stop="clickWorkRound(item.bookOrderId,'amend')">已查房</view>
           </view>
         </view>
       </view>
-    </view> -->
+    </view>
     <!-- 已结款 -->
-    <!-- <view class="overMoney" v-if="overMoney.length > 0">
-      <view class="conter-box">
+    <view class="overMoney" v-if="overMoney.length > 0">
+      <view class="conter-box" v-for="(item,i) in overMoney" :key="i">
         <view class="img-box">
-          <image class="obligation-img" src="../../static/images/meitu3.jpg"/>
-          <view class="title">名称</view>
+          <image class="obligation-img" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
+          <view class="title">{{item.lodgeUnitName===null?'占无标题':item.lodgeUnitName}}</view>
         </view>
         <view class="price-endtiem-box">
           <view style="text-align: left;">
-            <view>金额：共<text style="color:#ef5b72;margin-right:30upx;">1000.00</text>元</view>
+            <view>金额：共<text style="color:#ef5b72;margin-right:30upx;">{{item.actualTotalPrice}}</text>元</view>
           </view>
           <view style="text-align: right;">
-            <view>结款日期：2019/4/15</view>
+            <view>结款日期：{{item.endDate}}</view>
           </view>
         </view>
       </view>
-    </view> -->
-    <view v-else style="text-align:center">你暂时还没有相关的订单</view>
+    </view>
+    <!-- 待退款 -->
+    <view v-if="refund.length > 0">
+      <view class="conter-box" v-for="(item,i) in refund" :key="i">
+        <view class="img-box">
+          <image class="obligation-img" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
+          <view class="title">{{item.lodgeUnitName===null?'占无标题':item.lodgeUnitName}}</view>
+        </view>
+        <view class="price-endtiem-box">
+          <view style="text-align: left;">
+            <view>金额：共<text style="color:#ef5b72;margin-right:30upx;">{{item.actualTotalPrice}}</text>元</view>
+            <view>入住日期：{{item.startDate}}/{{item.endDate}}</view>
+            <view>入住天数：<text>{{item.dayCount}}天</text></view>
+          </view>
+          <view style="text-align: right;">
+            <text>等待退款</text>
+            <view style="width:160upx;height:60upx;color:#fff;line-height:60upx;text-align:center;background-color:#1592C8;border-radius:10upx;margin-top:10upx;" @tap="clickRefund(item.bookOrderId,'refund')">确认退款</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view v-else>
+      <view style="width:100%;height: calc(100% - 100upx);text-align: center;"><image style="width:100%;height: 460upx;" src="../../static/images/deault_list.png" mode="aspectFit"></image></view>
+      你暂时还没有相关的订单
+    </view>
     <neil-modal 
       :show="show" 
       @close="closeModal"
@@ -211,6 +234,25 @@
       @cancel="bindBtn('cancel')"
       @confirm="bindBtn('confirm')"
       >
+    </neil-modal>
+    <neil-modal 
+      :show="show2" 
+      @close="closeModal"
+      title="提示"
+      align="center"
+      @cancel="bindBtn('cancel')"
+      @confirm="bindBtn('confirm')"
+      >
+        <view>
+          是否需要修改退款金额
+        </view>
+        <view class="input-name">
+          <view style="margin-left:40upx;">退还金额:</view>
+          <view class="input-box">
+            <input type="text" placeholder="请输入退款金额" @blur="blurInput" />
+          </view>
+          <text>元</text>
+        </view>
     </neil-modal>
   </scroll-view>
 </template>
@@ -238,7 +280,9 @@ export default {
       title:'提示', // 弹出框的标题
       content:'', // 弹出框里面的内容
       show:false, // 是否显示模态框
+      show2:false, // 
       confirmDeletion:'', // 根据confirmDeletion的值来做判断操作
+      value:'', // 房东修改退款金额
     };
   },
   methods: {
@@ -284,30 +328,20 @@ export default {
                 case "已取消":
                   cancelData.push(data[i])
                   break;
-                // case "已失效":
-                
-                //   break;
                 case "待付款":
                   paymentData.push(data[i])
                   break;
-                // case "待入住":
-                
-                //   break;
-                // case "已结款":
-
-                //   break;
+                case "待入住":
+                  checkData.push(data[i])
+                  break;
+                case "入住中":
+                  livedData.push(data[i])
+                  break;
+                case "已结算":
+                  overMoneyData.push(data[i])
+                  break;
               }
-            }
-            console.log('1',affirmData);
-            console.log('2',pastDueData);
-            console.log('3',refundData);
-            console.log('4',wardRoundDoctorData);
-            console.log('5',refuseData);
-            console.log('6',accomplishData);
-            console.log('7',cancelData);
-            console.log('8',paymentData);
-            // console.log('9',affirmData);
-            // console.log('10',affirmData);
+            };
             _that.affirm = affirmData;
             _that.pastDue = pastDueData;
             _that.refund = refundData;
@@ -316,6 +350,9 @@ export default {
             _that.accomplish = accomplishData;
             _that.cancel = cancelData;
             _that.payment = paymentData;
+            _that.check = checkData;
+            _that.lived = livedData;
+            _that.overMoney = overMoneyData;
           } else {
             uni.showToast({
               title: res.data.errorMsg,
@@ -334,8 +371,6 @@ export default {
     },
     // 点击确认订单弹出模态框让房东再次确认
     clickNotarize(id,type){
-      // id = 订单id 
-      // console.log(id)
       this.confirmDeletion = type;
       this.id = id;
       this.content = '是否确认接收订单';
@@ -349,6 +384,24 @@ export default {
       this.content = '是否确认拒绝订单';
       this.show = true; //开启模态框
     },
+    // 已查房
+    clickWorkRound(id,type){
+      this.show2 = true; // 开启show2的模态框
+      this.id = id;
+      this.content = '确认查房是否没有问题,如有物品损失可修改退款金额';
+      this.confirmDeletion = type;
+    },
+    // 修改金额的失焦事件
+    blurInput(e){
+      this.value = e.detail.value
+    },
+    // 待退款
+    clickRefund(id,type){
+      this.confirmDeletion = type;
+      this.id = id;
+      this.content = '金额无误，确认退款';
+      this.show = true; //开启模态框
+    },
     // 监听模态框
     closeModal() {
       this.show = false
@@ -360,6 +413,8 @@ export default {
       /* 
       reject: 拒接订单
       notarize: 确认订单
+      amend:已查房
+      refund:待退款
       */
       //  判断confirmDeletion的值做不同的操作
       if(_that.confirmDeletion === 'reject'){
@@ -421,6 +476,64 @@ export default {
             }
           })
         }
+      } else if (_that.confirmDeletion === 'amend') {
+        if (type === 'confirm') {
+          request({
+            url:'/wap/api/order.php?action=changeState',
+            data:{id:_that.id,additional_money:_that.value},
+            success: function(res) {
+              if (res.data.status === 'success') {
+                uni.showToast({
+                  title:'查房成功',
+                  icon:'none'
+                });
+                setTimeout(() => {
+                  _that.allRequest()
+                },2000);
+              } else {
+                uni.showToast({
+                  title:res.data.errorMsg,
+                  icon:'none'
+                })
+              }
+            },
+            fail: function(err) {
+              uni.showToast({
+                title:'系统异常，请稍后再试',
+                icon:'none'
+              })
+            }
+          })
+        }
+      } else if (_that.confirmDeletion === 'refund') {
+        if (type === 'confirm') {
+          request({
+            url:'/wap/api/order.php?action=changeState',
+            data:{id:_that.id},
+            success: function(res) {
+              if (res.data.status === 'success') {
+                uni.showToast({
+                  title:'退款成功',
+                  icon:'none'
+                });
+                setTimeout(() => {
+                  _that.pendRequert()
+                }, 2000);
+              } else {
+                uni.showToast({
+                  title:res.data.errorMsg,
+                  icon:'none'
+                })
+              }
+            },
+            fail: function(err) {
+              uni.showToast({
+                title:'系统异常，请稍后再试',
+                icon:'none'
+              })
+            }
+          })
+        }
       }
       
       // console.log(`点击了${type==='cancel'?'取消':'确定'}按钮`);
@@ -440,7 +553,7 @@ page {
 <style lang="scss" scoped>
 .contanier {
   width: 100%;
-  height: calc(100% - 100upx);
+  height: calc(100% - 20upx);
   .affirm {
     .conter-box{
       width: 100%;

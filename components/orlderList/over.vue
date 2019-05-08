@@ -8,7 +8,7 @@
           <view class="state">{{item.state}}</view>
         </view>
         <view class="price-endtiem-box">
-          <view style="text-align: left;">
+          <view style="text-align: left;width:440upx;">
             <view>
               金额：共
               <text style="color:#ef5b72;margin-right:30upx;">{{item.actualTotalPrice}}</text>元
@@ -19,7 +19,15 @@
           <view style="display: flex;flex-direction: column;justify-content:flex-end">
             <!-- <text>等待客户入住</text> -->
             <!-- <view class="check-out-btn" @tap="deleteOrder(item.bookOrderId)">删除</view> -->
-            <view>
+            <view v-if="item.state === '已完成'" style="text-align:right;display: flex;justify-content: flex-end;flex-wrap: wrap;">
+              <view>
+                入住天数：
+                <text>{{item.dayCount}}天</text>
+              </view>
+              <!-- <text class="iconfont pinglun">&#xe665;</text> -->
+              <view class="btn" @tap.stop="comment()">评论</view>
+            </view>
+            <view v-else>
               入住天数：
               <text>{{item.dayCount}}天</text>
             </view>
@@ -31,7 +39,10 @@
         </view>
       </view>
     </view>
-    <view v-else>你暂时还没有相关的订单</view>
+    <view v-else>
+      <view style="width:100%;height: calc(100% - 100upx);text-align: center;"><image style="width:100%;height: 460upx;" src="../../static/images/deault_list.png" mode="aspectFit"></image></view>
+      你暂时还没有相关的订单
+    </view>
   </view>
 </template>
 <script>
@@ -46,9 +57,15 @@ export default {
     };
   },
   methods: {
-    deleteOrder( orderId){
+    /* deleteOrder( orderId){
       console.log(orderId);
       
+    } */
+    // 评论
+    comment(){
+      uni.navigateTo({
+        url:'/pages/comment/comment_order'
+      })
     }
   },
   mounted() {
@@ -137,67 +154,18 @@ export default {
       }
     }
   }
-  /* .unclosed-box{
-    width: 100%;
-    height: 600upx;
-    margin-top: 30upx;
-    .unclosed-img-box{
-      width: 100%;
-      height: 460upx;
-      position: relative;
-      .unclosed-img{
-      width: 100%;
-      height: 100%;
-      }
-      .whether-to-stay-in{
-      width: 130upx;
-      height: 60upx;
-      color: #fff;
-      background-color: rgba(0, 0, 0, .5);
-      text-align: center;
-      line-height: 60upx;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      }
-    }
-    .introduced{
-      width: 100%;
-      height: 140upx;
-      border-bottom: 2upx solid #ccc;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      .left-amount-box{
-        .title{
-          font-weight: bold;
-        }
-        .amount-box{
-          font-size: 14px;
-          color: #d3d3d3;
-        }
-      }
-      .btn{
-        .mini-btn{
-          width: 116upx;
-          height: 46upx;
-          border:2upx solid #ef5b72;
-          line-height: 46upx;
-          text-align: center;
-          border-radius: 10upx;
-          color: #ef5b72;
-          font-size: 12px;
-          &:active{
-          opacity: 0.5;
-          }
-          &:last-child{
-            margin-top: 10upx;
-          }
-        }
-        
-      }
-    }
-  } */
+}
+.btn{
+  width: 120upx;
+  height: 60upx;
+  background-color: #1592c8;
+  border-radius: 10upx;
+  text-align: center;
+  line-height: 60upx;
+  color: #fff;
+  &:active{
+    opacity: .5;
+  }
 }
 </style>
 

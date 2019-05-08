@@ -18,7 +18,7 @@
       <view class="remark-box">
         <text class="remark-title">5条点评</text>
         <!-- 星星评分组件 -->
-        <uni-rate size="20" value="4"></uni-rate>
+        <uni-rate size="20" disabled="true" value="4"></uni-rate>
       </view>
       <view class="btn-box">
         <button class="mini-btn" type="default" size="mini" @tap="clickBtnComment">更多点评</button>
@@ -72,8 +72,9 @@ export default {
   methods: {
     // 更多点评
     clickBtnComment(){
+      console.log(this.landlord);
       uni.navigateTo({
-        url:'/pages/comment/comment'
+        url:`/pages/comment/comment?id=${this.landlord}`
       })
     },
     // 用户点击获取当前房源的唯一id，携带id并跳转页面

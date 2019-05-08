@@ -79,32 +79,38 @@ export default {
         url:`/pages/particulars/editor_check_in?name=${name}&idcardno=${idcardno}&id=${id}&type=list`
       })
       console.log("再点击我呢");
+    },
+    addRequest(){
+      const _that = this
+      // 获取常用人列表
+      request({
+        url: "/wap/api/my.php?action=ContactList",
+        success: function(res) {
+          console.log("入住人列表",);
+          if(res.data.status === 'success'){
+          console.log(res.data.content)
+            let _data = res.data.content;
+            if(_data.length>0){
+              _data.map((item,index,self)=>{
+                self[index]['_val'] = JSON.stringify(item);
+              })
+            }
+          _that.listData = _data;
+          console.log(_that.listData)
+
+          }else{
+            helper.layer('获取入住人失败')
+          }
+          
+        }
+      });
     }
   },
-  onLoad() {
-    const _that = this
-    // 获取常用人列表
-    request({
-      url: "/wap/api/my.php?action=ContactList",
-      success: function(res) {
-        console.log("入住人列表",);
-        if(res.data.status === 'success'){
-        console.log(res.data.content)
-          let _data = res.data.content;
-          if(_data.length>0){
-            _data.map((item,index,self)=>{
-              self[index]['_val'] = JSON.stringify(item);
-            })
-          }
-        _that.listData = _data;
-        console.log(_that.listData)
-
-        }else{
-          helper.layer('获取入住人失败')
-        }
-        
-      }
-    });
+  // onLoad() {
+  //   this.addRequest()
+  // },
+  onShow(){
+    this.addRequest()
   },
   filters:{
     hideMiddle(val) {

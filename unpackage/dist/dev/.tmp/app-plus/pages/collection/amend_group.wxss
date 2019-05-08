@@ -24,17 +24,17 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-193abef4 {
+.contanier.data-v-5c5cd58e {
   width: 100%;
   padding: 30rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 14px;
 }
-.contanier .title-box .title.data-v-193abef4 {
+.contanier .title-box .title.data-v-5c5cd58e {
     font-weight: 700;
 }
-.contanier .title-box .input-box.data-v-193abef4 {
+.contanier .title-box .input-box.data-v-5c5cd58e {
     border-bottom: 1px solid #efefef;
     display: -webkit-box;
     display: -webkit-flex;
@@ -49,11 +49,11 @@
         -ms-flex-pack: justify;
             justify-content: space-between;
 }
-.contanier .title-box .input-box .input.data-v-193abef4 {
+.contanier .title-box .input-box .input.data-v-5c5cd58e {
       width: 500rpx;
       height: 60rpx;
 }
-.contanier .title-box .input-box .btn.data-v-193abef4 {
+.contanier .title-box .input-box .btn.data-v-5c5cd58e {
       width: 100rpx;
       height: 50rpx;
       color: #fff;
@@ -62,7 +62,7 @@
       text-align: center;
       line-height: 50rpx;
 }
-.contanier .title-box .input-box .btn.data-v-193abef4:active {
+.contanier .title-box .input-box .btn.data-v-5c5cd58e:active {
         opacity: .5;
 }
 

@@ -50,12 +50,13 @@
 					</button>
 				</view>
 			</view>
-			<view class="housing-information-box">
-				<view class="house-classifieds">
-					<i class="iconfont house-icon">&#xe61b;</i>
-					<view>{{leaseType}}</view>
-					<view class="font-color">{{area}}</view>
-					<view class="font-color">{{houseType}}</view>
+		</view>
+		<view class="tenant-review-box">
+			<view class="tenant-review">房客点评</view>
+			<view class="grades-box">
+				<view class="grades-contenr">
+					<!-- 星星评分组件 -->
+					<uni-rate size="20" disabled="true" :value="goodRate"></uni-rate>
 				</view>
 				<view class="house-classifieds">
 					<i class="iconfont house-icon">&#xe606;</i>
@@ -288,10 +289,10 @@
 				showPicker: false,
 				type: 'range', //时间插件类型  可选值：date（日期）、time（时间）、datetime（日期时间）、range（日期范围）、rangetime（日期时间范围）
 				value: '',
-				day: '', //日历选择的天数,
-				startTime: null,
-				endTime: null,
-				orderPrice: '', // 订单结算的价格
+				day:'', //日历选择的天数,
+				startTime:'',
+				endTime:'',
+				orderPrice:'', // 订单结算的价格
 			}
 		},
 		computed: {
@@ -462,22 +463,15 @@
 					// console.log('date => ' + e.date);
 				}
 			},
-			reservations() {
+			// 立即预定
+			reservations(){
 				const _that = this;
-				if (_that.day === null && _that.startTime === null && _that.endTime === null) {
+				if (_that.day === '' && _that.startTime === '' && _that.endTime === '') {
 					_that.showPicker = true;
 				} else {
-					// request({
-					// 	url:"/wap/api/book.php?action=submit",
-					// 	data:{luId:_that.luId,startDate:_that.startTime,endDate:_that.endTime,},
-					// 	success:function(res){
-					// 		console.log("回",res);
-					// 	}
-					// })
 					uni.navigateTo({
 						url: `/pages/particulars/place_order?startTime=${_that.startTime}&endTime=${_that.endTime}&luId=${_that.luId}&day=${_that.day}&orderPrice=${_that.orderPrice}&price=${_that.price}`
 					})
-
 				}
 
 			}

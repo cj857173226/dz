@@ -29,13 +29,13 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.house_detail_page.data-v-0da5ff29 {
+.house_detail_page.data-v-2e4738c3 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 20rpx 30rpx;
   min-height: 100%;
 }
-.house_detail_page .house_status.data-v-0da5ff29 {
+.house_detail_page .house_status.data-v-2e4738c3 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
@@ -47,13 +47,13 @@ page {
     font-size: 36rpx;
     text-align: center;
 }
-.house_detail_page .house_detail_form.data-v-0da5ff29 {
+.house_detail_page .house_detail_form.data-v-2e4738c3 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     background: #FFFFFF;
     margin-top: 20rpx;
 }
-.house_detail_page .house_detail_form .form_item.data-v-0da5ff29 {
+.house_detail_page .house_detail_form .form_item.data-v-2e4738c3 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
@@ -73,20 +73,20 @@ page {
               flex-direction: row;
       border-bottom: 1px solid #eaeaea;
 }
-.house_detail_page .house_detail_form .form_item .label.data-v-0da5ff29 {
+.house_detail_page .house_detail_form .form_item .label.data-v-2e4738c3 {
         font-size: 32rpx;
 }
-.house_detail_page .house_detail_form .form_item .content.data-v-0da5ff29 {
+.house_detail_page .house_detail_form .form_item .content.data-v-2e4738c3 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         padding: 20rpx 30rpx 20rpx 0;
         font-size: 28rpx;
         color: #aaaaaa;
 }
-.house_detail_page .house_detail_form .form_item .content > text.data-v-0da5ff29 {
+.house_detail_page .house_detail_form .form_item .content > text.data-v-2e4738c3 {
           color: #333333;
 }
-.house_detail_page .house_detail_form .form_item .ipt.data-v-0da5ff29 {
+.house_detail_page .house_detail_form .form_item .ipt.data-v-2e4738c3 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         height: 100%;
@@ -109,19 +109,23 @@ page {
                 align-items: center;
         font-size: 28rpx;
 }
+<<<<<<< HEAD
 .house_detail_page .house_detail_form .form_item .ipt input.data-v-0da5ff29 {
+=======
+.house_detail_page .house_detail_form .form_item .ipt input.data-v-2e4738c3 {
+>>>>>>> b29fc19e7acbb9424df4a603752c6a24b32277bf
           text-align: right;
           font-size: 28rpx;
 }
-.house_detail_page .house_detail_form .form_item .ipt .empty.data-v-0da5ff29 {
+.house_detail_page .house_detail_form .form_item .ipt .empty.data-v-2e4738c3 {
           color: #F05B72;
           font-size: 32rpx;
 }
-.house_detail_page .house_detail_form .form_item .ipt .data_box.data-v-0da5ff29 {
+.house_detail_page .house_detail_form .form_item .ipt .data_box.data-v-2e4738c3 {
           font-size: 32rpx;
           color: #444444;
 }
-.house_detail_page .house_detail_form .form_item .after_icon.data-v-0da5ff29 {
+.house_detail_page .house_detail_form .form_item .after_icon.data-v-2e4738c3 {
         width: 30rpx;
         display: -webkit-box;
         display: -webkit-flex;
@@ -136,11 +140,11 @@ page {
             -ms-flex-align: center;
                 align-items: center;
 }
-.house_detail_page .house_detail_form .form_item .after_icon .iconfont.data-v-0da5ff29 {
+.house_detail_page .house_detail_form .form_item .after_icon .iconfont.data-v-2e4738c3 {
           font-size: 28rpx;
           color: #cccccc;
 }
-.house_detail_page .bottom_wrap.data-v-0da5ff29 {
+.house_detail_page .bottom_wrap.data-v-2e4738c3 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
@@ -163,17 +167,17 @@ page {
         -ms-flex-align: center;
             align-items: center;
 }
-.house_detail_page .bottom_wrap .del_house.data-v-0da5ff29 {
+.house_detail_page .bottom_wrap .del_house.data-v-2e4738c3 {
       color: #aaaaaa;
       font-size: 28rpx;
       -webkit-transition: all 0.1s;
       -o-transition: all 0.1s;
       transition: all 0.1s;
 }
-.house_detail_page .bottom_wrap .del_house.data-v-0da5ff29:active {
+.house_detail_page .bottom_wrap .del_house.data-v-2e4738c3:active {
         color: #cccccc;
 }
-.house_detail_page .release_btn.data-v-0da5ff29 {
+.house_detail_page .release_btn.data-v-2e4738c3 {
     margin-top: 20rpx;
 }
 

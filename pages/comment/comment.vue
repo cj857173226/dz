@@ -22,8 +22,28 @@
   </view>
 </template>
 <script>
+import {request} from '../../common/request.js' // 封装的带有token的请求方法
 export default {
-  
+  data () {
+    return {
+      
+    }
+  },
+  // mounted () {
+  //   // request({
+  //   //   url:''
+  //   // })
+  // }
+  onLoad(option){
+    console.log(option);
+    request({
+      url:'/wap/api/fangdong.php?action=comments',
+      data:{id:option.id},
+      success: function(res) {
+        console.log(res)
+      }
+    })
+  }
 }
 </script>
 <style lang="scss" scoped>

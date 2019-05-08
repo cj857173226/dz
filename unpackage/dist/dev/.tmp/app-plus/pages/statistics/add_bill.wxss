@@ -29,12 +29,12 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.add_bill_page.data-v-3e24914b {
+.add_bill_page.data-v-928cde1e {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
 }
-.add_bill_page .tab_wrap.data-v-3e24914b {
+.add_bill_page .tab_wrap.data-v-928cde1e {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
@@ -43,7 +43,7 @@ page {
     display: -ms-flexbox;
     display: flex;
 }
-.add_bill_page .tab_wrap .tab_item.data-v-3e24914b {
+.add_bill_page .tab_wrap .tab_item.data-v-928cde1e {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 50%;
@@ -53,17 +53,17 @@ page {
       border-bottom: 1px solid #cccccc;
       font-size: 32rpx;
 }
-.add_bill_page .tab_wrap .tab-on.data-v-3e24914b {
+.add_bill_page .tab_wrap .tab-on.data-v-928cde1e {
       border-bottom: 1px solid #F05B72;
       color: #F05B72;
 }
-.add_bill_page .add_bill_form.data-v-3e24914b {
+.add_bill_page .add_bill_form.data-v-928cde1e {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     padding: 0 20rpx;
     width: 100%;
 }
-.add_bill_page .add_bill_form .form_item.data-v-3e24914b {
+.add_bill_page .add_bill_form .form_item.data-v-928cde1e {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
@@ -78,7 +78,7 @@ page {
               align-items: center;
       border-bottom: 1px solid #eaeaea;
 }
-.add_bill_page .add_bill_form .form_item .icon.data-v-3e24914b {
+.add_bill_page .add_bill_form .form_item .icon.data-v-928cde1e {
         height: 100%;
         width: 60rpx;
         color: #AAAAAA;
@@ -95,10 +95,10 @@ page {
             -ms-flex-pack: center;
                 justify-content: center;
 }
-.add_bill_page .add_bill_form .form_item .icon .iconfont.data-v-3e24914b {
+.add_bill_page .add_bill_form .form_item .icon .iconfont.data-v-928cde1e {
           font-size: 32rpx;
 }
-.add_bill_page .add_bill_form .form_item .label.data-v-3e24914b {
+.add_bill_page .add_bill_form .form_item .label.data-v-928cde1e {
         height: 100%;
         width: 140rpx;
         display: -webkit-box;
@@ -110,16 +110,16 @@ page {
             -ms-flex-align: center;
                 align-items: center;
 }
-.add_bill_page .add_bill_form .form_item .content_wrap.data-v-3e24914b {
+.add_bill_page .add_bill_form .form_item .content_wrap.data-v-928cde1e {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         width: calc(100% - 260rpx);
 }
-.add_bill_page .add_bill_form .form_item .content_wrap .no_data.data-v-3e24914b {
+.add_bill_page .add_bill_form .form_item .content_wrap .no_data.data-v-928cde1e {
           text-align: right;
           color: #cccccc;
 }
-.add_bill_page .add_bill_form .form_item .content_wrap .content.data-v-3e24914b {
+.add_bill_page .add_bill_form .form_item .content_wrap .content.data-v-928cde1e {
           width: 100%;
           overflow: hidden;
           -o-text-overflow: ellipsis;
@@ -127,22 +127,26 @@ page {
           white-space: nowrap;
           text-align: right;
 }
+<<<<<<< HEAD
 .add_bill_page .add_bill_form .form_item .content_wrap input.data-v-3e24914b {
+=======
+.add_bill_page .add_bill_form .form_item .content_wrap input.data-v-928cde1e {
+>>>>>>> b29fc19e7acbb9424df4a603752c6a24b32277bf
           text-align: right;
 }
-.add_bill_page .add_bill_form .form_item .unit.data-v-3e24914b,
-      .add_bill_page .add_bill_form .form_item .after-icon.data-v-3e24914b {
+.add_bill_page .add_bill_form .form_item .unit.data-v-928cde1e,
+      .add_bill_page .add_bill_form .form_item .after-icon.data-v-928cde1e {
         height: 100%;
         width: 60rpx;
         text-align: center;
 }
-.add_bill_page .add_bill_form .form_item .unit.data-v-3e24914b {
+.add_bill_page .add_bill_form .form_item .unit.data-v-928cde1e {
         line-height: 86rpx;
 }
-.add_bill_page .add_bill_form .form_item .after-icon.data-v-3e24914b {
+.add_bill_page .add_bill_form .form_item .after-icon.data-v-928cde1e {
         line-height: 90rpx;
 }
-.add_bill_page .add_bill_form .form_item .after-icon .iconfont.data-v-3e24914b {
+.add_bill_page .add_bill_form .form_item .after-icon .iconfont.data-v-928cde1e {
           display: inline-block;
           margin-top: 4rpx;
           font-size: 32rpx;
