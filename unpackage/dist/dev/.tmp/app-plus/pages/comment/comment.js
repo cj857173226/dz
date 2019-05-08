@@ -8,7 +8,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;var _default =\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n{};exports.default = _default;\n\n//# sourceURL=uni-app:///pages/comment/comment.vue?vue&type=script&lang=js&?3d57");
+eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nvar _request = __webpack_require__(/*! ../../common/request.js */ \"D:\\\\projectFile\\\\xzapp\\\\common\\\\request.js\"); // 封装的带有token的请求方法\nvar _default = {\n  data: function data() {\n    return {};\n\n\n  },\n  // mounted () {\n  //   // request({\n  //   //   url:''\n  //   // })\n  // }\n  onLoad: function onLoad(option) {\n    console.log(option);\n    (0, _request.request)({\n      url: '/wap/api/fangdong.php?action=comments',\n      data: { id: option.id },\n      success: function success(res) {\n        console.log(res);\n      } });\n\n  } };exports.default = _default;\n\n//# sourceURL=uni-app:///pages/comment/comment.vue?vue&type=script&lang=js&?3d57");
 
 /***/ }),
 

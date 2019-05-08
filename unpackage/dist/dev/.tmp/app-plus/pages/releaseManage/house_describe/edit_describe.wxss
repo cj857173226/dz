@@ -41,11 +41,7 @@ page {
     width: 100%;
     height: 400rpx;
 }
-<<<<<<< HEAD
-.edit_describe_page .textarea_wrap textarea.data-v-5cb32a74 {
-=======
 .edit_describe_page .textarea_wrap textarea.data-v-73f1f00e {
->>>>>>> b29fc19e7acbb9424df4a603752c6a24b32277bf
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;

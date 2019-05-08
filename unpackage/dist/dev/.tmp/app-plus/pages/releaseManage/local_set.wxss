@@ -84,11 +84,7 @@ page{
           border: 1px solid #cccccc;
           border-radius: 12rpx;
 }
-<<<<<<< HEAD
-.local_set_page .local_form .form_item .left .textarea_wrap textarea.data-v-ce5702f6 {
-=======
 .local_set_page .local_form .form_item .left .textarea_wrap textarea.data-v-8c1589aa {
->>>>>>> b29fc19e7acbb9424df4a603752c6a24b32277bf
             width: 100%;
             height: 100%;
             font-size: 28rpx;

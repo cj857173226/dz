@@ -79,11 +79,7 @@ page {
     height: 100rpx;
     border: 1px solid #cccccc;
 }
-<<<<<<< HEAD
-.house_area_page .input_wrap input.data-v-1071f014 {
-=======
 .house_area_page .input_wrap input.data-v-b451e18c {
->>>>>>> b29fc19e7acbb9424df4a603752c6a24b32277bf
       text-align: right;
       width: 120rpx;
 }

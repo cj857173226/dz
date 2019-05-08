@@ -30,11 +30,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-<<<<<<< HEAD
-.contanier label.data-v-7f3eb374 {
-=======
 .contanier label.data-v-a2a15228 {
->>>>>>> b29fc19e7acbb9424df4a603752c6a24b32277bf
     font-size: 32rpx;
 }
 .contanier .price-amount.data-v-a2a15228 {

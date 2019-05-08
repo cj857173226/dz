@@ -31,13 +31,8 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-<<<<<<< HEAD
-.page_quick_login.data-v-28774569 {
-  padding: 20rpx;
-=======
 .page_quick_login.data-v-606a18e2 {
-  padding: 10px;
->>>>>>> b29fc19e7acbb9424df4a603752c6a24b32277bf
+  padding: 20rpx;
 }
 .quick_login_form.data-v-606a18e2 {
   display: -webkit-box;
@@ -90,15 +85,9 @@ page {
         -ms-flex-pack: center;
             justify-content: center;
 }
-<<<<<<< HEAD
-.quick_login_form .input .img.data-v-28774569 {
+.quick_login_form .input .img.data-v-606a18e2 {
       min-width: 80rpx;
       min-height: 80rpx;
-=======
-.quick_login_form .input .img.data-v-606a18e2 {
-      min-width: 40px;
-      min-height: 40px;
->>>>>>> b29fc19e7acbb9424df4a603752c6a24b32277bf
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -112,24 +101,15 @@ page {
           -ms-flex-pack: center;
               justify-content: center;
 }
-<<<<<<< HEAD
-.quick_login_form .input .img .iconfont.data-v-28774569 {
+.quick_login_form .input .img .iconfont.data-v-606a18e2 {
         font-size: 36rpx;
         color: #F05B72;
 }
-.quick_login_form .input input.data-v-28774569 {
+.quick_login_form .input input.data-v-606a18e2 {
       height: 100%;
 }
-.quick_login_form .input .get_img_code.data-v-28774569 {
-      min-width: 120rpx;
-=======
-.quick_login_form .input .img .iconfont.data-v-606a18e2 {
-        font-size: 18px;
-        color: #F05B72;
-}
 .quick_login_form .input .get_img_code.data-v-606a18e2 {
-      min-width: 60px;
->>>>>>> b29fc19e7acbb9424df4a603752c6a24b32277bf
+      min-width: 120rpx;
       min-height: 40px;
       display: -webkit-box;
       display: -webkit-flex;
@@ -140,23 +120,13 @@ page {
           -ms-flex-align: center;
               align-items: center;
 }
-<<<<<<< HEAD
-.quick_login_form .input .get_img_code .code_img.data-v-28774569 {
+.quick_login_form .input .get_img_code .code_img.data-v-606a18e2 {
         width: 120rpx;
         height: 60rpx;
 }
-.quick_login_form .input .get_code.data-v-28774569 {
+.quick_login_form .input .get_code.data-v-606a18e2 {
       min-width: 180rpx;
       min-height: 80rpx;
-=======
-.quick_login_form .input .get_img_code .code_img.data-v-606a18e2 {
-        width: 60px;
-        height: 30px;
-}
-.quick_login_form .input .get_code.data-v-606a18e2 {
-      min-width: 90px;
-      min-height: 40px;
->>>>>>> b29fc19e7acbb9424df4a603752c6a24b32277bf
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -166,13 +136,8 @@ page {
           -ms-flex-align: center;
               align-items: center;
 }
-<<<<<<< HEAD
-.quick_login_form .input .get_code .get_code_btn.data-v-28774569 {
-        height: 60rpx;
-=======
 .quick_login_form .input .get_code .get_code_btn.data-v-606a18e2 {
-        height: 30px;
->>>>>>> b29fc19e7acbb9424df4a603752c6a24b32277bf
+        height: 60rpx;
         width: 100%;
         line-height: 60rpx;
         text-align: center;
@@ -188,21 +153,13 @@ page {
     .quick_login_form .input .icon_pwd_switch .iconfont.data-v-606a18e2 {
       color: #A0A0A0;
 }
-<<<<<<< HEAD
-.quick_login_form .input input.data-v-28774569 {
-=======
 .quick_login_form .input input.data-v-606a18e2 {
->>>>>>> b29fc19e7acbb9424df4a603752c6a24b32277bf
       outline: none;
       height: 60rpx;
       width: 100%;
       font-size: 28rpx;
 }
-<<<<<<< HEAD
-.quick_login_form .input input.data-v-28774569:focus {
-=======
 .quick_login_form .input input.data-v-606a18e2:focus {
->>>>>>> b29fc19e7acbb9424df4a603752c6a24b32277bf
         outline: none;
 }
 .submit.data-v-606a18e2 {
@@ -218,17 +175,10 @@ page {
 .submit.data-v-606a18e2:active {
     opacity: 0.8;
 }
-<<<<<<< HEAD
-.opts.data-v-28774569 {
+.opts.data-v-606a18e2 {
   margin-top: 10rpx;
   margin-left: 50rpx;
   margin-right: 50rpx;
-=======
-.opts.data-v-606a18e2 {
-  margin-top: 5px;
-  margin-left: 25px;
-  margin-right: 25px;
->>>>>>> b29fc19e7acbb9424df4a603752c6a24b32277bf
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -247,21 +197,12 @@ page {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-<<<<<<< HEAD
-.opts .text.data-v-28774569 {
+.opts .text.data-v-606a18e2 {
     font-size: 28rpx;
     color: #B6B6B6;
 }
-.quick_login_line.data-v-28774569 {
-  margin-top: 80rpx;
-=======
-.opts .text.data-v-606a18e2 {
-    font-size: 14px;
-    color: #B6B6B6;
-}
 .quick_login_line.data-v-606a18e2 {
-  margin-top: 40px;
->>>>>>> b29fc19e7acbb9424df4a603752c6a24b32277bf
+  margin-top: 80rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -285,23 +226,13 @@ page {
     width: 38%;
     background-color: #d3d3d5;
 }
-<<<<<<< HEAD
-.quick_login_line .text.data-v-28774569 {
+.quick_login_line .text.data-v-606a18e2 {
     font-size: 28rpx;
     color: #c8c8c8;
     margin: 2px;
 }
-.quick_login_list.data-v-28774569 {
-  margin-top: 60rpx;
-=======
-.quick_login_line .text.data-v-606a18e2 {
-    font-size: 13px;
-    color: #c8c8c8;
-    margin: 2px;
-}
 .quick_login_list.data-v-606a18e2 {
-  margin-top: 30px;
->>>>>>> b29fc19e7acbb9424df4a603752c6a24b32277bf
+  margin-top: 60rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -320,16 +251,9 @@ page {
       -ms-flex-pack: center;
           justify-content: center;
 }
-<<<<<<< HEAD
-.quick_login_list .item.data-v-28774569 {
+.quick_login_list .item.data-v-606a18e2 {
     width: 100rpx;
     height: 100rpx;
     margin: 40rpx;
-=======
-.quick_login_list .item.data-v-606a18e2 {
-    width: 50px;
-    height: 50px;
-    margin: 20px;
->>>>>>> b29fc19e7acbb9424df4a603752c6a24b32277bf
 }
 

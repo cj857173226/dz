@@ -1,7 +1,7 @@
 <template>
   <view class="contanier">
     <!-- 房客 -->
-    <view v-if="reveal===true" class="client-box">
+    <view v-if="reveal===false" class="client-box">
       <uni-segmented-control
         :current="current"
         :values="items"
@@ -155,12 +155,19 @@ export default {
         { name: "待退款" }
       ],
       current: 0,
-      reveal:true, //判断用户是房东还是房客
+      reveal:null, //判断用户是房东还是房客
       TabCur4: 0,
     };
   },
 	onLoad() {
-		helper.isLogin();
+    const _that = this;
+    helper.isLogin();
+    uni.getStorage({
+      key:'dz_userInfo',
+      success: function(res) {
+        _that.reveal = res.data.isFangDong
+      }
+    })
 	},
   methods: {
     onClickItem(index) {

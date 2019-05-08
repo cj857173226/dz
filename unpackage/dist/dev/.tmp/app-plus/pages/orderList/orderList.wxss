@@ -697,67 +697,6 @@ image {
 .unclosed-contanier.data-v-739e3e29 {
   width: 100%;
   font-size: 14px;
-  /* .unclosed-box{
-    width: 100%;
-    height: 600upx;
-    margin-top: 30upx;
-    .unclosed-img-box{
-      width: 100%;
-      height: 460upx;
-      position: relative;
-      .unclosed-img{
-      width: 100%;
-      height: 100%;
-      }
-      .whether-to-stay-in{
-      width: 130upx;
-      height: 60upx;
-      color: #fff;
-      background-color: rgba(0, 0, 0, .5);
-      text-align: center;
-      line-height: 60upx;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      }
-    }
-    .introduced{
-      width: 100%;
-      height: 140upx;
-      border-bottom: 2upx solid #ccc;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      .left-amount-box{
-        .title{
-          font-weight: bold;
-        }
-        .amount-box{
-          font-size: 14px;
-          color: #d3d3d3;
-        }
-      }
-      .btn{
-        .mini-btn{
-          width: 116upx;
-          height: 46upx;
-          border:2upx solid #ef5b72;
-          line-height: 46upx;
-          text-align: center;
-          border-radius: 10upx;
-          color: #ef5b72;
-          font-size: 12px;
-          &:active{
-          opacity: 0.5;
-          }
-          &:last-child{
-            margin-top: 10upx;
-          }
-        }
-        
-      }
-    }
-  } */
 }
 .unclosed-contanier .has-been-in-box.data-v-739e3e29 {
     width: 100%;
@@ -823,6 +762,18 @@ image {
 }
 .unclosed-contanier .has-been-in-box .price-endtiem-box .check-out-btn.data-v-739e3e29:active {
           opacity: 0.5;
+}
+.btn.data-v-739e3e29 {
+  width: 120rpx;
+  height: 60rpx;
+  background-color: #1592c8;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 60rpx;
+  color: #fff;
+}
+.btn.data-v-739e3e29:active {
+    opacity: .5;
 }
 
 

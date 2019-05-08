@@ -127,11 +127,7 @@ page {
           white-space: nowrap;
           text-align: right;
 }
-<<<<<<< HEAD
-.add_bill_page .add_bill_form .form_item .content_wrap input.data-v-3e24914b {
-=======
 .add_bill_page .add_bill_form .form_item .content_wrap input.data-v-928cde1e {
->>>>>>> b29fc19e7acbb9424df4a603752c6a24b32277bf
           text-align: right;
 }
 .add_bill_page .add_bill_form .form_item .unit.data-v-928cde1e,

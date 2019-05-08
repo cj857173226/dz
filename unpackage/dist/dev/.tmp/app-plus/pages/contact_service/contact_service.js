@@ -8,11 +8,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-<<<<<<< HEAD
-eval("/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;var _default =\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n{\n  data: function data() {\n    return {\n      service_line: '400-6565-06' // 热线电话\n    };\n  },\n  methods: {\n    callPhone: function callPhone() {\n      var that = this;\n      uni.makePhoneCall({\n        phoneNumber: that.service_line });\n\n    } } };exports.default = _default;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ \"./node_modules/@dcloudio/uni-app-plus/dist/index.js\")[\"default\"]))\n\n//# sourceURL=uni-app:///pages/contact_service/contact_service.vue?vue&type=script&lang=js&?299b");
-=======
 eval("/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;var _default =\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n{\n  data: function data() {\n    return {\n      service_line: '400-6565-06' // 热线电话\n    };\n  },\n  methods: {\n    callPhone: function callPhone() {\n      var that = this;\n      uni.makePhoneCall({\n        phoneNumber: that.service_line });\n\n    } } };exports.default = _default;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ \"./node_modules/@dcloudio/uni-app-plus/dist/index.js\")[\"default\"]))\n\n//# sourceURL=uni-app:///pages/contact_service/contact_service.vue?vue&type=script&lang=js&?07b0");
->>>>>>> b29fc19e7acbb9424df4a603752c6a24b32277bf
 
 /***/ }),
 
