@@ -115,14 +115,15 @@ export default {
   .list-box{
     width: 100%;
     height: 120upx;
-    background-color: #efefef;
+    background-color: #f3f3f3;
     display: flex;
+    margin-top: 20upx;
     .left-img{
-      width: 140upx;
-      height: 100upx;
-      .img{
-        width: 140upx;
-        height: 100upx;
+      width: 200upx;
+      height: 120upx;
+      .title-img{
+        width: 200upx;
+        height: 120upx;
       }
     }
     .right-title{
