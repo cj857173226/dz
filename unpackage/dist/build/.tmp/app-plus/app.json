@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/index/SearchCity",
+    "pages/index/search_city",
     "pages/particulars/particulars",
     "pages/particulars/selectors",
     "pages/particulars/addition",
@@ -73,6 +73,7 @@
     "pages/releaseManage/price_rule/break_contract",
     "pages/releaseManage/room_photograph/room_photograph",
     "pages/comment/comment",
+    "pages/comment/comment_order",
     "pages/setting/setting",
     "pages/setting/setting"
   ],

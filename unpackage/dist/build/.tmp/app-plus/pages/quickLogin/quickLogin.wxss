@@ -31,15 +31,15 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.page_quick_login.data-v-4a6131da {
-  padding: 10px;
+.page_quick_login.data-v-ae0c5bbe {
+  padding: 20rpx;
 }
-.quick_login_form.data-v-4a6131da {
+.quick_login_form.data-v-ae0c5bbe {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 20px;
+  margin: 40rpx;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -54,23 +54,23 @@ page {
       -ms-flex-pack: center;
           justify-content: center;
   border: 1px solid #d6d6d6;
-  border-radius: 10px;
+  border-radius: 20rpx;
 }
-.quick_login_form .line.data-v-4a6131da {
+.quick_login_form .line.data-v-ae0c5bbe {
     width: 100%;
     height: 1px;
     background-color: #d6d6d6;
 }
-.quick_login_form .input.data-v-4a6131da {
+.quick_login_form .input.data-v-ae0c5bbe {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
-    max-height: 80rpx;
+    min-height: 80rpx;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    padding: 3px;
+    padding: 6rpx;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -webkit-flex-direction: row;
@@ -85,7 +85,7 @@ page {
         -ms-flex-pack: center;
             justify-content: center;
 }
-.quick_login_form .input .img.data-v-4a6131da {
+.quick_login_form .input .img.data-v-ae0c5bbe {
       min-width: 80rpx;
       min-height: 80rpx;
       display: -webkit-box;
@@ -101,15 +101,15 @@ page {
           -ms-flex-pack: center;
               justify-content: center;
 }
-.quick_login_form .input .img .iconfont.data-v-4a6131da {
+.quick_login_form .input .img .iconfont.data-v-ae0c5bbe {
         font-size: 36rpx;
         color: #F05B72;
 }
-.quick_login_form .input input.data-v-4a6131da {
+.quick_login_form .input input.data-v-ae0c5bbe {
       height: 100%;
 }
-.quick_login_form .input .get_img_code.data-v-4a6131da {
-      min-width: 60px;
+.quick_login_form .input .get_img_code.data-v-ae0c5bbe {
+      min-width: 120rpx;
       min-height: 40px;
       display: -webkit-box;
       display: -webkit-flex;
@@ -120,13 +120,13 @@ page {
           -ms-flex-align: center;
               align-items: center;
 }
-.quick_login_form .input .get_img_code .code_img.data-v-4a6131da {
-        width: 60px;
-        height: 30px;
+.quick_login_form .input .get_img_code .code_img.data-v-ae0c5bbe {
+        width: 120rpx;
+        height: 60rpx;
 }
-.quick_login_form .input .get_code.data-v-4a6131da {
-      min-width: 90px;
-      min-height: 40px;
+.quick_login_form .input .get_code.data-v-ae0c5bbe {
+      min-width: 180rpx;
+      min-height: 80rpx;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -136,49 +136,49 @@ page {
           -ms-flex-align: center;
               align-items: center;
 }
-.quick_login_form .input .get_code .get_code_btn.data-v-4a6131da {
-        height: 30px;
+.quick_login_form .input .get_code .get_code_btn.data-v-ae0c5bbe {
+        height: 60rpx;
         width: 100%;
-        line-height: 30px;
+        line-height: 60rpx;
         text-align: center;
         color: #FFFFFF;
         background: #F05B72;
-        border-radius: 8px;
-        font-size: 14px;
+        border-radius: 16rpx;
+        font-size: 28rpx;
 }
-.quick_login_form .input .get_code .get_code_btn.data-v-4a6131da:active {
+.quick_login_form .input .get_code .get_code_btn.data-v-ae0c5bbe:active {
           opacity: 0.8;
 }
-.quick_login_form .input .icon_del .iconfont.data-v-4a6131da,
-    .quick_login_form .input .icon_pwd_switch .iconfont.data-v-4a6131da {
+.quick_login_form .input .icon_del .iconfont.data-v-ae0c5bbe,
+    .quick_login_form .input .icon_pwd_switch .iconfont.data-v-ae0c5bbe {
       color: #A0A0A0;
 }
-.quick_login_form .input input.data-v-4a6131da {
+.quick_login_form .input input.data-v-ae0c5bbe {
       outline: none;
-      height: 30px;
+      height: 60rpx;
       width: 100%;
-      font-size: 14px;
+      font-size: 28rpx;
 }
-.quick_login_form .input input.data-v-4a6131da:focus {
+.quick_login_form .input input.data-v-ae0c5bbe:focus {
         outline: none;
 }
-.submit.data-v-4a6131da {
+.submit.data-v-ae0c5bbe {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  height: 40px;
-  line-height: 40px;
-  margin: 30px 20px 10px 20px;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 60rpx 40rpx 20rpx 40rpx;
   color: white;
   background-color: #F05B72;
   -webkit-tap-highlight-color: #F05B72;
 }
-.submit.data-v-4a6131da:active {
+.submit.data-v-ae0c5bbe:active {
     opacity: 0.8;
 }
-.opts.data-v-4a6131da {
-  margin-top: 5px;
-  margin-left: 25px;
-  margin-right: 25px;
+.opts.data-v-ae0c5bbe {
+  margin-top: 10rpx;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -197,12 +197,12 @@ page {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.opts .text.data-v-4a6131da {
-    font-size: 14px;
+.opts .text.data-v-ae0c5bbe {
+    font-size: 28rpx;
     color: #B6B6B6;
 }
-.quick_login_line.data-v-4a6131da {
-  margin-top: 40px;
+.quick_login_line.data-v-ae0c5bbe {
+  margin-top: 80rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -221,18 +221,18 @@ page {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.quick_login_line .line.data-v-4a6131da {
+.quick_login_line .line.data-v-ae0c5bbe {
     height: 1px;
     width: 38%;
     background-color: #d3d3d5;
 }
-.quick_login_line .text.data-v-4a6131da {
-    font-size: 13px;
+.quick_login_line .text.data-v-ae0c5bbe {
+    font-size: 28rpx;
     color: #c8c8c8;
     margin: 2px;
 }
-.quick_login_list.data-v-4a6131da {
-  margin-top: 30px;
+.quick_login_list.data-v-ae0c5bbe {
+  margin-top: 60rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -251,9 +251,9 @@ page {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.quick_login_list .item.data-v-4a6131da {
-    width: 50px;
-    height: 50px;
-    margin: 20px;
+.quick_login_list .item.data-v-ae0c5bbe {
+    width: 100rpx;
+    height: 100rpx;
+    margin: 40rpx;
 }
 

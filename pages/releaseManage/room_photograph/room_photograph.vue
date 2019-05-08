@@ -34,11 +34,13 @@
 					<image :src="item.path">
 					</image>
 					<view class="mask">
-						<text class="progress">
+						<text class="progress" v-if="!uploadStatus[index]||uploadStatus[index]==false">
 							<text class="num">{{progressAll[index]}}</text>%
-							<!-- <text class="num">{{item.progress}}</text>% -->
 						</text>
-						<!-- <text class="err">此图不符合规范!!</text> -->
+						<!-- <text class="progress" v-if="uploadStatus[index] === true">
+							<text class="num">图片有误</text>
+						</text> -->
+						<text class="err" v-if="uploadStatus[index] === true">此图不符合规范!!</text>
 					</view>
 				</view>
 				<view class="choose_img" @tap.stop="chooseImg('bedroom')">
@@ -132,7 +134,7 @@
 				</view>
 			</view>
 		</view>
-<!-- 		<view class="btn">保存</view> -->
+		<!-- <view class="btn">保存</view> -->
 	</view>
 </template>
 <script>
@@ -161,10 +163,12 @@
 				toiletPics: [], //卫生间
 				kitchenPics: [], //厨房
 				otherPics: [], //其他
-				// 进度条管理
-				progressAll:[],
+
 				isUploading: false, // 是否正在上传
-				
+				// 进度条管理
+				progressAll: [],
+				// 错误状态
+				uploadStatus: []
 			}
 		},
 		onLoad() {
@@ -182,9 +186,12 @@
 			// 选择照片
 			chooseImg(type) {
 				if (this.isUploading) {
-					helper.layer('图片正在上传中..')
+					helper.layer('图片正在上传中..');
+					return;
 				}
 				const _this = this;
+				_this.progressAll = [];
+				_this.bedRoomPics = [];
 				uni.chooseImage({
 					count: 9, //默认9
 					sizeType: ['original'], //可以指定是原图还是压缩图，默认二者都有
@@ -197,11 +204,11 @@
 						if (type === 'bedroom') {
 							_this.bedRoomPics = _imgs;
 						}
-						console.log(1)
 						_imgs.forEach((item, i) => {
 							let _img = item.path;
-							_this.progressAll[i] = '0';
-							// _this.bedRoomPics[i]['progress'] = '0';
+							_this.progressAll[i] = 0;
+							_this.uploadStatus[i] = false;
+							// _this.bedRoomPics[i]['err'] = false;
 							_this.uploadImg(_img, i, type);
 						})
 						// _this.uploadImg(_imgs)
@@ -221,10 +228,19 @@
 						"Authorization": 'Bearer ' + token,
 					},
 					success: (uploadFileRes) => {
-						console.log(uploadFileRes.data);
+						const _data = JSON.parse(uploadFileRes.data)
+						if (_data.status === 'success') {
+
+						} else {
+							console.log(_this.uploadStatus)
+							// _this.uploadStatus[index] = true;
+							_this.$set(_this.uploadStatus, index, true);
+							// _this.$set(_this.bedRoomPics[index],'err',true);
+						}
+						console.log(_data);
 					},
 					fail: (err) => {
-						console.log(err)
+						console.log(index)
 					},
 					complete: (res) => {
 						// console.log(res)
@@ -233,17 +249,13 @@
 						}, 4000)
 					}
 				});
-				 uploadTask.onProgressUpdate((res) => {
+				uploadTask.onProgressUpdate((res) => {
 					if (type === 'bedroom') {
-		
-						// _this.bedRoomProgress[index] = res.progress.toString()
-						_this.$set(_this.progressAll,index,res.progress.toString())
-						// console.log(_this.progressAll[index]);
-					
+						_this.$set(_this.progressAll, index, res.progress)
 					}
-// 					console.log(`第${index+1}张图上传进度:${res.progress}`);
-// 					console.log(`第${index+1}张图已经上传的数据长度:${res.totalBytesSent}`);
-// 					console.log(`第${index+1}张图预期需要上传的数据总长度:${res.totalBytesExpectedToSend}`);
+					// 					console.log(`第${index+1}张图上传进度:${res.progress}`);
+					// 					console.log(`第${index+1}张图已经上传的数据长度:${res.totalBytesSent}`);
+					// 					console.log(`第${index+1}张图预期需要上传的数据总长度:${res.totalBytesExpectedToSend}`);
 
 					// 测试条件， 取消上传任务。
 					// if (res.progress > 90) {
@@ -273,6 +285,7 @@
 				this.house_id = _releaseObj.id;
 				const pics = _releaseObj.pics ? JSON.parse(_releaseObj.pics) : {};
 				this.pics = pics;
+				console.log(pics)
 				this.bedRoomImages = pics.bedroom;
 				this.liveRoomImages = pics.liveroom;
 				this.toiletImages = pics.toilet;

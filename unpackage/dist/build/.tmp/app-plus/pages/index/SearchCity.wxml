@@ -1,2 +1,0 @@
-<import src="./SearchCity.vue.wxml" />
-    <template is="1a803cd1" data="{{ ...$root['0'], $root }}"/>
