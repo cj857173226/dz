@@ -7,12 +7,12 @@
       <!-- 评分 -->
       <view class="grade-box">
         <view class="grade">
-          <uni-rate margin=10 :value="goodRate" maxlength=200 @change="changPoints"></uni-rate>
+          <uni-rate margin=10 :value="goodRate" @change="changPoints"></uni-rate>
         </view>
       </view>
       <view class="comment-box">
-        <textarea class="area" @input="buleInput" placeholder-style="text-algin:left;font-size:14px;" placeholder="说说哪里好，其他顾客都知道" />
-        <text class="number">{{number}}/140</text>
+        <textarea class="area" @input="buleInput" maxlength=200 placeholder-style="text-algin:left;font-size:14px;" placeholder="说说哪里好，其他顾客都知道" />
+        <text class="number">{{number}}/200</text>
       </view>
     </view>
     <view class="list-box">
@@ -20,6 +20,24 @@
         <image class="title-img" src="../../static/images/meitu5.jpg"></image>
       </view>
       <view class="right-title">12113315</view>
+    </view>
+    <!-- 评分 -->
+    <view class="grade-box">
+      <view class="grade">
+        <uni-rate margin=10 :value="indentRate"  @change="changindent"></uni-rate>
+      </view>
+    </view>
+    <view class="comment-box">
+      <textarea class="area" @input="buleInputOrder" maxlength=200 placeholder-style="text-algin:left;font-size:14px;" placeholder="说说哪里好，其他顾客都知道" />
+      <text class="number">{{number2}}/200</text>
+    </view>
+    <view>
+      <view @tap="clickAddPicture">添加照片</view>
+      <view v-if="listPicture.length > 0">
+        <view v-for="(item,i) in listPicture" :key="i">
+          <image :src="item"></image>  
+        </view>
+      </view>
     </view>
   </view>
 </template>
@@ -31,9 +49,13 @@ export default {
   },
   data () {
     return {
-      goodRate:'', // 评分星级，最高5
+      goodRate:'', // 对房东的评分星级，最高5
       landlordValue:'', // 对房东的评论内容
-      number:'0'
+      number:'0', // 对房东的评论字数限制
+      indentRate:'', // 房客的评分，最高5
+      number2:'0',
+      orderValue:'',
+      listPicture:[], // 图片上传的数组
     }
   },
   methods: {
@@ -41,10 +63,37 @@ export default {
     changPoints(e){
       this.goodRate = e.value;
     },
+    changindent(e){
+      this.indentRate = e.value;
+    },
     // 文本輸入框
     buleInput(e){
       this.landlordValue = e.detail.value;
       this.number = e.detail.cursor;
+    },
+    buleInputOrder(e){
+      this.orderValue = e.detail.value;
+      this.number2 = e.detail.cursor;
+    },
+    clickAddPicture(){
+      const _this = this;
+      console.log('添加图片');
+      uni.chooseImage({
+        // 默认九张图片上传
+        sizeType:['compressed'],
+        sourceType:['album','camera'],
+        success: function(res) {
+          // console.log(JSON.stringify());
+          let ary = res.tempFilePaths
+          // array.push(res.tempFilePaths)
+          for (let i = 0; i < ary.length; i++) {
+            _this.listPicture.push(ary[i])
+          }
+        },
+        fail: function(err) {
+          console.log(err);
+        }
+      })
     }
   }
 }
@@ -128,6 +177,38 @@ export default {
     }
     .right-title{
       font-weight: 600;
+      margin-left: 20upx;
+    }
+  }
+  .grade-box{
+    background: #f5d7d7;
+    height: 80upx;
+    border-radius: 10upx;
+    display: flex;
+    align-items: center;
+    margin-top: 20upx;
+    .grade{
+      width: 360upx;
+      margin: 0 auto;
+    }
+  }
+  .comment-box{
+    text-align: left;
+    width: 100%;
+    height:324upx;
+    background: #efefef;
+    margin-top: 20upx;
+    padding: 12upx 12upx;
+    box-sizing: border-box;
+    position: relative;
+    .area{
+      width: 100%;
+      height: 300upx;
+    }
+    .number{
+      position: absolute;
+      bottom: 20upx;
+      right: 20upx;
     }
   }
 }
