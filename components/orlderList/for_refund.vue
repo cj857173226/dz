@@ -52,10 +52,10 @@ export default {
     }
   },
   mounted () {
-    this.pendRequert()
+    this.pendsRequert()
   },
   methods: {
-    pendRequert(){
+    pendsRequert(){
       const _that = this;
       request({
         url:"/wap/api/order.php?action=landlordList&bizState=wait-cancel",

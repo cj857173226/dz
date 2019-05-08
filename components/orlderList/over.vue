@@ -66,33 +66,37 @@ export default {
       uni.navigateTo({
         url:'/pages/comment/comment_order'
       })
+    },
+    // 请求数据方法
+    overRequest(){
+      const _that = this;
+      uni.showLoading({
+        title:'加载中'
+      })
+      request({
+        url: "/wap/api/order.php?action=list&bizState=closed",
+        success: function(res) {
+          uni.hideLoading()
+          console.log("已结束：", res.data.content.orders);
+          if (res.data.status === 'success') {
+            _that.dataList = res.data.content.orders;
+          } else {
+            uni.showToast({
+              title:res.data.errorMsg,
+              icon:'none'
+            })
+          }
+        },
+        fail: function(err) {
+          uni.showToast({
+            title:err
+          })
+        }
+      });
     }
   },
   mounted() {
-    const _that = this;
-    uni.showLoading({
-      title:'加载中'
-    })
-    request({
-      url: "/wap/api/order.php?action=list&bizState=closed",
-      success: function(res) {
-        uni.hideLoading()
-        console.log("已结束：", res.data.content.orders);
-        if (res.data.status === 'success') {
-          _that.dataList = res.data.content.orders;
-        } else {
-          uni.showToast({
-            title:res.data.errorMsg,
-            icon:'none'
-          })
-        }
-      },
-      fail: function(err) {
-        uni.showToast({
-          title:err
-        })
-      }
-    });
+    this.overRequest()
   }
 };
 </script>

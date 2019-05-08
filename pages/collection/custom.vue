@@ -83,6 +83,7 @@ export default {
         url:'/wap/api/my.php?action=listFavorite',
         data:{classId:this.cId},
         success: function(res) {
+          console.log(res);
           _that.dataArray = res.data.content.item
           _that.numberHousing = res.data.content.item.length
         }

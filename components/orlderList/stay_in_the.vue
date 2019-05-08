@@ -35,10 +35,10 @@ export default {
     }
   },
   mounted () {
-    this.stayRequert()
+    this.staysRequert()
   },
   methods: {
-    stayRequert(){
+    staysRequert(){
       const _that = this;
       request({
         url:"/wap/api/order.php?action=landlordList&bizState=lived",

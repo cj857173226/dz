@@ -33,7 +33,7 @@ export default {
     }
   },
   methods: {
-    httpRequert(){
+    stayRequert(){
       const _that = this;
       request({
         url:'/wap/api/order.php?action=landlordList&bizState=wait-live',
@@ -58,7 +58,7 @@ export default {
     }
   },
   mounted () {
-    this.httpRequert()
+    this.stayRequert()
   }
 }
 </script>

@@ -15,7 +15,7 @@
           <unclosed ref="underway"></unclosed>
         </view>
         <view v-show="current === 1">
-          <over></over>
+          <over ref="finish"></over>
         </view>
       </scroll-view>
     </view>
@@ -37,62 +37,62 @@
       >
         <swiper-item :key="0">
           <div class="bg-white padding margin text-center text-black">
-            <completeAll></completeAll>
+            <completeAll ref="entire"></completeAll>
           </div>
         </swiper-item>
         <swiper-item :key="1">
           <div class="bg-white padding margin text-center text-black">
-            <obligation></obligation>
+            <obligation ref="pay"></obligation>
           </div>
         </swiper-item>
         <swiper-item :key="2">
           <div class="bg-white padding margin text-center text-black">
-            <toBeConfirmed></toBeConfirmed>
+            <toBeConfirmed ref="confirmed"></toBeConfirmed>
           </div>
         </swiper-item>
         <swiper-item :key="3">
           <div class="bg-white padding margin text-center text-black">
-            <toStayIn></toStayIn>
+            <toStayIn ref="stay"></toStayIn>
           </div>
         </swiper-item>
         <swiper-item :key="4">
           <div class="bg-white padding margin text-center text-black">
-            <stayInThe></stayInThe>
+            <stayInThe ref="stayThe"></stayInThe>
           </div>
         </swiper-item>
         <swiper-item :key="5">
           <div class="bg-white padding margin text-center text-black">
-            <offTheStocks></offTheStocks>
+            <offTheStocks ref="stock"></offTheStocks>
           </div>
         </swiper-item>
         <swiper-item :key="6">
           <div class="bg-white padding margin text-center text-black">
-            <canceled></canceled>
+            <canceled ref="canceled"></canceled>
           </div>
         </swiper-item>
         <swiper-item :key="7">
           <div class="bg-white padding margin text-center text-black">
-            <hasRefusedTo></hasRefusedTo>
+            <hasRefusedTo ref="hasRefusedTo"></hasRefusedTo>
           </div>
         </swiper-item>
         <swiper-item :key="8">
           <div class="bg-white padding margin text-center text-black">
-            <stale></stale>
+            <stale ref="stale"></stale>
           </div>
         </swiper-item>
         <swiper-item :key="9">
           <div class="bg-white padding margin text-center text-black">
-            <pendingInvestigationRoom></pendingInvestigationRoom>
+            <pendingInvestigationRoom ref="pendingInvestigationRoom"></pendingInvestigationRoom>
           </div>
         </swiper-item>
         <swiper-item :key="10">
           <div class="bg-white padding margin text-center text-black">
-            <haveMoney></haveMoney>
+            <haveMoney ref="haveMoney"></haveMoney>
           </div>
         </swiper-item>
         <swiper-item :key="11">
           <div class="bg-white padding margin text-center text-black">
-            <forRefund></forRefund>
+            <forRefund ref="forRefund"></forRefund>
           </div>
         </swiper-item>
       </swiper>
@@ -191,16 +191,30 @@ export default {
     },
   },
   onPullDownRefresh(){
-    if (this.reveal === true) {
-      this.$refs.underway.httpRequest(); // 调用子组件进行中的方法
+    // 判断是房东还是房客做下拉刷新事件
+    if (this.reveal === false) {
+      this.$refs.underway.httpRequest(); 
+      this.$refs.finish.overRequest();
       setTimeout(()=>{
         uni.stopPullDownRefresh();
       },2000)
     } else {
-      
+      this.$refs.entire.allRequest();
+      this.$refs.pay.payRequest();
+      this.$refs.stay.stayRequert();
+      this.$refs.confirmed.affirmRequest();
+      this.$refs.stayThe.staysRequert();
+      this.$refs.stock.stocksRequert();
+      this.$refs.canceled.canceldRequert();
+      this.$refs.hasRefusedTo.refuseRequest();
+      this.$refs.stale.staleRequert();
+      this.$refs.pendingInvestigationRoom.pendRequert();
+      this.$refs.haveMoney.haveRequest();
+      this.$refs.forRefund.pendsRequert();
+      setTimeout(()=>{
+        uni.stopPullDownRefresh();
+      },4000)
     }
-    console.log('正在下拉')
-
   }
 };
 </script>

@@ -36,7 +36,7 @@ export default {
     }
   },
   methods: {
-    refuseRequest(){
+    haveRequest(){
       const _that = this;
       request({
         url:'/wap/api/order.php?action=landlordList&bizState=over',
@@ -61,7 +61,7 @@ export default {
     }
   },
   mounted () {
-    this.refuseRequest()
+    this.haveRequest()
   }
 }
 </script>
