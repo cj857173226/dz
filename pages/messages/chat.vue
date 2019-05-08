@@ -204,15 +204,11 @@
 						
 					}else if(_data.type === 'one'){
 						const _msg =  _data.message;
-						
-						console.log(_msg.from_id == _this.toId)
-						if(_msg.to_id == _this.toId){
+						if(_msg.from_id == _this.toId){
 							let _id = _this.msgList.length
 							_this.msgList.push({type:'user',header:_this.userHead,id:_id,msg:_msg.content,date:_msg.time});
 							_this.handleMsg(_this.msgList[_this.msgList.length - 1]);
 						}
-						
-						console.log(_data)
 					}
 				})
 			}
