@@ -52,10 +52,10 @@
 ._div,
 scroll-view,
 swiper,
-._button,
-._input,
-._textarea,
-._label,
+button,
+input,
+textarea,
+label,
 navigator,
 image {
   -webkit-box-sizing: border-box;

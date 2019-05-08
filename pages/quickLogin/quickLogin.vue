@@ -6,7 +6,7 @@
 				<view class="img">
 					<text class="iconfont icon-ziyuan"></text>
 				</view>
-				<input type="text" v-model.trim="username" placeholder-style="color:#ccc;font-size:14px;" placeholder="请输入手机号"
+				<input type="text" v-model.trim="username" placeholder-class="placeholder" placeholder="请输入手机号"
 				 :focus="autoFocus">
 				<view class="img icon_del" @tap="delUser" v-if="username">
 					<text class="iconfont icon-quxiao"></text>
@@ -17,7 +17,7 @@
 				<view class="img">
 					<text class="iconfont icon-yanzhengma"></text>
 				</view>
-				<input v-model.trim="regCode" placeholder-style="color:#ccc;font-size:14px;" placeholder="动态验证码">
+				<input v-model.trim="regCode" placeholder-class="placeholder" placeholder="动态验证码">
 				<view class="get_code">
 					<view class="get_code_btn" :class="{'dis_btn':codeDisable===true}" @tap.stop="getMsgCode">{{codeText}}</view>
 				</view>
@@ -29,7 +29,7 @@
 			<text @tap="goReg" class="text">立即注册</text>
 			<text @tap="usualLogin" class="text" style="color: #F05B72;">账号登录</text>
 		</view>
-		<view class="quick_login_line">
+		<!-- <view class="quick_login_line">
 			<view class="line" />
 			<text class="text">快速登录</text>
 			<view class="line" />
@@ -38,18 +38,26 @@
 			<image @tap="thirdLogin('qq')" class="item" :src="imgInfo.qq" />
 			<image @tap="thirdLogin('wechat')" class="item" :src="imgInfo.wechat" />
 			<image @tap="thirdLogin('weibo')" class="item" :src="imgInfo.weibo" />
-		</view>
+		</view> -->
 	</view>
 </template>
 <script>
 	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
+	import {
 		request
 	} from '../../common/request.js'
 	import helper from '../../common/helper.js'
+	import {
+		shortHttp
+	} from '../../common/requestUrl.json';
 	export default {
 		data() {
 			const isUni = typeof(uni) !== 'undefined'
 			return {
+				host: shortHttp,
 				username: '', //账号
 				regCode: '', // 动态验证码
 				imgInfo: {
@@ -66,9 +74,10 @@
 				loginLoad: false, // 是否在登录
 			}
 		},
-		onLoad() {
-		},
+		onLoad() {},
+		computed: {},
 		methods: {
+			...mapMutations(['createChatSocket']),
 			inputUsername(e) {
 				this.username = e.target.value
 			},
@@ -107,8 +116,9 @@
 						icon: 'none'
 					});
 				} else {
+					_this.codeLoad = true;
 					uni.request({
-						url: "http://dz.cdabon.com/wap/api/global.php",
+						url: _this.host+"/wap/api/global.php",
 						method: 'GET',
 						data: {
 							action: 'QuickSendSmsCode',
@@ -156,7 +166,7 @@
 				}
 			},
 			quickLogin() {
-				
+
 				const _this = this;
 				const user = _this.username;
 				const regCode = _this.regCode;
@@ -181,7 +191,7 @@
 				} else {
 					_this.loginLoad = true;
 					uni.request({
-						url: "http://dz.abontest.com/e/member/ajax/index.php?action=mobilelogin",
+						url: _this.host+"/e/member/ajax/index.php?action=mobilelogin",
 						method: 'GET',
 						data: {
 							code: regCode,
@@ -193,12 +203,13 @@
 							if (res.data.status === 'success') {
 								uni.setStorageSync('dz_userInfo', res.data.content);
 								uni.setStorageSync('dz_token', res.data.content.token);
+								_this.createChatSocket();
 								uni.reLaunch({
 									url: "/pages/index/index"
 								})
 							} else {
 								uni.showToast({
-									title: res.data.errorMsg,
+									title: res.data.msg,
 									duration: 1500,
 									icon: 'none'
 								});
@@ -238,17 +249,17 @@
 	$text-color: #B6B6B6;
 
 	.page_quick_login {
-		padding: 10px;
+		padding: 20upx;
 	}
 
 	.quick_login_form {
 		display: flex;
-		margin: 20px;
+		margin: 40upx;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		border: 1px solid $form-border-color;
-		border-radius: 10px;
+		border-radius: 20upx;
 
 		.line {
 			width: 100%;
@@ -259,54 +270,56 @@
 		.input {
 			box-sizing: border-box;
 			width: 100%;
-			max-height: 40px;
+			min-height: 80upx;
 			display: flex;
-			padding: 3px;
+			padding: 6upx;
 			flex-direction: row;
 			align-items: center;
 			justify-content: center;
 
 			.img {
-				min-width: 40px;
-				min-height: 40px;
+				min-width: 80upx;
+				min-height: 80upx;
 				display: flex;
 				align-items: center;
 				justify-content: center;
 
 				.iconfont {
-					font-size: 18px;
+					font-size: 36upx;
 					color: #F05B72;
 				}
 
 			}
-
+			input{
+				height: 100%;
+			}
 			.get_img_code {
-				min-width: 60px;
+				min-width: 120upx;
 				min-height: 40px;
 				display: flex;
 				align-items: center;
 
 				.code_img {
-					width: 60px;
-					height: 30px
+					width: 120upx;
+					height: 60upx
 				}
 			}
 
 			.get_code {
-				min-width: 90px;
-				min-height: 40px;
+				min-width: 180upx;
+				min-height: 80upx;
 				display: flex;
 				align-items: center;
 
 				.get_code_btn {
-					height: 30px;
+					height: 60upx;
 					width: 100%;
-					line-height: 30px;
+					line-height: 60upx;
 					text-align: center;
 					color: #FFFFFF;
 					background: #F05B72;
-					border-radius: 8px;
-					font-size: 14px;
+					border-radius: 16upx;
+					font-size: 28upx;
 
 					&:active {
 						opacity: 0.8;
@@ -321,9 +334,9 @@
 
 			input {
 				outline: none;
-				height: 30px;
+				height: 60upx;
 				width: 100%;
-				font-size: 14px;
+				font-size: 28upx;
 
 				&:focus {
 					outline: none;
@@ -334,9 +347,9 @@
 
 	.submit {
 		box-sizing: border-box;
-		height: 40px;
-		line-height: 40px;
-		margin: 30px 20px 10px 20px;
+		height: 80upx;
+		line-height: 80upx;
+		margin: 60upx 40upx 20upx 40upx;
 		color: white;
 		background-color: #F05B72;
 		-webkit-tap-highlight-color: #F05B72;
@@ -347,22 +360,22 @@
 	}
 
 	.opts {
-		margin-top: 5px;
-		margin-left: 25px;
-		margin-right: 25px;
+		margin-top: 10upx;
+		margin-left: 50upx;
+		margin-right: 50upx;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
 
 		.text {
-			font-size: 14px;
+			font-size: 28upx;
 			color: $text-color;
 		}
 	}
 
 	.quick_login_line {
-		margin-top: 40px;
+		margin-top: 80upx;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -375,23 +388,23 @@
 		}
 
 		.text {
-			font-size: 13px;
+			font-size: 28upx;
 			color: rgba(200, 200, 200, 1);
 			margin: 2px;
 		}
 	}
 
 	.quick_login_list {
-		margin-top: 30px;
+		margin-top: 60upx;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
 
 		.item {
-			width: 50px;
-			height: 50px;
-			margin: 20px;
+			width: 100upx;
+			height: 100upx;
+			margin: 40upx;
 		}
 	}
 </style>

@@ -161,7 +161,9 @@
 			}
 			this.userInfo = uni.getStorageSync('dz_userInfo');
 			// 获取当前房东权限
-			this.curPowerType = this.userInfo.isFangDong?uni.getStorageSync('dz_curPower'):'fk' ;
+			let _curPower = uni.getStorageSync('dz_curPower')?uni.getStorageSync('dz_curPower'):'fk';
+			this.curPowerType = this.userInfo.isFangDong?_curPower:'fk' ;
+			console.log(this.curPowerType);
 			this.isUserInfoEditStatus(false);
 		},
 		onNavigationBarButtonTap(e){

@@ -79,7 +79,7 @@ page {
     height: 100rpx;
     border: 1px solid #cccccc;
 }
-.house_area_page .input_wrap ._input.data-v-1071f014 {
+.house_area_page .input_wrap input.data-v-1071f014 {
       text-align: right;
       width: 120rpx;
 }

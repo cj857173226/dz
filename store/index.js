@@ -230,7 +230,7 @@ const store = new Vuex.Store({
 				url: 'ws://woker.abontest.com:7272',
 				success: () => {
 					if (state.socketLoading) {
-						helper.layer('聊天室已重连')
+						// helper.layer('聊天室已重连')
 					}
 					state.socketLoading = false;
 					state.socketError = false;
@@ -276,25 +276,25 @@ const store = new Vuex.Store({
 							self[index]['count'] = item.read_count;
 							self[index]['time'] = item.msg_time;
 							self[index]['stick'] = false;
-							self[index]['disabled'] = false;
+							self[index]['disabled'] = true;
 							self[index]['message'] = item.message ? item.message.content : '';
 						})
 					}
-// 					if (total >= 1 && total < 99) {
-// 						uni.setTabBarBadge({
-// 							index: 3,
-// 							text: total.toString()
-// 						})
-// 					}else if(total>=99){
-// 						uni.setTabBarBadge({
-// 							index: 3,
-// 							text: '99'
-// 						})
-// 					} else{
-// 						uni.removeTabBarBadge({
-// 							index: 3,
-// 						})
-// 					}
+					// if (total >= 1 && total < 99) {
+					// 	uni.showTabBarRedDot({
+					// 		index: 3,
+					// 		// text: total.toString()
+					// 	})
+					// }else if(total>=99){
+					// 	uni.showTabBarRedDot({
+					// 		index: 3,
+					// 		text: '99'
+					// 	})
+					// } else{
+					// 	uni.hideTabBarRedDot({
+					// 		index: 3,
+					// 	})
+					// }
 						
 					state.totalCount = total;
 					state.chatList = _chatList;

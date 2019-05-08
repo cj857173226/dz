@@ -335,7 +335,6 @@
 			// 获取当前数据
 			getCurData() {
 				const releaseObj = this.releaseObj;
-				console.log(releaseObj.addtenant)
 				this.house_id = releaseObj.id; //房源id
 				this.dayPrice = releaseObj.dayrentprice == "0" ? "" : releaseObj.dayrentprice; // 日价
 				this.cashpledge = releaseObj.cashpledge == "0" ? "" : releaseObj.cashpledge; // 押金

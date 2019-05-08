@@ -1,0 +1,1 @@
+<template name="bc935d60"><view class="_view data-v-0cf173a9 setting_page"><view class="_view data-v-0cf173a9 setting_list"></view><button class="_button data-v-0cf173a9 logout_btn my-btn-block {{[isLogoutIng ? 'dis_btn' : '']}}" bindtap="handleProxy" data-eventid="{{'bc935d60-0'}}" data-comkey="{{$k}}">退出登录</button></view></template>

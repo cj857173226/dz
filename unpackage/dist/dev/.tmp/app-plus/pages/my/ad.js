@@ -8,7 +8,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;var _default =\n\n\n\n\n\n\n{\n  data: function data() {\n    return {\n      adDetail: {} };\n\n  },\n  onLoad: function onLoad() {\n    this.adDetail = uni.getStorageSync('dz_ad');\n    uni.setNavigationBarTitle({\n      title: this.adDetail.title });\n\n  },\n  onShow: function onShow() {\n\n  },\n  computed: {},\n\n\n  methods: {} };exports.default = _default;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js */ \"./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/uni-app-plus/dist/index.js\")[\"default\"]))\n\n//# sourceURL=uni-app:///pages/my/ad.vue?vue&type=script&lang=js&?4df1");
+eval("/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;var _default =\n\n\n\n\n\n\n{\n  data: function data() {\n    return {\n      adDetail: {} };\n\n  },\n  onLoad: function onLoad() {\n    this.adDetail = uni.getStorageSync('dz_ad');\n    uni.setNavigationBarTitle({\n      title: this.adDetail.title });\n\n  },\n  onShow: function onShow() {\n\n  },\n  computed: {},\n\n\n  methods: {} };exports.default = _default;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ \"./node_modules/@dcloudio/uni-app-plus/dist/index.js\")[\"default\"]))\n\n//# sourceURL=uni-app:///pages/my/ad.vue?vue&type=script&lang=js&?4df1");
 
 /***/ }),
 

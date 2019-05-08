@@ -116,7 +116,7 @@ page {
           -ms-flex-pack: center;
               justify-content: center;
 }
-.my_information_page .head .nick-name ._input.data-v-6525d449 {
+.my_information_page .head .nick-name input.data-v-6525d449 {
         width: 480rpx;
         text-align: center;
         caret-color: #F05B72;
@@ -185,7 +185,7 @@ page {
                 align-items: center;
         font-size: 28rpx;
 }
-.my_information_page .info_form .form_item .ipt ._input.data-v-6525d449 {
+.my_information_page .info_form .form_item .ipt input.data-v-6525d449 {
           text-align: right;
           font-size: 28rpx;
 }

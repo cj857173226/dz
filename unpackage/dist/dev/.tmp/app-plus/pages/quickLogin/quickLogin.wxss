@@ -32,14 +32,14 @@ page {
 /* 透明度 */
 /* 文章场景相关 */
 .page_quick_login.data-v-28774569 {
-  padding: 10px;
+  padding: 20rpx;
 }
 .quick_login_form.data-v-28774569 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 20px;
+  margin: 40rpx;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -54,7 +54,7 @@ page {
       -ms-flex-pack: center;
           justify-content: center;
   border: 1px solid #d6d6d6;
-  border-radius: 10px;
+  border-radius: 20rpx;
 }
 .quick_login_form .line.data-v-28774569 {
     width: 100%;
@@ -65,12 +65,12 @@ page {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
-    max-height: 40px;
+    min-height: 80rpx;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    padding: 3px;
+    padding: 6rpx;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -webkit-flex-direction: row;
@@ -86,8 +86,8 @@ page {
             justify-content: center;
 }
 .quick_login_form .input .img.data-v-28774569 {
-      min-width: 40px;
-      min-height: 40px;
+      min-width: 80rpx;
+      min-height: 80rpx;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -102,11 +102,14 @@ page {
               justify-content: center;
 }
 .quick_login_form .input .img .iconfont.data-v-28774569 {
-        font-size: 18px;
+        font-size: 36rpx;
         color: #F05B72;
 }
+.quick_login_form .input input.data-v-28774569 {
+      height: 100%;
+}
 .quick_login_form .input .get_img_code.data-v-28774569 {
-      min-width: 60px;
+      min-width: 120rpx;
       min-height: 40px;
       display: -webkit-box;
       display: -webkit-flex;
@@ -118,12 +121,12 @@ page {
               align-items: center;
 }
 .quick_login_form .input .get_img_code .code_img.data-v-28774569 {
-        width: 60px;
-        height: 30px;
+        width: 120rpx;
+        height: 60rpx;
 }
 .quick_login_form .input .get_code.data-v-28774569 {
-      min-width: 90px;
-      min-height: 40px;
+      min-width: 180rpx;
+      min-height: 80rpx;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -134,14 +137,14 @@ page {
               align-items: center;
 }
 .quick_login_form .input .get_code .get_code_btn.data-v-28774569 {
-        height: 30px;
+        height: 60rpx;
         width: 100%;
-        line-height: 30px;
+        line-height: 60rpx;
         text-align: center;
         color: #FFFFFF;
         background: #F05B72;
-        border-radius: 8px;
-        font-size: 14px;
+        border-radius: 16rpx;
+        font-size: 28rpx;
 }
 .quick_login_form .input .get_code .get_code_btn.data-v-28774569:active {
           opacity: 0.8;
@@ -150,21 +153,21 @@ page {
     .quick_login_form .input .icon_pwd_switch .iconfont.data-v-28774569 {
       color: #A0A0A0;
 }
-.quick_login_form .input ._input.data-v-28774569 {
+.quick_login_form .input input.data-v-28774569 {
       outline: none;
-      height: 30px;
+      height: 60rpx;
       width: 100%;
-      font-size: 14px;
+      font-size: 28rpx;
 }
-.quick_login_form .input ._input.data-v-28774569:focus {
+.quick_login_form .input input.data-v-28774569:focus {
         outline: none;
 }
 .submit.data-v-28774569 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  height: 40px;
-  line-height: 40px;
-  margin: 30px 20px 10px 20px;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 60rpx 40rpx 20rpx 40rpx;
   color: white;
   background-color: #F05B72;
   -webkit-tap-highlight-color: #F05B72;
@@ -173,9 +176,9 @@ page {
     opacity: 0.8;
 }
 .opts.data-v-28774569 {
-  margin-top: 5px;
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-top: 10rpx;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -195,11 +198,11 @@ page {
           justify-content: space-between;
 }
 .opts .text.data-v-28774569 {
-    font-size: 14px;
+    font-size: 28rpx;
     color: #B6B6B6;
 }
 .quick_login_line.data-v-28774569 {
-  margin-top: 40px;
+  margin-top: 80rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -224,12 +227,12 @@ page {
     background-color: #d3d3d5;
 }
 .quick_login_line .text.data-v-28774569 {
-    font-size: 13px;
+    font-size: 28rpx;
     color: #c8c8c8;
     margin: 2px;
 }
 .quick_login_list.data-v-28774569 {
-  margin-top: 30px;
+  margin-top: 60rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -249,8 +252,8 @@ page {
           justify-content: center;
 }
 .quick_login_list .item.data-v-28774569 {
-    width: 50px;
-    height: 50px;
-    margin: 20px;
+    width: 100rpx;
+    height: 100rpx;
+    margin: 40rpx;
 }
 

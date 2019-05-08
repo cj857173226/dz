@@ -114,7 +114,7 @@ page {
                   flex-direction: row-reverse;
           font-size: 14px;
 }
-.edit_address_page .edit_address_wrap .edit_address_form .form-item .input ._input.data-v-438ed8b2 {
+.edit_address_page .edit_address_wrap .edit_address_form .form-item .input input.data-v-438ed8b2 {
             text-align: right;
             font-size: 14px;
 }
@@ -133,7 +133,7 @@ page {
               justify-content: space-between;
       padding: 20rpx 20rpx;
 }
-.edit_address_page .edit_address_wrap .handle_btn_wrap ._button.data-v-438ed8b2 {
+.edit_address_page .edit_address_wrap .handle_btn_wrap button.data-v-438ed8b2 {
         height: 90rpx;
         line-height: 90rpx;
         width: 40%;

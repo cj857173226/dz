@@ -127,7 +127,7 @@ page {
           white-space: nowrap;
           text-align: right;
 }
-.add_bill_page .add_bill_form .form_item .content_wrap ._input.data-v-3e24914b {
+.add_bill_page .add_bill_form .form_item .content_wrap input.data-v-3e24914b {
           text-align: right;
 }
 .add_bill_page .add_bill_form .form_item .unit.data-v-3e24914b,

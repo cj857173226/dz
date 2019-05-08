@@ -104,7 +104,7 @@ page {
           text-align: right;
           color: #AAAAAA;
 }
-.edit_bill_page .edit_bill_form .form_item .content_wrap ._input.data-v-03983b26 {
+.edit_bill_page .edit_bill_form .form_item .content_wrap input.data-v-03983b26 {
           text-align: right;
 }
 .edit_bill_page .edit_bill_form .form_item .note.data-v-03983b26 {

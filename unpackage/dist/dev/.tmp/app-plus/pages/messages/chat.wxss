@@ -174,7 +174,7 @@ page {
       padding: 18rpx;
       border-radius: 16rpx;
 }
-.chat_page .send_box .cur_msg ._textarea.data-v-ef847096 {
+.chat_page .send_box .cur_msg textarea.data-v-ef847096 {
         font-size: 28rpx;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;

@@ -1,1 +1,1 @@
-<template name="24365bb8"><view class="_view 24365bb8"></view></template>
+<template name="70495f2e"><view class="_view data-v-0523efbe contanier"><view class="_view data-v-0523efbe group-box" bindtap="handleProxy" wx:key="i" key="{{i}}" data-eventid="{{'70495f2e-0-'+i}}" data-comkey="{{$k}}" wx:for="{{groupingList}}" wx:for-index="i" wx:for-item="item"><image class="_image data-v-0523efbe group-img" src="../../static/images/meitu.jpeg"></image><view class="_view data-v-0523efbe group-name">{{item.cname}}</view></view></view></template>

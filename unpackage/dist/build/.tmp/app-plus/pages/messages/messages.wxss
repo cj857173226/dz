@@ -159,7 +159,7 @@
       color: #808080;
       height: 50rpx;
       line-height: 40rpx;
-      font-size: 24rpx;
+      font-size: 28rpx;
       overflow: hidden;
       /**自动隐藏文字*/
       -o-text-overflow: ellipsis;
@@ -179,14 +179,14 @@
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+            align-items: flex-end;
 }
 .item .item-right .time {
       color: #808080;
-      font-size: 18rpx;
+      font-size: 28rpx;
       height: 60rpx;
       line-height: 60rpx;
 }
@@ -227,13 +227,71 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-31ea87df {
+.contanier.data-v-eda62214 {
   width: 100%;
   padding: 30rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.contanier .system-messages.data-v-31ea87df {
+.contanier .ad_box.data-v-eda62214 {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    padding: 10rpx 16rpx;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    border-bottom: 1px solid #f3f3f3;
+}
+.contanier .ad_box .icon.data-v-eda62214 {
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      width: 100rpx;
+      height: 100rpx;
+      background: #F05B72;
+      border-radius: 50%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+}
+.contanier .ad_box .icon .iconfont.data-v-eda62214 {
+        display: inline-block;
+        font-size: 60rpx;
+        color: #FFFFFF;
+}
+.contanier .ad_box .content_wrap.data-v-eda62214 {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      margin-left: 10rpx;
+      overflow: hidden;
+}
+.contanier .ad_box .content_wrap .title.data-v-eda62214 {
+        height: 50rpx;
+        line-height: 50rpx;
+        font-size: 28rpx;
+}
+.contanier .ad_box .content_wrap .content.data-v-eda62214 {
+        width: 100%;
+        height: 50rpx;
+        line-height: 40rpx;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+           text-overflow: ellipsis;
+        white-space: nowrap;
+}
+.contanier .system-messages.data-v-eda62214 {
     width: 100%;
     height: 160rpx;
     -webkit-box-sizing: border-box;
@@ -248,7 +306,7 @@
         -ms-flex-align: center;
             align-items: center;
 }
-.contanier .system-messages .photo.data-v-31ea87df {
+.contanier .system-messages .photo.data-v-eda62214 {
       width: 100rpx;
       height: 100rpx;
       border-radius: 50rpx;
@@ -257,23 +315,23 @@
       text-align: center;
       margin-right: 26rpx;
 }
-.contanier .system-messages .photo .colorbaise.data-v-31ea87df {
+.contanier .system-messages .photo .colorbaise.data-v-eda62214 {
         font-size: 50rpx;
         color: #fff;
 }
-.contanier .system-messages .photo .photo-img.data-v-31ea87df {
+.contanier .system-messages .photo .photo-img.data-v-eda62214 {
         width: 100rpx;
         height: 100rpx;
         border-radius: 50rpx;
 }
-.contanier .system-messages .messages-box.data-v-31ea87df {
+.contanier .system-messages .messages-box.data-v-eda62214 {
       width: 564rpx;
       height: 80rpx;
 }
-.contanier .system-messages .messages-box .system-title.data-v-31ea87df {
+.contanier .system-messages .messages-box .system-title.data-v-eda62214 {
         font-size: 14px;
 }
-.contanier .system-messages .messages-box .system-contanier.data-v-31ea87df {
+.contanier .system-messages .messages-box .system-contanier.data-v-eda62214 {
         width: 100%;
         height: 40rpx;
         color: #b9b9b9;

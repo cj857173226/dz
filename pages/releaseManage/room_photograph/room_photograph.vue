@@ -28,14 +28,15 @@
 						<text class="iconfont icon-duomeitiicon-"></text>
 					</view>
 				</view>
-				
+
 				<!-- 临时缓存地址 -->
 				<view class="img_item2" v-if="bedRoomPics.length>0 && isUploading" v-for="(item, index) in bedRoomPics" :key="index">
-					<image src="/static/images/meitu1.jpg">
+					<image :src="item.path">
 					</image>
 					<view class="mask">
 						<text class="progress">
-							<text class="num">100</text>%
+							<text class="num">{{progressAll[index]}}</text>%
+							<!-- <text class="num">{{item.progress}}</text>% -->
 						</text>
 						<!-- <text class="err">此图不符合规范!!</text> -->
 					</view>
@@ -131,7 +132,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="btn">保存</view>
+<!-- 		<view class="btn">保存</view> -->
 	</view>
 </template>
 <script>
@@ -160,7 +161,10 @@
 				toiletPics: [], //卫生间
 				kitchenPics: [], //厨房
 				otherPics: [], //其他
-				isUploading: false,// 是否正在上传
+				// 进度条管理
+				progressAll:[],
+				isUploading: false, // 是否正在上传
+				
 			}
 		},
 		onLoad() {
@@ -177,6 +181,9 @@
 			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
 			// 选择照片
 			chooseImg(type) {
+				if (this.isUploading) {
+					helper.layer('图片正在上传中..')
+				}
 				const _this = this;
 				uni.chooseImage({
 					count: 9, //默认9
@@ -185,10 +192,17 @@
 					success: function(res) {
 						// console.log(res);
 						let _imgs = res.tempFiles;
-						console.log(_imgs)
+						// console.log(_imgs)
+						_this.isUploading = true;
+						if (type === 'bedroom') {
+							_this.bedRoomPics = _imgs;
+						}
+						console.log(1)
 						_imgs.forEach((item, i) => {
 							let _img = item.path;
-							_this.uploadImg(_img, i)
+							_this.progressAll[i] = '0';
+							// _this.bedRoomPics[i]['progress'] = '0';
+							_this.uploadImg(_img, i, type);
 						})
 						// _this.uploadImg(_imgs)
 
@@ -196,7 +210,8 @@
 				});
 			},
 			// 图片上传
-			uploadImg(img, index) {
+			uploadImg(img, index, type) {
+				const _this = this;
 				const token = uni.getStorageSync('dz_token');
 				const uploadTask = uni.uploadFile({
 					url: 'http://dz.abontest.com/wap/api/upload.php', //仅为示例，非真实的接口地址
@@ -208,22 +223,32 @@
 					success: (uploadFileRes) => {
 						console.log(uploadFileRes.data);
 					},
-					fail: () => {
-
+					fail: (err) => {
+						console.log(err)
 					},
 					complete: (res) => {
-						console.log(res)
+						// console.log(res)
+						setTimeout(() => {
+							_this.isUploading = false;
+						}, 4000)
 					}
 				});
-				uploadTask.onProgressUpdate((res) => {
-					console.log(`第${index+1}张图上传进度:${res.progress}`);
-					console.log(`第${index+1}张图已经上传的数据长度:${res.totalBytesSent}`);
-					console.log(`第${index+1}张图预期需要上传的数据总长度:${res.totalBytesExpectedToSend}`);
+				 uploadTask.onProgressUpdate((res) => {
+					if (type === 'bedroom') {
+		
+						// _this.bedRoomProgress[index] = res.progress.toString()
+						_this.$set(_this.progressAll,index,res.progress.toString())
+						// console.log(_this.progressAll[index]);
+					
+					}
+// 					console.log(`第${index+1}张图上传进度:${res.progress}`);
+// 					console.log(`第${index+1}张图已经上传的数据长度:${res.totalBytesSent}`);
+// 					console.log(`第${index+1}张图预期需要上传的数据总长度:${res.totalBytesExpectedToSend}`);
 
-					// 测试条件，取消上传任务。
-					// 					if (res.progress > 50) {
-					// 						uploadTask.abort();
-					// 					}
+					// 测试条件， 取消上传任务。
+					// if (res.progress > 90) {
+					// 	uploadTask.abort();
+					// }
 				});
 			},
 			// 获取图片信息
@@ -363,7 +388,7 @@
 						border-radius: 8upx;
 						top: 0;
 						left: 0;
-						background: rgba(114, 114, 114, 0.4);
+						background: rgba(114, 114, 114, 0.5);
 						display: flex;
 						justify-content: center;
 						align-items: center;
@@ -374,13 +399,15 @@
 							color: #fff;
 							text-align: center;
 							word-break: break-all;
-							.num{
+
+							.num {
 								display: inline-block;
 								width: 56upx;
 								text-align: right;
 							}
 						}
-						.err{
+
+						.err {
 							font-size: 24upx;
 							font-weight: 800;
 							color: #fe7c4e;

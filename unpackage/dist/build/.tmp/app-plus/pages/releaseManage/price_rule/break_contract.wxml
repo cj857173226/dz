@@ -1,0 +1,2 @@
+<import src="./break_contract.vue.wxml" />
+    <template is="20bd9aea" data="{{ ...$root['0'], $root }}"/>

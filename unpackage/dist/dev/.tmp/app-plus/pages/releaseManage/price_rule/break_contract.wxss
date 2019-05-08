@@ -30,7 +30,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.contanier ._label.data-v-7f3eb374 {
+.contanier label.data-v-7f3eb374 {
     font-size: 32rpx;
 }
 .contanier .price-amount.data-v-7f3eb374 {

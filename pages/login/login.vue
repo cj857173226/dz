@@ -6,7 +6,7 @@
 				<view class="img">
 					<text class="iconfont icon-ziyuan"></text>
 				</view>
-				<input type="text" v-model.trim="username" placeholder-style="color:#ccc;font-size:14px;" placeholder="请输入手机号"
+				<input type="text" v-model.trim="username" placeholder-class="placeholder" placeholder="请输入手机号"
 				 :focus="autoFocus">
 				<view class="img icon_del" @tap="delUser" v-if="username">
 					<text class="iconfont icon-quxiao"></text>
@@ -17,7 +17,7 @@
 				<view class="img">
 					<text class="iconfont icon-mima"></text>
 				</view>
-				<input :type="pwdType" :value="userpwd" @input="inputPwd" placeholder-style="color:#ccc;font-size:14px;"
+				<input :type="pwdType" :value="userpwd" @input="inputPwd" placeholder-class="placeholder"
 				 placeholder="请输入密码">
 				<view class="img icon_pwd_switch" @tap="switchPwd">
 					<text class="iconfont icon-yanjing" v-if="pwdType==='password'"></text>
@@ -31,7 +31,7 @@
 			<text @tap="goReg" class="text">立即注册</text>
 			<text @tap="quickLogin" class="text" style="color: #F05B72;">手机快速登录</text>
 		</view>
-		<view class="quick_login_line">
+		<!-- <view class="quick_login_line">
 			<view class="line" />
 			<text class="text">快速登录</text>
 			<view class="line" />
@@ -40,18 +40,22 @@
 			<image @tap="thirdLogin('qq')" class="item" :src="imgInfo.qq" />
 			<image @tap="thirdLogin('wechat')" class="item" :src="imgInfo.wechat" />
 			<image @tap="thirdLogin('weibo')" class="item" :src="imgInfo.weibo" />
-		</view>
+		</view> -->
 	</view>
 </template>
 <script>
 	import {
 		mapState,
 		mapMutations
-	} from 'vuex'
+	} from 'vuex';
+	import {
+		shortHttp
+	} from '../../common/requestUrl.json';
 	export default {
 		data() {
 			const isUni = typeof(uni) !== 'undefined'
 			return {
+				host: shortHttp,
 				username: '',
 				userpwd: '',
 				pwdType: 'password',
@@ -67,8 +71,7 @@
 		onLoad() {
 
 		},
-		computed: {
-		},
+		computed: {},
 		methods: {
 			...mapMutations(['createChatSocket']),
 			inputUsername(e) {
@@ -134,7 +137,7 @@
 								uni.reLaunch({
 									url: "/pages/index/index"
 								})
-								
+
 							} else {
 								uni.showToast({
 									title: res.data.msg,
@@ -177,12 +180,12 @@
 
 	.login_form {
 		display: flex;
-		margin: 20px;
+		margin: 40upx;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		border: 1px solid $form-border-color;
-		border-radius: 10px;
+		border-radius: 20upx;
 
 		.line {
 			width: 100%;
@@ -193,7 +196,7 @@
 		.input {
 			box-sizing: border-box;
 			width: 100%;
-			max-height: 40px;
+			min-height: 80upx;
 			display: flex;
 			padding: 3px;
 			flex-direction: row;
@@ -201,14 +204,14 @@
 			justify-content: center;
 
 			.img {
-				min-width: 40px;
-				min-height: 40px;
+				min-width: 80upx;
+				min-height: 80upx;
 				display: flex;
 				align-items: center;
 				justify-content: center;
 
 				.iconfont {
-					font-size: 18px;
+					font-size: 36upx;
 					color: #F05B72;
 				}
 
@@ -221,9 +224,9 @@
 
 			input {
 				outline: none;
-				height: 30px;
+				height: 60upx;
 				width: 100%;
-				font-size: 14px;
+				font-size: 28upx;
 
 				&:focus {
 					outline: none;
@@ -234,9 +237,9 @@
 
 	.submit {
 		box-sizing: border-box;
-		height: 40px;
-		line-height: 40px;
-		margin: 30px 20px 10px 20px;
+		height: 80upx;
+		line-height: 80upx;
+		margin: 60upx 40upx 20upx 40upx;
 		color: white;
 		background-color: #F05B72;
 		-webkit-tap-highlight-color: #F05B72;
@@ -247,22 +250,22 @@
 	}
 
 	.opts {
-		margin-top: 5px;
-		margin-left: 25px;
-		margin-right: 25px;
+		margin-top: 10upx;
+		margin-left: 50upx;
+		margin-right: 50upx;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
 
 		.text {
-			font-size: 14px;
+			font-size: 28upx;
 			color: $text-color;
 		}
 	}
 
 	.quick_login_line {
-		margin-top: 40px;
+		margin-top: 80upx;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -275,23 +278,23 @@
 		}
 
 		.text {
-			font-size: 13px;
+			font-size: 28upx;
 			color: rgba(200, 200, 200, 1);
 			margin: 2px;
 		}
 	}
 
 	.quick_login_list {
-		margin-top: 30px;
+		margin-top: 60upx;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
 
 		.item {
-			width: 50px;
-			height: 50px;
-			margin: 20px;
+			width: 100upx;
+			height: 100upx;
+			margin: 40upx;
 		}
 	}
 </style>

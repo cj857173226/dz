@@ -109,7 +109,7 @@ page {
                 align-items: center;
         font-size: 28rpx;
 }
-.house_detail_page .house_detail_form .form_item .ipt ._input.data-v-0da5ff29 {
+.house_detail_page .house_detail_form .form_item .ipt input.data-v-0da5ff29 {
           text-align: right;
           font-size: 28rpx;
 }

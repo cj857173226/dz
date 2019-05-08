@@ -1,88 +1,4 @@
 
-.pickerMask {
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-}
-.mpvue-picker-content {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    -webkit-transform: translateY(100%);
-        -ms-transform: translateY(100%);
-            transform: translateY(100%);
-    z-index: 3000;
-}
-.mpvue-picker-view-show {
-    -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-            transform: translateY(0);
-}
-.mpvue-picker__hd {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 9px 15px;
-    background-color: #fff;
-    position: relative;
-    text-align: center;
-    font-size: 17px;
-}
-.mpvue-picker__hd:after {
-    content: ' ';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 1px;
-    border-bottom: 1px solid #e5e5e5;
-    color: #e5e5e5;
-    -webkit-transform-origin: 0 100%;
-        -ms-transform-origin: 0 100%;
-            transform-origin: 0 100%;
-    -webkit-transform: scaleY(0.5);
-        -ms-transform: scaleY(0.5);
-            transform: scaleY(0.5);
-}
-.mpvue-picker__action {
-    display: block;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    color: #1aad19;
-}
-.mpvue-picker__action:first-child {
-    text-align: left;
-    color: #888;
-}
-.mpvue-picker__action:last-child {
-    text-align: right;
-}
-.picker-item {
-    text-align: center;
-    line-height: 40px;
-    font-size: 16px;
-}
-.mpvue-picker-view {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 238px;
-    background-color: rgba(255, 255, 255, 1);
-}
-
-
 page {
 	height: 100%;
 }
@@ -113,11 +29,11 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.my_information_page.data-v-7cd28324 {
+.my_information_page.data-v-7f1fadc1 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.my_information_page .head.data-v-7cd28324 {
+.my_information_page .head.data-v-7f1fadc1 {
     height: 360rpx;
     caret-color: #F05B72;
     display: -webkit-box;
@@ -138,7 +54,7 @@ page {
         -ms-flex-align: center;
             align-items: center;
 }
-.my_information_page .head .avatar_wrap.data-v-7cd28324 {
+.my_information_page .head .avatar_wrap.data-v-7f1fadc1 {
       position: relative;
       border: 3px solid rgba(144, 144, 144, 0.1);
       height: 160rpx;
@@ -158,12 +74,12 @@ page {
               align-items: center;
       margin-bottom: 30rpx;
 }
-.my_information_page .head .avatar_wrap .avatar.data-v-7cd28324 {
+.my_information_page .head .avatar_wrap .avatar.data-v-7f1fadc1 {
         width: 156rpx;
         height: 156rpx;
         border-radius: 50%;
 }
-.my_information_page .head .avatar_wrap .img_icon.data-v-7cd28324 {
+.my_information_page .head .avatar_wrap .img_icon.data-v-7f1fadc1 {
         position: absolute;
         right: 0;
         bottom: 0;
@@ -184,11 +100,11 @@ page {
             -ms-flex-align: center;
                 align-items: center;
 }
-.my_information_page .head .avatar_wrap .img_icon .iconfont.data-v-7cd28324 {
+.my_information_page .head .avatar_wrap .img_icon .iconfont.data-v-7f1fadc1 {
           font-size: 24rpx;
           color: #FFFFFF;
 }
-.my_information_page .head .nick-name.data-v-7cd28324 {
+.my_information_page .head .nick-name.data-v-7f1fadc1 {
       width: 480rpx;
       height: 52rpx;
       display: -webkit-box;
@@ -200,30 +116,30 @@ page {
           -ms-flex-pack: center;
               justify-content: center;
 }
-.my_information_page .head .nick-name input.data-v-7cd28324 {
+.my_information_page .head .nick-name input.data-v-7f1fadc1 {
         width: 480rpx;
         text-align: center;
         caret-color: #F05B72;
         font-size: 36rpx;
 }
-.my_information_page .head .nick-name .show_nickname.data-v-7cd28324 {
+.my_information_page .head .nick-name .show_nickname.data-v-7f1fadc1 {
         display: inline;
         font-size: 36rpx;
         height: 52rpx;
         line-height: 52rpx;
         text-align: center;
 }
-.my_information_page .head .nick-name .show_nickname .edit-icon.data-v-7cd28324 {
+.my_information_page .head .nick-name .show_nickname .edit-icon.data-v-7f1fadc1 {
           font-size: 32rpx;
           color: #F05B72;
 }
-.my_information_page .info_form.data-v-7cd28324 {
+.my_information_page .info_form.data-v-7f1fadc1 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
     padding: 20rpx 30rpx;
 }
-.my_information_page .info_form .form_item.data-v-7cd28324 {
+.my_information_page .info_form .form_item.data-v-7f1fadc1 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
@@ -243,10 +159,10 @@ page {
               flex-direction: row;
       border-bottom: 1px solid #eaeaea;
 }
-.my_information_page .info_form .form_item .label.data-v-7cd28324 {
+.my_information_page .info_form .form_item .label.data-v-7f1fadc1 {
         font-size: 32rpx;
 }
-.my_information_page .info_form .form_item .ipt.data-v-7cd28324 {
+.my_information_page .info_form .form_item .ipt.data-v-7f1fadc1 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         height: 100%;
@@ -269,19 +185,19 @@ page {
                 align-items: center;
         font-size: 28rpx;
 }
-.my_information_page .info_form .form_item .ipt input.data-v-7cd28324 {
+.my_information_page .info_form .form_item .ipt input.data-v-7f1fadc1 {
           text-align: right;
           font-size: 28rpx;
 }
-.my_information_page .info_form .form_item .ipt .empty.data-v-7cd28324 {
+.my_information_page .info_form .form_item .ipt .empty.data-v-7f1fadc1 {
           font-size: 28rpx;
           color: #cccccc;
 }
-.my_information_page .info_form .form_item .ipt .data_box.data-v-7cd28324 {
+.my_information_page .info_form .form_item .ipt .data_box.data-v-7f1fadc1 {
           font-size: 28rpx;
           color: #333333;
 }
-.my_information_page .info_form .form_item .after_icon.data-v-7cd28324 {
+.my_information_page .info_form .form_item .after_icon.data-v-7f1fadc1 {
         width: 30rpx;
         display: -webkit-box;
         display: -webkit-flex;
@@ -296,7 +212,7 @@ page {
             -ms-flex-align: center;
                 align-items: center;
 }
-.my_information_page .info_form .form_item .after_icon .iconfont.data-v-7cd28324 {
+.my_information_page .info_form .form_item .after_icon .iconfont.data-v-7f1fadc1 {
           font-size: 28rpx;
           color: #cccccc;
 }

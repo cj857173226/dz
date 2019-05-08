@@ -123,5 +123,6 @@
     "alwaysShowBeforeRender": true,
     "autoclose": false
   },
-  "appname": "xzapp"
+  "appname": "xzapp",
+  "compilerVersion": "1.9.4"
 }

@@ -87,7 +87,6 @@
 			this.meId = userInfo.userid;
 			this.meHead = userInfo.headImgurl?this.host+userInfo.headImgurl:'';
 			this.userHead =param.userpic?this.host+param.userpic:'';
-			
 			// 获取设备信息
 			const res = uni.getSystemInfoSync();
 			this.style.pageHeight = res.windowHeight;
@@ -141,7 +140,6 @@
 			// 处理消息
 			handleMsg(msgRow){
 				this.$nextTick(function() {
-					// 滚动到底
 					this.scrollToView = 'msg'+msgRow.id
 				});
 			},
@@ -196,9 +194,13 @@
 								self[index]['msg'] = item.content
 								self[index]['date'] = item.time;
 							})
+							_this.msgList = _list;
+							_this.handleMsg(_this.msgList[_this.msgList.length - 1])
 						}
-						_this.msgList = _list;
-						_this.handleMsg(_this.msgList[_this.msgList.length - 1])
+						// console.log(_list)
+						
+
+						
 					}else if(_data.type === 'one'){
 						const _msg =  _data.message;
 						if(_msg.from_id == _this.toId);{

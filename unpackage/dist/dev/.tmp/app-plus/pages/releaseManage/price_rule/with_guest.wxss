@@ -109,7 +109,7 @@
       display: -ms-flexbox;
       display: flex;
 }
-.contanier .form_item .content_wrap ._input.data-v-42f58293 {
+.contanier .form_item .content_wrap input.data-v-42f58293 {
         text-align: right;
         padding-right: 16rpx;
         font-size: 28rpx;
@@ -136,7 +136,7 @@
       border: 1px solid #cccccc;
       padding: 20rpx;
 }
-.contanier .guest_desc_wrap .desc_content ._textarea.data-v-42f58293 {
+.contanier .guest_desc_wrap .desc_content textarea.data-v-42f58293 {
         width: 100%;
         height: 100%;
         font-size: 28rpx;

@@ -39,7 +39,7 @@ page {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 20px;
+  margin: 40rpx;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -54,7 +54,7 @@ page {
       -ms-flex-pack: center;
           justify-content: center;
   border: 1px solid #d6d6d6;
-  border-radius: 10px;
+  border-radius: 20rpx;
 }
 .login_form .line.data-v-6eab933d {
     width: 100%;
@@ -65,7 +65,7 @@ page {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
-    max-height: 40px;
+    min-height: 80rpx;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -86,8 +86,8 @@ page {
             justify-content: center;
 }
 .login_form .input .img.data-v-6eab933d {
-      min-width: 40px;
-      min-height: 40px;
+      min-width: 80rpx;
+      min-height: 80rpx;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -102,28 +102,28 @@ page {
               justify-content: center;
 }
 .login_form .input .img .iconfont.data-v-6eab933d {
-        font-size: 18px;
+        font-size: 36rpx;
         color: #F05B72;
 }
 .login_form .input .icon_del .iconfont.data-v-6eab933d,
     .login_form .input .icon_pwd_switch .iconfont.data-v-6eab933d {
       color: #A0A0A0;
 }
-.login_form .input ._input.data-v-6eab933d {
+.login_form .input input.data-v-6eab933d {
       outline: none;
-      height: 30px;
+      height: 60rpx;
       width: 100%;
-      font-size: 14px;
+      font-size: 28rpx;
 }
-.login_form .input ._input.data-v-6eab933d:focus {
+.login_form .input input.data-v-6eab933d:focus {
         outline: none;
 }
 .submit.data-v-6eab933d {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  height: 40px;
-  line-height: 40px;
-  margin: 30px 20px 10px 20px;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 60rpx 40rpx 20rpx 40rpx;
   color: white;
   background-color: #F05B72;
   -webkit-tap-highlight-color: #F05B72;
@@ -132,9 +132,9 @@ page {
     opacity: 0.8;
 }
 .opts.data-v-6eab933d {
-  margin-top: 5px;
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-top: 10rpx;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -154,11 +154,11 @@ page {
           justify-content: space-between;
 }
 .opts .text.data-v-6eab933d {
-    font-size: 14px;
+    font-size: 28rpx;
     color: #B6B6B6;
 }
 .quick_login_line.data-v-6eab933d {
-  margin-top: 40px;
+  margin-top: 80rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -183,12 +183,12 @@ page {
     background-color: #d3d3d5;
 }
 .quick_login_line .text.data-v-6eab933d {
-    font-size: 13px;
+    font-size: 28rpx;
     color: #c8c8c8;
     margin: 2px;
 }
 .quick_login_list.data-v-6eab933d {
-  margin-top: 30px;
+  margin-top: 60rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -208,8 +208,8 @@ page {
           justify-content: center;
 }
 .quick_login_list .item.data-v-6eab933d {
-    width: 50px;
-    height: 50px;
-    margin: 20px;
+    width: 100rpx;
+    height: 100rpx;
+    margin: 40rpx;
 }
 

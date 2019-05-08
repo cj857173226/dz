@@ -5,7 +5,7 @@
 				<view class="img">
 					<text class="iconfont icon-dianhua3"></text>
 				</view>
-				<input type="text" v-model.trim="username" placeholder-style="color:#ccc;font-size:14px;" placeholder="请输入手机号"
+				<input type="text" v-model.trim="username"placeholder-class="placeholder" placeholder="请输入手机号"
 				 :focus="autoFocus">
 			</view>
 			<view class="line" />
@@ -13,7 +13,7 @@
 				<view class="img">
 					<text class="iconfont icon-yanzhengma"></text>
 				</view>
-				<input v-model.trim="regCode" placeholder-style="color:#ccc;font-size:14px;" placeholder="动态验证码">
+				<input v-model.trim="regCode" placeholder-class="placeholder" placeholder="动态验证码">
 				<view class="get_code">
 					<view class="get_code_btn" :class="{'dis_btn':codeDisable===true}" @tap.stop="getMsgCode">{{codeText}}</view>
 				</view>
@@ -23,7 +23,7 @@
 				<view class="img">
 					<text class="iconfont icon-mima"></text>
 				</view>
-				<input :password="pwdType==='password'" :value="userpwd" @input="inputPwd" placeholder-style="color:#ccc;font-size:14px;"
+				<input :password="pwdType==='password'" :value="userpwd" @input="inputPwd" placeholder-class="placeholder"
 				 placeholder="请设置密码">
 				<view class="img icon_pwd_switch" @tap="switchPwd">
 					<text class="iconfont icon-yanjing" v-if="pwdType==='password'"></text>
@@ -31,15 +31,24 @@
 				</view>
 			</view>
 		</view>
-		<button class="submit" :class="{'dis_btn':registerLoad===true}" @tap="submitRegsiter">注册</button>
+		<button class="submit" :class="{'dis_btn':registerLoad===true}" @tap="submitRegsiter" v-text="registerLoad?'注册中...':'注册'"></button>
 	</view>
 </template>
 
 <script>
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex';
 	import helper from 'common/helper.js'
+	import {
+		shortHttp
+	} from '../../common/requestUrl.json';
+	
 	export default {
 		data() {
 			return {
+				host:shortHttp,
 				username: '', //用户名
 				userpwd: '', //密码
 				regCode: '', //验证码
@@ -53,7 +62,9 @@
 				registerLoad: false, // 是否正在注册中
 			}
 		},
+		computed: {},
 		methods: {
+			...mapMutations(['createChatSocket']),
 			inputUsername(e) {
 				this.username = e.target.value
 			},
@@ -73,9 +84,9 @@
 				if (that.codeDisable || that.codeLoad || that.regPhoneLoad) return;
 				if (user === '' || !helper.phoneReg(user)) {
 					let _title = '';
-					if(user === ''){
+					if (user === '') {
 						_title = "手机号不能为空"
-					} else if(!helper.phoneReg(user)){
+					} else if (!helper.phoneReg(user)) {
 						_title = "手机号格式有误"
 					}
 					uni.showToast({
@@ -86,17 +97,17 @@
 				} else {
 					that.regPhoneLoad = true;
 					uni.request({
-						url: "http://dz.abontest.com/wap/api/global.php?action=CheckParams4H5&type=phone",
+						url: that.host+"/wap/api/global.php?action=CheckParams4H5&type=phone",
 						method: 'GET',
 						data: {
 							key: user,
 							params: user
 						},
 						success: function(res) {
-							that.codeLoad = true;
 							if (res.data.status === 'success') {
+								that.codeLoad = true;
 								uni.request({
-									url: "http://dz.cdabon.com/e/member/doaction.php",
+									url: that.host+"/e/member/doaction.php",
 									method: 'GET',
 									data: {
 										enews: 'Rzsj',
@@ -128,8 +139,6 @@
 												icon: 'none'
 											});
 										}
-
-
 									},
 									fail: function() {
 										uni.showToast({
@@ -169,7 +178,7 @@
 				const user = this.username;
 				const psw = this.userpwd;
 				const regCode = this.regCode;
-				if(that.registerLoad) return;
+				if (that.registerLoad) return;
 				if (user === '') {
 					uni.showToast({
 						title: '请输入手机号',
@@ -191,7 +200,7 @@
 				} else {
 					that.registerLoad = true;
 					uni.request({
-						url: 'http://dz.cdabon.com/e/member/ajax/index.php?action=checkregister', //仅为示例，并非真实接口地址。
+						url: that.host+'/e/member/ajax/index.php?action=checkregister', //仅为示例，并非真实接口地址。
 						method: "POST",
 						data: {
 							password: psw,
@@ -202,13 +211,14 @@
 							"Content-Type": "application/x-www-form-urlencoded",
 						},
 						success: (res) => {
-							if(res.data.status==='success'){
+							if (res.data.status === 'success') {
 								uni.setStorageSync('dz_userInfo', res.data.content);
 								uni.setStorageSync('dz_token', res.data.content.token);
+								that.createChatSocket();
 								uni.reLaunch({
 									url: "/pages/index/index"
 								})
-							}else{
+							} else {
 								uni.showToast({
 									title: res.data.msg,
 									duration: 1500,
@@ -241,7 +251,7 @@
 
 	.page_reg {
 		box-sizing: border-box;
-		padding: 20px;
+		padding: 40upx;
 		height: 100%;
 		display: flex;
 		flex-direction: column;
@@ -267,7 +277,7 @@
 		.input {
 			box-sizing: border-box;
 			width: 100%;
-			max-height: 40px;
+			min-height: 80upx;
 			display: flex;
 			padding: 3px;
 			flex-direction: row;
@@ -275,14 +285,14 @@
 			justify-content: center;
 
 			.img {
-				min-width: 40px;
-				min-height: 40px;
+				min-width: 80upx;
+				min-height: 80upx;
 				display: flex;
 				align-items: center;
 				justify-content: center;
 
 				.iconfont {
-					font-size: 18px;
+					font-size: 36upx;
 					color: #F05B72;
 				}
 
@@ -294,20 +304,20 @@
 			}
 
 			.get_code {
-				min-width: 90px;
-				min-height: 40px;
+				min-width: 180upx;
+				min-height: 80upx;
 				display: flex;
 				align-items: center;
 
 				.get_code_btn {
-					height: 30px;
+					height: 60upx;
+					line-height: 60upx;
 					width: 100%;
-					line-height: 30px;
 					text-align: center;
 					color: #FFFFFF;
 					background: #F05B72;
 					border-radius: 8px;
-					font-size: 14px;
+					font-size: 28upx;
 
 					&:active {
 						opacity: 0.8;
@@ -317,7 +327,7 @@
 
 			input {
 				outline: none;
-				height: 30px;
+				height: 60upx;
 				width: 100%;
 				font-size: 14px;
 
@@ -331,9 +341,9 @@
 	.submit {
 		box-sizing: border-box;
 		width: 100%;
-		height: 40px;
-		line-height: 40px;
-		margin: 30px 20px 10px 20px;
+		height: 80upx;
+		line-height: 80upx;
+		margin: 60upx 40upx 20upx 40upx;
 		color: white;
 		background-color: #F05B72;
 		-webkit-tap-highlight-color: #F05B72;

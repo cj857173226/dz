@@ -24,103 +24,20 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.container.data-v-2ddf43d0 {
-  width: 100%;
-  height: 500rpx;
-}
-.container .uni-padding-wrap.data-v-2ddf43d0 {
-    position: relative;
-}
-.container .uni-padding-wrap .swiper.data-v-2ddf43d0 {
-      width: 100%;
-      height: 500rpx;
-}
-.container .uni-padding-wrap .swiper .banner.data-v-2ddf43d0 {
-        width: 100%;
-        height: 500rpx;
-}
-.container .uni-padding-wrap .price.data-v-2ddf43d0 {
-      width: 200rpx;
-      height: 60rpx;
-      line-height: 60rpx;
-      text-align: center;
-      color: #fff;
-      font-size: 14px;
-      background-color: rgba(0, 0, 0, 0.7);
-      position: absolute;
-      bottom: 0;
-      left: 0;
-}
-.container .uni-padding-wrap .price .specific-price.data-v-2ddf43d0 {
-        font-size: 18px;
-}
-.container .uni-padding-wrap .indexes-box.data-v-2ddf43d0 {
-      color: #fff;
-      position: absolute;
-      bottom: 10rpx;
-      right: 30rpx;
-}
-
-@charset "UTF-8";
-/**
- * 这里是uni-app内置的常用样式变量
- *
- * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
- * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
- *
- */
-/**
- * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
- *
- * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
- */
-/* 颜色变量 */
-/* 行为相关颜色 */
-/* 文字基本颜色 */
-/* 背景颜色 */
-/* 边框颜色 */
-/* 尺寸变量 */
-/* 文字尺寸 */
-/* 图片尺寸 */
-/* Border Radius */
-/* 水平间距 */
-/* 垂直间距 */
-/* 透明度 */
-/* 文章场景相关 */
-.container.data-v-4219cb7f {
+.containers-box.data-v-c225d790 {
   width: 100%;
   height: 490rpx;
   background-color: #fff;
   margin-top: 10rpx;
 }
-.container .map-box.data-v-4219cb7f {
+.containers-box .map-box.data-v-c225d790 {
     width: 100%;
-    height: 364rpx;
+    height: 424rpx;
     padding: 15rpx;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
-.container .btn-box.data-v-4219cb7f {
-    text-align: center;
-    margin-top: 18rpx;
-}
-.container .btn-box .mini-btn.data-v-4219cb7f {
-      height: 80rpx;
-      line-height: 80rpx;
-      background-color: #fff;
-      font-size: 12px;
-      border: 1px solid #ef5b72;
-      color: #ef5b72;
-}
-.container .btn-box .mini-btn .contact-the-landlord-icon.data-v-4219cb7f {
-        font-size: 14px;
-        color: #ef5b72;
-        margin-right: 10rpx;
-}
-.container .btn-box .btn-the-globe.data-v-4219cb7f {
-      margin-right: 26rpx;
-}
-.csssprite.data-v-4219cb7f {
+.csssprite.data-v-c225d790 {
   display: none !important;
 }
 
@@ -150,50 +67,58 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.container.data-v-62697c44 {
+.containers.data-v-adea21a0 {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  background-color: #fff;
 }
-.container .title.data-v-62697c44 {
+.containers .title.data-v-adea21a0 {
     font-weight: bold;
     text-align: center;
 }
-.container .supporting-box.data-v-62697c44 {
+.containers .supporting-box.data-v-adea21a0 {
     width: 100%;
     padding: 40rpx;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
-.container .supporting-box .box.data-v-62697c44 {
+.containers .supporting-box .box.data-v-adea21a0 {
       width: 100%;
-      height: 72rpx;
-      color: #a5a5a5;
+      color: #000;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-pack: justify;
-      -webkit-justify-content: space-between;
-          -ms-flex-pack: justify;
-              justify-content: space-between;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-          -ms-flex-align: center;
-              align-items: center;
-      border-bottom: 1px solid #ccc;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+      -webkit-box-align: start;
+      -webkit-align-items: flex-start;
+          -ms-flex-align: start;
+              align-items: flex-start;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
 }
-.container .supporting-box .box .left.data-v-62697c44 {
-        font-size: 14px;
+.containers .supporting-box .box .icon-box.data-v-adea21a0 {
+        width: 152rpx;
+        height: 72rpx;
+        text-align: center;
+        margin-bottom: 30rpx;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
 }
-.container .supporting-box .box .left .color-icon.data-v-62697c44 {
-          font-size: 18px;
+.containers .supporting-box .box .icon-box .color-icon.data-v-adea21a0 {
+          font-size: 20px;
 }
-.container .supporting-box .box .right.data-v-62697c44 {
-        font-size: 14px;
-}
-.container .supporting-box .box .right .color-icon.data-v-62697c44 {
-          font-size: 18px;
+.containers .else-supporting-box.data-v-adea21a0 {
+    width: 100%;
+    padding: 40rpx;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    text-align: center;
+    font-size: 12px;
+    color: #CFCFCF;
 }
 
 
@@ -723,31 +648,22 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-41b95e52 {
+.contanier.data-v-33763f62 {
   width: 100%;
+  height: 600rpx;
   padding: 0 40rpx 0 40rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.contanier .title.data-v-41b95e52 {
+.contanier .title.data-v-33763f62 {
     font-weight: bold;
     text-align: center;
 }
-.contanier .unsubscribe.data-v-41b95e52 {
+.contanier .unsubscribe.data-v-33763f62 {
     width: 100%;
 }
-.contanier .rule.data-v-41b95e52 {
+.contanier .rule.data-v-33763f62 {
     text-align: right;
-}
-.contanier .mini-btn.data-v-41b95e52 {
-    height: 80rpx;
-    line-height: 80rpx;
-    background-color: #ef5b72;
-    font-size: 16px;
-    border: 1px solid #ef5b72;
-    color: #fff;
-    margin-top: 60rpx;
-    margin-bottom: 60rpx;
 }
 
 @charset "UTF-8";
@@ -776,17 +692,17 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.cantainer.data-v-d68bfae6 {
+.cantainer-description-box.data-v-56bc3d66 {
   width: 100%;
   margin-top: 10rpx;
   background-color: #fff;
 }
-.cantainer .title.data-v-d68bfae6 {
+.cantainer-description-box .title.data-v-56bc3d66 {
     font-weight: bold;
     padding-top: 36rpx;
     text-align: center;
 }
-.cantainer .introduce.data-v-d68bfae6 {
+.cantainer-description-box .introduce.data-v-56bc3d66 {
     width: 610rpx;
     height: 136rpx;
     text-align: center;
@@ -795,11 +711,11 @@
     overflow: hidden;
     padding: 44rpx 46rpx;
 }
-.cantainer .btn-box.data-v-d68bfae6 {
+.cantainer-description-box .btn-box.data-v-56bc3d66 {
     text-align: center;
     margin-top: 18rpx;
 }
-.cantainer .btn-box .mini-btn.data-v-d68bfae6 {
+.cantainer-description-box .btn-box .mini-btn.data-v-56bc3d66 {
       height: 80rpx;
       line-height: 80rpx;
       background-color: #fff;
@@ -808,30 +724,30 @@
       color: #ef5b72;
       margin: 43rpx 0 28rpx 0;
 }
-.cantainer .btn-box .mini-btn .contact-the-landlord-icon.data-v-d68bfae6 {
+.cantainer-description-box .btn-box .mini-btn .contact-the-landlord-icon.data-v-56bc3d66 {
         font-size: 14px;
         color: #ef5b72;
         margin-right: 10rpx;
 }
-.cantainer .meinv-img.data-v-d68bfae6 {
+.cantainer-description-box .meinv-img.data-v-56bc3d66 {
     width: 100%;
     height: 364rpx;
 }
-.cantainer .details-of-the-room-box.data-v-d68bfae6 {
+.cantainer-description-box .details-of-the-room-box.data-v-56bc3d66 {
     width: 100%;
     margin-top: 48rpx;
 }
-.cantainer .details-of-the-room-box .details-of-the-room-title.data-v-d68bfae6 {
+.cantainer-description-box .details-of-the-room-box .details-of-the-room-title.data-v-56bc3d66 {
       font-weight: bold;
       text-align: center;
 }
-.cantainer .details-of-the-room-box .operation-list-box.data-v-d68bfae6 {
+.cantainer-description-box .details-of-the-room-box .operation-list-box.data-v-56bc3d66 {
       width: 100%;
       padding: 40rpx;
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
 }
-.cantainer .details-of-the-room-box .operation-list-box .list-box.data-v-d68bfae6 {
+.cantainer-description-box .details-of-the-room-box .operation-list-box .list-box.data-v-56bc3d66 {
         width: 100%;
         height: 65rpx;
         font-size: 14px;
@@ -849,26 +765,26 @@
             -ms-flex-pack: justify;
                 justify-content: space-between;
 }
-.cantainer .details-of-the-room-box .operation-list-box .list-box .left.data-v-d68bfae6 {
+.cantainer-description-box .details-of-the-room-box .operation-list-box .list-box .left.data-v-56bc3d66 {
           color: #b9b9b9;
 }
-.cantainer .details-of-the-room-box .operation-list-box .list-box .right.data-v-d68bfae6 {
+.cantainer-description-box .details-of-the-room-box .operation-list-box .list-box .right.data-v-56bc3d66 {
           color: #ef5b72;
 }
-.cantainer .tenant-review-box.data-v-d68bfae6 {
+.cantainer-description-box .tenant-review-box.data-v-56bc3d66 {
     width: 100%;
 }
-.cantainer .tenant-review-box .tenant-review.data-v-d68bfae6 {
+.cantainer-description-box .tenant-review-box .tenant-review.data-v-56bc3d66 {
       text-align: center;
       font-weight: bold;
 }
-.cantainer .tenant-review-box .grades-box.data-v-d68bfae6 {
+.cantainer-description-box .tenant-review-box .grades-box.data-v-56bc3d66 {
       width: 100%;
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       padding: 40rpx;
 }
-.cantainer .tenant-review-box .grades-box .grades-contenr.data-v-d68bfae6 {
+.cantainer-description-box .tenant-review-box .grades-box .grades-contenr.data-v-56bc3d66 {
         width: 100%;
         height: 82rpx;
         border-radius: 10rpx;
@@ -886,18 +802,18 @@
             -ms-flex-align: center;
                 align-items: center;
 }
-.cantainer .tenant-review-box .grades-box .discuss-box.data-v-d68bfae6 {
+.cantainer-description-box .tenant-review-box .grades-box .discuss-box.data-v-56bc3d66 {
         margin-top: 30rpx;
         -o-text-overflow: ellipsis;
            text-overflow: ellipsis;
         overflow: hidden;
 }
-.cantainer .tenant-review-box .grades-box .discuss-box .criticism.data-v-d68bfae6 {
+.cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism.data-v-56bc3d66 {
           width: 100%;
           height: 184rpx;
           border-bottom: 1px solid #ccc;
 }
-.cantainer .tenant-review-box .grades-box .discuss-box .criticism .username-img-box.data-v-d68bfae6 {
+.cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box.data-v-56bc3d66 {
             width: 100%;
             display: -webkit-box;
             display: -webkit-flex;
@@ -910,27 +826,27 @@
             margin-bottom: 30rpx;
             margin-top: 20rpx;
 }
-.cantainer .tenant-review-box .grades-box .discuss-box .criticism .username-img-box .username-photo.data-v-d68bfae6 {
+.cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box .username-photo.data-v-56bc3d66 {
               width: 76rpx;
               height: 76rpx;
               border-radius: 50%;
 }
-.cantainer .tenant-review-box .grades-box .discuss-box .criticism .username-img-box .username-check.data-v-d68bfae6 {
+.cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box .username-check.data-v-56bc3d66 {
               font-size: 14px;
 }
-.cantainer .tenant-review-box .grades-box .discuss-box .criticism .username-img-box .username-check .check.data-v-d68bfae6 {
+.cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box .username-check .check.data-v-56bc3d66 {
                 font-size: 12px;
                 color: #d6d6d6;
 }
-.cantainer .tenant-review-box .grades-box .discuss-box .btn-box.data-v-d68bfae6 {
+.cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box.data-v-56bc3d66 {
           text-align: center;
           margin-top: 18rpx;
 }
-.cantainer .tenant-review-box .grades-box .discuss-box .btn-box .show-img.data-v-d68bfae6 {
+.cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box .show-img.data-v-56bc3d66 {
             width: 100%;
             height: 364rpx;
 }
-.cantainer .tenant-review-box .grades-box .discuss-box .btn-box .mini-btn.data-v-d68bfae6 {
+.cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box .mini-btn.data-v-56bc3d66 {
             height: 80rpx;
             line-height: 80rpx;
             background-color: #fff;
@@ -938,7 +854,7 @@
             border: 1px solid #ef5b72;
             color: #ef5b72;
 }
-.cantainer .tenant-review-box .grades-box .discuss-box .btn-box .mini-btn .contact-the-landlord-icon.data-v-d68bfae6 {
+.cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box .mini-btn .contact-the-landlord-icon.data-v-56bc3d66 {
               font-size: 14px;
               color: #ef5b72;
               margin-right: 10rpx;
@@ -970,154 +886,446 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.container.data-v-08cbee1c {
+.container.data-v-2439d150 {
   width: 100%;
-  padding: 30rpx;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  height: 100%;
+  background-color: #ededed;
 }
-.container .contact-box.data-v-08cbee1c {
-    height: 556rpx;
-    background-color: #fff;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
+.container .container-box.data-v-2439d150 {
+    width: 100%;
+    height: 500rpx;
 }
-.container .contact-box .title.data-v-08cbee1c {
-      margin-top: 42rpx;
-      font-weight: bold;
+.container .container-box .uni-padding-wrap.data-v-2439d150 {
+      position: relative;
 }
-.container .contact-box .comment.data-v-08cbee1c {
-      margin-top: 34rpx;
+.container .container-box .uni-padding-wrap .swiper.data-v-2439d150 {
+        width: 100%;
+        height: 500rpx;
+}
+.container .container-box .uni-padding-wrap .swiper .banner.data-v-2439d150 {
+          width: 100%;
+          height: 500rpx;
+}
+.container .container-box .uni-padding-wrap .price.data-v-2439d150 {
+        width: 200rpx;
+        height: 60rpx;
+        line-height: 60rpx;
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+        background-color: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+}
+.container .container-box .uni-padding-wrap .price .specific-price.data-v-2439d150 {
+          font-size: 18px;
+}
+.container .container-box .uni-padding-wrap .indexes-box.data-v-2439d150 {
+        width: 60rpx;
+        height: 60rpx;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 50%;
+        text-align: center;
+        line-height: 60rpx;
+        font-size: 12px;
+        color: #fff;
+        position: absolute;
+        bottom: 10rpx;
+        right: 30rpx;
+}
+.container .container-box .uni-padding-wrap .icon-box.data-v-2439d150 {
+        width: 60rpx;
+        height: 60rpx;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 50%;
+        line-height: 60rpx;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        font-size: 30rpx;
+        position: absolute;
+        top: 30rpx;
+        right: 30rpx;
+}
+.container .container-box .uni-padding-wrap .icon-box .love-icon.data-v-2439d150 {
+          font-size: 30rpx;
+}
+.container .container-box .uni-padding-wrap .icon-box .love-icon-red.data-v-2439d150 {
+          font-size: 30rpx;
+          color: #F8070E;
+}
+.container .container-contact-box.data-v-2439d150 {
+    width: 100%;
+    padding: 30rpx;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.container .container-contact-box .contact-box.data-v-2439d150 {
+      height: 600rpx;
+      padding: 0 20rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      background-color: #fff;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-orient: horizontal;
+      -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
-      -webkit-flex-direction: row;
-          -ms-flex-direction: row;
-              flex-direction: row;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
 }
-.container .contact-box .comment .lightning-box.data-v-08cbee1c {
-        margin-right: 20rpx;
-        color: #a4a4a4;
+.container .container-contact-box .contact-box .title.data-v-2439d150 {
+        margin-top: 42rpx;
+        text-align: center;
+        font-weight: bold;
 }
-.container .contact-box .comment .lightning-box .lightning-icon.data-v-08cbee1c {
-          color: #d5efec;
-          font-size: 18px;
+.container .container-contact-box .contact-box .comment.data-v-2439d150 {
+        margin-top: 34rpx;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row;
 }
-.container .contact-box .comment .comment-on-box.data-v-08cbee1c {
-        color: #a4a4a4;
+.container .container-contact-box .contact-box .comment .lightning-box.data-v-2439d150 {
+          margin-right: 20rpx;
+          color: #a4a4a4;
 }
-.container .contact-box .comment .comment-on-box .comment-on-icon.data-v-08cbee1c {
-          color: #cccccc;
-          font-size: 18px;
+.container .container-contact-box .contact-box .comment .lightning-box .lightning-icon.data-v-2439d150 {
+            color: #d5efec;
+            font-size: 18px;
 }
-.container .contact-box .img-box.data-v-08cbee1c {
-      width: 120rpx;
-      height: 120rpx;
-      border-radius: 50%;
-      margin-top: 30rpx;
+.container .container-contact-box .contact-box .comment .comment-on-box.data-v-2439d150 {
+          color: #a4a4a4;
 }
-.container .contact-box .img-box .img.data-v-08cbee1c {
+.container .container-contact-box .contact-box .comment .comment-on-box .comment-on-icon.data-v-2439d150 {
+            color: #cccccc;
+            font-size: 18px;
+}
+.container .container-contact-box .contact-box .img-box.data-v-2439d150 {
         width: 120rpx;
         height: 120rpx;
         border-radius: 50%;
+        margin-top: 30rpx;
 }
-.container .contact-box .autonym.data-v-08cbee1c {
-      text-align: center;
-      margin-top: 20rpx;
+.container .container-contact-box .contact-box .img-box .img.data-v-2439d150 {
+          width: 120rpx;
+          height: 120rpx;
+          border-radius: 50%;
 }
-.container .contact-box .autonym .name.data-v-08cbee1c {
+.container .container-contact-box .contact-box .autonym.data-v-2439d150 {
+        text-align: center;
+        margin-top: 20rpx;
+}
+.container .container-contact-box .contact-box .autonym .name.data-v-2439d150 {
+          font-size: 14px;
+          text-align: center;
+}
+.container .container-contact-box .contact-box .autonym .attestation.data-v-2439d150 {
+          font-size: 12px;
+          color: #a9a9a9;
+          text-align: center;
+}
+.container .container-contact-box .contact-box .autonym .mini-btn.data-v-2439d150 {
+          background-color: #fff;
+          font-size: 18px;
+          border: 1px solid #ef5b72;
+          color: #ef5b72;
+}
+.container .container-contact-box .contact-box .autonym .mini-btn .contact-the-landlord-icon.data-v-2439d150 {
+            font-size: 18px;
+            color: #ef5b72;
+            margin-right: 10rpx;
+}
+.container .container-contact-box .housing-information-box.data-v-2439d150 {
+      width: 100%;
+      height: 220rpx;
+      background-color: #fff;
+      margin-top: 10rpx;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+}
+.container .container-contact-box .housing-information-box .house-classifieds.data-v-2439d150 {
+        width: 230rpx;
         font-size: 14px;
         text-align: center;
+        margin-top: 30rpx;
 }
-.container .contact-box .autonym .attestation.data-v-08cbee1c {
-        font-size: 12px;
-        color: #a9a9a9;
-        text-align: center;
-        margin-bottom: 20rpx;
+.container .container-contact-box .housing-information-box .house-classifieds .house-icon.data-v-2439d150 {
+          font-size: 24px;
+          color: #b8b8b8;
 }
-.container .contact-box .autonym .mini-btn.data-v-08cbee1c {
+.container .container-contact-box .housing-information-box .house-classifieds .font-color.data-v-2439d150 {
+          color: #c8c8c8;
+          font-size: 12px;
+}
+.container .container-contact-box .mini-btn.data-v-2439d150 {
+      height: 80rpx;
+      line-height: 80rpx;
+      background-color: #ef5b72;
+      font-size: 16px;
+      border: 1px solid #ef5b72;
+      color: #fff;
+      margin-top: 30rpx;
+}
+.container .cantainer-description-box.data-v-2439d150 {
+    width: 100%;
+    margin-top: 10rpx;
+    background-color: #fff;
+}
+.container .cantainer-description-box .title.data-v-2439d150 {
+      font-weight: bold;
+      padding-top: 36rpx;
+      text-align: center;
+}
+.container .cantainer-description-box .introduce.data-v-2439d150 {
+      width: 610rpx;
+      height: 136rpx;
+      text-align: center;
+      -o-text-overflow: ellipsis;
+         text-overflow: ellipsis;
+      overflow: hidden;
+      font-size: 14px;
+      padding: 44rpx 46rpx;
+}
+.container .cantainer-description-box .introduces.data-v-2439d150 {
+      width: 610rpx;
+      height: 100%;
+      font-size: 14px;
+      padding: 44rpx 46rpx;
+}
+.container .cantainer-description-box .btn-box.data-v-2439d150 {
+      text-align: center;
+      margin-top: 18rpx;
+}
+.container .cantainer-description-box .btn-box .mini-btn.data-v-2439d150 {
+        height: 80rpx;
+        line-height: 80rpx;
         background-color: #fff;
-        font-size: 18px;
+        font-size: 12px;
         border: 1px solid #ef5b72;
         color: #ef5b72;
+        margin: 0rpx 0 28rpx 0;
 }
-.container .contact-box .autonym .mini-btn .contact-the-landlord-icon.data-v-08cbee1c {
-          font-size: 18px;
+.container .cantainer-description-box .btn-box .mini-btn .contact-the-landlord-icon.data-v-2439d150 {
+          font-size: 14px;
           color: #ef5b72;
           margin-right: 10rpx;
 }
-.container .housing-information-box.data-v-08cbee1c {
+.container .cantainer-description-box .meinv-img.data-v-2439d150 {
+      width: 100%;
+      height: 364rpx;
+}
+.container .cantainer-description-box .details-of-the-room-box.data-v-2439d150 {
+      width: 100%;
+      margin-top: 48rpx;
+}
+.container .cantainer-description-box .details-of-the-room-box .details-of-the-room-title.data-v-2439d150 {
+        font-weight: bold;
+        text-align: center;
+}
+.container .cantainer-description-box .details-of-the-room-box .operation-list-box.data-v-2439d150 {
+        width: 100%;
+        padding: 40rpx;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+}
+.container .cantainer-description-box .details-of-the-room-box .operation-list-box .list-box.data-v-2439d150 {
+          width: 100%;
+          height: 65rpx;
+          font-size: 14px;
+          border-bottom: 1px #ccc solid;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+              -ms-flex-pack: justify;
+                  justify-content: space-between;
+}
+.container .cantainer-description-box .details-of-the-room-box .operation-list-box .list-box .left.data-v-2439d150 {
+            color: #b9b9b9;
+}
+.container .cantainer-description-box .details-of-the-room-box .operation-list-box .list-box .right.data-v-2439d150 {
+            color: #ef5b72;
+}
+.container .cantainer-description-box .tenant-review-box.data-v-2439d150 {
+      width: 100%;
+}
+.container .cantainer-description-box .tenant-review-box .tenant-review.data-v-2439d150 {
+        text-align: center;
+        font-weight: bold;
+}
+.container .cantainer-description-box .tenant-review-box .grades-box.data-v-2439d150 {
+        width: 100%;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        padding: 40rpx;
+}
+.container .cantainer-description-box .tenant-review-box .grades-box .grades-contenr.data-v-2439d150 {
+          width: 100%;
+          height: 82rpx;
+          border-radius: 10rpx;
+          background-color: #fdf6e5;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+                  align-items: center;
+}
+.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box.data-v-2439d150 {
+          margin-top: 30rpx;
+          -o-text-overflow: ellipsis;
+             text-overflow: ellipsis;
+          overflow: hidden;
+}
+.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism.data-v-2439d150 {
+            width: 100%;
+            height: 184rpx;
+            border-bottom: 1px solid #ccc;
+}
+.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box.data-v-2439d150 {
+              width: 100%;
+              display: -webkit-box;
+              display: -webkit-flex;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-pack: justify;
+              -webkit-justify-content: space-between;
+                  -ms-flex-pack: justify;
+                      justify-content: space-between;
+              margin-bottom: 30rpx;
+              margin-top: 20rpx;
+}
+.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box .username-photo.data-v-2439d150 {
+                width: 76rpx;
+                height: 76rpx;
+                border-radius: 50%;
+}
+.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box .username-check.data-v-2439d150 {
+                font-size: 14px;
+}
+.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box .username-check .check.data-v-2439d150 {
+                  font-size: 12px;
+                  color: #d6d6d6;
+}
+.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box.data-v-2439d150 {
+            text-align: center;
+            margin-top: 18rpx;
+}
+.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box .show-img.data-v-2439d150 {
+              width: 100%;
+              height: 364rpx;
+}
+.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box .mini-btn.data-v-2439d150 {
+              height: 80rpx;
+              line-height: 80rpx;
+              background-color: #fff;
+              font-size: 12px;
+              border: 1px solid #ef5b72;
+              color: #ef5b72;
+}
+.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box .mini-btn .contact-the-landlord-icon.data-v-2439d150 {
+                font-size: 14px;
+                color: #ef5b72;
+                margin-right: 10rpx;
+}
+.container .transaction-rules-box.data-v-2439d150 {
     width: 100%;
-    height: 220rpx;
-    background-color: #fff;
-    margin-top: 10rpx;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    padding: 40rpx;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
-.container .housing-information-box .house-classifieds.data-v-08cbee1c {
-      width: 230rpx;
-      font-size: 14px;
+.container .transaction-rules-box .transaction-rules-title.data-v-2439d150 {
+      width: 100%;
       text-align: center;
-      margin-top: 30rpx;
+      color: #000;
+      font-size: 14;
+      font-weight: bold;
 }
-.container .housing-information-box .house-classifieds .house-icon.data-v-08cbee1c {
-        font-size: 24px;
-        color: #b8b8b8;
+.container .transaction-rules-box .bottom-transaction-rules.data-v-2439d150 {
+      color: #626262;
+      margin-top: 20rpx;
 }
-.container .housing-information-box .house-classifieds .font-color.data-v-08cbee1c {
-        color: #c8c8c8;
-        font-size: 12px;
+.container .transaction-rules-box .bottom-transaction-rules .booking-way-box.data-v-2439d150 {
+        margin-top: 20rpx;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
 }
-
-@charset "UTF-8";
-/**
- * 这里是uni-app内置的常用样式变量
- *
- * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
- * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
- *
- */
-/**
- * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
- *
- * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
- */
-/* 颜色变量 */
-/* 行为相关颜色 */
-/* 文字基本颜色 */
-/* 背景颜色 */
-/* 边框颜色 */
-/* 尺寸变量 */
-/* 文字尺寸 */
-/* 图片尺寸 */
-/* Border Radius */
-/* 水平间距 */
-/* 垂直间距 */
-/* 透明度 */
-/* 文章场景相关 */
-.container.data-v-09b97de8 {
-  width: 100%;
-  height: 100%;
-  background-color: #ededed;
+.container .transaction-rules-box .bottom-transaction-rules .booking-way-box .iconyuding.data-v-2439d150 {
+          font-size: 16px;
+}
+.container .transaction-rules-box .bottom-transaction-rules .booking-way-box .right-booking-way-box.data-v-2439d150 {
+          font-size: 12px;
+          margin-left: 30rpx;
+}
+.container .transaction-rules-box .bottom-transaction-rules .booking-way-box .right-booking-way-box .top-title.data-v-2439d150 {
+            color: #000;
+}
+.container .transaction-rules-box .bottom-transaction-rules .booking-way-box .right-booking-way-box .conten.data-v-2439d150 {
+            color: #d6d6d6;
+}
+.container .transaction-rules-box .bottom-transaction-rules .booking-way-box .right-booking-way-box1.data-v-2439d150 {
+          margin-left: 62rpx;
+          font-size: 12px;
+}
+.container .transaction-rules-box .bottom-transaction-rules .booking-way-box .right-booking-way-box1 .top-title.data-v-2439d150 {
+            color: #000;
+}
+.container .transaction-rules-box .bottom-transaction-rules .booking-way-box .right-booking-way-box1 .conten.data-v-2439d150 {
+            color: #d6d6d6;
+}
+.container .reserve-box.data-v-2439d150 {
+    width: 100%;
+    height: 90rpx;
+    background: #f05b72;
+    border-radius: 10rpx;
+    color: #fff;
+    line-height: 90rpx;
+    text-align: center;
+    margin-top: 30rpx;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+}
+.container .reserve-box.data-v-2439d150:active {
+      opacity: .5;
 }
 

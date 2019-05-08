@@ -177,7 +177,7 @@
 			tapSelect: function() {
 				console.warn("城市", this.city)
 				uni.navigateTo({
-					url: "/pages/index/searchCity"
+					url: "/pages/index/SearchCity"
 				})
 			},
 			change({
@@ -337,12 +337,7 @@
 			}
 		},
 		onUnload() {
-			if (this.$refs.mpvuePicker.showPicker) {
-				this.$refs.mpvuePicker.pickerCancel()
-			}
-			if (this.$refs.mpvueCityPicker.showPicker) {
-				this.$refs.mpvueCityPicker.pickerCancel()
-			}
+			
 		},
 		onPullDownRefresh() { // 监听用户下拉事件
 			console.log('refresh');

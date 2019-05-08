@@ -29,15 +29,41 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*每个页面公共css */
 @font-face {
   font-family: 'iconfont';  /* project id 1051448 */
-  src: url('https://at.alicdn.com/t/font_1051448_giz8n4fv1vc.eot');
-  src: url('https://at.alicdn.com/t/font_1051448_giz8n4fv1vc.eot?#iefix') format('embedded-opentype'),
-  url('https://at.alicdn.com/t/font_1051448_giz8n4fv1vc.woff2') format('woff2'),
-  url('https://at.alicdn.com/t/font_1051448_giz8n4fv1vc.woff') format('woff'),
-  url('https://at.alicdn.com/t/font_1051448_giz8n4fv1vc.ttf') format('truetype'),
-  url('https://at.alicdn.com/t/font_1051448_giz8n4fv1vc.svg#iconfont') format('svg');
+  src: url('http://at.alicdn.com/t/font_1051448_wi6yx6nnvcn.eot');
+  src: url('http://at.alicdn.com/t/font_1051448_wi6yx6nnvcn.eot?#iefix') format('embedded-opentype'),
+  url('http://at.alicdn.com/t/font_1051448_wi6yx6nnvcn.woff2') format('woff2'),
+  url('http://at.alicdn.com/t/font_1051448_wi6yx6nnvcn.woff') format('woff'),
+  url('http://at.alicdn.com/t/font_1051448_wi6yx6nnvcn.ttf') format('truetype'),
+  url('http://at.alicdn.com/t/font_1051448_wi6yx6nnvcn.svg#iconfont') format('svg');
 }
 .iconfont {
   font-family: "iconfont" !important;
@@ -91,8 +117,14 @@
 .icon-icon-edit:before {
   content: "\E671";
 }
+.icon-xiexianicon:before {
+  content: "\E67E";
+}
 .icon-jia:before {
   content: "\E632";
+}
+.icon-you:before {
+  content: "\E644";
 }
 .icon-beizhu:before {
   content: "\E635";
@@ -109,6 +141,9 @@
 .icon-dianhua3:before {
   content: "\E636";
 }
+.icon-diandian:before {
+  content: "\E642";
+}
 .icon-pinglun1:before {
   content: "\E665";
 }
@@ -117,6 +152,9 @@
 }
 .icon-yunxudaichongwu:before {
   content: "\E620";
+}
+.icon-yunxuzuofan:before {
+  content: "\E63D";
 }
 .icon-shenfenzheng:before {
   content: "\E608";
@@ -187,6 +225,9 @@
 .icon-huodong-:before {
   content: "\E604";
 }
+.icon-kezuofan:before {
+  content: "\E807";
+}
 .icon-wuxianwangluo:before {
   content: "\E625";
 }
@@ -211,6 +252,9 @@
 .icon-zhongxinshangbao:before {
   content: "\E708";
 }
+.icon-yuding:before {
+  content: "\E6DD";
+}
 .icon-ditu:before {
   content: "\E607";
 }
@@ -223,6 +267,9 @@
 .icon-yaju:before {
   content: "\E640";
 }
+.icon-hongxin:before {
+  content: "\E63E";
+}
 .icon-tianjiahaoyou:before {
   content: "\E650";
 }
@@ -234,6 +281,9 @@
 }
 .icon-touxiang:before {
   content: "\E60E";
+}
+.icon-xiaolian:before {
+  content: "\E63F";
 }
 .icon-yinhangqia:before {
   content: "\E616";
@@ -252,6 +302,9 @@
 }
 .icon-fukuan:before {
   content: "\E670";
+}
+.icon-xiugai:before {
+  content: "\E645";
 }
 .icon-bingxiang:before {
   content: "\E631";
@@ -316,8 +369,14 @@
 .icon-chazuo-:before {
   content: "\E61F";
 }
+.icon-_shanchu:before {
+  content: "\E6A6";
+}
 .icon-faci_juhui:before {
   content: "\E743";
+}
+.icon-sousuo:before {
+  content: "\E643";
 }
 .icon-yanjing1:before {
   content: "\E602";
@@ -333,6 +392,9 @@
 }
 .icon-wodedangxuan:before {
   content: "\E60B";
+}
+.icon-yudingfangshi:before {
+  content: "\E641";
 }
 .icon-pinglun:before {
   content: "\E61C";
@@ -398,14 +460,18 @@ page {
 	-o-transition: all 0.2s;
 	transition: all 0.2s;
 }
-.my-del-block:active{
+.my-del-block:active {
 	background: #f9f9f9 !important;
 	color: #AAAAAA;
+}
+.placeholder{
+	color: #CCCCCC;
+	font-size: 28rpx;
 }
 ._ul ._li {
 	list-style: none;
 }
-uni-picker .uni-picker-action.uni-picker-action-confirm{
+uni-picker .uni-picker-action.uni-picker-action-confirm {
 	color: #f05b72;
 }
 
