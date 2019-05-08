@@ -1,1 +1,4 @@
+<import src="/components/particulars/uni-rate/uni-rate.vue.wxml" />
+<import src="/components/particulars/supporting-facility.vue.wxml" />
+<import src="/components/particulars/unsubscribe-rules.vue.wxml" />
 
