@@ -7,12 +7,19 @@
       <!-- 评分 -->
       <view class="grade-box">
         <view class="grade">
-          <uni-rate margin=10 :value="goodRate" @change="changPoints"></uni-rate>
+          <uni-rate margin=10 :value="goodRate" maxlength=200 @change="changPoints"></uni-rate>
         </view>
       </view>
       <view class="comment-box">
-        <textarea class="area" placeholder-style="text-algin:left;font-size:14px;" placeholder="说说哪里好，其他顾客都知道" />
+        <textarea class="area" @input="buleInput" placeholder-style="text-algin:left;font-size:14px;" placeholder="说说哪里好，其他顾客都知道" />
+        <text class="number">{{number}}/140</text>
       </view>
+    </view>
+    <view class="list-box">
+      <view class="left-img">
+        <image class="title-img" src="../../static/images/meitu5.jpg"></image>
+      </view>
+      <view class="right-title">12113315</view>
     </view>
   </view>
 </template>
@@ -25,12 +32,19 @@ export default {
   data () {
     return {
       goodRate:'', // 评分星级，最高5
+      landlordValue:'', // 对房东的评论内容
+      number:'0'
     }
   },
   methods: {
     // 评分事件
     changPoints(e){
       this.goodRate = e.value;
+    },
+    // 文本輸入框
+    buleInput(e){
+      this.landlordValue = e.detail.value;
+      this.number = e.detail.cursor;
     }
   }
 }
@@ -79,16 +93,40 @@ export default {
       }
     }
     .comment-box{
+      text-align: left;
       width: 100%;
       height:324upx;
       background: #efefef;
       margin-top: 20upx;
       padding: 12upx 12upx;
       box-sizing: border-box;
+      position: relative;
       .area{
         width: 100%;
         height: 300upx;
       }
+      .number{
+        position: absolute;
+        bottom: 20upx;
+        right: 20upx;
+      }
+    }
+  }
+  .list-box{
+    width: 100%;
+    height: 120upx;
+    background-color: #efefef;
+    display: flex;
+    .left-img{
+      width: 140upx;
+      height: 100upx;
+      .img{
+        width: 140upx;
+        height: 100upx;
+      }
+    }
+    .right-title{
+      font-weight: 600;
     }
   }
 }

@@ -21,8 +21,9 @@
 				}
 			}
 		},
+		//search_city  SearchCity
 		{
-			"path": "pages/index/SearchCity",
+			"path": "pages/index/search_city",
 			"style": {
 				"navigationBarTitleText": ""
 			}
