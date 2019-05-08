@@ -10,7 +10,7 @@
 					<button class="modify_local_btn" @tap="editLocal(item)">修改地址</button>
 				</view>
 				<view class="item_body">
-					<img class="house_pic" v-if="item.titlepic" :src="item.titlepic" alt="">
+					<img class="house_pic" v-if="item.titlepic" :src="host+item.titlepic" alt="">
 					<view class="no_pic" v-if="!item.titlepic">无房源图片</view>
 					<view class="rent-status" v-if="item.is_complete== 0">未完成发布</view>
 					<view class="rent-status" v-if="item.is_complete == 1">
@@ -57,6 +57,7 @@
 	export default {
 		data() {
 			return {
+				host:shortHttp,
 				listData: [
 					// 					{
 					// 						title: '', //房屋标题
