@@ -128,7 +128,7 @@
 			<view class="grades-box">
 				<view class="grades-contenr">
 					<!-- 星星评分组件 -->
-					<uni-rate size="20" disabled="false" :value="goodRate"></uni-rate>
+					<uni-rate size="20" disabled="true" :value="goodRate"></uni-rate>
 				</view>
 				<view v-if="count != 0" class="discuss-box">
 					<view  v-for="(v,i) in commentList" :key="i" class="criticism">

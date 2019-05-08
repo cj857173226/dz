@@ -773,7 +773,14 @@
 			"style": {
 				"navigationBarTitleText": ""
 			}
-		}, {
+		},
+		{
+			"path": "pages/comment/comment_order",
+			"style": {
+				"navigationBarTitleText": "评论"
+			}
+		}, 
+		{
 			"path": "pages/setting/setting",
 			"style": {
 				"navigationBarTitleText": "设置",

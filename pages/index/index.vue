@@ -158,6 +158,7 @@
 					method: "GET",
 					success: res => {
 						if (res.data.status === 'success') {
+							console.log("轮播图",res)
 							uni.hideLoading()
 							let array = res.data.content
 							_that.contentArray = array;

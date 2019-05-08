@@ -40,7 +40,7 @@
     padding: 20rpx;
     font-size: 28rpx;
 }
-.contanier .desc_wrap ._textarea.data-v-2eabb079 {
+.contanier .desc_wrap textarea.data-v-2eabb079 {
       width: 100%;
       height: 100%;
       font-size: 28rpx;

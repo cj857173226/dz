@@ -176,7 +176,7 @@ page {
                 flex-direction: row-reverse;
         font-size: 14px;
 }
-.edit_invoice_head_page .invoice_head_form .form-item .input ._input.data-v-713f0205 {
+.edit_invoice_head_page .invoice_head_form .form-item .input input.data-v-713f0205 {
           text-align: right;
           font-size: 14px;
 }

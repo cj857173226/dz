@@ -42,7 +42,7 @@ page{
     border: 1px solid #cccccc;
     border-radius: 8rpx;
 }
-.bill_note_page .bill_note_wrap ._textarea.data-v-3e2c854e {
+.bill_note_page .bill_note_wrap textarea.data-v-3e2c854e {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;

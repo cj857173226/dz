@@ -155,7 +155,7 @@ export default {
         { name: "待退款" }
       ],
       current: 0,
-      reveal:false, //判断用户是房东还是房客
+      reveal:true, //判断用户是房东还是房客
       TabCur4: 0,
     };
   },
@@ -184,11 +184,15 @@ export default {
     },
   },
   onPullDownRefresh(){
+    if (this.reveal === true) {
+      this.$refs.underway.httpRequest(); // 调用子组件进行中的方法
+      setTimeout(()=>{
+        uni.stopPullDownRefresh();
+      },2000)
+    } else {
+      
+    }
     console.log('正在下拉')
-    this.$refs.underway.httpRequest(); // 调用子组件进行中的方法
-    setTimeout(()=>{
-      uni.stopPullDownRefresh();
-    },2000)
 
   }
 };

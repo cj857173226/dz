@@ -12,7 +12,10 @@
             <view>入住日期：{{item.startDate}}/{{item.endDate}}</view>
           </view>
           <view style="text-align: right;">
-            <text>订单已完成</text>
+            <view>
+              <text>订单已完成</text>
+              <!-- <text class="iconfont">&#xe665;</text> -->
+            </view>
             <view>入住天数：<text>{{item.dayCount}}天</text></view>
           </view>
         </view>
@@ -100,4 +103,19 @@ page{
     }
   }
 }
+// .btn{
+//   width: 160upx;
+//   height: 60upx;
+//   background-color: #1592C8;
+//   border-radius: 10upx;
+//   color: #fff;
+//   text-align: center;
+//   line-height: 60upx;
+//   &:active{
+//     opacity: .5;
+//   }
+//   /* &:nth-of-type(2){
+//     margin-top: 10upx;
+//   } */
+// }
 </style>

@@ -150,13 +150,13 @@ page {
     .quick_login_form .input .icon_pwd_switch .iconfont.data-v-606a18e2 {
       color: #A0A0A0;
 }
-.quick_login_form .input ._input.data-v-606a18e2 {
+.quick_login_form .input input.data-v-606a18e2 {
       outline: none;
       height: 30px;
       width: 100%;
       font-size: 14px;
 }
-.quick_login_form .input ._input.data-v-606a18e2:focus {
+.quick_login_form .input input.data-v-606a18e2:focus {
         outline: none;
 }
 .submit.data-v-606a18e2 {

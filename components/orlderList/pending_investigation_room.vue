@@ -14,7 +14,7 @@
           </view>
           <view style="text-align: right;">
             <text>等待查房</text>
-            <view style="width:160upx;height:60upx;color:#fff;line-height:60upx;text-align:center;background-color:#1592C8;border-radius:10upx;margin-top:10upx;" @tap="clickWorkRound(item.bookOrderId)">已查房</view>
+            <view style="width:160upx;height:60upx;color:#fff;line-height:60upx;text-align:center;background-color:#1592C8;border-radius:10upx;margin-top:10upx;" @tap.stop="clickWorkRound(item.bookOrderId)">已查房</view>
           </view>
         </view>
       </view>
@@ -39,6 +39,7 @@
           <view class="input-box">
             <input type="text" placeholder="请输入退款金额" @blur="blurInput" />
           </view>
+          <text>元</text>
         </view>
     </neil-modal>
   </scroll-view>
@@ -89,7 +90,7 @@ export default {
       console.log();
       this.id = id;
       this.show = true;
-      this.content = '确认查房是否没有问题'
+      this.content = '确认查房是否没有问题,如有物品损失可修改退款金额'
     },
     // 监听模态框
     closeModal() {
@@ -101,7 +102,7 @@ export default {
       if (type === 'confirm') {
         request({
           url:'/wap/api/order.php?action=changeState',
-          data:{id:_that.id},
+          data:{id:_that.id,additional_money:_that.value},
           success: function(res) {
             if (res.data.status === 'success') {
               uni.showToast({

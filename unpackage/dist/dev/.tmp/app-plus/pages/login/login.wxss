@@ -109,13 +109,13 @@ page {
     .login_form .input .icon_pwd_switch .iconfont.data-v-16b598e3 {
       color: #A0A0A0;
 }
-.login_form .input ._input.data-v-16b598e3 {
+.login_form .input input.data-v-16b598e3 {
       outline: none;
       height: 30px;
       width: 100%;
       font-size: 14px;
 }
-.login_form .input ._input.data-v-16b598e3:focus {
+.login_form .input input.data-v-16b598e3:focus {
         outline: none;
 }
 .submit.data-v-16b598e3 {
