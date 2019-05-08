@@ -178,7 +178,7 @@
 			tapSelect: function() {
 				console.warn("城市", this.city)
 				uni.navigateTo({
-					url: "/pages/index/SearchCity"
+					url: "/pages/index/search_city"
 				})
 			},
 			change({
