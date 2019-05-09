@@ -296,9 +296,7 @@ export default {
     },
     clickDelete(type){
       // 删除回调函数
-      let array = this.listData
-      let a = array.indexOf(type);
-      array.splice(a,1);
+      this.listData.splice(type,1)
     }, 
     clickCheck(){ // 跳转到添加入住人页面
       uni.navigateTo({
