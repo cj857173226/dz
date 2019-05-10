@@ -21,7 +21,7 @@
 				<text class="hint-bedroom-color">卧室、床铺、床单、枕头展示齐全</text>
 			</view>
 			<view class="image_wrap">
-				<view class="img_item" v-if="bedRoomImages.length>0" v-for="(item, index) in bedRoomImages" :key="index">
+				<view class="img_item" v-if="pics.length>0" v-for="(item, index) in pics" :key="index">
 					<image src="/static/images/meitu1.jpg">
 					</image>
 					<view class="del_img">
@@ -30,17 +30,15 @@
 				</view>
 
 				<!-- 临时缓存地址 -->
-				<view class="img_item2" v-if="bedRoomPics.length>0 && isUploading" v-for="(item, index) in bedRoomPics" :key="index">
+				<view class="img_item2" v-if="temporaryUpload.length>0 && isUploading&& curUploadType==='bedroom'" v-for="(item, index) in temporaryUpload"
+				 :key="index">
 					<image :src="item.path">
 					</image>
 					<view class="mask">
-						<text class="progress" v-if="!uploadStatus[index]||uploadStatus[index]==false">
+						<text class="progress" v-if="!uploadErrStatus[index]||uploadErrStatus[index]==false">
 							<text class="num">{{progressAll[index]}}</text>%
 						</text>
-						<!-- <text class="progress" v-if="uploadStatus[index] === true">
-							<text class="num">图片有误</text>
-						</text> -->
-						<text class="err" v-if="uploadStatus[index] === true">此图不符合规范!!</text>
+						<text class="err" v-if="uploadErrStatus[index] === true">{{errTips[index]}}</text>
 					</view>
 				</view>
 				<view class="choose_img" @tap.stop="chooseImg('bedroom')">
@@ -61,7 +59,7 @@
 				建议上传。站在厅角拍摄，事业会更广阔。
 			</view>
 			<view class="image_wrap">
-				<view class="img_item" v-if="liveRoomImages.length>0" v-for="(item, index) in liveRoomImages" :key="index">
+				<view class="img_item" v-if="pics.length>0" v-for="(item, index) in pics" :key="index">
 					<image src="/static/images/meitu1.jpg">
 					</image>
 				</view>
@@ -83,7 +81,7 @@
 				<text class="hint-bedroom-color">马桶卫浴、地面细节完整。</text>
 			</view>
 			<view class="image_wrap">
-				<view class="img_item" v-if="toiletImages.length>0" v-for="(item, index) in toiletImages" :key="index">
+				<view class="img_item" v-if="pics.length>0" v-for="(item, index) in pics" :key="index">
 					<image src="/static/images/meitu1.jpg">
 					</image>
 				</view>
@@ -104,7 +102,7 @@
 				建议上传。
 			</view>
 			<view class="image_wrap">
-				<view class="img_item" v-if="kitchenImages.length>0" v-for="(item, index) in kitchenImages" :key="index">
+				<view class="img_item" v-if="pics.length>0" v-for="(item, index) in pics" :key="index">
 					<image src="/static/images/meitu1.jpg">
 					</image>
 				</view>
@@ -125,7 +123,7 @@
 				建议上传。可以是其他室内空间、物件、小区周边环境等。更多的照片往往能吸引更多的房客。
 			</view>
 			<view class="image_wrap">
-				<view class="img_item" v-if="otherImages.length>0" v-for="(item, index) in otherImages" :key="index">
+				<view class="img_item" v-if="pics.length>0" v-for="(item, index) in pics" :key="index">
 					<image src="/static/images/meitu1.jpg">
 					</image>
 				</view>
@@ -150,32 +148,41 @@
 		data() {
 			return {
 				house_id: '', //房源id
-				pics: {}, // 所有图片的集合
+				pics: [], // 所有图片的集合
 				bedRoomImages: [], //卧室
 				liveRoomImages: [], //客厅
 				toiletImages: [], //卫生间
 				kitchenImages: [], //厨房
 				otherImages: [], //其他
-
 				// 图片临时存储
-				bedRoomPics: [], //卧室
-				liveRoomPics: [], //客厅
-				toiletPics: [], //卫生间
-				kitchenPics: [], //厨房
-				otherPics: [], //其他
-
+				temporaryUpload: [],
 				isUploading: false, // 是否正在上传
-				// 进度条管理
+				// 当前上传图片的类型
+				curUploadType: '',
+				// 正在上传图片进度条管理
 				progressAll: [],
-				// 错误状态
-				uploadStatus: []
+				// 正在上传图片错误状态
+				uploadErrStatus: [],
+				// 正在上传图片错误提示
+				errTips: [],
+				// 正在上传图片 是否成功的状态
+				upLoadSuccessStatus: [],
+				// 上传成功后的定时器
+				successTimer: null,
+				// 当前上传图片的总数
+				uploadTotal: 0,
+				// 当前上传了多少张图片
+				curUploadNum: 0,
+				// 是否当前所有图片都已上传
+				uploadIsComplete: false,
+				// 暂存已上传成功的图片
+				uploadSuccessPic: [],
 			}
 		},
 		onLoad() {
 			this.getCurData();
 		},
 		onShow() {
-
 		},
 		computed: {
 			...mapState(['releaseObj']),
@@ -184,34 +191,31 @@
 		methods: {
 			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
 			// 选择照片
+			// 现在上传图片为单线程 一次只能上传一种类型的图片  并且只有等待这次图片上传能完成才能进行第二次
 			chooseImg(type) {
 				if (this.isUploading) {
 					helper.layer('图片正在上传中..');
 					return;
 				}
 				const _this = this;
-				_this.progressAll = [];
-				_this.bedRoomPics = [];
+				_this.init();
 				uni.chooseImage({
 					count: 9, //默认9
 					sizeType: ['original'], //可以指定是原图还是压缩图，默认二者都有
 					sourceType: ['album', 'camera'], //从相册选择
 					success: function(res) {
-						// console.log(res);
 						let _imgs = res.tempFiles;
-						// console.log(_imgs)
+						_this.uploadTotal = _imgs.length;
 						_this.isUploading = true;
-						if (type === 'bedroom') {
-							_this.bedRoomPics = _imgs;
-						}
+						_this.curUploadType = type;
+						_this.temporaryUpload = _imgs;
 						_imgs.forEach((item, i) => {
 							let _img = item.path;
 							_this.progressAll[i] = 0;
-							_this.uploadStatus[i] = false;
-							// _this.bedRoomPics[i]['err'] = false;
+							_this.uploadErrStatus[i] = false;
+							_this.upLoadSuccessStatus[i] = false;
 							_this.uploadImg(_img, i, type);
 						})
-						// _this.uploadImg(_imgs)
 
 					}
 				});
@@ -228,25 +232,39 @@
 						"Authorization": 'Bearer ' + token,
 					},
 					success: (uploadFileRes) => {
-						const _data = JSON.parse(uploadFileRes.data)
-						if (_data.status === 'success') {
+						const _data = JSON.parse(uploadFileRes.data);
 
+						if (_data.status === 'success') {
+							let result = Object.assign(_data.content, {
+								index: index
+							});
+							_this.uploadSuccessPic.push(result);
 						} else {
-							console.log(_this.uploadStatus)
-							// _this.uploadStatus[index] = true;
-							_this.$set(_this.uploadStatus, index, true);
-							// _this.$set(_this.bedRoomPics[index],'err',true);
+							_this.$set(_this.errTips, index, _data.errorMsg);
+							_this.$set(_this.uploadErrStatus, index, true);
 						}
-						console.log(_data);
+
 					},
 					fail: (err) => {
-						console.log(index)
+						_this.$set(_this.errTips, index, '上传发生异常');
+						_this.$set(_this.uploadErrStatus, index, true);
 					},
 					complete: (res) => {
-						// console.log(res)
-						setTimeout(() => {
-							_this.isUploading = false;
-						}, 4000)
+						_this.$set(_this.upLoadSuccessStatus, index, true);
+						_this.$set(_this, 'curUploadNum', _this.curUploadNum + 1);
+						// 当所有图片都上传完了 
+						if (_this.curUploadNum === _this.uploadTotal) {
+							helper.layer('上传完毕')
+							console.log(_this.hasMainPics()); // 判断有没有主图
+							let success_pics = _this.picsSort();// 返回已排好序的 图片
+							console.log(success_pics)
+							_this.successTimer = setTimeout(() => {
+								_this.isUploading = false;
+								clearTimeout(_this.successTimer);
+								_this.successTimer = null;
+							}, 2000)
+						}
+
 					}
 				});
 				uploadTask.onProgressUpdate((res) => {
@@ -279,19 +297,68 @@
 				});
 				return _obj
 			},
+			// 设置为主图
+			setMainPic(pic) {
+				
+			},
+			// 保存图片到该房源
+			savePics(_pics) {
+
+			},
+			// 判断是否有主图
+			hasMainPics() {
+				const _this = this;
+				const old_pics = _this.pics.splice(0);
+				if (old_pics.length > 0) {
+					for (let i = 0; i < old_pics.length; i++) {
+						if (old_pics[i].is_main == 1) {
+							return true
+						}
+					}
+				}
+				return false;
+			},
+			// 图片排序
+			picsSort(){
+				const _this = this;
+				let _arr = _this.uploadSuccessPic;
+				// 根据当前索引正序排列
+				_arr.sort(function(a,b){
+					return a.index - b.index;
+				})
+				// 删除每一项index属性
+				_arr.forEach((item)=>{
+					if(item.hasOwnProperty('index')){
+						item.is_main = 0;
+						delete item.index;
+					}
+				})
+				return _arr;
+			},
+			
+			// 初始化
+			init() {
+				const _this = this;
+				_this.progressAll = [];
+				_this.temporaryUpload = [];
+				_this.errTips = [];
+				_this.upLoadSuccessStatus = [];
+				_this.uploadIsComplete = false;
+				_this.uploadTotal = 0;
+				_this.curUploadNum = 0;
+				_this.uploadSuccessPic = [];
+			},
 			// 获取当前页面的数据
 			getCurData() {
 				const _releaseObj = this.releaseObj;
+				console.log(_releaseObj)
 				this.house_id = _releaseObj.id;
-				const pics = _releaseObj.pics ? JSON.parse(_releaseObj.pics) : {};
+				const pics = _releaseObj.pics ? _releaseObj.pics : [];
 				this.pics = pics;
-				console.log(pics)
-				this.bedRoomImages = pics.bedroom;
-				this.liveRoomImages = pics.liveroom;
-				this.toiletImages = pics.toilet;
-				this.kitchenImages = pics.kitchen;
-				this.otherImages = pics.other;
 			}
+			// 
+		
+			
 		}
 	};
 </script>

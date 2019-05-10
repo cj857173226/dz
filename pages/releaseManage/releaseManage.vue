@@ -37,7 +37,7 @@
 			</view>
 		</view>
 		<view class="no_list" v-if="listData.length===0">
-				暂无房源
+			暂无房源
 		</view>
 	</view>
 </template>
@@ -57,7 +57,7 @@
 	export default {
 		data() {
 			return {
-				host:shortHttp,
+				host: shortHttp,
 				listData: [
 					// 					{
 					// 						title: '', //房屋标题
@@ -115,13 +115,13 @@
 			this.getHouseLists();
 		},
 		onShow() {
-			if(this.isEditReleaseInfo){
+			if (this.isEditReleaseInfo) {
 				this.getHouseLists();
 			}
 			this.clearReleaseInfo();
 			this.editReleaseInfoStatus(false);
 		},
-			
+
 		onNavigationBarButtonTap(e) {
 			if (e.index === 0) {
 				// 清空创建房源的信息
@@ -132,7 +132,7 @@
 				})
 			}
 		},
-		
+
 		computed: {
 			...mapState(['isEditReleaseInfo']),
 		},
@@ -171,7 +171,7 @@
 				})
 			},
 			// 编辑地址
-			editLocal(par){
+			editLocal(par) {
 				this.clearReleaseInfo();
 				this.editReleaseInfo(par);
 				uni.navigateTo({
@@ -188,7 +188,8 @@
 				uni.navigateTo({
 					url: '/pages/releaseManage/house_detail?type=edit'
 				})
-			}
+			},
+			
 		}
 	}
 </script>
@@ -205,6 +206,7 @@
 		box-sizing: border-box;
 		width: 100%;
 		height: 100%;
+
 		.house_list {
 			box-sizing: border-box;
 			width: 100%;
@@ -319,6 +321,7 @@
 
 					.foot_left {
 						flex-grow: 1;
+						width: 100%;
 
 						.house_title {
 							font-size: 36upx;
@@ -359,7 +362,8 @@
 				}
 			}
 		}
-		.no_list{
+
+		.no_list {
 			box-sizing: border-box;
 			width: 100%;
 			height: 40%;
@@ -369,7 +373,7 @@
 			color: #cccccc;
 			font-weight: 800;
 			font-size: 36upx;
-			letter-spacing:8upx;
+			letter-spacing: 8upx;
 		}
 	}
 </style>
