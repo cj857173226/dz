@@ -1328,4 +1328,31 @@
 .container .reserve-box.data-v-3ad1568d:active {
       opacity: .5;
 }
+.grades1-box.data-v-3ad1568d {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 14px;
+  padding: 0 30rpx 20rpx 30rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fff;
+  margin-bottom: 30rpx;
+}
+.grades1-box .house-classifieds.data-v-3ad1568d {
+    text-align: center;
+    color: #a0a0a0;
+}
+.grades1-box .house-classifieds .house-icon.data-v-3ad1568d {
+      font-size: 30px;
+}
+.grades1-box .house-classifieds .black.data-v-3ad1568d {
+      color: #000;
+}
 

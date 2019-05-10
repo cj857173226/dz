@@ -92,6 +92,10 @@
 					value: this.valueSync
 				})
 			}
+		},
+		mounted () {
+			console.log(this.value);
+			
 		}
 	}
 </script>

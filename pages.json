@@ -139,8 +139,16 @@
 			"path": "pages/orderList/orderList",
 			"style": {
 				"navigationBarTitleText": "订单",
-				"enablePullDownRefresh": true,
-				"backgroundTextStyle": "dark"
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue79c",
+							"fontSrc": "/static/font/iconfont.ttf",
+							"fontSize": "22px",
+							"float": "right"
+						}]
+					}
+				}
 			}
 		},
 		{

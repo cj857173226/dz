@@ -9,9 +9,10 @@
         style-type="text"
         active-color="#ef5b72"
       ></uni-segmented-control>
-      <scroll-view class="content" scroll-y="true" @scrolltolower="lower" @scrolltoupper="roof" @scroll="scroll">
+      
+      <scroll-view class="content" scroll-y="true" @scrolltolower="lower" @scrolltoupper="roof">
         <!-- 内容 -->
-        <view v-show="current === 0">
+        <view  v-show="current === 0">
           <unclosed ref="underway"></unclosed>
         </view>
         <view v-show="current === 1">
@@ -157,6 +158,8 @@ export default {
       current: 0,
       reveal:false, //判断用户是房东还是房客
       TabCur4: 0,
+      pullDown:false,
+
     };
   },
 	onLoad() {
@@ -176,29 +179,25 @@ export default {
       }
     },
     roof:function(e){ //scroll-view触顶事件
-      // console.log('到顶了',e)
+      console.log('到顶了',e)
     },
     lower:function(e){ //scroll-view触底事件
       console.log('到底了',e)
-    },
-    scroll:function(e){ //scroll-view滚动事件(滚动触发)
-      // console.log('scroll:',e)
     },
     /* ---------------------------------------------------------------------- */
     swiperChange4(e) {
       let { current } = e.target;
       this.TabCur4 = current;
-    },
+    }
   },
-  onPullDownRefresh(){
-    // 判断是房东还是房客做下拉刷新事件
+  onNavigationBarButtonTap(e){
     if (this.reveal === false) {
       this.$refs.underway.httpRequest(); 
       this.$refs.finish.overRequest();
-      setTimeout(()=>{
-        uni.stopPullDownRefresh();
-      },2000)
     } else {
+      uni.showLoading({
+        title:"加载中"
+      })
       this.$refs.entire.allRequest();
       this.$refs.pay.payRequest();
       this.$refs.stay.stayRequert();
@@ -212,8 +211,8 @@ export default {
       this.$refs.haveMoney.haveRequest();
       this.$refs.forRefund.pendsRequert();
       setTimeout(()=>{
-        uni.stopPullDownRefresh();
-      },4000)
+        uni.hideLoading()
+      },2000)
     }
   }
 };
@@ -225,6 +224,7 @@ export default {
 </style>
 
 <style lang="scss" scoped>
+
   .contanier{
     width: 100%;
     height: 100%;
@@ -235,6 +235,17 @@ export default {
         box-sizing: border-box;
         width: 100%;
         height: calc(100% - 62upx);
+        .pull-box{
+          height: 80upx;
+          background-color: #efefef;
+          color: #3790ef;
+          line-height: 80upx;
+          text-align: center;
+          .shuaxin{
+            font-size: 30upx;
+            margin-right: 10upx;
+          }
+        }
       }
     }
     .landlord-box{

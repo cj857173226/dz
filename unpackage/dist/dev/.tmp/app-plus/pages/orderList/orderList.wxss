@@ -476,6 +476,7 @@ image {
 .unclosed-contanier.data-v-a8c6d8cc {
   width: 100%;
   font-size: 14px;
+  position: relative;
   /* .unclosed-box{
     width: 100%;
     height: 600upx;
@@ -666,6 +667,16 @@ image {
 }
 .unclosed-contanier .has-been-in-box .price-endtiem-box .check-out-btn.data-v-a8c6d8cc:active {
           opacity: 0.5;
+}
+.unclosed-contanier .refreshDisplay.data-v-a8c6d8cc {
+    position: absolute;
+    top: -52rpx;
+    right: 20rpx;
+    color: #1592c8;
+}
+.unclosed-contanier .refreshDisplay .shuaxin.data-v-a8c6d8cc {
+      font-size: 30rpx;
+      margin-right: 20rpx;
 }
 
 @charset "UTF-8";
@@ -1258,6 +1269,49 @@ page {
         bottom: 0;
 }
 .contanier .overMoney .conter-box .price-endtiem-box.data-v-7af300e3 {
+      width: 100%;
+      padding: 30rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+}
+.contanier .refund .conter-box.data-v-7af300e3 {
+    width: 100%;
+    margin-top: 30rpx;
+    border-bottom: 1px solid #adadad;
+}
+.contanier .refund .conter-box .img-box.data-v-7af300e3 {
+      width: 100%;
+      height: 460rpx;
+      padding: 40rpx 80rpx;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      background-color: #ececec;
+      position: relative;
+}
+.contanier .refund .conter-box .img-box .obligation-img.data-v-7af300e3 {
+        width: 100%;
+        height: 100%;
+        border-radius: 60rpx;
+}
+.contanier .refund .conter-box .img-box .title.data-v-7af300e3 {
+        position: absolute;
+        left: 30rpx;
+        bottom: 0;
+}
+.contanier .refund .conter-box .price-endtiem-box.data-v-7af300e3 {
       width: 100%;
       padding: 30rpx;
       -webkit-box-sizing: border-box;
@@ -2246,6 +2300,17 @@ page{
               box-sizing: border-box;
       width: 100%;
       height: calc(100% - 62rpx);
+}
+.contanier .client-box .content .pull-box.data-v-3404872e {
+        height: 80rpx;
+        background-color: #efefef;
+        color: #3790ef;
+        line-height: 80rpx;
+        text-align: center;
+}
+.contanier .client-box .content .pull-box .shuaxin.data-v-3404872e {
+          font-size: 30rpx;
+          margin-right: 10rpx;
 }
 .contanier .landlord-box.data-v-3404872e {
     font-size: 14px;

@@ -16,20 +16,23 @@
     <!-- 点评操作 -->
     <view class="comment-box">
       <view class="remark-box">
-        <text class="remark-title">5条点评</text>
+        <text class="remark-title">{{count}}条点评</text>
         <!-- 星星评分组件 -->
-        <uni-rate size="20" disabled="true" value="4"></uni-rate>
+        <uni-rate size="24" disabled="true" :value="badRate"></uni-rate>
       </view>
       <view class="btn-box">
         <button class="mini-btn" type="default" size="mini" @tap="clickBtnComment">更多点评</button>
       </view>
     </view>
     <!-- 评论信息 -->
-    <view class="commentInfo">
-      <view class="commentInfo-username">najigbau</view>
-      <view class="check-in-time">2019.2入住</view>
-      <view class="commentIn-fo">评论信息评论信息评论信息评论信息评论信息</view>
+    <view class="comment" v-if="Object.keys(lodger).length > 0">
+      <view class="commentInfo" v-for="(item,i) in lodger" :key="i">
+        <view class="commentInfo-username">{{item.user[0].realname}}</view>
+        <view class="check-in-time">{{item.comment_time}}</view>
+        <view class="commentIn-fo">{{item.comment}}</view>
+      </view>
     </view>
+    <view v-else>占无评论</view>
     <!-- 房源 -->
     <view class="property-id-box">
       <view class="property-id-title">{{listingCount}}个房源</view>
@@ -65,7 +68,10 @@ export default {
       username:'', //房东名字
       phone:'', //验证信息
       listingCount:'', //多少房源
-      scrollList:[],
+      scrollList:[], // 房源数据
+      badRate: 0, // 评分
+      lodger:[], // 评论数据
+      count:'', // 评论条数
     }
   },
   props: ["landlord"],
@@ -82,27 +88,51 @@ export default {
       uni.navigateTo({
         url:`/pages/particulars/particulars?id=${teyp}`
       })
+    },
+    httpRequerst(){
+      const _this = this;
+      let id = _this.landlord
+      request({
+        url:portrait,
+        data:{landlordId:id},
+        success: res => {
+          console.log("房东详情：",res);
+          if (res.data.status === 'success') {
+            _this.userpic = res.data.content.landlordInfo.userpic
+            _this.username = res.data.content.landlordInfo.username
+            let phone = res.data.content.landlordInfo.phone 
+            if (!phone=="") {
+              _this.phone = "手机号"
+            } else {
+              _this.phone = "未验证"
+            }
+            _this.listingCount = res.data.content.listing_count
+            _this.scrollList = res.data.content.listing
+            _this.lodger = res.data.content.comment.content
+            // _this.badRate = parseInt(res.data.content.comment.goodRate)
+            this.$set(this, 'badRate', parseInt(res.data.content.comment.goodRate))
+            // Object.assign(this, {'badRate': 3});
+            _this.count = res.data.content.comment.count
+            console.log('1',_this.badRate);
+            
+          } else {
+            uni.showToast({
+              title:res.data.errorMsg,
+              icon:'none'
+            })
+          }
+        },
+        fail: function(err) {
+          uni.showToast({
+            title:'系统错误，请稍后再试',
+            icon:'none'
+          })
+        }
+      })
     }
   },
   mounted () {
-    let id = this.landlord
-    request({
-      url:portrait,
-      data:{landlordId:id},
-      success: res => {
-        console.log("房东详情：",res);
-        this.userpic = res.data.content.landlordInfo.userpic
-        this.username = res.data.content.landlordInfo.username
-        let phone = res.data.content.landlordInfo.phone 
-        if (!phone=="") {
-          this.phone = "手机号"
-        } else {
-          this.phone = "未验证"
-        }
-        this.listingCount = res.data.content.listing_count
-        this.scrollList = res.data.content.listing
-      }
-    })
+    this.httpRequerst()
   }
 }
 </script>
@@ -179,30 +209,35 @@ export default {
         }
       }
     }
-    .commentInfo{
+    .comment{
       width: 100%;
-      height: 232upx;
-      border-radius: 20upx;
-      background-color: #f4f4f4;
-      line-height: 40upx;
-      padding: 40upx;
-      box-sizing: border-box;
-      overflow: hidden;
-      text-overflow:ellipsis;
-      white-space: nowrap;
-      .commentInfo-username{
-        font-size: 14px;
-        font-weight: bold;
-      }
-      .check-in-time{
-        font-size: 12px;
-        color: #a5a5a5;
-      }
-      .commentIn-fo{
-        font-size: 14px;
-        margin-top: 10upx;
+      .commentInfo{
+        width: 100%;
+        height: 232upx;
+        border-radius: 20upx;
+        background-color: #f4f4f4;
+        line-height: 40upx;
+        padding: 40upx;
+        box-sizing: border-box;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+        margin-bottom: 20upx;
+        .commentInfo-username{
+          font-size: 14px;
+          font-weight: bold;
+        }
+        .check-in-time{
+          font-size: 12px;
+          color: #a5a5a5;
+        }
+        .commentIn-fo{
+          font-size: 14px;
+          margin-top: 10upx;
+        }
       }
     }
+    
     .property-id-box{
       width: 100%;
       margin-top: 50upx;

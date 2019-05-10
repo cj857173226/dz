@@ -489,6 +489,7 @@ export default {
         }
       }
     }
+
   },
   mounted() {
     const _that = this;
@@ -500,7 +501,7 @@ export default {
 .unclosed-contanier {
   width: 100%;
   font-size: 14px;
-  
+  position: relative;
   .conter-box {
     width: 100%;
     margin-top: 30upx;
@@ -662,6 +663,17 @@ export default {
       }
     }
   } */
+  .refreshDisplay{
+    position: absolute;
+    top: -52upx;
+    right: 20upx;
+    color: #1592c8;
+    .shuaxin{
+      font-size: 30upx;
+      margin-right: 20upx;
+    }
+    
+  }
 }
 </style>
 

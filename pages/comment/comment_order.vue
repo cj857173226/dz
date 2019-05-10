@@ -41,41 +41,20 @@
           <image class="picture-img" src="../../static/images/tinajia.png" mode="scaleToFill"></image>
         </view>
       </view>
-      <!-- <view v-if="listPictureFake.length > 0" class="add-picture">
-        <view v-for="(item,i) in listPictureFake" :key="i" class="add-picture-img-box">
-          <image class="add-picture-img" :src="item" @tap.stop="uploadedPreview(item)"></image>
-          <text class="iconfont chacha" @tap.stop="clickDelete(item)">&#xe664;</text>
-          <view class="shade">100%</view>
-        </view>
-        <view  class="picture-box" @tap="clickAddPicture">
-          <image class="picture-img" src="../../static/images/tinajia.png" mode="scaleToFill"></image>
-        </view>
-      </view> -->
       <view  v-else class="picture-box" @tap="clickAddPicture">
         <image class="picture-img" src="../../static/images/tinajia.png"></image>
       </view>
     </view>
-    <!-- <view class="btn" @tap="clickPresent">提交评论</view> -->
-    <!-- <neil-modal 
-      :show="show" 
-      @close="closeModal"
-      align="center" 
-      title="提示"
-      content="添加房间环境图片，让更多朋友看到"
-      @cancel="bindBtn('cancel')"
-      @confirm="bindBtn('confirm')"
-      >
-    </neil-modal> -->
+    <view class="btn" @tap="clickPresent">提交评论</view>
   </view>
 </template>
 <script>
 import uniRate from "../../components/particulars/uni-rate/uni-rate.vue" //评分插件
-// import neilModal from '../../components/neil-modal/neil-modal'; // 引入弹出框插件
 import {request} from '../../common/request.js' // 封装的带有token的请求方法
 import {shortHttp} from "../../common/requestUrl.json"; // 接口文件
 export default {
   components: {
-    uniRate
+    uniRate,
   },
   data () {
     return {
@@ -87,13 +66,14 @@ export default {
       number2:'0',
       orderValue:'', // 订单评论内容
       listPicture:[], // 图片上传的数组
-      listPictureFake:[], // 图片上传进度
       show:false, // 是否开启弹出框
       orderId:'', // 订单id
       landlordName:'', // 房东账号名字
       headPortrait:'', // 房东头像
       roomUrl:'', // 展示图片地址
+      roomTitle:'',
       previewAry:[], // 预览图片地址
+      submitImgData:[] // 提交图片的数组
     }
   },
   methods: {
@@ -116,18 +96,35 @@ export default {
     // 添加图片
     clickAddPicture(){
       const _this = this;
-      const value = uni.getStorageSync('dz_token');
-      console.log('token',value);
+      const value = uni.getStorageSync('dz_token'); // 同步获取token
       uni.chooseImage({
         // 默认九张图片上传
         sizeType:['compressed'],
         sourceType:['album','camera'],
         success: function(res) {
-          console.log(res);
           let ary = res.tempFilePaths;
-          let _ary = [];
+          // 循环上传的图片
           for (let i = 0; i < ary.length; i++) {
-            // _this.listPicture.push(ary[i])
+            _this.listPicture.push(ary[i])
+            uni.uploadFile({
+              url:`${shortHttp}/wap/api/upload.php?type=comment`,
+              header: {
+                "Authorization": 'Bearer ' + value,
+              },
+              fileType:'image',
+              filePath:ary[i],
+              name:'file',
+              success:function(uploadFileRes) {
+                let response = JSON.parse(uploadFileRes.data);
+                console.log("转换",response);
+                _this.submitImgData.push(response.content.path);
+              }
+            })
+          }
+          
+          // let _ary = [];
+         /*  for (let i = 0; i < ary.length; i++) {
+            _this.listPicture.push(ary[i])
             uni.uploadFile({
               url:`${shortHttp}/wap/api/upload.php?type=comment`,
               header: {
@@ -156,8 +153,8 @@ export default {
                 })
               }
             })
-          }
-          console.log('_ary',_ary);
+          } */
+          // console.log('_ary',_ary);
             
         },
         fail: function(err) {
@@ -199,29 +196,44 @@ export default {
           icon:'none'
         })
       } else {
-        let ary = _this.listPicture;
+        let ary = _this.submitImgData;
         if (ary.length > 0) {
-          // for (let i = 0; i < ary.length; i++) {
-          //   uni.uploadFile({
-          //     url:'/wap/api/upload.php',
-          //     fileType:'image',
-          //     filePath:ary[i],
-          //     name:'file',
-          //     success:function(res) {
-          //       console.log("上传",res);
-                
-          //     },
-          //     fail: function(err) {
-          //       uni.showToast({
-          //         title:err,
-          //         icon:'none',
-          //       })
-          //     }
-          //   })
-            
-          // }
-          
+          let data = JSON.stringify(ary)
+          console.log('1',data);
+          request({
+            url:'/wap/api/detail.php?action=createComment',
+            method:"POST",
+            data:{
+              dd_id:_this.orderId,
+              dd_comment:_this.orderValue,
+              landlord_comment:_this.landlordValue,
+              dd_start:_this.indentRate,
+              land_start:_this.goodRate,
+              pictures:data
+            },
+            success: function(res) {
+              console.log('提交订单',res);
+              if (res.data.status === 'success') {
+                uni.showToast({
+                  title:'评论成功',
+                  icon:'none'
+                })
+              } else {
+                uni.showToast({
+                  title:res.data.errorMsg,
+                  icon:'none'
+                })
+              }
+            },
+            fail: function(err) {
+              uni.showToast({
+                title:'系统异常，请稍后再试',
+                icon:'none'
+              })
+            }
+          })
         } else {
+          console.log('2');
           request({
             url:'/wap/api/detail.php?action=createComment',
             method:"POST",
@@ -291,7 +303,7 @@ export default {
           _this.landlordName = res.data.content.landlord.landlordName;
           _this.headPortrait = res.data.content.landlord.headImageUrl;
           _this.roomUrl = res.data.content.images[0].bigImgUrl;
-          _this.roomTitle = res.data.content.detail.addPriceDesc;
+          _this.roomTitle = res.data.content.luBase.lodgeUnitName;
           let array = [];
           let ary = res.data.content.images;
           for (let i = 0; i < ary.length; i++) {
@@ -473,6 +485,19 @@ export default {
           color: rgba($color: #000, $alpha: .5);
           font-size: 20px;
 
+        }
+        .shade{
+          width: 140upx;
+          height: 140upx;
+          color: #fff;
+          background-color: rgba($color: #000, $alpha: .5);
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 100;
+          text-align: center;
+          line-height: 140upx;
+          border-radius: 10upx;
         }
       }
     }

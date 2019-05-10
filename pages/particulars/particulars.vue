@@ -132,7 +132,7 @@
 							<!-- 星星评分组件 -->
 							<uni-rate size="20" disabled="false" :value="goodRate"></uni-rate>
 						</view>
-						<view v-if="count != 0" class="discuss-box">
+						<view v-if="commentList.length>0" class="discuss-box">
 							<view v-for="(v,i) in commentList" :key="i" class="criticism">
 								<view class="username-img-box">
 									<view class="username-check">
@@ -146,8 +146,8 @@
 								</text>
 							</view>
 							<view class="btn-box">
-								<button class="mini-btn btn-the-globe" type="primary" size="mini" @tap="clickDiscuss(landlordId)">
-									全部评论({{commentList.length}})
+								<button class="mini-btn btn-the-globe" type="primary" size="mini" @tap="clickDiscuss">
+									全部评论({{count}})
 								</button>
 							</view>
 							<image class="show-img" src="../../static/images/landlordguide/banner4.jpg" alt="展示图片"></image>
@@ -252,8 +252,9 @@
 		},
 		data() {
 			return {
-				isTrue: true,
-				commentList: null, //评论数据
+				isTrue: false,
+				commentList: [], //评论数据
+				count:'', // 全部评论条数
 				imgArray: null, // 图片的数据
 				price: null, // 房间价格
 				http: shortHttp, // 域名
@@ -290,7 +291,7 @@
 				deepLength: 1,
 				pickerValueDefault: [0],
 				pickerValueArray: [],
-				luId: '',
+				luId: '', // 房源id
 				showPicker: false,
 				type: 'range', //时间插件类型  可选值：date（日期）、time（时间）、datetime（日期时间）、range（日期范围）、rangetime（日期时间范围）
 				value: '',
@@ -342,16 +343,9 @@
 				})
 			},
 			// 点击跳转页面查看房东所有描述
-			clickDiscuss(type) {
-				request({
-					url: fangDongDiscuss,
-					data: {
-						id: type
-					},
-					success: res => {
-						console.log("查看房东评论：", res);
-
-					}
+			clickDiscuss() {
+				uni.navigateTo({
+					url:`/pages/comment/comment?roomId=${this.luId}`
 				})
 			},
 			onCollect() {
@@ -492,6 +486,7 @@
 					luId: _that.luId
 				},
 				success: res => {
+					let array=[];
 					console.log("房间详情", res.data.content);
 					let datas = res.data.content
 					_that.data = datas
@@ -519,7 +514,11 @@
 					_that.minDays = datas.detail.minDays
 					_that.maxDays = datas.detail.maxDays
 					_that.foreigner = datas.detail.foreigner
-					_that.commentList = datas.comment.content
+					let commentList = datas.comment.content
+					for (const i in commentList) {
+						_that.commentList.push(commentList[i])
+					}
+					_that.count = datas.comment.count
 					_that.goodRate = datas.comment.goodRate
 					_that.count = datas.comment.count
 					_that.headImageUrl = datas.landlord.headImageUrl

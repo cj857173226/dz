@@ -22,7 +22,7 @@
             <view style="color:#B5B5B5;">推荐安装微信5.0及以上版本的用户使用</view>
           </view>
         </view>
-        <radio  color="#EA516B" value="微信"/>
+        <radio  color="#EA516B" disabled="true" value="微信"/>
       </view>
     </radio-group>
     <button class="pay-btn" :disabled="WhetherDisable" @click="clickPayment">支付</button>
@@ -40,7 +40,13 @@ export default {
     }
   },
   onLoad(option){
-    this.id = option.bookOrderId
+    this.id = option.bookOrderId;
+    // uni.getProvider({
+    //   service:'payment',
+    //   success:function(res){
+    //     console.warn(res.provider)
+    //   }
+    // })
   },
   methods: {
     radioChange(e){ // 获取用户选择的支付方式
