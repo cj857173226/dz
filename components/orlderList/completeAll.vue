@@ -202,7 +202,7 @@
       </view>
     </view>
     <!-- 待退款 -->
-    <view v-if="refund.length > 0">
+    <view class="refund" v-if="refund.length > 0">
       <view class="conter-box" v-for="(item,i) in refund" :key="i">
         <view class="img-box">
           <image class="obligation-img" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
@@ -891,6 +891,40 @@ page {
     }
   }
   .overMoney{
+    .conter-box{
+      width: 100%;
+      margin-top: 30upx;
+      border-bottom: 1px solid #adadad;
+      .img-box{
+        width: 100%;
+        height: 460upx;
+        padding: 40upx 80upx;
+        box-sizing: border-box;
+        background-color: #ececec;
+        position: relative;
+        .obligation-img{
+          width: 100%;
+          height: 100%;
+          border-radius: 60upx;
+        }
+        .title{
+          position: absolute;
+          left: 30upx;
+          bottom: 0;
+        }
+      }
+      
+      .price-endtiem-box{
+        width: 100%;
+        padding: 30upx;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
+  .refund{
     .conter-box{
       width: 100%;
       margin-top: 30upx;

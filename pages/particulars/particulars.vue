@@ -52,19 +52,24 @@
 			</view>
 		</view>
 		<view class="tenant-review-box">
-			<view class="tenant-review">房客点评</view>
-			<view class="grades-box">
-				<view class="grades-contenr">
+			<view class="grades1-box">
+				<!-- <view class="grades-contenr"> -->
 					<!-- 星星评分组件 -->
-					<uni-rate size="20" disabled="true" :value="goodRate"></uni-rate>
+					<!-- <uni-rate size="20" disabled="true" :value="goodRate"></uni-rate>
+				</view> -->
+				<view class="house-classifieds">
+					<i class="iconfont house-icon">&#xe61b;</i>
+					<view class="black">{{leaseType}}</view>
+					<view>{{area}}</view>
+					<view>{{houseType}}</view>
 				</view>
 				<view class="house-classifieds">
 					<i class="iconfont house-icon">&#xe606;</i>
-					<view>宜住{{bedNum}}人</view>
+					<view class="black">宜住{{bedNum}}人</view>
 				</view>
 				<view class="house-classifieds">
 					<i class="iconfont house-icon">&#xe61f;</i>
-					<view>{{bedNumTip}}</view>
+					<view class="black">{{bedNumTip}}</view>
 				</view>
 			</view>
 			<!-- 自定义组件 -->
@@ -977,6 +982,26 @@
 
 			&:active {
 				opacity: .5;
+			}
+		}
+	}
+	.grades1-box{
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		font-size:14px;
+		padding: 0 30upx 20upx 30upx;
+		box-sizing: border-box;
+		background-color: #fff;
+		margin-bottom: 30upx;
+		.house-classifieds{
+			text-align: center;
+			color: #a0a0a0;
+			.house-icon{
+				font-size: 30px;
+			}
+			.black{
+				color: #000;
 			}
 		}
 	}

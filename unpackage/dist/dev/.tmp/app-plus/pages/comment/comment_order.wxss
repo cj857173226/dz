@@ -115,5 +115,44 @@
 }
 .container .list-box .right-title.data-v-526addde {
       font-weight: 600;
+      margin-left: 20rpx;
+}
+.container .grade-box.data-v-526addde {
+    background: #f5d7d7;
+    height: 80rpx;
+    border-radius: 10rpx;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 20rpx;
+}
+.container .grade-box .grade.data-v-526addde {
+      width: 360rpx;
+      margin: 0 auto;
+}
+.container .comment-box.data-v-526addde {
+    text-align: left;
+    width: 100%;
+    height: 324rpx;
+    background: #efefef;
+    margin-top: 20rpx;
+    padding: 12rpx 12rpx;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    position: relative;
+}
+.container .comment-box .area.data-v-526addde {
+      width: 100%;
+      height: 300rpx;
+}
+.container .comment-box .number.data-v-526addde {
+      position: absolute;
+      bottom: 20rpx;
+      right: 20rpx;
 }
 

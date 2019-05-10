@@ -25,7 +25,7 @@
                 <text>{{item.dayCount}}天</text>
               </view>
               <!-- <text class="iconfont pinglun">&#xe665;</text> -->
-              <view class="btn" @tap.stop="comment()">评论</view>
+              <view class="btn" @tap.stop="comment(item.bookOrderId,item.luId)">评论</view>
             </view>
             <view v-else>
               入住天数：
@@ -62,9 +62,12 @@ export default {
       
     } */
     // 评论
-    comment(){
+    comment(orderId,roomId){
+      // orderId：订单id  roomId：房源id  
+      console.log(orderId,roomId);
+      
       uni.navigateTo({
-        url:'/pages/comment/comment_order'
+        url:`/pages/comment/comment_order?orderId=${orderId}&roomId=${roomId}`
       })
     },
     // 请求数据方法
