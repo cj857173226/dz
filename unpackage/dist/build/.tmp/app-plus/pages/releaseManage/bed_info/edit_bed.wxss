@@ -29,14 +29,14 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.edit_bed_page.data-v-7465651c {
+.edit_bed_page.data-v-4ee02371 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
   min-height: 100%;
   padding: 40rpx 30rpx 20rpx;
 }
-.edit_bed_page .form_item.data-v-7465651c {
+.edit_bed_page .form_item.data-v-4ee02371 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
@@ -58,7 +58,7 @@ page {
     font-size: 32rpx;
     border-bottom: 1px solid #EAEAEA;
 }
-.edit_bed_page .form_item .content_wrap.data-v-7465651c {
+.edit_bed_page .form_item .content_wrap.data-v-4ee02371 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       display: -webkit-box;
@@ -75,25 +75,25 @@ page {
           -ms-flex-positive: 1;
               flex-grow: 1;
 }
-.edit_bed_page .form_item .content_wrap .ipt.data-v-7465651c {
+.edit_bed_page .form_item .content_wrap .ipt.data-v-4ee02371 {
         text-align: right;
 }
-.edit_bed_page .form_item .after-icon .iconfont.data-v-7465651c {
+.edit_bed_page .form_item .after-icon .iconfont.data-v-4ee02371 {
       font-size: 32rpx;
       color: #AAAAAA;
 }
-.edit_bed_page .form_item .after-icon.data-v-7465651c,
-    .edit_bed_page .form_item .unit.data-v-7465651c {
+.edit_bed_page .form_item .after-icon.data-v-4ee02371,
+    .edit_bed_page .form_item .unit.data-v-4ee02371 {
       margin-left: 10rpx;
 }
-.edit_bed_page .bed-number-wrap.data-v-7465651c {
+.edit_bed_page .bed-number-wrap.data-v-4ee02371 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
     padding: 30rpx 0;
     border-bottom: 1px solid #cccccc;
 }
-.edit_bed_page .bed-number-wrap .main-box.data-v-7465651c {
+.edit_bed_page .bed-number-wrap .main-box.data-v-4ee02371 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
@@ -115,7 +115,7 @@ page {
           -ms-flex-align: center;
               align-items: center;
 }
-.edit_bed_page .bed-number-wrap .main-box .number-control.data-v-7465651c {
+.edit_bed_page .bed-number-wrap .main-box .number-control.data-v-4ee02371 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         display: -webkit-box;
@@ -136,8 +136,8 @@ page {
             -ms-flex-align: center;
                 align-items: center;
 }
-.edit_bed_page .bed-number-wrap .main-box .number-control .reduce-btn.data-v-7465651c,
-        .edit_bed_page .bed-number-wrap .main-box .number-control .add-btn.data-v-7465651c {
+.edit_bed_page .bed-number-wrap .main-box .number-control .reduce-btn.data-v-4ee02371,
+        .edit_bed_page .bed-number-wrap .main-box .number-control .add-btn.data-v-4ee02371 {
           -webkit-box-sizing: border-box;
                   box-sizing: border-box;
           width: 40rpx;
@@ -146,35 +146,35 @@ page {
           text-align: center;
           border: 1px solid #000000;
 }
-.edit_bed_page .bed-number-wrap .main-box .number-control .reduce-btn .iconfont.data-v-7465651c,
-          .edit_bed_page .bed-number-wrap .main-box .number-control .add-btn .iconfont.data-v-7465651c {
+.edit_bed_page .bed-number-wrap .main-box .number-control .reduce-btn .iconfont.data-v-4ee02371,
+          .edit_bed_page .bed-number-wrap .main-box .number-control .add-btn .iconfont.data-v-4ee02371 {
             font-size: 32rpx;
 }
-.edit_bed_page .bed-number-wrap .main-box .number-control .dis-num.data-v-7465651c {
+.edit_bed_page .bed-number-wrap .main-box .number-control .dis-num.data-v-4ee02371 {
           pointer-events: none;
           color: #cccccc !important;
           border: 1px solid #EAEAEA !important;
 }
-.edit_bed_page .bed-number-wrap .main-box .number-control .bed-num.data-v-7465651c {
+.edit_bed_page .bed-number-wrap .main-box .number-control .bed-num.data-v-4ee02371 {
           -webkit-box-sizing: border-box;
                   box-sizing: border-box;
           padding: 0 10rpx;
           width: 100rpx;
           text-align: right;
 }
-.edit_bed_page .bed-number-wrap .main-box .number-control .bed-num text.data-v-7465651c {
+.edit_bed_page .bed-number-wrap .main-box .number-control .bed-num text.data-v-4ee02371 {
             width: 40rpx;
             display: inline-block;
 }
-.edit_bed_page .bed-number-wrap .tips.data-v-7465651c {
+.edit_bed_page .bed-number-wrap .tips.data-v-4ee02371 {
       margin-top: 20rpx;
       font-size: 28rpx;
       color: #aaaaaa;
 }
-.edit_bed_page .add_btn.data-v-7465651c {
+.edit_bed_page .add_btn.data-v-4ee02371 {
     margin-top: 40rpx;
 }
-.edit_bed_page .del_btn.data-v-7465651c {
+.edit_bed_page .del_btn.data-v-4ee02371 {
     margin-top: 20rpx;
     color: #AAAAAA;
 }

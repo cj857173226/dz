@@ -18,7 +18,7 @@
       </view>
     </view>
     <view v-if="landlordData.length>0">
-      <view class="comment-box">
+      <view class="comment-box" v-for="(item,i) in landlordData" :key="i">
         <view class="top-box">
           <image class="userphoto" src="../../static/images/meitu1.jpg"></image>
           <view class="nickname-check-in-time">
@@ -27,11 +27,11 @@
           </view>
         </view>
         <view class="comment-content">
-          <view style="font-size:14px;">每一次都在孤单中徘徊</view>
+          <view style="font-size:14px;text-algin:center">每一次都在孤单中徘徊</view>
         </view>
       </view>
     </view>
-    <view v-else>占无相关评论</view>
+    <view v-else style="text-align:center">占无相关评论</view>
   </view>
 </template>
 <script>
@@ -51,8 +51,12 @@ export default {
     })
     console.log(option);
     const _this = this;
+    // 判断option接收到的值是从哪个地方传过来的
+    /* 
+      roomId：房源id
+      id：房东id
+    */
     if (option.roomId) {
-      console.log('1111');
       request({
         url:'/wap/api/detail.php?action=comments',
         data:{id:option.roomId},
@@ -77,19 +81,20 @@ export default {
       })
     } else {
       request({
-        url:'/wap/api/detail.php?action=comments',
+        url:'/wap/api/fangdong.php?action=comments',
         data:{id:option.id},
         success: function(res) {
           uni.hideLoading()
+            console.log('房东评论',res)
           if (res.data.status === 'success') {
-            _this.landlordData = res.data.content.content
+            _this.landlordData = res.data.content
           } else {
             uni.showToast({
               title:res.data.errorMsg,
               icon:'none'
             })
           }
-          console.log(res)
+          
         },
         fail: function(err) {
           uni.showToasr({

@@ -29,23 +29,23 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.house_facilities_page.data-v-bb3b8c82 {
+.house_facilities_page.data-v-7bb805a2 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
   min-height: 100%;
 }
-.house_facilities_page .facilities_check_group.data-v-bb3b8c82 {
+.house_facilities_page .facilities_check_group.data-v-7bb805a2 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
 }
-.house_facilities_page .facilities_check_group .check_wrap.data-v-bb3b8c82 {
+.house_facilities_page .facilities_check_group .check_wrap.data-v-7bb805a2 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
 }
-.house_facilities_page .facilities_check_group .check_wrap .title.data-v-bb3b8c82 {
+.house_facilities_page .facilities_check_group .check_wrap .title.data-v-7bb805a2 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         width: 100%;
@@ -54,7 +54,7 @@ page {
         padding: 0 20rpx;
         background: #eaeaea;
 }
-.house_facilities_page .facilities_check_group .check_wrap .check_item.data-v-bb3b8c82 {
+.house_facilities_page .facilities_check_group .check_wrap .check_item.data-v-7bb805a2 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         width: 100%;
@@ -76,13 +76,13 @@ page {
         color: #000;
         border-bottom: 1px solid #eaeaea;
 }
-.house_facilities_page .facilities_check_group .check_wrap .check_item .check_icon.data-v-bb3b8c82 {
+.house_facilities_page .facilities_check_group .check_wrap .check_item .check_icon.data-v-7bb805a2 {
           margin-right: 16rpx;
 }
-.house_facilities_page .facilities_check_group .check_wrap .check_item .check_icon .iconfont.data-v-bb3b8c82 {
+.house_facilities_page .facilities_check_group .check_wrap .check_item .check_icon .iconfont.data-v-7bb805a2 {
             font-size: 34rpx;
 }
-.house_facilities_page .facilities_check_group .check_wrap .check_item .label.data-v-bb3b8c82 {
+.house_facilities_page .facilities_check_group .check_wrap .check_item .label.data-v-7bb805a2 {
           height: 100%;
           line-height: 90rpx;
           -webkit-box-flex: 1;
@@ -90,7 +90,7 @@ page {
               -ms-flex-positive: 1;
                   flex-grow: 1;
 }
-.house_facilities_page .facilities_check_group .check_wrap .check_item .check_box.data-v-bb3b8c82 {
+.house_facilities_page .facilities_check_group .check_wrap .check_item .check_box.data-v-7bb805a2 {
           -webkit-box-sizing: border-box;
                   box-sizing: border-box;
           width: 36rpx;
@@ -99,17 +99,17 @@ page {
           text-align: center;
           line-height: 36rpx;
 }
-.house_facilities_page .facilities_check_group .check_wrap .check_item .check_box .iconfont.data-v-bb3b8c82 {
+.house_facilities_page .facilities_check_group .check_wrap .check_item .check_box .iconfont.data-v-7bb805a2 {
             font-size: 32rpx;
             color: #F05B72;
 }
-.house_facilities_page .facilities_check_group .check_wrap .check_item_on .check_icon.data-v-bb3b8c82 {
+.house_facilities_page .facilities_check_group .check_wrap .check_item_on .check_icon.data-v-7bb805a2 {
         color: #F05B72;
 }
-.house_facilities_page .facilities_check_group .check_wrap .check_item_on .label.data-v-bb3b8c82 {
+.house_facilities_page .facilities_check_group .check_wrap .check_item_on .label.data-v-7bb805a2 {
         color: #F05B72;
 }
-.house_facilities_page .facilities_check_group .check_wrap .check_item_on .check_box.data-v-bb3b8c82 {
+.house_facilities_page .facilities_check_group .check_wrap .check_item_on .check_box.data-v-7bb805a2 {
         border: 1px solid #F05B72;
 }
 

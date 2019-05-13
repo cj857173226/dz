@@ -29,20 +29,20 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.house_type_page.data-v-02bb07b1 {
+.house_type_page.data-v-ccdd7c20 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 100%;
   padding: 40rpx 30rpx 20rpx;
 }
-.house_type_page .tips_wrap.data-v-02bb07b1 {
+.house_type_page .tips_wrap.data-v-ccdd7c20 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
     font-size: 40rpx;
     margin-bottom: 80rpx;
 }
-.house_type_page .tips_wrap .one_line.data-v-02bb07b1 {
+.house_type_page .tips_wrap .one_line.data-v-ccdd7c20 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
@@ -51,15 +51,15 @@ page {
       margin-bottom: 6rpx;
       color: #888888;
 }
-.house_type_page .tips_wrap .one_line .b_text.data-v-02bb07b1 {
+.house_type_page .tips_wrap .one_line .b_text.data-v-ccdd7c20 {
         color: #000000;
 }
-.house_type_page .house_type_set.data-v-02bb07b1 {
+.house_type_page .house_type_set.data-v-ccdd7c20 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
 }
-.house_type_page .house_type_set .set_item.data-v-02bb07b1 {
+.house_type_page .house_type_set .set_item.data-v-ccdd7c20 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       margin: 0 auto 60rpx;
@@ -82,7 +82,7 @@ page {
           -ms-flex-align: center;
               align-items: center;
 }
-.house_type_page .house_type_set .set_item .reduce_btn.data-v-02bb07b1 {
+.house_type_page .house_type_set .set_item .reduce_btn.data-v-ccdd7c20 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         border: 1px solid #333333;
@@ -101,10 +101,10 @@ page {
         width: 56rpx;
         height: 56rpx;
 }
-.house_type_page .house_type_set .set_item .reduce_btn .iconfont.data-v-02bb07b1 {
+.house_type_page .house_type_set .set_item .reduce_btn .iconfont.data-v-ccdd7c20 {
           font-size: 40rpx;
 }
-.house_type_page .house_type_set .set_item .add_btn.data-v-02bb07b1 {
+.house_type_page .house_type_set .set_item .add_btn.data-v-ccdd7c20 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         border: 1px solid #333333;
@@ -123,15 +123,15 @@ page {
         width: 56rpx;
         height: 56rpx;
 }
-.house_type_page .house_type_set .set_item .add_btn .iconfont.data-v-02bb07b1 {
+.house_type_page .house_type_set .set_item .add_btn .iconfont.data-v-ccdd7c20 {
           font-size: 40rpx;
 }
-.house_type_page .house_type_set .set_item .dis-num.data-v-02bb07b1 {
+.house_type_page .house_type_set .set_item .dis-num.data-v-ccdd7c20 {
         border-color: #eaeaea !important;
         color: #eaeaea !important;
         pointer-events: none;
 }
-.house_type_page .house_type_set .set_item .type_box.data-v-02bb07b1 {
+.house_type_page .house_type_set .set_item .type_box.data-v-ccdd7c20 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         display: -webkit-box;
@@ -144,10 +144,10 @@ page {
             -ms-flex-align: center;
                 align-items: center;
 }
-.house_type_page .house_type_set .set_item .type_box .num.data-v-02bb07b1 {
+.house_type_page .house_type_set .set_item .type_box .num.data-v-ccdd7c20 {
           width: 60rpx;
 }
-.house_type_page .house_type_set .set_item .type_box .unit.data-v-02bb07b1 {
+.house_type_page .house_type_set .set_item .type_box .unit.data-v-ccdd7c20 {
           width: 80rpx;
 }
 

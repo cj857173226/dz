@@ -14,18 +14,35 @@
       </view>
     </view>
     <!-- 点评操作 -->
+    
     <view class="comment-box">
       <view class="remark-box">
         <text class="remark-title">{{count}}条点评</text>
         <!-- 星星评分组件 -->
-        <uni-rate size="24" disabled="true" :value="badRate"></uni-rate>
+        <!-- <star :starNum="badRates"></star> -->
+        <!-- <uni-rate size="20" disabled="false" :value="goodRate"></uni-rate> -->
+        <!-- <sunui-star></sunui-star> -->
+        <view class="star-phone" @click.stop="clickRating">
+          <text v-for="(item, index) in startArr" :key="index">
+              <text
+                v-if="item.active"
+                class="iconfont icon-xing"
+                :data-index="index"
+              ></text>
+              <text
+                v-if="!item.active"
+                class="iconfont icon-xing1"
+                :data-index="index"
+              ></text>
+          </text>  
+        </view>
       </view>
       <view class="btn-box">
         <button class="mini-btn" type="default" size="mini" @tap="clickBtnComment">更多点评</button>
       </view>
     </view>
     <!-- 评论信息 -->
-    <view class="comment" v-if="Object.keys(lodger).length > 0">
+    <view class="comment" v-if="lodger.length > 0">
       <view class="commentInfo" v-for="(item,i) in lodger" :key="i">
         <view class="commentInfo-username">{{item.user[0].realname}}</view>
         <view class="check-in-time">{{item.comment_time}}</view>
@@ -53,13 +70,15 @@
   </view>
 </template>
 <script>
-// 引入第三方评分插件
-import uniRate from '@/components/particulars/uni-rate/uni-rate'
+import uniIcon from '@/components/particulars/uni-icon/uni-icon.vue'
+import uniRate from "../../components/particulars/uni-rate/uni-rate.vue"
+import star from '@/components/landlord_introduced/star' // 自定义评分组件
 import { shortHttp,portrait } from "../../common/requestUrl.json"; // 接口文件
 import {request} from '../../common/request.js' // 封装的带有token的请求方法
 export default {
   components: {
-    uniRate
+    uniRate,
+    uniIcon
   },
   data(){
     return{
@@ -69,19 +88,34 @@ export default {
       phone:'', //验证信息
       listingCount:'', //多少房源
       scrollList:[], // 房源数据
-      badRate: 0, // 评分
       lodger:[], // 评论数据
       count:'', // 评论条数
-      id:''
+      id:'',
+      // isFill:true, //星星的类型，是否镂空
+      // color:'#ececec', //星星的颜色
+      // activeColor:'#ffca3e', //星星选中状态颜色
+      // size:24 ,//星星的大小
+      // rating:3,//当前评分
+      // max:5, //最大评分
+      // margin:0, //星星的间距
+      // disabled:false, //是否可点击
+      // starNum:5 ,// 星星的个数
+      // outIndex:0,
+      readOnly:false,
+      startArr:[
+        {active:false},
+        {active:false},
+        {active:false},
+        {active:false},
+        {active:false}
+      ]
     }
   },
-  props: ["landlord"],
   methods: {
     // 更多点评
     clickBtnComment(){
-      console.log(this.landlord);
       uni.navigateTo({
-        url:`/pages/comment/comment?id=${this.landlord}`
+        url:`/pages/comment/comment?id=${this.id}`
       })
     },
     // 用户点击获取当前房源的唯一id，携带id并跳转页面
@@ -100,12 +134,10 @@ export default {
           if (res.data.status === 'success') {
             if (cb) {
               cb(res);
-            }
-            
+            }            
             // _this.badRate = parseInt(res.data.content.comment.goodRate)
             // this.$set(this, 'badRate', parseInt(res.data.content.comment.goodRate))
             // Object.assign(this, {'badRate': 3});
-            console.log('1',_this.badRate);
           } else {
             uni.showToast({
               title:res.data.errorMsg,
@@ -120,13 +152,33 @@ export default {
           })
         }
       })
-    }
+    },
+    isRating (len) {
+      for(let i=0;i<len;i++){
+        this.startArr[i].active = true;
+      }
+    },
+    clickRating (ev) {
+      if (this.readOnly) {
+        return
+      }
+
+      let mark = parseInt(ev.target.dataset.index) + 1
+      this.rating = mark
+      // this.$emit('starMarkChange', mark, this.outIndex)
+    },
   },
   onLoad (option) {
+    console.log("onLoad");
+    uni.getStorageSync
     // const _this = this
     this.id = option.landlord
     this.httpRequerst((res) => {
-      console.log(res);
+      try {
+        
+      } catch (error) {
+        console.log(error);
+      }
       this.userpic = res.data.content.landlordInfo.userpic
       this.username = res.data.content.landlordInfo.username
       let phone = res.data.content.landlordInfo.phone 
@@ -137,9 +189,16 @@ export default {
       }
       this.listingCount = res.data.content.listing_count
       this.scrollList = res.data.content.listing
-      this.lodger = res.data.content.comment.content
+      
+      let object = res.data.content.comment.content
+      for (const key in object) {
+        this.lodger.push(object[key])
+      }
       this.count = res.data.content.comment.count
-      this.badRate = parseInt(res.data.content.comment.goodRate)
+      this.rating = res.data.content.comment.goodRate
+      this.isRating (res.data.content.comment.goodRate);
+      console.log(this.rating);
+      
     })
   }
 }
@@ -200,9 +259,24 @@ export default {
       justify-content: space-between;
       .remark-box{
         display: flex;
+        align-items: center;
         font-weight: bold;
         .remark-title{
           margin-right: 20upx;
+        }
+        .star-phone {
+          line-height: 26px;
+          -webkit-tap-highlight-color:transparent;
+        }
+        .icon-xing1{
+          font-size: 40upx;
+          color: #989895;
+          margin-left: 10upx;
+        }
+        .icon-xing{
+          font-size: 40upx;
+          color: #ffd600;
+          margin-left: 10upx;
         }
       }
       .btn-box{

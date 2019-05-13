@@ -156,7 +156,7 @@ export default {
         { name: "待退款" }
       ],
       current: 0,
-      reveal:false, //判断用户是房东还是房客
+      reveal:true, //判断用户是房东还是房客 true为房东，false为房客
       TabCur4: 0,
       pullDown:false,
 
