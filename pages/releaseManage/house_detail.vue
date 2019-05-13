@@ -8,7 +8,7 @@
 				<view class="label">基本信息</view>
 				<view class="ipt">
 					<view class="empty" v-if="!basicComplete">未完成</view>
-					<view class="data_box"></view>
+					<view class="data_box" v-else>完成</view>
 				</view>
 				<view class="after_icon">
 					<text class="iconfont icon-right"></text>
@@ -18,7 +18,7 @@
 				<view class="label">床铺信息</view>
 				<view class="ipt">
 					<view class="empty" v-if="!bedComplete">未完成</view>
-					<view class="data_box"></view>
+					<view class="data_box" v-else>完成</view>
 				</view>
 				<view class="after_icon">
 					<text class="iconfont icon-right"></text>
@@ -28,7 +28,7 @@
 				<view class="label">房间描述</view>
 				<view class="ipt">
 					<view class="empty" v-if="!houseDescComplete">未完成</view>
-					<view class="data_box"></view>
+					<view class="data_box" v-else>完成</view>
 				</view>
 				<view class="after_icon">
 					<text class="iconfont icon-right"></text>
@@ -38,7 +38,7 @@
 				<view class="label">配套设施</view>
 				<view class="ipt">
 					<view class="empty" v-if="!facilitiesComplete">未完成</view>
-					<view class="data_box"></view>
+					<view class="data_box" v-else>完成</view>
 				</view>
 				<view class="after_icon">
 					<text class="iconfont icon-right"></text>
@@ -48,7 +48,7 @@
 				<view class="label">价格规则</view>
 				<view class="ipt">
 					<view class="empty" v-if="!priceComplete">未完成</view>
-					<view class="data_box"></view>
+					<view class="data_box" v-else>完成</view>
 				</view>
 				<view class="after_icon">
 					<text class="iconfont icon-right"></text>
@@ -58,7 +58,7 @@
 				<view class="label">房间照片</view>
 				<view class="ipt">
 					<view class="empty" v-if="!pictureComplete">未完成</view>
-					<view class="data_box"></view>
+					<view class="data_box" v-else>完成</view>
 				</view>
 				<view class="after_icon">
 					<text class="iconfont icon-right"></text>
@@ -82,7 +82,7 @@
 				<view class="label">房源地址</view>
 				<view class="ipt">
 					<view class="empty" v-if="!houseInfo.xz_local">未完成</view>
-					<view class="data_box"></view>
+					<view class="data_box" v-else>完成</view>
 				</view>
 				<view class="after_icon">
 					<text class="iconfont icon-right"></text>

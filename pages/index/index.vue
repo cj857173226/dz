@@ -26,8 +26,8 @@
 						<text class="my-place">名宿</text>
 					</view>
 				</view>
-				<view class="calendar">
-					<calendar @change="change"></calendar>
+				<view class="calendar" >
+					<calendar @change="change" ref="calendar"></calendar>
 				</view>
 				<view class="search" @tap="tapSelect">
 					<view class="list-box">
@@ -185,6 +185,7 @@
 				choiceDate,
 				dayCount
 			}) {
+				console.log(this.$refs.calendar)
 				//1.choiceDate 时间区间（开始时间和结束时间）
 				//2.dayCount 共多少晚
 				console.log("入住从 " + choiceDate[0].re + "  到 " + choiceDate[1].re + "  共 " + dayCount + " 晚");
@@ -328,14 +329,19 @@
 			}
 		},
 		onBackPress() {
+			console.log(this.$refs.calendar)
 			if (this.$refs.mpvuePicker.showPicker) {
 				this.$refs.mpvuePicker.pickerCancel();
 				return true;
 			}
-			if (this.$refs.mpvueCityPicker.showPicker) {
-				this.$refs.mpvueCityPicker.pickerCancel();
+			if(this.$refs.calendar.isShow){
+				this.$refs.calendar.hideCalendar(true);
 				return true;
 			}
+			// if (this.$refs.mpvueCityPicker.showPicker) {
+			// 	this.$refs.mpvueCityPicker.pickerCancel();
+			// 	return true;
+			// }
 		},
 		onUnload() {
 			

@@ -21,17 +21,20 @@
 				<text class="hint-bedroom-color">卧室、床铺、床单、枕头展示齐全</text>
 			</view>
 			<view class="image_wrap">
-				<view class="img_item" v-if="pics.length>0" v-for="(item, index) in pics" :key="index">
-					<image src="/static/images/meitu1.jpg">
+				<view class="img_item" v-if="pics.length>0 && item.type === 'bedroom'" v-for="(item,index) in pics" :key="index" @tap.stop="previewPic(item)">
+					<image :src="host+item.val">
 					</image>
-					<view class="del_img">
+					<view class="del_img" @tap.stop="del_img(index)">
 						<text class="iconfont icon-duomeitiicon-"></text>
+					</view>
+					<view class="set_main" @tap.stop="setMainPic(item,index)">
+						<text v-text="item.is_main===1? '首图':'设置为首图'"></text>
 					</view>
 				</view>
 
 				<!-- 临时缓存地址 -->
 				<view class="img_item2" v-if="temporaryUpload.length>0 && isUploading&& curUploadType==='bedroom'" v-for="(item, index) in temporaryUpload"
-				 :key="index">
+				 :key="item.path">
 					<image :src="item.path">
 					</image>
 					<view class="mask">
@@ -59,11 +62,30 @@
 				建议上传。站在厅角拍摄，事业会更广阔。
 			</view>
 			<view class="image_wrap">
-				<view class="img_item" v-if="pics.length>0" v-for="(item, index) in pics" :key="index">
-					<image src="/static/images/meitu1.jpg">
+				<view class="img_item" v-if="pics.length>0 && item.type === 'liveroom'" v-for="(item,index) in pics" :key="index" @tap.stop="previewPic(item)">
+					<image :src="host+item.val">
 					</image>
+					<view class="del_img" @tap.stop="del_img(index)">
+						<text class="iconfont icon-duomeitiicon-"></text>
+					</view>
+					<view class="set_main" @tap.stop="setMainPic(item,index)">
+						<text v-text="item.is_main===1? '首图':'设置为首图'"></text>
+					</view>
 				</view>
-				<view class="choose_img">
+
+				<!-- 临时缓存地址 -->
+				<view class="img_item2" v-if="temporaryUpload.length>0 && isUploading&& curUploadType==='liveroom'" v-for="(item, index) in temporaryUpload"
+				 :key="item.path">
+					<image :src="item.path">
+					</image>
+					<view class="mask">
+						<text class="progress" v-if="!uploadErrStatus[index]||uploadErrStatus[index]==false">
+							<text class="num">{{progressAll[index]}}</text>%
+						</text>
+						<text class="err" v-if="uploadErrStatus[index] === true">{{errTips[index]}}</text>
+					</view>
+				</view>
+				<view class="choose_img" @tap.stop="chooseImg('liveroom')">
 					<text class="iconfont icon-jia"></text>
 				</view>
 			</view>
@@ -81,11 +103,30 @@
 				<text class="hint-bedroom-color">马桶卫浴、地面细节完整。</text>
 			</view>
 			<view class="image_wrap">
-				<view class="img_item" v-if="pics.length>0" v-for="(item, index) in pics" :key="index">
-					<image src="/static/images/meitu1.jpg">
+				<view class="img_item" v-if="pics.length>0 && item.type === 'toilet'" v-for="(item,index) in pics" :key="index" @tap.stop="previewPic(item)">
+					<image :src="host+item.val">
 					</image>
+					<view class="del_img" @tap.stop="del_img(index)">
+						<text class="iconfont icon-duomeitiicon-"></text>
+					</view>
+					<view class="set_main" @tap.stop="setMainPic(item,index)">
+						<text v-text="item.is_main===1? '首图':'设置为首图'"></text>
+					</view>
 				</view>
-				<view class="choose_img">
+
+				<!-- 临时缓存地址 -->
+				<view class="img_item2" v-if="temporaryUpload.length>0 && isUploading&& curUploadType==='toilet'" v-for="(item, index) in temporaryUpload"
+				 :key="item.path">
+					<image :src="item.path">
+					</image>
+					<view class="mask">
+						<text class="progress" v-if="!uploadErrStatus[index]||uploadErrStatus[index]==false">
+							<text class="num">{{progressAll[index]}}</text>%
+						</text>
+						<text class="err" v-if="uploadErrStatus[index] === true">{{errTips[index]}}</text>
+					</view>
+				</view>
+				<view class="choose_img" @tap.stop="chooseImg('toilet')">
 					<text class="iconfont icon-jia"></text>
 				</view>
 			</view>
@@ -102,11 +143,30 @@
 				建议上传。
 			</view>
 			<view class="image_wrap">
-				<view class="img_item" v-if="pics.length>0" v-for="(item, index) in pics" :key="index">
-					<image src="/static/images/meitu1.jpg">
+				<view class="img_item" v-if="pics.length>0 && item.type === 'kitchen'" v-for="(item,index) in pics" :key="index" @tap.stop="previewPic(item)">
+					<image :src="host+item.val">
 					</image>
+					<view class="del_img" @tap.stop="del_img(index)">
+						<text class="iconfont icon-duomeitiicon-"></text>
+					</view>
+					<view class="set_main" @tap.stop="setMainPic(item,index)">
+						<text v-text="item.is_main===1? '首图':'设置为首图'"></text>
+					</view>
 				</view>
-				<view class="choose_img">
+
+				<!-- 临时缓存地址 -->
+				<view class="img_item2" v-if="temporaryUpload.length>0 && isUploading&& curUploadType==='kitchen'" v-for="(item, index) in temporaryUpload"
+				 :key="item.path">
+					<image :src="item.path">
+					</image>
+					<view class="mask">
+						<text class="progress" v-if="!uploadErrStatus[index]||uploadErrStatus[index]==false">
+							<text class="num">{{progressAll[index]}}</text>%
+						</text>
+						<text class="err" v-if="uploadErrStatus[index] === true">{{errTips[index]}}</text>
+					</view>
+				</view>
+				<view class="choose_img" @tap.stop="chooseImg('kitchen')">
 					<text class="iconfont icon-jia"></text>
 				</view>
 			</view>
@@ -123,11 +183,30 @@
 				建议上传。可以是其他室内空间、物件、小区周边环境等。更多的照片往往能吸引更多的房客。
 			</view>
 			<view class="image_wrap">
-				<view class="img_item" v-if="pics.length>0" v-for="(item, index) in pics" :key="index">
-					<image src="/static/images/meitu1.jpg">
+				<view class="img_item" v-if="pics.length>0 && item.type === 'other'" v-for="(item,index) in pics" :key="index" @tap.stop="previewPic(item)">
+					<image :src="host+item.val">
 					</image>
+					<view class="del_img" @tap.stop="del_img(index)">
+						<text class="iconfont icon-duomeitiicon-"></text>
+					</view>
+					<view class="set_main" @tap.stop="setMainPic(item,index)">
+						<text v-text="item.is_main===1? '首图':'设置为首图'"></text>
+					</view>
 				</view>
-				<view class="choose_img">
+
+				<!-- 临时缓存地址 -->
+				<view class="img_item2" v-if="temporaryUpload.length>0 && isUploading&& curUploadType==='other'" v-for="(item, index) in temporaryUpload"
+				 :key="item.path">
+					<image :src="item.path">
+					</image>
+					<view class="mask">
+						<text class="progress" v-if="!uploadErrStatus[index]||uploadErrStatus[index]==false">
+							<text class="num">{{progressAll[index]}}</text>%
+						</text>
+						<text class="err" v-if="uploadErrStatus[index] === true">{{errTips[index]}}</text>
+					</view>
+				</view>
+				<view class="choose_img" @tap.stop="chooseImg('other')">
 					<text class="iconfont icon-jia"></text>
 				</view>
 			</view>
@@ -144,9 +223,13 @@
 		request
 	} from '../../../common/request.js'
 	import helper from '../../../common/helper.js'
+	import {
+		shortHttp
+	} from '../../../common/requestUrl.json'
 	export default {
 		data() {
 			return {
+				host: shortHttp,
 				house_id: '', //房源id
 				pics: [], // 所有图片的集合
 				bedRoomImages: [], //卧室
@@ -177,13 +260,16 @@
 				uploadIsComplete: false,
 				// 暂存已上传成功的图片
 				uploadSuccessPic: [],
+				// 是否正在删除图片
+				isDeling: false,
+				// 是否正在设置主图
+				isSetMaining: false,
 			}
 		},
 		onLoad() {
 			this.getCurData();
 		},
-		onShow() {
-		},
+		onShow() {},
 		computed: {
 			...mapState(['releaseObj']),
 			// 获取不同类型照片列表
@@ -233,7 +319,6 @@
 					},
 					success: (uploadFileRes) => {
 						const _data = JSON.parse(uploadFileRes.data);
-
 						if (_data.status === 'success') {
 							let result = Object.assign(_data.content, {
 								index: index
@@ -248,67 +333,185 @@
 					fail: (err) => {
 						_this.$set(_this.errTips, index, '上传发生异常');
 						_this.$set(_this.uploadErrStatus, index, true);
+						if (_this.curUploadNum === _this.uploadTotal) {
+							_this.isUploading = false;
+						}
+
 					},
 					complete: (res) => {
 						_this.$set(_this.upLoadSuccessStatus, index, true);
 						_this.$set(_this, 'curUploadNum', _this.curUploadNum + 1);
 						// 当所有图片都上传完了 
 						if (_this.curUploadNum === _this.uploadTotal) {
-							helper.layer('上传完毕')
-							console.log(_this.hasMainPics()); // 判断有没有主图
-							let success_pics = _this.picsSort();// 返回已排好序的 图片
-							console.log(success_pics)
-							_this.successTimer = setTimeout(() => {
-								_this.isUploading = false;
-								clearTimeout(_this.successTimer);
-								_this.successTimer = null;
-							}, 2000)
+							let success_pics = _this.picsSort(type); // 返回已排好序的 图片
+							_this.savePics(success_pics)
+
 						}
 
 					}
 				});
 				uploadTask.onProgressUpdate((res) => {
-					if (type === 'bedroom') {
-						_this.$set(_this.progressAll, index, res.progress)
-					}
-					// 					console.log(`第${index+1}张图上传进度:${res.progress}`);
-					// 					console.log(`第${index+1}张图已经上传的数据长度:${res.totalBytesSent}`);
-					// 					console.log(`第${index+1}张图预期需要上传的数据总长度:${res.totalBytesExpectedToSend}`);
-
-					// 测试条件， 取消上传任务。
-					// if (res.progress > 90) {
-					// 	uploadTask.abort();
-					// }
+					_this.$set(_this.progressAll, index, res.progress)
 				});
-			},
-			// 获取图片信息
-			getImgInfo(img) {
-				let _obj = {};
-				uni.getImageInfo({
-					src: img.path,
-					success: function(image) {
-						_obj = {
-							width: image.width,
-							height: image.height,
-							path: image.path ? image.path : '',
-							size: img.size / 1024 / 1024,
-						};
-					}
-				});
-				return _obj
 			},
 			// 设置为主图
-			setMainPic(pic) {
-				
+			setMainPic(pic,i) {
+				const _this = this;
+				const id = _this.house_id;
+				if (_this.isDeling || _this.isSetMaining) {
+					return;
+				} else if (_this.isUploading) {
+					helper.layer('图片上传中,不能进行删除操作...');
+					return;
+				} else {
+					if(pic.is_transverse!==1){
+						helper.layer('非横图,不能设置为首图');
+					} else{
+						let pics = _this.pics.slice();
+						pics.map((item,index,slef)=>{
+							slef[index]['is_main'] = 0 
+						});
+						_this.isSetMaining = true;
+						pics[i].is_main = 1;
+							let param = {
+							house_id: id,
+							pics: JSON.stringify(pics),
+						}
+						request({
+							url: '/wap/api/fangdong.php?action=improveHouse',
+							method: 'POST',
+							data: param,
+							success: (res) => {
+								if (res.data.status === 'success') {
+									let _data = res.data.content;
+									_this.editReleaseInfo(_data);
+									_this.editReleaseInfoStatus(true);
+									_this.getCurData();
+								} else {
+									helper.layer('设置失败!')
+								}
+							},
+							complete: () => {
+								_this.isSetMaining = false;
+							}
+						})
+					}
+				}
+			},
+			//图片预览
+			previewPic(pic){
+				const _this = this;
+				let picsarr = []
+				const pics = _this.pics.slice();
+				pics.forEach((item)=>{
+					picsarr.push(_this.host+item.path)
+				})
+				uni.previewImage({
+					current:_this.host + pic.path,
+					urls:picsarr
+				})
+			},
+			// 刪除图片 
+			del_img(index) {
+				const _this = this;
+				const id = _this.house_id;
+				if (_this.isDeling || _this.isSetMaining) {
+					return;
+				} else if (_this.isUploading) {
+					helper.layer('图片上传中,不能进行删除操作...');
+					return;
+				} else {
+					uni.showModal({
+						title: '',
+						content: '是否删除这张图片',
+						confirmText:'删除',
+						success: function(res) {
+							if (res.confirm) {
+								// 确定删除
+								_this.isDeling = true;
+								let curPics = _this.pics.slice();
+								curPics.splice(index, 1);
+								let param = {
+									house_id: id,
+									pics: JSON.stringify(curPics),
+								}
+								uni.showLoading({
+									title:'删除中...',
+									mask:true
+								})
+								request({
+									url: '/wap/api/fangdong.php?action=improveHouse',
+									method: 'POST',
+									data: param,
+									success: (res) => {
+										if (res.data.status === 'success') {
+											let _data = res.data.content;
+											_this.editReleaseInfo(_data);
+											_this.editReleaseInfoStatus(true);
+											_this.getCurData();
+										} else {
+											helper.layer('删除图片失败')
+										}
+									},
+									complete: () => {
+										_this.isDeling = false;
+										uni.hideLoading();
+									}
+								})
+								
+							} else if (res.cancel) {
+							}
+						}
+					});
+			
+
+				}
 			},
 			// 保存图片到该房源
 			savePics(_pics) {
-
+				const _this = this;
+				if (!_pics || _pics.length === 0) {
+					_this.successTimer = setTimeout(() => {
+						_this.isUploading = false;
+						clearTimeout(_this.successTimer);
+						_this.successTimer = null;
+						return;
+					}, 1000);
+				}
+				let old_pics = _this.pics.slice(0);
+				const id = _this.house_id;
+				let save_pics = old_pics.concat(_pics);
+				let param = {
+					house_id: id,
+					pics: JSON.stringify(save_pics),
+				}
+				request({
+					url: '/wap/api/fangdong.php?action=improveHouse',
+					method: 'POST',
+					data: param,
+					success: (res) => {
+						if (res.data.status === 'success') {
+							let _data = res.data.content;
+							_this.editReleaseInfo(_data);
+							_this.editReleaseInfoStatus(true);
+						} else {
+							helper.layer('照片上传失败')
+						}
+					},
+					complete: () => {
+						_this.successTimer = setTimeout(() => {
+							_this.isUploading = false;
+							_this.getCurData();
+							clearTimeout(_this.successTimer);
+							_this.successTimer = null;
+						}, 1000);
+					}
+				})
 			},
 			// 判断是否有主图
 			hasMainPics() {
 				const _this = this;
-				const old_pics = _this.pics.splice(0);
+				const old_pics = _this.pics.slice(0);
 				if (old_pics.length > 0) {
 					for (let i = 0; i < old_pics.length; i++) {
 						if (old_pics[i].is_main == 1) {
@@ -319,46 +522,63 @@
 				return false;
 			},
 			// 图片排序
-			picsSort(){
+			picsSort(type) {
 				const _this = this;
+				const has_main = _this.hasMainPics();
 				let _arr = _this.uploadSuccessPic;
+				let h_index = ''; // 上传中第一张横屏的图片
 				// 根据当前索引正序排列
-				_arr.sort(function(a,b){
+				_arr.sort(function(a, b) {
 					return a.index - b.index;
 				})
 				// 删除每一项index属性
-				_arr.forEach((item)=>{
-					if(item.hasOwnProperty('index')){
-						item.is_main = 0;
+				_arr.forEach((item) => {
+					if (item.hasOwnProperty('index')) {
+						item['is_main'] = 0;
+						item['type'] = type;
+						item['val'] = item.path;
 						delete item.index;
+
 					}
 				})
+				// 如果当前还没有主图就自动设置 第一张横屏照片为主图；
+				if (!has_main) {
+					for (let i = 0; i < _arr.length; i++) {
+						if (_arr[i].is_transverse === 1) {
+							h_index = i;
+							break;
+						}
+					}
+				}
+				if (h_index !== '') {
+					_arr[h_index]['is_main'] = 1;
+				}
 				return _arr;
 			},
-			
 			// 初始化
 			init() {
 				const _this = this;
 				_this.progressAll = [];
 				_this.temporaryUpload = [];
+				_this.uploadErrStatus = [];
 				_this.errTips = [];
 				_this.upLoadSuccessStatus = [];
 				_this.uploadIsComplete = false;
 				_this.uploadTotal = 0;
 				_this.curUploadNum = 0;
 				_this.uploadSuccessPic = [];
+				_this.success_pics = []
 			},
 			// 获取当前页面的数据
 			getCurData() {
 				const _releaseObj = this.releaseObj;
-				console.log(_releaseObj)
 				this.house_id = _releaseObj.id;
 				const pics = _releaseObj.pics ? _releaseObj.pics : [];
 				this.pics = pics;
 			}
 			// 
-		
-			
+
+
 		}
 	};
 </script>
@@ -455,6 +675,17 @@
 						.iconfont {
 							font-size: 28upx;
 						}
+					}
+					.set_main{
+						position: absolute;
+						font-size: 24upx;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						color: #fff;
+						text-align: center;
+						padding: 6upx 0;
+						background: rgba(0,0,0,0.3);
 					}
 				}
 

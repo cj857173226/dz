@@ -63,7 +63,9 @@
                 },
                 "oauth" : {},
                 "push" : {},
-                "payment" : {}
+                "payment" : {
+                    "alipay" : {}
+                }
             }
         }
     },

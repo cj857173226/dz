@@ -85,7 +85,9 @@
         },
         "oauth": {},
         "push": {},
-        "payment": {},
+        "payment": {
+          "alipay": {}
+        },
         "audio": {
           "mp3": {
             "description": "Android平台录音支持MP3格式文件"
