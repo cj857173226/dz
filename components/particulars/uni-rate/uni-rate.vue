@@ -35,7 +35,7 @@
 			},
 			value: { //当前评分
 				type: [Number, String],
-				default: 0
+				default: 3 
 			},
 			max: { //最大评分
 				type: [Number, String],

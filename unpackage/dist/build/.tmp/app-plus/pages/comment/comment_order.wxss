@@ -24,40 +24,40 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.container.data-v-cef38df4 {
+.container.data-v-263333cd {
   width: 100%;
   padding: 30rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 14px;
 }
-.container .landlord-information.data-v-cef38df4 {
+.container .landlord-information.data-v-263333cd {
     width: 100%;
     text-align: center;
 }
-.container .landlord-information .photo.data-v-cef38df4 {
+.container .landlord-information .photo.data-v-263333cd {
       width: 100rpx;
       height: 100rpx;
       border-radius: 50%;
       border: 1px solid #b5adad;
       margin: 20rpx auto;
 }
-.container .landlord-information .photo .photo-img.data-v-cef38df4 {
+.container .landlord-information .photo .photo-img.data-v-263333cd {
         width: 100rpx;
         height: 100rpx;
         border-radius: 50%;
 }
-.container .landlord-information .btn.data-v-cef38df4 {
+.container .landlord-information .btn.data-v-263333cd {
       width: 120rpx;
       height: 60rpx;
       border-radius: 10rpx;
-      background-color: #1592c8;
+      background-color: #f05b72;
       color: #fff;
       text-align: center;
       line-height: 60rpx;
       margin: 0 auto;
 }
-.container .landlord-information .grade-box.data-v-cef38df4 {
+.container .landlord-information .grade-box.data-v-263333cd {
       background: #f5d7d7;
       height: 80rpx;
       border-radius: 10rpx;
@@ -71,11 +71,11 @@
               align-items: center;
       margin-top: 20rpx;
 }
-.container .landlord-information .grade-box .grade.data-v-cef38df4 {
+.container .landlord-information .grade-box .grade.data-v-263333cd {
         width: 360rpx;
         margin: 0 auto;
 }
-.container .landlord-information .comment-box.data-v-cef38df4 {
+.container .landlord-information .comment-box.data-v-263333cd {
       text-align: left;
       width: 100%;
       height: 324rpx;
@@ -86,16 +86,16 @@
               box-sizing: border-box;
       position: relative;
 }
-.container .landlord-information .comment-box .area.data-v-cef38df4 {
+.container .landlord-information .comment-box .area.data-v-263333cd {
         width: 100%;
         height: 300rpx;
 }
-.container .landlord-information .comment-box .number.data-v-cef38df4 {
+.container .landlord-information .comment-box .number.data-v-263333cd {
         position: absolute;
         bottom: 20rpx;
         right: 20rpx;
 }
-.container .list-box.data-v-cef38df4 {
+.container .list-box.data-v-263333cd {
     width: 100%;
     height: 120rpx;
     background-color: #f3f3f3;
@@ -105,15 +105,145 @@
     display: flex;
     margin-top: 20rpx;
 }
-.container .list-box .left-img.data-v-cef38df4 {
+.container .list-box .left-img.data-v-263333cd {
       width: 200rpx;
       height: 120rpx;
 }
-.container .list-box .left-img .title-img.data-v-cef38df4 {
+.container .list-box .left-img .title-img.data-v-263333cd {
         width: 200rpx;
         height: 120rpx;
 }
-.container .list-box .right-title.data-v-cef38df4 {
+.container .list-box .right-title.data-v-263333cd {
       font-weight: 600;
+      margin-left: 20rpx;
+}
+.container .grade-box.data-v-263333cd {
+    background: #f5d7d7;
+    height: 80rpx;
+    border-radius: 10rpx;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 20rpx;
+}
+.container .grade-box .grade.data-v-263333cd {
+      width: 360rpx;
+      margin: 0 auto;
+}
+.container .comment-box.data-v-263333cd {
+    text-align: left;
+    width: 100%;
+    height: 324rpx;
+    background: #efefef;
+    margin-top: 20rpx;
+    padding: 12rpx 12rpx;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    position: relative;
+}
+.container .comment-box .area.data-v-263333cd {
+      width: 100%;
+      height: 300rpx;
+}
+.container .comment-box .number.data-v-263333cd {
+      position: absolute;
+      bottom: 20rpx;
+      right: 20rpx;
+}
+.container .add-picture-box.data-v-263333cd {
+    width: 100%;
+    margin-top: 20rpx;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.container .add-picture-box .picture-box.data-v-263333cd {
+      width: 140rpx;
+      height: 140rpx;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      border-radius: 10rpx;
+      background-color: #f3f1f1;
+      margin-left: 20rpx;
+}
+.container .add-picture-box .picture-box.data-v-263333cd:active {
+        opacity: .5;
+}
+.container .add-picture-box .picture-box .picture-img.data-v-263333cd {
+        width: 120rpx;
+        height: 120rpx;
+}
+.container .add-picture-box .add-picture.data-v-263333cd {
+      width: 100%;
+      height: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+}
+.container .add-picture-box .add-picture .add-picture-img-box.data-v-263333cd {
+        width: 140rpx;
+        height: 140rpx;
+        border-radius: 10rpx;
+        margin-left: 28rpx;
+        margin-bottom: 20rpx;
+        position: relative;
+}
+.container .add-picture-box .add-picture .add-picture-img-box .add-picture-img.data-v-263333cd {
+          width: 140rpx;
+          height: 140rpx;
+          border-radius: 10rpx;
+}
+.container .add-picture-box .add-picture .add-picture-img-box .chacha.data-v-263333cd {
+          position: absolute;
+          right: 0;
+          top: 0;
+          color: rgba(0, 0, 0, 0.5);
+          font-size: 20px;
+}
+.container .add-picture-box .add-picture .add-picture-img-box .shade.data-v-263333cd {
+          width: 140rpx;
+          height: 140rpx;
+          color: #fff;
+          background-color: rgba(0, 0, 0, 0.5);
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 100;
+          text-align: center;
+          line-height: 140rpx;
+          border-radius: 10rpx;
+}
+.container .btn.data-v-263333cd {
+    width: 100%;
+    height: 80rpx;
+    background-color: #f05b72;
+    color: #fff;
+    border-radius: 10rpx;
+    line-height: 80rpx;
+    margin-top: 20rpx;
+    text-align: center;
+}
+.container .btn.data-v-263333cd:active {
+      opacity: .5;
 }
 

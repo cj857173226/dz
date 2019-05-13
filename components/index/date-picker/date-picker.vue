@@ -17,9 +17,10 @@
 
 		<view class="calendar-layer" :animation="animationData" :class="isShow ? 'show' : 'hide'">
 			<!-- 遮罩层 -->
-			<view class="layer-white-space" @tap="hideCalendar(false)"></view>
+			<!-- <view class="layer-white-space" @tap="hideCalendar(false)"></view> -->
 
 			<view class="layer-content choiceDate">
+				<text class="iconfont shanchu" @tap="clickClose">&#xe649;</text>
 				<view class="layer-header">
 					<view class="layer-close" @tap="hideCalendar(false)"></view>
 					<text class="layer-title">选择日期</text>
@@ -168,6 +169,11 @@ export default {
 	// 	}
 	// },
 	methods: {
+		// 隐藏组件
+		clickClose(){
+			console.log('关闭');
+			this.isShow = false;
+		},
 		getLayerTop: function() {
 			return new Promise(resolve => {
 				//获取layer-list窗器的top
@@ -444,7 +450,7 @@ export default {
 				dataAll2[1][0].act.defaultStr = 1;
 				this.choiceDate.push(dataAll2[1][0]);
 			}
-			console.log(dataAll2, weeks, this.today, this.tomorrow, this.afterTomorrow);
+			// console.log(dataAll2, weeks, this.today, this.tomorrow, this.afterTomorrow);
 			this.date = dataAll2;
 			this.weeks = weeks;
 			this.choiceDate = this.choiceDate;
@@ -584,11 +590,17 @@ export default {
 				dayCount: this.dayCount
 			});
 		}
-	}
+	},
 };
 </script>
 
 <style lang="scss" scoped>
+.shanchu{
+	font-size: 20px;
+	position: absolute;
+	top: 0;
+	left:0;
+}
 /*  #ifndef  H5  */
 view {
 	display: flex;
@@ -621,12 +633,11 @@ uni-view {
 	height: 70upx;
 	align-items: center;
 	position: relative;
-
+	margin-top: 100upx;
 	.layer-close {
 		width: 34upx;
 		height: 34upx;
 		position: absolute;
-
 		left: 25upx;
 		top: 50%;
 		transform: translateY(-50%);
@@ -669,7 +680,7 @@ uni-view {
 	height: 0;
 	width: 100%;
 	overflow: hidden;
-	z-index: 1111;
+	z-index: 9999;
 
 	/*  #ifdef  H5  */
 	//h5使用css3动画
@@ -691,7 +702,7 @@ uni-view {
 
 .layer-content {
 	position: absolute;
-	height: 85%;
+	height: 100%;
 	bottom: 0;
 	font-size: 26upx;
 	flex-direction: column;
@@ -700,7 +711,7 @@ uni-view {
 
 .layer-body {
 	flex-direction: column;
-	height: calc(100% - 70upx);
+	height: calc(100% - 88upx);
 }
 
 .layer-list {
@@ -728,7 +739,7 @@ uni-view {
 	}
 
 	.layer-body {
-		height: calc(100% - 70upx - 120upx);
+		height: calc(100% - 88upx);
 	}
 }
 
@@ -755,7 +766,7 @@ uni-view {
 		height: 60upx;
 		line-height: 60upx;
 		justify-content: center;
-		border-bottom: 1upx solid #ddd;
+		// border-bottom: 1upx solid #ddd;
 		background: #fff;
 	}
 
@@ -931,7 +942,7 @@ uni-view {
 .week-box {
 	height: 60upx;
 	line-height: 60upx;
-	border-bottom: 1upx solid #ddd;
+	// border-bottom: 1upx solid #ddd;
 	background: #fff;
 	position: relative;
 	z-index: 11;

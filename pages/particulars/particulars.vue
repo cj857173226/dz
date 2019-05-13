@@ -53,10 +53,6 @@
 		</view>
 		<view class="tenant-review-box">
 			<view class="grades1-box">
-				<!-- <view class="grades-contenr"> -->
-					<!-- 星星评分组件 -->
-					<!-- <uni-rate size="20" disabled="true" :value="goodRate"></uni-rate>
-				</view> -->
 				<view class="house-classifieds">
 					<i class="iconfont house-icon">&#xe61b;</i>
 					<view class="black">{{leaseType}}</view>
@@ -74,7 +70,6 @@
 			</view>
 			<!-- 自定义组件 -->
 			<house_map :lat="latitude" :log="longitude"></house_map>
-			<!-- <roomDescription></roomDescription> -->
 			<view class="cantainer-description-box">
 				<view class="title">房间描述</view>
 				<view class="introduce" :class="[isTrue?'introduce':'introduces']">{{roomInnerIntro}}</view>
@@ -91,10 +86,6 @@
 							<text class="left">可租房态</text>
 							<text class="right" @click="onShowDatePicker('range')">查看日历</text>
 						</view>
-						<!-- <view class="list-box">
-					<text class="left">交易规则</text>
-					<text class="right">查看</text>
-				</view> -->
 						<view class="list-box">
 							<text class="left">是否允许加客</text>
 							<text class="right" style="color:#B8B8B8">{{addTenant}}</text>
@@ -348,30 +339,35 @@
 					url:`/pages/comment/comment?roomId=${this.luId}`
 				})
 			},
-			onCollect() {
+			// 收藏列表请求
+			collectReqList(){
 				const _this = this;
 				let pickerValueArray = []
 				request({
 					url: '/wap/api/my.php?action=favoriteClass',
 					success: function(res) {
-						let array = res.data.content.item
-						for (let i = 0; i < array.length; i++) {
-							pickerValueArray.push({
-								label: array[i].cname,
-								value: array[i].cid
-							})
-							_this.pickerValueArray = pickerValueArray
+						if (res.data.status === 'success') {
+							let array = res.data.content.item
+								for (let i = 0; i < array.length; i++) {
+									pickerValueArray.push({
+										label: array[i].cname,
+										value: array[i].cid
+									})
+									_this.pickerValueArray = pickerValueArray
+								}
+							}
 						}
-					}
 				})
-				let coll = !_this.data.isFavorite //获取原本的收藏值并取反
-				_this.$set(_this.data, "isFavorite", coll); //更改
-				// 判断
-				if (coll === true) {
-					setTimeout(() => {
-						_this.$refs.mpvuePicker.show() // 点击弹出mpvuePickerpicker
-					}, 2000)
-				} else if (coll === false) {
+			},
+				// 收藏
+			onCollect() {
+				// 请求分组列表
+				const _this = this;
+				let coll = _this.data.isFavorite
+					console.log('索引',coll);
+				if (coll===false) {
+					_this.$refs.mpvuePicker.show() // 点击弹出mpvuePickerpicker
+				} else {
 					request({
 						url: '/wap/api/my.php?action=modifyFavorite',
 						data: {
@@ -385,6 +381,7 @@
 									title: "取消收藏",
 									duration: 2000
 								})
+								_this.$set(_this.data,'isFavorite',false)
 							}
 						}
 					})
@@ -398,8 +395,8 @@
 			},
 			// picker 组件点击确定时回调，返回选中的 label, value 和数组索引 index 的值
 			onConfirm(e) {
-				console.log("确认：", e.value);
 				const _that = this;
+				// let index = _that.collectIndex; // 收藏索引
 				let value = e.value;
 				let collectId;
 				for (let index = 0; index < value.length; index++) {
@@ -408,8 +405,8 @@
 				request({
 					url: '/wap/api/my.php?action=modifyFavorite',
 					data: {
-						luId: _that.luId,
-						classId: collectId,
+						luId: _that.luId, // 房源id
+						classId: collectId, // 收藏的文件夹id
 						favAction: "add"
 					},
 					success: res => {
@@ -419,6 +416,7 @@
 								title: "收藏成功",
 								duration: 2000
 							})
+							_that.$set(_that.data, 'isFavorite', true) //更改
 						} else {
 							uni.showToast({
 								title: "收藏失败",
@@ -523,9 +521,12 @@
 					_that.count = datas.comment.count
 					_that.headImageUrl = datas.landlord.headImageUrl
 					_that.roomInnerIntro = datas.detail.roomInnerIntro
-					_that.landlordId = datas.landlord.landlordId
+					_that.landlordId = datas.landlord.landlordId,
+					_that.isFavorite = datas.isFavorite
 				}
 			})
+			this.collectReqList(); // 收藏列表
+
 		}
 	}
 </script>

@@ -29,14 +29,14 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-1ebd1162 {
+.contanier.data-v-07dc172e {
   width: 100%;
   height: 100%;
   padding: 30rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.contanier .selectors-btn.data-v-1ebd1162 {
+.contanier .selectors-btn.data-v-07dc172e {
     width: 100%;
     height: 80rpx;
     background-color: #ea516b;
@@ -45,23 +45,23 @@ page {
     text-align: center;
     border-radius: 8rpx;
 }
-.contanier .selectors-btn.data-v-1ebd1162:active {
+.contanier .selectors-btn.data-v-07dc172e:active {
       opacity: 0.5;
 }
-.contanier .check_list_wrap.data-v-1ebd1162 {
+.contanier .check_list_wrap.data-v-07dc172e {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
     margin-top: 20rpx;
     height: calc(100% - 100rpx);
 }
-.contanier .check_list_wrap .message-box.data-v-1ebd1162 {
+.contanier .check_list_wrap .message-box.data-v-07dc172e {
       width: 100%;
       font-size: 14px;
       margin-top: 40rpx;
       border-bottom: 1px solid #aba7a7;
 }
-.contanier .check_list_wrap .message-box .checkbox-box.data-v-1ebd1162 {
+.contanier .check_list_wrap .message-box .checkbox-box.data-v-07dc172e {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -72,13 +72,13 @@ page {
             -ms-flex-direction: row;
                 flex-direction: row;
 }
-.contanier .check_list_wrap .message-box .checkbox-box .radio-box.data-v-1ebd1162 {
+.contanier .check_list_wrap .message-box .checkbox-box .radio-box.data-v-07dc172e {
           margin-right: 20rpx;
 }
-.contanier .check_list_wrap .message-box .checkbox-box .right-box.data-v-1ebd1162 {
+.contanier .check_list_wrap .message-box .checkbox-box .right-box.data-v-07dc172e {
           width: 100%;
 }
-.contanier .check_list_wrap .message-box .checkbox-box .right-box .name-box.data-v-1ebd1162 {
+.contanier .check_list_wrap .message-box .checkbox-box .right-box .name-box.data-v-07dc172e {
             display: -webkit-box;
             display: -webkit-flex;
             display: -ms-flexbox;
@@ -93,14 +93,14 @@ page {
                 -ms-flex-pack: justify;
                     justify-content: space-between;
 }
-.contanier .check_list_wrap .message-box .checkbox-box .right-box .name-box .name.data-v-1ebd1162 {
+.contanier .check_list_wrap .message-box .checkbox-box .right-box .name-box .name.data-v-07dc172e {
               font-weight: 600;
 }
-.contanier .check_list_wrap .message-box .checkbox-box .right-box .name-box .jiantou.data-v-1ebd1162 {
+.contanier .check_list_wrap .message-box .checkbox-box .right-box .name-box .jiantou.data-v-07dc172e {
               color: #9a9797;
               font-size: 16px;
 }
-.contanier .check_list_wrap .message-box .checkbox-box .right-box .identity-card-box.data-v-1ebd1162 {
+.contanier .check_list_wrap .message-box .checkbox-box .right-box .identity-card-box.data-v-07dc172e {
             width: 100%;
             display: -webkit-box;
             display: -webkit-flex;
@@ -120,7 +120,7 @@ page {
             margin-bottom: 20rpx;
             font-size: 12px;
 }
-.contanier .check_list_wrap .message-box .checkbox-box .right-box .identity-card-box .identity-card.data-v-1ebd1162 {
+.contanier .check_list_wrap .message-box .checkbox-box .right-box .identity-card-box .identity-card.data-v-07dc172e {
               margin-right: 16rpx;
 }
 

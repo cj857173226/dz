@@ -27,7 +27,7 @@
 					</view>
 				</view>
 				<view class="calendar">
-					<calendar @change="change"></calendar>
+					<calendar ref="calen" @change="change"></calendar>
 				</view>
 				<view class="search" @tap="tapSelect">
 					<view class="list-box">
@@ -128,10 +128,11 @@
 				searchCity: '试试搜:花水湾',
 				startTime: '', // 开始时间
 				endTime: '', // 结束时间
+				collectIndex:null, // 收藏房源的索引
 			};
 		},
 		onLoad() {
-			console.log("时间", this.startTime);
+			this.collectReqList(); // 收藏列表
 			//判断是否登录
 			helper.isLogin();
 			this.cityGps(); //调用获取城市名
@@ -181,10 +182,7 @@
 					url: "/pages/index/search_city"
 				})
 			},
-			change({
-				choiceDate,
-				dayCount
-			}) {
+			change({choiceDate,dayCount}) {
 				//1.choiceDate 时间区间（开始时间和结束时间）
 				//2.dayCount 共多少晚
 				console.log("入住从 " + choiceDate[0].re + "  到 " + choiceDate[1].re + "  共 " + dayCount + " 晚");
@@ -221,12 +219,12 @@
 						cityName: "广州"
 					}, //*：有问题，无法拿到当前城市
 					success: function(res) {
+						console.log(res);
+						
 						uni.hideLoading();
 						_that.ambitusArray = res.data.content.item;
 					}
 				});
-
-
 			},
 			// 点击图片跳转页面查看房间详情
 			clickDetails(id) {
@@ -241,63 +239,73 @@
 					url: `/pages/landlord_introduced/landlord_introduced?id=${id}`
 				})
 			},
-			onCollect(id, index) {
-				// 请求分组列表
+			// 收藏列表请求
+			collectReqList(){
 				const _this = this;
 				let pickerValueArray = []
 				request({
 					url: '/wap/api/my.php?action=favoriteClass',
 					success: function(res) {
-						let array = res.data.content.item
-						for (let i = 0; i < array.length; i++) {
-							pickerValueArray.push({
-								label: array[i].cname,
-								value: array[i].cid
-							})
-							_this.pickerValueArray = pickerValueArray
-						}
-					}
-				})
-				let coll = !_this.ambitusArray[index].isFavorite //获取原本的收藏值并取反
-				_this.i = _this.ambitusArray[index]
-				_this.luId = _this.ambitusArray[index].luId
-				_this.$set(_this.ambitusArray[index], 'isFavorite', coll) //更改
-
-				// 判断
-				if (coll === true) {
-					setTimeout(() => {
-						_this.$refs.mpvuePicker.show() // 点击弹出mpvuePickerpicker
-					}, 1000)
-				} else if (coll === false) {
-					request({
-						url: '/wap/api/my.php?action=modifyFavorite',
-						data: {
-							luId: _this.luId,
-							favAction: "del"
-						},
-						success: res => {
-							console.log('取消了:', res);
-							if (res.data.status == "success") {
-								uni.showToast({
-									title: "取消收藏",
-									duration: 2000
-								})
+						if (res.data.status === 'success') {
+							let array = res.data.content.item
+								for (let i = 0; i < array.length; i++) {
+									pickerValueArray.push({
+										label: array[i].cname,
+										value: array[i].cid
+									})
+									_this.pickerValueArray = pickerValueArray
+								}
 							}
 						}
-					})
+				})
+			},
+			// 收藏
+			onCollect(id, index) {
+				// 判断pickerValueArray收藏列表的数组是否有数据
+				if (this.pickerValueArray.length>0) {
+					// 请求分组列表
+					const _this = this;
+					_this.collectIndex = index;
+					_this.i = _this.ambitusArray[index]
+					_this.luId = _this.ambitusArray[index].luId
+					let coll = _this.ambitusArray[index].isFavorite
+						console.log('索引',coll);
+					if (coll===false) {
+						_this.$refs.mpvuePicker.show() // 点击弹出mpvuePickerpicker
+					} else {
+						request({
+							url: '/wap/api/my.php?action=modifyFavorite',
+							data: {
+								luId: _this.luId,
+								favAction: "del"
+							},
+							success: res => {
+								console.log('取消了:', res);
+								if (res.data.status == "success") {
+									uni.showToast({
+										title: "取消收藏",
+										duration: 2000
+									})
+									_this.$set(_this.ambitusArray[index],'isFavorite',false)
+								}
+							}
+						})
+					}
+				} else {
+						uni.showToast({
+							title:'请先添加收藏分组',
+							icon:'none'
+						})
 				}
-
 			},
 			// picker 组件点击取消时回调
 			onCancel(e) {
-				// console.log(this.i);
-
 				this.i.isFavorite = false
 			},
 			// picker 组件点击确定时回调，返回选中的 label, value 和数组索引 index 的值
 			onConfirm(e) {
-				console.log("确认：", e.value);
 				const _that = this;
+				let index = _that.collectIndex; // 收藏索引
 				let value = e.value;
 				let collectId;
 				for (let index = 0; index < value.length; index++) {
@@ -306,8 +314,8 @@
 				request({
 					url: '/wap/api/my.php?action=modifyFavorite',
 					data: {
-						luId: _that.luId,
-						classId: collectId,
+						luId: _that.luId, // 房源id
+						classId: collectId, // 收藏的文件夹id
 						favAction: "add"
 					},
 					success: res => {
@@ -317,6 +325,7 @@
 								title: "收藏成功",
 								duration: 2000
 							})
+							_that.$set(_that.ambitusArray[index], 'isFavorite', true) //更改
 						} else {
 							uni.showToast({
 								title: "收藏失败",
@@ -327,18 +336,13 @@
 				})
 			}
 		},
+		// 手机原生返回监控函数
 		onBackPress() {
+			
 			if (this.$refs.mpvuePicker.showPicker) {
 				this.$refs.mpvuePicker.pickerCancel();
 				return true;
 			}
-			if (this.$refs.mpvueCityPicker.showPicker) {
-				this.$refs.mpvueCityPicker.pickerCancel();
-				return true;
-			}
-		},
-		onUnload() {
-			
 		},
 		onPullDownRefresh() { // 监听用户下拉事件
 			console.log('refresh');

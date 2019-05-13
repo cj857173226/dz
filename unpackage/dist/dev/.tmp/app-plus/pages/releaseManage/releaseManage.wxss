@@ -186,6 +186,7 @@ page {
           -webkit-flex-grow: 1;
               -ms-flex-positive: 1;
                   flex-grow: 1;
+          width: 100%;
 }
 .releaseManage_page .house_list .list_item .item_foot .foot_left .house_title.data-v-d5d3572e {
             font-size: 36rpx;

@@ -24,20 +24,20 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.containers-box.data-v-c225d790 {
+.containers-box.data-v-cf04c744 {
   width: 100%;
   height: 490rpx;
   background-color: #fff;
   margin-top: 10rpx;
 }
-.containers-box .map-box.data-v-c225d790 {
+.containers-box .map-box.data-v-cf04c744 {
     width: 100%;
     height: 424rpx;
     padding: 15rpx;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
-.csssprite.data-v-c225d790 {
+.csssprite.data-v-cf04c744 {
   display: none !important;
 }
 
@@ -67,23 +67,23 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.containers.data-v-adea21a0 {
+.containers.data-v-be682a6c {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: #fff;
 }
-.containers .title.data-v-adea21a0 {
+.containers .title.data-v-be682a6c {
     font-weight: bold;
     text-align: center;
 }
-.containers .supporting-box.data-v-adea21a0 {
+.containers .supporting-box.data-v-be682a6c {
     width: 100%;
     padding: 40rpx;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
-.containers .supporting-box .box.data-v-adea21a0 {
+.containers .supporting-box .box.data-v-be682a6c {
       width: 100%;
       color: #000;
       display: -webkit-box;
@@ -100,7 +100,7 @@
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
 }
-.containers .supporting-box .box .icon-box.data-v-adea21a0 {
+.containers .supporting-box .box .icon-box.data-v-be682a6c {
         width: 152rpx;
         height: 72rpx;
         text-align: center;
@@ -108,10 +108,10 @@
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
 }
-.containers .supporting-box .box .icon-box .color-icon.data-v-adea21a0 {
+.containers .supporting-box .box .icon-box .color-icon.data-v-be682a6c {
           font-size: 20px;
 }
-.containers .else-supporting-box.data-v-adea21a0 {
+.containers .else-supporting-box.data-v-be682a6c {
     width: 100%;
     padding: 40rpx;
     -webkit-box-sizing: border-box;
@@ -648,21 +648,21 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-33763f62 {
+.contanier.data-v-16c06c08 {
   width: 100%;
   height: 600rpx;
   padding: 0 40rpx 0 40rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.contanier .title.data-v-33763f62 {
+.contanier .title.data-v-16c06c08 {
     font-weight: bold;
     text-align: center;
 }
-.contanier .unsubscribe.data-v-33763f62 {
+.contanier .unsubscribe.data-v-16c06c08 {
     width: 100%;
 }
-.contanier .rule.data-v-33763f62 {
+.contanier .rule.data-v-16c06c08 {
     text-align: right;
 }
 
@@ -692,17 +692,17 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.cantainer-description-box.data-v-56bc3d66 {
+.cantainer-description-box.data-v-6bbe0332 {
   width: 100%;
   margin-top: 10rpx;
   background-color: #fff;
 }
-.cantainer-description-box .title.data-v-56bc3d66 {
+.cantainer-description-box .title.data-v-6bbe0332 {
     font-weight: bold;
     padding-top: 36rpx;
     text-align: center;
 }
-.cantainer-description-box .introduce.data-v-56bc3d66 {
+.cantainer-description-box .introduce.data-v-6bbe0332 {
     width: 610rpx;
     height: 136rpx;
     text-align: center;
@@ -711,11 +711,11 @@
     overflow: hidden;
     padding: 44rpx 46rpx;
 }
-.cantainer-description-box .btn-box.data-v-56bc3d66 {
+.cantainer-description-box .btn-box.data-v-6bbe0332 {
     text-align: center;
     margin-top: 18rpx;
 }
-.cantainer-description-box .btn-box .mini-btn.data-v-56bc3d66 {
+.cantainer-description-box .btn-box .mini-btn.data-v-6bbe0332 {
       height: 80rpx;
       line-height: 80rpx;
       background-color: #fff;
@@ -724,30 +724,30 @@
       color: #ef5b72;
       margin: 43rpx 0 28rpx 0;
 }
-.cantainer-description-box .btn-box .mini-btn .contact-the-landlord-icon.data-v-56bc3d66 {
+.cantainer-description-box .btn-box .mini-btn .contact-the-landlord-icon.data-v-6bbe0332 {
         font-size: 14px;
         color: #ef5b72;
         margin-right: 10rpx;
 }
-.cantainer-description-box .meinv-img.data-v-56bc3d66 {
+.cantainer-description-box .meinv-img.data-v-6bbe0332 {
     width: 100%;
     height: 364rpx;
 }
-.cantainer-description-box .details-of-the-room-box.data-v-56bc3d66 {
+.cantainer-description-box .details-of-the-room-box.data-v-6bbe0332 {
     width: 100%;
     margin-top: 48rpx;
 }
-.cantainer-description-box .details-of-the-room-box .details-of-the-room-title.data-v-56bc3d66 {
+.cantainer-description-box .details-of-the-room-box .details-of-the-room-title.data-v-6bbe0332 {
       font-weight: bold;
       text-align: center;
 }
-.cantainer-description-box .details-of-the-room-box .operation-list-box.data-v-56bc3d66 {
+.cantainer-description-box .details-of-the-room-box .operation-list-box.data-v-6bbe0332 {
       width: 100%;
       padding: 40rpx;
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
 }
-.cantainer-description-box .details-of-the-room-box .operation-list-box .list-box.data-v-56bc3d66 {
+.cantainer-description-box .details-of-the-room-box .operation-list-box .list-box.data-v-6bbe0332 {
         width: 100%;
         height: 65rpx;
         font-size: 14px;
@@ -765,26 +765,26 @@
             -ms-flex-pack: justify;
                 justify-content: space-between;
 }
-.cantainer-description-box .details-of-the-room-box .operation-list-box .list-box .left.data-v-56bc3d66 {
+.cantainer-description-box .details-of-the-room-box .operation-list-box .list-box .left.data-v-6bbe0332 {
           color: #b9b9b9;
 }
-.cantainer-description-box .details-of-the-room-box .operation-list-box .list-box .right.data-v-56bc3d66 {
+.cantainer-description-box .details-of-the-room-box .operation-list-box .list-box .right.data-v-6bbe0332 {
           color: #ef5b72;
 }
-.cantainer-description-box .tenant-review-box.data-v-56bc3d66 {
+.cantainer-description-box .tenant-review-box.data-v-6bbe0332 {
     width: 100%;
 }
-.cantainer-description-box .tenant-review-box .tenant-review.data-v-56bc3d66 {
+.cantainer-description-box .tenant-review-box .tenant-review.data-v-6bbe0332 {
       text-align: center;
       font-weight: bold;
 }
-.cantainer-description-box .tenant-review-box .grades-box.data-v-56bc3d66 {
+.cantainer-description-box .tenant-review-box .grades-box.data-v-6bbe0332 {
       width: 100%;
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       padding: 40rpx;
 }
-.cantainer-description-box .tenant-review-box .grades-box .grades-contenr.data-v-56bc3d66 {
+.cantainer-description-box .tenant-review-box .grades-box .grades-contenr.data-v-6bbe0332 {
         width: 100%;
         height: 82rpx;
         border-radius: 10rpx;
@@ -802,18 +802,18 @@
             -ms-flex-align: center;
                 align-items: center;
 }
-.cantainer-description-box .tenant-review-box .grades-box .discuss-box.data-v-56bc3d66 {
+.cantainer-description-box .tenant-review-box .grades-box .discuss-box.data-v-6bbe0332 {
         margin-top: 30rpx;
         -o-text-overflow: ellipsis;
            text-overflow: ellipsis;
         overflow: hidden;
 }
-.cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism.data-v-56bc3d66 {
+.cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism.data-v-6bbe0332 {
           width: 100%;
           height: 184rpx;
           border-bottom: 1px solid #ccc;
 }
-.cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box.data-v-56bc3d66 {
+.cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box.data-v-6bbe0332 {
             width: 100%;
             display: -webkit-box;
             display: -webkit-flex;
@@ -826,27 +826,27 @@
             margin-bottom: 30rpx;
             margin-top: 20rpx;
 }
-.cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box .username-photo.data-v-56bc3d66 {
+.cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box .username-photo.data-v-6bbe0332 {
               width: 76rpx;
               height: 76rpx;
               border-radius: 50%;
 }
-.cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box .username-check.data-v-56bc3d66 {
+.cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box .username-check.data-v-6bbe0332 {
               font-size: 14px;
 }
-.cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box .username-check .check.data-v-56bc3d66 {
+.cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box .username-check .check.data-v-6bbe0332 {
                 font-size: 12px;
                 color: #d6d6d6;
 }
-.cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box.data-v-56bc3d66 {
+.cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box.data-v-6bbe0332 {
           text-align: center;
           margin-top: 18rpx;
 }
-.cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box .show-img.data-v-56bc3d66 {
+.cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box .show-img.data-v-6bbe0332 {
             width: 100%;
             height: 364rpx;
 }
-.cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box .mini-btn.data-v-56bc3d66 {
+.cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box .mini-btn.data-v-6bbe0332 {
             height: 80rpx;
             line-height: 80rpx;
             background-color: #fff;
@@ -854,7 +854,7 @@
             border: 1px solid #ef5b72;
             color: #ef5b72;
 }
-.cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box .mini-btn .contact-the-landlord-icon.data-v-56bc3d66 {
+.cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box .mini-btn .contact-the-landlord-icon.data-v-6bbe0332 {
               font-size: 14px;
               color: #ef5b72;
               margin-right: 10rpx;
@@ -886,27 +886,27 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.container.data-v-7143afc8 {
+.container.data-v-64395a68 {
   width: 100%;
   height: 100%;
   background-color: #ededed;
 }
-.container .container-box.data-v-7143afc8 {
+.container .container-box.data-v-64395a68 {
     width: 100%;
     height: 500rpx;
 }
-.container .container-box .uni-padding-wrap.data-v-7143afc8 {
+.container .container-box .uni-padding-wrap.data-v-64395a68 {
       position: relative;
 }
-.container .container-box .uni-padding-wrap .swiper.data-v-7143afc8 {
+.container .container-box .uni-padding-wrap .swiper.data-v-64395a68 {
         width: 100%;
         height: 500rpx;
 }
-.container .container-box .uni-padding-wrap .swiper .banner.data-v-7143afc8 {
+.container .container-box .uni-padding-wrap .swiper .banner.data-v-64395a68 {
           width: 100%;
           height: 500rpx;
 }
-.container .container-box .uni-padding-wrap .price.data-v-7143afc8 {
+.container .container-box .uni-padding-wrap .price.data-v-64395a68 {
         width: 200rpx;
         height: 60rpx;
         line-height: 60rpx;
@@ -918,10 +918,10 @@
         bottom: 0;
         left: 0;
 }
-.container .container-box .uni-padding-wrap .price .specific-price.data-v-7143afc8 {
+.container .container-box .uni-padding-wrap .price .specific-price.data-v-64395a68 {
           font-size: 18px;
 }
-.container .container-box .uni-padding-wrap .indexes-box.data-v-7143afc8 {
+.container .container-box .uni-padding-wrap .indexes-box.data-v-64395a68 {
         width: 60rpx;
         height: 60rpx;
         background-color: rgba(0, 0, 0, 0.7);
@@ -934,7 +934,7 @@
         bottom: 10rpx;
         right: 30rpx;
 }
-.container .container-box .uni-padding-wrap .icon-box.data-v-7143afc8 {
+.container .container-box .uni-padding-wrap .icon-box.data-v-64395a68 {
         width: 60rpx;
         height: 60rpx;
         color: #fff;
@@ -954,20 +954,20 @@
         top: 30rpx;
         right: 30rpx;
 }
-.container .container-box .uni-padding-wrap .icon-box .love-icon.data-v-7143afc8 {
+.container .container-box .uni-padding-wrap .icon-box .love-icon.data-v-64395a68 {
           font-size: 30rpx;
 }
-.container .container-box .uni-padding-wrap .icon-box .love-icon-red.data-v-7143afc8 {
+.container .container-box .uni-padding-wrap .icon-box .love-icon-red.data-v-64395a68 {
           font-size: 30rpx;
           color: #F8070E;
 }
-.container .container-contact-box.data-v-7143afc8 {
+.container .container-contact-box.data-v-64395a68 {
     width: 100%;
     padding: 30rpx;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
-.container .container-contact-box .contact-box.data-v-7143afc8 {
+.container .container-contact-box .contact-box.data-v-64395a68 {
       height: 600rpx;
       padding: 0 20rpx;
       -webkit-box-sizing: border-box;
@@ -987,12 +987,12 @@
           -ms-flex-align: center;
               align-items: center;
 }
-.container .container-contact-box .contact-box .title.data-v-7143afc8 {
+.container .container-contact-box .contact-box .title.data-v-64395a68 {
         margin-top: 42rpx;
         text-align: center;
         font-weight: bold;
 }
-.container .container-contact-box .contact-box .comment.data-v-7143afc8 {
+.container .container-contact-box .contact-box .comment.data-v-64395a68 {
         margin-top: 34rpx;
         display: -webkit-box;
         display: -webkit-flex;
@@ -1004,57 +1004,57 @@
             -ms-flex-direction: row;
                 flex-direction: row;
 }
-.container .container-contact-box .contact-box .comment .lightning-box.data-v-7143afc8 {
+.container .container-contact-box .contact-box .comment .lightning-box.data-v-64395a68 {
           margin-right: 20rpx;
           color: #a4a4a4;
 }
-.container .container-contact-box .contact-box .comment .lightning-box .lightning-icon.data-v-7143afc8 {
+.container .container-contact-box .contact-box .comment .lightning-box .lightning-icon.data-v-64395a68 {
             color: #d5efec;
             font-size: 18px;
 }
-.container .container-contact-box .contact-box .comment .comment-on-box.data-v-7143afc8 {
+.container .container-contact-box .contact-box .comment .comment-on-box.data-v-64395a68 {
           color: #a4a4a4;
 }
-.container .container-contact-box .contact-box .comment .comment-on-box .comment-on-icon.data-v-7143afc8 {
+.container .container-contact-box .contact-box .comment .comment-on-box .comment-on-icon.data-v-64395a68 {
             color: #cccccc;
             font-size: 18px;
 }
-.container .container-contact-box .contact-box .img-box.data-v-7143afc8 {
+.container .container-contact-box .contact-box .img-box.data-v-64395a68 {
         width: 120rpx;
         height: 120rpx;
         border-radius: 50%;
         margin-top: 30rpx;
 }
-.container .container-contact-box .contact-box .img-box .img.data-v-7143afc8 {
+.container .container-contact-box .contact-box .img-box .img.data-v-64395a68 {
           width: 120rpx;
           height: 120rpx;
           border-radius: 50%;
 }
-.container .container-contact-box .contact-box .autonym.data-v-7143afc8 {
+.container .container-contact-box .contact-box .autonym.data-v-64395a68 {
         text-align: center;
         margin-top: 20rpx;
 }
-.container .container-contact-box .contact-box .autonym .name.data-v-7143afc8 {
+.container .container-contact-box .contact-box .autonym .name.data-v-64395a68 {
           font-size: 14px;
           text-align: center;
 }
-.container .container-contact-box .contact-box .autonym .attestation.data-v-7143afc8 {
+.container .container-contact-box .contact-box .autonym .attestation.data-v-64395a68 {
           font-size: 12px;
           color: #a9a9a9;
           text-align: center;
 }
-.container .container-contact-box .contact-box .autonym .mini-btn.data-v-7143afc8 {
+.container .container-contact-box .contact-box .autonym .mini-btn.data-v-64395a68 {
           background-color: #fff;
           font-size: 18px;
           border: 1px solid #ef5b72;
           color: #ef5b72;
 }
-.container .container-contact-box .contact-box .autonym .mini-btn .contact-the-landlord-icon.data-v-7143afc8 {
+.container .container-contact-box .contact-box .autonym .mini-btn .contact-the-landlord-icon.data-v-64395a68 {
             font-size: 18px;
             color: #ef5b72;
             margin-right: 10rpx;
 }
-.container .container-contact-box .housing-information-box.data-v-7143afc8 {
+.container .container-contact-box .housing-information-box.data-v-64395a68 {
       width: 100%;
       height: 220rpx;
       background-color: #fff;
@@ -1068,21 +1068,21 @@
           -ms-flex-pack: justify;
               justify-content: space-between;
 }
-.container .container-contact-box .housing-information-box .house-classifieds.data-v-7143afc8 {
+.container .container-contact-box .housing-information-box .house-classifieds.data-v-64395a68 {
         width: 230rpx;
         font-size: 14px;
         text-align: center;
         margin-top: 30rpx;
 }
-.container .container-contact-box .housing-information-box .house-classifieds .house-icon.data-v-7143afc8 {
+.container .container-contact-box .housing-information-box .house-classifieds .house-icon.data-v-64395a68 {
           font-size: 24px;
           color: #b8b8b8;
 }
-.container .container-contact-box .housing-information-box .house-classifieds .font-color.data-v-7143afc8 {
+.container .container-contact-box .housing-information-box .house-classifieds .font-color.data-v-64395a68 {
           color: #c8c8c8;
           font-size: 12px;
 }
-.container .container-contact-box .mini-btn.data-v-7143afc8 {
+.container .container-contact-box .mini-btn.data-v-64395a68 {
       height: 80rpx;
       line-height: 80rpx;
       background-color: #ef5b72;
@@ -1091,17 +1091,17 @@
       color: #fff;
       margin-top: 30rpx;
 }
-.container .cantainer-description-box.data-v-7143afc8 {
+.container .cantainer-description-box.data-v-64395a68 {
     width: 100%;
     margin-top: 10rpx;
     background-color: #fff;
 }
-.container .cantainer-description-box .title.data-v-7143afc8 {
+.container .cantainer-description-box .title.data-v-64395a68 {
       font-weight: bold;
       padding-top: 36rpx;
       text-align: center;
 }
-.container .cantainer-description-box .introduce.data-v-7143afc8 {
+.container .cantainer-description-box .introduce.data-v-64395a68 {
       width: 610rpx;
       height: 136rpx;
       text-align: center;
@@ -1111,17 +1111,17 @@
       font-size: 14px;
       padding: 44rpx 46rpx;
 }
-.container .cantainer-description-box .introduces.data-v-7143afc8 {
+.container .cantainer-description-box .introduces.data-v-64395a68 {
       width: 610rpx;
       height: 100%;
       font-size: 14px;
       padding: 44rpx 46rpx;
 }
-.container .cantainer-description-box .btn-box.data-v-7143afc8 {
+.container .cantainer-description-box .btn-box.data-v-64395a68 {
       text-align: center;
       margin-top: 18rpx;
 }
-.container .cantainer-description-box .btn-box .mini-btn.data-v-7143afc8 {
+.container .cantainer-description-box .btn-box .mini-btn.data-v-64395a68 {
         height: 80rpx;
         line-height: 80rpx;
         background-color: #fff;
@@ -1130,30 +1130,30 @@
         color: #ef5b72;
         margin: 0rpx 0 28rpx 0;
 }
-.container .cantainer-description-box .btn-box .mini-btn .contact-the-landlord-icon.data-v-7143afc8 {
+.container .cantainer-description-box .btn-box .mini-btn .contact-the-landlord-icon.data-v-64395a68 {
           font-size: 14px;
           color: #ef5b72;
           margin-right: 10rpx;
 }
-.container .cantainer-description-box .meinv-img.data-v-7143afc8 {
+.container .cantainer-description-box .meinv-img.data-v-64395a68 {
       width: 100%;
       height: 364rpx;
 }
-.container .cantainer-description-box .details-of-the-room-box.data-v-7143afc8 {
+.container .cantainer-description-box .details-of-the-room-box.data-v-64395a68 {
       width: 100%;
       margin-top: 48rpx;
 }
-.container .cantainer-description-box .details-of-the-room-box .details-of-the-room-title.data-v-7143afc8 {
+.container .cantainer-description-box .details-of-the-room-box .details-of-the-room-title.data-v-64395a68 {
         font-weight: bold;
         text-align: center;
 }
-.container .cantainer-description-box .details-of-the-room-box .operation-list-box.data-v-7143afc8 {
+.container .cantainer-description-box .details-of-the-room-box .operation-list-box.data-v-64395a68 {
         width: 100%;
         padding: 40rpx;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
 }
-.container .cantainer-description-box .details-of-the-room-box .operation-list-box .list-box.data-v-7143afc8 {
+.container .cantainer-description-box .details-of-the-room-box .operation-list-box .list-box.data-v-64395a68 {
           width: 100%;
           height: 65rpx;
           font-size: 14px;
@@ -1171,26 +1171,26 @@
               -ms-flex-pack: justify;
                   justify-content: space-between;
 }
-.container .cantainer-description-box .details-of-the-room-box .operation-list-box .list-box .left.data-v-7143afc8 {
+.container .cantainer-description-box .details-of-the-room-box .operation-list-box .list-box .left.data-v-64395a68 {
             color: #b9b9b9;
 }
-.container .cantainer-description-box .details-of-the-room-box .operation-list-box .list-box .right.data-v-7143afc8 {
+.container .cantainer-description-box .details-of-the-room-box .operation-list-box .list-box .right.data-v-64395a68 {
             color: #ef5b72;
 }
-.container .cantainer-description-box .tenant-review-box.data-v-7143afc8 {
+.container .cantainer-description-box .tenant-review-box.data-v-64395a68 {
       width: 100%;
 }
-.container .cantainer-description-box .tenant-review-box .tenant-review.data-v-7143afc8 {
+.container .cantainer-description-box .tenant-review-box .tenant-review.data-v-64395a68 {
         text-align: center;
         font-weight: bold;
 }
-.container .cantainer-description-box .tenant-review-box .grades-box.data-v-7143afc8 {
+.container .cantainer-description-box .tenant-review-box .grades-box.data-v-64395a68 {
         width: 100%;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         padding: 40rpx;
 }
-.container .cantainer-description-box .tenant-review-box .grades-box .grades-contenr.data-v-7143afc8 {
+.container .cantainer-description-box .tenant-review-box .grades-box .grades-contenr.data-v-64395a68 {
           width: 100%;
           height: 82rpx;
           border-radius: 10rpx;
@@ -1208,18 +1208,18 @@
               -ms-flex-align: center;
                   align-items: center;
 }
-.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box.data-v-7143afc8 {
+.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box.data-v-64395a68 {
           margin-top: 30rpx;
           -o-text-overflow: ellipsis;
              text-overflow: ellipsis;
           overflow: hidden;
 }
-.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism.data-v-7143afc8 {
+.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism.data-v-64395a68 {
             width: 100%;
             height: 184rpx;
             border-bottom: 1px solid #ccc;
 }
-.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box.data-v-7143afc8 {
+.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box.data-v-64395a68 {
               width: 100%;
               display: -webkit-box;
               display: -webkit-flex;
@@ -1232,27 +1232,27 @@
               margin-bottom: 30rpx;
               margin-top: 20rpx;
 }
-.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box .username-photo.data-v-7143afc8 {
+.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box .username-photo.data-v-64395a68 {
                 width: 76rpx;
                 height: 76rpx;
                 border-radius: 50%;
 }
-.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box .username-check.data-v-7143afc8 {
+.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box .username-check.data-v-64395a68 {
                 font-size: 14px;
 }
-.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box .username-check .check.data-v-7143afc8 {
+.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .criticism .username-img-box .username-check .check.data-v-64395a68 {
                   font-size: 12px;
                   color: #d6d6d6;
 }
-.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box.data-v-7143afc8 {
+.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box.data-v-64395a68 {
             text-align: center;
             margin-top: 18rpx;
 }
-.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box .show-img.data-v-7143afc8 {
+.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box .show-img.data-v-64395a68 {
               width: 100%;
               height: 364rpx;
 }
-.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box .mini-btn.data-v-7143afc8 {
+.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box .mini-btn.data-v-64395a68 {
               height: 80rpx;
               line-height: 80rpx;
               background-color: #fff;
@@ -1260,59 +1260,59 @@
               border: 1px solid #ef5b72;
               color: #ef5b72;
 }
-.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box .mini-btn .contact-the-landlord-icon.data-v-7143afc8 {
+.container .cantainer-description-box .tenant-review-box .grades-box .discuss-box .btn-box .mini-btn .contact-the-landlord-icon.data-v-64395a68 {
                 font-size: 14px;
                 color: #ef5b72;
                 margin-right: 10rpx;
 }
-.container .transaction-rules-box.data-v-7143afc8 {
+.container .transaction-rules-box.data-v-64395a68 {
     width: 100%;
     padding: 40rpx;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
-.container .transaction-rules-box .transaction-rules-title.data-v-7143afc8 {
+.container .transaction-rules-box .transaction-rules-title.data-v-64395a68 {
       width: 100%;
       text-align: center;
       color: #000;
       font-size: 14;
       font-weight: bold;
 }
-.container .transaction-rules-box .bottom-transaction-rules.data-v-7143afc8 {
+.container .transaction-rules-box .bottom-transaction-rules.data-v-64395a68 {
       color: #626262;
       margin-top: 20rpx;
 }
-.container .transaction-rules-box .bottom-transaction-rules .booking-way-box.data-v-7143afc8 {
+.container .transaction-rules-box .bottom-transaction-rules .booking-way-box.data-v-64395a68 {
         margin-top: 20rpx;
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
 }
-.container .transaction-rules-box .bottom-transaction-rules .booking-way-box .iconyuding.data-v-7143afc8 {
+.container .transaction-rules-box .bottom-transaction-rules .booking-way-box .iconyuding.data-v-64395a68 {
           font-size: 16px;
 }
-.container .transaction-rules-box .bottom-transaction-rules .booking-way-box .right-booking-way-box.data-v-7143afc8 {
+.container .transaction-rules-box .bottom-transaction-rules .booking-way-box .right-booking-way-box.data-v-64395a68 {
           font-size: 12px;
           margin-left: 30rpx;
 }
-.container .transaction-rules-box .bottom-transaction-rules .booking-way-box .right-booking-way-box .top-title.data-v-7143afc8 {
+.container .transaction-rules-box .bottom-transaction-rules .booking-way-box .right-booking-way-box .top-title.data-v-64395a68 {
             color: #000;
 }
-.container .transaction-rules-box .bottom-transaction-rules .booking-way-box .right-booking-way-box .conten.data-v-7143afc8 {
+.container .transaction-rules-box .bottom-transaction-rules .booking-way-box .right-booking-way-box .conten.data-v-64395a68 {
             color: #d6d6d6;
 }
-.container .transaction-rules-box .bottom-transaction-rules .booking-way-box .right-booking-way-box1.data-v-7143afc8 {
+.container .transaction-rules-box .bottom-transaction-rules .booking-way-box .right-booking-way-box1.data-v-64395a68 {
           margin-left: 62rpx;
           font-size: 12px;
 }
-.container .transaction-rules-box .bottom-transaction-rules .booking-way-box .right-booking-way-box1 .top-title.data-v-7143afc8 {
+.container .transaction-rules-box .bottom-transaction-rules .booking-way-box .right-booking-way-box1 .top-title.data-v-64395a68 {
             color: #000;
 }
-.container .transaction-rules-box .bottom-transaction-rules .booking-way-box .right-booking-way-box1 .conten.data-v-7143afc8 {
+.container .transaction-rules-box .bottom-transaction-rules .booking-way-box .right-booking-way-box1 .conten.data-v-64395a68 {
             color: #d6d6d6;
 }
-.container .reserve-box.data-v-7143afc8 {
+.container .reserve-box.data-v-64395a68 {
     width: 100%;
     height: 90rpx;
     background: #f05b72;
@@ -1325,7 +1325,34 @@
     left: 0;
     z-index: 999;
 }
-.container .reserve-box.data-v-7143afc8:active {
+.container .reserve-box.data-v-64395a68:active {
       opacity: .5;
+}
+.grades1-box.data-v-64395a68 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 14px;
+  padding: 0 30rpx 20rpx 30rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fff;
+  margin-bottom: 30rpx;
+}
+.grades1-box .house-classifieds.data-v-64395a68 {
+    text-align: center;
+    color: #a0a0a0;
+}
+.grades1-box .house-classifieds .house-icon.data-v-64395a68 {
+      font-size: 30px;
+}
+.grades1-box .house-classifieds .black.data-v-64395a68 {
+      color: #000;
 }
 
