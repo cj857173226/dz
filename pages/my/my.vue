@@ -78,6 +78,12 @@
 							<p class="name">常用入住人</p>
 						</view>
 					</view>
+						<view class="more-fun-item ">
+						<view class="_box" @click.stop="pageTo('/pages/my/comment/comment')">
+							<text class="iconfont icon-icon-edit"></text> 
+							<p class="name">评论管理</p>
+						</view>
+					</view>
 					<view class="more-fun-item ">
 						<view class="_box" @click.stop="pageTo('/pages/my_address/my_address')">
 							<text class="iconfont icon-dizhi-01"></text> 

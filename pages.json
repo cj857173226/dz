@@ -806,7 +806,13 @@
 				}
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/my/comment/comment",
+            "style": {
+            	"navigationBarTitleText": "评论管理"
+            }
+        }
+    ],
 	// 全局样式
 	"globalStyle": {
 		"navigationBarBackgroundColor": "#F05B72"
