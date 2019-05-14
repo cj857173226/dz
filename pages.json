@@ -806,12 +806,18 @@
 				}
 			}
 		}
-	    ,{
-            "path" : "pages/my/comment/comment",
-            "style": {
-            	"navigationBarTitleText": "评论管理"
-            }
-        }
+		,{
+					"path" : "pages/my/comment/comment",
+					"style": {
+						"navigationBarTitleText": "评论管理"
+					}
+			},
+			{
+				"path" : "pages/my/comment/revert_comment",
+				"style": {
+					"navigationBarTitleText": "回复评论"
+				}
+		}
     ],
 	// 全局样式
 	"globalStyle": {

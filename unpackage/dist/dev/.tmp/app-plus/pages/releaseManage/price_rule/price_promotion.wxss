@@ -29,19 +29,19 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contenr.data-v-7d13272e {
+.contenr.data-v-c6045efa {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   min-height: 100%;
   width: 100%;
 }
-.contenr .check_box.data-v-7d13272e {
+.contenr .check_box.data-v-c6045efa {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
     padding: 20rpx 30rpx;
 }
-.contenr .check_box .check_item.data-v-7d13272e {
+.contenr .check_box .check_item.data-v-c6045efa {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
@@ -54,7 +54,7 @@ page {
           -ms-flex-pack: justify;
               justify-content: space-between;
 }
-.contenr .check_box .check_item .check_btn.data-v-7d13272e {
+.contenr .check_box .check_item .check_btn.data-v-c6045efa {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         width: 36rpx;
@@ -63,22 +63,22 @@ page {
         border-radius: 50%;
         margin-top: 4rpx;
 }
-.contenr .check_box .check_item .content_box.data-v-7d13272e {
+.contenr .check_box .check_item .content_box.data-v-c6045efa {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         width: calc(100% - 60rpx);
         margin-bottom: 60rpx;
 }
-.contenr .check_box .check_item .content_box .content.data-v-7d13272e {
+.contenr .check_box .check_item .content_box .content.data-v-c6045efa {
           font-size: 32rpx;
           color: #000000;
           margin-bottom: 20rpx;
 }
-.contenr .check_box .check_item .content_box .desc.data-v-7d13272e {
+.contenr .check_box .check_item .content_box .desc.data-v-c6045efa {
           font-size: 28rpx;
           color: #aaaaaa;
 }
-.contenr .check_box .checked .check_btn.data-v-7d13272e {
+.contenr .check_box .checked .check_btn.data-v-c6045efa {
       border: 1px solid #F05B72;
       display: -webkit-box;
       display: -webkit-flex;
@@ -93,7 +93,7 @@ page {
           -ms-flex-align: center;
               align-items: center;
 }
-.contenr .check_box .checked .check_btn.data-v-7d13272e::after {
+.contenr .check_box .checked .check_btn.data-v-c6045efa::after {
         content: '';
         display: block;
         width: 20rpx;
@@ -101,7 +101,7 @@ page {
         border-radius: 50%;
         background: #F05B72;
 }
-.contenr .bottom-box.data-v-7d13272e {
+.contenr .bottom-box.data-v-c6045efa {
     position: fixed;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;

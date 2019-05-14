@@ -75,7 +75,9 @@
     "pages/comment/comment",
     "pages/comment/comment_order",
     "pages/setting/setting",
-    "pages/setting/setting"
+    "pages/setting/setting",
+    "pages/my/comment/comment",
+    "pages/my/comment/revert_comment"
   ],
   "subPackages": [],
   "window": {

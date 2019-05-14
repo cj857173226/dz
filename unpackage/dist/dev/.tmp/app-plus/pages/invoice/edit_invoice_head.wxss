@@ -30,13 +30,13 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.edit_invoice_head_page.data-v-155ad6df {
+.edit_invoice_head_page.data-v-713f0205 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 100%;
   padding: 20rpx 30rpx;
 }
-.edit_invoice_head_page .type_change_wrap.data-v-155ad6df {
+.edit_invoice_head_page .type_change_wrap.data-v-713f0205 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
@@ -45,13 +45,13 @@ page {
     border-radius: 12rpx;
     background: #ffffff;
 }
-.edit_invoice_head_page .type_change_wrap .t_line.data-v-155ad6df {
+.edit_invoice_head_page .type_change_wrap .t_line.data-v-713f0205 {
       width: 86%;
       height: 1px;
       background: #eaeaea;
       margin: 0 auto;
 }
-.edit_invoice_head_page .type_change_wrap .type_item.data-v-155ad6df {
+.edit_invoice_head_page .type_change_wrap .type_item.data-v-713f0205 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       padding: 20rpx 10rpx;
@@ -65,10 +65,10 @@ page {
           -ms-flex-direction: row;
               flex-direction: row;
 }
-.edit_invoice_head_page .type_change_wrap .type_item .chang_radio_wrap.data-v-155ad6df {
+.edit_invoice_head_page .type_change_wrap .type_item .chang_radio_wrap.data-v-713f0205 {
         width: 40rpx;
 }
-.edit_invoice_head_page .type_change_wrap .type_item .chang_radio_wrap .chang_radio.data-v-155ad6df {
+.edit_invoice_head_page .type_change_wrap .type_item .chang_radio_wrap .chang_radio.data-v-713f0205 {
           -webkit-box-sizing: border-box;
                   box-sizing: border-box;
           margin-top: 4rpx;
@@ -89,7 +89,7 @@ page {
           border: 1px solid #aaaaaa;
           border-radius: 18rpx;
 }
-.edit_invoice_head_page .type_change_wrap .type_item .chang_radio_wrap .chang_radio .radio_circle.data-v-155ad6df {
+.edit_invoice_head_page .type_change_wrap .type_item .chang_radio_wrap .chang_radio .radio_circle.data-v-713f0205 {
             -webkit-box-sizing: border-box;
                     box-sizing: border-box;
             width: 20rpx;
@@ -97,10 +97,10 @@ page {
             background: #F05B72;
             border-radius: 10rpx;
 }
-.edit_invoice_head_page .type_change_wrap .type_item .chang_radio_wrap .chang_radio_on.data-v-155ad6df {
+.edit_invoice_head_page .type_change_wrap .type_item .chang_radio_wrap .chang_radio_on.data-v-713f0205 {
           border: 1px solid #F05B72;
 }
-.edit_invoice_head_page .type_change_wrap .type_item .info.data-v-155ad6df {
+.edit_invoice_head_page .type_change_wrap .type_item .info.data-v-713f0205 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         padding-left: 16rpx;
@@ -109,16 +109,16 @@ page {
             -ms-flex-positive: 1;
                 flex-grow: 1;
 }
-.edit_invoice_head_page .type_change_wrap .type_item .info .text.data-v-155ad6df {
+.edit_invoice_head_page .type_change_wrap .type_item .info .text.data-v-713f0205 {
           font-size: 28rpx;
           color: #ccc;
           margin-bottom: 4rpx;
 }
-.edit_invoice_head_page .type_change_wrap .type_item .info .title.data-v-155ad6df {
+.edit_invoice_head_page .type_change_wrap .type_item .info .title.data-v-713f0205 {
           font-size: 32rpx;
           color: #333;
 }
-.edit_invoice_head_page .invoice_head_form.data-v-155ad6df {
+.edit_invoice_head_page .invoice_head_form.data-v-713f0205 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     padding: 0 20rpx;
@@ -126,7 +126,7 @@ page {
     margin-top: 20rpx;
     border-radius: 12rpx;
 }
-.edit_invoice_head_page .invoice_head_form .form-item.data-v-155ad6df {
+.edit_invoice_head_page .invoice_head_form .form-item.data-v-713f0205 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       padding: 10rpx 0;
@@ -137,10 +137,10 @@ page {
       display: -ms-flexbox;
       display: flex;
 }
-.edit_invoice_head_page .invoice_head_form .form-item.data-v-155ad6df:last-child {
+.edit_invoice_head_page .invoice_head_form .form-item.data-v-713f0205:last-child {
         border-bottom: none;
 }
-.edit_invoice_head_page .invoice_head_form .form-item .label.data-v-155ad6df {
+.edit_invoice_head_page .invoice_head_form .form-item .label.data-v-713f0205 {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -156,7 +156,7 @@ page {
         text-align: right;
         font-size: 16px;
 }
-.edit_invoice_head_page .invoice_head_form .form-item .input.data-v-155ad6df {
+.edit_invoice_head_page .invoice_head_form .form-item .input.data-v-713f0205 {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -176,11 +176,11 @@ page {
                 flex-direction: row-reverse;
         font-size: 14px;
 }
-.edit_invoice_head_page .invoice_head_form .form-item .input input.data-v-155ad6df {
+.edit_invoice_head_page .invoice_head_form .form-item .input input.data-v-713f0205 {
           text-align: right;
           font-size: 14px;
 }
-.edit_invoice_head_page .my-del-block.data-v-155ad6df {
+.edit_invoice_head_page .my-del-block.data-v-713f0205 {
     margin-top: 40rpx;
 }
 
