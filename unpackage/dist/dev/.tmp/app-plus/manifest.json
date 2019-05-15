@@ -18,10 +18,10 @@
     "url": ""
   },
   "permissions": {
+    "Payment": {},
     "Maps": {
       "coordType": "gcj02"
-    },
-    "Payment": {}
+    }
   },
   "plus": {
     "useragent": {
@@ -79,8 +79,8 @@
       "plugins": {
         "maps": {
           "amap": {
-            "appkey_ios": "762ed8c71859b8e2ab587fcb3211fa14",
-            "appkey_android": "762ed8c71859b8e2ab587fcb3211fa14"
+            "appkey_ios": "ff60afce471bf105359e78dfc05feed4",
+            "appkey_android": "ff60afce471bf105359e78dfc05feed4"
           }
         },
         "oauth": {},

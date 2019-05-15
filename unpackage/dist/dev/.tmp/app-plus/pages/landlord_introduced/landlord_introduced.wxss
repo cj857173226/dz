@@ -195,11 +195,10 @@
 }
 .contanier .comment .commentInfo.data-v-0854164e {
       width: 100%;
-      height: 232rpx;
       border-radius: 20rpx;
       background-color: #f4f4f4;
       line-height: 40rpx;
-      padding: 40rpx;
+      padding: 10rpx 40rpx;
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       overflow: hidden;

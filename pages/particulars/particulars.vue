@@ -346,6 +346,8 @@
 				request({
 					url: '/wap/api/my.php?action=favoriteClass',
 					success: function(res) {
+						console.log('收藏列表',res);
+						
 						if (res.data.status === 'success') {
 							let array = res.data.content.item
 								for (let i = 0; i < array.length; i++) {
@@ -361,31 +363,40 @@
 			},
 				// 收藏
 			onCollect() {
-				// 请求分组列表
-				const _this = this;
-				let coll = _this.data.isFavorite
-					console.log('索引',coll);
-				if (coll===false) {
-					_this.$refs.mpvuePicker.show() // 点击弹出mpvuePickerpicker
-				} else {
-					request({
-						url: '/wap/api/my.php?action=modifyFavorite',
-						data: {
-							luId: _this.luId,
-							favAction: "del"
-						},
-						success: res => {
-							console.log('取消了:', res);
-							if (res.data.status == "success") {
-								uni.showToast({
-									title: "取消收藏",
-									duration: 2000
-								})
-								_this.$set(_this.data,'isFavorite',false)
+				// 判断pickerValueArray.length的长度是否大于0，大于零显示收藏的列表，否者提醒用户添加列表
+				if (this.pickerValueArray.length > 0) {
+					// 请求分组列表
+					const _this = this;
+					let coll = _this.data.isFavorite
+						console.log('索引',coll);
+					if (coll===false) {
+						_this.$refs.mpvuePicker.show() // 点击弹出mpvuePickerpicker
+					} else {
+						request({
+							url: '/wap/api/my.php?action=modifyFavorite',
+							data: {
+								luId: _this.luId,
+								favAction: "del"
+							},
+							success: res => {
+								console.log('取消了:', res);
+								if (res.data.status == "success") {
+									uni.showToast({
+										title: "取消收藏",
+										duration: 2000
+									})
+									_this.$set(_this.data,'isFavorite',false)
+								}
 							}
-						}
+						})
+					}
+				} else {
+					uni.showToast({
+						title:'请先添加收藏分组',
+						icon:'none'
 					})
 				}
+				
 			},
 			// picker 组件点击取消时回调
 			onCancel(e) {
@@ -521,8 +532,7 @@
 					_that.count = datas.comment.count
 					_that.headImageUrl = datas.landlord.headImageUrl
 					_that.roomInnerIntro = datas.detail.roomInnerIntro
-					_that.landlordId = datas.landlord.landlordId,
-					_that.isFavorite = datas.isFavorite
+					_that.landlordId = datas.landlord.landlordId
 				}
 			})
 			this.collectReqList(); // 收藏列表

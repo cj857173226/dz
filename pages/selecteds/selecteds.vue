@@ -7,16 +7,15 @@
         <text class="iconfont icon-xiala- xiala"></text>
       </view>
       <view class="select-box">
-        <mSearch :mode="2" button="inside" @search="search($event)"></mSearch>
+        <mSearch value=""  :mode="2" button="inside" @search="search($event)"></mSearch>
       </view>
     </view>
     <view class="list-box">
-      <view @click="onShowDatePicker('range')" style="color:#EA516B">
-        <!-- <calendar @change="change"></calendar> -->
-        {{range[0]}}-{{range[1]}}
+      <view @click="onShowDatePicker('range')" class="tiem-data">
+        <calendar @change="change" :beginDate="start" :endDate="end"></calendar>
         <text class="iconfont icon-xiasanjiaoxiangxiamianxing"></text>
       </view>
-      <view>
+      <view @tap="showCalendar">
         位置区域
         <text class="iconfont icon-xiasanjiaoxiangxiamianxing"></text>
       </view>
@@ -29,7 +28,6 @@
         <text class="iconfont icon-xiasanjiaoxiangxiamianxing"></text>
       </view>
     </view>
-    <checkboxGroup></checkboxGroup>
     <view class="housing-show">
       <view class="housing">
         <image class="housing-img" src="../../static/images/landlordguide/banner1.jpg"/>
@@ -60,30 +58,52 @@
         </view>
       </view>
     </view>
-    <mx-date-picker :show="showPicker" :type="type" :value="value" :show-tips="true" :begin-text="'入住'" :end-text="'离店'" :show-seconds="true" @confirm="onSelected" @cancel="onSelected" />
+    <!-- 位置区域 -->
+    <view class="place" :class="isShow ? 'show' : 'hide'" :animation="animationData">
+      1212121212
+    </view>
   </view>
 </template>
 <script>
 import mSearch from "@/components/selected/mehaotian-search-revision/mehaotian-search-revision"; //引入第三方搜索组件
-import MxDatePicker from '@/components/mx-datepicker/mx-datepicker' //引入日期插件件
-import calendar from '../../components/index/date-picker/date-picker' //引入日期插件件
+import calendar from '../../components/selected/date-picker/date-picker' //引入日期插件件
 import checkboxGroup from "@/components/selected/checjbox/group/pages/checkbox-group/checkbox-group"; //引入第三方更多选框
+// import popupView from '@/components/selected/'
 import {request} from '../../common/request.js' // 封装的带有token的请求方法
 export default {
   components: {
     mSearch,
     checkboxGroup,
-    MxDatePicker,
     calendar
   },
   data() {
     return {
       showPicker: false,
-      value: '',
       type: 'range',
       city:'', // 城市
-      range: ['1.1','1.6'],
+      start:'',// 开始时间
+      end:'', // 结束时间
+      isShow:'',
+      animation:null,
+      animationData: {},
     };
+  },
+  onLoad(option){
+    this.city = option.city;
+    // this.start = option.start;
+    // this.end = option.end;
+  },
+  onShow(){
+    console.log('1',uni);
+    console.log('2',uni.createAnimation);
+    
+    // 弹出层动画创建
+		this.animation = uni.createAnimation({
+			duration: 1000,
+      timingFunction: 'ease',
+    });
+    this.animation.scale(2,2).rotate(45).step()
+    this.animationData = animation.export()
   },
   methods: {
     search(e, val) {
@@ -111,6 +131,37 @@ export default {
           console.log('date => ' + e.date);
       }
     },
+    showCalendar: function() {
+			//#ifndef H5
+			// 设置动画内容为：使用绝对定位显示区域，高度变为100%
+			this.animation
+				.bottom('0px')
+				.height('100%')
+				.step();
+			this.animationData = this.animation.export();
+			//#endif
+
+			///////////////////h5平台适配//////////////////
+			//#ifdef H5
+			this.isShow = true;
+			//#endif
+    },
+    hideCalendar: function() {
+			///////////////////非非非h5平台适配//////////////////
+			//#ifndef H5
+			// 设置动画内容为：使用绝对定位隐藏整个区域，高度变为0
+			this.animation
+				.bottom('-100%')
+				.height('0upx')
+				.step();
+			this.animationData = this.animation.export();
+			//#endif
+
+			///////////////////h5平台适配//////////////////
+			//#ifdef H5
+			this.isShow = false;
+			//#endi
+		},
     change({choiceDate, dayCount}){
 			//1.choiceDate 时间区间（开始时间和结束时间）
 			//2.dayCount 共多少晚
@@ -119,23 +170,20 @@ export default {
 			this.startTime = choiceDate[0].re;
 			this.endTime = choiceDate[1].re;
 		},
-  },
-  onLoad(option){
-    console.log(option);
-    this.city = option.city;
-    request({
-      url:'/wap/api/search.php?action=result',
-      data: { cityName: "广州" },
-      success: function(res) {
-        console.log(res);
-      }
-    })
   }
+  
 };
 </script>
+<style>
+page{
+ height: 100%;
+}
+</style>
+
 <style lang="scss" scoped>
 .contanier {
   width: 100%;
+  height: 100%;
   padding: 30upx;
   box-sizing: border-box;
   .top {
@@ -151,7 +199,7 @@ export default {
       border-radius: 10upx;
       font-size: 14px;
       .xiala {
-        font-size: 16px;
+        font-size: 14px;
         margin-left: 10upx;
       }
     }
@@ -171,10 +219,14 @@ export default {
     height: 80upx;
     display: flex;
     align-items: center;
-    color: #858585;
+    color: #000;
     justify-content: space-between;
+    .tiem-data{
+      display: flex;
+      align-items: center;
+    }
     text {
-      color: #e1e1e1;
+      color: #000;
     }
   }
   .housing-show {
@@ -256,6 +308,27 @@ export default {
           }
         }
       }
+    }
+  }
+  .place{
+    position: fixed;
+    left: 0;
+    bottom: -100%;
+    height: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 9999;
+    &.show {
+      bottom: 0;
+      height: 100%;
+      transition: bottom 0.4s;
+    }
+
+    //h5使用css3动画
+    &.hide {
+      bottom: -100%;
+      height: 100%;
+      transition: bottom 0.4s;
     }
   }
 }

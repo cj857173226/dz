@@ -133,6 +133,9 @@ page{
           color: #f05b72;
           font-size: 24rpx;
 }
+.contanier .content .housing-comments .btn-box .btn.data-v-ad2dcfd2:nth-of-type(2) {
+            margin-right: 20rpx;
+}
 .contanier .content .housing-comments .btn-box .btn.data-v-ad2dcfd2:active {
             opacity: .5;
 }
@@ -212,5 +215,190 @@ page{
           margin-top: 10rpx;
           border-bottom: 2rpx solid #ccc;
           padding-bottom: 20rpx;
+}
+.contanier .content .landlord-comments.data-v-ad2dcfd2 {
+      width: 100%;
+      margin-bottom: 20rpx;
+}
+.contanier .content .landlord-comments .head-portrait-box.data-v-ad2dcfd2 {
+        width: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        padding: 0 30rpx;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        margin-top: 30rpx;
+}
+.contanier .content .landlord-comments .head-portrait-box .portrait-box.data-v-ad2dcfd2 {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+                  align-items: center;
+}
+.contanier .content .landlord-comments .head-portrait-box .portrait-box .portrait-img-box.data-v-ad2dcfd2 {
+            width: 100rpx;
+            height: 100rpx;
+            border-radius: 50%;
+            margin-right: 20rpx;
+}
+.contanier .content .landlord-comments .head-portrait-box .portrait-box .portrait-img-box .img-portrait.data-v-ad2dcfd2 {
+              width: 100rpx;
+              height: 100rpx;
+              border-radius: 50%;
+}
+.contanier .content .landlord-comments .head-portrait-box .portrait-box .ursename.data-v-ad2dcfd2 {
+            font-weight: 800;
+}
+.contanier .content .landlord-comments .head-portrait-box .years-box.data-v-ad2dcfd2 {
+          color: #888888;
+          text-align: right;
+}
+.contanier .content .landlord-comments .comments-content.data-v-ad2dcfd2 {
+        margin-top: 10rpx;
+        padding: 0 30rpx;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+}
+.contanier .content .landlord-comments .img-box.data-v-ad2dcfd2 {
+        width: 100%;
+        height: 100%;
+        padding: 20rpx 30rpx;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+}
+.contanier .content .landlord-comments .img-box .img-list.data-v-ad2dcfd2 {
+          width: 152rpx;
+          height: 152rpx;
+          margin-right: 10rpx;
+          margin-left: 10rpx;
+}
+.contanier .content .landlord-comments .btn-box.data-v-ad2dcfd2 {
+        width: 100%;
+        padding: 0 30rpx;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -webkit-flex-direction: row-reverse;
+            -ms-flex-direction: row-reverse;
+                flex-direction: row-reverse;
+}
+.contanier .content .landlord-comments .btn-box .btn.data-v-ad2dcfd2 {
+          width: 100rpx;
+          height: 40rpx;
+          border: 2rpx solid #f05b72;
+          border-radius: 8rpx;
+          text-align: center;
+          line-height: 40rpx;
+          color: #f05b72;
+          font-size: 24rpx;
+}
+.contanier .content .landlord-comments .btn-box .btn.data-v-ad2dcfd2:nth-of-type(2) {
+            margin-right: 20rpx;
+}
+.contanier .content .landlord-comments .btn-box .btn.data-v-ad2dcfd2:active {
+            opacity: .5;
+}
+.contanier .content .landlord-comments .reply.data-v-ad2dcfd2 {
+        width: 100%;
+        padding: 20rpx 30rpx;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        position: relative;
+}
+.contanier .content .landlord-comments .reply .reply-tarea.data-v-ad2dcfd2 {
+          width: 100%;
+          height: 300rpx;
+          border: 2rpx solid #ccc;
+          padding: 10rpx;
+          -webkit-box-sizing: border-box;
+                  box-sizing: border-box;
+}
+.contanier .content .landlord-comments .reply .notarize.data-v-ad2dcfd2 {
+          position: absolute;
+          bottom: 30rpx;
+          right: 40rpx;
+          width: 100rpx;
+          height: 40rpx;
+          border: 2rpx solid #f05b72;
+          border-radius: 8rpx;
+          text-align: center;
+          line-height: 40rpx;
+          color: #f05b72;
+          font-size: 24rpx;
+}
+.contanier .content .landlord-comments .reply .notarize.data-v-ad2dcfd2:active {
+            opacity: .5;
+}
+.contanier .content .landlord-comments .landlord-reply.data-v-ad2dcfd2 {
+        width: 100%;
+        padding: 20rpx 30rpx;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+}
+.contanier .content .landlord-comments .landlord-reply .landlord-reply-top.data-v-ad2dcfd2 {
+          width: 100%;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+              -ms-flex-pack: justify;
+                  justify-content: space-between;
+}
+.contanier .content .landlord-comments .landlord-reply .landlord-reply-top .left-reply.data-v-ad2dcfd2 {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+                -ms-flex-align: center;
+                    align-items: center;
+}
+.contanier .content .landlord-comments .landlord-reply .landlord-reply-top .left-reply .sign.data-v-ad2dcfd2 {
+              width: 6rpx;
+              height: 28rpx;
+              background: #f05b72;
+              margin-right: 20rpx;
+}
+.contanier .content .landlord-comments .landlord-reply .landlord-reply-top .time.data-v-ad2dcfd2 {
+            color: #888888;
+}
+.contanier .content .landlord-comments .landlord-reply .landlord-reply-center.data-v-ad2dcfd2 {
+          width: 100%;
+          margin-top: 10rpx;
+          border-bottom: 2rpx solid #ccc;
+          padding-bottom: 20rpx;
+}
+.forno.data-v-ad2dcfd2 {
+  text-align: center;
+  line-height: calc(100% - 90rpx);
+  height: calc(100% - 90rpx);
+  color: #fff;
+  background: #ccc;
 }
 
