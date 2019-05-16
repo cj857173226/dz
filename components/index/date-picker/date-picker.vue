@@ -11,7 +11,6 @@
 					明天
 				</text>
 			</view>
-			
 			<text class="sumCount">{{ dayCount2 }}</text>
 		</view>
 
@@ -154,7 +153,7 @@ export default {
 	},
 	created() {
 		//#ifdef H5
-		console.log(this.beginDate, this.endDate);
+		// console.log(this.beginDate, this.endDate);
 		this.dateData();
 		//#endif
 	},
@@ -169,11 +168,7 @@ export default {
 	// 	}
 	// },
 	methods: {
-		// 隐藏组件
-		clickClose(){
-			console.log('关闭');
-			this.isShow = false;
-		},
+		
 		getLayerTop: function() {
 			return new Promise(resolve => {
 				//获取layer-list窗器的top
@@ -450,13 +445,13 @@ export default {
 				dataAll2[1][0].act.defaultStr = 1;
 				this.choiceDate.push(dataAll2[1][0]);
 			}
-			// console.log(dataAll2, weeks, this.today, this.tomorrow, this.afterTomorrow);
+			console.log(dataAll2, weeks, this.today, this.tomorrow, this.afterTomorrow);
 			this.date = dataAll2;
 			this.weeks = weeks;
 			this.choiceDate = this.choiceDate;
 			this.choiceDateArr = this.choiceDate;
 
-			console.log(this.choiceDate);
+			// console.log(this.choiceDate);
 		},
 		selectday: function(e) {
 			var indexs = e.currentTarget.dataset.indexs;
@@ -575,6 +570,12 @@ export default {
 				this.choiceDate[0] = this.date[index][indexs];
 			}
 		},
+		// 隐藏组件
+		clickClose(){
+			console.log('关闭');
+			// this.isShow = true;
+			this.hideCalendar(true);
+		},
 		submitbtn: function() {
 			this.choiceDate[0] = this.choiceDateArr[0];
 			this.choiceDate[1] = this.choiceDateArr[this.choiceDateArr.length - 1];
@@ -596,7 +597,7 @@ export default {
 
 <style lang="scss" scoped>
 .shanchu{
-	font-size: 20px;
+	font-size: 30px;
 	position: absolute;
 	top: 0;
 	left:0;

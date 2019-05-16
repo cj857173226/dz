@@ -295,11 +295,10 @@ export default {
       width: 100%;
       .commentInfo{
         width: 100%;
-        height: 232upx;
         border-radius: 20upx;
         background-color: #f4f4f4;
         line-height: 40upx;
-        padding: 40upx;
+        padding:10upx 40upx;
         box-sizing: border-box;
         overflow: hidden;
         text-overflow:ellipsis;

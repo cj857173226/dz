@@ -1,2 +1,6 @@
 <import src="./with_guest.vue.wxml" />
+<<<<<<< HEAD
     <template is="e6227f64" data="{{ ...$root['0'], $root }}"/>
+=======
+    <template is="05f99c2e" data="{{ ...$root['0'], $root }}"/>
+>>>>>>> f27b4d270c8b7da9bccda9260e74e8bba5acc2d4

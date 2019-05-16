@@ -1,37 +1,66 @@
 <template>
   <view class="contanier">
-    <view v-if="roomData.length>0">
-      <view class="comment-box" v-for="(item,i) in roomData" :key="i">
-        <view class="top-box">
-          <image class="userphoto" :src="shortHttp+item.user.userpic"></image>
-          <view class="nickname-check-in-time">
-            <view class="nickname">{{item.user.realname}}</view>
-            <view class="check-in-time">{{item.comment_time}}</view>
+    <!-- 房源评论 -->
+    <view>
+      <view v-if="roomData.length>0">
+        <view class="comment-box" v-for="(item,i) in roomData" :key="i">
+          <view class="top-box">
+            <image class="userphoto" :src="shortHttp+item.userpic"></image>
+            <view class="nickname-check-in-time">
+              <view class="nickname">{{item.realname}}</view>
+              <view class="check-in-time">{{item.comment_time}}</view>
+            </view>
           </view>
-        </view>
-        <view class="comment-content">
-          <view style="font-size:14px;">{{item.comment}}</view>
-          <view class="img-box" v-if="item.pictures.length>0">
-            <image style="width:120upx;height:120upx;margin-left:14upx;" v-for="(items,index) in item.pictures" :key="index" :src="shortHttp+items.picture"></image>
+          <view class="comment-content">
+            <view style="font-size:14px;">{{item.comment}}</view>
+            <view class="img-box" v-if="item.pictures.length>0">
+              <image style="width:120upx;height:120upx;margin-left:14upx;" v-for="(items,index) in item.pictures" :key="index" :src="shortHttp+items.picture"></image>
+            </view>
+          </view>
+          <view class="landlord-reply" v-if="item.recomment != null">
+            <view class="landlord-reply-top">
+              <view class="left-reply">
+                <view class="sign"></view>
+                <text>房东回复</text>
+              </view>
+              <view class="time">
+                <text>{{item.re_comment_time}}</text>
+              </view>
+            </view>
+            <view class="landlord-reply-center">{{item.recomment}}</view>
           </view>
         </view>
       </view>
     </view>
-    <view v-if="landlordData.length>0">
-      <view class="comment-box" v-for="(item,i) in landlordData" :key="i">
-        <view class="top-box">
-          <image class="userphoto" src="../../static/images/meitu1.jpg"></image>
-          <view class="nickname-check-in-time">
-            <view class="nickname">昵称</view>
-            <view class="check-in-time">入住时间</view>
+    <view>
+      <view v-if="landlordData.length>0">
+        <view class="comment-box" v-for="(item,i) in landlordData" :key="i">
+          <view class="top-box">
+            <image class="userphoto" :src="item.userpic===''?'../../static/images/meitu1.jpg':shortHttp+item.userpic"></image>
+            <view class="nickname-check-in-time">
+              <view class="nickname">{{item.realname}}</view>
+              <view class="check-in-time">{{item.comment_time}}</view>
+            </view>
           </view>
-        </view>
-        <view class="comment-content">
-          <view style="font-size:14px;text-algin:center">每一次都在孤单中徘徊</view>
+          <view class="comment-content">
+            <view style="font-size:14px;text-algin:center">{{item.comment}}</view>
+          </view>
+          <view class="landlord-reply" v-if="item.recomment != null">
+            <view class="landlord-reply-top">
+              <view class="left-reply">
+                <view class="sign"></view>
+                <text>房东回复</text>
+              </view>
+              <view class="time">
+                <text>{{item.re_comment_time}}</text>
+              </view>
+            </view>
+            <view class="landlord-reply-center">{{item.recomment}}</view>
+          </view>
         </view>
       </view>
     </view>
-    <view v-else style="text-align:center">占无相关评论</view>
+    
   </view>
 </template>
 <script>
@@ -61,9 +90,11 @@ export default {
         url:'/wap/api/detail.php?action=comments',
         data:{id:option.roomId},
         success: function(res) {
+          console.log('房源评论',res);
+          
           uni.hideLoading()
           if (res.data.status === 'success') {
-            _this.roomData = res.data.content.content
+            _this.roomData = res.data.content
           } else {
             uni.showToast({
               title:res.data.errorMsg,
@@ -94,7 +125,6 @@ export default {
               icon:'none'
             })
           }
-          
         },
         fail: function(err) {
           uni.showToasr({
@@ -138,7 +168,37 @@ export default {
       }
       .comment-content{
         margin-top: 10upx;
-        text-indent: 56upx;
+      }
+      .landlord-reply{
+        width: 100%;
+        padding: 20upx 30upx;
+        box-sizing: border-box;
+        .landlord-reply-top{
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .left-reply{
+            display: flex;
+            align-items: center;
+            .sign{
+              width: 6upx;
+              height: 28upx;
+              background: #f05b72;
+              margin-right: 20upx;
+            }
+          }
+          .time{
+            font-size: 24upx;
+            color: #888888;
+          }
+        }
+        .landlord-reply-center{
+          width: 100%;
+          margin-top: 10upx;
+          // border-bottom: 2upx solid #ccc;
+          padding-bottom: 20upx;
+        }
       }
     }
   }

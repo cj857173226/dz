@@ -24,21 +24,21 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-f53ac1e2 {
+.contanier.data-v-ef4d11ae {
   width: 100%;
   padding: 30rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.contanier .messages.data-v-f53ac1e2 {
+.contanier .messages.data-v-ef4d11ae {
     width: 100%;
     padding: 0 0 30rpx 0;
     border-bottom: 1px solid #d7d7d7;
 }
-.contanier .messages .contanier-msg.data-v-f53ac1e2 {
+.contanier .messages .contanier-msg.data-v-ef4d11ae {
       font-size: 14px;
 }
-.contanier .messages .time.data-v-f53ac1e2 {
+.contanier .messages .time.data-v-ef4d11ae {
       font-size: 12px;
       color: #b9b9b9;
       margin-top: 20rpx;

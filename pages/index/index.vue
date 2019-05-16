@@ -19,11 +19,11 @@
 				<view class="location">
 					<view class="list-box">
 						<i class="iconfont icon-city">&#xec70;</i>
-						<text class="city">{{city}}</text>
+						<text class="city">{{addressName}}</text>
 					</view>
 					<view class="list-box" @tap="tapOrientation">
 						<i class="iconfont icon-place">&#xe793;</i>
-						<text class="my-place">名宿</text>
+						<text class="my-place">{{city===""?'民宿':'我的附近'}}</text>
 					</view>
 				</view>
 				<view class="calendar">
@@ -32,7 +32,7 @@
 				<view class="search" @tap="tapSelect">
 					<view class="list-box">
 						<i class="iconfont icon-city">&#xe611;</i>
-						<text class="city">{{searchCity}}</text>
+						<text class="city">{{city===""?searchCity:city}}</text>
 					</view>
 					<view>
 						<i class="iconfont right">&#xe65e;</i>
@@ -80,6 +80,9 @@
 
 			</view>
 		</view>
+		<!-- <view>{{addressNames}}</view>
+		<textarea style="width:100%;height:1000px;" :value="addressName" :maxlength="number" /> -->
+		<!-- <view style="width:100%" v-for="(item,i) in addressName" :key="i">{{JSON.stringify(item) }}</view> -->
 		<mpvue-picker :themeColor="themeColor" ref="mpvuePicker" :mode="mode" :deepLength="deepLength" :pickerValueDefault="pickerValueDefault"
 		 @onConfirm="onConfirm" @onCancel="onCancel()" :pickerValueArray="pickerValueArray"></mpvue-picker>
 	</view>
@@ -88,6 +91,7 @@
 <script>
 	import mpvuePicker from '../../components/index/mpvue-picker/mpvuePicker';
 	import calendar from '../../components/index/date-picker/date-picker' //引入日期插件件
+	// import calendar from '@/components/selected/date-picker/date-picker'
 	import {
 		request
 	} from '../../common/request.js' // 封装的带有token的请求方法
@@ -97,6 +101,7 @@
 		banner,
 		ambitus
 	} from "../../common/requestUrl.json"; // 接口文件
+	import amap from '../../common/amap-wx.js' // 高德小程序sdk
 	export default {
 		components: {
 			//注册组件
@@ -105,15 +110,18 @@
 		},
 		data() {
 			return {
+				number:-1,
 				indicatorDots: true,
 				autoplay: true,
 				interval: 5000,
 				duration: 500,
 				shortHttp, //域名
-				weather: {
-					hasData: false,
-					data: []
-				},
+				addressName: '',  
+				addressNames:'',
+				weather: {  
+						hasData: false,  
+						data: []  
+				} ,
 				contentArray: null, //轮播图
 				ambitusArray: null, //周边推荐
 				i: null,
@@ -125,13 +133,18 @@
 				deepLength: 1,
 				pickerValueDefault: [0],
 				pickerValueArray: [],
-				searchCity: '试试搜:花水湾',
+				searchCity: '位置/地名/房源',
 				startTime: '', // 开始时间
 				endTime: '', // 结束时间
 				collectIndex:null, // 收藏房源的索引
+				amapPlugin: null,  
+        key: 'ff60afce471bf105359e78dfc05feed4' // 高德小程序key
 			};
 		},
 		onLoad() {
+			this.amapPlugin = new amap.AMapWX({  
+        key: this.key  
+      });
 			this.collectReqList(); // 收藏列表
 			//判断是否登录
 			helper.isLogin();
@@ -140,6 +153,9 @@
 		onReady() {
 			this.bannerFn();
 			this.recommended();
+		},
+		onShow(){
+			this.collectReqList(); // 收藏列表
 		},
 		methods: {
 			onDetails(id) {
@@ -171,7 +187,10 @@
 						}
 					},
 					fail: err => {
-						console.log(err);
+						uni.showToast({
+							title: err,
+							icon: 'none'
+						})
 					}
 				});
 			},
@@ -181,6 +200,7 @@
 				uni.navigateTo({
 					url: "/pages/index/search_city"
 				})
+
 			},
 			change({choiceDate,dayCount}) {
 				//1.choiceDate 时间区间（开始时间和结束时间）
@@ -194,18 +214,49 @@
 				console.log('1111')
 				let startTime = this.startTime;
 				let endTime = this.endTime;
+				let ressCity = this.addressName
 				uni.navigateTo({
-					url: `/pages/selecteds/selecteds?start=${startTime}&end=${endTime}`
+					url: `/pages/selecteds/selecteds?start=${startTime}&end=${endTime}&city=${ressCity}`
 				})
 			},
 			cityGps() {
-				// 获取当前位置
+				const _this = this;
+				_this.amapPlugin.getRegeo({
+					success: (data) => {  
+						// console.warn('获取位置',JSON.stringify(data[0].name))
+						_this.addressName = data[0].regeocodeData.addressComponent.city
+					},
+					fail:function(info){
+						console.log(info);
+					}
+				});  
+				// uni.getLocation({
+				// 	type:'gcj02',
+				// 	success: function (res) {
+				// 		console.log('当前位置的经度：' + res.longitude);
+				// 		console.log('当前位置的纬度：' + res.latitude);
+    		// 	}
+				// })
+				/* // 获取当前位置
 				const _that = this;
 				plus.geolocation.getCurrentPosition(p => {
 					_that.city = p.address.city; //当前城市名
 					console.log(_that.city)
-				});
+				}); */
 
+			},
+			// 点击获取当前位置
+			tapOrientation(){
+				const _this = this;
+				_this.amapPlugin.getRegeo({
+					success: (data) => {  
+						_this.city = data[0].name
+						// _this.addressName = data[0].regeocodeData.addressComponent.city
+					},
+					fail:function(info){
+						console.log(info);
+					}
+				}); 
 			},
 			// 周边推荐
 			recommended() {
@@ -219,8 +270,7 @@
 						cityName: "广州"
 					}, //*：有问题，无法拿到当前城市
 					success: function(res) {
-						console.log(res);
-						
+						// console.log(res);
 						uni.hideLoading();
 						_that.ambitusArray = res.data.content.item;
 					}
