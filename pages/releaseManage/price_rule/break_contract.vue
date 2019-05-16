@@ -4,14 +4,14 @@
 			<label class>全额退款天数</label>
 			<view class="amout-box">
 				<text>{{fullRefunds}}天</text>
-				<text class="iconfont">&#xe65e;</text>
+				<text class="iconfont" v-if="houseStatus== -1|| houseStatus == 2">&#xe65e;</text>
 			</view>
 		</view>
 		<view class="price-amount" @tap="fullRefund('balance')">
 			<label class>违约取消扣款天数</label>
 			<view class="amout-box">
 				<text>{{balanceRefund}}天</text>
-				<text class="iconfont">&#xe65e;</text>
+				<text class="iconfont" v-if="houseStatus== -1|| houseStatus == 2">&#xe65e;</text>
 			</view>
 		</view>
 		<view class="step_wrap">
@@ -61,6 +61,7 @@
 				pickerValueArray: [],
 				similarType: "",
 				isSubmiting: false,
+				houseStatus:'', // 房屋状态
 			}
 		},
 		onLoad() {
@@ -86,6 +87,7 @@
 		methods: {
 			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
 			fullRefund: function(type) {
+				if(this.houseStatus == 0 || this.houseStatus == 1) return;
 				// console.log(type);
 				this.similarType = type; // 接收参数复制给similarType
 				let _data = [];
@@ -119,6 +121,10 @@
 			},
 			// 保存入住天数
 			save() {
+				if(this.houseStatus == 0 || this.houseStatus == 1){
+					helper.layer('无法编辑上架或者审核中的房源!');
+					return;
+				};
 				if (this.isSubmiting) return;
 				const _this = this;
 				const id = _this.house_id;
@@ -157,6 +163,7 @@
 				this.house_id = _releaseObj.id;
 				this.fullRefunds = _releaseObj.crvn;
 				this.balanceRefund = _releaseObj.crva;
+				this.houseStatus = _releaseObj.status;
 			}
 		},
 	};

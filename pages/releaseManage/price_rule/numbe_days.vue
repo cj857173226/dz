@@ -3,14 +3,14 @@
 		<view class="box">
 			<view class="label">最少入住天数</view>
 			<view class="right-box">
-				<input class="day" type="number" placeholder="最少可设置1" placeholder-class="placeholder" maxlength="3" v-model="minday" />
+				<input class="day"  type="number" :disabled="houseStatus==1|| houseStatus ==0" placeholder="最少可设置1" placeholder-class="placeholder" maxlength="3" v-model="minday" />
 				<view class="unit">晚</view>
 			</view>
 		</view>
 		<view class="box">
 			<view class="label">最多入住天数</view>
 			<view class="right-box">
-				<input class="day" type="number" placeholder="最多可设置500" placeholder-class="placeholder"  maxlength="3"  v-model="maxday" />
+				<input class="day" type="number" :disabled="houseStatus==1|| houseStatus ==0" placeholder="最多可设置500" placeholder-class="placeholder"  maxlength="3"  v-model="maxday" />
 				<view class="unit">晚</view>
 			</view>
 		</view>
@@ -32,6 +32,7 @@
 				minday: '',
 				maxday: '',
 				isSubmiting: false,
+				houseStatus:'', // 房屋状态
 			}
 		},
 		onLoad() {
@@ -52,6 +53,10 @@
 			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
 			// 保存入住天数
 			save(){
+				if(this.houseStatus == 0 || this.houseStatus == 1){
+					helper.layer('无法编辑上架或者审核中的房源!');
+					return;
+				};
 				if(this.isSubmiting) return;
 				const _this = this;
 				const id = _this.house_id;
@@ -96,6 +101,7 @@
 				this.house_id = _releaseObj.id;
 				this.minday = _releaseObj.minday;
 				this.maxday = _releaseObj.maxday;
+				this.houseStatus = _releaseObj.status;
 			}
 		}
 	}

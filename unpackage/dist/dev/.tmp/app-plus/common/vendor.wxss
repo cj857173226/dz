@@ -374,7 +374,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.shanchu.data-v-0904387a {
+.shanchu.data-v-a8fd8e40 {
   font-size: 20px;
   position: absolute;
   top: 0;
@@ -536,13 +536,8 @@ view.data-v-a8fd8e40 {
 .layer-content.choiceDate .layer-footer.data-v-a8fd8e40 {
   display: block;
 }
-<<<<<<< HEAD
 .layer-content.choiceDate .layer-body.data-v-a8fd8e40 {
-  height: calc(100% - 70rpx - 120rpx);
-=======
-.layer-content.choiceDate .layer-body.data-v-0904387a {
   height: calc(100% - 88rpx);
->>>>>>> 4b6a97c7458041e16d84caaf0987c3ced936f792
 }
 .submitBtn.data-v-a8fd8e40 {
   height: 80rpx;

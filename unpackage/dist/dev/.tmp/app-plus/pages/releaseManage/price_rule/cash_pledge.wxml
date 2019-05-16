@@ -1,2 +1,2 @@
 <import src="./cash_pledge.vue.wxml" />
-    <template is="575a68ac" data="{{ ...$root['0'], $root }}"/>
+    <template is="4757eaf6" data="{{ ...$root['0'], $root }}"/>

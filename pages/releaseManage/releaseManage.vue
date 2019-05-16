@@ -1,24 +1,19 @@
 <template>
 	<view class="releaseManage_page">
 		<view class="house_list" v-if="listData.length>0">
-			<view class="list_item" v-for="(item,index) in listData" :key="index">
+			<view class="list_item" v-for="(item,index) in listData" :key="index" @tap.stop="previewHouse(item)">
 				<view class="item_head">
 					<view class="hous_local">
 						<text class="iconfont icon-dizhi-01 "></text>
 						{{item.xz_local}}
 					</view>
-					<button class="modify_local_btn" @tap="editLocal(item)">修改地址</button>
+					<button class="modify_local_btn" @tap="editLocal(item)" v-if="item.status== -1||item.status== 2">修改地址</button>
 				</view>
 				<view class="item_body">
 					<img class="house_pic" v-if="item.titlepic" :src="host+item.titlepic" alt="">
 					<view class="no_pic" v-if="!item.titlepic">无房源图片</view>
-					<view class="rent-status" v-if="item.is_complete== 0">未完成发布</view>
-					<view class="rent-status" v-if="item.is_complete == 1">
-						<view v-if="item.status== -1">待发布</view>
-						<view v-else-if="item.status== 0">待审核</view>
-						<view v-else-if="item.status== 1">已上架</view>
-						<view v-else-if="item.status== 2">已下架</view>
-					</view>
+					<view class="rent-status">{{item.state}}</view>
+
 				</view>
 				<view class="item_foot">
 					<view class="foot_left">
@@ -30,9 +25,8 @@
 							<view v-else-if="item.leasetype == 3">合住房间</view>
 						</view>
 					</view>
-					<button class="house-handle-btn lower-shelf-btn" v-if="item.is_complete ==1 && item.status== 1">下架</button>
-					<button class="house-handle-btn upper-shelf-btn" v-if="item.is_complete ==0 && item.status== 2">上架</button>
-					<button class="house-handle-btn house-update-btn" v-if="item.is_complete ==0 && item.status== -1" @tap.stop="editHouseInfo(item)">修改</button>
+					<button class="house-handle-btn upper-shelf-btn" v-if="item.status== 0||item.status== 1" @tap.stop="editHouseInfo(item)">查看房源</button>
+					<button class="house-handle-btn house-update-btn" v-if="item.status== -1||item.status== 2" @tap.stop="editHouseInfo(item)">编辑房源</button>
 				</view>
 			</view>
 		</view>
@@ -180,16 +174,41 @@
 			},
 			// 修改房屋发布信息
 			editHouseInfo(par) {
-				// 先清空房源信息
 				this.clearReleaseInfo();
 				// 带入当前要修改的房源信息
 				this.editReleaseInfo(par);
 				this.editReleaseInfoStatus(false);
 				uni.navigateTo({
-					url: '/pages/releaseManage/house_detail?type=edit'
+					url: '/pages/releaseManage/house_detail'
 				})
 			},
-			
+			// 预览房间
+			previewHouse(item) {
+				const _this = this;
+				const status = item.status;
+				const complete = item.is_complete;
+				console.log(complete,typeof complete)
+				if (complete === '0') {
+					uni.showModal({
+						title: '',
+						content: '完善房源信息后才可预览',
+						confirmText: '知道了',
+						showCancel:false,
+						success: function(res) {
+							
+						}
+					});
+				} else {
+					this.clearReleaseInfo();
+					// 带入当前要修改的房源信息
+					this.editReleaseInfo(item);
+					this.editReleaseInfoStatus(false);
+					uni.navigateTo({
+						url: '/pages/releaseManage/preview_house'
+					})
+				}
+			}
+
 		}
 	}
 </script>
@@ -302,6 +321,8 @@
 
 					.rent-status {
 						font-size: 32upx;
+						min-width: 220upx;
+						text-align: center;
 						position: absolute;
 						bottom: 0;
 						left: 0;
@@ -352,7 +373,7 @@
 						margin: 0 0 0 20upx;
 						background: #FFFFFF;
 						border: 1px solid $theme-color;
-						width: 140upx;
+						width: 180upx;
 						height: 60upx;
 						line-height: 60upx;
 						text-align: center;

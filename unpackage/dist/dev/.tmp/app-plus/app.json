@@ -44,6 +44,7 @@
     "pages/releaseManage/local_set",
     "pages/releaseManage/rent_type",
     "pages/releaseManage/house_detail",
+    "pages/releaseManage/preview_house",
     "pages/releaseManage/house_basic_info/house_basic_info",
     "pages/releaseManage/house_basic_info/house_type",
     "pages/releaseManage/house_basic_info/house_area",
@@ -75,7 +76,8 @@
     "pages/comment/comment",
     "pages/comment/comment_order",
     "pages/setting/setting",
-    "pages/setting/setting"
+    "pages/setting/setting",
+    "pages/my/comment/comment"
   ],
   "subPackages": [],
   "window": {
@@ -125,5 +127,5 @@
     "autoclose": false
   },
   "appname": "xzapp",
-  "compilerVersion": "1.9.4"
+  "compilerVersion": "1.8.1"
 }

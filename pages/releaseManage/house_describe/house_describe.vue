@@ -7,7 +7,7 @@
 						<view class="title">房源标题</view>
 					</view>
 					<view class="content_wrap">
-						<view class="no_data" v-if="!title">请完善</view>
+						<view class="no_data" v-if="!title && (houseStatus== -1 || houseStatus == 2)">请完善</view>
 						<view class="content" v-if="title">{{title}}</view>
 					</view>
 				</view>
@@ -22,7 +22,7 @@
 						<view class="tag">选填</view>
 					</view>
 					<view class="content_wrap">
-						<view class="no_data" v-if="!roomServiceIntro">请完善</view>
+						<view class="no_data" v-if="!roomServiceIntro && (houseStatus== -1 || houseStatus == 2)">请完善</view>
 						<view class="content" v-if="roomServiceIntro">{{roomServiceIntro}}</view>
 					</view>
 				</view>
@@ -36,7 +36,7 @@
 						<view class="title">内部情况</view>
 					</view>
 					<view class="content_wrap">
-						<view class="no_data" v-if="!roomRoominnerIntro">请完善</view>
+						<view class="no_data" v-if="!roomRoominnerIntro && (houseStatus== -1 || houseStatus == 2)">请完善</view>
 						<view class="content" v-if="roomRoominnerIntro">{{roomRoominnerIntro}}</view>
 					</view>
 				</view>
@@ -51,7 +51,7 @@
 						<view class="tag">选填</view>
 					</view>
 					<view class="content_wrap">
-						<view class="no_data" v-if="!roomLocationIntro">请完善</view>
+						<view class="no_data" v-if="!roomLocationIntro && (houseStatus== -1 || houseStatus == 2)">请完善</view>
 						<view class="content" v-if="roomLocationIntro">{{roomLocationIntro}}</view>
 					</view>
 				</view>
@@ -66,7 +66,7 @@
 						<view class="tag">选填</view>
 					</view>
 					<view class="content_wrap">
-						<view class="no_data" v-if="!roomAroundIntro">请完善</view>
+						<view class="no_data" v-if="!roomAroundIntro && (houseStatus== -1 || houseStatus == 2)">请完善</view>
 						<view class="content" v-if="roomAroundIntro">{{roomAroundIntro}}</view>
 					</view>
 				</view>
@@ -96,7 +96,8 @@
 				roomServiceIntro: '', //个性
 				roomRoominnerIntro: '', //内部
 				roomLocationIntro: '', //交通
-				roomAroundIntro: '' //周边
+				roomAroundIntro: '' ,//周边
+				houseStatus:'', // 房屋状态
 			}
 		},
 		onLoad() {
@@ -128,6 +129,7 @@
 				_this.roomRoominnerIntro = _houseInfo.roomRoominnerIntro;
 				_this.roomLocationIntro = _houseInfo.roomLocationIntro;
 				_this.roomAroundIntro = _houseInfo.roomAroundIntro;
+				_this.houseStatus = _houseInfo.status;
 			},
 		}
 	}

@@ -1,7 +1,7 @@
 <template>
 	<view class="edit_describe_page">
 		<view class="textarea_wrap">
-			<textarea placeholder-style="color:#cccccc;font-size:28upx" :placeholder="describeOption.placeholder" :maxlength="describeOption.maxLength"
+			<textarea :disabled="houseStatus==1|| houseStatus== 0" placeholder-style="color:#cccccc;font-size:28upx" :placeholder="describeOption.placeholder" :maxlength="describeOption.maxLength"
 			 v-model="describeContent" />
 			<view class="control">
 				<text class="cur" v-text="describeContent.length"></text>
@@ -45,6 +45,7 @@
 					placeholder: '', // 文本提示
 				},
 				isSubmiting:false, //是否正在提交描述
+				houseStatus:'', // 房屋状态
 				// 所有配置数据
 				optionsArr:[
 					{
@@ -138,6 +139,10 @@
 			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
 			// 提交描述
 			submitDescribe(){
+				if(this.houseStatus == 0 || this.houseStatus ==1 ){
+					helper.layer('无法编辑上架或者审核中的房源!');
+					return;
+				}
 				if(this.isSubmiting) return;
 				const _this = this;
 				const id = this.house_id;
@@ -197,6 +202,7 @@
 				const _houseInfo = _this.releaseObj;
 				const describeType = _this.describeType;
 				_this.house_id = _houseInfo.id;
+				_this.houseStatus = _houseInfo.status;
 				switch (describeType) {
 					case 'title':
 						_this.describeContent = _this.releaseObj.title?_this.releaseObj.title:'';

@@ -1,2 +1,2 @@
 <import src="./edit_bed.vue.wxml" />
-    <template is="3656008b" data="{{ ...$root['0'], $root }}"/>
+    <template is="cce28ffe" data="{{ ...$root['0'], $root }}"/>

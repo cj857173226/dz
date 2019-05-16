@@ -3,7 +3,8 @@
 		<view class="price-amount">
 			<view class="label">日价金额</view>
 			<view class="amout-box">
-				<input class="amount" placeholder="最高设置金额99999" placeholder-class="placeholder" type="number" maxlength="6"  v-model="money"/>
+				<input class="amount" :disabled="houseStatus==1|| houseStatus ==0" placeholder="最高设置金额99999" placeholder-class="placeholder"
+				 type="number" maxlength="6" v-model="money" />
 				<view class="unit">元/每晚</view>
 			</view>
 		</view>
@@ -22,9 +23,10 @@
 	export default {
 		data() {
 			return {
-				house_id:'', //房源id
-				money:'',
-				isSubmiting:false,
+				house_id: '', //房源id
+				money: '',
+				isSubmiting: false,
+				houseStatus: '', // 房屋状态
 			}
 		},
 		onLoad() {
@@ -33,10 +35,9 @@
 		onShow() {
 
 		},
-		onBackPress() {
-		},
-		onNavigationBarButtonTap(e){
-			if(e.index === 0){
+		onBackPress() {},
+		onNavigationBarButtonTap(e) {
+			if (e.index === 0) {
 				this.save()
 			}
 		},
@@ -46,46 +47,50 @@
 		methods: {
 			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
 			// 保存日价设置
-			save(){
-				if(this.isSubmiting) return;
+			save() {
+				if (this.houseStatus == 0 || this.houseStatus == 1) {
+					helper.layer('无法编辑上架或者审核中的房源!');
+					return;
+				};
+				if (this.isSubmiting) return;
 				const _this = this;
 				const money = _this.money;
 				const id = _this.house_id;
-				if(money<=0 || money> 99999 || !helper.intNumReg(money)){
+				if (money <= 0 || money > 99999 || !helper.intNumReg(money)) {
 					helper.layer('请输入0~99999的正整数')
-				}else{
+				} else {
 					_this.isSubmiting = true;
 					request({
-						url:'/wap/api/fangdong.php?action=improveHouse',
-						method:'POST',
-						data:{
-							house_id:id,
-							dayrentprice:money,
+						url: '/wap/api/fangdong.php?action=improveHouse',
+						method: 'POST',
+						data: {
+							house_id: id,
+							dayrentprice: money,
 						},
-						success:(res)=>{
-							if(res.data.status === 'success'){
+						success: (res) => {
+							if (res.data.status === 'success') {
 								let _data = res.data.content;
 								_this.editReleaseInfo(_data);
 								_this.editReleaseInfoStatus(true);
 								uni.navigateBack({
-									delta:1,
+									delta: 1,
 								})
-							}else{
+							} else {
 								helper.layer('保存失败')
 							}
 						},
-						complete:()=>{
+						complete: () => {
 							_this.isSubmiting = false;
 						}
 					})
 				}
 			},
 			//获取当前数据
-			getCurData(){
+			getCurData() {
 				const _dayPrice = this.releaseObj.dayrentprice;
 				this.house_id = this.releaseObj.id;
-				console.log(_dayPrice)
-				this.money = _dayPrice == '0'?'':_dayPrice;
+				this.houseStatus = this.releaseObj.status;
+				this.money = _dayPrice == '0' ? '' : _dayPrice;
 			}
 		}
 	}

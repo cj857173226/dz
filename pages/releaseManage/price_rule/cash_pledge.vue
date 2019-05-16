@@ -10,7 +10,7 @@
 			<view class="deposit">
 				<label style="font-size:32upx;">收取押金</label>
 				<label class="switch-box">
-					<switch @change="switch1Change" :checked="show" color="#EA516B" />
+					<switch :disabled="houseStatus==1|| houseStatus == 0" @change="switch1Change" :checked="show" color="#EA516B" />
 				</label>
 			</view>
 			<input v-if="show" type="number" placeholder="押金金额最高设置金额9999元" placeholder-class="placeholder" style="font-size: 28upx;"
@@ -35,6 +35,7 @@
 				show: false, // 是否收取押金
 				money: '', //押金金额
 				isSubmiting: false,
+				houseStatus: '', // 房屋状态
 			}
 		},
 		onLoad() {
@@ -64,6 +65,10 @@
 			},
 			// 保存押金
 			save() {
+				if(this.houseStatus == 0 || this.houseStatus == 1){
+					helper.layer('无法编辑上架或者审核中的房源!');
+					return;
+				};
 				if (this.isSubmiting) return;
 				const _this = this;
 				const money = _this.money;
@@ -76,31 +81,35 @@
 						helper.layer('请输入0~9999的正整数')
 						return;
 					} else {
-						let _money = money<=0?'':money;
-						param = Object.assign(param,{cashpledge:_money})
+						let _money = money <= 0 ? '' : money;
+						param = Object.assign(param, {
+							cashpledge: _money
+						})
 					}
-				}else{
-					param = Object.assign(param,{cashpledge:''})
+				} else {
+					param = Object.assign(param, {
+						cashpledge: ''
+					})
 				}
-				
+
 				_this.isSubmiting = true;
 				request({
-					url:'/wap/api/fangdong.php?action=improveHouse',
-					method:'POST',
-					data:param,
-					success:(res)=>{
-						if(res.data.status === 'success'){
+					url: '/wap/api/fangdong.php?action=improveHouse',
+					method: 'POST',
+					data: param,
+					success: (res) => {
+						if (res.data.status === 'success') {
 							let _data = res.data.content;
 							_this.editReleaseInfo(_data);
 							_this.editReleaseInfoStatus(true);
 							uni.navigateBack({
-								delta:1,
+								delta: 1,
 							})
-						}else{
+						} else {
 							helper.layer('保存失败')
 						}
 					},
-					complete:()=>{
+					complete: () => {
 						_this.isSubmiting = false;
 					}
 				})
@@ -109,6 +118,7 @@
 			getCurData() {
 				const _cashpledge = this.releaseObj.cashpledge;
 				this.house_id = this.releaseObj.id;
+				this.houseStatus = this.releaseObj.status;
 				this.money = _cashpledge <= '0' ? '' : _cashpledge;
 				if (_cashpledge > 0) {
 					this.show = true;

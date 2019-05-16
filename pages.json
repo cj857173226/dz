@@ -179,7 +179,7 @@
 				"navigationBarTitleText": "优惠活动"
 			}
 		},
-			{
+		{
 			// 优惠活动
 			"path": "pages/messages/chat",
 			"style": {
@@ -444,7 +444,17 @@
 					}
 				}
 			}
-		}, {
+		},
+		{
+			"path": "pages/releaseManage/preview_house",
+			"style": {
+				"navigationBarTitleText": "房源预览",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
 			"path": "pages/releaseManage/house_basic_info/house_basic_info",
 			"style": {
 				"navigationBarTitleText": "基本信息",
@@ -469,7 +479,8 @@
 					}
 				}
 			}
-		}, {
+		},
+		{
 			"path": "pages/releaseManage/house_basic_info/house_area",
 			"style": {
 				"navigationBarTitleText": "出租面积",
@@ -500,7 +511,8 @@
 					}
 				}
 			}
-		}, {
+		},
+		{
 			"path": "pages/landlord/landlord",
 			"style": {
 				"navigationBarTitleText": "成为房东",
@@ -508,17 +520,20 @@
 					// "bounce": "none",
 				}
 			}
-		}, {
+		},
+		{
 			"path": "pages/landlord/landlord_benefit",
 			"style": {
 				"navigationBarTitleText": "我想成为房东"
 			}
-		}, {
+		},
+		{
 			"path": "pages/landlord/iphone",
 			"style": {
 				"navigationBarTitleText": "修改手机号码"
 			}
-		}, {
+		},
+		{
 			"path": "pages/landlord/information",
 			"style": {
 				"navigationBarTitleText": "完善真实身份",
@@ -538,7 +553,8 @@
 			"style": {
 				"navigationBarTitleText": "选择收款方式"
 			}
-		}, {
+		},
+		{
 			"path": "pages/releaseManage/bed_info/bed_info",
 			"style": {
 				"navigationBarTitleText": "床铺信息",
@@ -549,12 +565,13 @@
 							"text": "添加床铺",
 							"fontSize": "14px",
 							"float": "right",
-							"width":"60px"
+							"width": "60px"
 						}]
 					}
 				}
 			}
-		}, {
+		},
+		{
 			"path": "pages/releaseManage/bed_info/edit_bed",
 			"style": {
 				"navigationBarTitleText": "编辑床铺",
@@ -563,7 +580,8 @@
 
 				}
 			}
-		}, {
+		},
+		{
 			"path": "pages/releaseManage/bed_info/add_bed",
 			"style": {
 				"navigationBarTitleText": "添加床铺",
@@ -571,7 +589,8 @@
 					// "bounce": "none",
 				}
 			}
-		}, {
+		},
+		{
 			"path": "pages/releaseManage/bed_info/other_bed",
 			"style": {
 				"navigationBarTitleText": "其他类型和尺寸",
@@ -579,7 +598,8 @@
 					// "bounce": "none",
 				}
 			}
-		}, {
+		},
+		{
 			"path": "pages/releaseManage/house_describe/house_describe",
 			"style": {
 				"navigationBarTitleText": "房源描述",
@@ -602,7 +622,8 @@
 					}
 				}
 			}
-		}, {
+		},
+		{
 			"path": "pages/releaseManage/house_facilities/house_facilities",
 			"style": {
 				"navigationBarTitleText": "配套设施",
@@ -616,12 +637,14 @@
 					}
 				}
 			}
-		}, {
+		},
+		{
 			"path": "pages/releaseManage/price_rule/price_rule",
 			"style": {
 				"navigationBarTitleText": "价格规则"
 			}
-		}, {
+		},
+		{
 			"path": "pages/releaseManage/price_rule/price_control",
 			"style": {
 				"navigationBarTitleText": "日价管理",
@@ -767,13 +790,6 @@
 			"style": {
 				"navigationBarTitleText": "房间照片",
 				"app-plus": {
-					"titleNView": {
-						"buttons": [{
-							"text": "排序",
-							"fontSize": "14px",
-							"float": "right"
-						}]
-					}
 				}
 			}
 		},
@@ -788,7 +804,7 @@
 			"style": {
 				"navigationBarTitleText": "评论"
 			}
-		}, 
+		},
 		{
 			"path": "pages/setting/setting",
 			"style": {
@@ -797,7 +813,8 @@
 					"bounce": "none"
 				}
 			}
-		}, {
+		},
+		{
 			"path": "pages/setting/setting",
 			"style": {
 				"navigationBarTitleText": "设置",
@@ -805,14 +822,14 @@
 					"bounce": "none"
 				}
 			}
+		},
+		{
+			"path": "pages/my/comment/comment",
+			"style": {
+				"navigationBarTitleText": "评论管理"
+			}
 		}
-	    ,{
-            "path" : "pages/my/comment/comment",
-            "style": {
-            	"navigationBarTitleText": "评论管理"
-            }
-        }
-    ],
+	],
 	// 全局样式
 	"globalStyle": {
 		"navigationBarBackgroundColor": "#F05B72"

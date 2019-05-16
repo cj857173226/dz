@@ -6,7 +6,7 @@
 		</view>
 		<view class="bed_list" v-if="bedList.length>0">
 			<view class="bed_item" v-for="(item,index) in bedList" :key="index" @tap="editBed(index)">
-				<view class="del_btn_wrap" @tap.stop="deleteBed(index)">
+				<view class="del_btn_wrap" @tap.stop="deleteBed(index)" v-if="houseStatus==-1 || houseStatus == 2">
 					<view class="del_btn">
 						<text class="iconfont icon-jian"></text>
 					</view>
@@ -52,6 +52,7 @@
 				house_id: '', //房源ID
 				bedList: [],
 				isDeling: false, // 是否正在删除中
+				houseStatus:'', // 房屋状态
 			}
 		},
 		components: {},
@@ -129,6 +130,10 @@
 			},
 			// 跳转到添加床铺页面
 			addBed() {
+				if(this.houseStatus == 0|| this.houseStatus == 1){
+					helper.layer('无法编辑上架或者审核中的房源!');
+					return;
+				}
 				//清空自定义床铺组合
 				this.clearCustomBedOption();
 				// 清空当前选择的床铺组合
@@ -139,9 +144,10 @@
 			},
 			getBedinfo() {
 				const _releaseObj = this.releaseObj;
-				let _bedList = _releaseObj.bed?JSON.parse(_releaseObj.bed):[];
+				let _bedList = _releaseObj.bed?_releaseObj.bed:[];
 				this.house_id = _releaseObj.id;
 				this.bedList = _bedList;
+				this.houseStatus = _releaseObj.status;
 			}
 
 		}

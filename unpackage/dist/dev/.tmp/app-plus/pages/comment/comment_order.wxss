@@ -220,11 +220,7 @@
           color: rgba(0, 0, 0, 0.5);
           font-size: 20px;
 }
-<<<<<<< HEAD
 .container .add-picture-box .add-picture .add-picture-img-box .shade.data-v-a9d1a090 {
-=======
-.container .add-picture-box .add-picture .add-picture-img-box .shade.data-v-526addde {
->>>>>>> 4b6a97c7458041e16d84caaf0987c3ced936f792
           width: 140rpx;
           height: 140rpx;
           color: #fff;
@@ -237,11 +233,7 @@
           line-height: 140rpx;
           border-radius: 10rpx;
 }
-<<<<<<< HEAD
 .container .btn.data-v-a9d1a090 {
-=======
-.container .btn.data-v-526addde {
->>>>>>> 4b6a97c7458041e16d84caaf0987c3ced936f792
     width: 100%;
     height: 80rpx;
     background-color: #f05b72;

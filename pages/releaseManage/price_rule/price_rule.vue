@@ -174,6 +174,7 @@
 				crva: '', // 违约扣款天数
 				isCrvping: false, // 是否正在修改 定金比
 				isForeignering: false, // 是否正在修改 接待境外人士
+				houseStatus:'', // 房屋状态
 			};
 		},
 		onLoad() {
@@ -229,6 +230,7 @@
 				})
 			},
 			whether: function() { //是否接待境外人士
+			if(this.houseStatus == 0 || this.houseStatus == 1) return;
 				if (this.isForeignering) return;
 				const _this = this;
 				const id = _this.house_id;
@@ -278,7 +280,8 @@
 					url: '/pages/releaseManage/price_rule/hide_the_tips' //隐藏贴士
 				})
 			},
-			earnest: function() { //定金比
+			earnest: function() { //定金比]
+				if(this.houseStatus == 0 || this.houseStatus == 1) return;
 				if (this.isCrvping) return;
 				const _this = this;
 				const id = _this.house_id;
@@ -336,6 +339,7 @@
 			getCurData() {
 				const releaseObj = this.releaseObj;
 				this.house_id = releaseObj.id; //房源id
+				this.houseStatus = releaseObj.status;
 				this.dayPrice = releaseObj.dayrentprice == "0" ? "" : releaseObj.dayrentprice; // 日价
 				this.cashpledge = releaseObj.cashpledge == "0" ? "" : releaseObj.cashpledge; // 押金
 				this.addtenant = releaseObj.addtenant=== '1' ? '1' : '0'; // 允许加客

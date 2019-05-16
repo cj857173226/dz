@@ -7,7 +7,7 @@
 					<view class="empty_data" v-if="houseType ===''">请选择</view>
 					<view class="result" v-else>{{houseType}}</view>
 				</view>
-				<view class="after_icon">
+				<view class="after_icon" v-if="houseStatus==-1|| houseStatus == 1">
 					<text class="iconfont icon-right"></text>
 				</view>
 			</view>
@@ -17,7 +17,7 @@
 					<view class="empty_data" v-if="houseArea==='0'">请选择</view>
 					<view class="result" v-else>{{houseArea}}㎡</view>
 				</view>
-				<view class="after_icon">
+				<view class="after_icon" v-if="houseStatus==-1|| houseStatus == 1">
 					<text class="iconfont icon-right"></text>
 				</view>
 			</view>
@@ -30,7 +30,7 @@
 						<text v-if="weiType==='2'">独立卫生间</text>
 					</view>
 				</view>
-				<view class="after_icon">
+				<view class="after_icon" v-if="houseStatus==-1|| houseStatus == 1">
 					<text class="iconfont icon-right"></text>
 				</view>
 			</view>
@@ -43,7 +43,7 @@
 						<text v-if="cohabitation==='2'">否</text>
 					</view>
 				</view>
-				<view class="after_icon">
+				<view class="after_icon" v-if="houseStatus==-1|| houseStatus == 1">
 					<text class="iconfont icon-right"></text>
 				</view>
 			</view>
@@ -53,7 +53,7 @@
 					<view class="empty_data" v-if="liveNumber===''">请选择</view>
 					<view class="result" v-else>{{liveNumber}}人</view>
 				</view>
-				<view class="after_icon">
+				<view class="after_icon" v-if="houseStatus==-1|| houseStatus == 1">
 					<text class="iconfont icon-right"></text>
 				</view>
 			</view>
@@ -77,7 +77,7 @@
 						<text v-if="leasetype==='3'">床位</text>
 						吗</view>
 				</view>
-				<view class="after_icon">
+				<view class="after_icon" v-if="houseStatus==-1|| houseStatus == 1">
 					<text class="iconfont icon-right"></text>
 				</view>
 			</view>
@@ -139,6 +139,7 @@
 				mode: 'selector', //picker类型
 				pickerValueDefault: [0],
 				pickerValueArray: [],
+				houseStatus:'', // 房屋状态
 
 			}
 		},
@@ -176,6 +177,7 @@
 			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
 			// 设置房屋户型
 			setHouseType() {
+				if(this.houseStatus == 0 || this.houseStatus == 1) return;
 				uni.navigateTo({
 					url: '/pages/releaseManage/house_basic_info/house_type'
 				})
@@ -183,18 +185,21 @@
 
 			// 设置出租面积
 			setHouseArea() {
+				if(this.houseStatus == 0 || this.houseStatus == 1) return;
 				uni.navigateTo({
 					url: '/pages/releaseManage/house_basic_info/house_area'
 				})
 			},
 			// 设置宜居人数
 			setPeopleNum() {
+				if(this.houseStatus == 0 || this.houseStatus == 1) return;
 				uni.navigateTo({
 					url: '/pages/releaseManage/house_basic_info/people_number'
 				})
 			},
 			// 选择卫生间类型
 			changeWeiType() {
+				if(this.houseStatus == 0 || this.houseStatus == 1) return;
 				const _this = this;
 				const old_val = _this.releaseObj.toilet;
 				const id = _this.house_id;
@@ -232,6 +237,7 @@
 			},
 			// 选择是否与房东同居
 			isLiveTogether() {
+				if(this.houseStatus == 0 || this.houseStatus == 1) return;
 				const _this = this;
 				const old_val = _this.releaseObj.livetogether;
 				const id = _this.house_id;
@@ -270,6 +276,7 @@
 			// 选择同类房源\房间\床位数量
 			// type: house房源  room房间  bed 床位
 			similarChange() {
+				if(this.houseStatus == 0 || this.houseStatus == 1) return;
 				const type = this.leasetype;
 				let unit = '';
 				let _data = [];
@@ -341,6 +348,7 @@
 				this.cohabitation = _houseInfo.livetogether; //是否与房东同居
 				this.liveNumber = _houseInfo.tantnum; // 宜居人数
 				this.sameroom = _houseInfo.sameroom; // 同类房源、床位、房间
+				this.houseStatus = _houseInfo.status;
 			},
 		}
 	}
