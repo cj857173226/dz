@@ -213,6 +213,7 @@
 				],
 				checkedList: [],
 				isSubmiting: false, // 是否在提交中
+				houseStatus:'', // 房屋状态
 
 			}
 		},
@@ -236,6 +237,7 @@
 			]),
 			// 配套设施选择
 			facilitiesCheck(index) {
+				if(this.houseStatus == 0 || this.houseStatus == 1)return;
 				let _arr = [];
 				this.checkList[index].checked = !this.checkList[index].checked;
 				this.checkList.forEach(function(item, index) {
@@ -247,6 +249,10 @@
 			},
 			// 提交配套设施
 			submitFacilities() {
+				if(this.houseStatus == 0 || this.houseStatus == 1){
+					helper.layer('无法编辑上架或者审核中的房源!');
+					return;
+				};
 				if (this.isSubmiting) return;
 				const _this = this;
 				const id = _this.house_id;
@@ -288,9 +294,10 @@
 			// 获取当前设施
 			getFacilitiesData() {
 				const _releaseObj = this.releaseObj;
-				let curFacilities = _releaseObj.sb_list ? JSON.parse(_releaseObj.sb_list) : [];
+				let curFacilities = _releaseObj.sb_list ? _releaseObj.sb_list : [];
 				this.checkedList = curFacilities;
 				this.house_id = _releaseObj.id;
+				this.houseStatus = _releaseObj.status;
 				this.checkList.map((item,index,self)=>{
 					if(item.type ===2 && curFacilities.indexOf(item.value)!= -1){
 						self[index].checked = true;

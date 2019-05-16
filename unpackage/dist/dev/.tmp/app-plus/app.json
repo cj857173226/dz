@@ -45,6 +45,7 @@
     "pages/releaseManage/local_set",
     "pages/releaseManage/rent_type",
     "pages/releaseManage/house_detail",
+    "pages/releaseManage/preview_house",
     "pages/releaseManage/house_basic_info/house_basic_info",
     "pages/releaseManage/house_basic_info/house_type",
     "pages/releaseManage/house_basic_info/house_area",
@@ -77,6 +78,7 @@
     "pages/comment/comment_order",
     "pages/setting/setting",
     "pages/setting/setting",
+    "pages/my/comment/comment",
     "pages/my/comment/comment",
     "pages/my/comment/revert_comment"
   ],

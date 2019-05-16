@@ -24,14 +24,14 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.content.data-v-5bf71d48 {
+.content.data-v-112a047c {
   width: 100%;
   padding: 30rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 28rpx;
 }
-.content .list-box.data-v-5bf71d48 {
+.content .list-box.data-v-112a047c {
     width: 100%;
     display: -webkit-box;
     display: -webkit-flex;
@@ -41,12 +41,12 @@
             box-shadow: 0 8rpx 6rpx 0 #dadada;
     margin-bottom: 20rpx;
 }
-.content .list-box .img-box.data-v-5bf71d48 {
+.content .list-box .img-box.data-v-112a047c {
       width: 180rpx;
       height: 120rpx;
       margin-right: 20rpx;
 }
-.content .list-box .img-box .housing-pictures.data-v-5bf71d48 {
+.content .list-box .img-box .housing-pictures.data-v-112a047c {
         width: 180rpx;
         height: 120rpx;
 }

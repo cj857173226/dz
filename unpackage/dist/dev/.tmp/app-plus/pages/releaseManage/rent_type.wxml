@@ -1,2 +1,6 @@
 <import src="./rent_type.vue.wxml" />
+<<<<<<< HEAD
+    <template is="0caa569c" data="{{ ...$root['0'], $root }}"/>
+=======
     <template is="e2fed266" data="{{ ...$root['0'], $root }}"/>
+>>>>>>> f27b4d270c8b7da9bccda9260e74e8bba5acc2d4

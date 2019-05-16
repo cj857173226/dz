@@ -20,7 +20,7 @@
 		<view class="form_item" v-if="isAddGuest==='1'">
 			<view class="label">加客费用</view>
 			<view class="content_wrap">
-				<input type="number" placeholder-class="placeholder" placeholder="最高设置金额999" maxlength="3" v-model="money">
+				<input type="number" :disabled="houseStatus==1|| houseStatus ==0" placeholder-class="placeholder" placeholder="最高设置金额999" maxlength="3" v-model="money">
 				<view class="unit">元/每位每晚</view>
 			</view>
 		</view>
@@ -28,7 +28,7 @@
 		<view class="guest_desc_wrap" v-if="isAddGuest==='1'">
 			<view class="tips">加客费用只做展示,请自行线下收取</view>
 			<view class="desc_content">
-				<textarea placeholder="加客费用描述,可用于描述最大加客人数等(选填)" placeholder-class="placeholder" maxlength="100" v-model="desc" />
+				<textarea :disabled="houseStatus==1|| houseStatus ==0" placeholder="加客费用描述,可用于描述最大加客人数等(选填)" placeholder-class="placeholder" maxlength="100" v-model="desc" />
 				<view class="number_control"><text style="color: #F05B72;" v-text="desc.length"></text>/100</view>
 			</view>
 		</view>
@@ -51,6 +51,7 @@
 				money:'',// 加客费用
 				desc: '', // 加客描述
 				isSubmiting: false,
+				houseStatus:'', // 房屋状态
 			}
 		},
 		onLoad() {
@@ -70,10 +71,15 @@
 		methods: {
 			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
 			addGuestCheck(is){
+				if(this.houseStatus == 0 || this.houseStatus == 1) return;
 				this.isAddGuest = is;
 			},
 			// 保存加客设置
 			save(){
+				if(this.houseStatus == 0 || this.houseStatus == 1){
+					helper.layer('无法编辑上架或者审核中的房源!');
+					return;
+				};
 				if(this.isSubmiting) return;
 				const _this = this;
 				const id = _this.house_id;
@@ -127,6 +133,7 @@
 			getCurData() {
 				const _releaseObj = this.releaseObj;
 				this.house_id = _releaseObj.id;
+				this.houseStatus = _releaseObj.status;
 				this.isAddGuest = _releaseObj.addtenant=== '1' ? '1' : '0';
 				this.money = _releaseObj.addtionalprice ? _releaseObj.addtionalprice : '';
 				this.desc = _releaseObj.addtenanttips?_releaseObj.addtenanttips:'';

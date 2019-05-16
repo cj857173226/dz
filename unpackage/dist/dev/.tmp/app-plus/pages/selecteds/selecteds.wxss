@@ -24,14 +24,161 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+<<<<<<< HEAD
 .shanchu.data-v-777817ca {
+=======
+.serach.data-v-468a93c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 28rpx;
+}
+.serach .content.data-v-468a93c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    height: 80rpx;
+    overflow: hidden;
+    -webkit-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+.serach .content .content-box.data-v-468a93c1 {
+      width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+}
+.serach .content .content-box.center.data-v-468a93c1 {
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+}
+.serach .content .content-box .icon.data-v-468a93c1 {
+        padding: 0 15rpx;
+}
+.serach .content .content-box .icon.icon-del.data-v-468a93c1 {
+          font-size: 38rpx;
+}
+.serach .content .content-box .input.data-v-468a93c1 {
+        width: 100%;
+        max-width: 100%;
+        line-height: 80rpx;
+        height: 80rpx;
+        -webkit-transition: all 0.2s linear;
+        -o-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+}
+.serach .content .content-box .input.center.data-v-468a93c1 {
+          width: 300rpx;
+}
+.serach .content .content-box .input.sub.data-v-468a93c1 {
+          width: auto;
+          color: grey;
+}
+.serach .content .serachBtn.data-v-468a93c1 {
+      height: 100%;
+      -webkit-flex-shrink: 0;
+          -ms-flex-negative: 0;
+              flex-shrink: 0;
+      padding: 0 30rpx;
+      background: #ef5b72;
+      line-height: 80rpx;
+      color: #fff;
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+}
+.serach .button.data-v-468a93c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: relative;
+    -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0;
+    width: 0;
+    -webkit-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.serach .button.active.data-v-468a93c1 {
+      padding-left: 15rpx;
+      width: 100rpx;
+}
+@font-face {
+  font-family: "iconfont";
+  src: url("data:application/x-font-woff;charset=utf-8;base64,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");
+}
+.icon.data-v-468a93c1 {
+  font-family: iconfont;
+  font-size: 32rpx;
+  font-style: normal;
+  color: #999;
+}
+
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.shanchu.data-v-96555c16 {
+>>>>>>> 76e01219265a0a1dffe29e348bedf38a45023cd8
   font-size: 30px;
   position: absolute;
   top: 0;
   left: 0;
 }
 
-view.data-v-777817ca {
+view.data-v-96555c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -39,7 +186,7 @@ view.data-v-777817ca {
 }
 
 
-.box.data-v-777817ca {
+.box.data-v-96555c16 {
   font-size: 14px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -56,14 +203,14 @@ view.data-v-777817ca {
           align-items: center;
   color: #f05b72;
 }
-.layer-white-space.data-v-777817ca {
+.layer-white-space.data-v-96555c16 {
   position: fixed;
   height: 100%;
   width: 100%;
   background-color: #ccc;
   opacity: 0.5;
 }
-.layer-header.data-v-777817ca {
+.layer-header.data-v-96555c16 {
   height: 70rpx;
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -72,7 +219,7 @@ view.data-v-777817ca {
   position: relative;
   margin-top: 100rpx;
 }
-.layer-header .layer-close.data-v-777817ca {
+.layer-header .layer-close.data-v-96555c16 {
     width: 34rpx;
     height: 34rpx;
     position: absolute;
@@ -82,7 +229,7 @@ view.data-v-777817ca {
         -ms-transform: translateY(-50%);
             transform: translateY(-50%);
 }
-.layer-header .layer-close.data-v-777817ca ::before {
+.layer-header .layer-close.data-v-96555c16 ::before {
       content: '';
       width: 34rpx;
       height: 1rpx;
@@ -94,7 +241,7 @@ view.data-v-777817ca {
           -ms-transform: rotate(45deg);
               transform: rotate(45deg);
 }
-.layer-header .layer-close.data-v-777817ca ::after {
+.layer-header .layer-close.data-v-96555c16 ::after {
       content: '';
       width: 1rpx;
       height: 34rpx;
@@ -106,7 +253,7 @@ view.data-v-777817ca {
           -ms-transform: rotate(45deg);
               transform: rotate(45deg);
 }
-.layer-header .layer-title.data-v-777817ca {
+.layer-header .layer-title.data-v-96555c16 {
     text-align: center;
     -webkit-box-flex: 1;
     -webkit-flex: 1;
@@ -114,7 +261,7 @@ view.data-v-777817ca {
             flex: 1;
     font-size: 36rpx;
 }
-.calendar-layer.data-v-777817ca {
+.calendar-layer.data-v-96555c16 {
   position: fixed;
   left: 0;
   bottom: -100%;
@@ -124,21 +271,21 @@ view.data-v-777817ca {
   z-index: 9999;
 
 }
-.calendar-layer.show.data-v-777817ca {
+.calendar-layer.show.data-v-96555c16 {
     bottom: 0;
     height: 100%;
     -webkit-transition: bottom 0.4s;
     -o-transition: bottom 0.4s;
     transition: bottom 0.4s;
 }
-.calendar-layer.hide.data-v-777817ca {
+.calendar-layer.hide.data-v-96555c16 {
     bottom: -100%;
     height: 100%;
     -webkit-transition: bottom 0.4s;
     -o-transition: bottom 0.4s;
     transition: bottom 0.4s;
 }
-.layer-content.data-v-777817ca {
+.layer-content.data-v-96555c16 {
   position: absolute;
   height: 100%;
   bottom: 0;
@@ -150,7 +297,7 @@ view.data-v-777817ca {
           flex-direction: column;
   background-color: #fff;
 }
-.layer-body.data-v-777817ca {
+.layer-body.data-v-96555c16 {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -158,7 +305,7 @@ view.data-v-777817ca {
           flex-direction: column;
   height: calc(100% - 88rpx);
 }
-.layer-list.data-v-777817ca {
+.layer-list.data-v-96555c16 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -175,7 +322,7 @@ view.data-v-777817ca {
           flex-direction: column;
   position: relative;
 }
-.layer-footer.data-v-777817ca {
+.layer-footer.data-v-96555c16 {
   width: 100%;
   height: 120rpx;
   -webkit-box-align: center;
@@ -185,13 +332,13 @@ view.data-v-777817ca {
   justify-items: center;
   display: none;
 }
-.layer-content.choiceDate .layer-footer.data-v-777817ca {
+.layer-content.choiceDate .layer-footer.data-v-96555c16 {
   display: block;
 }
-.layer-content.choiceDate .layer-body.data-v-777817ca {
+.layer-content.choiceDate .layer-body.data-v-96555c16 {
   height: calc(100% - 88rpx);
 }
-.submitBtn.data-v-777817ca {
+.submitBtn.data-v-96555c16 {
   height: 80rpx;
   line-height: 80rpx;
   color: #fff;
@@ -206,7 +353,7 @@ view.data-v-777817ca {
   background: -o-linear-gradient(left, #f5504f, #f43f4f);
   background: linear-gradient(to right, #f5504f, #f43f4f);
 }
-.month.data-v-777817ca {
+.month.data-v-96555c16 {
   width: 750rpx;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -215,7 +362,7 @@ view.data-v-777817ca {
           flex-direction: column;
   margin-bottom: 50rpx;
 }
-.month .month-title.data-v-777817ca {
+.month .month-title.data-v-96555c16 {
     font-size: 30rpx;
     text-align: center;
     width: 100%;
@@ -227,23 +374,23 @@ view.data-v-777817ca {
             justify-content: center;
     background: #fff;
 }
-.month.fixed .month-title.data-v-777817ca {
+.month.fixed .month-title.data-v-96555c16 {
     position: fixed;
     top: calc(15% + 70rpx + 60rpx);
     z-index: 11;
 }
-.month.fixed.data-v-777817ca:first-child {
+.month.fixed.data-v-96555c16:first-child {
     padding-top: 60rpx;
 }
-.month.data-v-777817ca:last-child {
+.month.data-v-96555c16:last-child {
     margin-bottom: 0;
 }
-.month .month-content.data-v-777817ca {
+.month .month-content.data-v-96555c16 {
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
 }
-.day.data-v-777817ca {
+.day.data-v-96555c16 {
   width: calc(100% / 7);
   text-align: center;
   height: 90rpx;
@@ -257,7 +404,7 @@ view.data-v-777817ca {
           justify-content: center;
   position: relative;
 }
-.day .day-content.data-v-777817ca {
+.day .day-content.data-v-96555c16 {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -265,25 +412,25 @@ view.data-v-777817ca {
             flex-direction: column;
     line-height: 1;
 }
-.day .day-txt.data-v-777817ca {
+.day .day-txt.data-v-96555c16 {
     width: 100%;
     height: 1.2em;
 }
-.day .day-tip.data-v-777817ca {
+.day .day-tip.data-v-96555c16 {
     font-size: 20rpx;
     height: 1.2em;
 }
-.day .day-subject.data-v-777817ca {
+.day .day-subject.data-v-96555c16 {
     font-size: 14rpx;
     height: 1.2em;
 }
-.day.disabled.data-v-777817ca {
+.day.disabled.data-v-96555c16 {
     color: #ccc;
 }
-.day.active.data-v-777817ca {
+.day.active.data-v-96555c16 {
     background: #feeeef;
 }
-.day .beginTip.data-v-777817ca {
+.day .beginTip.data-v-96555c16 {
     display: none;
 
     width: 115rpx;
@@ -298,7 +445,7 @@ view.data-v-777817ca {
     font-size: 16rpx;
     z-index: 33;
 }
-.day .beginTip.data-v-777817ca::after {
+.day .beginTip.data-v-96555c16::after {
       content: '';
       position: absolute;
 
@@ -309,7 +456,7 @@ view.data-v-777817ca {
 
 
 }
-.day .endTip.data-v-777817ca {
+.day .endTip.data-v-96555c16 {
     display: none;
     background: rgba(0, 0, 0, 0.6);
     position: absolute;
@@ -324,7 +471,7 @@ view.data-v-777817ca {
     left: 12%;
     z-index: 33;
 }
-.day .endTip.data-v-777817ca::after {
+.day .endTip.data-v-96555c16::after {
       content: '';
       position: absolute;
 
@@ -335,39 +482,39 @@ view.data-v-777817ca {
 
 
 }
-.day.begin.data-v-777817ca, .day.end.data-v-777817ca {
+.day.begin.data-v-96555c16, .day.end.data-v-96555c16 {
     background: #f93f4a;
     color: #fff;
 }
-.day.begin.data-v-777817ca {
+.day.begin.data-v-96555c16 {
     border-radius: 8rpx 0 0 8rpx;
 }
-.day.begin .beginTip.data-v-777817ca {
+.day.begin .beginTip.data-v-96555c16 {
       display: block;
 }
-.day.end.data-v-777817ca {
+.day.end.data-v-96555c16 {
     border-radius: 0 8rpx 8rpx 0;
 }
-.day.end .endTip.data-v-777817ca {
+.day.end .endTip.data-v-96555c16 {
       display: block;
 }
 /* ///////////////////////////////////////// */
-.week-box.data-v-777817ca {
+.week-box.data-v-96555c16 {
   height: 60rpx;
   line-height: 60rpx;
   background: #fff;
   position: relative;
   z-index: 11;
 }
-.week-box-item.data-v-777817ca {
+.week-box-item.data-v-96555c16 {
   width: calc(100% / 7);
   text-align: center;
 }
-.week-box-item.data-v-777817ca:first-child, .week-box-item.data-v-777817ca:last-child {
+.week-box-item.data-v-96555c16:first-child, .week-box-item.data-v-96555c16:last-child {
     color: #f93f4a;
 }
 /* ///////////////////order-time////////////////////// */
-.order-time.data-v-777817ca {
+.order-time.data-v-96555c16 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -388,7 +535,7 @@ view.data-v-777817ca {
           flex-direction: row;
   width: 100%;
 }
-.order-time.data-v-777817ca::after {
+.order-time.data-v-96555c16::after {
   position: absolute;
   content: '';
   width: 100%;
@@ -402,24 +549,24 @@ view.data-v-777817ca {
       -ms-transform: scaleY(0.5);
           transform: scaleY(0.5);
 }
-.goInHotel.data-v-777817ca {
+.goInHotel.data-v-96555c16 {
   font-size: 40rpx;
 }
-.goInHotel2.data-v-777817ca {
+.goInHotel2.data-v-96555c16 {
   font-size: 26rpx;
   color: gray;
 }
-.date-wrappper.data-v-777817ca {
+.date-wrappper.data-v-96555c16 {
   position: relative;
   padding: 0 10rpx;
   font-size: 28rpx;
   color: #000;
 }
-.left-hotel.data-v-777817ca {
+.left-hotel.data-v-96555c16 {
   font-size: 26rpx;
   color: #000;
 }
-.order-time .sumCount.data-v-777817ca {
+.order-time .sumCount.data-v-96555c16 {
   color: #6495ed;
   float: right;
   font-size: 26rpx;
@@ -475,21 +622,21 @@ page{
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-0f9b21c1 {
+.contanier.data-v-d1f3bbca {
   width: 100%;
   height: 100%;
   padding: 30rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.contanier .top.data-v-0f9b21c1 {
+.contanier .top.data-v-d1f3bbca {
     width: 100%;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
 }
-.contanier .top .city.data-v-0f9b21c1 {
+.contanier .top .city.data-v-d1f3bbca {
       width: 138rpx;
       height: 80rpx;
       color: #ef5f75;
@@ -499,11 +646,11 @@ page{
       border-radius: 10rpx;
       font-size: 14px;
 }
-.contanier .top .city .xiala.data-v-0f9b21c1 {
+.contanier .top .city .xiala.data-v-d1f3bbca {
         font-size: 14px;
         margin-left: 10rpx;
 }
-.contanier .top .select-box.data-v-0f9b21c1 {
+.contanier .top .select-box.data-v-d1f3bbca {
       width: 540rpx;
       height: 80rpx;
       background-color: #f5f5f5;
@@ -536,7 +683,7 @@ page{
         line-height: 60rpx;
         border-radius: 30rpx;
 }
-.contanier .list-box.data-v-0f9b21c1 {
+.contanier .list-box.data-v-d1f3bbca {
     width: 100%;
     font-size: 28rpx;
     height: 80rpx;
@@ -554,7 +701,7 @@ page{
         -ms-flex-pack: justify;
             justify-content: space-between;
 }
-.contanier .list-box .tiem-data.data-v-0f9b21c1 {
+.contanier .list-box .tiem-data.data-v-d1f3bbca {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -564,17 +711,17 @@ page{
           -ms-flex-align: center;
               align-items: center;
 }
-.contanier .list-box text.data-v-0f9b21c1 {
+.contanier .list-box text.data-v-d1f3bbca {
       color: #000;
 }
-.contanier .housing-show .housing.data-v-0f9b21c1 {
+.contanier .housing-show .housing.data-v-d1f3bbca {
     position: relative;
 }
-.contanier .housing-show .housing .housing-img.data-v-0f9b21c1 {
+.contanier .housing-show .housing .housing-img.data-v-d1f3bbca {
       width: 100%;
       height: 460rpx;
 }
-.contanier .housing-show .housing .price.data-v-0f9b21c1 {
+.contanier .housing-show .housing .price.data-v-d1f3bbca {
       width: 200rpx;
       height: 60rpx;
       line-height: 60rpx;
@@ -586,10 +733,10 @@ page{
       bottom: 142rpx;
       left: 0;
 }
-.contanier .housing-show .housing .price .specific-price.data-v-0f9b21c1 {
+.contanier .housing-show .housing .price .specific-price.data-v-d1f3bbca {
         font-size: 18px;
 }
-.contanier .housing-show .housing .icon-box.data-v-0f9b21c1 {
+.contanier .housing-show .housing .icon-box.data-v-d1f3bbca {
       width: 60rpx;
       height: 60rpx;
       color: #fff;
@@ -601,10 +748,10 @@ page{
       top: 30rpx;
       right: 30rpx;
 }
-.contanier .housing-show .housing .icon-box .love-icon.data-v-0f9b21c1 {
+.contanier .housing-show .housing .icon-box .love-icon.data-v-d1f3bbca {
         font-size: 40rpx;
 }
-.contanier .housing-show .housing .bottom-username-box.data-v-0f9b21c1 {
+.contanier .housing-show .housing .bottom-username-box.data-v-d1f3bbca {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -615,18 +762,18 @@ page{
               align-items: center;
       margin-top: 30rpx;
 }
-.contanier .housing-show .housing .bottom-username-box .username-box.data-v-0f9b21c1 {
+.contanier .housing-show .housing .bottom-username-box .username-box.data-v-d1f3bbca {
         width: 104rpx;
         height: 104rpx;
         border-radius: 52rpx;
         margin-right: 30rpx;
 }
-.contanier .housing-show .housing .bottom-username-box .username-box .username-photos.data-v-0f9b21c1 {
+.contanier .housing-show .housing .bottom-username-box .username-box .username-photos.data-v-d1f3bbca {
           width: 104rpx;
           height: 104rpx;
           border-radius: 52rpx;
 }
-.contanier .housing-show .housing .bottom-username-box .lightning-comment.data-v-0f9b21c1 {
+.contanier .housing-show .housing .bottom-username-box .lightning-comment.data-v-d1f3bbca {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -639,26 +786,27 @@ page{
             -ms-flex-align: center;
                 align-items: center;
 }
-.contanier .housing-show .housing .bottom-username-box .lightning-comment .username-comment.data-v-0f9b21c1 {
+.contanier .housing-show .housing .bottom-username-box .lightning-comment .username-comment.data-v-d1f3bbca {
           text-align: left;
 }
-.contanier .housing-show .housing .bottom-username-box .lightning-comment .username-comment .lightning-comment-box.data-v-0f9b21c1 {
+.contanier .housing-show .housing .bottom-username-box .lightning-comment .username-comment .lightning-comment-box.data-v-d1f3bbca {
             display: -webkit-box;
             display: -webkit-flex;
             display: -ms-flexbox;
             display: flex;
 }
-.contanier .housing-show .housing .bottom-username-box .lightning-comment .username-comment .lightning-comment-box .lightning.data-v-0f9b21c1 {
+.contanier .housing-show .housing .bottom-username-box .lightning-comment .username-comment .lightning-comment-box .lightning.data-v-d1f3bbca {
               margin-right: 10rpx;
 }
-.contanier .housing-show .housing .bottom-username-box .lightning-comment .username-comment .lightning-comment-box .lightning .lightning-icon.data-v-0f9b21c1 {
+.contanier .housing-show .housing .bottom-username-box .lightning-comment .username-comment .lightning-comment-box .lightning .lightning-icon.data-v-d1f3bbca {
                 font-size: 18px;
                 color: #5bbfb5;
 }
-.contanier .housing-show .housing .bottom-username-box .lightning-comment .username-comment .lightning-comment-box .comment .comment-icon.data-v-0f9b21c1 {
+.contanier .housing-show .housing .bottom-username-box .lightning-comment .username-comment .lightning-comment-box .comment .comment-icon.data-v-d1f3bbca {
               font-size: 18px;
               color: #d2d2d2;
 }
+<<<<<<< HEAD
 .contanier .place.data-v-0f9b21c1 {
     width: 100%;
     height: 100%;
@@ -677,5 +825,29 @@ page{
         position: absolute;
         top: 40rpx;
         left: 40rpx;
+=======
+.contanier .place.data-v-d1f3bbca {
+    position: fixed;
+    left: 0;
+    bottom: -100%;
+    height: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 9999;
+}
+.contanier .place.show.data-v-d1f3bbca {
+      bottom: 0;
+      height: 100%;
+      -webkit-transition: bottom 0.4s;
+      -o-transition: bottom 0.4s;
+      transition: bottom 0.4s;
+}
+.contanier .place.hide.data-v-d1f3bbca {
+      bottom: -100%;
+      height: 100%;
+      -webkit-transition: bottom 0.4s;
+      -o-transition: bottom 0.4s;
+      transition: bottom 0.4s;
+>>>>>>> 76e01219265a0a1dffe29e348bedf38a45023cd8
 }
 

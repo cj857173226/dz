@@ -13,14 +13,15 @@
 						<text v-else-if="modifyBedForm.type=='other'">其他</text>
 					</text>
 				</view>
-				<view class="after-icon">
+				<view class="after-icon" v-if="houseStatus==-1 || houseStatus == 2">
 					<text class="iconfont icon-right"></text>
 				</view>
 			</view>
 			<view class="form_item">
 				<view class="label">宽度</view>
 				<view class="content_wrap">
-					<input class="ipt" type="number" placeholder-style="color:#ccc;" placeholder="0.1-10范围内的数字" maxlength="4" v-model="modifyBedForm.weight">
+					<input class="ipt" type="number" :disabled="houseStatus==0||houseStatus==1" placeholder-style="color:#ccc;"
+					 placeholder="0.1-10范围内的数字" maxlength="4" v-model="modifyBedForm.weight">
 				</view>
 				<view class="unit">
 					m
@@ -29,7 +30,8 @@
 			<view class="form_item">
 				<view class="label">长度</view>
 				<view class="content_wrap">
-					<input class="ipt" type="number" placeholder-style="color:#ccc;" placeholder="0.1-10范围内的数字" maxlength="4" v-model="modifyBedForm.length">
+					<input class="ipt" type="number" :disabled="houseStatus==0||houseStatus==1" placeholder-style="color:#ccc;"
+					 placeholder="0.1-10范围内的数字" maxlength="4" v-model="modifyBedForm.length">
 				</view>
 				<view class="unit">
 					m
@@ -40,17 +42,19 @@
 			<view class="main-box">
 				<text>同规格床铺数</text>
 				<view class="number-control">
-					<view class="reduce-btn" :class="{'dis-num':modifyBedForm.num<=1}" @click.stop="modifyBedNumber(0)"><text class="iconfont icon-jian"></text></view>
+					<view class="reduce-btn" :class="{'dis-num':modifyBedForm.num<=1}" v-if="houseStatus==-1 || houseStatus == 2"
+					 @click.stop="modifyBedNumber(0)"><text class="iconfont icon-jian"></text></view>
 					<view class="bed-num"><text>{{modifyBedForm.num}}</text>张</view>
-					<view class="add-btn" :class="{'dis-num':modifyBedForm.num>=99}" @click.stop="modifyBedNumber(1)"><text class="iconfont icon-jia"></text></view>
+					<view class="add-btn" :class="{'dis-num':modifyBedForm.num>=99}" v-if="houseStatus==-1 || houseStatus == 2"
+					 @click.stop="modifyBedNumber(1)"><text class="iconfont icon-jia"></text></view>
 				</view>
 			</view>
 			<view class="tips">
 				如果有相同类型和尺寸的床铺,可以设置同规格床铺数而不需要重复添加.如无需要,请填写1张
 			</view>
 		</view>
-		<button class="add_btn my-btn-block" :class="{'dis_btn': isAllowEdit}" @tap="submitEditBed()">确定</button>
-		<button class="del_btn my-del-block" @tap="deleteBed()">删除床铺</button>
+		<button class="add_btn my-btn-block" :class="{'dis_btn': isAllowEdit}" @tap="submitEditBed()" v-if="houseStatus==-1 || houseStatus == 2">确定</button>
+		<button class="del_btn my-del-block" @tap="deleteBed()" v-if="houseStatus==-1 || houseStatus == 2">删除床铺</button>
 	</view>
 </template>
 
@@ -77,6 +81,7 @@
 					num: 1,
 				},
 				isLoading: false, //是否正在提交请求
+				houseStatus: '', // 房源状态
 			}
 		},
 		onLoad(opt) {
@@ -139,36 +144,36 @@
 						delta: 1,
 					})
 				} else {
-					let curBedList = this.releaseObj.bed?JSON.parse(this.releaseObj.bed):[];
-				    curBedList[_this.curindex] = param;
+					let curBedList = this.releaseObj.bed ? this.releaseObj.bed : [];
+					curBedList[_this.curindex] = param;
 					let bedParam = JSON.stringify(curBedList);
 					_this.isLoading = true;
 					uni.showLoading({
-						title:'修改床铺..',
-						mask:true,
+						title: '修改床铺..',
+						mask: true,
 					})
 					request({
-						url:'/wap/api/fangdong.php?action=improveHouse',
-						method:'POST',
-						data:{
-							house_id:id,
-							bed:bedParam,
+						url: '/wap/api/fangdong.php?action=improveHouse',
+						method: 'POST',
+						data: {
+							house_id: id,
+							bed: bedParam,
 						},
-						success:(res)=>{
-							if(res.data.status === 'success'){
+						success: (res) => {
+							if (res.data.status === 'success') {
 								let _data = res.data.content;
 								_this.editReleaseInfo(_data);
 								_this.editReleaseInfoStatus(true);
 								uni.hideLoading();
 								uni.navigateBack({
-									delta:1,
+									delta: 1,
 								})
-								
-							}else{
+
+							} else {
 								helper.layer('修改失败')
 							}
 						},
-						complete:()=>{
+						complete: () => {
 							_this.isLoading = false;
 						}
 					})
@@ -176,7 +181,7 @@
 			},
 			// 删除床铺
 			deleteBed() {
-				if(this.isLoading) return;
+				if (this.isLoading) return;
 				const _this = this;
 				const id = _this.house_id;
 				uni.showModal({
@@ -186,36 +191,36 @@
 					confirmColor: '#F05B72',
 					success: function(res) {
 						if (res.confirm) {
-							let curBedList = _this.releaseObj.bed?JSON.parse(_this.releaseObj.bed):[];
+							let curBedList = _this.releaseObj.bed ? _this.releaseObj.bed : [];
 							//这里分割一下数组
-							curBedList.splice(_this.curindex,1);
+							curBedList.splice(_this.curindex, 1);
 							let param = JSON.stringify(curBedList);
 							_this.isLoading = true;
 							uni.showLoading({
-								title:'删除床铺...',
-								mask:true,
+								title: '删除床铺...',
+								mask: true,
 							})
 							request({
-								url:'/wap/api/fangdong.php?action=improveHouse',
-								method:'POST',
-								data:{
-									house_id:id,
-									bed:param,
+								url: '/wap/api/fangdong.php?action=improveHouse',
+								method: 'POST',
+								data: {
+									house_id: id,
+									bed: param,
 								},
-								success:(res)=>{
-									if(res.data.status === 'success'){
+								success: (res) => {
+									if (res.data.status === 'success') {
 										let _data = res.data.content;
 										_this.editReleaseInfo(_data);
 										_this.editReleaseInfoStatus(true);
 										uni.hideLoading();
 										uni.navigateBack({
-											delta:1,
+											delta: 1,
 										})
-									}else{
+									} else {
 										helper.layer('删除失败')
 									}
 								},
-								complete:()=>{
+								complete: () => {
 									_this.isLoading = false;
 								}
 							})
@@ -227,6 +232,7 @@
 			},
 			// 选择床铺类型
 			changeBedType() {
+				if (this.houseStatus == 0 || this.houseStatus == 1) return;
 				const _this = this;
 				const bedData = ['double', 'single', 'sofa', 'canopy', 'tatami', 'other']
 				uni.showActionSheet({
@@ -241,11 +247,13 @@
 			// 获取当前床铺信息
 			getCurBedInfo() {
 				const _releaseObj = this.releaseObj;
-				let _bedList = _releaseObj.bed ? JSON.parse(_releaseObj.bed) : [];
+				let _bedList = _releaseObj.bed ? _releaseObj.bed : [];
 				this.house_id = _releaseObj.id;
+				this.houseStatus = _releaseObj.status;
 				const curBed = _bedList[this.curindex];
 				this.oldBed = helper.deepCopy(curBed);
 				this.modifyBedForm = helper.deepCopy(curBed);
+
 			},
 			// 比较两个obj 是否相等obj,obj2
 			compareObj(obj, obj2) {

@@ -141,7 +141,7 @@
 				const _this = this;
 				const id = this.house_id;
 				const _curbed = this.curActiveBedOption;
-				let curBedList = this.releaseObj.bed?JSON.parse(this.releaseObj.bed):[];
+				let curBedList = this.releaseObj.bed?this.releaseObj.bed:[];
 				let _bedInfo = {
 					type:_curbed.type,
 					length:_curbed.length,

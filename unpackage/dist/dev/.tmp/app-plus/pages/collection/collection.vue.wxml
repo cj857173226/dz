@@ -1,1 +1,5 @@
+<<<<<<< HEAD
+<template name="24365bb8"><view class="_view data-v-0a423c29 contanier"><view class="_view data-v-0a423c29 group-box" bindtap="handleProxy" wx:key="i" key="{{i}}" data-eventid="{{'24365bb8-0-'+i}}" data-comkey="{{$k}}" wx:for="{{groupingList}}" wx:for-index="i" wx:for-item="item"><image class="_image data-v-0a423c29 group-img" src="../../static/images/meitu.jpeg"></image><view class="_view data-v-0a423c29 group-name">{{item.cname}}</view></view></view></template>
+=======
 <template name="6dea5eff"><view class="_view data-v-9cd42b62 contanier"><view class="_view data-v-9cd42b62 group-box" bindtap="handleProxy" wx:key="i" key="{{i}}" data-eventid="{{'6dea5eff-0-'+i}}" data-comkey="{{$k}}" wx:for="{{groupingList}}" wx:for-index="i" wx:for-item="item"><image class="_image data-v-9cd42b62 group-img" src="../../static/images/meitu.jpeg"></image><view class="_view data-v-9cd42b62 group-name">{{item.cname}}</view></view></view></template>
+>>>>>>> f27b4d270c8b7da9bccda9260e74e8bba5acc2d4

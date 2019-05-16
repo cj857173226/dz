@@ -1,7 +1,7 @@
 <template>
 	<view class="contanier">
 		<view class="desc_wrap">
-			<textarea placeholder-class="placeholder" placeholder="房客使用您的房间需要遵守的规则 (如年龄段、性别、接待时间等) ,合理的要求可使您避免一些不可必要的麻烦 (请不要发布联系方式) "
+			<textarea :disabled="houseStatus==1|| houseStatus ==0" placeholder-class="placeholder" placeholder="房客使用您的房间需要遵守的规则 (如年龄段、性别、接待时间等) ,合理的要求可使您避免一些不可必要的麻烦 (请不要发布联系方式) "
 			 maxlength="2000" v-model="desc"></textarea>
 			<view class="number_control"><text style="color: #F05B72;" v-text="desc.length"></text>/2000</view>
 		</view>
@@ -22,6 +22,7 @@
 				house_id: '', // 房源id
 				desc: '', //其他要求描述
 				isSubmiting: false,
+				houseStatus:'', // 房屋状态
 			}
 		},
 		onLoad() {
@@ -42,6 +43,10 @@
 			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
 			// 保存入住天数
 			save() {
+				if(this.houseStatus == 0 || this.houseStatus == 1){
+					helper.layer('无法编辑上架或者审核中的房源!');
+					return;
+				};
 				if (this.isSubmiting) return;
 				const _this = this;
 				const id = _this.house_id;
@@ -76,6 +81,7 @@
 			getCurData() {
 				const _releaseObj = this.releaseObj;
 				this.house_id = _releaseObj.id;
+				this.houseStatus = _releaseObj.status;
 				this.desc = _releaseObj.userule ? _releaseObj.userule : '';
 			}
 		}
