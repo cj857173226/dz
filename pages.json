@@ -87,6 +87,21 @@
 			}
 		},
 		{
+			"path": "pages/selecteds/more_screening",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "清空",
+							"fontSize": "16px",
+							"float": "right"
+						}]
+					}
+				}
+			}
+		},
+		{
 			// 收藏
 			"path": "pages/collection/collection",
 			"style": {
