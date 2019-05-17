@@ -52,7 +52,7 @@ const store = new Vuex.Store({
 			id: '',
 			title: '', //房屋标题
 			titlepic: '', // 标题配图
-			// titlepic: '',
+			titlepic: '',
 			xz_zb: '', //坐标,
 			xz_province: '', //省
 			xz_city: '', //市

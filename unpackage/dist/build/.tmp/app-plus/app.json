@@ -10,6 +10,7 @@
     "pages/particulars/place_order",
     "pages/particulars/pay",
     "pages/selecteds/selecteds",
+    "pages/selecteds/more_screening",
     "pages/collection/collection",
     "pages/collection/new_group",
     "pages/collection/custom",

@@ -303,6 +303,9 @@
 								let _data = res.data.content;
 								_this.editReleaseInfo(_data);
 								_this.editReleaseInfoStatus(true);
+								uni.navigateBack({
+									delta: 1,
+								})
 
 							} else {
 								helper.layer('发布失败')
