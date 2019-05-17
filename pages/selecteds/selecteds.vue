@@ -6,26 +6,28 @@
         {{city}}
         <text class="iconfont icon-xiala- xiala"></text>
       </view>
+      <!-- 搜索 -->
       <view class="select-box">
-        <mSearch value=""  :mode="2" button="inside" @search="search($event)"></mSearch>
+        <input class="select-input" placeholder="位置/地名/房源" @focus="focusInput" @blur="blurInput" :value="place" />
+        <view v-show="isShow" class="sousuo" @tap="clickSearch">搜索</view>
       </view>
     </view>
     <view class="list-box">
       <view @click="onShowDatePicker('range')" class="tiem-data">
-        <calendar @change="change" :beginDate="start" :endDate="end"></calendar>
+        <calendar @change="change"></calendar>
         <text class="iconfont icon-xiasanjiaoxiangxiamianxing"></text>
       </view>
-      <view @tap="showCalendar">
+      <!-- <view >
         位置区域
         <text class="iconfont icon-xiasanjiaoxiangxiamianxing"></text>
-      </view>
-      <view>
+      </view> -->
+      <view @tap="clickCalendar">
         更多筛选
-        <text class="iconfont icon-xiasanjiaoxiangxiamianxing"></text>
+        <!-- <text class="iconfont icon-xiasanjiaoxiangxiamianxing"></text> -->
       </view>
       <view>
         排序筛选
-        <text class="iconfont icon-xiasanjiaoxiangxiamianxing"></text>
+        <!-- <text class="iconfont icon-xiasanjiaoxiangxiamianxing"></text> -->
       </view>
     </view>
     <view class="housing-show">
@@ -58,120 +60,93 @@
         </view>
       </view>
     </view>
-    <!-- 位置区域 -->
-    <view class="place" :class="isShow ? 'show' : 'hide'" :animation="animationData">
-      1212121212
-    </view>
   </view>
 </template>
 <script>
-import mSearch from "@/components/selected/mehaotian-search-revision/mehaotian-search-revision"; //引入第三方搜索组件
+// import mSearch from "@/components/selected/mehaotian-search-revision/mehaotian-search-revision"; //引入第三方搜索组件
 import calendar from '../../components/selected/date-picker/date-picker' //引入日期插件件
 import checkboxGroup from "@/components/selected/checjbox/group/pages/checkbox-group/checkbox-group"; //引入第三方更多选框
-// import popupView from '@/components/selected/'
 import {request} from '../../common/request.js' // 封装的带有token的请求方法
+import {shortHttp} from "../../common/requestUrl.json"; // 接口文件
 export default {
   components: {
-    mSearch,
     checkboxGroup,
     calendar
   },
   data() {
     return {
+      shortHttp,
       showPicker: false,
       type: 'range',
       city:'', // 城市
-      start:'',// 开始时间
-      end:'', // 结束时间
-      isShow:'',
-      animation:null,
-      animationData: {},
+      place:'', // 位置
+      isShow:false, // 是否显示搜索按钮
+      inputValue:'',//搜索框的value值
     };
   },
   onLoad(option){
     this.city = option.city;
-    // this.start = option.start;
-    // this.end = option.end;
-  },
-  onShow(){
-    console.log('1',uni);
-    console.log('2',uni.createAnimation);
-    
-    // 弹出层动画创建
-		this.animation = uni.createAnimation({
-			duration: 1000,
-      timingFunction: 'ease',
-    });
-    this.animation.scale(2,2).rotate(45).step()
-    this.animationData = animation.export()
+    this.place = option.site;
   },
   methods: {
-    search(e, val) {
-      console.log(e, val);
-      this["val" + val] = e;
+    // 当输入框聚焦时显示搜索按钮
+    focusInput(){
+      this.isShow = true;
+    },
+    // 输入框失去焦点时把value拿到
+    blurInput(e){
+      this.inputValue = e.detail.value;
+    },
+    // 点击搜索按钮隐藏自己，并发起搜索请求
+    clickSearch(){
+      console.log(this.inputValue);
+      
+      this.isShow = false;
     },
     // 点击跳转页面
     clickCity(){
       uni.navigateTo({
-        url:'/pages/index/searchCity'
+        url:'/pages/index/search_city'
       })
     },
     onShowDatePicker(type){//显示
       this.type = type;
       this.showPicker = true;
-      this.value = this[type];
+      // this.value = this[type];
     },
-    onSelected(e) {//选择
-      this.showPicker = false;
-      if(e) {
-          this[this.type] = e.value; 
-          //选择的值
-          console.log('value => '+ e.value);
-          //原始的Date对象
-          console.log('date => ' + e.date);
-      }
+    // onSelected(e) {//选择
+    //   this.showPicker = false;
+    //   if(e) {
+    //       this[this.type] = e.value; 
+    //       //选择的值
+    //       console.log('value => '+ e.value);
+    //       //原始的Date对象
+    //       console.log('date => ' + e.date);
+    //   }
+    // },
+    // 跳转到筛选页面
+    clickCalendar(){
+      uni.navigateTo({
+        url:'/pages/selecteds/more_screening'
+      })
     },
-    showCalendar: function() {
-			//#ifndef H5
-			// 设置动画内容为：使用绝对定位显示区域，高度变为100%
-			this.animation
-				.bottom('0px')
-				.height('100%')
-				.step();
-			this.animationData = this.animation.export();
-			//#endif
-
-			///////////////////h5平台适配//////////////////
-			//#ifdef H5
-			this.isShow = true;
-			//#endif
-    },
-    hideCalendar: function() {
-			///////////////////非非非h5平台适配//////////////////
-			//#ifndef H5
-			// 设置动画内容为：使用绝对定位隐藏整个区域，高度变为0
-			this.animation
-				.bottom('-100%')
-				.height('0upx')
-				.step();
-			this.animationData = this.animation.export();
-			//#endif
-
-			///////////////////h5平台适配//////////////////
-			//#ifdef H5
-			this.isShow = false;
-			//#endif
-		},
     change({choiceDate, dayCount}){
 			//1.choiceDate 时间区间（开始时间和结束时间）
 			//2.dayCount 共多少晚
 			console.dir(choiceDate)
 			console.log("入住从 "+ choiceDate[0].re + "  到 " + choiceDate[1].re + "  共 " + dayCount +" 晚");
-			this.startTime = choiceDate[0].re;
-			this.endTime = choiceDate[1].re;
-		},
+			// this.startTime = choiceDate[0].re;
+			// this.endTime = choiceDate[1].re;
+    },
+    // 地址数据请求
+    // siteRequest(){
+    //   request({
+    //     url:'/wap/api/search.php?action=result',
+    //     data:{}
+    //   })
+    // }
   }
-  
+
 };
 </script>
 <style>
@@ -210,7 +185,22 @@ page{
       border-radius: 10upx;
       display: flex;
       align-items: center;
+      justify-content:  space-between;
       margin-left: 10upx;
+      padding-left: 20upx;
+      font-size: 28upx;
+      .select-input{
+        width: 400upx;
+      }
+      .sousuo{
+        width: 100upx;
+        height: 60upx;
+        background-color: #ef5f75;
+        color: #fff;
+        text-align: center;
+        line-height: 60upx;
+        border-radius: 30upx;
+      }
     }
   }
   .list-box {
@@ -311,24 +301,21 @@ page{
     }
   }
   .place{
-    position: fixed;
-    left: 0;
-    bottom: -100%;
-    height: 0;
     width: 100%;
-    overflow: hidden;
-    z-index: 9999;
-    &.show {
-      bottom: 0;
-      height: 100%;
-      transition: bottom 0.4s;
-    }
-
-    //h5使用css3动画
-    &.hide {
-      bottom: -100%;
-      height: 100%;
-      transition: bottom 0.4s;
+    height: 100%;
+    .box{
+      width: 100%;
+      background-color: #fff;
+      font-size: 28upx;
+      position: relative;
+      .icon-box{
+        font-size: 32upx;
+        padding: 30upx;
+        box-sizing: border-box;
+        position: absolute;
+        top: 40upx;
+        left: 40upx;
+      }
     }
   }
 }

@@ -91,7 +91,6 @@
 <script>
 	import mpvuePicker from '../../components/index/mpvue-picker/mpvuePicker';
 	import calendar from '../../components/index/date-picker/date-picker' //引入日期插件件
-	// import calendar from '@/components/selected/date-picker/date-picker'
 	import {
 		request
 	} from '../../common/request.js' // 封装的带有token的请求方法
@@ -211,12 +210,14 @@
 			},
 			// 点击按钮跳转到搜索页面
 			clickSelect: function() {
-				console.log('1111')
-				let startTime = this.startTime;
-				let endTime = this.endTime;
-				let ressCity = this.addressName
+				// let startTime = this.startTime;
+				// let endTime = this.endTime;
+				let ressCity = this.addressName;
+				let site = this.city;
+				console.warn(ressCity);
+				
 				uni.navigateTo({
-					url: `/pages/selecteds/selecteds?start=${startTime}&end=${endTime}&city=${ressCity}`
+					url: `/pages/selecteds/selecteds?city=${ressCity}&site=${site}`
 				})
 			},
 			cityGps() {
@@ -229,21 +230,7 @@
 					fail:function(info){
 						console.log(info);
 					}
-				});  
-				// uni.getLocation({
-				// 	type:'gcj02',
-				// 	success: function (res) {
-				// 		console.log('当前位置的经度：' + res.longitude);
-				// 		console.log('当前位置的纬度：' + res.latitude);
-    		// 	}
-				// })
-				/* // 获取当前位置
-				const _that = this;
-				plus.geolocation.getCurrentPosition(p => {
-					_that.city = p.address.city; //当前城市名
-					console.log(_that.city)
-				}); */
-
+				});
 			},
 			// 点击获取当前位置
 			tapOrientation(){

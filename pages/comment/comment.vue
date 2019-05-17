@@ -14,7 +14,7 @@
           <view class="comment-content">
             <view style="font-size:14px;">{{item.comment}}</view>
             <view class="img-box" v-if="item.pictures.length>0">
-              <image style="width:120upx;height:120upx;margin-left:14upx;" v-for="(items,index) in item.pictures" :key="index" :src="shortHttp+items.picture"></image>
+              <image style="width:120upx;height:120upx;margin-left:14upx;" @tap="clickPreview(items.picture)" v-for="(items,index) in item.pictures" :key="index" :src="shortHttp+items.picture"></image>
             </view>
           </view>
           <view class="landlord-reply" v-if="item.recomment != null">
@@ -132,6 +132,14 @@ export default {
             icon:'none'
           })
         }
+      })
+    }
+  },
+  methods: {
+    // 预览图片
+    clickPreview(uri){
+      uni.previewImage({
+        urls:[this.shortHttp+uri]
       })
     }
   }

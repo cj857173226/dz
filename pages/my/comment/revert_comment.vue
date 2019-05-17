@@ -26,7 +26,7 @@
               {{item.comment}}
             </view>
             <view class="img-box" v-if="item.pictures.length>0">
-              <image class="img-list" v-for="(value,key) in item.pictures" :key="key" :src="shortHttp+value.picture"></image>
+              <image class="img-list" @tap="clickPreview(value.picture)" v-for="(value,key) in item.pictures" :key="key" :src="shortHttp+value.picture"></image>
             </view>
             <view class="btn-box">
               <view class="btn" @tap="cliakReply(item.id)">回复</view>
@@ -275,6 +275,14 @@ export default {
             icon:'none'
           })
         }
+      })
+    },
+    // 预览图片
+    clickPreview(uri){
+      console.log();
+      
+      uni.previewImage({
+        urls:[this.shortHttp+uri]
       })
     }
   },
