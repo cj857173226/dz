@@ -804,8 +804,7 @@
 			"path": "pages/releaseManage/room_photograph/room_photograph",
 			"style": {
 				"navigationBarTitleText": "房间照片",
-				"app-plus": {
-				}
+				"app-plus": {}
 			}
 		},
 		{
@@ -843,20 +842,19 @@
 			"style": {
 				"navigationBarTitleText": "评论管理"
 			}
+		}, {
+			"path": "pages/my/comment/comment",
+			"style": {
+				"navigationBarTitleText": "评论管理"
+			}
+		},
+		{
+			"path": "pages/my/comment/revert_comment",
+			"style": {
+				"navigationBarTitleText": "回复评论"
+			}
 		}
-		,{
-					"path" : "pages/my/comment/comment",
-					"style": {
-						"navigationBarTitleText": "评论管理"
-					}
-			},
-			{
-				"path" : "pages/my/comment/revert_comment",
-				"style": {
-					"navigationBarTitleText": "回复评论"
-				}
-		}
-    ],
+	],
 	// 全局样式
 	"globalStyle": {
 		"navigationBarBackgroundColor": "#F05B72"

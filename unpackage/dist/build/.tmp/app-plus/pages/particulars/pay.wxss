@@ -24,20 +24,12 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-<<<<<<< HEAD
 .contanier.data-v-919dae00 {
-=======
-.contanier.data-v-47eb6226 {
->>>>>>> 4b6a97c7458041e16d84caaf0987c3ced936f792
   width: 100%;
   height: 100%;
   font-size: 14px;
 }
-<<<<<<< HEAD
 .contanier .top-price.data-v-919dae00 {
-=======
-.contanier .top-price.data-v-47eb6226 {
->>>>>>> 4b6a97c7458041e16d84caaf0987c3ced936f792
     width: 100%;
     height: 100rpx;
     background: #2CACA0;
@@ -48,21 +40,13 @@
     line-height: 100rpx;
     color: #fff;
 }
-<<<<<<< HEAD
 .contanier .pay-box.data-v-919dae00 {
-=======
-.contanier .pay-box.data-v-47eb6226 {
->>>>>>> 4b6a97c7458041e16d84caaf0987c3ced936f792
     width: 100%;
     padding: 0 30rpx;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
-<<<<<<< HEAD
 .contanier .pay-box .zhifubao-box.data-v-919dae00 {
-=======
-.contanier .pay-box .zhifubao-box.data-v-47eb6226 {
->>>>>>> 4b6a97c7458041e16d84caaf0987c3ced936f792
       width: 100%;
       display: -webkit-box;
       display: -webkit-flex;
@@ -86,11 +70,7 @@
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
 }
-<<<<<<< HEAD
 .contanier .pay-box .zhifubao-box .left-box.data-v-919dae00 {
-=======
-.contanier .pay-box .zhifubao-box .left-box.data-v-47eb6226 {
->>>>>>> 4b6a97c7458041e16d84caaf0987c3ced936f792
         width: 100%;
         display: -webkit-box;
         display: -webkit-flex;
@@ -106,20 +86,12 @@
             -ms-flex-align: center;
                 align-items: center;
 }
-<<<<<<< HEAD
 .contanier .pay-box .zhifubao-box .left-box .icon-img.data-v-919dae00 {
-=======
-.contanier .pay-box .zhifubao-box .left-box .icon-img.data-v-47eb6226 {
->>>>>>> 4b6a97c7458041e16d84caaf0987c3ced936f792
           width: 90rpx;
           height: 90rpx;
           margin-right: 20rpx;
 }
-<<<<<<< HEAD
 .contanier .pay-btn.data-v-919dae00 {
-=======
-.contanier .pay-btn.data-v-47eb6226 {
->>>>>>> 4b6a97c7458041e16d84caaf0987c3ced936f792
     width: 80%;
     height: 80rpx;
     margin: 0 auto;
@@ -130,11 +102,7 @@
     border-radius: 10rpx;
     margin-top: 30%;
 }
-<<<<<<< HEAD
 .contanier .pay-btn.data-v-919dae00:active {
-=======
-.contanier .pay-btn.data-v-47eb6226:active {
->>>>>>> 4b6a97c7458041e16d84caaf0987c3ced936f792
       opacity: .5;
 }
 

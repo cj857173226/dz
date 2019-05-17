@@ -24,13 +24,13 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.container.data-v-077b2e02 {
+.container.data-v-0e37e1d9 {
   width: 100%;
   padding: 0 30rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.container .payment-method.data-v-077b2e02 {
+.container .payment-method.data-v-0e37e1d9 {
     width: 100%;
     height: 250rpx;
     background-color: #2B9FFB;
@@ -40,7 +40,7 @@
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
-.container .payment-method .zhifubao.data-v-077b2e02 {
+.container .payment-method .zhifubao.data-v-0e37e1d9 {
       width: 100%;
       padding: 20rpx 0;
       -webkit-box-sizing: border-box;
@@ -57,11 +57,11 @@
               align-items: center;
       border-bottom: 1px solid #E0E0E0;
 }
-.container .payment-method .zhifubao .zhububao-icon.data-v-077b2e02 {
+.container .payment-method .zhifubao .zhububao-icon.data-v-0e37e1d9 {
         font-size: 18px;
         margin-right: 10rpx;
 }
-.container .payment-method .explain.data-v-077b2e02 {
+.container .payment-method .explain.data-v-0e37e1d9 {
       color: #fff;
       font-size: 12px;
       line-height: 40rpx;
