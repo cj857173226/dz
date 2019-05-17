@@ -114,7 +114,6 @@
       position: absolute;
       top: 20rpx;
       right: 20rpx;
-      z-index: 999;
 }
 .contanier .costom-box .right-box .font20.data-v-78b81a22 {
         font-size: 40rpx;

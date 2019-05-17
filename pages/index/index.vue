@@ -341,6 +341,8 @@
 			},
 			// picker 组件点击确定时回调，返回选中的 label, value 和数组索引 index 的值
 			onConfirm(e) {
+				console.log(e);
+				
 				const _that = this;
 				let index = _that.collectIndex; // 收藏索引
 				let value = e.value;
