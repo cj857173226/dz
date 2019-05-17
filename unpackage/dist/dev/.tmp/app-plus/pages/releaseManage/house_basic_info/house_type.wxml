@@ -1,6 +1,2 @@
 <import src="./house_type.vue.wxml" />
-<<<<<<< HEAD
-    <template is="0c502abc" data="{{ ...$root['0'], $root }}"/>
-=======
     <template is="761c87d2" data="{{ ...$root['0'], $root }}"/>
->>>>>>> f27b4d270c8b7da9bccda9260e74e8bba5acc2d4

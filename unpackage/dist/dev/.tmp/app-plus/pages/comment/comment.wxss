@@ -61,11 +61,7 @@
           font-size: 12px;
           color: #999;
 }
-<<<<<<< HEAD
-.contanier .comment-box .comment-content.data-v-33d155a9 {
-=======
 .contanier .comment-box .comment-content.data-v-1674184f {
->>>>>>> f27b4d270c8b7da9bccda9260e74e8bba5acc2d4
       margin-top: 10rpx;
 }
 .contanier .comment-box .landlord-reply.data-v-1674184f {

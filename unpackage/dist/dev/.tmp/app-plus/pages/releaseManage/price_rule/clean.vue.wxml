@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-<template name="2e5a89ba"><view class="_view data-v-7068b085 center"><view class="_view data-v-7068b085 price-amount"><view class="_view data-v-7068b085 label">清洁费</view><view class="_view data-v-7068b085 amout-box"><input class="_input data-v-7068b085 amount" placeholder="最高设置金额9999" placeholder-class="placeholder" type="number" maxlength="5" /><view class="_view data-v-7068b085 unit">元/单</view></view></view><text class="_text data-v-7068b085 hint">清洁费的10%将作为服务费,请酌情考虑。</text></view></template>
-=======
 <template name="08a6433f"><view class="_view data-v-f780e5c2 center"><view class="_view data-v-f780e5c2 price-amount"><view class="_view data-v-f780e5c2 label">清洁费</view><view class="_view data-v-f780e5c2 amout-box"><input class="_input data-v-f780e5c2 amount" placeholder="最高设置金额9999" placeholder-class="placeholder" type="number" maxlength="5" /><view class="_view data-v-f780e5c2 unit">元/单</view></view></view><text class="_text data-v-f780e5c2 hint">清洁费的10%将作为服务费,请酌情考虑。</text></view></template>
->>>>>>> f27b4d270c8b7da9bccda9260e74e8bba5acc2d4

@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-<template name="7f9ed937"><canvas wx:if="{{canvasId}}" class="_canvas data-v-40620cfc ec-canvas" id="{{canvasId}}" canvasId="{{canvasId}}" bindtouchstart="handleProxy" bindtouchmove="handleProxy" bindtouchend="handleProxy" binderror="handleProxy" data-eventid="{{'7f9ed937-0'}}" data-comkey="{{$k}}"></canvas></template>
-=======
 <template name="59ea92bc"><canvas wx:if="{{canvasId}}" class="_canvas data-v-18b453c8 ec-canvas" id="{{canvasId}}" canvasId="{{canvasId}}" bindtouchstart="handleProxy" bindtouchmove="handleProxy" bindtouchend="handleProxy" binderror="handleProxy" data-eventid="{{'59ea92bc-0'}}" data-comkey="{{$k}}"></canvas></template>
->>>>>>> f27b4d270c8b7da9bccda9260e74e8bba5acc2d4

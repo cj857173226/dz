@@ -17,17 +17,13 @@
         <calendar @change="change"></calendar>
         <text class="iconfont icon-xiasanjiaoxiangxiamianxing"></text>
       </view>
-      <!-- <view >
-        位置区域
-        <text class="iconfont icon-xiasanjiaoxiangxiamianxing"></text>
-      </view> -->
       <view @tap="clickCalendar">
         更多筛选
-        <!-- <text class="iconfont icon-xiasanjiaoxiangxiamianxing"></text> -->
+        <text class="iconfont icon-xiasanjiaoxiangxiamianxing"></text>
       </view>
-      <view>
+      <view @click="clickShowPicker">
         排序筛选
-        <!-- <text class="iconfont icon-xiasanjiaoxiangxiamianxing"></text> -->
+        <text class="iconfont icon-xiasanjiaoxiangxiamianxing"></text>
       </view>
     </view>
     <view class="housing-show">
@@ -60,18 +56,21 @@
         </view>
       </view>
     </view>
+    <mpvue-picker :themeColor="themeColor" ref="mpvuePicker" mode="selector" :deepLength="deepLength" :pickerValueDefault="pickerValueDefault"
+    @onConfirm="onConfirm" @="" :pickerValueArray="pickerValueArray"></mpvue-picker>
   </view>
 </template>
 <script>
-// import mSearch from "@/components/selected/mehaotian-search-revision/mehaotian-search-revision"; //引入第三方搜索组件
 import calendar from '../../components/selected/date-picker/date-picker' //引入日期插件件
 import checkboxGroup from "@/components/selected/checjbox/group/pages/checkbox-group/checkbox-group"; //引入第三方更多选框
+import mpvuePicker from '../../components/index/mpvue-picker/mpvuePicker';
 import {request} from '../../common/request.js' // 封装的带有token的请求方法
 import {shortHttp} from "../../common/requestUrl.json"; // 接口文件
 export default {
   components: {
     checkboxGroup,
-    calendar
+    calendar,
+    mpvuePicker
   },
   data() {
     return {
@@ -82,6 +81,27 @@ export default {
       place:'', // 位置
       isShow:false, // 是否显示搜索按钮
       inputValue:'',//搜索框的value值
+      pickerValueArray: [
+        {
+          label: '住宿费',
+          value: 1
+        },
+        {
+          label: '活动费',
+          value: 2
+        },
+        {
+          label: '通讯费',
+          value: 3
+        },
+        {
+          label: '补助',
+          value: 4
+        }
+      ],
+      pickerValueDefault: [1],
+      deepLength:1,
+      themeColor: '#007AFF',
     };
   },
   onLoad(option){
@@ -99,8 +119,7 @@ export default {
     },
     // 点击搜索按钮隐藏自己，并发起搜索请求
     clickSearch(){
-      console.log(this.inputValue);
-      
+      // console.log(this.inputValue);
       this.isShow = false;
     },
     // 点击跳转页面
@@ -114,16 +133,6 @@ export default {
       this.showPicker = true;
       // this.value = this[type];
     },
-    // onSelected(e) {//选择
-    //   this.showPicker = false;
-    //   if(e) {
-    //       this[this.type] = e.value; 
-    //       //选择的值
-    //       console.log('value => '+ e.value);
-    //       //原始的Date对象
-    //       console.log('date => ' + e.date);
-    //   }
-    // },
     // 跳转到筛选页面
     clickCalendar(){
       uni.navigateTo({
@@ -138,6 +147,20 @@ export default {
 			// this.startTime = choiceDate[0].re;
 			// this.endTime = choiceDate[1].re;
     },
+    clickShowPicker() {
+      console.log('点击');
+      
+      this.$refs.mpvuePicker.show();
+    },
+    onConfirm(e) {
+      console.log(e);
+    },
+    onChange(e) {
+      console.log(e);
+    },
+    onCancel(e) {
+      console.log(e);
+    }
     // 地址数据请求
     // siteRequest(){
     //   request({
@@ -146,7 +169,6 @@ export default {
     //   })
     // }
   }
-
 };
 </script>
 <style>
@@ -215,7 +237,7 @@ page{
       display: flex;
       align-items: center;
     }
-    text {
+    text{
       color: #000;
     }
   }

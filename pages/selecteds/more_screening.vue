@@ -115,7 +115,10 @@ export default {
       for (let i = 0; i < ary.length; i++) {
         console.log(ary[i].pitch);
       }
-        
+    },
+    radioChange(e){
+      console.log(e);
+      
     }
   }
 }
@@ -221,7 +224,7 @@ export default {
   }
   .btn-box{
     width: 100%;
-    height: 170upx;
+    height: 140upx;
     background: #fff;
     position: fixed;
     bottom: 0;
