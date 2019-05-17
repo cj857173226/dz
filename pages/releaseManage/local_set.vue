@@ -41,7 +41,6 @@
 
 <script>
 	import mpvueCityPicker from '../../components/mpvue-citypicker/mpvueCityPicker.vue'
-
 	import {
 		mapState,
 		mapMutations
@@ -135,6 +134,7 @@
 				const district = _this.district;
 				const address = _this.address;
 				const number = _this.number;
+				
 				if(this.type === 'add'){
 					_this.editCreateHouseInfo({
 						xz_province:province,
@@ -150,6 +150,7 @@
 					console.log('保存')
 				}
 			},
+			
 			// 保存  （状态为编辑）
 			save(){
 				if(this.type!=='edit') return;

@@ -1,3 +1,4 @@
+import helper from '../common/helper.js'
 // 域名
 const host = 'http://dz.abontest.com';
 // 封装请求方法 （详情可以参考uniapp官方文档）
@@ -32,7 +33,26 @@ export function request(opt) {
 		data:opt.data,
 		dataType:opt.dataType,
 		responseType:opt.responseType,
-		success:opt.success,
+		success:function(res){
+			// 统一处理 权限不够或token无效 （返回登录页面）
+			if(res.data.status == 401|| res.data.status == 403){
+				uni.showToast({
+					title: '身份过期请重新登录~',
+					duration: 3000,
+					icon: 'none',
+					mask:true,
+				});
+				let timer = setTimeout(()=>{
+					uni.reLaunch({
+						url: "/pages/login/login"
+					})
+					clearTimeout(timer);
+					timer = null;
+				},3000)
+			}else{
+				opt.success(res);
+			}
+		},
 		fail:opt.fail,
 		complete:opt.complete
 	})

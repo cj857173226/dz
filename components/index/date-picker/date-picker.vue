@@ -445,7 +445,7 @@ export default {
 				dataAll2[1][0].act.defaultStr = 1;
 				this.choiceDate.push(dataAll2[1][0]);
 			}
-			console.log(dataAll2, weeks, this.today, this.tomorrow, this.afterTomorrow);
+			// console.log(dataAll2, weeks, this.today, this.tomorrow, this.afterTomorrow);
 			this.date = dataAll2;
 			this.weeks = weeks;
 			this.choiceDate = this.choiceDate;
