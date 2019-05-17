@@ -1,6 +1,2 @@
 <import src="./price_rule.vue.wxml" />
-<<<<<<< HEAD
     <template is="c018a13e" data="{{ ...$root['0'], $root }}"/>
-=======
-    <template is="100820fc" data="{{ ...$root['0'], $root }}"/>
->>>>>>> f27b4d270c8b7da9bccda9260e74e8bba5acc2d4

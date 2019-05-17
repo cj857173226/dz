@@ -160,7 +160,7 @@ export default {
 			///////////////////h5平台适配//////////////////
 			//#ifdef H5
 			this.isShow = false;
-			//#endi
+			//#endif
 		},
     change({choiceDate, dayCount}){
 			//1.choiceDate 时间区间（开始时间和结束时间）

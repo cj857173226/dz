@@ -29,18 +29,18 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.house_basic_page.data-v-984f7c6a {
+.house_basic_page.data-v-e6b2b548 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 100%;
   padding: 20rpx 30rpx;
 }
-.house_basic_page .house_basic_form.data-v-984f7c6a {
+.house_basic_page .house_basic_form.data-v-e6b2b548 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
 }
-.house_basic_page .house_basic_form .form_item.data-v-984f7c6a {
+.house_basic_page .house_basic_form .form_item.data-v-e6b2b548 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
@@ -64,18 +64,18 @@ page {
               align-items: center;
       border-bottom: 1px solid #eaeaea;
 }
-.house_basic_page .house_basic_form .form_item .item_left.data-v-984f7c6a {
+.house_basic_page .house_basic_form .form_item .item_left.data-v-e6b2b548 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         width: calc(100% - 60rpx);
 }
-.house_basic_page .house_basic_form .form_item .item_left > view.data-v-984f7c6a {
+.house_basic_page .house_basic_form .form_item .item_left > view.data-v-e6b2b548 {
           margin-bottom: 4rpx;
 }
-.house_basic_page .house_basic_form .form_item .item_left > view.data-v-984f7c6a:last-child {
+.house_basic_page .house_basic_form .form_item .item_left > view.data-v-e6b2b548:last-child {
           margin-bottom: 0;
 }
-.house_basic_page .house_basic_form .form_item .item_left .label.data-v-984f7c6a {
+.house_basic_page .house_basic_form .form_item .item_left .label.data-v-e6b2b548 {
           width: 100%;
           overflow: hidden;
           -o-text-overflow: ellipsis;
@@ -84,7 +84,7 @@ page {
           font-size: 32rpx;
           color: #333333;
 }
-.house_basic_page .house_basic_form .form_item .item_left .empty_data.data-v-984f7c6a {
+.house_basic_page .house_basic_form .form_item .item_left .empty_data.data-v-e6b2b548 {
           width: 100%;
           overflow: hidden;
           -o-text-overflow: ellipsis;
@@ -93,7 +93,7 @@ page {
           font-size: 28rpx;
           color: #cccccc;
 }
-.house_basic_page .house_basic_form .form_item .item_left .result.data-v-984f7c6a {
+.house_basic_page .house_basic_form .form_item .item_left .result.data-v-e6b2b548 {
           width: 100%;
           overflow: hidden;
           -o-text-overflow: ellipsis;
@@ -102,12 +102,12 @@ page {
           font-size: 28rpx;
           color: #333333;
 }
-.house_basic_page .house_basic_form .form_item .item_left .tips.data-v-984f7c6a {
+.house_basic_page .house_basic_form .form_item .item_left .tips.data-v-e6b2b548 {
           color: #AAAAAA;
           font-size: 28rpx;
           word-break: break-all;
 }
-.house_basic_page .house_basic_form .form_item .after_icon.data-v-984f7c6a {
+.house_basic_page .house_basic_form .form_item .after_icon.data-v-e6b2b548 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         display: -webkit-box;
@@ -129,7 +129,7 @@ page {
                 align-items: center;
         width: 60rpx;
 }
-.house_basic_page .house_basic_form .form_item .after_icon .iconfont.data-v-984f7c6a {
+.house_basic_page .house_basic_form .form_item .after_icon .iconfont.data-v-e6b2b548 {
           font-size: 40rpx;
           color: #AAAAAA;
 }

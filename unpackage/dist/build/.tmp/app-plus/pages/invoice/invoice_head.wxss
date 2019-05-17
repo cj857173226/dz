@@ -30,31 +30,31 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.invocie_head_page.data-v-59ac9108 {
+.invocie_head_page.data-v-379262a5 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 100%;
   width: 100%;
   padding: 20rpx 30rpx;
 }
-.invocie_head_page .add_btn.data-v-59ac9108 {
+.invocie_head_page .add_btn.data-v-379262a5 {
     margin-top: 20rpx;
 }
-.invocie_head_page .add_btn .iconfont.data-v-59ac9108 {
+.invocie_head_page .add_btn .iconfont.data-v-379262a5 {
       font-size: 32rpx;
 }
-.invocie_head_page .invice_head_list_wrap.data-v-59ac9108 {
+.invocie_head_page .invice_head_list_wrap.data-v-379262a5 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     margin-top: 20rpx;
     height: calc(100% - 130rpx);
 }
-.invocie_head_page .invice_head_list_wrap .invice_head_list.data-v-59ac9108 {
+.invocie_head_page .invice_head_list_wrap .invice_head_list.data-v-379262a5 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       padding: 10rpx 0;
 }
-.invocie_head_page .invice_head_list_wrap .invice_head_list .list_item.data-v-59ac9108 {
+.invocie_head_page .invice_head_list_wrap .invice_head_list .list_item.data-v-379262a5 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         margin-bottom: 20rpx;
@@ -72,15 +72,15 @@ page {
         background: #FFFFFF;
         border-radius: 12rpx;
 }
-.invocie_head_page .invice_head_list_wrap .invice_head_list .list_item .one_line.data-v-59ac9108 {
+.invocie_head_page .invice_head_list_wrap .invice_head_list .list_item .one_line.data-v-379262a5 {
           font-size: 28rpx;
           margin-bottom: 6rpx;
 }
-.invocie_head_page .invice_head_list_wrap .invice_head_list .list_item .one_line text.data-v-59ac9108 {
+.invocie_head_page .invice_head_list_wrap .invice_head_list .list_item .one_line text.data-v-379262a5 {
             color: #aaaaaa;
             margin-left: 32rpx;
 }
-.invocie_head_page .invice_head_list_wrap .invice_head_list .list_item .hanle_wrap.data-v-59ac9108 {
+.invocie_head_page .invice_head_list_wrap .invice_head_list .list_item .hanle_wrap.data-v-379262a5 {
           -webkit-box-sizing: border-box;
                   box-sizing: border-box;
           width: 100%;
@@ -102,19 +102,19 @@ page {
               -ms-flex-align: center;
                   align-items: center;
 }
-.invocie_head_page .invice_head_list_wrap .invice_head_list .list_item .hanle_wrap .edit_btn.data-v-59ac9108 {
+.invocie_head_page .invice_head_list_wrap .invice_head_list .list_item .hanle_wrap .edit_btn.data-v-379262a5 {
             font-size: 28rpx;
             color: #aaaaaa;
             padding: 8rpx;
 }
-.invocie_head_page .invice_head_list_wrap .invice_head_list .list_item .hanle_wrap .edit_btn.data-v-59ac9108:active {
+.invocie_head_page .invice_head_list_wrap .invice_head_list .list_item .hanle_wrap .edit_btn.data-v-379262a5:active {
               color: #cccccc;
 }
-.invocie_head_page .invice_head_list_wrap .invice_head_list .list_item .hanle_wrap .default.data-v-59ac9108 {
+.invocie_head_page .invice_head_list_wrap .invice_head_list .list_item .hanle_wrap .default.data-v-379262a5 {
             color: #F05B72;
             font-size: 28rpx;
 }
-.invocie_head_page .no_data.data-v-59ac9108 {
+.invocie_head_page .no_data.data-v-379262a5 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     height: calc(100% - 130rpx);

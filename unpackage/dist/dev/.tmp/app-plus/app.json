@@ -77,12 +77,9 @@
     "pages/comment/comment_order",
     "pages/setting/setting",
     "pages/setting/setting",
-<<<<<<< HEAD
-    "pages/my/comment/comment"
-=======
+    "pages/my/comment/comment",
     "pages/my/comment/comment",
     "pages/my/comment/revert_comment"
->>>>>>> f27b4d270c8b7da9bccda9260e74e8bba5acc2d4
   ],
   "subPackages": [],
   "window": {

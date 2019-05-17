@@ -1,12 +1,6 @@
 <import src="/components/neil-modal/neil-modal.vue.wxml" />
 
-<<<<<<< HEAD
-<template name="data-v-f125f186-default-698cacf8-1"><view class="_view data-v-f125f186">是否需要修改退款金额</view><view class="_view data-v-f125f186 input-name"><view style="margin-left:40rpx;" class="_view data-v-f125f186">退还金额:</view><view class="_view data-v-f125f186 input-box"><input type="text" placeholder="请输入退款金额" bindblur="handleProxy" data-eventid="{{'698cacf8-5'}}" data-comkey="{{$k}}" class="_input data-v-f125f186" /></view><text class="_text data-v-f125f186">元</text></view></template>
-
 <template name="data-v-4c89d19b-default-4c311a50-0"><view class="_view data-v-4c89d19b">是否需要修改退款金额</view><view class="_view data-v-4c89d19b input-name"><view style="margin-left:40rpx;" class="_view data-v-4c89d19b">退还金额:</view><view class="_view data-v-4c89d19b input-box"><input type="text" placeholder="请输入退款金额" bindblur="handleProxy" data-eventid="{{'4c311a50-1'}}" data-comkey="{{$k}}" class="_input data-v-4c89d19b" /></view><text class="_text data-v-4c89d19b">元</text></view></template>
-=======
-<template name="data-v-7af300e3-default-3b2de993-1"><view class="_view data-v-7af300e3">是否需要修改退款金额</view><view class="_view data-v-7af300e3 input-name"><view style="margin-left:40rpx;" class="_view data-v-7af300e3">退还金额:</view><view class="_view data-v-7af300e3 input-box"><input type="text" placeholder="请输入退款金额" bindblur="handleProxy" data-eventid="{{'3b2de993-5'}}" data-comkey="{{$k}}" class="_input data-v-7af300e3" /></view><text class="_text data-v-7af300e3">元</text></view></template>
 
-<template name="data-v-63c89735-default-b07c9756-0"><view class="_view data-v-63c89735">是否需要修改退款金额</view><view class="_view data-v-63c89735 input-name"><view style="margin-left:40rpx;" class="_view data-v-63c89735">退还金额:</view><view class="_view data-v-63c89735 input-box"><input type="text" placeholder="请输入退款金额" bindblur="handleProxy" data-eventid="{{'b07c9756-1'}}" data-comkey="{{$k}}" class="_input data-v-63c89735" /></view><text class="_text data-v-63c89735">元</text></view></template>
->>>>>>> f27b4d270c8b7da9bccda9260e74e8bba5acc2d4
+<template name="data-v-f125f186-default-698cacf8-1"><view class="_view data-v-f125f186">是否需要修改退款金额</view><view class="_view data-v-f125f186 input-name"><view style="margin-left:40rpx;" class="_view data-v-f125f186">退还金额:</view><view class="_view data-v-f125f186 input-box"><input type="text" placeholder="请输入退款金额" bindblur="handleProxy" data-eventid="{{'698cacf8-5'}}" data-comkey="{{$k}}" class="_input data-v-f125f186" /></view><text class="_text data-v-f125f186">元</text></view></template>
 

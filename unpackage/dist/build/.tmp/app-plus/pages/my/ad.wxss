@@ -29,12 +29,12 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.ad_page.data-v-170f7900 {
+.ad_page.data-v-ed41f2be {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
 }
-.ad_page ._img.data-v-170f7900 {
+.ad_page ._img.data-v-ed41f2be {
     max-width: 100%;
 }
 

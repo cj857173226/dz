@@ -83,7 +83,7 @@
 			<view class="bed-info-box">
 				<view class="title">床铺信息</view>
 				<view class="content-wrap">
-					<view class="row" v-for="(item,index) in releaseObj.bed" :key="'bed'+index">
+					<view class="row" v-for="(item,index) in releaseObj.bed" :key="index">
 						<view class="bed">
 							<text v-if="item.type=== 'double'">双人床</text>
 							<text v-else-if="item.type=== 'single'">单人床</text>

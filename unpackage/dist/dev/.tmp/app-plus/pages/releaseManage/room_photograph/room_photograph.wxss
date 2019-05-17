@@ -24,14 +24,14 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-4ba76ece {
+.contanier.data-v-39d252a8 {
   width: 100%;
   padding: 30rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 14px;
 }
-.contanier .title.data-v-4ba76ece {
+.contanier .title.data-v-39d252a8 {
     text-align: center;
     padding: 30rpx 0;
     -webkit-box-sizing: border-box;
@@ -39,7 +39,7 @@
     font-size: 16px;
     font-weight: bold;
 }
-.contanier .demand-box.data-v-4ba76ece {
+.contanier .demand-box.data-v-39d252a8 {
     width: 520rpx;
     padding: 30rpx;
     -webkit-box-sizing: border-box;
@@ -48,11 +48,11 @@
     border-radius: 10rpx;
     margin: 0 auto;
 }
-.contanier .bedroom-box.data-v-4ba76ece {
+.contanier .bedroom-box.data-v-39d252a8 {
     margin-top: 40rpx;
     border-bottom: 1px solid #efefef;
 }
-.contanier .bedroom-box .top-bedroom.data-v-4ba76ece {
+.contanier .bedroom-box .top-bedroom.data-v-39d252a8 {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -67,18 +67,18 @@
               justify-content: space-between;
       margin-top: 10rpx;
 }
-.contanier .bedroom-box .top-bedroom .example.data-v-4ba76ece {
+.contanier .bedroom-box .top-bedroom .example.data-v-39d252a8 {
         color: #acacac;
 }
-.contanier .bedroom-box .hint-bedroom.data-v-4ba76ece {
+.contanier .bedroom-box .hint-bedroom.data-v-39d252a8 {
       font-size: 12px;
       color: #acacac;
 }
-.contanier .bedroom-box .hint-bedroom .hint-bedroom-color.data-v-4ba76ece {
+.contanier .bedroom-box .hint-bedroom .hint-bedroom-color.data-v-39d252a8 {
         color: #000;
         font-weight: 700;
 }
-.contanier .bedroom-box .image_wrap.data-v-4ba76ece {
+.contanier .bedroom-box .image_wrap.data-v-39d252a8 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
@@ -92,8 +92,8 @@
           -ms-flex-wrap: wrap;
               flex-wrap: wrap;
 }
-.contanier .bedroom-box .image_wrap .img_item.data-v-4ba76ece,
-      .contanier .bedroom-box .image_wrap .img_item2.data-v-4ba76ece {
+.contanier .bedroom-box .image_wrap .img_item.data-v-39d252a8,
+      .contanier .bedroom-box .image_wrap .img_item2.data-v-39d252a8 {
         position: relative;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
@@ -106,13 +106,13 @@
         margin-bottom: 20rpx;
         margin-right: 16rpx;
 }
-.contanier .bedroom-box .image_wrap .img_item image.data-v-4ba76ece,
-        .contanier .bedroom-box .image_wrap .img_item2 image.data-v-4ba76ece {
+.contanier .bedroom-box .image_wrap .img_item image.data-v-39d252a8,
+        .contanier .bedroom-box .image_wrap .img_item2 image.data-v-39d252a8 {
           height: 100%;
           width: 100%;
           border-radius: 8rpx;
 }
-.contanier .bedroom-box .image_wrap .img_item .del_img.data-v-4ba76ece {
+.contanier .bedroom-box .image_wrap .img_item .del_img.data-v-39d252a8 {
         position: absolute;
         top: 0;
         right: 0;
@@ -134,10 +134,10 @@
         background: #f66;
         border-radius: 8rpx;
 }
-.contanier .bedroom-box .image_wrap .img_item .del_img .iconfont.data-v-4ba76ece {
+.contanier .bedroom-box .image_wrap .img_item .del_img .iconfont.data-v-39d252a8 {
           font-size: 28rpx;
 }
-.contanier .bedroom-box .image_wrap .img_item .set_main.data-v-4ba76ece {
+.contanier .bedroom-box .image_wrap .img_item .set_main.data-v-39d252a8 {
         position: absolute;
         font-size: 24rpx;
         left: 0;
@@ -148,7 +148,7 @@
         padding: 4rpx 0;
         background: rgba(0, 0, 0, 0.5);
 }
-.contanier .bedroom-box .image_wrap .img_item2 .mask.data-v-4ba76ece {
+.contanier .bedroom-box .image_wrap .img_item2 .mask.data-v-39d252a8 {
         position: absolute;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
@@ -172,26 +172,26 @@
             -ms-flex-align: center;
                 align-items: center;
 }
-.contanier .bedroom-box .image_wrap .img_item2 .mask .progress.data-v-4ba76ece {
+.contanier .bedroom-box .image_wrap .img_item2 .mask .progress.data-v-39d252a8 {
           font-weight: 800;
           font-size: 24rpx;
           color: #fff;
           text-align: center;
           word-break: break-all;
 }
-.contanier .bedroom-box .image_wrap .img_item2 .mask .progress .num.data-v-4ba76ece {
+.contanier .bedroom-box .image_wrap .img_item2 .mask .progress .num.data-v-39d252a8 {
             display: inline-block;
             width: 56rpx;
             text-align: right;
 }
-.contanier .bedroom-box .image_wrap .img_item2 .mask .err.data-v-4ba76ece {
+.contanier .bedroom-box .image_wrap .img_item2 .mask .err.data-v-39d252a8 {
           font-size: 24rpx;
           font-weight: 800;
           color: #fe7c4e;
           text-align: center;
           word-break: break-all;
 }
-.contanier .bedroom-box .image_wrap .choose_img.data-v-4ba76ece {
+.contanier .bedroom-box .image_wrap .choose_img.data-v-39d252a8 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         display: -webkit-inline-box;
@@ -213,11 +213,11 @@
         margin-bottom: 20rpx;
         margin-right: 20rpx;
 }
-.contanier .bedroom-box .image_wrap .choose_img .iconfont.data-v-4ba76ece {
+.contanier .bedroom-box .image_wrap .choose_img .iconfont.data-v-39d252a8 {
           font-size: 80rpx;
           color: #cccccc;
 }
-.contanier .btn.data-v-4ba76ece {
+.contanier .btn.data-v-39d252a8 {
     width: 100%;
     height: 90rpx;
     background-color: #ea516b;
@@ -227,7 +227,7 @@
     line-height: 90rpx;
     margin-top: 40rpx;
 }
-.contanier .btn.data-v-4ba76ece:active {
+.contanier .btn.data-v-39d252a8:active {
       opacity: 0.5;
 }
 

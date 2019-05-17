@@ -1,13 +1,4 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "房间照片",
-  "titleNView": {
-    "buttons": [
-      {
-        "text": "排序",
-        "fontSize": "14px",
-        "float": "right"
-      }
-    ]
-  }
+  "navigationBarTitleText": "房间照片"
 }
