@@ -14,7 +14,7 @@
             </view>
           </view>
         </view>
-        <view class="price">{{item.showPrice.price}}<text style="font-size:12px;">起/晚</text></view>
+        <view class="price">{{item.showPrice.originalPrice}}<text style="font-size:12px;">起/晚</text></view>
         <view class="right-box"><text class="iconfont font20" @tap.stop="clickCancelTransfer(item.luId)">&#xe642;</text></view>
       </view> 
     </view>
@@ -242,7 +242,7 @@ export default {
       position: absolute;
       top: 20upx;
       right: 20upx;
-      z-index: 999;
+      // z-index: 999;
       .font20{
         font-size: 40upx;
       }

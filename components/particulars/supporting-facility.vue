@@ -24,7 +24,9 @@ export default {
   props: ["facility"],
   mounted() {
     let data = this.facility; // 拿到从父组件穿过来的参数
-    // 循环
+    console.log(data);
+    if (data != null) {
+      // 循环
     data.forEach(element => {
       let allowName = element.name;
       switch (allowName) {
@@ -136,8 +138,9 @@ export default {
             leftIcon: "icon-kezuofan"
           });
           break;
-      }
-    });
+        }
+      });
+    }
   }
 };
 </script>

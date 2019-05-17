@@ -22,33 +22,37 @@
         <text class="iconfont icon-xiasanjiaoxiangxiamianxing"></text>
       </view>
       <view @click="clickShowPicker">
-        排序筛选
+        {{sortingFilter}}
         <text class="iconfont icon-xiasanjiaoxiangxiamianxing"></text>
       </view>
     </view>
     <view class="housing-show">
-      <view class="housing">
-        <image class="housing-img" src="../../static/images/landlordguide/banner1.jpg"/>
+      <view class="housing" v-for="(val,index) in datas" :key="index">
+        <swiper class="housing-swiper">
+          <swiper-item v-for="(item,j) in val.extImages" :key="j">
+            <image class="swiper-item" @click="clickDetails(val.luId)" :src="shortHttp+item.val"></image>
+          </swiper-item>
+        </swiper>
         <view class="price">
           &yen;
-          <text class="specific-price">2199</text>起/晚
+          <text class="specific-price">{{val.showPrice.price}}</text>起/晚
         </view>
-        <view class="icon-box">
-          <i class="iconfont love-icon">&#xe619;</i>
+        <view class="icon-box" @click="clickCollect(val.luId,index)">
+          <text class="iconfont" :class="val.isFavorite?'love-icon-red':'love-icon'">&#xe63e;</text>
         </view>
         <view class="bottom-username-box">
           <view class="username-box">
-            <image class="username-photos" src="../../static/images/landlordguide/banner2.jpg"/>
+            <image class="username-photos" @click="clickHeadPortrait(val.landlordId)" :src="shortHttp+val.landlordheadimgurl"/>
           </view>
           <view class="lightning-comment">
             <view class="username-comment">
-              <text style="font-size:14px;font-weight: bold;color:#000;margin-left:10upx;">我了个擦擦擦擦</text>
+              <view style="width: 556upx;font-size:14px;font-weight:600;color:#000;margin-left:10upx;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;">{{val.luTitle}}</view>
               <view class="lightning-comment-box">
                 <view class="lightning">
                   <text class="iconfont icon-lightningbshandian lightning-icon"></text>速订
                 </view>
                 <view class="comment">
-                  <text class="iconfont icon-pinglun1 comment-icon"></text>0条评论
+                  <text class="iconfont icon-pinglun1 comment-icon"></text>{{val.commentScore}}条评论
                 </view>
               </view>
             </view>
@@ -56,8 +60,11 @@
         </view>
       </view>
     </view>
+    <!-- <textarea :value='addressName' maxlength="-1" /> -->
     <mpvue-picker :themeColor="themeColor" ref="mpvuePicker" mode="selector" :deepLength="deepLength" :pickerValueDefault="pickerValueDefault"
     @onConfirm="onConfirm" @="" :pickerValueArray="pickerValueArray"></mpvue-picker>
+    <mpvue-picker :themeColor="themeColor" ref="mpPicker" mode="selector" :deepLength="deepLength" :pickerValueDefault="pickerValueDefault"
+    @onConfirm="clickAffirm" @="" :pickerValueArray="pickerArray"></mpvue-picker>
   </view>
 </template>
 <script>
@@ -66,6 +73,7 @@ import checkboxGroup from "@/components/selected/checjbox/group/pages/checkbox-g
 import mpvuePicker from '../../components/index/mpvue-picker/mpvuePicker';
 import {request} from '../../common/request.js' // 封装的带有token的请求方法
 import {shortHttp} from "../../common/requestUrl.json"; // 接口文件
+import amap from '../../common/amap-wx.js' // 高德小程序sdk
 export default {
   components: {
     checkboxGroup,
@@ -81,34 +89,73 @@ export default {
       place:'', // 位置
       isShow:false, // 是否显示搜索按钮
       inputValue:'',//搜索框的value值
+      sortingFilter:'排序筛选',
       pickerValueArray: [
         {
-          label: '住宿费',
+          label: '好评排序',
           value: 1
         },
         {
-          label: '活动费',
+          label: '价格 高-低',
           value: 2
         },
         {
-          label: '通讯费',
+          label: '价格 低-高',
           value: 3
         },
         {
-          label: '补助',
+          label: '距离 近-远',
           value: 4
         }
-      ],
-      pickerValueDefault: [1],
+      ], // 排序弹出框的内容
+      pickerArray:[], // 收藏列表的内容
+      pickerValueDefault: [0],
       deepLength:1,
       themeColor: '#007AFF',
+      datas:[], // 使用地址返回的数据
+      index:null, // 点击收藏的索引
+      luId:'', // 房源id
+      i:'',
+      addressName: '',  
+      weather: {  
+          hasData: false,  
+          data: []  
+      } ,
+      key: 'ff60afce471bf105359e78dfc05feed4' // 高德小程序key
     };
   },
   onLoad(option){
+    this.amapPlugin = new amap.AMapWX({  
+      key: this.key  
+    });
     this.city = option.city;
     this.place = option.site;
+    this.siteRequest();
+  },
+  onShow(){
+    this.enshrineList(); // 收藏列表
   },
   methods: {
+    // 获取收藏列表
+    enshrineList(){
+      const _this = this;
+      let pickerValueArray = []
+      request({
+        url: '/wap/api/my.php?action=favoriteClass',
+        success: function(res) {
+          if (res.data.status === 'success') {
+            let array = res.data.content.item
+            for (let i = 0; i < array.length; i++) {
+              pickerValueArray.push({
+                label: array[i].cname,
+                value: array[i].cid
+              })
+              _this.pickerArray = pickerValueArray
+            }
+          }
+        }
+      })
+    },
     // 当输入框聚焦时显示搜索按钮
     focusInput(){
       this.isShow = true;
@@ -147,44 +194,236 @@ export default {
 			// this.startTime = choiceDate[0].re;
 			// this.endTime = choiceDate[1].re;
     },
+    // 调用picker组件
     clickShowPicker() {
       console.log('点击');
-      
       this.$refs.mpvuePicker.show();
     },
+    // 更多筛选列表确认回调
     onConfirm(e) {
-      console.log(e);
+      const _this = this;
+      // 判断label的值发起不同的请求
+      if (e.label === '好评排序') {
+        console.log('好评排序');
+      } else if (e.label === '价格 高-低') {
+        uni.showLoading({
+          title:'加载中'
+        })
+        _this.sortingFilter = '价格 高-低';
+        request({
+          url:'/wap/api/search.php?action=result',
+          data:{cityName:'成都',orderBy:'zuigui'},
+          success: function(res) {
+            console.log("高",res);
+            uni.hideLoading()
+            if (res.data.status === 'success') {
+              _this.datas = res.data.content.item
+            } else {
+              uni.showToast({
+                title:res.data.errorMsg,
+                icon:'none'
+              })
+            }
+          },
+          fail: function(err) {
+            uni.showToast({
+              title:err,
+              icon:'none'
+            })
+          }
+        })
+      } else if (e.label === '价格 低-高') {
+        uni.showLoading({
+          title:'加载中'
+        })
+        _this.sortingFilter = '价格 低-高';
+        request({
+          url:'/wap/api/search.php?action=result',
+          data:{cityName:'成都',orderBy:'zuipianyi'},
+          success: function(res) {
+            console.log("低",res);
+            uni.hideLoading()
+            if (res.data.status === 'success') {
+              _this.datas = res.data.content.item
+            } else {
+              uni.showToast({
+                title:res.data.errorMsg,
+                icon:'none'
+              })
+            }
+          },
+          fail: function(err) {
+            uni.showToast({
+              title:err,
+              icon:'none'
+            })
+          }
+        })
+      } else if (e.label === '距离 近-远') {
+        uni.showLoading({
+          title:'加载中'
+        })
+        _this.sortingFilter = '距离 近-远'
+        // 获取经纬度请求接口
+        uni.getLocation({
+          type:'gcj02',
+          success: function (res) {
+            console.log('近');
+            request({
+              url:'/wap/api/search.php?action=result',
+              data:{cityName:'成都',lag:res.longitude,lng:res.latitude},
+              success: function(res) {
+                uni.hideLoading()
+                if(res.data.status === 'success'){
+                    _this.datas = res.data.content.item
+                } else {
+                  uni.showToast({
+                    title:res.data.errorMsg,
+                    icon:'none'
+                  })
+                }
+              },
+              fail: function(err) {
+                uni.showToast({
+                  title:err,
+                  icon:'none'
+                })
+              }
+            })
+            console.log('当前位置的经度：' + res.longitude);
+            console.log('当前位置的纬度：' + res.latitude);
+          }
+        })
+        
+      }
     },
-    onChange(e) {
-      console.log(e);
-    },
-    onCancel(e) {
-      console.log(e);
-    }
+    // onCancel(e) {
+    //   console.log(e);
+    // },
     // 地址数据请求
-    // siteRequest(){
-    //   request({
-    //     url:'/wap/api/search.php?action=result',
-    //     data:{}
-    //   })
-    // }
+    siteRequest(){
+      const _this = this;
+      uni.showLoading({
+        title:'加载中'
+      })
+      let city = _this.city.slice(0,2)
+      console.log(city);
+      request({
+        url:'/wap/api/search.php?action=result',
+        data:{cityName:'成都'},
+        success: function(res) {
+          uni.hideLoading();
+          console.log('筛选',res);
+          if (res.data.status === 'success') {
+            _this.datas = res.data.content.item
+          } else {
+            uni.showToast({
+              title:res.data.errorMsg,
+              icon:'none'
+            })
+          }
+        },
+        fail: function(err) {
+          uni.showToast({
+            title:'系统错误，请稍后再试',
+            icon:'none'
+          })
+        }
+      })
+    },
+    // 点击进入房间详情
+    clickDetails(id){
+      uni.navigateTo({
+        url:`/pages/particulars/particulars?id=${id}`
+      })
+    },
+    // 进入房东详情
+    clickHeadPortrait(landlordId){
+      uni.navigateTo({
+        url:`/pages/landlord_introduced/landlord_introduced?landlord=${landlordId}`
+      })
+    },
+    // 点击开启收藏列表
+    clickCollect(id,index){
+      if (this.pickerValueArray.length>0) {
+        // 请求分组列表
+        const _this = this;
+        _this.index = index;
+        _this.i = _this.datas[index]
+        _this.luId = _this.datas[index].luId
+        let coll = _this.datas[index].isFavorite
+          console.log('索引',coll);
+        if (coll===false) {
+          _this.$refs.mpPicker.show() // 点击弹出mpvuePickerpicker
+        } else {
+          request({
+            url: '/wap/api/my.php?action=modifyFavorite',
+            data: {
+              luId: _this.luId,
+              favAction: "del"
+            },
+            success: res => {
+              console.log('取消了:', res);
+              if (res.data.status == "success") {
+                uni.showToast({
+                  title: "取消收藏",
+                  duration: 2000
+                })
+                _this.$set(_this.datas[index],'isFavorite',false)
+              }
+            }
+          })
+        }
+      } else {
+          uni.showToast({
+            title:'请先添加收藏分组',
+            icon:'none'
+          })
+      }
+    },
+    // 点击收藏列表确认回调
+    clickAffirm(e){
+      const _that = this;
+      let index = _that.index; // 收藏索引
+      let value = e.value;
+      let collectId;
+      for (let index = 0; index < value.length; index++) {
+        collectId = value[index];
+      }
+      request({
+        url: '/wap/api/my.php?action=modifyFavorite',
+        data: {
+          luId: _that.luId, // 房源id
+          classId: collectId, // 收藏的文件夹id
+          favAction: "add"
+        },
+        success: res => {
+          console.log("收藏：", res);
+          if (res.data.status == "success") {
+            uni.showToast({
+              title: "收藏成功",
+              duration: 2000
+            })
+            _that.$set(_that.datas[index], 'isFavorite', true) //更改
+          } else {
+            uni.showToast({
+              title: "收藏失败",
+              duration: 2000
+            })
+          }
+        }
+      })
+    }
   }
 };
 </script>
-<style>
-page{
- height: 100%;
-}
-</style>
-
 <style lang="scss" scoped>
 .contanier {
   width: 100%;
-  height: 100%;
-  padding: 30upx;
-  box-sizing: border-box;
   .top {
     width: 100%;
+    padding: 30upx;
+    box-sizing: border-box;
     display: flex;
     .city {
       width: 138upx;
@@ -227,6 +466,8 @@ page{
   }
   .list-box {
     width: 100%;
+    padding: 30upx;
+    box-sizing: border-box;
     font-size: 28upx;
     height: 80upx;
     display: flex;
@@ -242,46 +483,62 @@ page{
     }
   }
   .housing-show {
+    width: 100%;
     .housing {
+      width: 100%;
+      height: 636upx;
       position: relative;
-      .housing-img {
+      margin-top: 20upx;
+      .housing-swiper {
         width: 100%;
         height: 460upx;
-      }
+        .swiper-item{
+          width: 100%;
+          height: 460upx;
+        }
+      } 
       .price {
-            width: 200upx;
-            height: 60upx;
-            line-height: 60upx;
-            text-align: center;
-            color: #fff;
-            font-size: 14px;
-            background-color: rgba(0, 0, 0, 0.7);
-            position: absolute;
-            bottom: 142upx;
-            left: 0;
-            .specific-price {
-              font-size: 18px;
-            }
-          }
-          .icon-box {
-            width: 60upx;
-            height: 60upx;
-            color: #fff;
-            line-height: 60upx;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 50%;
-            position: absolute;
-            top: 30upx;
-            right: 30upx;
-            .love-icon {
-              font-size: 40upx;
-            }
-          }
+        width: 200upx;
+        height: 60upx;
+        line-height: 60upx;
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+        background-color: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        bottom: 176upx;
+        left: 0;
+        .specific-price {
+          font-size: 18px;
+        }
+      }
+      .icon-box {
+        width: 80upx;
+        height: 80upx;
+        color: #fff;
+        line-height: 80upx;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 50%;
+        position: absolute;
+        top: 30upx;
+        right: 30upx;
+        text {
+          font-size: 40upx;
+        }
+        .love-icon {
+          font-size: 40upx;
+        }
+
+        .love-icon-red {
+          font-size: 40upx;
+          color: #f8070e;
+        }
+      }
       .bottom-username-box {
         display: flex;
         align-items: center;
-        margin-top: 30upx;
+        padding: 30upx;
         .username-box {
           width: 104upx;
           height: 104upx;
@@ -300,6 +557,7 @@ page{
           margin-top: 20upx;
           align-items: center;
           .username-comment {
+            width: 100%;
             text-align: left;
             .lightning-comment-box {
               display: flex;

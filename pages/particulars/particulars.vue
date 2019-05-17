@@ -536,7 +536,6 @@
 				}
 			})
 			this.collectReqList(); // 收藏列表
-
 		}
 	}
 </script>
