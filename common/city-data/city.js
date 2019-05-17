@@ -1,11 +1,11 @@
 /* eslint-disable */
 var cityData = [
   [{
-    "label": "市辖区",
+    "label": "北京市",
     "value": "1101"
   }],
   [{
-    "label": "市辖区",
+    "label": "天津市",
     "value": "1201"
   }],
   [{
@@ -295,7 +295,7 @@ var cityData = [
     }
   ],
   [{
-    "label": "市辖区",
+    "label": "上海市",
     "value": "3101"
   }],
   [{
@@ -963,12 +963,8 @@ var cityData = [
     }
   ],
   [{
-      "label": "市辖区",
+      "label": "重庆市",
       "value": "5001"
-    },
-    {
-      "label": "县",
-      "value": "5002"
     }
   ],
   [{

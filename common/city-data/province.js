@@ -124,15 +124,15 @@ var provinceData = [{
     "value": "65"
   },
   {
-    "label": "台湾",
+    "label": "台湾省",
     "value": "66"
   },
   {
-    "label": "香港",
+    "label": "香港特别行政区",
     "value": "67"
   },
   {
-    "label": "澳门",
+    "label": "澳门特别行政区",
     "value": "68"
   }
 ]

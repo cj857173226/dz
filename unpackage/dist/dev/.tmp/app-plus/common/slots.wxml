@@ -1,6 +1,4 @@
 <import src="/components/neil-modal/neil-modal.vue.wxml" />
-<import src="/components/index/date-picker/date-picker.vue.wxml" />
-<import src="/components/index/mpvue-picker/mpvuePicker.vue.wxml" />
 
 <template name="data-v-7af300e3-default-3b2de993-1"><view class="_view data-v-7af300e3">是否需要修改退款金额</view><view class="_view data-v-7af300e3 input-name"><view style="margin-left:40rpx;" class="_view data-v-7af300e3">退还金额:</view><view class="_view data-v-7af300e3 input-box"><input type="text" placeholder="请输入退款金额" bindblur="handleProxy" data-eventid="{{'3b2de993-5'}}" data-comkey="{{$k}}" class="_input data-v-7af300e3" /></view><text class="_text data-v-7af300e3">元</text></view></template>
 
