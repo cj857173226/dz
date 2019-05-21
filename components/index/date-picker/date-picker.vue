@@ -445,13 +445,15 @@ export default {
 				dataAll2[1][0].act.defaultStr = 1;
 				this.choiceDate.push(dataAll2[1][0]);
 			}
-			// console.log(dataAll2, weeks, this.today, this.tomorrow, this.afterTomorrow);
+			// console.log(this.$store.commit);
+			let taday = this.today;
+			let tomorrow = this.tomorrow
 			this.date = dataAll2;
 			this.weeks = weeks;
 			this.choiceDate = this.choiceDate;
 			this.choiceDateArr = this.choiceDate;
-
-			// console.log(this.choiceDate);
+			this.$store.commit('startTimeStatus',taday);
+			this.$store.commit('endTimeStatus',tomorrow);
 		},
 		selectday: function(e) {
 			var indexs = e.currentTarget.dataset.indexs;
@@ -580,6 +582,7 @@ export default {
 			this.choiceDate[0] = this.choiceDateArr[0];
 			this.choiceDate[1] = this.choiceDateArr[this.choiceDateArr.length - 1];
 			this.dayCount2 = '共' + this.dayCount + '晚';
+			
 			this.hideCalendar(true);
 			/**派发事件
 			 * 参数：

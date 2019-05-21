@@ -242,7 +242,7 @@
         </view>
       </view>
     </view>
-    <view style="width:100%;height: 700upx;text-align: center;" v-else>
+    <view class="countless" v-else>
       <image style="width:100%;height: 700upx;" src="../../static/images/deault_list.png" mode="scaleToFill"></image>
       你暂时还没有相关的订单
     </view>
@@ -497,9 +497,16 @@ export default {
   }
 };
 </script>
+<style>
+page{
+  height: 100%;
+}
+</style>
+
 <style lang="scss" scoped>
 .unclosed-contanier {
   width: 100%;
+  height: 100%;
   font-size: 14px;
   position: relative;
   .conter-box {
@@ -609,60 +616,6 @@ export default {
       }
     }
   }
-  /* .unclosed-box{
-    width: 100%;
-    height: 600upx;
-    margin-top: 30upx;
-    .unclosed-img-box{
-      width: 100%;
-      height: 460upx;
-      position: relative;
-      .unclosed-img{
-      width: 100%;
-      height: 100%;
-      }
-      .whether-to-stay-in{
-      width: 130upx;
-      height: 60upx;
-      color: #fff;
-      background-color: rgba(0, 0, 0, .5);
-      text-align: center;
-      line-height: 60upx;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      }
-    }
-    .introduced{
-      width: 100%;
-      height: 140upx;
-      border-bottom: 2upx solid #ccc;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      .left-amount-box{
-        .title{
-          font-weight: bold;
-        }
-        .amount-box{
-          font-size: 14px;
-          color: #d3d3d3;
-        }
-      }
-      .btn{
-        width: 90upx;
-        height: 76upx;
-        border-radius: 10upx;
-        background-color: #ef5b72;
-        color: #fff;
-        text-align: center;
-        line-height: 76upx;
-        &:active{
-          opacity: 0.5;
-        }
-      }
-    }
-  } */
   .refreshDisplay{
     position: absolute;
     top: -52upx;
@@ -673,6 +626,11 @@ export default {
       margin-right: 20upx;
     }
     
+  }
+  .countless{
+    width: 100%;
+    height: 100%;
+    background-color: #efefef;
   }
 }
 </style>

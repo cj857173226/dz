@@ -93,6 +93,8 @@ export default {
     clickCancelTransfer(id){
       const _that = this;
       // id：收藏房源的id
+      console.log(id);
+      
       _that.id = id
       uni.showActionSheet({
         itemList:["转移分组","取消收藏"],
@@ -152,13 +154,15 @@ export default {
 					console.log("转移：",res);
 					if (res.data.status == "success") {
 						uni.showToast({
-							title:"转移成功",
+              title:"转移成功",
+              icon:'none',
 							duration:2000
             })
             _that.httpRequest(); // 调用数据请求
 					} else {
 						uni.showToast({
-							title:"转移失败",
+              title:"转移失败",
+              icon:'none',
 							duration:2000
 						})
 					}

@@ -444,6 +444,11 @@ view.data-v-777817ca {
   margin: 30rpx 0;
 }
 
+
+page{
+  height: 100%;
+}
+
 @charset "UTF-8";
 /**
  * 这里是uni-app内置的常用样式变量
@@ -472,6 +477,7 @@ view.data-v-777817ca {
 /* 文章场景相关 */
 .contanier.data-v-0f9b21c1 {
   width: 100%;
+  height: 100%;
 }
 .contanier .top.data-v-0f9b21c1 {
     width: 100%;
@@ -692,5 +698,13 @@ view.data-v-777817ca {
         position: absolute;
         top: 40rpx;
         left: 40rpx;
+}
+.contanier .reportError.data-v-0f9b21c1 {
+    width: 100%;
+    height: calc(100% - 220rpx);
+    background-color: #efefef;
+    text-align: center;
+    line-height: 500rpx;
+    font-size: 28rpx;
 }
 

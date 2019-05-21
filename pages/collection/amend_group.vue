@@ -3,7 +3,7 @@
     <view class="title-box">
       <text class="title">标题</text>
       <view class="input-box">
-        <input class="input" @blur="blurValue" type="text" placeholder="起个名字吧" placeholder-style="font-size:12px">
+        <input class="input" @input="blurValue" type="text" placeholder="起个名字吧" placeholder-style="font-size:12px">
         <view class="btn" @tap="clickSave">保存</view>
       </view>
     </view>

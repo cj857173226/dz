@@ -24,16 +24,16 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.centenr.data-v-5d546a24 {
+.centenr.data-v-44dab546 {
   width: 100%;
   padding: 0 30rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.centenr .china.data-v-5d546a24 {
+.centenr .china.data-v-44dab546 {
     width: 100%;
 }
-.centenr .china .identity-card.data-v-5d546a24 {
+.centenr .china .identity-card.data-v-44dab546 {
       height: 40rpx;
       padding: 20rpx 0;
       display: -webkit-box;
@@ -51,15 +51,15 @@
       border-bottom: 1px solid #ececec;
       font-size: 14px;
 }
-.centenr .china .identity-card .name.data-v-5d546a24 {
+.centenr .china .identity-card .name.data-v-44dab546 {
         font-weight: 600;
 }
-.centenr .china .identity-card .name-card.data-v-5d546a24 {
+.centenr .china .identity-card .name-card.data-v-44dab546 {
         width: 360rpx;
         text-align: right;
         color: #777777;
 }
-.centenr .china .hint.data-v-5d546a24 {
+.centenr .china .hint.data-v-44dab546 {
       font-size: 12px;
       font-weight: bold;
       text-align: center;

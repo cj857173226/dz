@@ -1,0 +1,13 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "清空",
+        "fontSize": "16px",
+        "float": "right"
+      }
+    ]
+  }
+}

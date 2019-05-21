@@ -19,7 +19,7 @@
       </view>
     </view>
     <view style="width:100%;height: 700upx;text-align: center;" v-else>
-      <image style="width:100%;height: 460upx;" src="../../static/images/deault_list.png"></image>
+      <image style="width:100%;height: 700upx;" src="../../static/images/deault_list.png"></image>
       你暂时还没有相关的订单
     </view>
   </scroll-view>

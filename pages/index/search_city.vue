@@ -2,7 +2,7 @@
   <view class="contaniner">
     <view class="search-box">
       <text class="iconfont iconsearch">&#xe643;</text>
-      <input class="input" value="" @blur="search" placeholder="位置/地名/房源" placeholder-style="color:#ccc;font-weight:800;" focus="true" confirm-type="搜索" />
+      <input class="input" value="" @input="search" placeholder="位置/地名/房源" placeholder-style="color:#ccc;font-weight:800;" @confirm="clickConfirm" confirm-type="搜索" />
     </view>
     <ss-select-city :hotCitys="hotCitys" v-model="value" @on-select="onSelect" />
   </view>
@@ -23,33 +23,21 @@ export default {
   },
   methods: {
     search(e){
-      console.log(e.detail.value);
       this.val = e.detail.value;
     },
     onSelect(city) {
-      console.log(city)
       uni.navigateTo({
         url:`/pages/selecteds/selecteds?city=${city}`
       })
+    },
+    clickConfirm(){
+      uni.navigateTo({
+        url:`/pages/selecteds/selecteds?city=${this.val}`
+      })
     }
   },
-  onLoad(){
-    // 获取城市
-    request({
-      url:"/wap/api/search.php?action=city",
-      success: function(res) {
-        console.log("所有城市",res);
-        
-      }
-    })
-    
-    request({
-      url:"/wap/api/search.php?action=result",
-      success: function(res) {
-        console.log("目的地搜索",res);
-        
-      }
-    })
+  onLoad(option){
+    this.value = option.city
   }
 }
 </script>

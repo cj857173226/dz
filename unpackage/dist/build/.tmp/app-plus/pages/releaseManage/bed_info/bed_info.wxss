@@ -29,19 +29,19 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.bed_info_page.data-v-548f8a6d {
+.bed_info_page.data-v-7e5ffb80 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 40rpx 30rpx 20rpx;
 }
-.bed_info_page .tips_wrap.data-v-548f8a6d {
+.bed_info_page .tips_wrap.data-v-7e5ffb80 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
     font-size: 40rpx;
     margin-bottom: 80rpx;
 }
-.bed_info_page .tips_wrap .one_line.data-v-548f8a6d {
+.bed_info_page .tips_wrap .one_line.data-v-7e5ffb80 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
@@ -50,15 +50,15 @@ page {
       margin-bottom: 6rpx;
       color: #888888;
 }
-.bed_info_page .tips_wrap .one_line .b_text.data-v-548f8a6d {
+.bed_info_page .tips_wrap .one_line .b_text.data-v-7e5ffb80 {
         color: #000000;
 }
-.bed_info_page .bed_list.data-v-548f8a6d {
+.bed_info_page .bed_list.data-v-7e5ffb80 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
 }
-.bed_info_page .bed_list .bed_item.data-v-548f8a6d {
+.bed_info_page .bed_list .bed_item.data-v-7e5ffb80 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
@@ -78,10 +78,10 @@ page {
       height: 90rpx;
       border-bottom: 1px solid #eaeaea;
 }
-.bed_info_page .bed_list .bed_item.data-v-548f8a6d:first-child {
+.bed_info_page .bed_list .bed_item.data-v-7e5ffb80:first-child {
         border-top: 1px solid #eaeaea;
 }
-.bed_info_page .bed_list .bed_item .del_btn_wrap.data-v-548f8a6d {
+.bed_info_page .bed_list .bed_item .del_btn_wrap.data-v-7e5ffb80 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         width: 60rpx;
@@ -94,7 +94,7 @@ page {
             -ms-flex-align: center;
                 align-items: center;
 }
-.bed_info_page .bed_list .bed_item .del_btn_wrap .del_btn.data-v-548f8a6d {
+.bed_info_page .bed_list .bed_item .del_btn_wrap .del_btn.data-v-7e5ffb80 {
           width: 40rpx;
           height: 40rpx;
           background: #F66;
@@ -116,15 +116,15 @@ page {
           -o-transition: all 0.1s ease;
           transition: all 0.1s ease;
 }
-.bed_info_page .bed_list .bed_item .del_btn_wrap .del_btn .iconfont.data-v-548f8a6d {
+.bed_info_page .bed_list .bed_item .del_btn_wrap .del_btn .iconfont.data-v-7e5ffb80 {
             margin-top: 4rpx;
             font-size: 32rpx;
             font-weight: 800;
 }
-.bed_info_page .bed_list .bed_item .del_btn_wrap .del_btn.data-v-548f8a6d:active {
+.bed_info_page .bed_list .bed_item .del_btn_wrap .del_btn.data-v-7e5ffb80:active {
             opacity: 0.8;
 }
-.bed_info_page .bed_list .bed_item .bed_info.data-v-548f8a6d {
+.bed_info_page .bed_list .bed_item .bed_info.data-v-7e5ffb80 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         display: -webkit-box;
@@ -138,14 +138,14 @@ page {
                 flex-direction: row;
         width: calc(100% - 180rpx);
 }
-.bed_info_page .bed_list .bed_item .bed_info .bed_type.data-v-548f8a6d {
+.bed_info_page .bed_list .bed_item .bed_info .bed_type.data-v-7e5ffb80 {
           width: 140rpx;
 }
-.bed_info_page .bed_list .bed_item .bed-number.data-v-548f8a6d {
+.bed_info_page .bed_list .bed_item .bed-number.data-v-7e5ffb80 {
         text-align: right;
         width: 80rpx;
 }
-.bed_info_page .bed_list .bed_item .after-icon.data-v-548f8a6d {
+.bed_info_page .bed_list .bed_item .after-icon.data-v-7e5ffb80 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         display: -webkit-box;
@@ -168,11 +168,11 @@ page {
         width: 40rpx;
         color: #aaaaaa;
 }
-.bed_info_page .bed_list .bed_item .after-icon .iconfont.data-v-548f8a6d {
+.bed_info_page .bed_list .bed_item .after-icon .iconfont.data-v-7e5ffb80 {
           margin-top: 4rpx;
           font-size: 32rpx;
 }
-.bed_info_page .no_list.data-v-548f8a6d {
+.bed_info_page .no_list.data-v-7e5ffb80 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
@@ -192,7 +192,7 @@ page {
         -ms-flex-align: center;
             align-items: center;
 }
-.bed_info_page .add_bed.data-v-548f8a6d {
+.bed_info_page .add_bed.data-v-7e5ffb80 {
     margin-top: 40rpx;
 }
 

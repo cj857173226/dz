@@ -72,7 +72,7 @@
 			<house_map :lat="latitude" :log="longitude"></house_map>
 			<view class="cantainer-description-box">
 				<view class="title">房间描述</view>
-				<view class="introduce" :class="[isTrue?'introduce':'introduces']">{{roomInnerIntro}}</view>
+				<view class="introduce" :class="isTrue === false?'introduce':'introduces'" v-html="roomInnerIntro"></view>
 				<view class="btn-box">
 					<button class="mini-btn btn-the-globe" type="primary" size="mini" @tap="clickBtn">
 						查看全部描述

@@ -152,6 +152,7 @@
 		onReady() {
 			this.bannerFn();
 			this.recommended();
+			console.log('开始时间',this.$store.state.startTime);
 		},
 		onShow(){
 			this.collectReqList(); // 收藏列表
@@ -195,9 +196,8 @@
 			},
 			// 搜索城市
 			tapSelect: function() {
-				console.warn("城市", this.city)
 				uni.navigateTo({
-					url: "/pages/index/search_city"
+					url: `/pages/index/search_city?city=${this.addressName}`
 				})
 
 			},
@@ -217,31 +217,42 @@
 				console.warn(ressCity);
 				
 				uni.navigateTo({
-					url: `/pages/selecteds/selecteds?city=${ressCity}&site=${site}`
+					url: `/pages/selecteds/selecteds?mold=index&city=${ressCity}&site=${site}`
 				})
 			},
 			cityGps() {
 				const _this = this;
 				_this.amapPlugin.getRegeo({
 					success: (data) => {  
-						// console.warn('获取位置',JSON.stringify(data[0].name))
-						_this.addressName = data[0].regeocodeData.addressComponent.city
+						let dataCity = data[0].regeocodeData.addressComponent.city;
+						_this.addressName = dataCity.substr(0,dataCity.length-1);
 					},
 					fail:function(info){
-						console.log(info);
+						let infos = JSON.stringify(info) 
+						uni.showToast({
+							title:info.errMsg,
+							icon:'none'
+						})
 					}
 				});
 			},
 			// 点击获取当前位置
 			tapOrientation(){
+				uni.showLoading({
+					title:'获取定位中'
+				})
 				const _this = this;
 				_this.amapPlugin.getRegeo({
 					success: (data) => {  
+						uni.hideLoading()
 						_this.city = data[0].name
 						// _this.addressName = data[0].regeocodeData.addressComponent.city
 					},
 					fail:function(info){
-						console.log(info);
+						uni.showToast({
+							title:info.errMsg,
+							icon:'none'
+						})
 					}
 				}); 
 			},
