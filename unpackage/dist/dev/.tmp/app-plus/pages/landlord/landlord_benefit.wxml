@@ -1,2 +1,2 @@
 <import src="./landlord_benefit.vue.wxml" />
-    <template is="692b7dd7" data="{{ ...$root['0'], $root }}"/>
+    <template is="9a845308" data="{{ ...$root['0'], $root }}"/>

@@ -219,7 +219,7 @@
 							<text v-else>
 								<text>允许加客</text>
 								<text v-if="addtionalprice>0">,{{addtionalprice}}/每位每晚</text>
-								<text v-if="addtenanttips!==''">,{{addtenanttips}}</text>
+								<text v-if="releaseObj.addtenanttips!==''">,{{releaseObj.addtenanttips}}</text>
 							</text>
 						</view>
 					</view>

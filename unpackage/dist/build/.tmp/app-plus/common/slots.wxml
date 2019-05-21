@@ -1,4 +1,5 @@
 <import src="/components/neil-modal/neil-modal.vue.wxml" />
+<import src="/components/ss-select-city/ss-select-city.vue.wxml" />
 <import src="/components/index/date-picker/date-picker.vue.wxml" />
 <import src="/components/index/mpvue-picker/mpvuePicker.vue.wxml" />
 <import src="/components/particulars/map.vue.wxml" />
@@ -6,13 +7,11 @@
 <import src="/components/particulars/supporting-facility.vue.wxml" />
 <import src="/components/particulars/unsubscribe-rules.vue.wxml" />
 <import src="/components/mx-datepicker/mx-datepicker.vue.wxml" />
-<import src="/components/ss-select-city/ss-select-city.vue.wxml" />
 <import src="/components/selected/date-picker/date-picker.vue.wxml" />
 <import src="/components/mpvue-citypicker/mpvueCityPicker.vue.wxml" />
 <import src="/components/mpvue-picker/mpvuePicker.vue.wxml" />
 <import src="/components/mpvue-echarts/src/echarts.vue.wxml" />
 <import src="/components/w-picker/w-picker.vue.wxml" />
-<import src="/pages/messages/lign-in/components/wkiwi-swipe-action.vue.wxml" />
 <import src="/components/orlderList/uni-segmented-control.vue.wxml" />
 <import src="/components/orlderList/unclosed.vue.wxml" />
 <import src="/components/orlderList/over.vue.wxml" />
@@ -29,8 +28,9 @@
 <import src="/components/orlderList/pending_investigation_room.vue.wxml" />
 <import src="/components/orlderList/have_money.vue.wxml" />
 <import src="/components/orlderList/for_refund.vue.wxml" />
-<import src="/components/particulars/uni-icon/uni-icon.vue.wxml" />
+<import src="/pages/messages/lign-in/components/wkiwi-swipe-action.vue.wxml" />
 <import src="/components/particulars/plug/uni-steps/uni-steps.vue.wxml" />
+<import src="/components/particulars/uni-icon/uni-icon.vue.wxml" />
 <import src="/common/slots.wxml" />
 <import src="/components/particulars/plug/uni-icon/uni-icon.vue.wxml" />
 

@@ -1,2 +1,2 @@
 <import src="./bill_note.vue.wxml" />
-    <template is="228d5e24" data="{{ ...$root['0'], $root }}"/>
+    <template is="e07d35ae" data="{{ ...$root['0'], $root }}"/>

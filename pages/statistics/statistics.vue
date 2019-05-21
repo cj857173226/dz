@@ -161,6 +161,8 @@
 				get: function() {
 					if (Number(this.checkOnTime.year) <= Number(this.startYear) && Number(this.checkOnTime.month) <= 1) {
 						return true
+					}else{
+						return false;
 					}
 				}
 			},
@@ -168,7 +170,9 @@
 			disNextMonthBtn: {
 				get: function() {
 					if (Number(this.checkOnTime.year) >= Number(this.curTime.year) && Number(this.checkOnTime.month) >= Number(this.curTime.month)) {
-						return true
+						return true;
+					}else{
+						return false;
 					}
 				}
 			},

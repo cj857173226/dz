@@ -21,12 +21,12 @@
 			<view class="basic-info">
 				<p class="basic-title">基本信息</p>
 				<view class="basic-info-item-wrap">
-					<view class="basic-info-item">
+					<!-- <view class="basic-info-item">
 						<view class="_box" @click.stop="pageTo('myAccount')">
 							<text class="iconfont icon-qianbao"></text> 
 							<p class="name">我的账户</p>
 						</view>
-					</view>
+					</view> -->
 					<view class="basic-info-item ">
 						<view class="_box" @tap.stop="editUserInfo">
 							<text class="iconfont icon-shenfenzheng"></text> 

@@ -1,5 +1,5 @@
 <template>
-	<view class="contanier">
+	<scroll-view class="contanier" :scroll-y="!setMainPicShow">
 		<view class="title">上传房源照片要求</view>
 		<view class="demand-box">
 			<text>1.无明显修改&nbsp;</text>
@@ -11,6 +11,30 @@
 		</view>
 		<view class="bedroom-box">
 			<view class="top-bedroom">
+				<text style="font-weight: 700;">首图</text>
+			</view>
+			<view class="hint-bedroom">
+				<view style="color: #f66;margin-right: 10upx;">*必须设置(请先上传房源照片)</view>
+				<text class="hint-bedroom-color">从上传的照片中选择一张<text style="color: #f66;margin:0 10upx;">横图</text>作为首图!</text>
+			</view>
+			<view class="image_wrap">
+				<view class="img_item" v-if="mainPic!==''">
+					<image :src="host+mainPic">
+					</image>
+					<view class="set_main" @tap.stop="MainPicModelShow()">
+						<text>切换首图</text>
+					</view>
+				</view>
+
+				<view class="choose_img" v-if="mainPic===''" @tap.stop="MainPicModelShow()">
+					<text class="iconfont icon-jia"></text>
+				</view>
+			</view>
+		</view>
+
+
+		<view class="bedroom-box">
+			<view class="top-bedroom">
 				<text style="font-weight: 700;">卧室</text>
 				<view class="example">
 					范例
@@ -18,7 +42,7 @@
 				</view>
 			</view>
 			<view class="hint-bedroom">
-				填写户型和床铺信息后将有更多要求处理。请确保
+				<text style="color: #f66;margin-right: 10upx;">*必须上传</text>请确保
 				<text class="hint-bedroom-color">卧室、床铺、床单、枕头展示齐全</text>
 			</view>
 			<view class="image_wrap">
@@ -29,13 +53,12 @@
 					<view class="del_img" @tap.stop="del_img(index)" v-if="houseStatus==-1|| houseStatus == 2">
 						<text class="iconfont icon-duomeitiicon-"></text>
 					</view>
-					
-					<view v-if="houseStatus==-1|| houseStatus == 2" class="set_main" @tap.stop="setMainPic(item,index)">
+					<!-- <view v-if="houseStatus==-1|| houseStatus == 2" class="set_main" @tap.stop="setMainPic(item,index)">
 						<text  v-text="item.is_main===1? '首图':'设置为首图'"></text>
 					</view>
 					<view class="set_main" v-if="(houseStatus== 0|| houseStatus == 1) && item.is_main === 1">
 						<text>首图</text>
-					</view>
+					</view> -->
 				</view>
 
 				<!-- 临时缓存地址 -->
@@ -50,7 +73,7 @@
 						<text class="err" v-if="uploadErrStatus[index] === true">{{errTips[index]}}</text>
 					</view>
 				</view>
-				<view class="choose_img" v-if="houseStatus==-1|| houseStatus == 2" @tap.stop="chooseImg('bedroom')" >
+				<view class="choose_img" v-if="houseStatus==-1|| houseStatus == 2" @tap.stop="chooseImg('bedroom')">
 					<text class="iconfont icon-jia"></text>
 				</view>
 			</view>
@@ -74,12 +97,6 @@
 					</image>
 					<view class="del_img" v-if="houseStatus==-1|| houseStatus == 2" @tap.stop="del_img(index)">
 						<text class="iconfont icon-duomeitiicon-"></text>
-					</view>
-					<view class="set_main" v-if="houseStatus==-1|| houseStatus == 2" @tap.stop="setMainPic(item,index)">
-						<text v-text="item.is_main===1? '首图':'设置为首图'"></text>
-					</view>
-					<view class="set_main" v-if="(houseStatus== 0|| houseStatus == 1) && item.is_main === 1">
-						<text>首图</text>
 					</view>
 				</view>
 
@@ -109,7 +126,7 @@
 				</view>
 			</view>
 			<view class="hint-bedroom">
-				必须上传卫生间照片。请确保
+				<text style="color: #f66;margin-right: 10upx;">*必须上传</text>卫生间照片。请确保
 				<text class="hint-bedroom-color">马桶卫浴、地面细节完整。</text>
 			</view>
 			<view class="image_wrap">
@@ -119,12 +136,6 @@
 					</image>
 					<view class="del_img" v-if="houseStatus==-1|| houseStatus == 2" @tap.stop="del_img(index)">
 						<text class="iconfont icon-duomeitiicon-"></text>
-					</view>
-					<view v-if="houseStatus==-1|| houseStatus == 2" class="set_main" @tap.stop="setMainPic(item,index)">
-						<text v-text="item.is_main===1? '首图':'设置为首图'" ></text>
-					</view>
-					<view class="set_main" v-if="(houseStatus== 0|| houseStatus == 1) && item.is_main === 1">
-						<text>首图</text>
 					</view>
 				</view>
 
@@ -164,12 +175,6 @@
 					<view class="del_img" v-if="houseStatus==-1|| houseStatus == 2" @tap.stop="del_img(index)">
 						<text class="iconfont icon-duomeitiicon-"></text>
 					</view>
-					<view class="set_main" v-if="houseStatus==-1|| houseStatus == 2" @tap.stop="setMainPic(item,index)">
-						<text v-text="item.is_main===1? '首图':'设置为首图'"></text>
-					</view>
-					<view class="set_main" v-if="(houseStatus== 0|| houseStatus == 1) && item.is_main === 1">
-						<text>首图</text>
-					</view>
 				</view>
 
 				<!-- 临时缓存地址 -->
@@ -205,14 +210,8 @@
 				 @tap.stop="previewPic(item)">
 					<image :src="host+item.val">
 					</image>
-					<view class="del_img" v-if="houseStatus==-1|| houseStatus == 2"  @tap.stop="del_img(index)">
+					<view class="del_img" v-if="houseStatus==-1|| houseStatus == 2" @tap.stop="del_img(index)">
 						<text class="iconfont icon-duomeitiicon-"></text>
-					</view>
-					<view class="set_main" v-if="houseStatus==-1|| houseStatus == 2" @tap.stop="setMainPic(item,index)">
-						<text v-text="item.is_main===1? '首图':'设置为首图'"></text>
-					</view>
-					<view class="set_main" v-if="(houseStatus== 0|| houseStatus == 1) && item.is_main === 1">
-						<text>首图</text>
 					</view>
 				</view>
 
@@ -233,8 +232,21 @@
 				</view>
 			</view>
 		</view>
-		<!-- <view class="btn">保存</view> -->
-	</view>
+		<view class="main-pics-model" v-if="setMainPicShow">
+			<scroll-view class="hengPics-wrap" scroll-y>
+				<view class="title">请选择一张照片作为首图</view>
+				<view class="hengPics-list">
+					<view class="hengPics-item" v-for="(item,index) in hengPics" :key="index" v-if="item.is_transverse === 1"
+					 @tap.stop="checkMainPic(index)">
+						<image :src="host+item.val"></image>
+						<view class="check-on" v-if="curCheckMain === index"><text class="iconfont icon-gou"></text></view>
+					</view>
+				</view>
+				<button class="my-btn-block set-btn" :class="{'dis_btn':curCheckMain===''}" @tap.stop="setMainPic(curCheckMain)">设为首图</button>
+				<text class="close-btn iconfont icon-quxiao" @tap.stop="MainPicModelHide()"></text>
+			</scroll-view>
+		</view>
+	</scroll-view>
 </template>
 <script>
 	import {
@@ -287,23 +299,78 @@
 				// 是否正在设置主图
 				isSetMaining: false,
 				houseStatus: '', // 房屋状态
+				mainPic: '', // 主图
+				setMainPicList: [], //选择主图的列表
+				curCheckMain: '', // 当前选择的主图
+				setMainPicShow: false,
+				hengPics: [], // 横图列表
 			}
 		},
 		onLoad() {
 			this.getCurData();
 		},
 		onShow() {},
+		onBackPress() {
+			if (this.setMainPicShow) {
+				this.MainPicModelHide();
+				return true;
+			} else if (this.isUploading) {
+				uni.showModal({
+					title: '提示',
+					content: '图片上传中,禁止操作',
+					showCancel:false,
+					confirmText:'知道了',
+					success: function(res) {
+					}
+				});
+				return true;
+			}
+		},
 		computed: {
 			...mapState(['releaseObj']),
 			// 获取不同类型照片列表
 		},
 		methods: {
 			...mapMutations(['editReleaseInfo', 'clearReleaseInfo', 'editReleaseInfoStatus']),
+			// 显示设置主图弹窗
+			MainPicModelShow() {
+				if (this.isUploading) {
+					helper.layer('图片正在上传中..');
+					return;
+				} else if (this.isDeling || this.isSetMaining) {
+					return;
+				}
+				const _this = this;
+				let _flag = false;
+				_this.hengPics.forEach((item) => {
+					if (item.is_transverse === 1) {
+						_flag = true;
+					}
+				})
+				if (_flag) {
+					this.setMainPicShow = true;
+				} else {
+
+				}
+			},
+			// 设置主图模态框隐藏
+			MainPicModelHide() {
+				this.setMainPicShow = false;
+			},
+			// 选择主图
+			checkMainPic(i) {
+				const _this = this;
+				_this.curCheckMain = i;
+			},
+
+
 			// 选择照片
 			// 现在上传图片为单线程 一次只能上传一种类型的图片  并且只有等待这次图片上传能完成才能进行第二次
 			chooseImg(type) {
 				if (this.isUploading) {
 					helper.layer('图片正在上传中..');
+					return;
+				} else if (this.isDeling || this.isSetMaining) {
 					return;
 				}
 				const _this = this;
@@ -378,30 +445,33 @@
 				});
 			},
 			// 设置为主图
-			setMainPic(pic, i) {
+			setMainPic(i) {
 				const _this = this;
+				const pic = _this.hengPics[i];
 				const id = _this.house_id;
 				if (_this.isDeling || _this.isSetMaining) {
 					return;
 				} else if (_this.isUploading) {
-					helper.layer('图片上传中,不能进行删除操作...');
+					helper.layer('图片上传中,不能设置...');
 					return;
 				} else if (pic.is_main === 1) {
+					_this.isSetMaining = true;
 					return;
 				} else {
 					if (pic.is_transverse !== 1) {
 						helper.layer('非横图,不能设置为首图');
 					} else {
-						let pics = _this.pics.slice();
+						let pics = JSON.parse(JSON.stringify(_this.pics));
 						pics.map((item, index, slef) => {
 							slef[index]['is_main'] = 0
 						});
-						_this.isSetMaining = true;
 						pics[i].is_main = 1;
+						_this.isSetMaining = true;
 						let param = {
 							house_id: id,
 							pictures: JSON.stringify(pics),
 						}
+						_this.MainPicModelHide();
 						request({
 							url: '/wap/api/fangdong.php?action=improveHouse',
 							method: 'POST',
@@ -411,13 +481,13 @@
 									let _data = res.data.content;
 									_this.editReleaseInfo(_data);
 									_this.editReleaseInfoStatus(true);
-									_this.getCurData();
 								} else {
 									helper.layer('设置失败!')
 								}
 							},
 							complete: () => {
 								_this.isSetMaining = false;
+								_this.getCurData();
 							}
 						})
 					}
@@ -544,9 +614,7 @@
 			// 图片排序
 			picsSort(type) {
 				const _this = this;
-				const has_main = _this.hasMainPics();
 				let _arr = _this.uploadSuccessPic;
-				let h_index = ''; // 上传中第一张横屏的图片
 				// 根据当前索引正序排列
 				_arr.sort(function(a, b) {
 					return a.index - b.index;
@@ -561,18 +629,6 @@
 
 					}
 				})
-				// 如果当前还没有主图就自动设置 第一张横屏照片为主图；
-				if (!has_main) {
-					for (let i = 0; i < _arr.length; i++) {
-						if (_arr[i].is_transverse === 1) {
-							h_index = i;
-							break;
-						}
-					}
-				}
-				if (h_index !== '') {
-					_arr[h_index]['is_main'] = 1;
-				}
 				return _arr;
 			},
 			// 初始化
@@ -591,11 +647,22 @@
 			},
 			// 获取当前页面的数据
 			getCurData() {
+				const _this = this;
 				const _releaseObj = this.releaseObj;
 				this.house_id = _releaseObj.id;
 				this.houseStatus = _releaseObj.status;
 				const pics = _releaseObj.pics ? _releaseObj.pics : [];
+				let _mainPic = '';
 				this.pics = pics;
+				pics.forEach((item, index) => {
+					if (item.is_main === 1) {
+						_mainPic = item.path;
+						_this.curCheckMain = index;
+					}
+				})
+				this.mainPic = _mainPic;
+				this.hengPics = JSON.parse(JSON.stringify(pics));
+				console.log(this.hengPics)
 			}
 			// 
 
@@ -603,14 +670,25 @@
 		}
 	};
 </script>
+<style>
+	page {
+		height: 100%;
+	}
+</style>
 <style lang="scss" scoped>
 	$theme-color: #F05B72;
+
+	.dis-scroll {
+		overflow: hidden;
+	}
 
 	.contanier {
 		width: 100%;
 		padding: 30upx;
 		box-sizing: border-box;
 		font-size: 14px;
+		height: 100%;
+		overflow: hidden;
 
 		.title {
 			text-align: center;
@@ -671,6 +749,7 @@
 					width: 190upx;
 					margin-bottom: 20upx;
 					margin-right: 16upx;
+
 					image {
 						height: 100%;
 						width: 100%;
@@ -705,8 +784,9 @@
 						bottom: 0;
 						color: #fff;
 						text-align: center;
-						padding: 4upx 0;
+						padding: 8upx 0;
 						background: rgba(0, 0, 0, 0.5);
+						border-radius: 0 0 8upx 8upx;
 					}
 				}
 
@@ -781,6 +861,85 @@
 
 			&:active {
 				opacity: 0.5;
+			}
+		}
+
+		.main-pics-model {
+			position: fixed;
+			z-index: 1000;
+			box-sizing: border-box;
+			padding: 64px 30upx 64upx;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.3);
+
+			.hengPics-wrap {
+				position: relative;
+				box-sizing: border-box;
+				padding: 20upx 20upx 30upx;
+				height: 100%;
+				width: 100%;
+				background: #fff;
+				border-radius: 8upx;
+				box-shadow: 0upx 6upx 10upx rgba(0, 0, 0, 0.3);
+
+				.close-btn {
+					position: absolute;
+					font-size: 40upx;
+					color: #a7a7a7;
+					right: 6upx;
+					top: 6upx;
+					transition: all 0.2s ease;
+
+					&:active {
+						color: #F05B72;
+					}
+				}
+
+				.hengPics-list {
+					position: relative;
+					box-sizing: border-box;
+					width: 100%;
+
+					.hengPics-item {
+						position: relative;
+						box-sizing: border-box;
+						display: inline-flex;
+						height: 190upx;
+						width: 190upx;
+						margin-bottom: 20upx;
+						margin-right: 16upx;
+
+						image {
+							height: 100%;
+							width: 100%;
+							border-radius: 8upx;
+						}
+
+						.check-on {
+							position: absolute;
+							left: 0;
+							right: 0;
+							bottom: 0;
+							color: #fff;
+							text-align: center;
+							background: rgba(240, 91, 114, 0.8);
+							border-radius: 0 0 8upx 8upx;
+
+							.iconfont {
+								font-size: 40upx;
+							}
+						}
+					}
+				}
+
+				.set-btn {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+				}
 			}
 		}
 	}
