@@ -29,30 +29,18 @@ page{
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-<<<<<<< HEAD
 .local_set_page.data-v-cbefc21a {
-=======
-.local_set_page.data-v-05dc4464 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   min-height: 100%;
   padding: 20rpx 30rpx;
 }
-<<<<<<< HEAD
 .local_set_page .local_form.data-v-cbefc21a {
-=======
-.local_set_page .local_form.data-v-05dc4464 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
 }
-<<<<<<< HEAD
 .local_set_page .local_form .form_item.data-v-cbefc21a {
-=======
-.local_set_page .local_form .form_item.data-v-05dc4464 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
@@ -69,17 +57,12 @@ page{
           -ms-flex-direction: row;
               flex-direction: row;
 }
-<<<<<<< HEAD
 .local_set_page .local_form .form_item .left.data-v-cbefc21a {
-=======
-.local_set_page .local_form .form_item .left.data-v-05dc4464 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
         -webkit-box-flex: 1;
         -webkit-flex-grow: 1;
             -ms-flex-positive: 1;
                 flex-grow: 1;
 }
-<<<<<<< HEAD
 .local_set_page .local_form .form_item .left .label.data-v-cbefc21a {
           font-size: 32rpx;
           margin-bottom: 20rpx;
@@ -92,20 +75,6 @@ page{
           font-size: 28rpx;
 }
 .local_set_page .local_form .form_item .left .textarea_wrap.data-v-cbefc21a {
-=======
-.local_set_page .local_form .form_item .left .label.data-v-05dc4464 {
-          font-size: 32rpx;
-          margin-bottom: 20rpx;
-}
-.local_set_page .local_form .form_item .left .empty_data.data-v-05dc4464 {
-          font-size: 28rpx;
-          color: #cccccc;
-}
-.local_set_page .local_form .form_item .left .content.data-v-05dc4464 {
-          font-size: 28rpx;
-}
-.local_set_page .local_form .form_item .left .textarea_wrap.data-v-05dc4464 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
           position: relative;
           -webkit-box-sizing: border-box;
                   box-sizing: border-box;
@@ -115,45 +84,26 @@ page{
           border: 1px solid #cccccc;
           border-radius: 12rpx;
 }
-<<<<<<< HEAD
 .local_set_page .local_form .form_item .left .textarea_wrap textarea.data-v-cbefc21a {
-=======
-.local_set_page .local_form .form_item .left .textarea_wrap textarea.data-v-05dc4464 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
             width: 100%;
             height: 100%;
             font-size: 28rpx;
 }
-<<<<<<< HEAD
 .local_set_page .local_form .form_item .left .textarea_wrap .word_num.data-v-cbefc21a {
-=======
-.local_set_page .local_form .form_item .left .textarea_wrap .word_num.data-v-05dc4464 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
             position: absolute;
             right: 20rpx;
             bottom: 20rpx;
             font-size: 28rpx;
 }
-<<<<<<< HEAD
 .local_set_page .local_form .form_item .left .textarea_wrap .word_num .cur.data-v-cbefc21a {
               color: #F05B72;
 }
 .local_set_page .local_form .form_item .left .tips.data-v-cbefc21a {
-=======
-.local_set_page .local_form .form_item .left .textarea_wrap .word_num .cur.data-v-05dc4464 {
-              color: #F05B72;
-}
-.local_set_page .local_form .form_item .left .tips.data-v-05dc4464 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
           font-size: 28rpx;
           color: #aaaaaa;
           margin-top: 20rpx;
 }
-<<<<<<< HEAD
 .local_set_page .local_form .form_item .after_icon.data-v-cbefc21a {
-=======
-.local_set_page .local_form .form_item .after_icon.data-v-05dc4464 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
         width: 40rpx;
         display: -webkit-box;
         display: -webkit-flex;
@@ -168,11 +118,7 @@ page{
             -ms-flex-align: center;
                 align-items: center;
 }
-<<<<<<< HEAD
 .local_set_page .local_form .form_item .after_icon .iconfont.data-v-cbefc21a {
-=======
-.local_set_page .local_form .form_item .after_icon .iconfont.data-v-05dc4464 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
           font-size: 36rpx;
           color: #cccccc;
 }

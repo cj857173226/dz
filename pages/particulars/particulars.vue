@@ -767,7 +767,6 @@
 				font-size: 14px;
 				padding: 44upx 46upx;
 			}
-
 			.introduces {
 				width: 610upx;
 				height: 100%;

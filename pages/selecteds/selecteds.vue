@@ -277,7 +277,32 @@ export default {
       const _this = this;
       // 判断label的值发起不同的请求
       if (e.label === '好评排序') {
-        console.log('好评排序');
+        uni.showLoading({
+          title:'加载中'
+        })
+        _this.sortingFilter = '好评排序';
+        request({
+          url:'/wap/api/search.php?action=result',
+          data:{cityName:_this.city,orderBy:'score'},
+          success: function(res) {
+            console.log("好评",res);
+            uni.hideLoading()
+            if (res.data.status === 'success') {
+              _this.datas = res.data.content.item
+            } else {
+              uni.showToast({
+                title:res.data.errorMsg,
+                icon:'none'
+              })
+            }
+          },
+          fail: function(err) {
+            uni.showToast({
+              title:err,
+              icon:'none'
+            })
+          }
+        })
       } else if (e.label === '价格 高-低') {
         uni.showLoading({
           title:'加载中'

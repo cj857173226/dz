@@ -24,32 +24,20 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-<<<<<<< HEAD
-.contanier.data-v-5c6bd75b {
-=======
-.contanier.data-v-a84750b6 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
+.contanier.data-v-4aa3e552 {
   width: 100%;
   height: 100%;
   font-size: 28rpx;
   padding: 30rpx 0;
 }
-<<<<<<< HEAD
-.contanier .price-box.data-v-5c6bd75b {
-=======
-.contanier .price-box.data-v-a84750b6 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
+.contanier .price-box.data-v-4aa3e552 {
     width: 100%;
     padding: 30rpx;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     background-color: #efefef;
 }
-<<<<<<< HEAD
-.contanier .price-box .price-input.data-v-5c6bd75b {
-=======
-.contanier .price-box .price-input.data-v-a84750b6 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
+.contanier .price-box .price-input.data-v-4aa3e552 {
       width: 100%;
       display: -webkit-box;
       display: -webkit-flex;
@@ -65,11 +53,7 @@
               justify-content: space-between;
       margin-top: 30rpx;
 }
-<<<<<<< HEAD
-.contanier .price-box .price-input .labes.data-v-5c6bd75b {
-=======
-.contanier .price-box .price-input .labes.data-v-a84750b6 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
+.contanier .price-box .price-input .labes.data-v-4aa3e552 {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -79,30 +63,18 @@
             -ms-flex-align: center;
                 align-items: center;
 }
-<<<<<<< HEAD
-.contanier .price-box .price-input .labes .input.data-v-5c6bd75b {
-=======
-.contanier .price-box .price-input .labes .input.data-v-a84750b6 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
+.contanier .price-box .price-input .labes .input.data-v-4aa3e552 {
           width: 200rpx;
           margin-left: 10rpx;
           margin-right: 10rpx;
 }
-<<<<<<< HEAD
-.contanier .rent-out-box.data-v-5c6bd75b {
-=======
-.contanier .rent-out-box.data-v-a84750b6 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
+.contanier .rent-out-box.data-v-4aa3e552 {
     width: 100%;
     padding: 30rpx;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
-<<<<<<< HEAD
-.contanier .rent-out-box .rent-out.data-v-5c6bd75b {
-=======
-.contanier .rent-out-box .rent-out.data-v-a84750b6 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
+.contanier .rent-out-box .rent-out.data-v-4aa3e552 {
       width: 100%;
       height: 100%;
       display: -webkit-box;
@@ -115,11 +87,7 @@
               align-items: center;
       margin-top: 30rpx;
 }
-<<<<<<< HEAD
-.contanier .rent-out-box .rent-out .room-box.data-v-5c6bd75b {
-=======
-.contanier .rent-out-box .rent-out .room-box.data-v-a84750b6 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
+.contanier .rent-out-box .rent-out .room-box.data-v-4aa3e552 {
         width: 120rpx;
         display: -webkit-box;
         display: -webkit-flex;
@@ -134,11 +102,7 @@
                 justify-content: center;
         margin-right: 30rpx;
 }
-<<<<<<< HEAD
-.contanier .rent-out-box .rent-out .room-box .room.data-v-5c6bd75b {
-=======
-.contanier .rent-out-box .rent-out .room-box .room.data-v-a84750b6 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
+.contanier .rent-out-box .rent-out .room-box .room.data-v-4aa3e552 {
           width: 80rpx;
           height: 80rpx;
           border: 2rpx dashed #000;
@@ -147,17 +111,10 @@
           line-height: 80rpx;
           margin-bottom: 10rpx;
 }
-<<<<<<< HEAD
-.contanier .rent-out-box .rent-out .room-box .room .zhengtao.data-v-5c6bd75b {
+.contanier .rent-out-box .rent-out .room-box .room .zhengtao.data-v-4aa3e552 {
             font-size: 60rpx;
 }
-.contanier .rent-out-box .rent-out .room-boxs.data-v-5c6bd75b {
-=======
-.contanier .rent-out-box .rent-out .room-box .room .zhengtao.data-v-a84750b6 {
-            font-size: 60rpx;
-}
-.contanier .rent-out-box .rent-out .room-boxs.data-v-a84750b6 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
+.contanier .rent-out-box .rent-out .room-boxs.data-v-4aa3e552 {
         width: 120rpx;
         display: -webkit-box;
         display: -webkit-flex;
@@ -173,11 +130,7 @@
         margin-right: 30rpx;
         color: #f05b72;
 }
-<<<<<<< HEAD
-.contanier .rent-out-box .rent-out .room-boxs .rooms.data-v-5c6bd75b {
-=======
-.contanier .rent-out-box .rent-out .room-boxs .rooms.data-v-a84750b6 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
+.contanier .rent-out-box .rent-out .room-boxs .rooms.data-v-4aa3e552 {
           width: 80rpx;
           height: 80rpx;
           border: 2rpx solid #f05b72;
@@ -186,64 +139,68 @@
           line-height: 80rpx;
           margin-bottom: 10rpx;
 }
-<<<<<<< HEAD
-.contanier .max-livable-box.data-v-5c6bd75b {
-=======
-.contanier .max-livable-box.data-v-a84750b6 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
+.contanier .max-livable-box.data-v-4aa3e552 {
     width: 100%;
     background-color: #efefef;
     padding: 30rpx;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
-<<<<<<< HEAD
-.contanier .max-livable-box .radio-box.data-v-5c6bd75b {
+.contanier .max-livable-box .radio-box.data-v-4aa3e552 {
       width: 100%;
-      margin-top: 30rpx;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+      /* .radio-group-box{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        .uni-list-cell{
+          width: 136upx;
+          height: 80upx;
+          display: flex;
+          align-items: center;
+        }
+      } */
 }
-.contanier .max-livable-box .radio-box .radio-group-box.data-v-5c6bd75b {
-=======
-.contanier .max-livable-box .radio-box.data-v-a84750b6 {
-      width: 100%;
-      margin-top: 30rpx;
-}
-.contanier .max-livable-box .radio-box .radio-group-box.data-v-a84750b6 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
+.contanier .max-livable-box .radio-box .radio.data-v-4aa3e552 {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
-        -webkit-flex-wrap: wrap;
-            -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
-        -webkit-box-pack: justify;
-        -webkit-justify-content: space-between;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
-        width: 100%;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        margin-top: 30rpx;
 }
-<<<<<<< HEAD
-.contanier .max-livable-box .radio-box .radio-group-box .uni-list-cell.data-v-5c6bd75b {
-=======
-.contanier .max-livable-box .radio-box .radio-group-box .uni-list-cell.data-v-a84750b6 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
-          width: 136rpx;
-          height: 80rpx;
-          display: -webkit-box;
-          display: -webkit-flex;
-          display: -ms-flexbox;
-          display: flex;
-          -webkit-box-align: center;
-          -webkit-align-items: center;
-              -ms-flex-align: center;
-                  align-items: center;
+.contanier .max-livable-box .radio-box .radio .pitch.data-v-4aa3e552 {
+          width: 50rpx;
+          height: 50rpx;
+          border-radius: 50%;
+          background-color: #fff;
+          text-align: center;
+          line-height: 50rpx;
+          margin-right: 20rpx;
 }
-<<<<<<< HEAD
-.contanier .btn-box.data-v-5c6bd75b {
-=======
-.contanier .btn-box.data-v-a84750b6 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
+.contanier .max-livable-box .radio-box .radio .pitch .xuanzhong.data-v-4aa3e552 {
+            font-size: 50rpx;
+            color: #f05b72;
+}
+.contanier .btn-box.data-v-4aa3e552 {
     width: 100%;
     height: 140rpx;
     background: #fff;
@@ -256,11 +213,7 @@
     -webkit-box-shadow: 0 -2rpx 0 0  #b7b6b6;
             box-shadow: 0 -2rpx 0 0  #b7b6b6;
 }
-<<<<<<< HEAD
-.contanier .btn-box .btn.data-v-5c6bd75b {
-=======
-.contanier .btn-box .btn.data-v-a84750b6 {
->>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
+.contanier .btn-box .btn.data-v-4aa3e552 {
       width: 100%;
       height: 80rpx;
       background: #f05b72;
