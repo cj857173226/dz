@@ -1,12 +1,15 @@
 <import src="/components/neil-modal/neil-modal.vue.wxml" />
 <import src="/components/index/date-picker/date-picker.vue.wxml" />
 <import src="/components/index/mpvue-picker/mpvuePicker.vue.wxml" />
-<import src="/components/ss-select-city/ss-select-city.vue.wxml" />
 <import src="/components/particulars/map.vue.wxml" />
 <import src="/components/particulars/uni-rate/uni-rate.vue.wxml" />
 <import src="/components/particulars/supporting-facility.vue.wxml" />
 <import src="/components/particulars/unsubscribe-rules.vue.wxml" />
 <import src="/components/mx-datepicker/mx-datepicker.vue.wxml" />
+<<<<<<< HEAD
+=======
+<import src="/components/ss-select-city/ss-select-city.vue.wxml" />
+>>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
 <import src="/components/selected/date-picker/date-picker.vue.wxml" />
 <import src="/components/mpvue-citypicker/mpvueCityPicker.vue.wxml" />
 <import src="/components/mpvue-picker/mpvuePicker.vue.wxml" />
@@ -28,6 +31,7 @@
 <import src="/components/orlderList/pending_investigation_room.vue.wxml" />
 <import src="/components/orlderList/have_money.vue.wxml" />
 <import src="/components/orlderList/for_refund.vue.wxml" />
+<<<<<<< HEAD
 <import src="/pages/messages/lign-in/components/wkiwi-swipe-action.vue.wxml" />
 <import src="/common/slots.wxml" />
 <import src="/components/particulars/uni-icon/uni-icon.vue.wxml" />
@@ -35,6 +39,14 @@
 <import src="/components/particulars/plug/uni-icon/uni-icon.vue.wxml" />
 
 <template name="data-v-882fd186-default-b07c9756-0"><view class="_view data-v-882fd186">是否需要修改退款金额</view><view class="_view data-v-882fd186 input-name"><view style="margin-left:40rpx;" class="_view data-v-882fd186">退还金额:</view><view class="_view data-v-882fd186 input-box"><input type="text" placeholder="请输入退款金额" bindblur="handleProxy" data-eventid="{{'b07c9756-1'}}" data-comkey="{{$k}}" class="_input data-v-882fd186" /></view><text class="_text data-v-882fd186">元</text></view></template>
+=======
+<import src="/components/particulars/uni-icon/uni-icon.vue.wxml" />
+<import src="/components/particulars/plug/uni-steps/uni-steps.vue.wxml" />
+<import src="/common/slots.wxml" />
+<import src="/components/particulars/plug/uni-icon/uni-icon.vue.wxml" />
+>>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88
 
 <template name="data-v-04db12de-default-3b2de993-1"><view class="_view data-v-04db12de">是否需要修改退款金额</view><view class="_view data-v-04db12de input-name"><view style="margin-left:40rpx;" class="_view data-v-04db12de">退还金额:</view><view class="_view data-v-04db12de input-box"><input type="text" placeholder="请输入退款金额" bindblur="handleProxy" data-eventid="{{'3b2de993-5'}}" data-comkey="{{$k}}" class="_input data-v-04db12de" /></view><text class="_text data-v-04db12de">元</text></view></template>
+
+<template name="data-v-bd588678-default-698cacf8-1"><view class="_view data-v-bd588678">是否需要修改退款金额</view><view class="_view data-v-bd588678 input-name"><view style="margin-left:40rpx;" class="_view data-v-bd588678">退还金额:</view><view class="_view data-v-bd588678 input-box"><input type="text" placeholder="请输入退款金额" bindblur="handleProxy" data-eventid="{{'698cacf8-5'}}" data-comkey="{{$k}}" class="_input data-v-bd588678" /></view><text class="_text data-v-bd588678">元</text></view></template>
 

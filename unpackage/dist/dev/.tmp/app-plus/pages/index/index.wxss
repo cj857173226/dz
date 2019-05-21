@@ -30,15 +30,12 @@
   top: 0;
   left: 0;
 }
-
 view.data-v-0904387a {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
-
-
 .box.data-v-0904387a {
   font-size: 14px;
   display: -webkit-box;
@@ -120,21 +117,6 @@ view.data-v-0904387a {
   width: 100%;
   overflow: hidden;
   z-index: 9999;
-
-}
-.calendar-layer.show.data-v-0904387a {
-    bottom: 0;
-    height: 100%;
-    -webkit-transition: bottom 0.4s;
-    -o-transition: bottom 0.4s;
-    transition: bottom 0.4s;
-}
-.calendar-layer.hide.data-v-0904387a {
-    bottom: -100%;
-    height: 100%;
-    -webkit-transition: bottom 0.4s;
-    -o-transition: bottom 0.4s;
-    transition: bottom 0.4s;
 }
 .layer-content.data-v-0904387a {
   position: absolute;
@@ -283,11 +265,8 @@ view.data-v-0904387a {
 }
 .day .beginTip.data-v-0904387a {
     display: none;
-
     width: 115rpx;
     margin-top: -70rpx;
-
-
     position: absolute;
     background: rgba(0, 0, 0, 0.6);
     border-radius: 5rpx;
@@ -299,13 +278,10 @@ view.data-v-0904387a {
 .day .beginTip.data-v-0904387a::after {
       content: '';
       position: absolute;
-
       left: 35%;
       top: 28rpx;
       border: 5rpx solid transparent;
       border-top: 6rpx solid rgba(0, 0, 0, 0.6);
-
-
 }
 .day .endTip.data-v-0904387a {
     display: none;
@@ -314,10 +290,7 @@ view.data-v-0904387a {
     border-radius: 5rpx;
     text-align: center;
     padding: 6rpx 10rpx;
-
     margin-top: -70rpx;
-
-
     font-size: 16rpx;
     left: 12%;
     z-index: 33;
@@ -325,13 +298,10 @@ view.data-v-0904387a {
 .day .endTip.data-v-0904387a::after {
       content: '';
       position: absolute;
-
       left: 35%;
       top: 28rpx;
       border: 5rpx solid transparent;
       border-top: 6rpx solid rgba(0, 0, 0, 0.6);
-
-
 }
 .day.begin.data-v-0904387a, .day.end.data-v-0904387a {
     background: #f93f4a;

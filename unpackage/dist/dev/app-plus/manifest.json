@@ -79,8 +79,8 @@
       "plugins": {
         "maps": {
           "amap": {
-            "appkey_ios": "ff60afce471bf105359e78dfc05feed4",
-            "appkey_android": "ff60afce471bf105359e78dfc05feed4"
+            "appkey_ios": "137f61d2a0740333ea16ac35dc4bb961",
+            "appkey_android": "137f61d2a0740333ea16ac35dc4bb961"
           }
         },
         "oauth": {},
@@ -104,7 +104,7 @@
       }
     },
     "uni-app": {
-      "compilerVersion": "1.9.4",
+      "compilerVersion": "1.9.8",
       "control": "webview"
     }
   }

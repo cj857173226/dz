@@ -88,7 +88,7 @@ const layer = function(msg) {
 		title: msg,
 		duration: 1500,
 		icon: 'none',
-		mask:true,
+		// mask:true,
 	});
 
 }

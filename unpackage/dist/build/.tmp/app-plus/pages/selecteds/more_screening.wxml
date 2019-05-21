@@ -1,2 +1,6 @@
 <import src="./more_screening.vue.wxml" />
+<<<<<<< HEAD
     <template is="5a042a1a" data="{{ ...$root['0'], $root }}"/>
+=======
+    <template is="65c92ca4" data="{{ ...$root['0'], $root }}"/>
+>>>>>>> 5fc218084fafceded050bafac153a53e6d7ddd88

@@ -394,11 +394,9 @@ page{
           border-bottom: 2rpx solid #ccc;
           padding-bottom: 20rpx;
 }
-.forno.data-v-ad2dcfd2 {
-  text-align: center;
-  line-height: calc(100% - 90rpx);
-  height: calc(100% - 90rpx);
-  color: #fff;
-  background: #ccc;
+.contanier .content .forno.data-v-ad2dcfd2 {
+      text-align: center;
+      height: 100%;
+      margin-top: 300rpx;
 }
 
