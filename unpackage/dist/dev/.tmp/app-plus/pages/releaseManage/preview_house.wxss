@@ -30,22 +30,22 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.preview_house_page.data-v-59360be0 {
+.preview_house_page.data-v-4cbc0586 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
 }
-.preview_house_page .title_pic.data-v-59360be0 {
+.preview_house_page .title_pic.data-v-4cbc0586 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
     position: relative;
 }
-.preview_house_page .title_pic ._img.data-v-59360be0 {
+.preview_house_page .title_pic ._img.data-v-4cbc0586 {
       width: 100%;
       display: block;
 }
-.preview_house_page .title_pic .day_price.data-v-59360be0 {
+.preview_house_page .title_pic .day_price.data-v-4cbc0586 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       position: absolute;
@@ -58,16 +58,16 @@ page {
       font-size: 32rpx;
       background: rgba(0, 0, 0, 0.5);
 }
-.preview_house_page .title_pic .day_price .num.data-v-59360be0 {
+.preview_house_page .title_pic .day_price .num.data-v-4cbc0586 {
         font-size: 36rpx;
 }
-.preview_house_page .container-contact-box.data-v-59360be0 {
+.preview_house_page .container-contact-box.data-v-4cbc0586 {
     width: 100%;
     padding: 30rpx;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
-.preview_house_page .container-contact-box .contact-box.data-v-59360be0 {
+.preview_house_page .container-contact-box .contact-box.data-v-4cbc0586 {
       padding: 60rpx 20rpx 80rpx;
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
@@ -89,26 +89,26 @@ page {
       -webkit-box-shadow: 0 10rpx 10rpx rgba(192, 192, 192, 0.3);
               box-shadow: 0 10rpx 10rpx rgba(192, 192, 192, 0.3);
 }
-.preview_house_page .container-contact-box .contact-box .title.data-v-59360be0 {
+.preview_house_page .container-contact-box .contact-box .title.data-v-4cbc0586 {
         text-align: center;
         font-weight: bold;
 }
-.preview_house_page .container-contact-box .contact-box .rent-type.data-v-59360be0 {
+.preview_house_page .container-contact-box .contact-box .rent-type.data-v-4cbc0586 {
         margin-top: 16rpx;
         font-size: 28rpx;
         color: #f05b72;
 }
-.preview_house_page .container-contact-box .contact-box .local.data-v-59360be0 {
+.preview_house_page .container-contact-box .contact-box .local.data-v-4cbc0586 {
         margin-top: 16rpx;
         font-size: 28rpx;
         color: #919191;
 }
-.preview_house_page .container-contact-box .contact-box .local .iconfont.data-v-59360be0 {
+.preview_house_page .container-contact-box .contact-box .local .iconfont.data-v-4cbc0586 {
           font-weight: 800;
           font-size: 32rpx;
           margin-right: 10rpx;
 }
-.preview_house_page .container-contact-box .contact-box .comment.data-v-59360be0 {
+.preview_house_page .container-contact-box .contact-box .comment.data-v-4cbc0586 {
         margin-top: 20rpx;
         display: -webkit-box;
         display: -webkit-flex;
@@ -120,51 +120,51 @@ page {
             -ms-flex-direction: row;
                 flex-direction: row;
 }
-.preview_house_page .container-contact-box .contact-box .comment .lightning-box.data-v-59360be0 {
+.preview_house_page .container-contact-box .contact-box .comment .lightning-box.data-v-4cbc0586 {
           margin-right: 20rpx;
           color: #a4a4a4;
 }
-.preview_house_page .container-contact-box .contact-box .comment .lightning-box .lightning-icon.data-v-59360be0 {
+.preview_house_page .container-contact-box .contact-box .comment .lightning-box .lightning-icon.data-v-4cbc0586 {
             color: #d5efec;
             font-size: 18px;
 }
-.preview_house_page .container-contact-box .contact-box .comment .comment-on-box.data-v-59360be0 {
+.preview_house_page .container-contact-box .contact-box .comment .comment-on-box.data-v-4cbc0586 {
           color: #a4a4a4;
 }
-.preview_house_page .container-contact-box .contact-box .comment .comment-on-box .comment-on-icon.data-v-59360be0 {
+.preview_house_page .container-contact-box .contact-box .comment .comment-on-box .comment-on-icon.data-v-4cbc0586 {
             color: #cccccc;
             font-size: 18px;
 }
-.preview_house_page .container-contact-box .contact-box .img-box.data-v-59360be0 {
+.preview_house_page .container-contact-box .contact-box .img-box.data-v-4cbc0586 {
         width: 120rpx;
         height: 120rpx;
         border-radius: 50%;
         margin-top: 30rpx;
 }
-.preview_house_page .container-contact-box .contact-box .img-box .img.data-v-59360be0 {
+.preview_house_page .container-contact-box .contact-box .img-box .img.data-v-4cbc0586 {
           width: 120rpx;
           height: 120rpx;
           border-radius: 50%;
 }
-.preview_house_page .container-contact-box .contact-box .autonym.data-v-59360be0 {
+.preview_house_page .container-contact-box .contact-box .autonym.data-v-4cbc0586 {
         text-align: center;
         margin-top: 20rpx;
 }
-.preview_house_page .container-contact-box .contact-box .autonym .name.data-v-59360be0 {
+.preview_house_page .container-contact-box .contact-box .autonym .name.data-v-4cbc0586 {
           font-size: 14px;
           text-align: center;
 }
-.preview_house_page .container-contact-box .contact-box .autonym .attestation.data-v-59360be0 {
+.preview_house_page .container-contact-box .contact-box .autonym .attestation.data-v-4cbc0586 {
           font-size: 12px;
           color: #a9a9a9;
           text-align: center;
 }
-.preview_house_page .container-contact-box .basic-info-box.data-v-59360be0,
-    .preview_house_page .container-contact-box .house-pic-box.data-v-59360be0,
-    .preview_house_page .container-contact-box .bed-info-box.data-v-59360be0,
-    .preview_house_page .container-contact-box .describe-info-box.data-v-59360be0,
-    .preview_house_page .container-contact-box .facilities-box.data-v-59360be0,
-    .preview_house_page .container-contact-box .price-rule-box.data-v-59360be0 {
+.preview_house_page .container-contact-box .basic-info-box.data-v-4cbc0586,
+    .preview_house_page .container-contact-box .house-pic-box.data-v-4cbc0586,
+    .preview_house_page .container-contact-box .bed-info-box.data-v-4cbc0586,
+    .preview_house_page .container-contact-box .describe-info-box.data-v-4cbc0586,
+    .preview_house_page .container-contact-box .facilities-box.data-v-4cbc0586,
+    .preview_house_page .container-contact-box .price-rule-box.data-v-4cbc0586 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       padding: 40rpx 0rpx;
@@ -174,12 +174,12 @@ page {
       -webkit-box-shadow: 0 10rpx 10rpx rgba(192, 192, 192, 0.3);
               box-shadow: 0 10rpx 10rpx rgba(192, 192, 192, 0.3);
 }
-.preview_house_page .container-contact-box .basic-info-box .title.data-v-59360be0,
-      .preview_house_page .container-contact-box .house-pic-box .title.data-v-59360be0,
-      .preview_house_page .container-contact-box .bed-info-box .title.data-v-59360be0,
-      .preview_house_page .container-contact-box .describe-info-box .title.data-v-59360be0,
-      .preview_house_page .container-contact-box .facilities-box .title.data-v-59360be0,
-      .preview_house_page .container-contact-box .price-rule-box .title.data-v-59360be0 {
+.preview_house_page .container-contact-box .basic-info-box .title.data-v-4cbc0586,
+      .preview_house_page .container-contact-box .house-pic-box .title.data-v-4cbc0586,
+      .preview_house_page .container-contact-box .bed-info-box .title.data-v-4cbc0586,
+      .preview_house_page .container-contact-box .describe-info-box .title.data-v-4cbc0586,
+      .preview_house_page .container-contact-box .facilities-box .title.data-v-4cbc0586,
+      .preview_house_page .container-contact-box .price-rule-box .title.data-v-4cbc0586 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         position: relative;
@@ -199,12 +199,12 @@ page {
         width: 100%;
         color: #8d8d8d;
 }
-.preview_house_page .container-contact-box .basic-info-box .title.data-v-59360be0::after,
-        .preview_house_page .container-contact-box .house-pic-box .title.data-v-59360be0::after,
-        .preview_house_page .container-contact-box .bed-info-box .title.data-v-59360be0::after,
-        .preview_house_page .container-contact-box .describe-info-box .title.data-v-59360be0::after,
-        .preview_house_page .container-contact-box .facilities-box .title.data-v-59360be0::after,
-        .preview_house_page .container-contact-box .price-rule-box .title.data-v-59360be0::after {
+.preview_house_page .container-contact-box .basic-info-box .title.data-v-4cbc0586::after,
+        .preview_house_page .container-contact-box .house-pic-box .title.data-v-4cbc0586::after,
+        .preview_house_page .container-contact-box .bed-info-box .title.data-v-4cbc0586::after,
+        .preview_house_page .container-contact-box .describe-info-box .title.data-v-4cbc0586::after,
+        .preview_house_page .container-contact-box .facilities-box .title.data-v-4cbc0586::after,
+        .preview_house_page .container-contact-box .price-rule-box .title.data-v-4cbc0586::after {
           position: absolute;
           content: '';
           height: 100%;
@@ -213,18 +213,18 @@ page {
           top: 0;
           background: #F05B72;
 }
-.preview_house_page .container-contact-box .basic-info-box .content-wrap.data-v-59360be0,
-      .preview_house_page .container-contact-box .house-pic-box .content-wrap.data-v-59360be0,
-      .preview_house_page .container-contact-box .bed-info-box .content-wrap.data-v-59360be0,
-      .preview_house_page .container-contact-box .describe-info-box .content-wrap.data-v-59360be0,
-      .preview_house_page .container-contact-box .facilities-box .content-wrap.data-v-59360be0,
-      .preview_house_page .container-contact-box .price-rule-box .content-wrap.data-v-59360be0 {
+.preview_house_page .container-contact-box .basic-info-box .content-wrap.data-v-4cbc0586,
+      .preview_house_page .container-contact-box .house-pic-box .content-wrap.data-v-4cbc0586,
+      .preview_house_page .container-contact-box .bed-info-box .content-wrap.data-v-4cbc0586,
+      .preview_house_page .container-contact-box .describe-info-box .content-wrap.data-v-4cbc0586,
+      .preview_house_page .container-contact-box .facilities-box .content-wrap.data-v-4cbc0586,
+      .preview_house_page .container-contact-box .price-rule-box .content-wrap.data-v-4cbc0586 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         width: 100%;
         padding: 0 22rpx;
 }
-.preview_house_page .container-contact-box .basic-info-box .content-wrap .row.data-v-59360be0 {
+.preview_house_page .container-contact-box .basic-info-box .content-wrap .row.data-v-4cbc0586 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       display: -webkit-box;
@@ -243,10 +243,10 @@ page {
       font-size: 28rpx;
       margin-bottom: 20rpx;
 }
-.preview_house_page .container-contact-box .basic-info-box .content-wrap .row .data-box.data-v-59360be0 {
+.preview_house_page .container-contact-box .basic-info-box .content-wrap .row .data-box.data-v-4cbc0586 {
         color: #a7a7a7;
 }
-.preview_house_page .container-contact-box .bed-info-box .content-wrap .row.data-v-59360be0 {
+.preview_house_page .container-contact-box .bed-info-box .content-wrap .row.data-v-4cbc0586 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       display: -webkit-box;
@@ -265,26 +265,26 @@ page {
       font-size: 28rpx;
       margin-bottom: 20rpx;
 }
-.preview_house_page .container-contact-box .bed-info-box .content-wrap .row .bed .bed-size.data-v-59360be0 {
+.preview_house_page .container-contact-box .bed-info-box .content-wrap .row .bed .bed-size.data-v-4cbc0586 {
         margin-left: 20rpx;
 }
-.preview_house_page .container-contact-box .bed-info-box .content-wrap .row .number.data-v-59360be0 {
+.preview_house_page .container-contact-box .bed-info-box .content-wrap .row .number.data-v-4cbc0586 {
         color: #a7a7a7;
 }
-.preview_house_page .container-contact-box .house-pic-box .content-wrap.data-v-59360be0 {
+.preview_house_page .container-contact-box .house-pic-box .content-wrap.data-v-4cbc0586 {
       padding: 0;
 }
-.preview_house_page .container-contact-box .house-pic-box .content-wrap .pics-type.data-v-59360be0 {
+.preview_house_page .container-contact-box .house-pic-box .content-wrap .pics-type.data-v-4cbc0586 {
         margin-bottom: 40rpx;
 }
-.preview_house_page .container-contact-box .house-pic-box .content-wrap .pics-type .p-title.data-v-59360be0 {
+.preview_house_page .container-contact-box .house-pic-box .content-wrap .pics-type .p-title.data-v-4cbc0586 {
           margin-bottom: 20rpx;
           text-align: center;
           font-size: 28rpx;
           color: #b3b3b3;
           font-weight: 800;
 }
-.preview_house_page .container-contact-box .house-pic-box .content-wrap .pics-type .pics-box.data-v-59360be0 {
+.preview_house_page .container-contact-box .house-pic-box .content-wrap .pics-type .pics-box.data-v-4cbc0586 {
           -webkit-box-sizing: border-box;
                   box-sizing: border-box;
           width: 100%;
@@ -296,7 +296,7 @@ page {
               -ms-flex-wrap: wrap;
                   flex-wrap: wrap;
 }
-.preview_house_page .container-contact-box .house-pic-box .content-wrap .pics-type .pics-box .img-item.data-v-59360be0 {
+.preview_house_page .container-contact-box .house-pic-box .content-wrap .pics-type .pics-box .img-item.data-v-4cbc0586 {
             display: -webkit-inline-box;
             display: -webkit-inline-flex;
             display: -ms-inline-flexbox;
@@ -305,12 +305,12 @@ page {
             width: 210rpx;
             padding: 10rpx;
 }
-.preview_house_page .container-contact-box .house-pic-box .content-wrap .pics-type .pics-box .img-item image.data-v-59360be0 {
+.preview_house_page .container-contact-box .house-pic-box .content-wrap .pics-type .pics-box .img-item image.data-v-4cbc0586 {
               height: 100%;
               width: 100%;
               border-radius: 8rpx;
 }
-.preview_house_page .container-contact-box .facilities-box .content-wrap.data-v-59360be0 {
+.preview_house_page .container-contact-box .facilities-box .content-wrap.data-v-4cbc0586 {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -319,7 +319,7 @@ page {
           -ms-flex-wrap: wrap;
               flex-wrap: wrap;
 }
-.preview_house_page .container-contact-box .facilities-box .content-wrap .sb-item.data-v-59360be0 {
+.preview_house_page .container-contact-box .facilities-box .content-wrap .sb-item.data-v-4cbc0586 {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -340,60 +340,60 @@ page {
         width: 160rpx;
         margin-bottom: 40rpx;
 }
-.preview_house_page .container-contact-box .facilities-box .content-wrap .sb-item .sb-icon.data-v-59360be0 {
+.preview_house_page .container-contact-box .facilities-box .content-wrap .sb-item .sb-icon.data-v-4cbc0586 {
           font-size: 50rpx;
           color: #ececec;
           font-weight: 800;
 }
-.preview_house_page .container-contact-box .facilities-box .content-wrap .sb-item .active.data-v-59360be0 {
+.preview_house_page .container-contact-box .facilities-box .content-wrap .sb-item .active.data-v-4cbc0586 {
           color: #F05B72;
 }
-.preview_house_page .container-contact-box .facilities-box .content-wrap .sb-item .name.data-v-59360be0 {
+.preview_house_page .container-contact-box .facilities-box .content-wrap .sb-item .name.data-v-4cbc0586 {
           margin-top: 10rpx;
           font-size: 24rpx;
           color: #cccccc;
 }
-.preview_house_page .container-contact-box .facilities-box .content-wrap .sb-item .name-on.data-v-59360be0 {
+.preview_house_page .container-contact-box .facilities-box .content-wrap .sb-item .name-on.data-v-4cbc0586 {
           color: #F05B72;
 }
-.preview_house_page .container-contact-box .describe-info-box .content-wrap .desc-box.data-v-59360be0 {
+.preview_house_page .container-contact-box .describe-info-box .content-wrap .desc-box.data-v-4cbc0586 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       margin-bottom: 40rpx;
 }
-.preview_house_page .container-contact-box .describe-info-box .content-wrap .desc-box .d-title.data-v-59360be0 {
+.preview_house_page .container-contact-box .describe-info-box .content-wrap .desc-box .d-title.data-v-4cbc0586 {
         margin-bottom: 20rpx;
         font-size: 32rpx;
         color: #efb0ba;
 }
-.preview_house_page .container-contact-box .describe-info-box .content-wrap .desc-box .content.data-v-59360be0 {
+.preview_house_page .container-contact-box .describe-info-box .content-wrap .desc-box .content.data-v-4cbc0586 {
         color: #333;
         font-size: 28rpx;
 }
-.preview_house_page .container-contact-box .describe-info-box .content-wrap .desc-box .no-data.data-v-59360be0 {
+.preview_house_page .container-contact-box .describe-info-box .content-wrap .desc-box .no-data.data-v-4cbc0586 {
         color: #cccccc;
         font-size: 28rpx;
 }
-.preview_house_page .container-contact-box .price-rule-box .content-wrap .row.data-v-59360be0 {
+.preview_house_page .container-contact-box .price-rule-box .content-wrap .row.data-v-4cbc0586 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
       margin-bottom: 20rpx;
 }
-.preview_house_page .container-contact-box .price-rule-box .content-wrap .row .label.data-v-59360be0 {
+.preview_house_page .container-contact-box .price-rule-box .content-wrap .row .label.data-v-4cbc0586 {
         margin-bottom: 10rpx;
 }
-.preview_house_page .container-contact-box .price-rule-box .content-wrap .row .content.data-v-59360be0 {
+.preview_house_page .container-contact-box .price-rule-box .content-wrap .row .content.data-v-4cbc0586 {
         font-size: 28rpx;
         color: #a7a7a7;
 }
-.preview_house_page .container-contact-box .price-rule-box .content-wrap .step_wrap.data-v-59360be0 {
+.preview_house_page .container-contact-box .price-rule-box .content-wrap .step_wrap.data-v-4cbc0586 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
       padding: 0 20rpx;
 }
-.preview_house_page .container-contact-box .price-rule-box .content-wrap .step_wrap .step_item.data-v-59360be0 {
+.preview_house_page .container-contact-box .price-rule-box .content-wrap .step_wrap .step_item.data-v-4cbc0586 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         width: 100%;
@@ -402,7 +402,7 @@ page {
         margin-top: 10rpx;
         border-left: 1px solid #F05B72;
 }
-.preview_house_page .container-contact-box .price-rule-box .content-wrap .step_wrap .step_item .s_title.data-v-59360be0 {
+.preview_house_page .container-contact-box .price-rule-box .content-wrap .step_wrap .step_item .s_title.data-v-4cbc0586 {
           position: relative;
           font-size: 28rpx;
           color: #aaaaaa;
@@ -410,30 +410,30 @@ page {
           line-height: 40rpx;
           margin-bottom: 30rpx;
 }
-.preview_house_page .container-contact-box .price-rule-box .content-wrap .step_wrap .step_item .s_title .iconfont.data-v-59360be0 {
+.preview_house_page .container-contact-box .price-rule-box .content-wrap .step_wrap .step_item .s_title .iconfont.data-v-4cbc0586 {
             position: absolute;
             font-size: 40rpx;
             color: #F05B72;
             left: -50rpx;
             top: -4rpx;
 }
-.preview_house_page .container-contact-box .price-rule-box .content-wrap .step_wrap .step_item .content.data-v-59360be0 {
+.preview_house_page .container-contact-box .price-rule-box .content-wrap .step_wrap .step_item .content.data-v-4cbc0586 {
           padding: 20rpx 16rpx;
           background: #eaeaea;
           border-radius: 8rpx;
 }
-.preview_house_page .container-contact-box .price-rule-box .content-wrap .step_wrap .step_item.data-v-59360be0:first-child {
+.preview_house_page .container-contact-box .price-rule-box .content-wrap .step_wrap .step_item.data-v-4cbc0586:first-child {
           border-left: 1px solid #5bdb9c;
 }
-.preview_house_page .container-contact-box .price-rule-box .content-wrap .step_wrap .step_item:first-child .s_title .iconfont.data-v-59360be0 {
+.preview_house_page .container-contact-box .price-rule-box .content-wrap .step_wrap .step_item:first-child .s_title .iconfont.data-v-4cbc0586 {
             color: #5bdb9c;
 }
-.preview_house_page .container-contact-box .price-rule-box .content-wrap .step_wrap .step_item.data-v-59360be0:last-child {
+.preview_house_page .container-contact-box .price-rule-box .content-wrap .step_wrap .step_item.data-v-4cbc0586:last-child {
           min-height: 0;
           padding-bottom: 0;
           border: none;
 }
-.preview_house_page .container-contact-box .price-rule-box .content-wrap .step_wrap .step_item:last-child .s_title .iconfont.data-v-59360be0 {
+.preview_house_page .container-contact-box .price-rule-box .content-wrap .step_wrap .step_item:last-child .s_title .iconfont.data-v-4cbc0586 {
             color: #cccccc;
 }
 

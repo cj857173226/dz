@@ -575,13 +575,12 @@ page{
         }
       }
     }
+    .forno{
+      text-align: center;
+      height: 100%;
+      margin-top: 300upx;
+    }
   }
 }
-.forno{
-  text-align: center;
-  line-height: calc(100% - 90upx); 
-  height: calc(100% - 90upx);
-  color: #fff;
-  background: #ccc; 
-}
+
 </style>

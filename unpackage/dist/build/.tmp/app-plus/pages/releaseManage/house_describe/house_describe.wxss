@@ -29,18 +29,18 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.house_describe_page.data-v-2f902d77 {
+.house_describe_page.data-v-37c3352c {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0 30rpx;
   width: 100%;
 }
-.house_describe_page .describe_form.data-v-2f902d77 {
+.house_describe_page .describe_form.data-v-37c3352c {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
 }
-.house_describe_page .describe_form .form_item.data-v-2f902d77 {
+.house_describe_page .describe_form .form_item.data-v-37c3352c {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       padding: 20rpx 0;
@@ -60,12 +60,12 @@ page {
               align-items: center;
       border-bottom: 1px solid #eaeaea;
 }
-.house_describe_page .describe_form .form_item .left_wrap.data-v-2f902d77 {
+.house_describe_page .describe_form .form_item .left_wrap.data-v-37c3352c {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         width: calc(100% - 60rpx);
 }
-.house_describe_page .describe_form .form_item .left_wrap .label_wrap.data-v-2f902d77 {
+.house_describe_page .describe_form .form_item .left_wrap .label_wrap.data-v-37c3352c {
           -webkit-box-sizing: border-box;
                   box-sizing: border-box;
           width: 100%;
@@ -84,10 +84,10 @@ page {
                   align-items: center;
           margin-bottom: 8rpx;
 }
-.house_describe_page .describe_form .form_item .left_wrap .label_wrap .title.data-v-2f902d77 {
+.house_describe_page .describe_form .form_item .left_wrap .label_wrap .title.data-v-37c3352c {
             font-size: 32rpx;
 }
-.house_describe_page .describe_form .form_item .left_wrap .label_wrap .tag.data-v-2f902d77 {
+.house_describe_page .describe_form .form_item .left_wrap .label_wrap .tag.data-v-37c3352c {
             -webkit-box-sizing: border-box;
                     box-sizing: border-box;
             margin-left: 8rpx;
@@ -97,17 +97,17 @@ page {
             border: 1px solid #cccccc;
             border-radius: 8rpx;
 }
-.house_describe_page .describe_form .form_item .left_wrap .content_wrap.data-v-2f902d77 {
+.house_describe_page .describe_form .form_item .left_wrap .content_wrap.data-v-37c3352c {
           -webkit-box-sizing: border-box;
                   box-sizing: border-box;
           width: 100%;
           min-height: 76rpx;
           font-size: 28rpx;
 }
-.house_describe_page .describe_form .form_item .left_wrap .content_wrap .no_data.data-v-2f902d77 {
+.house_describe_page .describe_form .form_item .left_wrap .content_wrap .no_data.data-v-37c3352c {
             color: #cccccc;
 }
-.house_describe_page .describe_form .form_item .left_wrap .content_wrap .content.data-v-2f902d77 {
+.house_describe_page .describe_form .form_item .left_wrap .content_wrap .content.data-v-37c3352c {
             -webkit-box-sizing: border-box;
                     box-sizing: border-box;
             width: 100%;
@@ -120,11 +120,11 @@ page {
             -webkit-line-clamp: 2;
             word-break: break-all;
 }
-.house_describe_page .describe_form .form_item .after_icon.data-v-2f902d77 {
+.house_describe_page .describe_form .form_item .after_icon.data-v-37c3352c {
         width: 60rpx;
         text-align: right;
 }
-.house_describe_page .describe_form .form_item .after_icon .iconfont.data-v-2f902d77 {
+.house_describe_page .describe_form .form_item .after_icon .iconfont.data-v-37c3352c {
           font-size: 36rpx;
           color: #aaaaaa;
 }

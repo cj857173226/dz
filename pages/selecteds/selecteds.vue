@@ -26,7 +26,7 @@
         <text class="iconfont icon-xiasanjiaoxiangxiamianxing"></text>
       </view>
     </view>
-    <view class="housing-show">
+    <view v-if="datas.length > 0" class="housing-show">
       <view class="housing" v-for="(val,index) in datas" :key="index">
         <swiper class="housing-swiper">
           <swiper-item v-for="(item,j) in val.extImages" :key="j">
@@ -60,6 +60,7 @@
         </view>
       </view>
     </view>
+    <view v-else class="reportError">占无相关房源</view>
     <!-- <textarea :value='addressName' maxlength="-1" /> -->
     <mpvue-picker :themeColor="themeColor" ref="mpvuePicker" mode="selector" :deepLength="deepLength" :pickerValueDefault="pickerValueDefault"
     @onConfirm="onConfirm" @="" :pickerValueArray="pickerValueArray"></mpvue-picker>
@@ -116,12 +117,18 @@ export default {
       index:null, // 点击收藏的索引
       luId:'', // 房源id
       i:'',
+      low:'', // 最高价格
+      tall:'', // 最低价格
+      lease:'',// 出租类型选择搜索的值
+      livable:'',// 宜居
       addressName: '',  
+      stateTime:'', // 开始时间
+      endTime:'',// 结束时间
       weather: {  
           hasData: false,  
           data: []  
       } ,
-      key: 'ff60afce471bf105359e78dfc05feed4' // 高德小程序key
+      key: 'ff60afce471bf105359e78dfc05feed4', // 高德小程序key
     };
   },
   onLoad(option){
@@ -130,10 +137,25 @@ export default {
     });
     this.city = option.city;
     this.place = option.site;
-    this.siteRequest();
+    this.low = option.low;
+    this.tall = option.tall;
+    this.lease = option.lease;
+    this.livable = option.livable
+    if (option.mold === 'index') {
+      this.siteRequest();
+    } else if (option.mold === 'more') {
+      this.moreScreening()
+    }
   },
   onShow(){
     this.enshrineList(); // 收藏列表
+  },
+  onReady(){
+    console.log('开始时间',this.$store.state.startTime);
+    let start = this.$store.state.startTime;
+    let end = this.$store.state.endTime;
+    this.stateTime = start.replace(/-/g,'/');
+    this.endTime = end.replace(/-/g,'/');
   },
   methods: {
     // 获取收藏列表
@@ -166,7 +188,33 @@ export default {
     },
     // 点击搜索按钮隐藏自己，并发起搜索请求
     clickSearch(){
-      // console.log(this.inputValue);
+      const _this = this;
+      let keyword = this.inputValue;
+      uni.showLoading({
+        title:'加载中'
+      })
+      request({
+        url:'/wap/api/search.php?action=result',
+        data:{cityName:_this.city,keyword},
+        success: function(res) {
+          uni.hideLoading();
+          console.log('关键只',res);
+          if (res.data.status === 'success') {
+            _this.datas = res.data.content.item
+          } else {
+            uni.showToast({
+              title:res.data.errorMsg,
+              icon:'none',
+            })
+          }
+        },
+        fail: function(err) {
+          uni.showToast({
+            title:err,
+            icon:'none'
+          })
+        }
+      })
       this.isShow = false;
     },
     // 点击跳转页面
@@ -188,11 +236,36 @@ export default {
     },
     change({choiceDate, dayCount}){
 			//1.choiceDate 时间区间（开始时间和结束时间）
-			//2.dayCount 共多少晚
+      //2.dayCount 共多少晚
+      const _this = this;
 			console.dir(choiceDate)
 			console.log("入住从 "+ choiceDate[0].re + "  到 " + choiceDate[1].re + "  共 " + dayCount +" 晚");
-			// this.startTime = choiceDate[0].re;
-			// this.endTime = choiceDate[1].re;
+      let stateTime = choiceDate[0].re.replace(/-/,'/');
+      let endTime = choiceDate[1].re.replace(/-/,'/');
+      uni.showLoading({
+        title:'加载中'
+      })
+      request({
+        url:'/wap/api/search.php?action=result',
+        data:{cityName:_this.city,checkInDay:stateTime,checkOutDay:endTime},
+        success: function(res) {
+          uni.hideLoading()
+          if (res.data.status === 'success') {
+            _this.datas = res.data.content.item
+          } else {
+            uni.showToast({
+              title:res.data.errorMsg,
+              icon:'none'
+            })
+          }
+        },
+        fail: function(err) {
+          uni.showToast({
+            title:err,
+            icon:'none'
+          })
+        }
+      })
     },
     // 调用picker组件
     clickShowPicker() {
@@ -204,7 +277,32 @@ export default {
       const _this = this;
       // 判断label的值发起不同的请求
       if (e.label === '好评排序') {
-        console.log('好评排序');
+        uni.showLoading({
+          title:'加载中'
+        })
+        _this.sortingFilter = '好评排序';
+        request({
+          url:'/wap/api/search.php?action=result',
+          data:{cityName:_this.city,orderBy:'score'},
+          success: function(res) {
+            console.log("好评",res);
+            uni.hideLoading()
+            if (res.data.status === 'success') {
+              _this.datas = res.data.content.item
+            } else {
+              uni.showToast({
+                title:res.data.errorMsg,
+                icon:'none'
+              })
+            }
+          },
+          fail: function(err) {
+            uni.showToast({
+              title:err,
+              icon:'none'
+            })
+          }
+        })
       } else if (e.label === '价格 高-低') {
         uni.showLoading({
           title:'加载中'
@@ -212,7 +310,7 @@ export default {
         _this.sortingFilter = '价格 高-低';
         request({
           url:'/wap/api/search.php?action=result',
-          data:{cityName:'成都',orderBy:'zuigui'},
+          data:{cityName:_this.city,orderBy:'zuigui'},
           success: function(res) {
             console.log("高",res);
             uni.hideLoading()
@@ -239,7 +337,7 @@ export default {
         _this.sortingFilter = '价格 低-高';
         request({
           url:'/wap/api/search.php?action=result',
-          data:{cityName:'成都',orderBy:'zuipianyi'},
+          data:{cityName:_this.city,orderBy:'zuipianyi'},
           success: function(res) {
             console.log("低",res);
             uni.hideLoading()
@@ -271,7 +369,7 @@ export default {
             console.log('近');
             request({
               url:'/wap/api/search.php?action=result',
-              data:{cityName:'成都',lag:res.longitude,lng:res.latitude},
+              data:{cityName:_this.city,lag:res.longitude,lng:res.latitude},
               success: function(res) {
                 uni.hideLoading()
                 if(res.data.status === 'success'){
@@ -306,11 +404,9 @@ export default {
       uni.showLoading({
         title:'加载中'
       })
-      let city = _this.city.slice(0,2)
-      console.log(city);
       request({
         url:'/wap/api/search.php?action=result',
-        data:{cityName:'成都'},
+        data:{cityName:_this.city},
         success: function(res) {
           uni.hideLoading();
           console.log('筛选',res);
@@ -413,13 +509,49 @@ export default {
           }
         }
       })
+    },
+    // 更多筛选数据请求
+    moreScreening(){
+      const _this = this;
+      uni.showLoading({
+        title:'加载中'
+      })
+      request({
+        url:'/wap/api/search.php?action=result',
+        data:{cityName:_this.city,maxPrice:_this.tall,minPrice:_this.low,leaseType:_this.lease,guestNum:_this.livable},
+        success: function(res) {
+          uni.hideLoading()
+          console.log('更多筛选',res);
+          if (res.data.status === 'success') {
+            _this.datas = res.data.content.item
+          } else {
+            uni.showToast({
+              title:res.data.errorMsg,
+              icon:'none'
+            })
+          }
+        },
+        fail: function(err) {
+          uni.showToast({
+            title:err,
+            icon:'none'
+          })
+        }
+      })
     }
   }
 };
 </script>
+<style>
+page{
+  height: 100%;
+}
+</style>
+
 <style lang="scss" scoped>
 .contanier {
   width: 100%;
+  height: 100%;
   .top {
     width: 100%;
     padding: 30upx;
@@ -597,6 +729,14 @@ export default {
         left: 40upx;
       }
     }
+  }
+  .reportError{
+    width: 100%;
+    height: calc(100% - 220upx);
+    background-color: #efefef;
+    text-align: center;
+    line-height: 500upx;
+    font-size: 28upx;
   }
 }
 </style>

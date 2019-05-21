@@ -1,2 +1,2 @@
 <import src="./numbe_days.vue.wxml" />
-    <template is="42742888" data="{{ ...$root['0'], $root }}"/>
+    <template is="4eda5d57" data="{{ ...$root['0'], $root }}"/>

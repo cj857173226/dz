@@ -445,12 +445,15 @@ export default {
 				dataAll2[1][0].act.defaultStr = 1;
 				this.choiceDate.push(dataAll2[1][0]);
 			}
-			console.log(dataAll2, weeks, this.today, this.tomorrow, this.afterTomorrow);
+			// console.log(dataAll2, weeks, this.today, this.tomorrow, this.afterTomorrow);
+			let taday = this.today;
+			let tomorrow = this.tomorrow
 			this.date = dataAll2;
 			this.weeks = weeks;
 			this.choiceDate = this.choiceDate;
 			this.choiceDateArr = this.choiceDate;
-
+			this.$store.commit('startTimeStatus',taday);
+			this.$store.commit('endTimeStatus',tomorrow);
 			// console.log(this.choiceDate);
 		},
 		selectday: function(e) {

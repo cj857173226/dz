@@ -153,8 +153,20 @@ const store = new Vuex.Store({
 		curBedOption: null,
 		// 初始添加入住人勾选获取的索引数组
 		addCheckin: [],
+		startTime:'', // 开始时间
+		endTime:'', // 结束时间
 	},
 	mutations: {
+		// 开始时间
+		startTimeStatus(state,str){
+			state.startTime = str
+			console.log(state,str);
+			
+		},
+		// 结束时间
+		endTimeStatus(state,is){
+			state.endTime = is
+		},
 		// 收货地址是否编辑状态更新
 		addressEditStatus(state, is) {
 			state.isEditAddress = is;

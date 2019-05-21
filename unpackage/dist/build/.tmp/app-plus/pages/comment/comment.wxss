@@ -24,18 +24,18 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-4ee73f10 {
+.contanier.data-v-b3346bdc {
   width: 100%;
   padding: 0 30rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 14px;
 }
-.contanier .comment-box.data-v-4ee73f10 {
+.contanier .comment-box.data-v-b3346bdc {
     border-bottom: 1px solid #efefef;
     margin-top: 30rpx;
 }
-.contanier .comment-box .top-box.data-v-4ee73f10 {
+.contanier .comment-box .top-box.data-v-b3346bdc {
       width: 100%;
       display: -webkit-box;
       display: -webkit-flex;
@@ -46,31 +46,31 @@
           -ms-flex-align: center;
               align-items: center;
 }
-.contanier .comment-box .top-box .userphoto.data-v-4ee73f10 {
+.contanier .comment-box .top-box .userphoto.data-v-b3346bdc {
         width: 80rpx;
         height: 80rpx;
         border-radius: 50%;
 }
-.contanier .comment-box .top-box .nickname-check-in-time.data-v-4ee73f10 {
+.contanier .comment-box .top-box .nickname-check-in-time.data-v-b3346bdc {
         margin-left: 20rpx;
 }
-.contanier .comment-box .top-box .nickname-check-in-time .nickname.data-v-4ee73f10 {
+.contanier .comment-box .top-box .nickname-check-in-time .nickname.data-v-b3346bdc {
           font-weight: 600;
 }
-.contanier .comment-box .top-box .nickname-check-in-time .check-in-time.data-v-4ee73f10 {
+.contanier .comment-box .top-box .nickname-check-in-time .check-in-time.data-v-b3346bdc {
           font-size: 12px;
           color: #999;
 }
-.contanier .comment-box .comment-content.data-v-4ee73f10 {
+.contanier .comment-box .comment-content.data-v-b3346bdc {
       margin-top: 10rpx;
 }
-.contanier .comment-box .landlord-reply.data-v-4ee73f10 {
+.contanier .comment-box .landlord-reply.data-v-b3346bdc {
       width: 100%;
       padding: 20rpx 30rpx;
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
 }
-.contanier .comment-box .landlord-reply .landlord-reply-top.data-v-4ee73f10 {
+.contanier .comment-box .landlord-reply .landlord-reply-top.data-v-b3346bdc {
         width: 100%;
         display: -webkit-box;
         display: -webkit-flex;
@@ -85,7 +85,7 @@
             -ms-flex-pack: justify;
                 justify-content: space-between;
 }
-.contanier .comment-box .landlord-reply .landlord-reply-top .left-reply.data-v-4ee73f10 {
+.contanier .comment-box .landlord-reply .landlord-reply-top .left-reply.data-v-b3346bdc {
           display: -webkit-box;
           display: -webkit-flex;
           display: -ms-flexbox;
@@ -95,17 +95,17 @@
               -ms-flex-align: center;
                   align-items: center;
 }
-.contanier .comment-box .landlord-reply .landlord-reply-top .left-reply .sign.data-v-4ee73f10 {
+.contanier .comment-box .landlord-reply .landlord-reply-top .left-reply .sign.data-v-b3346bdc {
             width: 6rpx;
             height: 28rpx;
             background: #f05b72;
             margin-right: 20rpx;
 }
-.contanier .comment-box .landlord-reply .landlord-reply-top .time.data-v-4ee73f10 {
+.contanier .comment-box .landlord-reply .landlord-reply-top .time.data-v-b3346bdc {
           font-size: 24rpx;
           color: #888888;
 }
-.contanier .comment-box .landlord-reply .landlord-reply-center.data-v-4ee73f10 {
+.contanier .comment-box .landlord-reply .landlord-reply-center.data-v-b3346bdc {
         width: 100%;
         margin-top: 10rpx;
         padding-bottom: 20rpx;

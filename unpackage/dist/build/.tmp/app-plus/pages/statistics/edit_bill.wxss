@@ -29,17 +29,17 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.edit_bill_page.data-v-0e6e5e84 {
+.edit_bill_page.data-v-2ba8a203 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0 20rpx;
 }
-.edit_bill_page .edit_bill_form.data-v-0e6e5e84 {
+.edit_bill_page .edit_bill_form.data-v-2ba8a203 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
 }
-.edit_bill_page .edit_bill_form .form_item.data-v-0e6e5e84 {
+.edit_bill_page .edit_bill_form .form_item.data-v-2ba8a203 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
@@ -54,7 +54,7 @@ page {
               align-items: center;
       border-bottom: 1px solid #eaeaea;
 }
-.edit_bill_page .edit_bill_form .form_item .icon.data-v-0e6e5e84 {
+.edit_bill_page .edit_bill_form .form_item .icon.data-v-2ba8a203 {
         height: 100%;
         width: 60rpx;
         color: #AAAAAA;
@@ -71,10 +71,10 @@ page {
             -ms-flex-pack: center;
                 justify-content: center;
 }
-.edit_bill_page .edit_bill_form .form_item .icon .iconfont.data-v-0e6e5e84 {
+.edit_bill_page .edit_bill_form .form_item .icon .iconfont.data-v-2ba8a203 {
           font-size: 32rpx;
 }
-.edit_bill_page .edit_bill_form .form_item .label.data-v-0e6e5e84 {
+.edit_bill_page .edit_bill_form .form_item .label.data-v-2ba8a203 {
         height: 100%;
         width: 140rpx;
         display: -webkit-box;
@@ -86,16 +86,16 @@ page {
             -ms-flex-align: center;
                 align-items: center;
 }
-.edit_bill_page .edit_bill_form .form_item .content_wrap.data-v-0e6e5e84 {
+.edit_bill_page .edit_bill_form .form_item .content_wrap.data-v-2ba8a203 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         width: calc(100% - 220rpx);
 }
-.edit_bill_page .edit_bill_form .form_item .content_wrap .no_data.data-v-0e6e5e84 {
+.edit_bill_page .edit_bill_form .form_item .content_wrap .no_data.data-v-2ba8a203 {
           text-align: right;
           color: #cccccc;
 }
-.edit_bill_page .edit_bill_form .form_item .content_wrap .content.data-v-0e6e5e84 {
+.edit_bill_page .edit_bill_form .form_item .content_wrap .content.data-v-2ba8a203 {
           width: 100%;
           overflow: hidden;
           -o-text-overflow: ellipsis;
@@ -104,37 +104,37 @@ page {
           text-align: right;
           color: #AAAAAA;
 }
-.edit_bill_page .edit_bill_form .form_item .content_wrap input.data-v-0e6e5e84 {
+.edit_bill_page .edit_bill_form .form_item .content_wrap input.data-v-2ba8a203 {
           text-align: right;
 }
-.edit_bill_page .edit_bill_form .form_item .note.data-v-0e6e5e84 {
+.edit_bill_page .edit_bill_form .form_item .note.data-v-2ba8a203 {
         width: 100%;
 }
-.edit_bill_page .edit_bill_form .form_item .unit.data-v-0e6e5e84,
-      .edit_bill_page .edit_bill_form .form_item .after-icon.data-v-0e6e5e84 {
+.edit_bill_page .edit_bill_form .form_item .unit.data-v-2ba8a203,
+      .edit_bill_page .edit_bill_form .form_item .after-icon.data-v-2ba8a203 {
         height: 100%;
         width: 60rpx;
         text-align: center;
 }
-.edit_bill_page .edit_bill_form .form_item .unit.data-v-0e6e5e84 {
+.edit_bill_page .edit_bill_form .form_item .unit.data-v-2ba8a203 {
         line-height: 86rpx;
 }
-.edit_bill_page .edit_bill_form .form_item .after-icon.data-v-0e6e5e84 {
+.edit_bill_page .edit_bill_form .form_item .after-icon.data-v-2ba8a203 {
         line-height: 90rpx;
 }
-.edit_bill_page .edit_bill_form .form_item .after-icon .iconfont.data-v-0e6e5e84 {
+.edit_bill_page .edit_bill_form .form_item .after-icon .iconfont.data-v-2ba8a203 {
           display: inline-block;
           margin-top: 4rpx;
           font-size: 32rpx;
           color: #cccccc;
 }
-.edit_bill_page .edit_bill_form .note_item.data-v-0e6e5e84 {
+.edit_bill_page .edit_bill_form .note_item.data-v-2ba8a203 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
       padding: 20rpx 0;
 }
-.edit_bill_page .edit_bill_form .note_item .label.data-v-0e6e5e84 {
+.edit_bill_page .edit_bill_form .note_item .label.data-v-2ba8a203 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         width: 100%;
@@ -147,7 +147,7 @@ page {
             -ms-flex-align: center;
                 align-items: center;
 }
-.edit_bill_page .edit_bill_form .note_item .label .icon.data-v-0e6e5e84 {
+.edit_bill_page .edit_bill_form .note_item .label .icon.data-v-2ba8a203 {
           width: 60rpx;
           color: #AAAAAA;
           display: -webkit-box;
@@ -163,15 +163,15 @@ page {
               -ms-flex-pack: center;
                   justify-content: center;
 }
-.edit_bill_page .edit_bill_form .note_item .label .icon .iconfont.data-v-0e6e5e84 {
+.edit_bill_page .edit_bill_form .note_item .label .icon .iconfont.data-v-2ba8a203 {
             font-size: 32rpx;
 }
-.edit_bill_page .edit_bill_form .note_item .note.data-v-0e6e5e84 {
+.edit_bill_page .edit_bill_form .note_item .note.data-v-2ba8a203 {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         padding: 16rpx;
 }
-.edit_bill_page .edit_bill_form .note_item .note .content.data-v-0e6e5e84 {
+.edit_bill_page .edit_bill_form .note_item .note .content.data-v-2ba8a203 {
           -webkit-box-sizing: border-box;
                   box-sizing: border-box;
           width: 100%;
@@ -181,7 +181,7 @@ page {
           padding: 20rpx;
           color: #AAAAAA;
 }
-.edit_bill_page .del_btn.data-v-0e6e5e84 {
+.edit_bill_page .del_btn.data-v-2ba8a203 {
     color: #AAAAAA;
     margin-top: 40rpx;
 }

@@ -165,12 +165,12 @@ export default {
 	onLoad() {
     const _that = this;
     helper.isLogin();
-    // uni.getStorage({
-    //   key:'dz_userInfo',
-    //   success: function(res) {
-    //     _that.reveal = res.data.isFangDong
-    //   }
-    // })
+    uni.getStorage({
+      key:'dz_userInfo',
+      success: function(res) {
+        _that.reveal = res.data.isFangDong
+      }
+    })
 	},
   methods: {
     onClickItem(index) {

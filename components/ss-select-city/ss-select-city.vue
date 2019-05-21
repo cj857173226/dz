@@ -71,7 +71,7 @@
         this.scrollIntoId = letter === '#' ? 'current' : letter
       },
       onSelect(city) {
-        this.current = city
+        // this.current = city
         this.$emit('input', city)
         this.$emit('on-select', city)
       }
