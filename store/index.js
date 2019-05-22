@@ -155,18 +155,41 @@ const store = new Vuex.Store({
 		addCheckin: [],
 		startTime:'', // 开始时间
 		endTime:'', // 结束时间
+		presentCity:'', // 当前城市
+		invoice:false, // 是否开发票
+		// 创建订单详情
+		orderDetails:{}, 
 	},
 	mutations: {
 		// 开始时间
 		startTimeStatus(state,str){
 			state.startTime = str
 			console.log(state,str);
-			
 		},
 		// 结束时间
 		endTimeStatus(state,is){
 			state.endTime = is
 		},
+		// 当前城市更新
+		presentCityFn(state,str){
+			state.presentCity = str
+		},
+		// 是否开发票更新
+		invoiceFn(state,is){
+			state.invoice = is
+		},
+		// 订单详情更新
+		orderDetailsFn(state,obj){
+			state.orderDetails = obj
+		},
+		// // 最高价格更新
+		// tallFn(state,str){
+		// 	state.tall = str
+		// },
+		// // 宜居人数更新
+		// livableFn(state,str){
+		// 	state.livable = str
+		// },
 		// 收货地址是否编辑状态更新
 		addressEditStatus(state, is) {
 			state.isEditAddress = is;

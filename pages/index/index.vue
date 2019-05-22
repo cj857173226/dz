@@ -220,12 +220,15 @@
 					url: `/pages/selecteds/selecteds?mold=index&city=${ressCity}&site=${site}`
 				})
 			},
+			// 获取当前城市
 			cityGps() {
 				const _this = this;
 				_this.amapPlugin.getRegeo({
 					success: (data) => {  
 						let dataCity = data[0].regeocodeData.addressComponent.city;
 						_this.addressName = dataCity.substr(0,dataCity.length-1);
+						// 把当前城市存进状态机
+						_this.$store.commit('presentCityFn',dataCity.substr(0,dataCity.length-1))
 					},
 					fail:function(info){
 						let infos = JSON.stringify(info) 

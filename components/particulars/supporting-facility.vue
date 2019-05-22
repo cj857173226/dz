@@ -24,7 +24,7 @@ export default {
   props: ["facility"],
   mounted() {
     let data = this.facility; // 拿到从父组件穿过来的参数
-    console.log(data);
+    // console.log(data);
     if (data != null) {
       // 循环
     data.forEach(element => {

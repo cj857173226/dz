@@ -1,2 +1,2 @@
 <import src="./landlord_introduced.vue.wxml" />
-    <template is="1892b06e" data="{{ ...$root['0'], $root }}"/>
+    <template is="c0e246ee" data="{{ ...$root['0'], $root }}"/>

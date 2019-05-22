@@ -65,6 +65,18 @@
 			}
 		},
 		{
+			"path": "pages/particulars/rule",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/particulars/invoice",
+			"style": {
+				"navigationBarTitleText": "开具发票"
+			}
+		},
+		{
 			"path": "pages/particulars/pay",
 			"style": {
 				"navigationBarTitleText": "支付"
@@ -74,6 +86,12 @@
 			"path": "pages/selecteds/selecteds",
 			"style": {
 				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/orderList/order_details",
+			"style": {
+				"navigationBarTitleText": "订单详情"
 			}
 		},
 		{

@@ -135,6 +135,7 @@ export default {
     this.amapPlugin = new amap.AMapWX({  
       key: this.key  
     });
+    // console.log(this.$store.state.presentCity)
     this.city = option.city;
     this.place = option.site;
     this.low = option.low;

@@ -82,7 +82,7 @@ export default {
 		});
 		this.cityGps()
 	},
-  // 有上角清楚事件
+  // 有上角清除事件
   onNavigationBarButtonTap(e){
     console.log('11111',e)
     this.low = ''; // 清空最低价
@@ -109,23 +109,26 @@ export default {
           genre.push(array[i].type)
         }
       }
-      this.ary = genre.join('|')
+      this.ary = genre.join('|'); // 拼接字符串
+      // this.$store.commit('leasetypeFn',genre.join('|'))
     },
     // 最低的失焦事件
     lowBulr(e){
       this.low = e.detail.value;
+      // this.$store.commit('lowFn',e.detail.value)
     },
     // 最高的失焦事件
     tallBulr(e){
       this.tall = e.detail.value;
+      // this.$store.commit('tallFn',e.detail.value)
     },
     // 最多宜居单选触发事件
     radioChange(index,type){
       // 判断type的值，如果是10和0则livable为空
       if (type != '10' && type != '0') {
         console.log('1');
-        
         this.livable = type
+        // this.$store.commit('livableFn',type)
       } else {
         console.log('2');
         this.livable = ''

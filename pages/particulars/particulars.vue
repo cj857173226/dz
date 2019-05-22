@@ -72,12 +72,12 @@
 			<house_map :lat="latitude" :log="longitude"></house_map>
 			<view class="cantainer-description-box">
 				<view class="title">房间描述</view>
-				<view class="introduce" :class="isTrue === false?'introduce':'introduces'" v-html="roomInnerIntro"></view>
-				<view class="btn-box">
+				<view class="introduce" v-html="roomInnerIntro"></view>
+				<!-- <view class="btn-box">
 					<button class="mini-btn btn-the-globe" type="primary" size="mini" @tap="clickBtn">
 						查看全部描述
 					</button>
-				</view>
+				</view> -->
 				<image class="meinv-img" :src="http+headImageUrl"></image>
 				<view class="details-of-the-room-box">
 					<view class="details-of-the-room-title">房间详情</view>
@@ -121,7 +121,7 @@
 					<view class="grades-box">
 						<view class="grades-contenr">
 							<!-- 星星评分组件 -->
-							<uni-rate size="20" disabled="false" :value="goodRate"></uni-rate>
+							<uni-rate size="20" disabled="true" :value="goodRate"></uni-rate>
 						</view>
 						<view v-if="commentList.length>0" class="discuss-box">
 							<view v-for="(v,i) in commentList" :key="i" class="criticism">
@@ -760,7 +760,7 @@
 
 			.introduce {
 				width: 610upx;
-				height: 136upx;
+				height: 100%;
 				text-align: center;
 				text-overflow: ellipsis;
 				overflow: hidden;

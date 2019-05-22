@@ -1,172 +1,9 @@
 <template>
   <view class="unclosed-contanier">
-    <view v-if="waitingPayment.length > 0">
-      <view class="conter-box" v-for="(item,i) in waitingPayment" :key="i">
-        <view class="img-box">
-          <image class="obligation-img" :src="item.lodgeUnitImageUrl === null ? '../../static/images/meitu3.jpg' : shortHttp+item.lodgeUnitImageUrl"/>
-          <view class="title">{{item.lodgeUnitName === null ? '占无名称' : item.lodgeUnitName}}</view>
-          <view class="state">{{item.state}}</view>
-        </view>
-        <view class="price-endtiem-box">
-          <view style="text-align: left;">
-            <view>
-              金额：共
-              <text style="color:#ef5b72;margin-right:30upx;">{{item.actualTotalPrice}}</text>元
-            </view>
-            <view style="font-size:12px;margin:10upx 0;">入住日期：{{item.startDate}}/{{item.endDate}}</view>
-            <!-- <view>
-              剩余时间
-              <text>30:00</text>
-            </view> -->
-          </view>
-          <view style="text-align: right;">
-            <!-- <text>等待客户入住</text> -->
-            <view>等待支付</view>
-            <view>
-              入住天数：
-              <text>{{item.dayCount}}天</text>
-            </view>
-            <view style="display: flex;flex-direction: row;">
-              <!-- <view class="btn" @tap="clickCancel(item.bookOrderId)">取消订单</view> -->
-              <view class="btn" @tap="clickPay(item.bookOrderId)">支付</view>
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
-    <view v-if="hasBeen.length > 0">
-      <view class="has-been-in-box" v-for="(item,i) in hasBeen" :key="i">
-        <view class="has-been-in-img-box">
-          <image class="has-been-in-img" :src="item.lodgeUnitImageUrl === null ? '../../static/images/meitu3.jpg' : shortHttp+item.lodgeUnitImageUrl" />
-          <view class="title">{{item.lodgeUnitName === null ? '占无名称' : item.lodgeUnitName}}</view>
-          <view class="state">{{item.state}}</view>
-        </view>
-        <view class="price-endtiem-box">
-          <view style="text-align: left;">
-            <view>
-              金额：共
-              <text style="color:#ef5b72;margin-right:30upx;">{{item.actualTotalPrice}}</text>元
-            </view>
-            <view style="font-size:12px;margin:10upx 0;">入住日期：{{item.startDate}}/{{item.endDate}}</view>
-            <!-- <view>剩余时间<text>30:00</text></view> -->
-          </view>
-          <view style="text-align: right;">
-            <!-- <text>等待客户入住</text> -->
-            <view class="check-out-btn" @tap.stop="clickCheckOut(item.bookOrderId,'out')">退房</view>
-            <view>
-              入住天数：
-              <text>{{item.dayCount}}天</text>
-            </view>
-            <!-- <view style="display: flex;flex-direction: row;">
-            <view class="btn">取消</view>
-            <view class="btn">支付</view>
-            </view>-->
-          </view>
-        </view>
-      </view>
-    </view>
-    <!-- <view v-if="waitingCheck.length > 0">
-      <view class="has-been-in-box">
-        <view class="has-been-in-img-box">
-          <image class="has-been-in-img" src="../../static/images/meitu3.jpg"/>
-          <view class="title">名称</view>
-          <view class="state">待入住</view>
-        </view>
-        <view class="price-endtiem-box">
-          <view style="text-align: left;">
-            <view>
-              金额：共
-              <text style="color:#ef5b72;margin-right:30upx;">1000.00</text>元
-            </view>
-            <view style="font-size:12px;margin:10upx 0;">入住日期：2019/4/9-2019/4/15</view>
-          </view>
-          <view style="text-align: right;">
-            <view style="display:flex;align-items: center;flex-direction: row;">
-              <view class="check-out-btn" >退房</view>
-              <view class="check-out-btn">确认入住</view>
-            </view>
-            <view>
-              入住天数：
-              <text>1天</text>
-            </view>
-          </view>
-        </view>
-      </view>
-    </view> -->
-    <view v-if="affirm.length > 0">
-      <view class="has-been-in-box" v-for="(item,i) in affirm" :key="i" @tap="clickDetails()">
-        <view class="has-been-in-img-box">
-          <image
-            class="has-been-in-img"
-            :src="item.lodgeUnitImageUrl === null ? '../../static/images/meitu3.jpg' : shortHttp+item.lodgeUnitImageUrl"
-          />
-          <view class="title">{{item.lodgeUnitName === null ? '占无名称' : item.lodgeUnitName}}</view>
-          <view class="state">{{item.state}}</view>
-        </view>
-        <view class="price-endtiem-box">
-          <view style="text-align: left;">
-            <view>
-              金额：共
-              <text style="color:#ef5b72;margin-right:30upx;">{{item.actualTotalPrice}}</text>元
-            </view>
-            <view style="font-size:12px;margin:10upx 0;">入住日期：{{item.startDate}}/{{item.endDate}}</view>
-            <!-- <view>剩余时间<text>30:00</text></view> -->
-          </view>
-          <view style="text-align: right;">
-            <text>等待房东确认</text>
-            <!-- <view class="check-out-btn">退房</view> -->
-            <view>
-              入住天数：
-              <text>{{item.dayCount}}天</text>
-            </view>
-            <!-- <view style="display: flex;flex-direction: row;">
-            <view class="btn">取消</view>
-            <view class="btn">支付</view>
-            </view>-->
-          </view>
-        </view>
-      </view>
-    </view>
-    <view v-if="refund.length > 0">
-      <view class="has-been-in-box" v-for="(item,i) in refund" :key="i" @tap="clickDetails()">
-        <view class="has-been-in-img-box">
-          <image
-            class="has-been-in-img"
-            :src="item.lodgeUnitImageUrl === null ? '../../static/images/meitu3.jpg' : shortHttp+item.lodgeUnitImageUrl"
-          />
-          <view class="title">{{item.lodgeUnitName === null ? '占无名称' : item.lodgeUnitName}}</view>
-          <view class="state">{{item.state}}</view>
-        </view>
-        <view class="price-endtiem-box">
-          <view style="text-align: left;">
-            <view>
-              金额：共
-              <text style="color:#ef5b72;margin-right:30upx;">{{item.actualTotalPrice}}</text>元
-            </view>
-            <view style="font-size:12px;margin:10upx 0;">入住日期：{{item.startDate}}/{{item.endDate}}</view>
-            <!-- <view>剩余时间<text>30:00</text></view> -->
-          </view>
-          <view style="text-align: right;">
-            <text>等待房东确认</text>
-            <!-- <view class="check-out-btn">退房</view> -->
-            <view>
-              入住天数：
-              <text>{{item.dayCount}}天</text>
-            </view>
-            <!-- <view style="display: flex;flex-direction: row;">
-            <view class="btn">取消</view>
-            <view class="btn">支付</view>
-            </view>-->
-          </view>
-        </view>
-      </view>
-      <view v-if="wardRoundDoctor.length > 0">
-        <view
-          class="has-been-in-box"
-          v-for="(item,i) in wardRoundDoctor"
-          :key="i"
-          @tap="clickDetails()"
-        >
+    <view v-if="datas.length > 0">
+      <!-- 待确定 -->
+      <view v-if="affirm.length > 0">
+        <view class="has-been-in-box" v-for="(item,i) in affirm" :key="i" @tap="clickDetails(item.bookOrderId)">
           <view class="has-been-in-img-box">
             <image
               class="has-been-in-img"
@@ -185,15 +22,108 @@
               <!-- <view>剩余时间<text>30:00</text></view> -->
             </view>
             <view style="text-align: right;">
-              <text>等待房东查房...</text>
+              <text>等待房东确认</text>
+              <!-- <view class="check-out-btn">退房</view> -->
+              <view>
+                入住天数：
+                <text>{{item.dayCount}}天</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 待支付 -->
+      <view v-if="waitingPayment.length > 0">
+        <view class="conter-box" v-for="(item,i) in waitingPayment" :key="i" @tap="clickDetails(i)">
+          <view class="img-box">
+            <image class="obligation-img" :src="item.lodgeUnitImageUrl === null ? '../../static/images/meitu3.jpg' : shortHttp+item.lodgeUnitImageUrl"/>
+            <view class="title">{{item.lodgeUnitName === null ? '占无名称' : item.lodgeUnitName}}</view>
+            <view class="state">{{item.state}}</view>
+          </view>
+          <view class="price-endtiem-box">
+            <view style="text-align: left;">
+              <view>
+                金额：共
+                <text style="color:#ef5b72;margin-right:30upx;">{{item.actualTotalPrice}}</text>元
+              </view>
+              <view style="font-size:12px;margin:10upx 0;">入住日期：{{item.startDate}}/{{item.endDate}}</view>
+              <!-- <view>
+                剩余时间
+                <text>30:00</text>
+              </view> -->
+            </view>
+            <view style="text-align: right;">
+              <!-- <text>等待客户入住</text> -->
+              <view>等待支付</view>
+              <view>
+                入住天数：
+                <text>{{item.dayCount}}天</text>
+              </view>
+              <view style="display: flex;flex-direction: row;">
+                <!-- <view class="btn" @tap="clickCancel(item.bookOrderId)">取消订单</view> -->
+                <view class="btn" @tap="clickPay(item.bookOrderId)">支付</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 入住中 -->
+      <view v-if="hasBeen.length > 0">
+        <view class="has-been-in-box" v-for="(item,i) in hasBeen" :key="i">
+          <view class="has-been-in-img-box">
+            <image class="has-been-in-img" :src="item.lodgeUnitImageUrl === null ? '../../static/images/meitu3.jpg' : shortHttp+item.lodgeUnitImageUrl" />
+            <view class="title">{{item.lodgeUnitName === null ? '占无名称' : item.lodgeUnitName}}</view>
+            <view class="state">{{item.state}}</view>
+          </view>
+          <view class="price-endtiem-box">
+            <view style="text-align: left;">
+              <view>
+                金额：共
+                <text style="color:#ef5b72;margin-right:30upx;">{{item.actualTotalPrice}}</text>元
+              </view>
+              <view style="font-size:12px;margin:10upx 0;">入住日期：{{item.startDate}}/{{item.endDate}}</view>
+            </view>
+            <view style="text-align: right;">
+              <!-- <text>等待客户入住</text> -->
+              <view class="check-out-btn" @tap.stop="clickCheckOut(item.bookOrderId,'out')">退房</view>
+              <view>
+                入住天数：
+                <text>{{item.dayCount}}天</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 待退款 -->
+      <view v-if="refund.length > 0">
+        <view class="has-been-in-box" v-for="(item,i) in refund" :key="i" @tap="clickDetails()">
+          <view class="has-been-in-img-box">
+            <image
+              class="has-been-in-img"
+              :src="item.lodgeUnitImageUrl === null ? '../../static/images/meitu3.jpg' : shortHttp+item.lodgeUnitImageUrl"
+            />
+            <view class="title">{{item.lodgeUnitName === null ? '占无名称' : item.lodgeUnitName}}</view>
+            <view class="state">{{item.state}}</view>
+          </view>
+          <view class="price-endtiem-box">
+            <view style="text-align: left;">
+              <view>
+                金额：共
+                <text style="color:#ef5b72;margin-right:30upx;">{{item.actualTotalPrice}}</text>元
+              </view>
+              <view style="font-size:12px;margin:10upx 0;">入住日期：{{item.startDate}}/{{item.endDate}}</view>
+              <!-- <view>剩余时间<text>30:00</text></view> -->
+            </view>
+            <view style="text-align: right;">
+              <text>等待房东确认</text>
               <!-- <view class="check-out-btn">退房</view> -->
               <view>
                 入住天数：
                 <text>{{item.dayCount}}天</text>
               </view>
               <!-- <view style="display: flex;flex-direction: row;">
-            <view class="btn">取消</view>
-            <view class="btn">支付</view>
+              <view class="btn">取消</view>
+              <view class="btn">支付</view>
               </view>-->
             </view>
           </view>
@@ -241,6 +171,46 @@
           </view>
         </view>
       </view>
+      <!-- 待查房 -->
+      <view v-if="wardRoundDoctor.length > 0">
+        <view
+          class="has-been-in-box"
+          v-for="(item,i) in wardRoundDoctor"
+          :key="i"
+          @tap="clickDetails()"
+        >
+          <view class="has-been-in-img-box">
+            <image
+              class="has-been-in-img"
+              :src="item.lodgeUnitImageUrl === null ? '../../static/images/meitu3.jpg' : shortHttp+item.lodgeUnitImageUrl"
+            />
+            <view class="title">{{item.lodgeUnitName === null ? '占无名称' : item.lodgeUnitName}}</view>
+            <view class="state">{{item.state}}</view>
+          </view>
+          <view class="price-endtiem-box">
+            <view style="text-align: left;">
+              <view>
+                金额：共
+                <text style="color:#ef5b72;margin-right:30upx;">{{item.actualTotalPrice}}</text>元
+              </view>
+              <view style="font-size:12px;margin:10upx 0;">入住日期：{{item.startDate}}/{{item.endDate}}</view>
+              <!-- <view>剩余时间<text>30:00</text></view> -->
+            </view>
+            <view style="text-align: right;">
+              <text>等待房东查房...</text>
+              <!-- <view class="check-out-btn">退房</view> -->
+              <view>
+                入住天数：
+                <text>{{item.dayCount}}天</text>
+              </view>
+              <!-- <view style="display: flex;flex-direction: row;">
+            <view class="btn">取消</view>
+            <view class="btn">支付</view>
+              </view>-->
+            </view>
+          </view>
+        </view>
+      </view>
     </view>
     <view class="countless" v-else>
       <image style="width:100%;height: 700upx;" src="../../static/images/deault_list.png" mode="scaleToFill"></image>
@@ -271,7 +241,7 @@ export default {
       affirm: [], // 待确认
       generationCheck: [], // 带入住
       waitingPayment: [], // 等待支付
-      waitingCheck:[], 
+      // waitingCheck:[], 
       hasBeen: [], // 入住中
       refund: [], // 待退款
       wardRoundDoctor: [], // 待查房
@@ -279,12 +249,28 @@ export default {
       orderFromId:'', // 订单id
       content:'', // 提示信息
       status:'', // 状态
+      datas:[],
     };
   },
   methods: {
-    // 点击进入房间详情
-    clickDetails() {
-      console.log("点击进入房间详情");
+    // 点击进入订单详情
+    clickDetails(index) {
+      /* let orderDetails = {
+        lodgeUnitImageUrl:'', // 图片
+        lodgeUnitName:'', // 标题
+        state:'',// 状态
+        price:'', // 价格
+        startDate:'', // 入住时间
+        endDate:'',// 离开时间
+        dayCount:'',// 共住时间
+        name:'',//入住人信息
+        idcardno:'',// 身份证
+        mobile:'',//电话
+      }; */
+      this.$store.commit('orderDetailsFn',this.datas[index])
+      uni.navigateTo({
+        url:`/pages/orderList/order_details`
+      })
     },
     // 取消订单
     clickCancelOrder(id,type){
@@ -316,11 +302,12 @@ export default {
           if (res.data.status === "success") {
             let affirmData = []; // 待确认
             let generationCheckData = []; // 带入住
-            let waitingPaymentData = []; // 等待支付
+            let waitingPaymentData = []; // 待支付
             let hasBeenData = []; // 入住中
             let refundData = []; // 待退款
             let wardRoundDoctorData = []; // 待查房
             let dataList = res.data.content.orders;
+            _that.datas = dataList
             for (let i = 0; i < dataList.length; i++) {
               let state = dataList[i].state;
               // 判断状态

@@ -8,6 +8,8 @@
     "pages/particulars/editor_check_in",
     "pages/landlord_introduced/landlord_introduced",
     "pages/particulars/place_order",
+    "pages/particulars/rule",
+    "pages/particulars/invoice",
     "pages/particulars/pay",
     "pages/selecteds/selecteds",
     "pages/selecteds/more_screening",

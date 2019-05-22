@@ -48,7 +48,7 @@
         <text>代金券</text>
         <text style="color:rgb(191, 188, 188)">占代金券</text>
       </view>
-      <view class="voucher">
+      <view class="voucher" @click="clickIncoice">
         <text>开具发票</text>
         <text class="iconfont">&#xe65e;</text>
       </view>
@@ -69,11 +69,11 @@
     </view>
     <view class="rule-protocol-box">
       <view class="rule-box">
-        <view class="unsubscribe-rules-box">
+        <view class="unsubscribe-rules-box" @click="clickRule('unsubscribe')">
           <text class="unsubscribe-rules-title">退订规则</text>
           <view class="unsubscribe-rules-conter">根据房顶设置的交易规则你将不能享受无责取消权益。若退订将被扣除取消订单哪弄if糊弄if年全年富婆安防破案翻盘发票</view>
         </view>
-        <view class="regulation-box">
+        <view class="regulation-box" @click="clickRule('check')">
           <text class="regulation-title">入住规定</text>
           <view class="regulation-conter">不允许做饭。不允许带宠物，不允许聚会。允许吸烟。不接待境外人士。入那就AVOK案破案破昂破案AV哪骗你破</view>
         </view>
@@ -308,12 +308,25 @@ export default {
       uni.navigateTo({
         url:`/pages/particulars/editor_check_in?name=${name}&idcardno=${idcardno}&id=${id}&type=indent`
       })
+    },
+    // 根据传过来的参数判断进入规则页面
+    clickRule(type){
+      console.log(type);
+      uni.navigateTo({
+        url:`/pages/particulars/rule?mold=${type}`
+      })
+    },
+    clickIncoice(){
+      uni.navigateTo({
+        url:'/pages/particulars/invoice'
+      })
     }
   },
   onShow(){
     let listData=[];
     let data = this.$store.state.addCheckin;
     this.listData = data
+    console.log(this.$store.state.invoice) 
   }
 }
 </script>
