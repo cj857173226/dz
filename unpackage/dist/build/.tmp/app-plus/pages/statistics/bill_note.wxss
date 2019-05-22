@@ -29,12 +29,12 @@ page{
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.bill_note_page.data-v-5cee0b1d {
+.bill_note_page.data-v-1e3d2203 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 40rpx 30rpx 20rpx;
 }
-.bill_note_page .bill_note_wrap.data-v-5cee0b1d {
+.bill_note_page .bill_note_wrap.data-v-1e3d2203 {
     position: relative;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -42,24 +42,24 @@ page{
     border: 1px solid #cccccc;
     border-radius: 8rpx;
 }
-.bill_note_page .bill_note_wrap textarea.data-v-5cee0b1d {
+.bill_note_page .bill_note_wrap textarea.data-v-1e3d2203 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
       height: 100%;
       padding: 20rpx;
 }
-.bill_note_page .bill_note_wrap .control.data-v-5cee0b1d {
+.bill_note_page .bill_note_wrap .control.data-v-1e3d2203 {
       position: absolute;
       right: 10rpx;
       bottom: 10rpx;
       font-size: 28rpx;
       text-align: right;
 }
-.bill_note_page .bill_note_wrap .control .cur.data-v-5cee0b1d {
+.bill_note_page .bill_note_wrap .control .cur.data-v-1e3d2203 {
         color: #F05B72;
 }
-.bill_note_page .bill_note_wrap .control .total.data-v-5cee0b1d {
+.bill_note_page .bill_note_wrap .control .total.data-v-1e3d2203 {
         color: #cccccc;
 }
 

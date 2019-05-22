@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 <template name="443ecd56"><view class="_view M443ecd56 segmented-control {{styleType}}" style=" {{wrapStyle}}"><view class="_view M443ecd56 segmented-control-item {{styleType}}" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'443ecd56-0-'+index}}" data-comkey="{{$k}}" wx:for="{{values}}" wx:for-index="index" wx:for-item="item" style=" {{index === currentIndex ? activeStyle : itemStyle}}">{{item}}</view></view></template>
-=======
-<template name="cac1dfa0"><view class="_view Mcac1dfa0 segmented-control {{styleType}}" style=" {{wrapStyle}}"><view class="_view Mcac1dfa0 segmented-control-item {{styleType}}" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'cac1dfa0-0-'+index}}" data-comkey="{{$k}}" wx:for="{{values}}" wx:for-index="index" wx:for-item="item" style=" {{index === currentIndex ? activeStyle : itemStyle}}">{{item}}</view></view></template>
->>>>>>> 85e1bcbd5b462704f06f21f14baf4250ed2ccd4b

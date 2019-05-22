@@ -29,14 +29,14 @@ page {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.rent_type_page.data-v-b7673dc0 {
+.rent_type_page.data-v-ac4415e6 {
   position: relative;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   min-height: 100%;
   padding: 0 30rpx 160rpx;
 }
-.rent_type_page .head.data-v-b7673dc0 {
+.rent_type_page .head.data-v-ac4415e6 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     height: 280rpx;
@@ -56,16 +56,16 @@ page {
     font-size: 36rpx;
     color: #333333;
 }
-.rent_type_page .head .key.data-v-b7673dc0 {
+.rent_type_page .head .key.data-v-ac4415e6 {
       font-weight: 800;
       color: #000000;
 }
-.rent_type_page .type_check_wrap.data-v-b7673dc0 {
+.rent_type_page .type_check_wrap.data-v-ac4415e6 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
 }
-.rent_type_page .type_check_wrap .check_item.data-v-b7673dc0 {
+.rent_type_page .type_check_wrap .check_item.data-v-ac4415e6 {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       width: 100%;
@@ -80,10 +80,10 @@ page {
           -ms-flex-direction: row;
               flex-direction: row;
 }
-.rent_type_page .type_check_wrap .check_item .check_btn_wrap.data-v-b7673dc0 {
+.rent_type_page .type_check_wrap .check_item .check_btn_wrap.data-v-ac4415e6 {
         width: 60rpx;
 }
-.rent_type_page .type_check_wrap .check_item .check_btn_wrap .check_btn.data-v-b7673dc0 {
+.rent_type_page .type_check_wrap .check_item .check_btn_wrap .check_btn.data-v-ac4415e6 {
           -webkit-box-sizing: border-box;
                   box-sizing: border-box;
           margin-top: 4rpx;
@@ -104,10 +104,10 @@ page {
               -ms-flex-align: center;
                   align-items: center;
 }
-.rent_type_page .type_check_wrap .check_item .check_btn_wrap .check_on.data-v-b7673dc0 {
+.rent_type_page .type_check_wrap .check_item .check_btn_wrap .check_on.data-v-ac4415e6 {
           border: 1px solid #F05B72;
 }
-.rent_type_page .type_check_wrap .check_item .check_btn_wrap .check_on.data-v-b7673dc0::after {
+.rent_type_page .type_check_wrap .check_item .check_btn_wrap .check_on.data-v-ac4415e6::after {
             content: '';
             display: block;
             width: 24rpx;
@@ -115,20 +115,20 @@ page {
             background: #F05B72;
             border-radius: 50%;
 }
-.rent_type_page .type_check_wrap .check_item .check_content.data-v-b7673dc0 {
+.rent_type_page .type_check_wrap .check_item .check_content.data-v-ac4415e6 {
         width: calc(100% - 60rpx);
         padding-bottom: 40rpx;
         border-bottom: 1px solid #eaeaea;
 }
-.rent_type_page .type_check_wrap .check_item .check_content .type.data-v-b7673dc0 {
+.rent_type_page .type_check_wrap .check_item .check_content .type.data-v-ac4415e6 {
           font-size: 36rpx;
           margin-bottom: 20rpx;
 }
-.rent_type_page .type_check_wrap .check_item .check_content .desc.data-v-b7673dc0 {
+.rent_type_page .type_check_wrap .check_item .check_content .desc.data-v-ac4415e6 {
           font-size: 32rpx;
           color: #aaaaaa;
 }
-.rent_type_page .bottom.data-v-b7673dc0 {
+.rent_type_page .bottom.data-v-ac4415e6 {
     position: absolute;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;

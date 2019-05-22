@@ -137,13 +137,13 @@
 				endTime: '', // 结束时间
 				collectIndex:null, // 收藏房源的索引
 				amapPlugin: null,  
-        key: 'ff60afce471bf105359e78dfc05feed4' // 高德小程序key
+				key: 'ff60afce471bf105359e78dfc05feed4' // 高德小程序key
 			};
 		},
 		onLoad() {
 			this.amapPlugin = new amap.AMapWX({  
-        key: this.key  
-      });
+				key: this.key  
+			});
 			this.collectReqList(); // 收藏列表
 			//判断是否登录
 			helper.isLogin();

@@ -1,2 +1,2 @@
 <import src="./releaseManage.vue.wxml" />
-    <template is="f7381fce" data="{{ ...$root['0'], $root }}"/>
+    <template is="9a7a9904" data="{{ ...$root['0'], $root }}"/>

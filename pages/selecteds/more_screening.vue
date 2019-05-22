@@ -40,6 +40,7 @@
 </template>
 <script>
 import { request } from '../../common/request';
+import amap from '../../common/amap-wx.js' // 高德小程序sdk
 export default {
   data () {
     return {
@@ -47,6 +48,12 @@ export default {
       tall:'', // 最低价格
       ary:'', // 出租类型选择搜索的值
       livable:'',// 宜居
+			addressName: '', 
+			weather: {  
+					hasData: false,  
+					data: []  
+			} ,
+			key: 'ff60afce471bf105359e78dfc05feed4', // 高德小程序key
       // isShow:false,
       iconList:[
         {title:'整套出租',icon:'icon-type_zhengtao',pitch:false,type:'room'},
@@ -69,6 +76,12 @@ export default {
     // current: '0'
     }
   },
+	onLoad(){
+		this.amapPlugin = new amap.AMapWX({  
+			key: this.key  
+		});
+		this.cityGps()
+	},
   // 有上角清楚事件
   onNavigationBarButtonTap(e){
     console.log('11111',e)
@@ -131,10 +144,27 @@ export default {
       let tallPrice = _this.tall; // 最高价
       let LeaseType = _this.ary; // 出租类型
       let livable = _this.livable; // 宜居人数
-      uni.navigateTo({
-        url:`/pages/selecteds/selecteds?mold=more&low=${lowPrice}&tall=${tallPrice}&lease=${LeaseType}&livable=${livable}`
+			let city = _this.addressName; // 当前城市
+      uni.redirectTo({
+        url:`/pages/selecteds/selecteds?mold=more&low=${lowPrice}&tall=${tallPrice}&lease=${LeaseType}&livable=${livable}&city=${city}`
       })
-    }
+    },
+		cityGps() {
+			const _this = this;
+			_this.amapPlugin.getRegeo({
+				success: (data) => {  
+					let dataCity = data[0].regeocodeData.addressComponent.city;
+					_this.addressName = dataCity.substr(0,dataCity.length-1);
+				},
+				fail:function(info){
+					let infos = JSON.stringify(info) 
+					uni.showToast({
+						title:info.errMsg,
+						icon:'none'
+					})
+				}
+			});
+		},
     
   }
 }

@@ -24,20 +24,20 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.contanier.data-v-4aa3e552 {
+.contanier.data-v-7aeddf76 {
   width: 100%;
   height: 100%;
   font-size: 28rpx;
   padding: 30rpx 0;
 }
-.contanier .price-box.data-v-4aa3e552 {
+.contanier .price-box.data-v-7aeddf76 {
     width: 100%;
     padding: 30rpx;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     background-color: #efefef;
 }
-.contanier .price-box .price-input.data-v-4aa3e552 {
+.contanier .price-box .price-input.data-v-7aeddf76 {
       width: 100%;
       display: -webkit-box;
       display: -webkit-flex;
@@ -53,7 +53,7 @@
               justify-content: space-between;
       margin-top: 30rpx;
 }
-.contanier .price-box .price-input .labes.data-v-4aa3e552 {
+.contanier .price-box .price-input .labes.data-v-7aeddf76 {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -63,18 +63,18 @@
             -ms-flex-align: center;
                 align-items: center;
 }
-.contanier .price-box .price-input .labes .input.data-v-4aa3e552 {
+.contanier .price-box .price-input .labes .input.data-v-7aeddf76 {
           width: 200rpx;
           margin-left: 10rpx;
           margin-right: 10rpx;
 }
-.contanier .rent-out-box.data-v-4aa3e552 {
+.contanier .rent-out-box.data-v-7aeddf76 {
     width: 100%;
     padding: 30rpx;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
-.contanier .rent-out-box .rent-out.data-v-4aa3e552 {
+.contanier .rent-out-box .rent-out.data-v-7aeddf76 {
       width: 100%;
       height: 100%;
       display: -webkit-box;
@@ -87,7 +87,7 @@
               align-items: center;
       margin-top: 30rpx;
 }
-.contanier .rent-out-box .rent-out .room-box.data-v-4aa3e552 {
+.contanier .rent-out-box .rent-out .room-box.data-v-7aeddf76 {
         width: 120rpx;
         display: -webkit-box;
         display: -webkit-flex;
@@ -102,7 +102,7 @@
                 justify-content: center;
         margin-right: 30rpx;
 }
-.contanier .rent-out-box .rent-out .room-box .room.data-v-4aa3e552 {
+.contanier .rent-out-box .rent-out .room-box .room.data-v-7aeddf76 {
           width: 80rpx;
           height: 80rpx;
           border: 2rpx dashed #000;
@@ -111,10 +111,10 @@
           line-height: 80rpx;
           margin-bottom: 10rpx;
 }
-.contanier .rent-out-box .rent-out .room-box .room .zhengtao.data-v-4aa3e552 {
+.contanier .rent-out-box .rent-out .room-box .room .zhengtao.data-v-7aeddf76 {
             font-size: 60rpx;
 }
-.contanier .rent-out-box .rent-out .room-boxs.data-v-4aa3e552 {
+.contanier .rent-out-box .rent-out .room-boxs.data-v-7aeddf76 {
         width: 120rpx;
         display: -webkit-box;
         display: -webkit-flex;
@@ -130,7 +130,7 @@
         margin-right: 30rpx;
         color: #f05b72;
 }
-.contanier .rent-out-box .rent-out .room-boxs .rooms.data-v-4aa3e552 {
+.contanier .rent-out-box .rent-out .room-boxs .rooms.data-v-7aeddf76 {
           width: 80rpx;
           height: 80rpx;
           border: 2rpx solid #f05b72;
@@ -139,14 +139,14 @@
           line-height: 80rpx;
           margin-bottom: 10rpx;
 }
-.contanier .max-livable-box.data-v-4aa3e552 {
+.contanier .max-livable-box.data-v-7aeddf76 {
     width: 100%;
     background-color: #efefef;
     padding: 30rpx;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
-.contanier .max-livable-box .radio-box.data-v-4aa3e552 {
+.contanier .max-livable-box .radio-box.data-v-7aeddf76 {
       width: 100%;
       display: -webkit-box;
       display: -webkit-flex;
@@ -176,7 +176,7 @@
         }
       } */
 }
-.contanier .max-livable-box .radio-box .radio.data-v-4aa3e552 {
+.contanier .max-livable-box .radio-box .radio.data-v-7aeddf76 {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -187,7 +187,7 @@
                 align-items: center;
         margin-top: 30rpx;
 }
-.contanier .max-livable-box .radio-box .radio .pitch.data-v-4aa3e552 {
+.contanier .max-livable-box .radio-box .radio .pitch.data-v-7aeddf76 {
           width: 50rpx;
           height: 50rpx;
           border-radius: 50%;
@@ -196,11 +196,11 @@
           line-height: 50rpx;
           margin-right: 20rpx;
 }
-.contanier .max-livable-box .radio-box .radio .pitch .xuanzhong.data-v-4aa3e552 {
+.contanier .max-livable-box .radio-box .radio .pitch .xuanzhong.data-v-7aeddf76 {
             font-size: 50rpx;
             color: #f05b72;
 }
-.contanier .btn-box.data-v-4aa3e552 {
+.contanier .btn-box.data-v-7aeddf76 {
     width: 100%;
     height: 140rpx;
     background: #fff;
@@ -213,7 +213,7 @@
     -webkit-box-shadow: 0 -2rpx 0 0  #b7b6b6;
             box-shadow: 0 -2rpx 0 0  #b7b6b6;
 }
-.contanier .btn-box .btn.data-v-4aa3e552 {
+.contanier .btn-box .btn.data-v-7aeddf76 {
       width: 100%;
       height: 80rpx;
       background: #f05b72;
