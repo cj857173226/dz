@@ -21,7 +21,7 @@ const isLogin = function() {
 
 //  手机号验证
 const phoneReg = function(phone) {
-	const phoneReg = /^[1][3,4,5,7,8][0-9]{9}$/;
+	const phoneReg = /^1[3456789]\d{9}$/;
 	if (phoneReg.test(phone)) {
 		return true
 	} else {
