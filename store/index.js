@@ -159,6 +159,8 @@ const store = new Vuex.Store({
 		invoice:false, // 是否开发票
 		// 创建订单详情
 		orderDetails:{}, 
+		invoiceId:'', // 发票id
+		invoiceCompany:'', // 发票公司
 	},
 	mutations: {
 		// 开始时间
@@ -182,14 +184,12 @@ const store = new Vuex.Store({
 		orderDetailsFn(state,obj){
 			state.orderDetails = obj
 		},
-		// // 最高价格更新
-		// tallFn(state,str){
-		// 	state.tall = str
-		// },
-		// // 宜居人数更新
-		// livableFn(state,str){
-		// 	state.livable = str
-		// },
+		invoiceIdFn(state,str){
+			state.invoiceId = str
+		},
+		invoiceCompanyFn(state,str){
+			state.invoiceCompany = str
+		},
 		// 收货地址是否编辑状态更新
 		addressEditStatus(state, is) {
 			state.isEditAddress = is;

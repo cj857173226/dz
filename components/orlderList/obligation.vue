@@ -3,7 +3,7 @@
     <view v-if="listData.length > 0">
       <view class="conter-box" v-for="(item,i) in listData" :key="i">
         <view class="img-box">
-          <image class="obligation-img" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrlg"/>
+          <image class="obligation-img" @tap="clickDetails(i)" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrlg"/>
           <view class="title">{{item.lodgeUnitName===null?'占无标题':item.lodgeUnitName}}</view>
         </view>
         <view class="price-endtiem-box">
@@ -32,6 +32,13 @@ export default {
     }
   },
   methods: {
+    // 点击进入订单详情
+    clickDetails(index) {
+      this.$store.commit('orderDetailsFn',this.listData[index])
+      uni.navigateTo({
+        url:`/pages/orderList/order_details`
+      })
+    },
     payRequest(){
       const _that = this;
       request({

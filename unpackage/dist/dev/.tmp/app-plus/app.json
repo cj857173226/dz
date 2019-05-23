@@ -12,6 +12,7 @@
     "pages/particulars/invoice",
     "pages/particulars/pay",
     "pages/selecteds/selecteds",
+    "pages/orderList/order_details",
     "pages/selecteds/more_screening",
     "pages/collection/collection",
     "pages/collection/new_group",

@@ -3,7 +3,7 @@
 		<button class="my-btn-block add_btn" @tap="handleInvoiceHead('add')"><text class="iconfont icon-jia">&nbsp;添加</text></button>
 		<scroll-view scroll-y class="invice_head_list_wrap" v-if="listData.length>0">
 			<view class="invice_head_list">
-				<view class="list_item" v-for="(item, index) in listData" :key="index">
+				<view class="list_item" @click="clickSelect(index)" v-for="(item, index) in listData" :key="index">
 					<view class="one_line type">发票类型:<text v-text="item.type==='common'?'电子普通发票':'专用发票'"></text></view>
 					<view class="one_line company">公司全称:<text>{{item.company}}</text> </view>
 					<view class="one_line number">纳税人识别号: <text>{{item.number}}</text></view>
@@ -75,7 +75,9 @@
 				]
 			};
 		},
-		onLoad() {
+		onLoad(option) {
+			console.log(option);
+			
 			this.getInvoiceHeadList()
 		},
 		onShow() {
@@ -116,6 +118,8 @@
 					url: '/wap/api/my.php?action=InvoiceList',
 					method:'POST',
 					success:(res)=>{
+						console.log(res);
+						
 						if(res.data.status === 'success'){
 							_this.listData = res.data.content;
 						}else{
@@ -126,6 +130,14 @@
 						uni.hideLoading()
 					}
 				})
+			},
+			// 选择抬头
+			clickSelect(i){
+				this.$store.commit('invoiceIdFn',this.listData[i].id);
+				this.$store.commit('invoiceCompanyFn',this.listData[i].company);
+				uni.navigateBack({
+        	delta:1
+      	})
 			}
 		}
 	}

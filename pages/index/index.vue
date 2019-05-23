@@ -138,12 +138,15 @@
 				collectIndex:null, // 收藏房源的索引
 				amapPlugin: null,  
 				key: 'ff60afce471bf105359e78dfc05feed4' // 高德小程序key
+				// key:'0bca5016f2d31e44ba02698e1b97f4c4'
 			};
 		},
 		onLoad() {
 			this.amapPlugin = new amap.AMapWX({  
 				key: this.key  
 			});
+			console.log(this.amapPlugin);
+			
 			this.collectReqList(); // 收藏列表
 			//判断是否登录
 			helper.isLogin();
@@ -222,6 +225,14 @@
 			},
 			// 获取当前城市
 			cityGps() {
+				// const _this = this;
+				// 		_this.amapPlugin.getRegeo({
+				// 	success: data => {
+				// 		// console.log(1)
+				// 		_this.city = data[0].regeocodeData.addressComponent.city.replace(/市/g,'')
+				// 		console.log(_this.city)
+				// 	}
+				// })
 				const _this = this;
 				_this.amapPlugin.getRegeo({
 					success: (data) => {  

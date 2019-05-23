@@ -39,6 +39,8 @@ page{
 }
 .contanier .switch-box.data-v-c1557508 {
     width: 100%;
+    margin-bottom: 30rpx;
+    padding-bottom: 30rpx;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -51,6 +53,26 @@ page{
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    border-bottom: 2rpx solid #d4d4d4;
+}
+.contanier .invoice-title-box.data-v-c1557508 {
+    width: 100%;
+    padding-bottom: 30rpx;
+    border-bottom: 2rpx solid #d4d4d4;
+}
+.contanier .invoice-title-box .invoice-title.data-v-c1557508 {
+      margin-bottom: 20rpx;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+}
+.contanier .invoice-title-box .invoice-title .jiantou.data-v-c1557508 {
+        color: #868686;
 }
 .contanier .btn-box.data-v-c1557508 {
     width: 100%;

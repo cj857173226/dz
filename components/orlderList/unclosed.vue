@@ -3,11 +3,12 @@
     <view v-if="datas.length > 0">
       <!-- 待确定 -->
       <view v-if="affirm.length > 0">
-        <view class="has-been-in-box" v-for="(item,i) in affirm" :key="i" @tap="clickDetails(item.bookOrderId)">
+        <view class="has-been-in-box" v-for="(item,i) in affirm" :key="i" >
           <view class="has-been-in-img-box">
             <image
               class="has-been-in-img"
               :src="item.lodgeUnitImageUrl === null ? '../../static/images/meitu3.jpg' : shortHttp+item.lodgeUnitImageUrl"
+              @tap="clickDetails(i)"
             />
             <view class="title">{{item.lodgeUnitName === null ? '占无名称' : item.lodgeUnitName}}</view>
             <view class="state">{{item.state}}</view>
@@ -34,9 +35,9 @@
       </view>
       <!-- 待支付 -->
       <view v-if="waitingPayment.length > 0">
-        <view class="conter-box" v-for="(item,i) in waitingPayment" :key="i" @tap="clickDetails(i)">
+        <view class="conter-box" v-for="(item,i) in waitingPayment" :key="i" >
           <view class="img-box">
-            <image class="obligation-img" :src="item.lodgeUnitImageUrl === null ? '../../static/images/meitu3.jpg' : shortHttp+item.lodgeUnitImageUrl"/>
+            <image class="obligation-img" @tap="clickDetails(i)" :src="item.lodgeUnitImageUrl === null ? '../../static/images/meitu3.jpg' : shortHttp+item.lodgeUnitImageUrl"/>
             <view class="title">{{item.lodgeUnitName === null ? '占无名称' : item.lodgeUnitName}}</view>
             <view class="state">{{item.state}}</view>
           </view>
@@ -71,7 +72,7 @@
       <view v-if="hasBeen.length > 0">
         <view class="has-been-in-box" v-for="(item,i) in hasBeen" :key="i">
           <view class="has-been-in-img-box">
-            <image class="has-been-in-img" :src="item.lodgeUnitImageUrl === null ? '../../static/images/meitu3.jpg' : shortHttp+item.lodgeUnitImageUrl" />
+            <image class="has-been-in-img" @tap="clickDetails(i)" :src="item.lodgeUnitImageUrl === null ? '../../static/images/meitu3.jpg' : shortHttp+item.lodgeUnitImageUrl" />
             <view class="title">{{item.lodgeUnitName === null ? '占无名称' : item.lodgeUnitName}}</view>
             <view class="state">{{item.state}}</view>
           </view>
@@ -96,11 +97,12 @@
       </view>
       <!-- 待退款 -->
       <view v-if="refund.length > 0">
-        <view class="has-been-in-box" v-for="(item,i) in refund" :key="i" @tap="clickDetails()">
+        <view class="has-been-in-box" v-for="(item,i) in refund" :key="i" >
           <view class="has-been-in-img-box">
             <image
               class="has-been-in-img"
               :src="item.lodgeUnitImageUrl === null ? '../../static/images/meitu3.jpg' : shortHttp+item.lodgeUnitImageUrl"
+              @tap="clickDetails(i)"
             />
             <view class="title">{{item.lodgeUnitName === null ? '占无名称' : item.lodgeUnitName}}</view>
             <view class="state">{{item.state}}</view>
@@ -135,12 +137,12 @@
           class="has-been-in-box"
           v-for="(item,i) in generationCheck"
           :key="i"
-          @tap="clickDetails()"
         >
           <view class="has-been-in-img-box">
             <image
               class="has-been-in-img"
               :src="item.lodgeUnitImageUrl === null ? '../../static/images/meitu3.jpg' : shortHttp+item.lodgeUnitImageUrl"
+              @tap="clickDetails(i)"
             />
             <view class="title">{{item.lodgeUnitName === null ? '占无名称' : item.lodgeUnitName}}</view>
             <view class="state">{{item.state}}</view>
@@ -177,12 +179,12 @@
           class="has-been-in-box"
           v-for="(item,i) in wardRoundDoctor"
           :key="i"
-          @tap="clickDetails()"
         >
           <view class="has-been-in-img-box">
             <image
               class="has-been-in-img"
               :src="item.lodgeUnitImageUrl === null ? '../../static/images/meitu3.jpg' : shortHttp+item.lodgeUnitImageUrl"
+              @tap="clickDetails(i)"
             />
             <view class="title">{{item.lodgeUnitName === null ? '占无名称' : item.lodgeUnitName}}</view>
             <view class="state">{{item.state}}</view>
@@ -255,18 +257,6 @@ export default {
   methods: {
     // 点击进入订单详情
     clickDetails(index) {
-      /* let orderDetails = {
-        lodgeUnitImageUrl:'', // 图片
-        lodgeUnitName:'', // 标题
-        state:'',// 状态
-        price:'', // 价格
-        startDate:'', // 入住时间
-        endDate:'',// 离开时间
-        dayCount:'',// 共住时间
-        name:'',//入住人信息
-        idcardno:'',// 身份证
-        mobile:'',//电话
-      }; */
       this.$store.commit('orderDetailsFn',this.datas[index])
       uni.navigateTo({
         url:`/pages/orderList/order_details`

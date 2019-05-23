@@ -3,7 +3,7 @@
     <view v-if="dataList.length > 0">
       <view class="has-been-in-box" v-for="(item,i) in dataList" :key="i">
         <view class="has-been-in-img-box">
-          <image class="has-been-in-img" :src="item.lodgeUnitImageUrl === null ? '../../static/images/meitu3.jpg' : shortHttp+item.lodgeUnitImageUrl"/>
+          <image class="has-been-in-img" @tap="clickDetails(i)" :src="item.lodgeUnitImageUrl === null ? '../../static/images/meitu3.jpg' : shortHttp+item.lodgeUnitImageUrl"/>
           <view class="title">{{item.lodgeUnitName === null ? '占无名称' : item.lodgeUnitName}}</view>
           <view class="state">{{item.state}}</view>
         </view>
@@ -61,6 +61,15 @@ export default {
       console.log(orderId);
       
     } */
+    // 进入订单详情
+    clickDetails(index){
+      console.log(this.dataList);
+      
+      this.$store.commit('orderDetailsFn',this.dataList[index])
+      uni.navigateTo({
+        url:`/pages/orderList/order_details`
+      })
+    },
     // 评论
     comment(orderId,roomId){
       // orderId：订单id  roomId：房源id  

@@ -50,7 +50,7 @@
       </view>
       <view class="voucher" @click="clickIncoice">
         <text>开具发票</text>
-        <text class="iconfont">&#xe65e;</text>
+        <text class="iconfont">{{invoice === true?"开发票":'>'}}</text>
       </view>
       <view class="voucher">
         <text>押金</text>
@@ -59,7 +59,7 @@
       <view class="online-payment-detail-box">
         <view class="online-payment-box">
           <text>需在线支付</text>
-          <view class="price">{{orderPrice}}</view>
+          <view class="price">{{orderPrices}}</view>
         </view>
         <view class="detail-box">
           <text>查看明细</text>
@@ -121,10 +121,12 @@ export default {
       title:'', // 标题
       cashplege:null, // 押金
       price:'', // 房间价格
-      orderPrice:'', // 计算价格
+      orderPrices:'', // 总价格
       nickname:'', // 用户昵称
       phone:'', // 用户手机号
       listData:[],
+      invoice:false,// 是否开发票
+      invoiceId:'', // 发票id
     }
   },
   computed: {
@@ -239,6 +241,7 @@ export default {
     clickSubmit(){
       const _that = this
       let data = JSON.stringify(_that.listData);
+
       console.log(data)
       if (_that.choice === false) {
         uni.showToast({
@@ -251,28 +254,54 @@ export default {
           icon:"none"
         })
       } else {
-        request({
-          url:'/wap/api/book.php?action=submit',
-          data:{luId:_that.luId,startDate:_that.startTime,endDate:_that.endTime,roomNum:'1',tenants:data},
-          success:res => {
-            console.log("提交订单：",res);
-            if (res.data.status === "success") {
-              uni.navigateTo({
-                url:`/pages/particulars/pay?bookOrderId=${res.data.content.bookOrderId}`
-              })
-            } else {
+        // 判断是否开了发票
+        if (_that.invoice === false) {
+          request({
+            url:'/wap/api/book.php?action=submit',
+            data:{luId:_that.luId,startDate:_that.startTime,endDate:_that.endTime,roomNum:'1',tenants:data},
+            success:res => {
+              console.log("提交订单2：",res);
+              if (res.data.status === "success") {
+                uni.navigateTo({
+                  url:`/pages/particulars/pay?bookOrderId=${res.data.content.bookOrderId}`
+                })
+              } else {
+                uni.showToast({
+                  title:res.data.errorMsg,
+                  icon:"none"
+                })
+              }
+            },
+            fail:function(err){
               uni.showToast({
-                title:res.data.errorMsg,
-                icon:"none"
+                title:"系统错误",
               })
             }
-          },
-          fail:function(err){
-            uni.showToast({
-              title:"系统错误",
-            })
-          }
-        })
+          })
+        } else {
+          request({
+            url:'/wap/api/book.php?action=submit',
+            data:{luId:_that.luId,startDate:_that.startTime,endDate:_that.endTime,roomNum:'1',tenants:data,invoiceInfo:_that.invoice,fp_id:_that.invoiceId,fp_total:'0'},
+            success:res => {
+              console.log("提交订单1：",res);
+              if (res.data.status === "success") {
+                uni.navigateTo({
+                  url:`/pages/particulars/pay?bookOrderId=${res.data.content.bookOrderId}`
+                })
+              } else {
+                uni.showToast({
+                  title:res.data.errorMsg,
+                  icon:"none"
+                })
+              }
+            },
+            fail:function(err){
+              uni.showToast({
+                title:"系统错误",
+              })
+            }
+          })
+        }
         
       }
     },
@@ -282,7 +311,7 @@ export default {
         url:room,
         data:{luId:_that.luId},
         success: function(res) {
-          // console.log('数据：'+res.data);
+          console.log('数据：'+res);
           let arrayImg = res.data.content.images;
           let img;
           for (let index = 0; index < arrayImg.length; index++) {
@@ -291,6 +320,10 @@ export default {
           _that.ImageUrl = img;
           _that.title = res.data.content.luBase.lodgeUnitName;
           _that.cashplege = res.data.content.detail.cashplege;
+          let a = parseFloat(_that.orderPrice.substr(1));
+          let b = parseFloat(_that.cashplege);
+          let c = parseFloat(_that.price);
+          _that.orderPrices = (a + b + c) + '￥'
         }
       })
     },
@@ -323,10 +356,13 @@ export default {
     }
   },
   onShow(){
+    
+    // this.orderPrices = this.cashplege+this.price+this.orderPrice
     let listData=[];
     let data = this.$store.state.addCheckin;
     this.listData = data
-    console.log(this.$store.state.invoice) 
+    this.invoice = this.$store.state.invoice
+    this.invoiceId = this.$store.state.invoiceId
   }
 }
 </script>

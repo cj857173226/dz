@@ -4,7 +4,7 @@
     <view class="payment" v-if="payment.length > 0">
       <view class="conter-box" v-for="(item,i) in payment" :key="i">
         <view class="img-box">
-          <image class="obligation-img" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
+          <image class="obligation-img" @tap="clickDetails(i)" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
           <view class="title">{{item.lodgeUnitName===null?'占无标题':item.lodgeUnitName}}</view>
         </view>
         <view class="price-endtiem-box">
@@ -27,7 +27,7 @@
     <view class="affirm" v-if="affirm.length > 0">
       <view class="conter-box" v-for="(item,i) in affirm" :key="i">
         <view class="img-box">
-          <image class="obligation-img" :src="item.lodgeUnitImageUrl === null ? '../../static/images/meitu3.jpg' : shortHttp+item.lodgeUnitImageUrl"/>
+          <image class="obligation-img" @tap="clickDetails(i)" :src="item.lodgeUnitImageUrl === null ? '../../static/images/meitu3.jpg' : shortHttp+item.lodgeUnitImageUrl"/>
           <view class="title">{{item.lodgeUnitName === null ? '占无标题' : item.lodgeUnitName}}</view>
         </view>
         <view class="price-endtiem-box">
@@ -53,7 +53,7 @@
     <view class="check" v-if="check.length > 0">
       <view class="conter-box" v-for="(item,i) in check" :key="i">
         <view class="img-box">
-          <image class="obligation-img" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
+          <image class="obligation-img" @tap="clickDetails(i)" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
           <view class="title">{{item.lodgeUnitName===null?'占无标题':item.lodgeUnitName}}</view>
         </view>
         <view class="price-endtiem-box">
@@ -72,7 +72,7 @@
     <view class="lived" v-if="lived.length > 0">
       <view class="conter-box" v-for="(item,i) in lived" :key="i">
         <view class="img-box">
-          <image class="obligation-img" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
+          <image class="obligation-img" @tap="clickDetails(i)" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
           <view class="title">{{item.lodgeUnitName===null?'占无标题':item.lodgeUnitName}}</view>
         </view>
         <view class="price-endtiem-box">
@@ -91,7 +91,7 @@
     <view class="accomplish" v-if="accomplish.length > 0">
       <view class="conter-box" v-for="(item,i) in accomplish" :key="i">
         <view class="img-box">
-          <image class="obligation-img" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
+          <image class="obligation-img" @tap="clickDetails(i)" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
           <view class="title">{{item.lodgeUnitName===null?'占无标题':item.lodgeUnitName}}</view>
         </view>
         <view class="price-endtiem-box">
@@ -110,7 +110,7 @@
     <view class="cancel" v-if="cancel.length > 0">
       <view class="conter-box" v-for="(item,i) in cancel" :key="i">
         <view class="img-box">
-          <image class="obligation-img" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
+          <image class="obligation-img" @tap="clickDetails(i)" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
           <view class="title">{{item.lodgeUnitName===null?'占无标题':item.lodgeUnitName}}</view>
         </view>
         <view class="price-endtiem-box">
@@ -129,7 +129,7 @@
     <view class="refuse" v-if="refuse.length > 0">
       <view class="conter-box" v-for="(item,i) in refuse" :key="i">
         <view class="img-box">
-          <image class="obligation-img" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
+          <image class="obligation-img" @tap="clickDetails(i)" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
           <view class="title">{{item.lodgeUnitName===null?'占无标题':item.lodgeUnitName}}</view>
         </view>
         <view class="price-endtiem-box">
@@ -149,7 +149,7 @@
     <view class="pastDue" v-if="pastDue.length > 0">
       <view class="conter-box" v-for="(item,i) in pastDue" :key="i">
         <view class="img-box">
-          <image class="obligation-img" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
+          <image class="obligation-img" @tap="clickDetails(i)" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
           <view class="title">{{item.lodgeUnitName===null?'占无标题':item.lodgeUnitName}}</view>
         </view>
         <view class="price-endtiem-box">
@@ -168,7 +168,7 @@
     <view class="wardRoundDoctor" v-if="wardRoundDoctor.length > 0">
       <view class="conter-box" v-for="(item,i) in wardRoundDoctor" :key="i">
         <view class="img-box">
-          <image class="obligation-img" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
+          <image class="obligation-img" @tap="clickDetails(i)" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
           <view class="title">{{item.lodgeUnitName===null?'占无标题':item.lodgeUnitName}}</view>
         </view>
         <view class="price-endtiem-box">
@@ -188,7 +188,7 @@
     <view class="overMoney" v-if="overMoney.length > 0">
       <view class="conter-box" v-for="(item,i) in overMoney" :key="i">
         <view class="img-box">
-          <image class="obligation-img" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
+          <image class="obligation-img" @tap="clickDetails(i)" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
           <view class="title">{{item.lodgeUnitName===null?'占无标题':item.lodgeUnitName}}</view>
         </view>
         <view class="price-endtiem-box">
@@ -205,7 +205,7 @@
     <view class="refund" v-if="refund.length > 0">
       <view class="conter-box" v-for="(item,i) in refund" :key="i">
         <view class="img-box">
-          <image class="obligation-img" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
+          <image class="obligation-img" @tap="clickDetails(i)" :src="item.lodgeUnitImageUrl===null ? '../../static/images/default.png' : shortHttp + item.lodgeUnitImageUrl"/>
           <view class="title">{{item.lodgeUnitName===null?'占无标题':item.lodgeUnitName}}</view>
         </view>
         <view class="price-endtiem-box">
@@ -283,9 +283,17 @@ export default {
       show2:false, // 
       confirmDeletion:'', // 根据confirmDeletion的值来做判断操作
       value:'', // 房东修改退款金额
+      datas:[]
     };
   },
   methods: {
+    // 点击进入订单详情
+    clickDetails(index) {
+      this.$store.commit('orderDetailsFn',this.datas[index])
+      uni.navigateTo({
+        url:`/pages/orderList/order_details`
+      })
+    },
     // 全部列表的数据请求方法
     allRequest() {
       const _that = this;
@@ -294,6 +302,7 @@ export default {
         success: function(res) {
           if (res.data.status === "success") {
             let data = res.data.content.orders;
+            _that.datas = data
             let paymentData=[],
                 affirmData=[],
                 checkData=[],
